@@ -153,7 +153,7 @@ export const adminLeadConfirmationTemplate = async ({
               <div style="background: #f8f8f8; border-left: 3px solid #111;
                 border-radius: 0 8px 8px 0; padding: 16px 20px;">
                 <p style="margin: 0; font-size: 14px; line-height: 1.7;
-                  color: #333; white-space: pre-wrap;">
+                  color: #333; white-space: pre-wrap; text-align: left">
                   ${message}
                 </p>
               </div>
@@ -449,7 +449,7 @@ export const clientContactFormTemplate = async ({
                     </p>
                     <p style="margin: 0; font-size: 12px; color: #aaa; line-height: 1.6;">
                       Building purposeful digital experiences.<br />
-                      <a href="https://veilcodestudio.vercel.app"
+                      <a href="https://veilcode.studio"
                         style="color: #555; text-decoration: underline;
                           text-underline-offset: 2px;">
                         veilcodestudio.vercel.app

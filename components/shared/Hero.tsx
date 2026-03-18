@@ -134,7 +134,7 @@ export function Hero() {
           variants={fadeUp(0.32)}
           initial="hidden"
           animate="visible"
-          className="font-sans text-lg font-light text-ink-muted
+          className="font-sans text-lg font-light text-gray-100
             max-w-140 leading-relaxed mb-12"
         >
           VeilCode is a premium digital agency crafting high-performance web &amp;
