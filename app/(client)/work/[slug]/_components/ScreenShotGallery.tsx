@@ -27,6 +27,7 @@ function Shot({
             src={shot.src}
             alt={shot.alt}
             fill
+            loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
             className="object-contain object-fill"
           />

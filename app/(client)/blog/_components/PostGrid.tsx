@@ -7,7 +7,7 @@ import { FilterBar, type FilterState } from "./FilterBar";
 import { PostCard } from "./PostCard";
 import type { BlogPost } from "@/constants/blog";
 
-/* ─── EMPTY STATE ─────────────────────────────────────────────────────────── */
+// empty state
 
 function EmptyState({ onReset }: { onReset: () => void }) {
   return (
@@ -49,7 +49,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
   );
 }
 
-/* ─── POST GRID ───────────────────────────────────────────────────────────── */
+// posts grid
 
 interface PostGridProps {
   /** All posts EXCEPT the featured one shown above */

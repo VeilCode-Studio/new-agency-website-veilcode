@@ -7,7 +7,7 @@ import { formatDate, type BlogPost } from "@/constants/blog";
 import Image from "next/image";
 import Link from "next/link";
 
-/* ─── HERO IMAGE PLACEHOLDER ──────────────────────────────────────────────── */
+// hero image placeholder
 
 function HeroImagePlaceholder({ post: p }: { post: BlogPost }) {
   const { classes: c } = p;
@@ -60,7 +60,7 @@ function HeroImagePlaceholder({ post: p }: { post: BlogPost }) {
   );
 }
 
-/* ─── BLOG HERO ───────────────────────────────────────────────────────────── */
+// blog hero
 
 export function BlogPostHero({ post: p }: { post: BlogPost }) {
   const { classes: c } = p;

@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { fadeUp, useReveal } from "@/lib/motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { formatDate, type BlogPost } from "@/constants/blog";
+import Image from "next/image";
 
-/* ─── HERO IMAGE / PLACEHOLDER ───────────────────────────────────────────── */
+// hero image placeholder
 
 function FeaturedVisual({ post: p }: { post: BlogPost }) {
   const { classes: c } = p;
@@ -41,9 +42,14 @@ function FeaturedVisual({ post: p }: { post: BlogPost }) {
       ))}
 
       {p.heroSrc ? (
-        /* eslint-disable-next-line @next/next/no-img-element */
-        <img src={p.heroSrc} alt={p.heroAlt}
-          className="absolute inset-0 w-full h-full object-cover" />
+
+        <Image
+          src={p.heroSrc}
+          alt={p.heroAlt}
+          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+        />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
           <div className={`size-14 rounded-xl border flex items-center justify-center
@@ -77,7 +83,7 @@ function FeaturedVisual({ post: p }: { post: BlogPost }) {
   );
 }
 
-/* ─── FEATURED POST ───────────────────────────────────────────────────────── */
+// featured post
 
 export function FeaturedPost({ post: p }: { post: BlogPost }) {
   const [hovered, setHovered] = useState(false);

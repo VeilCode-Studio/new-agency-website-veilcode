@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   SectionTag,
@@ -72,9 +73,9 @@ export function PricingTiers() {
         >
           All prices are indicative starting points. Final investment is scoped
           per project. VAT/taxes not included.{" "}
-          <a href="#" className="text-brand hover:underline transition-colors duration-150">
+          <Link href="/start" className="text-brand hover:underline transition-colors duration-150">
             Book a free discovery call
-          </a>{" "}
+          </Link>{" "}
           for an exact quote.
         </motion.p>
       </div>

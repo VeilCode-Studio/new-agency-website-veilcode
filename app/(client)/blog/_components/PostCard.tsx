@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { formatDate, type BlogPost } from "@/constants/blog";
+import Image from "next/image";
 
 /* ─── CARD VISUAL ─────────────────────────────────────────────────────────── */
 
@@ -30,10 +31,14 @@ function CardVisual({ post: p }: { post: BlogPost }) {
       ))}
 
       {p.heroSrc ? (
-        /* eslint-disable-next-line @next/next/no-img-element */
-        <img src={p.heroSrc} alt={p.heroAlt}
+        <Image
+          src={p.heroSrc}
+          alt={p.heroAlt}
           className="absolute inset-0 w-full h-full object-cover
-            transition-transform duration-500 group-hover:scale-[1.03]" />
+            transition-transform duration-500 group-hover:scale-[1.03]"
+          fill
+          loading="lazy"
+        />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className={`size-10 rounded-lg border flex items-center justify-center
@@ -64,7 +69,7 @@ function CardVisual({ post: p }: { post: BlogPost }) {
   );
 }
 
-/* ─── POST CARD ───────────────────────────────────────────────────────────── */
+// post card
 
 export function PostCard({
   post: p,

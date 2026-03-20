@@ -1,4 +1,4 @@
-/* ─── GOOGLE FONTS ────────────────────────────────────────────────────────── */
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap");
 
 
@@ -8,7 +8,7 @@
 
 
 
-/* ─── TAILWIND V4 THEME TOKENS ────────────────────────────────────────────── */
+/* TAILWIND V4 THEME TOKENS */
 @theme {
   /* --- Fonts --- */
   --font-display: "Syne", sans-serif;
@@ -70,7 +70,7 @@
   --animate-marquee:    marquee 28s linear infinite;
 }
 
-/* ─── KEYFRAMES ───────────────────────────────────────────────────────────── */
+/* Keyframes */
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50%       { opacity: 0.75; transform: scale(1.04); }
@@ -92,7 +92,7 @@
   to   { transform: translateX(-50%); }
 }
 
-/* ─── BASE RESET & GLOBALS ────────────────────────────────────────────────── */
+/* BASE RESET & GLOBALS */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {

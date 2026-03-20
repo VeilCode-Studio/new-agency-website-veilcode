@@ -709,7 +709,7 @@ export const TIERS: PricingTier[] = [
   {
     name:     "Starter",
     badge:    null,
-    price:    "From $2,500",
+    price:    "Starting at $2,500 — Pay 30% to get started",
     priceSub: "one-time project",
     desc:     "For early-stage startups and small businesses that need a professional digital presence without the enterprise price tag.",
     features: [
@@ -726,7 +726,7 @@ export const TIERS: PricingTier[] = [
   {
     name:     "Growth",
     badge:    "Most Popular",
-    price:    "From $8,000",
+    price:    "Starting at $8,000 - Pay 30% to get started!",
     priceSub: "one-time project",
     desc:     "For growing businesses ready to invest in a full-scale digital product — web, mobile, or data — built to perform.",
     features: [

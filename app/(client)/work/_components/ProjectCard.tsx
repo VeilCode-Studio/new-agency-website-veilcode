@@ -32,6 +32,7 @@ function CardVisual({ project: p }: { project: Project }) {
                         src={heroShot!.src!}
                         alt={heroShot!.alt}
                         fill
+                        loading="lazy"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                         className="object-cover object-top
                             transition-transform duration-500 group-hover:scale-[1.04]"

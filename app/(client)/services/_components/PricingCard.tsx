@@ -5,6 +5,7 @@ import {
   GhostButton,
 } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
+import Link from "next/link";
 
 export function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
 
@@ -43,10 +44,11 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
 
         {/* Price */}
         <div className="mb-4">
-          <span className={`font-display font-extrabold text-[36px] tracking-tight leading-none
+          <span className={`font-display font-extrabold text-[20px] tracking-tight leading-none
             ${tier.featured ? "text-brand drop-shadow-[0_0_20px_var(--color-brand-glow)]" : "text-ink"}`}>
             {tier.price}
           </span>
+          <br />
           <span className="font-sans text-sm text-ink-faint ml-2">/ {tier.priceSub}</span>
         </div>
 
@@ -77,11 +79,11 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
         {/* CTA */}
         {tier.featured ? (
           <PrimaryButton className="w-full justify-center py-3.5!">
-            {tier.cta} →
+            <Link href={"/start"}>{tier.cta} →</Link>
           </PrimaryButton>
         ) : (
           <GhostButton className="w-full justify-center py-3.5!">
-            {tier.cta} →
+            <Link href={"/start"}>{tier.cta} →</Link>
           </GhostButton>
         )}
       </div>
