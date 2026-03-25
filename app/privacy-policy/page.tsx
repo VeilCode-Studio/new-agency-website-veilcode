@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Shield, Lock, Eye, Database, Users, Globe } from 'lucide-react';
+import { ArrowLeft, Shield, Eye, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { PrimaryButton } from '@/components/extras/Primitives';
+import InfoCollected from './_components/InfoCollected';
+import HowWeUseInfo from './_components/HowWeUseInfo';
+import InfoSharingAndDisclosure from './_components/InfoSharingAndDisclosure';
+import PrivacyFooter from './_components/PrivacyFooter';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -56,7 +60,7 @@ export default function PrivacyPolicyPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <Eye className="w-6 h-6 text-brand" />
-                1. Introduction
+                <span className='text-white/80'>1. Introduction</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-ink-muted leading-relaxed space-y-6">
@@ -76,95 +80,20 @@ export default function PrivacyPolicyPage() {
           </Card>
 
           {/* Information We Collect */}
-          <Card className="bg-surface border-line mb-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <Database className="w-6 h-6 text-brand" />
-                2. Information We Collect
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-ink-muted leading-relaxed space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-medium text-ink mb-3">Information You Provide</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Contact details (name, email, phone, company)</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Project briefs and requirements</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Inquiries via forms or email</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Payment and billing information (processed securely via third parties)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-ink mb-3">Automatically Collected Information</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> IP address, browser type, device information</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Usage data (pages visited, time spent)</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Cookies and similar tracking technologies</li>
-                    <li className="flex items-start gap-2"><span className="text-brand mt-px">•</span> Analytics data from tools like Google Analytics</li>
-                  </ul>
-                </div>
-              </div>
-              <Separator className="bg-line" />
-              <p className="text-xs text-ink-faint italic">
-                We never collect sensitive personal data (race, religion, health) unless explicitly required for a project and with your prior written consent.
-              </p>
-            </CardContent>
-          </Card>
+          <InfoCollected />
 
           {/* How We Use Your Information */}
-          <Card className="bg-surface border-line mb-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <Lock className="w-6 h-6 text-brand" />
-                3. How We Use Your Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-ink-muted leading-relaxed space-y-4">
-              <ul className="space-y-4">
-                <li className="flex gap-4">
-                  <div className="w-6 h-6 rounded-2xl bg-brand-dim shrink-0 flex items-center justify-center text-brand text-sm font-mono">01</div>
-                  <div>To respond to your inquiries and deliver our services (web solutions, AI automation, data analytics, etc.)</div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="w-6 h-6 rounded-2xl bg-brand-dim shrink-0 flex items-center justify-center text-brand text-sm font-mono">02</div>
-                  <div>To improve our website, services, and client experience through analytics</div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="w-6 h-6 rounded-2xl bg-brand-dim shrink-0 flex items-center justify-center text-brand text-sm font-mono">03</div>
-                  <div>To send important updates, project communications, and (with consent) marketing about new capabilities</div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="w-6 h-6 rounded-2xl bg-brand-dim shrink-0 flex items-center justify-center text-brand text-sm font-mono">04</div>
-                  <div>To comply with legal obligations and protect our rights</div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <HowWeUseInfo />
 
           {/* Sharing & Disclosure */}
-          <Card className="bg-surface border-line mb-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <Users className="w-6 h-6 text-brand" />
-                4. Sharing &amp; Disclosure
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-ink-muted leading-relaxed">
-              <p>We do not sell your personal information. We may share data only in these limited cases:</p>
-              <ul className="mt-6 space-y-3 text-sm">
-                <li className="flex items-start gap-3"><span className="text-brand">↗</span> With trusted service providers (Vercel, AWS, Stripe, analytics tools) under strict data-processing agreements</li>
-                <li className="flex items-start gap-3"><span className="text-brand">↗</span> When required by law or to protect VeilCode and our clients</li>
-                <li className="flex items-start gap-3"><span className="text-brand">↗</span> In the event of a business transfer (merger, acquisition) with appropriate safeguards</li>
-              </ul>
-            </CardContent>
-          </Card>
+          <InfoSharingAndDisclosure />
 
           {/* Cookies & Tracking */}
           <Card className="bg-surface border-line mb-8">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <Globe className="w-6 h-6 text-brand" />
-                5. Cookies &amp; Tracking Technologies
+                <span className="text-white/80">5. Cookies &amp; Tracking Technologies</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-ink-muted leading-relaxed">
@@ -178,7 +107,7 @@ export default function PrivacyPolicyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Card className="bg-surface border-line">
               <CardHeader>
-                <CardTitle className="text-xl">6. Your Rights</CardTitle>
+                <CardTitle className="text-xl text-white/90">6. Your Rights</CardTitle>
               </CardHeader>
               <CardContent className="text-ink-muted text-sm leading-relaxed">
                 You have the right to access, correct, delete, or restrict your personal data. 
@@ -188,7 +117,7 @@ export default function PrivacyPolicyPage() {
 
             <Card className="bg-surface border-line">
               <CardHeader>
-                <CardTitle className="text-xl">7. Data Security</CardTitle>
+                <CardTitle className="text-xl text-white/90">7. Data Security</CardTitle>
               </CardHeader>
               <CardContent className="text-ink-muted text-sm leading-relaxed">
                 We implement industry-standard security measures (encryption, access controls, regular audits) 
@@ -225,21 +154,14 @@ export default function PrivacyPolicyPage() {
                 className="mt-6 bg-brand hover:bg-brand/90 text-black font-medium px-10"
                 asChild
               >
-                <a href="mailto:privacy@veilcode.studio">Contact Our Privacy Team</a>
+                <a href="mailto:hello@veilcode.studio">Contact Our Privacy Team</a>
               </Button>
             </div>
           </div>
         </div>
 
         {/* Footer note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-24 text-center text-xs text-ink-faint font-mono border-t border-line pt-8"
-        >
-          © 2026 VeilCode Studio Ltd. All rights reserved.<br />
-          Built with precision · Deployed with purpose.
-        </motion.div>
+        <PrivacyFooter />
       </div>
     </div>
   );
