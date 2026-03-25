@@ -32,6 +32,7 @@ export function MobileDrawer({
             onClick={onClose}
             className="fixed inset-0 z-40 bg-base/80 backdrop-blur-sm"
             aria-hidden
+            id="navbar"
           />
 
           {/* Drawer panel */}

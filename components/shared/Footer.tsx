@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { LogoMark, WordMark } from "@/components/extras/Primitives";
 import { FOOTER_COLS } from "@/constants";
 import FooterSocials from "../extras/FooterSocials";
+import { ArrowUp } from "lucide-react";
 
 
 export function Footer() {
@@ -12,7 +13,7 @@ export function Footer() {
   if (pathname === "/start" || pathname.includes("/newsletter")) return null;
   return (
     <footer className="border-t border-line bg-surface pt-16 pb-10 px-6 md:px-10">
-      <div className="max-w-30Link mx-auto">
+      <div className="max-w-30Link mx-auto relative z-5">
 
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16">
@@ -66,6 +67,19 @@ export function Footer() {
           </p>
         </div>
       </div>
+      {/* can you better position and make it better in general */}
+      <Link
+        href="#navbar"
+        className="fixed bottom-6 right-6 z-50
+        flex items-center justify-center
+        w-12 h-12 rounded-full
+        bg-brand text-black
+        shadow-lg shadow-black/20
+        hover:scale-110 hover:bg-brand/90
+        transition-all duration-300 ease-out"
+      >
+        <ArrowUp size={20} />
+      </Link>
     </footer>
   );
 }

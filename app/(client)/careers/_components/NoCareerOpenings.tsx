@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { PrimaryButton } from '@/components/extras/Primitives'
+import Link from 'next/link'
 
 
 const NoCareersOpenings = () => {
@@ -27,15 +28,13 @@ const NoCareersOpenings = () => {
       we keep the best ones close.
     </p>
 
-    <Button
-      size="lg"
+    <PrimaryButton
       className="mt-10 bg-brand hover:bg-brand/90 text-black font-medium px-10"
-      asChild
     >
-      <a href="mailto:careers@veilcode.com">
+      <Link href="mailto:hello@veilcode.studio">
         Send Your Application Anyway
-      </a>
-    </Button>
+      </Link>
+    </PrimaryButton>
   </motion.div>
   )
 }

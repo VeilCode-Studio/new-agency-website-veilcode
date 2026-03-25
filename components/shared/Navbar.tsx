@@ -12,7 +12,7 @@ import { NAV_LINKS } from "@/constants";
 
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
   return (
-    <a
+    <Link
       href={href}
       className="relative group font-sans text-sm font-normal tracking-wide
         text-ink-muted transition-colors duration-200
@@ -23,7 +23,7 @@ function DesktopNavLink({ label, href }: { label: string; href: string }) {
         className="absolute -bottom-0.5 left-0 h-px w-0 bg-brand
           transition-all duration-250 group-hover:w-full"
       />
-    </a>
+    </Link>
   );
 }
 
@@ -100,6 +100,7 @@ export function Nav() {
               ? "bg-base/90 backdrop-blur-xl border-b border-line"
               : "bg-transparent"
           }`}
+        id="navbar"
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
