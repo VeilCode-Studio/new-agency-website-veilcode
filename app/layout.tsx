@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/shared/Navbar";
-import { Footer } from "@/components/shared/Footer";
 import { Toaster } from "sonner";
 import Image from "next/image";
 
@@ -129,15 +127,13 @@ export default function RootLayout({
             alt="facebook pixel"
             height="1"
             width="1"
-            style={{display: "none"}}
+            style={{ display: "none" }}
           />
         </noscript>
-        <Nav />
-        <main>
+        <main className="max-w-400 mx-auto">
           {children}
+          <Toaster />
         </main>
-        <Toaster />
-        <Footer />
       </body>
     </html>
   );

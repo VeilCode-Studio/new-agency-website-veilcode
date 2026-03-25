@@ -189,3 +189,16 @@ interface SampleProjects {
     link:       string;
   };
 }
+
+
+interface JobOpening {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string; // e.g. "Full-time", "Remote"
+  experience: string; // e.g. "Mid-level"
+  description: string;
+  responsibilities: string[];
+  posted: string; // e.g. "2 days ago"
+}

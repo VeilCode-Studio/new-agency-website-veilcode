@@ -3,7 +3,7 @@
 import { type ReactNode, type ButtonHTMLAttributes } from "react";
 import { motion } from "framer-motion";
 
-/* ─── LOGO MARK ───────────────────────────────────────────────────────────── */
+// LOGO MARK
 
 export function LogoMark({ size = 32 }: { size?: number }) {
   return (
@@ -30,6 +30,7 @@ export function LogoMark({ size = 32 }: { size?: number }) {
   );
 }
 
+// WORD MARK
 export function WordMark() {
   return (
     <span className="font-display text-xl font-bold text-ink tracking-tight">
@@ -38,7 +39,7 @@ export function WordMark() {
   );
 }
 
-/* ─── ACCENT LINE ─────────────────────────────────────────────────────────── */
+// ACCENT LINE
 
 export function AccentLine({ width = 48 }: { width?: number }) {
   return (
@@ -52,7 +53,7 @@ export function AccentLine({ width = 48 }: { width?: number }) {
   );
 }
 
-/* ─── SECTION TAG ─────────────────────────────────────────────────────────── */
+// SECTION TAG
 
 export function SectionTag({ children }: { children: ReactNode }) {
   return (
@@ -66,7 +67,7 @@ export function SectionTag({ children }: { children: ReactNode }) {
   );
 }
 
-/* ─── BUTTONS ─────────────────────────────────────────────────────────────── */
+// BUTTONS
 
 type BtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
@@ -108,7 +109,7 @@ export function GhostButton({ children, className = "", ...props }: BtnProps) {
   );
 }
 
-/* ─── ANIMATED ARROW ──────────────────────────────────────────────────────── */
+// ANIMATED ARROW
 
 export function AnimatedArrow({ hovered }: { hovered: boolean }) {
   return (
@@ -122,7 +123,7 @@ export function AnimatedArrow({ hovered }: { hovered: boolean }) {
   );
 }
 
-/* ─── GRID BACKGROUND ─────────────────────────────────────────────────────── */
+// GRID BACKGROUND
 
 export function GridBg({ className = "" }: { className?: string }) {
   return (
@@ -136,7 +137,7 @@ export function GridBg({ className = "" }: { className?: string }) {
   );
 }
 
-/* ─── GLOW ORB ────────────────────────────────────────────────────────────── */
+// GLOW ORB
 
 export function GlowOrb({
   color,

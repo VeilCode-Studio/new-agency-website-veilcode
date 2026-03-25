@@ -147,7 +147,7 @@ export const FOOTER_COLS = [
   {
     heading: "Legal",
     links: [
-      { label: "Privacy Policy",  href: "#" },
+      { label: "Privacy Policy",  href: "/privacy-policy" },
       { label: "Terms of Service", href: "#" },
       { label: "Cookie Policy",   href: "#" },
     ],
@@ -218,7 +218,7 @@ export const PROJECTS: SampleProjects[] = [
 export const SOCIALS = [
   { label: "Twitter / X", abbr: "TW", href: "#" },
   { label: "LinkedIn",    abbr: "LI", href: "#" },
-  { label: "GitHub",      abbr: "GH", href: "#" },
+  { label: "GitHub",      abbr: "GH", href: "https://github.com/ghost-sys-coder" },
 ] as const;
 
 export const TYPEWRITER_WORDS = [

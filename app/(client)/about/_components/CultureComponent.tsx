@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionTag, AccentLine, PrimaryButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { PERKS, CULTURE_CARDS } from "@/constants";
+import Link from "next/link";
 
 
 export function Culture() {
@@ -149,17 +150,17 @@ export function Culture() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <PrimaryButton className="text-[15px]! px-8! py-4!">
-                  See Open Positions →
+                  <Link href={"/careers"}>See Open Positions →</Link>
                 </PrimaryButton>
-                <a
-                  href="mailto:hello@veilcode.io"
+                <Link
+                  href="mailto:hello@veilcode.studio"
                   className="inline-flex items-center gap-2 font-sans text-sm
                     font-medium text-ink-muted border border-line px-8 py-4
                     rounded-md no-underline hover:text-ink hover:border-line-hi
                     hover:bg-surface-hi transition-all duration-200"
                 >
                   Say Hello
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

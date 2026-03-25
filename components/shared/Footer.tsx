@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LogoMark, WordMark } from "@/components/extras/Primitives";
-import { SOCIALS, FOOTER_COLS } from "@/constants";
+import { FOOTER_COLS } from "@/constants";
+import FooterSocials from "../extras/FooterSocials";
 
 
 export function Footer() {
@@ -28,22 +29,7 @@ export function Footer() {
               analytics, and AI automation for ambitious businesses.
             </p>
 
-            {/* Social icons */}
-            <div className="flex gap-2.5">
-              {SOCIALS.map((s) => (
-                <a
-                  key={s.abbr}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="size-9 flex items-center justify-center rounded-md
-                    border border-line text-ink-faint
-                    hover:border-line-hi hover:text-ink-muted
-                    transition-colors duration-200 no-underline"
-                >
-                  <span className="font-mono text-[10px] tracking-wide">{s.abbr}</span>
-                </a>
-              ))}
-            </div>
+            <FooterSocials />
           </div>
 
           {/* Link columns */}
