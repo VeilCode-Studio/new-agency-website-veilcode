@@ -1,6 +1,146 @@
 export type ServiceSlug = "web" | "mobile" | "data" | "social" | "ai";
 
 export const PROJECTS: Project[] = [
+  // PRESTIGE PROPERTIES PROJECT
+  {
+    slug: "prestige-properties",
+    service: "web",
+    serviceLabel: "Web Application",
+    year: "2025",
+    title: "Prestige Properties Real Estate Platform",
+    client: "Prestige Properties",
+    industry: "Real Estate",
+    duration: "6 weeks",
+    team: "2 engineers, 1 designer",
+
+    summary:
+      "A modern real estate web application designed to help users discover, explore, and inquire about premium properties — transforming property browsing into a seamless, high-conversion digital experience.",
+
+    challenge:
+      "Prestige Properties lacked a centralized digital platform to showcase listings, manage property inquiries, and provide a seamless user experience. Property discovery was fragmented across social media and offline channels, making it difficult for potential buyers and renters to explore listings efficiently. The brand also needed a premium, trust-driven online presence to compete in a growing real estate market.",
+
+    approach:
+      "We started with a product-focused discovery phase to define user flows for property search, filtering, and inquiries. The platform was designed with a clean, modern interface that emphasizes property visuals and ease of navigation. We implemented advanced filtering, dynamic property pages, and integrated WhatsApp/contact inquiry flows for instant communication. Performance optimization and SEO were prioritized to ensure fast load times and strong visibility in property-related searches.",
+
+    outcome:
+      "Delivered a high-performance real estate platform with advanced property browsing, seamless inquiry flows, and a premium user experience. The platform significantly improved user engagement, lead generation, and positioned Prestige Properties as a modern real estate brand.",
+
+    metric: "+210%",
+    metricLabel: "Property Inquiries",
+
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Real Estate Platform",
+      "Responsive Design",
+      "SEO",
+      "WhatsApp Integration",
+      "Vercel",
+    ],
+    featured: true,
+
+    results: [
+      {
+        metric: "+210%",
+        label: "Property inquiries",
+        sub: "within first 60 days",
+      },
+      {
+        metric: "1.6s",
+        label: "Average load time",
+        sub: "optimized for property images",
+      },
+      {
+        metric: "+85%",
+        label: "User engagement",
+        sub: "via search & filtering experience",
+      },
+      {
+        metric: "100%",
+        label: "Mobile responsiveness",
+        sub: "across all devices",
+      },
+    ],
+
+    deliverables: [
+      {
+        title: "Product & UX strategy",
+        desc: "Defined user journeys for property discovery, filtering, and inquiry to maximize engagement and conversions.",
+      },
+      {
+        title: "UI/UX design",
+        desc: "Clean, modern interface focused on property visuals, usability, and intuitive navigation.",
+      },
+      {
+        title: "Next.js web application",
+        desc: "Scalable, high-performance platform with dynamic property pages and optimized media handling.",
+      },
+      {
+        title: "Search & filtering system",
+        desc: "Advanced filters for location, price, property type, and features to improve user experience.",
+      },
+      {
+        title: "Inquiry integration",
+        desc: "WhatsApp and contact-based inquiry system for instant lead generation.",
+      },
+      {
+        title: "SEO & optimization",
+        desc: "Structured data and on-page SEO to improve search rankings for property listings.",
+      },
+    ],
+
+    screenshots: [
+      {
+        src: "/assets/prestige-realestate/homepage-hero.png",
+        alt: "Prestige Properties homepage",
+        caption: "Homepage — premium property showcase",
+        size: "wide",
+      },
+      {
+        src: "/assets/prestige-realestate/homepage-mobile.png",
+        alt: "Property homepage on mobile",
+        caption: "Property listings with filters",
+        size: "half",
+      },
+      {
+        src: "/assets/prestige-realestate/featured-section.png",
+        alt: "Property details page",
+        caption: "Detailed property view",
+        size: "half",
+      },
+      {
+        src: "/assets/prestige-realestate/property-listings-mobile.png",
+        alt: "Mobile property browsing",
+        caption: "Mobile experience",
+        size: "half",
+      },
+      {
+        src: "/assets/prestige-realestate/browse-listings.png",
+        alt: "Inquiry section",
+        caption: "Lead generation & inquiry flow",
+        size: "half",
+      },
+    ],
+
+    testimonial: {
+      quote:
+        "Veilcode delivered beyond our expectations. Our platform now makes it incredibly easy for clients to explore properties and reach out instantly. We've seen a massive increase in serious inquiries.",
+      name: "Managing Director",
+      role: "Prestige Properties",
+      initials: "PP",
+    },
+
+    nextSlug: "flowmetrics-dashboard",
+
+    classes: {
+      accent: "text-svc-web",
+      dimBg: "bg-svc-web-dim",
+      border: "border-svc-web-border",
+      hoverBorder: "hover:border-svc-web-border",
+      hoverShadow: "hover:shadow-[0_0_40px_var(--color-svc-web-dim)]",
+      gradFrom: "from-svc-web/10",
+    },
+  },
   // SALON PROJECT
   {
     slug: "inspire-me-salon",
@@ -118,7 +258,7 @@ export const PROJECTS: Project[] = [
         alt: "Inspire Me gallery section",
         caption: "Visual gallery",
         size: "half",
-      }
+      },
     ],
 
     testimonial: {
