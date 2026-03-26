@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
         size: "wide",
       },
       {
-        src: "/assets/prestige-realestate/homepage-mobile.png",
+        src: "/assets/prestige-realestate/agents-page.png",
         alt: "Property homepage on mobile",
         caption: "Property listings with filters",
         size: "half",
@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
         size: "half",
       },
       {
-        src: "/assets/prestige-realestate/property-listings-mobile.png",
+        src: "/assets/prestige-realestate/testimonials.png",
         alt: "Mobile property browsing",
         caption: "Mobile experience",
         size: "half",
