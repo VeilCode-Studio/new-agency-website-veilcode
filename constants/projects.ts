@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
 
     screenshots: [
       {
-        src: "/assets/prestige-realestate/homepage-hero.png",
+        src: "/assets/prestige-realestate/homepage-hero-hd.png",
         alt: "Prestige Properties homepage",
         caption: "Homepage — premium property showcase",
         size: "wide",
