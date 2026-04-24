@@ -276,79 +276,6 @@
 }
 
 /* -------------------------------------------------------------
-   KEYFRAMES
-   ------------------------------------------------------------- */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50%       { opacity: 0.75; transform: scale(1.04); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
-}
-@keyframes scan {
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* -------------------------------------------------------------
-   BASE RESET + GLOBALS
-   ------------------------------------------------------------- */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  color-scheme: light;
-}
-
-html.dark,
-html.midnight {
-  color-scheme: dark;
-}
-
-html.linen {
-  color-scheme: light;
-}
-
-body {
-  background-color: var(--color-page);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-  transition: background-color 200ms ease, color 200ms ease;
-}
-
-/* Noise texture overlay (subtle on both themes) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* Scrollbar */
-::-webkit-scrollbar       { width: 4px; }
-::-webkit-scrollbar-track { background: var(--color-page); }
-::-webkit-scrollbar-thumb { background: var(--color-brand-glow); border-radius: 2px; }
-
-/* Selection */
-::selection { background: var(--color-brand-dim); color: var(--color-ink); }
-
-/* -------------------------------------------------------------
    MIDNIGHT (deep indigo-navy — bespoke studio at night)
    ------------------------------------------------------------- */
 .midnight {
@@ -507,6 +434,79 @@ body::after {
   --sidebar-border: oklch(0.86 0.02 75);
   --sidebar-ring: oklch(0.68 0.05 75);
 }
+
+/* -------------------------------------------------------------
+   KEYFRAMES
+   ------------------------------------------------------------- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.75; transform: scale(1.04); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* -------------------------------------------------------------
+   BASE RESET + GLOBALS
+   ------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
+
+html.dark,
+html.midnight {
+  color-scheme: dark;
+}
+
+html.linen {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Noise texture overlay (subtle on both themes) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-page); }
+::-webkit-scrollbar-thumb { background: var(--color-brand-glow); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--color-brand-dim); color: var(--color-ink); }
 
 @layer base {
   * {
