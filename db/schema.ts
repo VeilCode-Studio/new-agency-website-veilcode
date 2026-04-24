@@ -15,6 +15,7 @@ import type {
   ServiceCardClasses,
   ServiceOverviewClasses,
   ServiceDeepDiveClasses,
+  EmailBlock,
 } from "@/types/content";
 
 // Newsletter subscriptions
@@ -48,7 +49,7 @@ export const timelineEnum = pgEnum("timelines", [
   "Just exploring for now",
 ]);
 
-export const servicesEnum = pgEnum("services", [
+export const servicesEnum = pgEnum("services_type", [
   "Web Solutions (Design & Development)",
   "Mobile Application Development",
   "Data Analytics",
@@ -176,6 +177,37 @@ export const projects = pgTable("projects", {
   classes: jsonb("classes").$type<ProjectClasses>().notNull(),
   published: boolean("published").default(true).notNull(),
   sortOrder: integer("sort_order").default(0).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// NEWSLETTER CAMPAIGNS
+
+export const campaignStatusEnum = pgEnum("campaign_status", [
+  "draft",
+  "sending",
+  "sent",
+  "failed",
+]);
+
+export const campaignTypeEnum = pgEnum("campaign_type", [
+  "announcement",
+  "product-update",
+  "tips-tricks",
+  "blog-digest",
+  "custom",
+]);
+
+export const newsletterCampaigns = pgTable("newsletter_campaigns", {
+  id: serial("id").primaryKey(),
+  subject: text("subject").notNull(),
+  previewText: text("preview_text").notNull(),
+  type: campaignTypeEnum("type").notNull(),
+  status: campaignStatusEnum("status").notNull().default("draft"),
+  body: jsonb("body").$type<EmailBlock[]>().notNull(),
+  sentAt: timestamp("sent_at"),
+  sentCount: integer("sent_count").default(0).notNull(),
+  failedCount: integer("failed_count").default(0).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });

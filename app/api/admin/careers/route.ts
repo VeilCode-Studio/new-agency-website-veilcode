@@ -1,0 +1,37 @@
+import { NextResponse } from "next/server";
+import { asc } from "drizzle-orm";
+import { db } from "@/db/drizzle";
+import { jobOpenings } from "@/db/schema";
+import { getAdminContext } from "@/lib/auth/admin";
+
+export const runtime = "nodejs";
+
+export async function GET() {
+  const ctx = await getAdminContext();
+  if (!ctx) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  try {
+    const rows = await db
+      .select()
+      .from(jobOpenings)
+      .orderBy(asc(jobOpenings.createdAt));
+    return NextResponse.json(rows);
+  } catch (err) {
+    console.error("[api/admin/careers] GET error:", err);
+    return NextResponse.json({ error: "Failed to fetch job openings" }, { status: 500 });
+  }
+}
+
+export async function POST(req: Request) {
+  const ctx = await getAdminContext();
+  if (!ctx) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  try {
+    const body = await req.json();
+    const [created] = await db.insert(jobOpenings).values(body).returning();
+    return NextResponse.json(created, { status: 201 });
+  } catch (err) {
+    console.error("[api/admin/careers] POST error:", err);
+    return NextResponse.json({ error: "Failed to create job opening" }, { status: 500 });
+  }
+}

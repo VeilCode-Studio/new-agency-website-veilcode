@@ -1,0 +1,2 @@
+CREATE TYPE "public"."services_type" AS ENUM('Web Solutions (Design & Development)', 'Mobile Application Development', 'Data Analytics', 'Social Media Marketing', 'AI Automation', 'Multiple Services', 'Not Sure Yet');--> statement-breakpoint
+DROP TYPE "public"."services";

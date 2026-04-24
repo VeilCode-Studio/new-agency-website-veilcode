@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(npm install *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/api/admin/blog/[id]\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/\\(admin\\)/admin/blog/[id]/edit\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/api/admin/careers/[id]\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/\\(admin\\)/admin/careers/[id]/edit\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/api/admin/newsletter/subscribers/[id]\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/api/admin/newsletter/campaigns/[id]\")",
+      "Bash(mkdir -p \"D:/AGENCY MARKETING MATERIAL/AGENCY_WEBSITE_TEMPLATES/new-agency-website-veilcode/app/api/admin/newsletter/campaigns/[id]/send\")",
+      "Bash(npx drizzle-kit *)",
+      "Bash(node -e ' *)"
     ]
   }
 }

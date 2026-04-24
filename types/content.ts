@@ -46,3 +46,24 @@ export type ServiceDeepDiveClasses = {
 export type BlogAuthorJSON = BlogAuthor;
 export type TocEntryJSON = TocEntry;
 export type ContentBlockJSON = ContentBlock;
+
+// Email campaign blocks
+
+export type EmailHeadingBlock = { type: "heading"; text: string; level: 1 | 2 | 3 };
+export type EmailTextBlock    = { type: "text"; html: string };
+export type EmailButtonBlock  = { type: "button"; label: string; url: string; align: "left" | "center" | "right" };
+export type EmailDividerBlock = { type: "divider" };
+export type EmailQuoteBlock   = { type: "quote"; text: string; attribution?: string };
+export type EmailListBlock    = { type: "list"; items: string[]; ordered?: boolean };
+export type EmailImageBlock   = { type: "image"; src: string; alt: string; caption?: string; link?: string };
+export type EmailSpacerBlock  = { type: "spacer"; size: "sm" | "md" | "lg" };
+
+export type EmailBlock =
+  | EmailHeadingBlock
+  | EmailTextBlock
+  | EmailButtonBlock
+  | EmailDividerBlock
+  | EmailQuoteBlock
+  | EmailListBlock
+  | EmailImageBlock
+  | EmailSpacerBlock;
