@@ -4,6 +4,7 @@ import { slideInLeft, overlayVariants } from "@/lib/motion";
 import Link from "next/link";
 import { LogoMark, PrimaryButton, WordMark } from "./Primitives";
 import { NAV_LINKS } from "@/constants";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function MobileDrawer({
   open,
@@ -54,20 +55,23 @@ export function MobileDrawer({
                 <LogoMark size={28} />
                 <WordMark />
               </Link>
-              <button
-                onClick={onClose}
-                aria-label="Close menu"
-                className="flex items-center justify-center size-8 rounded-md
-                  border border-line text-ink-muted
-                  hover:border-line-hi hover:text-ink
-                  transition-colors duration-200 cursor-pointer
-                  focus-visible:outline-none focus-visible:ring-2
-                  focus-visible:ring-brand"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                  <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              </button>
+              <div className="flex items-center gap-2">
+                <ThemeToggle size="sm" />
+                <button
+                  onClick={onClose}
+                  aria-label="Close menu"
+                  className="flex items-center justify-center size-8 rounded-md
+                    border border-line text-ink-muted
+                    hover:border-line-hi hover:text-ink
+                    transition-colors duration-200 cursor-pointer
+                    focus-visible:outline-none focus-visible:ring-2
+                    focus-visible:ring-brand"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                    <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </button>
+              </div>
             </div>
 
             {/* Nav links */}

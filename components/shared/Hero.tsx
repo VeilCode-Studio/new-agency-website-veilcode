@@ -48,14 +48,14 @@ function useTypewriter(words: readonly string[]) {
 
 
 
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
+// hero section with typewriter effect, scroll parallax, and animated stats
 
 export function Hero() {
   const typedText = useTypewriter(TYPEWRITER_WORDS);
 
   const { scrollY } = useScroll();
-  const y       = useTransform(scrollY, [0, 500], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 380], [1, 0]);
+  const y       = useTransform(scrollY, [0, 700], [0, 80]);
+  const opacity = useTransform(scrollY, [300, 800], [1, 0]);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -129,7 +129,7 @@ export function Hero() {
           That Scale.
         </motion.h2>
 
-        {/* Sub copy -- this text is not visible under the midnight and light themes */}
+        {/* Sub copy */}
         <motion.p
           variants={fadeUp(0.32)}
           initial="hidden"
