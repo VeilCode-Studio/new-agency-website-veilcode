@@ -17,7 +17,7 @@ import type {
   ServiceDeepDiveClasses,
 } from "@/types/content";
 
-/* ─── NEWSLETTER ──────────────────────────────────────────────────────────── */
+// Newsletter subscriptions
 
 export const newsletterSubscriptionTable = pgTable("newsletter_subscription", {
   id: serial("id").primaryKey(),
@@ -28,7 +28,7 @@ export const newsletterSubscriptionTable = pgTable("newsletter_subscription", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-/* ─── ENUMS ───────────────────────────────────────────────────────────────── */
+// ENUMS
 
 export const budgetEnum = pgEnum("budget", [
   "Under $1,500",
@@ -77,7 +77,7 @@ export const serviceSlugEnum = pgEnum("service_slug", [
   "ai",
 ]);
 
-/* ─── CLIENT INQUIRIES ────────────────────────────────────────────────────── */
+// Client inquiries
 
 export const clientInquiries = pgTable("client_inquiries", {
   id: serial("id").primaryKey(),
@@ -92,7 +92,7 @@ export const clientInquiries = pgTable("client_inquiries", {
   createAt: timestamp("created_at").defaultNow(),
 });
 
-/* ─── ADMINS ──────────────────────────────────────────────────────────────── */
+// ADMINS
 
 export const admins = pgTable("admins", {
   id: serial("id").primaryKey(),
@@ -103,7 +103,7 @@ export const admins = pgTable("admins", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-/* ─── JOB OPENINGS ────────────────────────────────────────────────────────── */
+// JOB OPENINGS
 
 export const jobOpenings = pgTable("job_openings", {
   id: serial("id").primaryKey(),
@@ -119,7 +119,7 @@ export const jobOpenings = pgTable("job_openings", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-/* ─── SERVICES ────────────────────────────────────────────────────────────── */
+// SERVICES
 
 export const services = pgTable("services", {
   id: text("id").primaryKey(),
@@ -147,7 +147,7 @@ export const services = pgTable("services", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-/* ─── PROJECTS ────────────────────────────────────────────────────────────── */
+// PROJECTS
 
 export const projects = pgTable("projects", {
   id: serial("id").primaryKey(),
@@ -180,7 +180,7 @@ export const projects = pgTable("projects", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-/* ─── BLOG POSTS ──────────────────────────────────────────────────────────── */
+// BLOG POSTS
 
 export const blogPosts = pgTable("blog_posts", {
   id: serial("id").primaryKey(),

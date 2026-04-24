@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{
       hostname: "www.facebook.com"
+    },
+      {
+        hostname: "res.cloudinary.com"
     }]
   }
 };
