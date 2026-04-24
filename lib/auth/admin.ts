@@ -27,7 +27,15 @@ export type AdminContext = {
 };
 
 export async function getAdminContext(): Promise<AdminContext | null> {
-  const user = await currentUser();
+  let user;
+  try {
+    user = await currentUser();
+  } catch {
+    // Clerk's backend API can fail transiently on the first request after
+    // sign-in before the session has fully propagated. Surface a recoverable
+    // error so the admin error boundary can prompt a refresh.
+    throw new Error("Clerk session lookup failed — please refresh the page.");
+  }
   if (!user) return null;
 
   const email = user.emailAddresses.find(
