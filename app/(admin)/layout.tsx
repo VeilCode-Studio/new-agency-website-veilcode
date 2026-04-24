@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/auth/admin";
 import { AdminSidebar } from "@/components/admin/Sidebar";

@@ -34,7 +34,9 @@ export async function getAdminContext(): Promise<AdminContext | null> {
     // Clerk's backend API can fail transiently on the first request after
     // sign-in before the session has fully propagated. Surface a recoverable
     // error so the admin error boundary can prompt a refresh.
-    throw new Error("Clerk session lookup failed — please refresh the page.");
+
+    // throw new Error("Clerk session lookup failed — please refresh the page.");
+    return null;
   }
   if (!user) return null;
 
