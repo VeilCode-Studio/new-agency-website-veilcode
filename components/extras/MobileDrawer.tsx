@@ -108,7 +108,7 @@ export function MobileDrawer({
                 </PrimaryButton>
               </motion.div>
               <p className="text-center font-mono text-[10px] tracking-widest uppercase text-ink-faint mt-4">
-                hello@veilcode.io
+                hello@veilcode.studio
               </p>
             </div>
           </motion.aside>

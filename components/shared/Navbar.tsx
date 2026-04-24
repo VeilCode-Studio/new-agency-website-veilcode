@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { MobileDrawer } from "../extras/MobileDrawer";
 import { NAV_LINKS } from "@/constants";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
@@ -117,6 +118,8 @@ export function Nav() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-3">
+          <ThemeToggle size="sm" className="hidden sm:inline-flex" />
+
           <Link href="/start"
             className="hidden md:inline-flex items-center gap-1.5
               font-sans text-[13px] font-medium px-5 py-2.5 rounded-lg

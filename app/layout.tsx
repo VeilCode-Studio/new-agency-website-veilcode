@@ -5,6 +5,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import Image from "next/image";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,7 +99,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -131,12 +132,14 @@ export default function RootLayout({
             style={{ display: "none" }}
           />
         </noscript>
-        <ClerkProvider>
-          <main className="max-w-400 mx-auto">
-            {children}
-            <Toaster />
-          </main>
-        </ClerkProvider>
+        <ThemeProvider>
+          <ClerkProvider>
+            <main className="max-w-400 mx-auto">
+              {children}
+              <Toaster />
+            </main>
+          </ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

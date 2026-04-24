@@ -1,5 +1,4 @@
-import { SignIn } from "@clerk/nextjs";
-import { adminClerkAppearance } from "@/components/auth/clerkAppearance";
+import { ThemedSignIn } from "@/components/auth/ThemedSignIn";
 
 export default function SignInPage() {
   return (
@@ -17,12 +16,7 @@ export default function SignInPage() {
         </p>
       </div>
 
-      <SignIn
-        // appearance={adminClerkAppearance}
-        signUpUrl="/sign-up"
-        fallbackRedirectUrl="/admin"
-        forceRedirectUrl="/admin"
-      />
+      <ThemedSignIn />
 
       <p className="text-center text-[11px] uppercase tracking-widest text-ink-faint">
         Admin-only area · All access is logged

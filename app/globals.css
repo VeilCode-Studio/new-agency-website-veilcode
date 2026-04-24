@@ -7,62 +7,18 @@
 @import "shadcn/tailwind.css";
 
 
+@custom-variant dark (&:is(.dark *));
 
-/* TAILWIND V4 THEME TOKENS */
+/* -------------------------------------------------------------
+   TAILWIND V4 STATIC TOKENS (fonts + animations — theme-agnostic)
+   ------------------------------------------------------------- */
 @theme {
-  /* --- Fonts --- */
+  /* Fonts */
   --font-display: "Syne", sans-serif;
   --font-sans:    "DM Sans", sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 
-  /* --- Brand Core --- */
-  --color-brand:          #00E5FF; /* electric cyan — primary accent          */
-  --color-brand-dim:      #00E5FF1A; /* 10% opacity fill                      */
-  --color-brand-border:   #00E5FF40; /* 25% opacity border                    */
-  --color-brand-glow:     #00E5FF66; /* text-shadow / box-shadow glow         */
-
-  /* --- Surface Scale (dark → light) --- */
-  --color-base:           #080A0F; /* page background                         */
-  --color-surface:        #0D1117; /* card / section background               */
-  --color-surface-hi:     #131920; /* hover state surface                     */
-  --color-surface-top:    #1A2230; /* highest surface (tooltips, popovers)    */
-
-  /* --- Border Scale --- */
-  --color-line:           #1E2733; /* default border                          */
-  --color-line-hi:        #2A3547; /* hover / focus border                    */
-
-  /* --- Text Scale --- */
-  --color-ink:            #F0F4F8; /* primary text                            */
-  --color-ink-muted:      #8A9BB0; /* secondary text                          */
-  --color-ink-faint:      #4A5568; /* placeholder / disabled                  */
-
-  /* --- Service Accent Palette --- */
-  /* Web Solutions — electric cyan (matches brand) */
-  --color-svc-web:        #00E5FF;
-  --color-svc-web-dim:    #00E5FF14;
-  --color-svc-web-border: #00E5FF33;
-
-  /* Mobile Apps — violet blue */
-  --color-svc-mobile:        #818CF8;
-  --color-svc-mobile-dim:    #818CF814;
-  --color-svc-mobile-border: #818CF833;
-
-  /* Data Analytics — emerald */
-  --color-svc-data:        #10D9A0;
-  --color-svc-data-dim:    #10D9A014;
-  --color-svc-data-border: #10D9A033;
-
-  /* Social Media — amber gold */
-  --color-svc-social:        #F5A623;
-  --color-svc-social-dim:    #F5A62314;
-  --color-svc-social-border: #F5A62333;
-
-  /* AI Automation — soft purple */
-  --color-svc-ai:        #C084FC;
-  --color-svc-ai-dim:    #C084FC14;
-  --color-svc-ai-border: #C084FC33;
-
-  /* --- Keyframe animations --- */
+  /* Keyframe animations */
   --animate-pulse-glow: pulse-glow 5s ease-in-out infinite;
   --animate-float:      float 4s ease-in-out infinite;
   --animate-scan:       scan 8s linear infinite;
@@ -70,68 +26,51 @@
   --animate-marquee:    marquee 28s linear infinite;
 }
 
-/* Keyframes */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50%       { opacity: 0.75; transform: scale(1.04); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
-}
-@keyframes scan {
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* BASE RESET & GLOBALS */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  background-color: var(--color-base);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* Noise texture overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* Scrollbar */
-::-webkit-scrollbar       { width: 4px; }
-::-webkit-scrollbar-track { background: var(--color-base); }
-::-webkit-scrollbar-thumb { background: var(--color-brand-glow); border-radius: 2px; }
-
-/* Selection */
-::selection { background: var(--color-brand-dim); color: var(--color-brand); }
-
-
-@custom-variant dark (&:is(.dark *));
-
+/* -------------------------------------------------------------
+   THEME-SWITCHABLE TOKENS
+   Variables are defined in :root (light) and .dark (dark override).
+   @theme inline below exposes them as Tailwind utilities.
+   ------------------------------------------------------------- */
 @theme inline {
+  /* Brand */
+  --color-brand:        var(--brand);
+  --color-brand-dim:    var(--brand-dim);
+  --color-brand-border: var(--brand-border);
+  --color-brand-glow:   var(--brand-glow);
+
+  /* Surface + line + ink */
+  --color-base:         var(--base);
+  --color-surface:      var(--surface);
+  --color-surface-hi:   var(--surface-hi);
+  --color-surface-top:  var(--surface-top);
+  --color-line:         var(--line);
+  --color-line-hi:      var(--line-hi);
+  --color-ink:          var(--ink);
+  --color-ink-muted:    var(--ink-muted);
+  --color-ink-faint:    var(--ink-faint);
+
+  /* Service accent palette */
+  --color-svc-web:        var(--svc-web);
+  --color-svc-web-dim:    var(--svc-web-dim);
+  --color-svc-web-border: var(--svc-web-border);
+
+  --color-svc-mobile:        var(--svc-mobile);
+  --color-svc-mobile-dim:    var(--svc-mobile-dim);
+  --color-svc-mobile-border: var(--svc-mobile-border);
+
+  --color-svc-data:        var(--svc-data);
+  --color-svc-data-dim:    var(--svc-data-dim);
+  --color-svc-data-border: var(--svc-data-border);
+
+  --color-svc-social:        var(--svc-social);
+  --color-svc-social-dim:    var(--svc-social-dim);
+  --color-svc-social-border: var(--svc-social-border);
+
+  --color-svc-ai:        var(--svc-ai);
+  --color-svc-ai-dim:    var(--svc-ai-dim);
+  --color-svc-ai-border: var(--svc-ai-border);
+
+  /* shadcn bridge tokens (also switchable via :root / .dark) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -174,7 +113,53 @@ body::after {
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* -------------------------------------------------------------
+   LIGHT (default)
+   ------------------------------------------------------------- */
 :root {
+  /* Brand */
+  --brand:         #00E5FF;
+  --brand-dim:     #00E5FF1F;   /* ~12% alpha — slightly more fill on white */
+  --brand-border:  #00E5FF4D;   /* ~30% alpha */
+  --brand-glow:    #00E5FF66;   /* ~40% alpha */
+
+  /* Surface */
+  --base:          #FFFFFF;
+  --surface:       #F4F6F9;
+  --surface-hi:    #EAEDF2;
+  --surface-top:   #DEE3EB;
+
+  /* Line */
+  --line:          #E2E6EC;
+  --line-hi:       #C6CCD4;
+
+  /* Ink */
+  --ink:           #0B111B;
+  --ink-muted:     #54627A;
+  --ink-faint:     #8D97A6;
+
+  /* Service accents (text-hue chosen for AA on white; fills keep original hue) */
+  --svc-web:        #00B8D4;
+  --svc-web-dim:    #00E5FF1F;
+  --svc-web-border: #00E5FF4D;
+
+  --svc-mobile:        #5058E6;
+  --svc-mobile-dim:    #818CF824;
+  --svc-mobile-border: #818CF84D;
+
+  --svc-data:        #047857;
+  --svc-data-dim:    #10D9A024;
+  --svc-data-border: #10D9A04D;
+
+  --svc-social:        #B45309;
+  --svc-social-dim:    #F5A62326;
+  --svc-social-border: #F5A62354;
+
+  --svc-ai:        #8B5CF6;
+  --svc-ai-dim:    #C084FC24;
+  --svc-ai-border: #C084FC54;
+
+  /* shadcn — light */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -209,7 +194,53 @@ body::after {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* -------------------------------------------------------------
+   DARK (override — the original brand experience)
+   ------------------------------------------------------------- */
 .dark {
+  /* Brand */
+  --brand:         #00E5FF;
+  --brand-dim:     #00E5FF1A;
+  --brand-border:  #00E5FF40;
+  --brand-glow:    #00E5FF66;
+
+  /* Surface */
+  --base:          #080A0F;
+  --surface:       #0D1117;
+  --surface-hi:    #131920;
+  --surface-top:   #1A2230;
+
+  /* Line */
+  --line:          #1E2733;
+  --line-hi:       #2A3547;
+
+  /* Ink */
+  --ink:           #F0F4F8;
+  --ink-muted:     #8A9BB0;
+  --ink-faint:     #4A5568;
+
+  /* Service accents — dark */
+  --svc-web:        #00E5FF;
+  --svc-web-dim:    #00E5FF14;
+  --svc-web-border: #00E5FF33;
+
+  --svc-mobile:        #818CF8;
+  --svc-mobile-dim:    #818CF814;
+  --svc-mobile-border: #818CF833;
+
+  --svc-data:        #10D9A0;
+  --svc-data-dim:    #10D9A014;
+  --svc-data-border: #10D9A033;
+
+  --svc-social:        #F5A623;
+  --svc-social-dim:    #F5A62314;
+  --svc-social-border: #F5A62333;
+
+  --svc-ai:        #C084FC;
+  --svc-ai-dim:    #C084FC14;
+  --svc-ai-border: #C084FC33;
+
+  /* shadcn — dark */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -242,6 +273,74 @@ body::after {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+/* -------------------------------------------------------------
+   KEYFRAMES
+   ------------------------------------------------------------- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.75; transform: scale(1.04); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* -------------------------------------------------------------
+   BASE RESET + GLOBALS
+   ------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Noise texture overlay (subtle on both themes) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-base); }
+::-webkit-scrollbar-thumb { background: var(--color-brand-glow); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--color-brand-dim); color: var(--color-ink); }
 
 @layer base {
   * {

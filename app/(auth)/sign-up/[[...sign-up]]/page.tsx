@@ -1,5 +1,4 @@
-import { SignUp } from "@clerk/nextjs";
-import { adminClerkAppearance } from "@/components/auth/clerkAppearance";
+import { ThemedSignUp } from "@/components/auth/ThemedSignUp";
 
 export default function SignUpPage() {
   return (
@@ -18,12 +17,7 @@ export default function SignUpPage() {
         </p>
       </div>
 
-      <SignUp
-        // appearance={adminClerkAppearance}
-        signInUrl="/sign-in"
-        fallbackRedirectUrl="/admin"
-        forceRedirectUrl="/admin"
-      />
+      <ThemedSignUp />
 
       <p className="text-center text-[11px] uppercase tracking-widest text-ink-faint">
         Access is reviewed before every sign-in
