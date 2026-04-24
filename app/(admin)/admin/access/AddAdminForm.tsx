@@ -28,7 +28,7 @@ export function AddAdminForm() {
       action={formAction}
       className="flex flex-wrap items-end gap-3 rounded-xl border border-line bg-surface/40 p-4"
     >
-      <div className="flex-1 min-w-[220px]">
+      <div className="flex-1 min-w-55">
         <Label htmlFor="email" className="text-xs text-ink-muted">
           Email
         </Label>
@@ -42,7 +42,7 @@ export function AddAdminForm() {
           className="mt-1"
         />
       </div>
-      <div className="flex-1 min-w-[180px]">
+      <div className="flex-1 min-w-45">
         <Label htmlFor="name" className="text-xs text-ink-muted">
           Name (optional)
         </Label>

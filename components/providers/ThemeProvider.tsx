@@ -3,6 +3,9 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { ComponentProps } from "react";
 
+export const APP_THEMES = ["light", "dark", "midnight", "linen"] as const;
+export type AppTheme = (typeof APP_THEMES)[number];
+
 export function ThemeProvider({
   children,
   ...props
@@ -11,6 +14,7 @@ export function ThemeProvider({
     <NextThemesProvider
       attribute="class"
       defaultTheme="dark"
+      themes={[...APP_THEMES]}
       enableSystem
       disableTransitionOnChange
       {...props}

@@ -22,7 +22,7 @@ export function MeetingCard({
       className={`w-full text-left rounded-xl p-6 border cursor-pointer
         outline-none transition-all duration-200
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-base
+        focus-visible:ring-offset-page
         ${selected
           ? `${meeting.bg} ${meeting.border} ${meeting.hoverShadow}`
           : `bg-surface border-line hover:bg-surface-hi ${meeting.hoverBorder} ${meeting.hoverShadow}`

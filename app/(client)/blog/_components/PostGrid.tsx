@@ -41,7 +41,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
         onClick={onReset}
         className="font-sans text-sm text-brand border border-brand-border
           bg-brand-dim px-5 py-2.5 rounded-lg cursor-pointer
-          hover:bg-brand hover:text-base transition-all duration-200"
+          hover:bg-brand hover:text-page transition-all duration-200"
       >
         Clear filters
       </button>

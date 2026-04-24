@@ -564,7 +564,7 @@ function PrimaryButton({ children, className = "", ...props }) {
   return (
     <button
       className={\`px-7 py-3.5 rounded-md border border-brand text-brand
-        hover:bg-brand hover:text-base transition-all duration-200
+        hover:bg-brand hover:text-page transition-all duration-200
         focus-visible:ring-2 focus-visible:ring-brand \${className}\`}
       {...props}
     >

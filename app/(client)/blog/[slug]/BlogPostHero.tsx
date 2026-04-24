@@ -182,7 +182,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
       </div>
 
       <div aria-hidden className="absolute bottom-0 inset-x-0 h-24
-        bg-linear-to-t from-base to-transparent pointer-events-none" />
+        bg-linear-to-t from-page to-transparent pointer-events-none" />
     </section>
   );
 }

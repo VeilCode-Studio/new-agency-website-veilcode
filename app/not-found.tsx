@@ -6,7 +6,7 @@ import NotFoundLinks from '@/components/extras/NotFoundLinks';
 
 export default function NotFoundPage() {
   return (
-    <div className="min-h-screen bg-base flex items-center justify-center overflow-hidden relative pt-20 pb-24">
+    <div className="min-h-screen bg-page flex items-center justify-center overflow-hidden relative pt-20 pb-24">
       {/* Subtle background glow & noise consistency */}
       <div className="absolute inset-0 bg-[radial-gradient(#00E5FF_0.8px,transparent_1px)] bg-size-[40px_40px] opacity-5 pointer-events-none" />
 

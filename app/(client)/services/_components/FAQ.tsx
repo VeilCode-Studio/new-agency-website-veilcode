@@ -58,7 +58,7 @@ export function FAQ() {
               {/* Decorative stat */}
               <motion.div
                 variants={fadeUp(0.24)}
-                className="hidden lg:block p-6 rounded-xl border border-line bg-base"
+                className="hidden lg:block p-6 rounded-xl border border-line bg-page"
               >
                 <div className="font-display font-extrabold text-[40px] tracking-tight
                   text-brand leading-none mb-1 drop-shadow-[0_0_16px_var(--color-brand-glow)]">
@@ -76,7 +76,7 @@ export function FAQ() {
             {/* Right accordion */}
             <motion.div
               variants={stagger}
-              className="flex-1 bg-base rounded-xl border border-line px-6 divide-y-0"
+              className="flex-1 bg-page rounded-xl border border-line px-6 divide-y-0"
             >
               {FAQS.map((faq, i) => (
                 <FaqItem

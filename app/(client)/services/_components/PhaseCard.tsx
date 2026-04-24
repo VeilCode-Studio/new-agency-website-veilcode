@@ -12,7 +12,7 @@ export function PhaseCard({
   return (
     <motion.div
       variants={fadeUp(index * 0.07)}
-      className="group relative p-7 rounded-xl bg-base border border-line
+      className="group relative p-7 rounded-xl bg-page border border-line
         hover:bg-surface-hi hover:border-line-hi
         transition-all duration-200"
     >

@@ -63,7 +63,7 @@ export function NewsletterCTA() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="relative overflow-hidden rounded-2xl border border-line
-            bg-base px-8 md:px-16 py-14 max-w-180 mx-auto text-center"
+            bg-page px-8 md:px-16 py-14 max-w-180 mx-auto text-center"
         >
           {/* Ambient glow */}
           <div aria-hidden
@@ -149,7 +149,7 @@ export function NewsletterCTA() {
                       className="shrink-0 inline-flex items-center justify-center gap-2
                       px-6 py-3 rounded-lg border border-brand text-brand
                       font-sans text-sm font-medium cursor-pointer
-                      hover:bg-brand hover:text-base
+                      hover:bg-brand hover:text-page
                       hover:shadow-[0_0_24px_var(--color-brand-glow)]
                       transition-all duration-200 outline-none
                       focus-visible:ring-2 focus-visible:ring-brand

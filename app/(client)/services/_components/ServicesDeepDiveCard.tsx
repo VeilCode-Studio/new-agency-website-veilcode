@@ -18,7 +18,7 @@ export function ServiceDeepDiveCard({
     <section
       id={data.id}
       className={`py-28 px-6 md:px-10 border-t border-line
-        ${flipped ? "bg-surface" : "bg-base"}`}
+        ${flipped ? "bg-surface" : "bg-page"}`}
     >
       <div className="max-w-300 mx-auto">
         <motion.div
@@ -113,7 +113,7 @@ export function ServiceDeepDiveCard({
                     key={d.title}
                     className={`p-5 transition-colors duration-200 hover:bg-surface-hi
                       ${i < data.deliverables.length - 1 ? "border-b border-line" : ""}
-                      ${flipped ? "bg-base" : "bg-surface"}`}
+                      ${flipped ? "bg-page" : "bg-surface"}`}
                   >
                     <div className="flex items-start gap-3">
                       <span className={`mt-1 size-1.5 rounded-full shrink-0 bg-current ${c.accent}`} aria-hidden />

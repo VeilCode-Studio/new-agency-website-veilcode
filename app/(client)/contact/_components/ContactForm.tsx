@@ -137,7 +137,7 @@ function PillSelector<T extends string>({
             className={`font-sans text-[13px] px-3.5 py-2 rounded-lg border
               transition-all duration-150 cursor-pointer outline-none
               focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-              focus-visible:ring-offset-base
+              focus-visible:ring-offset-page
               ${value === opt
                 ? "bg-brand-dim border-brand-border text-brand"
                 : "bg-surface-hi border-line text-ink-muted hover:border-line-hi hover:text-ink"

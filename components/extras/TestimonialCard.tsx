@@ -10,7 +10,7 @@ export function TestimonialCard({ item }: { item: (typeof TESTIMONIALS)[number] 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.45 }}
-      className="bg-base border border-line rounded-2xl px-8 md:px-14 py-12 m-0"
+      className="bg-page border border-line rounded-2xl px-8 md:px-14 py-12 m-0"
     >
       {/* Open quote */}
       <span

@@ -48,7 +48,7 @@ function HamburgerButton({
         hover:border-line-hi hover:bg-surface-hi
         focus-visible:outline-none focus-visible:ring-2
         focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-base"
+        focus-visible:ring-offset-page"
     >
       <span
         className={`block h-[1.5px] w-5 bg-ink-muted rounded-full
@@ -98,7 +98,7 @@ export function Nav() {
           h-18 px-6 md:px-10 transition-all duration-400
           ${
             scrolled
-              ? "bg-base/90 backdrop-blur-xl border-b border-line"
+              ? "bg-page/90 backdrop-blur-xl border-b border-line"
               : "bg-transparent"
           }`}
         id="navbar"
@@ -124,7 +124,7 @@ export function Nav() {
             className="hidden md:inline-flex items-center gap-1.5
               font-sans text-[13px] font-medium px-5 py-2.5 rounded-lg
               border border-brand text-brand no-underline
-              hover:bg-brand hover:text-base
+              hover:bg-brand hover:text-page
               hover:shadow-[0_0_20px_var(--color-brand-glow)]
               transition-all duration-200">
             Start a Project →

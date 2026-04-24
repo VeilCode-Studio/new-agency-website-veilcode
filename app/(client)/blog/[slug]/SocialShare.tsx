@@ -63,7 +63,7 @@ function ShareBtn({
       className={`group size-10 flex items-center justify-center rounded-xl
         border cursor-pointer outline-none transition-all duration-200
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-base
+        focus-visible:ring-offset-page
         ${active
           ? "border-svc-data-border bg-svc-data-dim text-svc-data"
           : "border-line bg-surface text-ink-faint hover:border-brand-border hover:bg-brand-dim hover:text-brand"

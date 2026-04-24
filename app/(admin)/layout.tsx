@@ -16,7 +16,7 @@ export default async function AdminLayout({
   const admin = await requireAdmin();
 
   return (
-    <div className="flex min-h-dvh bg-base text-ink">
+    <div className="flex min-h-dvh bg-page text-ink">
       <AdminSidebar />
       <div className="flex min-w-0 flex-1 flex-col">
         <AdminHeader admin={admin} />

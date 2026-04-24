@@ -14,7 +14,7 @@ import PrivacyFooter from './_components/PrivacyFooter';
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-base pt-20 pb-24 text-ink">
+    <div className="min-h-screen bg-page pt-20 pb-24 text-ink">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back Link */}
         <motion.div

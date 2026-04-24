@@ -21,10 +21,10 @@ export function LogoMark({ size = 32 }: { size?: number }) {
       >
         <path
           d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z"
-          stroke="var(--color-base)"
+          stroke="var(--color-page)"
           strokeWidth="1.5"
         />
-        <path d="M8 5L11 6.75V10.25L8 12L5 10.25V6.75L8 5Z" fill="var(--color-base)" />
+        <path d="M8 5L11 6.75V10.25L8 12L5 10.25V6.75L8 5Z" fill="var(--color-page)" />
       </svg>
     </div>
   );
@@ -81,9 +81,9 @@ export function PrimaryButton({ children, className = "", ...props }: BtnProps) 
         font-sans text-sm font-medium tracking-wide cursor-pointer
         border border-brand text-brand bg-transparent
         transition-all duration-200 outline-none
-        hover:bg-brand hover:text-base hover:shadow-[0_0_24px_var(--color-brand-glow)]
+        hover:bg-brand hover:text-page hover:shadow-[0_0_24px_var(--color-brand-glow)]
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-base
+        focus-visible:ring-offset-page
         ${className}`}
     >
       {children}
@@ -101,7 +101,7 @@ export function GhostButton({ children, className = "", ...props }: BtnProps) {
         transition-all duration-200 outline-none
         hover:border-line-hi hover:text-ink hover:bg-surface-hi
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-base
+        focus-visible:ring-offset-page
         ${className}`}
     >
       {children}

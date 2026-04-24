@@ -17,7 +17,7 @@ export function WorkFilters({ active, onChange }: Props) {
   }
 
   return (
-    <div className="sticky top-18 z-30 bg-base/90 backdrop-blur-lg
+    <div className="sticky top-18 z-30 bg-page/90 backdrop-blur-lg
       border-b border-line py-4 px-6 md:px-10">
       <div className="max-w-300 mx-auto">
         <div
@@ -39,7 +39,7 @@ export function WorkFilters({ active, onChange }: Props) {
                   font-sans text-[13px] font-medium px-4 py-2 rounded-lg border
                   cursor-pointer outline-none transition-all duration-200
                   focus-visible:ring-2 focus-visible:ring-brand
-                  focus-visible:ring-offset-2 focus-visible:ring-offset-base
+                  focus-visible:ring-offset-2 focus-visible:ring-offset-page
                   ${isActive
                     ? tab.classes.active
                     : "bg-surface border-line text-ink-muted hover:bg-surface-hi hover:border-line-hi hover:text-ink"

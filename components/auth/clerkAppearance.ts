@@ -1,4 +1,5 @@
 import { dark } from "@clerk/themes";
+import type { AppTheme } from "@/components/providers/ThemeProvider";
 
 const sharedVariables = {
   colorPrimary: "#00E5FF",
@@ -13,24 +14,44 @@ const sharedVariables = {
   spacingUnit: "0.9rem",
 } as const;
 
-const darkVariables = {
-  ...sharedVariables,
-  colorBackground: "#0D1117",
-  colorText: "#F0F4F8",
-  colorTextSecondary: "#8A9BB0",
-  colorInputBackground: "#131920",
-  colorInputText: "#F0F4F8",
-  colorNeutral: "#F0F4F8",
-} as const;
-
-const lightVariables = {
-  ...sharedVariables,
-  colorBackground: "#FFFFFF",
-  colorText: "#0B111B",
-  colorTextSecondary: "#54627A",
-  colorInputBackground: "#F4F6F9",
-  colorInputText: "#0B111B",
-  colorNeutral: "#0B111B",
+const variablesByTheme = {
+  dark: {
+    ...sharedVariables,
+    colorBackground: "#0D1117",
+    colorText: "#F0F4F8",
+    colorTextSecondary: "#8A9BB0",
+    colorInputBackground: "#131920",
+    colorInputText: "#F0F4F8",
+    colorNeutral: "#F0F4F8",
+  },
+  light: {
+    ...sharedVariables,
+    colorBackground: "#FFFFFF",
+    colorText: "#0B111B",
+    colorTextSecondary: "#54627A",
+    colorInputBackground: "#F4F6F9",
+    colorInputText: "#0B111B",
+    colorNeutral: "#0B111B",
+  },
+  midnight: {
+    ...sharedVariables,
+    colorBackground: "#0F1528",
+    colorText: "#EEF0F7",
+    colorTextSecondary: "#8892B5",
+    colorInputBackground: "#161D38",
+    colorInputText: "#EEF0F7",
+    colorNeutral: "#EEF0F7",
+  },
+  linen: {
+    ...sharedVariables,
+    colorPrimary: "#00B8D4",
+    colorBackground: "#F7F3EC",
+    colorText: "#1B1914",
+    colorTextSecondary: "#5C564B",
+    colorInputBackground: "#EFEAE0",
+    colorInputText: "#1B1914",
+    colorNeutral: "#1B1914",
+  },
 } as const;
 
 const sharedElements = {
@@ -48,10 +69,10 @@ const sharedElements = {
   dividerText: "text-ink-muted text-xs uppercase tracking-wider",
   formFieldLabel: "text-xs text-ink-muted uppercase tracking-wider",
   formFieldInput:
-    "bg-base border border-line text-ink placeholder:text-ink-faint focus:border-brand focus:ring-0",
+    "bg-page border border-line text-ink placeholder:text-ink-faint focus:border-brand focus:ring-0",
   formFieldInputShowPasswordButton: "text-ink-muted hover:text-ink",
   formButtonPrimary:
-    "bg-brand text-base hover:bg-brand/90 normal-case font-semibold shadow-[0_0_24px_var(--color-brand-dim)] transition-all",
+    "bg-brand text-page hover:bg-brand/90 normal-case font-semibold shadow-[0_0_24px_var(--color-brand-dim)] transition-all",
   footer: "bg-transparent border-0",
   footerAction: "text-ink-muted",
   footerActionText: "text-ink-muted text-sm",
@@ -62,7 +83,7 @@ const sharedElements = {
   alertText: "text-sm",
   formFieldSuccessText: "text-svc-data",
   formFieldErrorText: "text-destructive",
-  otpCodeFieldInput: "bg-base border border-line text-ink focus:border-brand",
+  otpCodeFieldInput: "bg-page border border-line text-ink focus:border-brand",
   formResendCodeLink: "text-brand hover:text-brand/80",
   badge: "bg-brand-dim border border-brand-border text-brand",
   userButtonPopoverCard:
@@ -72,10 +93,12 @@ const sharedElements = {
   userButtonPopoverFooter: "bg-surface border-t border-line",
 } as const;
 
-export function getClerkAppearance(theme: "light" | "dark") {
+const DARK_FAMILY: ReadonlySet<AppTheme> = new Set(["dark", "midnight"]);
+
+export function getClerkAppearance(theme: AppTheme) {
   return {
-    baseTheme: theme === "dark" ? dark : undefined,
-    variables: theme === "dark" ? darkVariables : lightVariables,
+    baseTheme: DARK_FAMILY.has(theme) ? dark : undefined,
+    variables: variablesByTheme[theme],
     elements: sharedElements,
   };
 }

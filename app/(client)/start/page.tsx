@@ -219,7 +219,7 @@ export default function StartProjectWizard() {
           className="ml-auto inline-flex items-center justify-center gap-2
             font-sans text-sm font-medium
             px-8 py-3.5 rounded-xl border border-brand text-brand cursor-pointer
-            hover:bg-brand hover:text-base
+            hover:bg-brand hover:text-page
             hover:shadow-[0_0_28px_var(--color-brand-glow)]
             transition-all duration-200 outline-none
             focus-visible:ring-2 focus-visible:ring-brand

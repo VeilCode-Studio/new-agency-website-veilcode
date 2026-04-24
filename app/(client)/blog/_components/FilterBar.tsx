@@ -52,7 +52,7 @@ export function FilterBar({
   }
 
   return (
-    <div className="sticky top-18 z-20 border-b border-line bg-base/90 backdrop-blur-md">
+    <div className="sticky top-18 z-20 border-b border-line bg-page/90 backdrop-blur-md">
       <div className="max-w-300 mx-auto px-6 md:px-10 py-4 space-y-3">
 
         {/* ── Category row ─────────────────────────────────────────────── */}

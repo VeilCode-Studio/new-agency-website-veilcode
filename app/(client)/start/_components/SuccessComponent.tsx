@@ -81,7 +81,7 @@ export function SuccessScreen({ name }: { name: string }) {
         <a href="/work"
           className="font-sans text-sm text-brand border border-brand-border
             bg-brand-dim px-6 py-3 rounded-xl no-underline
-            hover:bg-brand hover:text-base transition-all duration-200">
+            hover:bg-brand hover:text-page transition-all duration-200">
           See Our Work →
         </a>
       </div>

@@ -62,7 +62,7 @@ export function Culture() {
             <motion.div
               key={card.title}
               variants={fadeUp(i * 0.08)}
-              className="group rounded-xl p-8 bg-base border border-line
+              className="group rounded-xl p-8 bg-page border border-line
                 transition-all duration-300 hover:bg-surface-hi hover:border-line-hi"
             >
               {/* Icon */}
@@ -109,7 +109,7 @@ export function Culture() {
                 key={perk.label}
                 variants={fadeUp(i * 0.05)}
                 className="flex items-center gap-3 p-4 rounded-lg border border-line
-                  bg-base hover:bg-surface-hi hover:border-line-hi
+                  bg-page hover:bg-surface-hi hover:border-line-hi
                   transition-colors duration-200 cursor-default"
               >
                 <span className="text-xl leading-none shrink-0" aria-hidden>
@@ -126,7 +126,7 @@ export function Culture() {
           <motion.div
             variants={fadeUp(0.2)}
             className="relative overflow-hidden rounded-2xl border border-line
-              bg-base px-8 md:px-14 py-14 text-center"
+              bg-page px-8 md:px-14 py-14 text-center"
           >
             {/* Ambient glow */}
             <div

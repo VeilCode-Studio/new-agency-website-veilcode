@@ -18,7 +18,7 @@ export default async function NoAccessPage() {
   )?.emailAddress;
 
   return (
-    <div className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-base px-5 py-14 text-ink">
+    <div className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-page px-5 py-14 text-ink">
       {/* ambient glow */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute -top-24 left-1/4 size-96 rounded-full bg-svc-social-dim blur-3xl" />
@@ -69,7 +69,7 @@ export default async function NoAccessPage() {
           </div>
 
           {email && (
-            <div className="mt-6 flex items-center gap-3 rounded-lg border border-line bg-base px-3 py-2.5">
+            <div className="mt-6 flex items-center gap-3 rounded-lg border border-line bg-page px-3 py-2.5">
               <Mail className="size-4 shrink-0 text-ink-muted" />
               <div className="min-w-0 flex-1">
                 <div className="text-[11px] uppercase tracking-widest text-ink-faint">

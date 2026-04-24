@@ -6,7 +6,7 @@ import { ThemedUserButton } from "@/components/auth/ThemedUserButton";
 
 export function AdminHeader({ admin }: { admin: AdminContext }) {
   return (
-    <header className="sticky top-0 z-20 flex h-14 items-center justify-between border-b border-line bg-base/80 px-4 backdrop-blur md:px-6">
+    <header className="sticky top-0 z-20 flex h-14 items-center justify-between border-b border-line bg-page/80 px-4 backdrop-blur md:px-6">
       <div className="flex items-center gap-3 text-xs text-ink-muted">
         <Link href="/" className="hover:text-ink">
           ← Back to site

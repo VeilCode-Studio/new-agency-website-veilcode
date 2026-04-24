@@ -11,7 +11,7 @@ export default function page() {
     const hasOpenings = openings.length > 0;
 
     return (
-        <div className="min-h-screen bg-base pt-20 pb-24">
+        <div className="min-h-screen bg-page pt-20 pb-24">
             {/* Hero Section */}
             <div className="relative overflow-hidden border-b border-line">
                 <div className="max-w-5xl mx-auto px-6 py-24">

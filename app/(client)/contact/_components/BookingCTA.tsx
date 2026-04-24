@@ -55,7 +55,7 @@ export function BookingCTA() {
               {/* What to expect */}
               <motion.div
                 variants={fadeUp(0.22)}
-                className="bg-base rounded-xl border border-line p-6"
+                className="bg-page rounded-xl border border-line p-6"
               >
                 <p className="font-mono text-[11px] tracking-widest uppercase
                   text-ink-faint mb-4">

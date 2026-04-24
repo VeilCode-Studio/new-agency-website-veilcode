@@ -30,7 +30,7 @@ export function MobileDrawer({
             animate="visible"
             exit="exit"
             onClick={onClose}
-            className="fixed inset-0 z-40 bg-base/80 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-page/80 backdrop-blur-sm"
             aria-hidden
             id="navbar"
           />

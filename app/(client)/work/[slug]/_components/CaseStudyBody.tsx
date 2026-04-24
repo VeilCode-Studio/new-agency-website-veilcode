@@ -102,7 +102,7 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
               </ul>
 
               {/* Tech stack footer */}
-              <div className="px-6 py-4 border-t border-line bg-base">
+              <div className="px-6 py-4 border-t border-line bg-page">
                 <p className="font-mono text-[10px] tracking-widest uppercase
                   text-ink-faint mb-3">
                   Tech Stack

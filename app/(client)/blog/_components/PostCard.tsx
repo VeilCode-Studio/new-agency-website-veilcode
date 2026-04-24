@@ -133,7 +133,7 @@ export function PostCard({
           {p.tags.slice(0, 3).map((tag) => (
             <span key={tag}
               className="font-mono text-[9px] tracking-widest uppercase
-                px-2 py-1 rounded border border-line bg-base text-ink-faint">
+                px-2 py-1 rounded border border-line bg-page text-ink-faint">
               {tag}
             </span>
           ))}

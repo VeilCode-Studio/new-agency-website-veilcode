@@ -161,7 +161,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
                   {p.tags.slice(0, 4).map((tag) => (
                     <span key={tag}
                       className="font-mono text-[10px] tracking-widest uppercase
-                        px-2.5 py-1 rounded border border-line bg-base
+                        px-2.5 py-1 rounded border border-line bg-page
                         text-ink-faint">
                       {tag}
                     </span>
