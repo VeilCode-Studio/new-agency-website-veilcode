@@ -217,14 +217,16 @@ function Field({
   label,
   required,
   children,
+  htmlFor
 }: {
   label: string;
   required?: boolean;
-  children: React.ReactNode;
+    children: React.ReactNode;
+  htmlFor?: string;
 }) {
   return (
     <div className="space-y-1">
-      <label className="block text-xs font-medium text-ink-muted">
+      <label className="block text-xs font-medium text-ink-muted" htmlFor={htmlFor}>
         {label}
         {required && <span className="ml-0.5 text-destructive">*</span>}
       </label>
@@ -282,7 +284,7 @@ function ChipEditor({
 
   return (
     <Field label={label}>
-      <div className="flex min-h-[42px] flex-wrap gap-1.5 rounded-md border border-line bg-page p-2">
+      <div className="flex min-h-10.5 flex-wrap gap-1.5 rounded-md border border-line bg-page p-2">
         {values.map((v) => (
           <span
             key={v}
@@ -339,6 +341,7 @@ function BulletsEditor({
             className={cn(inputCls, "flex-1")}
           />
           <button
+            title="delete"
             type="button"
             onClick={() => onChange(bullets.filter((_, idx) => idx !== i))}
             className="shrink-0 text-ink-faint hover:text-destructive"
@@ -378,6 +381,7 @@ function DeliverablesEditor({
             type="button"
             onClick={() => onChange(deliverables.filter((_, idx) => idx !== i))}
             className="absolute right-2 top-2 text-ink-faint hover:text-destructive"
+            title="delete"
           >
             <Trash2 className="size-3.5" />
           </button>
@@ -591,6 +595,7 @@ export function ServiceForm(props: ServiceFormProps) {
               <Field label="Service ID" required>
                 {props.mode === "create" ? (
                   <select
+                    title="service-type"
                     value={data.id}
                     onChange={(e) => handleIdChange(e.target.value)}
                     className={inputCls}
@@ -860,6 +865,7 @@ export function ServiceForm(props: ServiceFormProps) {
           <div className="rounded-xl border border-line bg-surface/40 p-4">
             <Field label="Sort order">
               <input
+                title="sort"
                 type="number"
                 value={data.sortOrder}
                 onChange={(e) => set("sortOrder", parseInt(e.target.value, 10) || 0)}

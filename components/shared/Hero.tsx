@@ -129,12 +129,12 @@ export function Hero() {
           That Scale.
         </motion.h2>
 
-        {/* Sub copy */}
+        {/* Sub copy -- this text is not visible under the midnight and light themes */}
         <motion.p
           variants={fadeUp(0.32)}
           initial="hidden"
           animate="visible"
-          className="font-sans text-lg font-light text-gray-100
+          className="font-sans text-lg font-light text-ink-muted
             max-w-140 leading-relaxed mb-12"
         >
           VeilCode is a premium digital agency crafting high-performance web &amp;
