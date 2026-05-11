@@ -1,93 +1,93 @@
 /* ─── TYPES ───────────────────────────────────────────────────────────────── */
 
 export interface BlogAuthor {
-  name:     string;
-  role:     string;
+  name: string;
+  role: string;
   initials: string;
-  bio:      string;
+  bio: string;
   linkedin: string;
-  twitter:  string;
+  twitter: string;
   /** Accent class for avatar bg — reuses service tokens */
-  accent:   string;
-  dimBg:    string;
-  border:   string;
+  accent: string;
+  dimBg: string;
+  border: string;
 }
 
 export interface TocEntry {
-  id:    string;
+  id: string;
   level: 2 | 3;
-  text:  string;
+  text: string;
 }
 
 /** A single content block in the article body */
 export type ContentBlock =
-  | { type: "h2";       id: string; text: string }
-  | { type: "h3";       id: string; text: string }
-  | { type: "p";        html: string }
-  | { type: "ul";       items: string[] }
-  | { type: "ol";       items: string[] }
-  | { type: "code";     lang: string; code: string }
-  | { type: "callout";  variant: "info" | "warning" | "tip"; html: string }
+  | { type: "h2"; id: string; text: string }
+  | { type: "h3"; id: string; text: string }
+  | { type: "p"; html: string }
+  | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
+  | { type: "code"; lang: string; code: string }
+  | { type: "callout"; variant: "info" | "warning" | "tip"; html: string }
   | { type: "divider" };
 
 export interface BlogPost {
-  slug:        string;
-  title:       string;
-  excerpt:     string;
-  category:    string;
-  tags:        string[];
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
   publishedAt: string; // ISO date string
-  readTime:    string;
-  author:      BlogAuthor;
-  heroAlt:     string;
+  readTime: string;
+  author: BlogAuthor;
+  heroAlt: string;
   /** Set to null until you add a real image at /public/blog/{slug}/hero.jpg */
-  heroSrc:     string | null;
-  toc:         TocEntry[];
-  body:        ContentBlock[];
+  heroSrc: string | null;
+  toc: TocEntry[];
+  body: ContentBlock[];
   relatedSlugs: string[];
   classes: {
-    accent:  string;
-    dimBg:   string;
-    border:  string;
+    accent: string;
+    dimBg: string;
+    border: string;
   };
 }
 
 /* ─── AUTHORS ─────────────────────────────────────────────────────────────── */
 
 const FRANK: BlogAuthor = {
-  name:     "Frank Tamale",
-  role:     "Founder & Lead Engineer",
+  name: "Frank Tamale",
+  role: "Founder & Lead Engineer",
   initials: "DK",
-  bio:      "Full-stack engineer with a decade of experience building products that scale. Writes about software architecture, performance engineering, and building digital products in Africa.",
+  bio: "Full-stack engineer with a decade of experience building products that scale. Writes about software architecture, performance engineering, and building digital products in Africa.",
   linkedin: "#",
-  twitter:  "#",
-  accent:   "text-brand",
-  dimBg:    "bg-brand-dim",
-  border:   "border-brand-border",
+  twitter: "#",
+  accent: "text-brand",
+  dimBg: "bg-brand-dim",
+  border: "border-brand-border",
 };
 
 const RONALD: BlogAuthor = {
-  name:     "Ronald Mugisha",
-  role:     "Head of Data & AI",
+  name: "Ronald Mugisha",
+  role: "Head of Data & AI",
   initials: "RM",
-  bio:      "Data engineer and ML practitioner building analytics systems and AI automation pipelines. Writes about data architecture, LLMs, and practical AI implementation.",
+  bio: "Data engineer and ML practitioner building analytics systems and AI automation pipelines. Writes about data architecture, LLMs, and practical AI implementation.",
   linkedin: "#",
-  twitter:  "#",
-  accent:   "text-svc-data",
-  dimBg:    "bg-svc-data-dim",
-  border:   "border-svc-data-border",
+  twitter: "#",
+  accent: "text-svc-data",
+  dimBg: "bg-svc-data-dim",
+  border: "border-svc-data-border",
 };
 
 const AISHA: BlogAuthor = {
-  name:     "Aisha Nakato",
-  role:     "Creative Director",
+  name: "Aisha Nakato",
+  role: "Creative Director",
   initials: "AN",
-  bio:      "Designer who codes. Writes about design systems, the intersection of brand and product, and building interfaces that feel as good as they perform.",
+  bio: "Designer who codes. Writes about design systems, the intersection of brand and product, and building interfaces that feel as good as they perform.",
   linkedin: "#",
-  twitter:  "#",
-  accent:   "text-svc-mobile",
-  dimBg:    "bg-svc-mobile-dim",
-  border:   "border-svc-mobile-border",
+  twitter: "#",
+  accent: "text-svc-mobile",
+  dimBg: "bg-svc-mobile-dim",
+  border: "border-svc-mobile-border",
 };
 
 /* ─── POSTS ───────────────────────────────────────────────────────────────── */
@@ -95,27 +95,53 @@ const AISHA: BlogAuthor = {
 export const POSTS: BlogPost[] = [
   /* ── 01 ─────────────────────────────────────────────────────────────────── */
   {
-    slug:        "next-js-performance-east-africa",
-    title:       "Building Fast Web Apps for Low-Bandwidth Markets",
-    excerpt:     "Performance optimisation isn't a nice-to-have when your users are on 3G in Kampala or Nairobi. Here's the exact stack and techniques we use to build sub-2s load times across East Africa.",
-    category:    "Engineering",
-    tags:        ["Next.js", "Performance", "Web Development", "East Africa"],
+    slug: "next-js-performance-east-africa",
+    title: "Building Fast Web Apps for Low-Bandwidth Markets",
+    excerpt:
+      "Performance optimisation isn't a nice-to-have when your users are on 3G in Kampala or Nairobi. Here's the exact stack and techniques we use to build sub-2s load times across East Africa.",
+    category: "Engineering",
+    tags: ["Next.js", "Performance", "Web Development", "East Africa"],
     publishedAt: "2024-11-14",
-    readTime:    "9 min read",
-    author:      FRANK,
-    heroSrc:     "/blog-assets/blog-one.png",
-    heroAlt:     "Code editor showing Next.js configuration with performance annotations",
+    readTime: "9 min read",
+    author: FRANK,
+    heroSrc: "/blog-assets/blog-one.png",
+    heroAlt:
+      "Code editor showing Next.js configuration with performance annotations",
     relatedSlugs: ["ai-agents-production", "design-systems-scale"],
-    classes: { accent: "text-brand", dimBg: "bg-brand-dim", border: "border-brand-border" },
+    classes: {
+      accent: "text-brand",
+      dimBg: "bg-brand-dim",
+      border: "border-brand-border",
+    },
     toc: [
-      { id: "the-problem",              level: 2, text: "The Problem with Standard Advice" },
-      { id: "baseline-measurements",   level: 2, text: "Start With Baseline Measurements" },
-      { id: "image-optimisation",      level: 2, text: "Image Optimisation That Actually Moves the Needle" },
-      { id: "js-bundle-strategy",      level: 2, text: "JavaScript Bundle Strategy" },
-      { id: "edge-and-caching",        level: 2, text: "Edge Deployment and Caching" },
-      { id: "font-loading",            level: 3, text: "Font Loading Without Layout Shift" },
-      { id: "measuring-real-users",    level: 2, text: "Measuring Real User Performance" },
-      { id: "checklist",               level: 2, text: "The Full Checklist" },
+      { id: "the-problem", level: 2, text: "The Problem with Standard Advice" },
+      {
+        id: "baseline-measurements",
+        level: 2,
+        text: "Start With Baseline Measurements",
+      },
+      {
+        id: "image-optimisation",
+        level: 2,
+        text: "Image Optimisation That Actually Moves the Needle",
+      },
+      {
+        id: "js-bundle-strategy",
+        level: 2,
+        text: "JavaScript Bundle Strategy",
+      },
+      { id: "edge-and-caching", level: 2, text: "Edge Deployment and Caching" },
+      {
+        id: "font-loading",
+        level: 3,
+        text: "Font Loading Without Layout Shift",
+      },
+      {
+        id: "measuring-real-users",
+        level: 2,
+        text: "Measuring Real User Performance",
+      },
+      { id: "checklist", level: 2, text: "The Full Checklist" },
     ],
     body: [
       {
@@ -126,7 +152,11 @@ export const POSTS: BlogPost[] = [
         type: "p",
         html: `We've shipped over 30 web products in East African markets. Here's what we've learned — often the hard way — about building web apps that feel fast for those users.`,
       },
-      { type: "h2", id: "the-problem", text: "The Problem with Standard Advice" },
+      {
+        type: "h2",
+        id: "the-problem",
+        text: "The Problem with Standard Advice",
+      },
       {
         type: "p",
         html: `The standard Next.js performance tutorial will tell you to use <code>next/image</code>, enable ISR, and deploy to Vercel. That's all correct and you should do it. But it's the floor, not the ceiling. When we profiled a client's site against real users in Nairobi, we found that following all the standard recommendations still left us with a 4.8s LCP on a median device. We needed to get it under 2s.`,
@@ -136,7 +166,11 @@ export const POSTS: BlogPost[] = [
         variant: "info",
         html: `<strong>LCP target:</strong> Aim for under 2.5s on a simulated mid-range Android (Moto G4 class) throttled to "Fast 3G" in Chrome DevTools. That's the baseline test environment we use for every East African deployment.`,
       },
-      { type: "h2", id: "baseline-measurements", text: "Start With Baseline Measurements" },
+      {
+        type: "h2",
+        id: "baseline-measurements",
+        text: "Start With Baseline Measurements",
+      },
       {
         type: "p",
         html: `Before touching a single line of code, instrument your actual user population. Google Analytics 4's Core Web Vitals report and Chrome UX Report (CrUX) will tell you the 75th percentile LCP, CLS, and INP for your real traffic — not your local machine. The numbers are almost always worse than you expect.`,
@@ -150,7 +184,11 @@ curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed\\
 &strategy=mobile\\
 &key=YOUR_API_KEY" | jq '.loadingExperience.metrics'`,
       },
-      { type: "h2", id: "image-optimisation", text: "Image Optimisation That Actually Moves the Needle" },
+      {
+        type: "h2",
+        id: "image-optimisation",
+        text: "Image Optimisation That Actually Moves the Needle",
+      },
       {
         type: "p",
         html: `<code>next/image</code> handles WebP conversion and lazy loading. That's table stakes. What it won't do for you is enforce disciplined <code>sizes</code> attributes — and without them, Next.js will serve a 1200px image to a 390px phone screen.`,
@@ -186,7 +224,11 @@ module.exports = {
   },
 };`,
       },
-      { type: "h2", id: "js-bundle-strategy", text: "JavaScript Bundle Strategy" },
+      {
+        type: "h2",
+        id: "js-bundle-strategy",
+        text: "JavaScript Bundle Strategy",
+      },
       {
         type: "p",
         html: `JavaScript parse time on a mid-range Android is 3–5× slower than a modern laptop. Every kilobyte of JS you send costs more than you think. Our rules:`,
@@ -212,7 +254,11 @@ const HeavyChart = dynamic(() => import("@/components/HeavyChart"), {
   loading: () => <div className="h-64 animate-pulse bg-surface-hi rounded-xl" />,
 });`,
       },
-      { type: "h2", id: "edge-and-caching", text: "Edge Deployment and Caching" },
+      {
+        type: "h2",
+        id: "edge-and-caching",
+        text: "Edge Deployment and Caching",
+      },
       {
         type: "p",
         html: `Vercel's Edge Network has nodes in Johannesburg and a growing presence in West Africa. For East African users, this means your ISR-cached pages can be served from a node that's 30–40ms away rather than Frankfurt or US-East. The configuration for aggressive edge caching looks like this:`,
@@ -235,7 +281,11 @@ export async function generateMetadata() {
   };
 }`,
       },
-      { type: "h3", id: "font-loading", text: "Font Loading Without Layout Shift" },
+      {
+        type: "h3",
+        id: "font-loading",
+        text: "Font Loading Without Layout Shift",
+      },
       {
         type: "p",
         html: `Custom fonts are a common source of CLS. The right pattern with Next.js is to use <code>next/font</code> with <code>display: 'swap'</code> and <code>preload: true</code>, and to declare font variables on <code>:root</code> rather than injecting them into <code>body</code> directly.`,
@@ -269,7 +319,11 @@ export default function RootLayout({ children }) {
   );
 }`,
       },
-      { type: "h2", id: "measuring-real-users", text: "Measuring Real User Performance" },
+      {
+        type: "h2",
+        id: "measuring-real-users",
+        text: "Measuring Real User Performance",
+      },
       {
         type: "p",
         html: `Synthetic testing (Lighthouse, PageSpeed Insights) is useful for catching regressions in CI. But the number that matters is your real user p75 LCP from CrUX. Set up a monthly alert using the CrUX API if it crosses your threshold. We use this snippet in a GitHub Action that runs weekly:`,
@@ -303,26 +357,48 @@ export default function RootLayout({ children }) {
 
   /* ── 02 ─────────────────────────────────────────────────────────────────── */
   {
-    slug:        "ai-agents-production",
-    title:       "Shipping AI Agents to Production: What Nobody Tells You",
-    excerpt:     "Building an LLM prototype takes an afternoon. Getting it to production takes months. After shipping 6 agent systems this year, here's the gap between the demo and reality.",
-    category:    "AI & Automation",
-    tags:        ["AI", "LangChain", "LangGraph", "Production", "Architecture"],
+    slug: "ai-agents-production",
+    title: "Shipping AI Agents to Production: What Nobody Tells You",
+    excerpt:
+      "Building an LLM prototype takes an afternoon. Getting it to production takes months. After shipping 6 agent systems this year, here's the gap between the demo and reality.",
+    category: "AI & Automation",
+    tags: ["AI", "LangChain", "LangGraph", "Production", "Architecture"],
     publishedAt: "2024-10-02",
-    readTime:    "12 min read",
-    author:      RONALD,
-    heroSrc:     "/blog-assets/blog-two.png",
-    heroAlt:     "Diagram showing a multi-agent LLM workflow with human escalation paths",
+    readTime: "12 min read",
+    author: RONALD,
+    heroSrc: "/blog-assets/blog-two.png",
+    heroAlt:
+      "Diagram showing a multi-agent LLM workflow with human escalation paths",
     relatedSlugs: ["next-js-performance-east-africa", "design-systems-scale"],
-    classes: { accent: "text-svc-data", dimBg: "bg-svc-data-dim", border: "border-svc-data-border" },
+    classes: {
+      accent: "text-svc-data",
+      dimBg: "bg-svc-data-dim",
+      border: "border-svc-data-border",
+    },
     toc: [
-      { id: "the-demo-gap",            level: 2, text: "The Demo-to-Production Gap" },
-      { id: "reliability",             level: 2, text: "Reliability Is Not Optional" },
-      { id: "prompt-versioning",       level: 2, text: "Prompt Versioning and Testing" },
-      { id: "human-in-the-loop",       level: 2, text: "Human-in-the-Loop Is an Architecture Decision" },
-      { id: "observability",           level: 2, text: "Observability for Agents" },
-      { id: "cost-management",         level: 3, text: "Managing Token Costs at Scale" },
-      { id: "when-not-to-use-agents",  level: 2, text: "When Not to Use Agents" },
+      { id: "the-demo-gap", level: 2, text: "The Demo-to-Production Gap" },
+      { id: "reliability", level: 2, text: "Reliability Is Not Optional" },
+      {
+        id: "prompt-versioning",
+        level: 2,
+        text: "Prompt Versioning and Testing",
+      },
+      {
+        id: "human-in-the-loop",
+        level: 2,
+        text: "Human-in-the-Loop Is an Architecture Decision",
+      },
+      { id: "observability", level: 2, text: "Observability for Agents" },
+      {
+        id: "cost-management",
+        level: 3,
+        text: "Managing Token Costs at Scale",
+      },
+      {
+        id: "when-not-to-use-agents",
+        level: 2,
+        text: "When Not to Use Agents",
+      },
     ],
     body: [
       {
@@ -364,7 +440,11 @@ async def call_llm_with_retry(messages: list[dict]) -> str:
     )
     return response.choices[0].message.content`,
       },
-      { type: "h2", id: "prompt-versioning", text: "Prompt Versioning and Testing" },
+      {
+        type: "h2",
+        id: "prompt-versioning",
+        text: "Prompt Versioning and Testing",
+      },
       {
         type: "p",
         html: `Prompts are code. They need to be version-controlled, reviewed, and tested before shipping. We store every prompt in a dedicated <code>prompts/</code> directory with a version suffix, and we maintain a golden dataset of input/output pairs that we run on every prompt change.`,
@@ -379,7 +459,11 @@ async def call_llm_with_retry(messages: list[dict]) -> str:
           "Log every prompt + completion pair to a database for analysis and fine-tuning",
         ],
       },
-      { type: "h2", id: "human-in-the-loop", text: "Human-in-the-Loop Is an Architecture Decision" },
+      {
+        type: "h2",
+        id: "human-in-the-loop",
+        text: "Human-in-the-Loop Is an Architecture Decision",
+      },
       {
         type: "p",
         html: `Every production agent system we've shipped has a human escalation path. Not because we don't trust the LLM — but because there will always be a class of inputs where the right answer is "a human needs to make this call". The architecture question is not <em>whether</em> to build this, but <em>where</em> in the flow to put it.`,
@@ -412,7 +496,11 @@ graph.add_conditional_edges("process", should_escalate)`,
         type: "p",
         html: `You cannot debug what you cannot observe. Every agent invocation should emit structured logs with: the input hash, model used, token counts, latency, confidence score, and whether it was escalated. We use a simple Postgres table for this — not a fancy LLMOps platform — because SQL gives us full flexibility to query and aggregate.`,
       },
-      { type: "h3", id: "cost-management", text: "Managing Token Costs at Scale" },
+      {
+        type: "h3",
+        id: "cost-management",
+        text: "Managing Token Costs at Scale",
+      },
       {
         type: "p",
         html: `Token costs are invisible until they're not. A document processing agent that handles 10 documents a day in testing might need to handle 10,000 a day in production. At that scale, the difference between a 2,000-token and 4,000-token prompt is significant. Instrument token usage from day one.`,
@@ -422,7 +510,11 @@ graph.add_conditional_edges("process", should_escalate)`,
         variant: "tip",
         html: `<strong>Cost pattern:</strong> Cache LLM responses for identical or near-identical inputs using a semantic similarity hash. For document classification tasks, we typically see 30–40% cache hit rates — effectively cutting costs by a third with no accuracy loss.`,
       },
-      { type: "h2", id: "when-not-to-use-agents", text: "When Not to Use Agents" },
+      {
+        type: "h2",
+        id: "when-not-to-use-agents",
+        text: "When Not to Use Agents",
+      },
       {
         type: "p",
         html: `Not every automation problem needs an LLM. If the logic can be expressed as rules, use rules. If the data is structured, use a database query. LLMs add latency, cost, and non-determinism. They earn their place when the task genuinely requires language understanding or judgment — not just pattern matching.`,
@@ -440,26 +532,36 @@ graph.add_conditional_edges("process", should_escalate)`,
 
   /* ── 03 ─────────────────────────────────────────────────────────────────── */
   {
-    slug:        "design-systems-scale",
-    title:       "Design Systems That Don't Become a Burden",
-    excerpt:     "Most design systems start as a solution and end up as a problem. Here's how we build component libraries that teams actually want to use — and keep using.",
-    category:    "Design",
-    tags:        ["Design Systems", "Tailwind CSS", "React", "Component Design"],
+    slug: "design-systems-scale",
+    title: "Design Systems That Don't Become a Burden",
+    excerpt:
+      "Most design systems start as a solution and end up as a problem. Here's how we build component libraries that teams actually want to use — and keep using.",
+    category: "Design",
+    tags: ["Design Systems", "Tailwind CSS", "React", "Component Design"],
     publishedAt: "2024-08-19",
-    readTime:    "8 min read",
-    author:      AISHA,
-    heroSrc:     "/blog-assets/blog-two2.png",
-    heroAlt:     "Figma file showing a component library with tokens, variants, and documentation",
+    readTime: "8 min read",
+    author: AISHA,
+    heroSrc: "/blog-assets/blog-two2.png",
+    heroAlt:
+      "Figma file showing a component library with tokens, variants, and documentation",
     relatedSlugs: ["next-js-performance-east-africa", "ai-agents-production"],
-    classes: { accent: "text-svc-mobile", dimBg: "bg-svc-mobile-dim", border: "border-svc-mobile-border" },
+    classes: {
+      accent: "text-svc-mobile",
+      dimBg: "bg-svc-mobile-dim",
+      border: "border-svc-mobile-border",
+    },
     toc: [
-      { id: "why-they-fail",           level: 2, text: "Why Most Design Systems Fail" },
-      { id: "tokens-first",            level: 2, text: "Start With Tokens, Not Components" },
-      { id: "component-api-design",    level: 2, text: "Component API Design" },
-      { id: "documentation",           level: 2, text: "Documentation That Gets Read" },
-      { id: "governance",              level: 3, text: "Governance Without Bureaucracy" },
-      { id: "tailwind-approach",       level: 2, text: "Our Tailwind Approach" },
-      { id: "measuring-adoption",      level: 2, text: "Measuring Adoption" },
+      { id: "why-they-fail", level: 2, text: "Why Most Design Systems Fail" },
+      {
+        id: "tokens-first",
+        level: 2,
+        text: "Start With Tokens, Not Components",
+      },
+      { id: "component-api-design", level: 2, text: "Component API Design" },
+      { id: "documentation", level: 2, text: "Documentation That Gets Read" },
+      { id: "governance", level: 3, text: "Governance Without Bureaucracy" },
+      { id: "tailwind-approach", level: 2, text: "Our Tailwind Approach" },
+      { id: "measuring-adoption", level: 2, text: "Measuring Adoption" },
     ],
     body: [
       {
@@ -480,7 +582,11 @@ graph.add_conditional_edges("process", should_escalate)`,
         variant: "info",
         html: `<strong>The adoption test:</strong> A component should be faster to use from the system than to build from scratch. If it isn't — if the API is confusing, the documentation is missing, or the customisation model is inflexible — developers will build their own. Every time.`,
       },
-      { type: "h2", id: "tokens-first", text: "Start With Tokens, Not Components" },
+      {
+        type: "h2",
+        id: "tokens-first",
+        text: "Start With Tokens, Not Components",
+      },
       {
         type: "p",
         html: `The biggest mistake teams make is jumping straight to building buttons and cards. Tokens — colour, spacing, typography, shadow — are the foundation everything else inherits from. If you get tokens wrong, every component built on top of them carries the mistake.`,
@@ -531,7 +637,7 @@ graph.add_conditional_edges("process", should_escalate)`,
   Continue
 </Button>`,
       },
-      { type: "h2", id: "documentation",  text: "Documentation That Gets Read" },
+      { type: "h2", id: "documentation", text: "Documentation That Gets Read" },
       {
         type: "p",
         html: `Documentation that isn't read is worse than no documentation — it creates a false sense that the system is self-explanatory. The only documentation that gets read is documentation that's <em>in context</em>: in the IDE via TypeScript types, in the component file via JSDoc, and in examples that show real usage patterns rather than synthetic demos.`,
@@ -606,9 +712,9 @@ export function getRelatedPosts(post: BlogPost): BlogPost[] {
 
 export function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", {
-    day:   "numeric",
+    day: "numeric",
     month: "long",
-    year:  "numeric",
+    year: "numeric",
   });
 }
 
@@ -629,8 +735,10 @@ export function getFeaturedPost(): BlogPost {
 }
 
 export function getRecentPosts(exclude?: string, limit = 20): BlogPost[] {
-  return POSTS
-    .filter((p) => p.slug !== exclude)
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  return POSTS.filter((p) => p.slug !== exclude)
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
     .slice(0, limit);
 }

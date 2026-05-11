@@ -28,6 +28,8 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
+    // TODO: validate body shape
+    console.log("[api/admin/projects] Creating project with data:", body);
     const [created] = await db.insert(projects).values(body).returning();
     return NextResponse.json(created, { status: 201 });
   } catch (err) {

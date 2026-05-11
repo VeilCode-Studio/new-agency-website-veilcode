@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
-import { asc, sql } from "drizzle-orm";
+import { asc } from "drizzle-orm";
 import { db } from "@/db/drizzle";
 import { services } from "@/db/schema";
 import { getAdminContext } from "@/lib/auth/admin";
-
-function textArray(arr: unknown[]) {
-  const vals = arr.map(String);
-  if (!vals.length) return sql`ARRAY[]::text[]`;
-  return sql`ARRAY[${sql.join(vals.map((v) => sql`${v}`), sql`, `)}]::text[]`;
-}
 
 export const runtime = "nodejs";
 
@@ -46,10 +40,10 @@ export async function POST(req: Request) {
         intro:          body.intro,
         challenge:      body.challenge,
         approach:       body.approach,
-        bullets:        textArray(body.bullets        ?? []) as unknown as string[],
+        bullets:        body.bullets ?? [],
         deliverables:   body.deliverables    ?? [],
-        stack:          textArray(body.stack          ?? []) as unknown as string[],
-        tags:           textArray(body.tags           ?? []) as unknown as string[],
+        stack:          body.stack ?? [],
+        tags:           body.tags ?? [],
         metric:         body.metric,
         metricLabel:    body.metricLabel,
         metricSub:      body.metricSub,

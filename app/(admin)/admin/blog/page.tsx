@@ -45,6 +45,13 @@ export default async function BlogPage() {
         title="Blog"
         description="Manage articles shown on the public blog."
         action={
+          <div className="flex items-center gap-2">
+          <Link
+            href="/admin/blog/preview"
+            className="inline-flex items-center gap-1.5 rounded-md border border-line px-3.5 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90 hover:bg-surface"
+          >
+            Preview Blog
+          </Link>
           <Link
             href="/admin/blog/new"
             className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"
@@ -52,6 +59,7 @@ export default async function BlogPage() {
             <Plus className="size-4" />
             New post
           </Link>
+        </div>
         }
       />
 

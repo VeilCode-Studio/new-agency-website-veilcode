@@ -204,9 +204,8 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                   <td className="px-4 py-3 text-right">
                     <div className="flex items-center justify-end gap-1.5">
                       <Link
-                        href={`/blog/${row.slug}`}
-                        target="_blank"
-                        title="View live post"
+                        href={`/admin/blog/${row.id}/preview`}
+                        title="Preview post"
                         className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
                       >
                         <ExternalLink className="size-3.5" />

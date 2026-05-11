@@ -57,12 +57,12 @@ const SingleBlogPage = async ({ params }: Params) => {
   return (
       <>
           <BlogPostHero post={post} />
-          <section className="py-16 px-6 md:px-10 border-t border-line">
+          <section className="py-16 px-6 md:px-10 xl:px-20 border-t border-line">
           <div className="max-w-300 mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-14 xl:gap-20">
+            <div className="flex flex-col lg:flex-row gap-14 xl:gap-20 items-start">
 
               {/* Article column */}
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1 relative">
                 {/* Social share strip — mobile/tablet only, desktop uses fixed rail */}
                 <SocialShare post={post} />
                 {/* Body blocks */}

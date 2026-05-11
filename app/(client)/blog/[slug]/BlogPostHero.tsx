@@ -75,7 +75,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
         bg-linear-to-r from-transparent via-brand/20 to-transparent
         animate-scan" />
 
-      <div className="relative z-10 max-w-300 mx-auto px-6 md:px-10 pt-36 pb-16">
+      <div className="relative z-10 max-w-300 mx-auto px-6 md:px-10 xl:px-20 pt-36 pb-16">
         <motion.div variants={stagger} initial="hidden" animate="visible">
 
           {/* Breadcrumb */}
@@ -172,8 +172,10 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
           {/* Hero image */}
           <motion.div variants={fadeUp(0.28)}>
             {p.heroSrc ? (
-              <Image src={p.heroSrc} alt={p.heroAlt} fill
-                className="w-full h-80 md:h-120 object-cover rounded-2xl border border-line" />
+              <div className="w-full rounded-2xl overflow-hidden border border-line">
+                <Image src={p.heroSrc} alt={p.heroAlt} width={1408} height={768}
+                  className="w-full h-auto object-contain bg-surface" />
+              </div>
             ) : (
               <HeroImagePlaceholder post={p} />
             )}

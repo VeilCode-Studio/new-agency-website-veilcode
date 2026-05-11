@@ -87,7 +87,7 @@ export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 md:px-10 border-t border-line">
+    <section className="py-24 px-6 md:px-10 xl:px-20 border-t border-line">
       <div className="max-w-300 mx-auto">
         <motion.div
           ref={ref}

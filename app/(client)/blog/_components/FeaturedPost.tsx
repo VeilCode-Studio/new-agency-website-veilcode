@@ -119,7 +119,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
               w-0 group-hover:w-full transition-all duration-500 ${c.accent}`} />
 
             {/* Visual panel */}
-            <div className="lg:order-2 aspect-4/3 lg:aspect-auto">
+            <div className="lg:order-2 aspect-11/6 lg:aspect-auto">
               <FeaturedVisual post={p} />
             </div>
 

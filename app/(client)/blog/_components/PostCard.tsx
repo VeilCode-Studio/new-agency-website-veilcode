@@ -13,7 +13,7 @@ function CardVisual({ post: p }: { post: BlogPost }) {
   const { classes: c } = p;
 
   return (
-    <div className={`relative h-50 overflow-hidden
+    <div className={`relative aspect-[11/6] overflow-hidden
       bg-linear-to-br ${c.dimBg} to-surface`}>
 
       {/* Grid texture */}

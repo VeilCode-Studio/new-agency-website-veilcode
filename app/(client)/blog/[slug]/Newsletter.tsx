@@ -55,7 +55,7 @@ export function NewsletterCTA() {
   }
 
   return (
-    <section className="py-20 px-6 md:px-10 border-t border-line bg-surface" id="newsletter">
+    <section className="py-20 px-6 md:px-10 xl:px-20 border-t border-line bg-surface" id="newsletter">
       <div className="max-w-300 mx-auto">
         <motion.div
           ref={ref}

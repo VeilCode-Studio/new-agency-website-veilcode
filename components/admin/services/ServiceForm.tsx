@@ -211,253 +211,19 @@ const EMPTY: ServiceFormData = {
   published: true,
 };
 
-// Primitive field components
-
-function Field({
-  label,
-  required,
-  children,
-  htmlFor
-}: {
-  label: string;
-  required?: boolean;
-    children: React.ReactNode;
-  htmlFor?: string;
-}) {
-  return (
-    <div className="space-y-1">
-      <label className="block text-xs font-medium text-ink-muted" htmlFor={htmlFor}>
-        {label}
-        {required && <span className="ml-0.5 text-destructive">*</span>}
-      </label>
-      {children}
-    </div>
-  );
-}
+// Primitive field components imported from shared forms directory
+import { Field } from "../forms/Field";
+import { SectionCard } from "../forms/SectionCard";
+import { ChipEditor } from "../forms/ChipEditor";
+import { BulletsEditor } from "../forms/BulletsEditor";
+import { DeliverablesEditor } from "../forms/DeliverablesEditor";
+import { ClassesEditor } from "../forms/ClassesEditor";
 
 const inputCls =
   "w-full rounded-md border border-line bg-page px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:border-brand focus:outline-none";
 
 const textareaCls =
   "w-full resize-y rounded-md border border-line bg-page px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:border-brand focus:outline-none";
-
-function SectionCard({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-xl border border-line bg-surface/40 p-5">
-      <div className="mb-4">
-        <h2 className="font-display text-sm font-semibold tracking-wide text-ink">{title}</h2>
-        {description && <p className="mt-0.5 text-xs text-ink-muted">{description}</p>}
-      </div>
-      {children}
-    </div>
-  );
-}
-
-// Simple string-array chip editor (used for bullets, stack, tags)
-function ChipEditor({
-  label,
-  values,
-  onChange,
-  placeholder,
-}: {
-  label: string;
-  values: string[];
-  onChange: (v: string[]) => void;
-  placeholder?: string;
-}) {
-  const [input, setInput] = useState("");
-
-  function add() {
-    const t = input.trim();
-    if (!t || values.includes(t)) return;
-    onChange([...values, t]);
-    setInput("");
-  }
-
-  return (
-    <Field label={label}>
-      <div className="flex min-h-10.5 flex-wrap gap-1.5 rounded-md border border-line bg-page p-2">
-        {values.map((v) => (
-          <span
-            key={v}
-            className="inline-flex items-center gap-1 rounded-full border border-line bg-surface px-2.5 py-0.5 text-xs text-ink"
-          >
-            {v}
-            <button
-              type="button"
-              onClick={() => onChange(values.filter((x) => x !== v))}
-              className="text-ink-faint hover:text-destructive"
-            >
-              ×
-            </button>
-          </span>
-        ))}
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") { e.preventDefault(); add(); }
-            if (e.key === "Backspace" && !input && values.length) onChange(values.slice(0, -1));
-          }}
-          placeholder={values.length === 0 ? (placeholder ?? "Type and press Enter…") : "Add another…"}
-          className="min-w-28 flex-1 bg-transparent text-xs text-ink placeholder:text-ink-faint outline-none"
-        />
-      </div>
-    </Field>
-  );
-}
-
-// Bullets editor — ordered list of plain strings
-function BulletsEditor({
-  bullets,
-  onChange,
-}: {
-  bullets: string[];
-  onChange: (v: string[]) => void;
-}) {
-  function patch(i: number, val: string) {
-    onChange(bullets.map((b, idx) => (idx === i ? val : b)));
-  }
-
-  return (
-    <div className="space-y-2">
-      {bullets.map((b, i) => (
-        <div key={i} className="flex items-center gap-2">
-          <span className="shrink-0 font-mono text-[11px] text-ink-faint w-5 text-right">{i + 1}.</span>
-          <input
-            type="text"
-            value={b}
-            onChange={(e) => patch(i, e.target.value)}
-            placeholder="Key capability or highlight…"
-            className={cn(inputCls, "flex-1")}
-          />
-          <button
-            title="delete"
-            type="button"
-            onClick={() => onChange(bullets.filter((_, idx) => idx !== i))}
-            className="shrink-0 text-ink-faint hover:text-destructive"
-          >
-            <Trash2 className="size-3.5" />
-          </button>
-        </div>
-      ))}
-      <button
-        type="button"
-        onClick={() => onChange([...bullets, ""])}
-        className="flex items-center gap-1.5 rounded-md border border-dashed border-line px-3 py-2 text-xs text-ink-muted transition-colors hover:border-brand hover:text-brand"
-      >
-        <Plus className="size-3.5" /> Add bullet
-      </button>
-    </div>
-  );
-}
-
-// Deliverables editor
-function DeliverablesEditor({
-  deliverables,
-  onChange,
-}: {
-  deliverables: DeliverableItem[];
-  onChange: (v: DeliverableItem[]) => void;
-}) {
-  function patch(i: number, p: Partial<DeliverableItem>) {
-    onChange(deliverables.map((d, idx) => (idx === i ? { ...d, ...p } : d)));
-  }
-
-  return (
-    <div className="space-y-3">
-      {deliverables.map((d, i) => (
-        <div key={i} className="relative rounded-lg border border-line bg-page p-3">
-          <button
-            type="button"
-            onClick={() => onChange(deliverables.filter((_, idx) => idx !== i))}
-            className="absolute right-2 top-2 text-ink-faint hover:text-destructive"
-            title="delete"
-          >
-            <Trash2 className="size-3.5" />
-          </button>
-          <div className="grid gap-2 sm:grid-cols-[1fr_2fr]">
-            <Field label="Title">
-              <input
-                type="text"
-                value={d.title}
-                onChange={(e) => patch(i, { title: e.target.value })}
-                placeholder="Strategy & Planning"
-                className={inputCls}
-              />
-            </Field>
-            <Field label="Description">
-              <input
-                type="text"
-                value={d.desc}
-                onChange={(e) => patch(i, { desc: e.target.value })}
-                placeholder="Define goals, audience, and success metrics…"
-                className={inputCls}
-              />
-            </Field>
-          </div>
-        </div>
-      ))}
-      <button
-        type="button"
-        onClick={() => onChange([...deliverables, { title: "", desc: "" }])}
-        className="flex items-center gap-1.5 rounded-md border border-dashed border-line px-3 py-2 text-xs text-ink-muted transition-colors hover:border-brand hover:text-brand"
-      >
-        <Plus className="size-3.5" /> Add deliverable
-      </button>
-    </div>
-  );
-}
-
-// Generic key-value classes editor
-function ClassesEditor<T extends Record<string, string>>({
-  title,
-  classes,
-  onChange,
-  onReset,
-  fields,
-}: {
-  title: string;
-  classes: T;
-  onChange: (v: T) => void;
-  onReset: () => void;
-  fields: { key: keyof T; label: string; hint: string }[];
-}) {
-  return (
-    <div className="space-y-3">
-      <p className="text-[11px] font-medium text-ink-muted uppercase tracking-wider">{title}</p>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {fields.map(({ key, label, hint }) => (
-          <Field key={String(key)} label={label}>
-            <input
-              type="text"
-              value={classes[key]}
-              onChange={(e) => onChange({ ...classes, [key]: e.target.value })}
-              placeholder={hint}
-              className={cn(inputCls, "font-mono text-xs")}
-            />
-          </Field>
-        ))}
-      </div>
-      <button
-        type="button"
-        onClick={onReset}
-        className="flex items-center gap-1.5 text-xs text-ink-muted transition-colors hover:text-brand"
-      >
-        <RotateCcw className="size-3" /> Reset to preset
-      </button>
-    </div>
-  );
-}
 
 // Field definitions for the three class groups
 const CARD_FIELDS: { key: keyof ServiceCardClasses; label: string; hint: string }[] = [
@@ -520,7 +286,7 @@ export function ServiceForm(props: ServiceFormProps) {
     return CLASS_PRESETS[data.id as ServiceId] ?? CLASS_PRESETS.web;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     startTransition(async () => {
       const url =
@@ -535,6 +301,7 @@ export function ServiceForm(props: ServiceFormProps) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
+
         const json = await res.json();
         if (!res.ok) throw new Error(json.error ?? "Save failed");
         toast.success(props.mode === "edit" ? "Service saved" : "Service created");

@@ -104,25 +104,26 @@ export function SocialShare({ post }: { post: BlogPost }) {
   return (
     <>
       {/* ── Desktop: floating left rail ─────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0, x: -16 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.6, duration: 0.4 }}
-        className="hidden xl:flex flex-col items-center gap-3
-          fixed left-6 top-1/2 -translate-y-1/2 z-20"
-      >
-        <div className="h-12 w-px bg-linear-to-b from-transparent to-line" />
-        <ShareBtn label="Share on Twitter / X" onClick={shareTwitter}>
-          <TwitterShareIcon />
-        </ShareBtn>
-        <ShareBtn label="Share on LinkedIn" onClick={shareLinkedIn}>
-          <LinkedInShareIcon />
-        </ShareBtn>
-        <ShareBtn label={copied ? "Copied!" : "Copy link"} onClick={copyLink} active={copied}>
-          {copied ? <CheckIcon /> : <CopyLinkIcon />}
-        </ShareBtn>
-        <div className="h-12 w-px bg-linear-to-t from-transparent to-line" />
-      </motion.div>
+      <div className="hidden xl:block absolute -left-16 top-0 bottom-0 z-20">
+        <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.4 }}
+          className="sticky top-1/2 -translate-y-1/2 flex flex-col items-center gap-3"
+        >
+          <div className="h-12 w-px bg-linear-to-b from-transparent to-line" />
+          <ShareBtn label="Share on Twitter / X" onClick={shareTwitter}>
+            <TwitterShareIcon />
+          </ShareBtn>
+          <ShareBtn label="Share on LinkedIn" onClick={shareLinkedIn}>
+            <LinkedInShareIcon />
+          </ShareBtn>
+          <ShareBtn label={copied ? "Copied!" : "Copy link"} onClick={copyLink} active={copied}>
+            {copied ? <CheckIcon /> : <CopyLinkIcon />}
+          </ShareBtn>
+          <div className="h-12 w-px bg-linear-to-t from-transparent to-line" />
+        </motion.div>
+      </div>
 
       {/* ── Mobile / tablet: inline strip below hero ────────────────────── */}
       <div className="xl:hidden flex items-center gap-3 mb-8">

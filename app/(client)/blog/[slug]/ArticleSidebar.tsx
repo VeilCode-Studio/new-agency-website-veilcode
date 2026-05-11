@@ -142,7 +142,7 @@ export function ArticleSidebar({ post }: { post: BlogPost }) {
       variants={fadeUp(0.12)}
       initial="hidden"
       animate="visible"
-      className="hidden lg:flex flex-col gap-6 sticky top-28 self-start"
+      className="hidden lg:flex flex-col gap-6 sticky top-28 self-start w-full lg:w-[300px] shrink-0"
     >
       {/* TOC card */}
       <div className="rounded-xl border border-line bg-surface p-5">
