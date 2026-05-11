@@ -1,18 +1,18 @@
+"use client";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert, Mail, LogOut, ArrowLeft } from "lucide-react";
-import { currentUser } from "@clerk/nextjs/server";
-import { SignOutButton } from "@clerk/nextjs";
+import { SignOutButton, useUser } from "@clerk/nextjs";
 
-export const metadata: Metadata = {
-  title: "Access pending",
-  robots: { index: false, follow: false },
-};
+// export const metadata: Metadata = {
+//   title: "Access pending",
+//   robots: { index: false, follow: false },
+// };
 
 export const dynamic = "force-dynamic";
 
-export default async function NoAccessPage() {
-  const user = await currentUser();
+export default function NoAccessPage() {
+  const { user, isLoaded } = useUser();
   const email = user?.emailAddresses.find(
     (e) => e.id === user.primaryEmailAddressId,
   )?.emailAddress;

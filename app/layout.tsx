@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Image from "next/image";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const geistSans = Geist({
@@ -133,12 +132,10 @@ export default function RootLayout({
           />
         </noscript>
         <ThemeProvider>
-          <ClerkProvider>
             <main className="max-w-400 mx-auto">
               {children}
               <Toaster />
             </main>
-          </ClerkProvider>
         </ThemeProvider>
       </body>
     </html>
