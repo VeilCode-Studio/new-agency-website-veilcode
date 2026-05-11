@@ -6,7 +6,7 @@ export default function SignUpPage() {
       <div className="space-y-1.5">
         <span className="inline-flex items-center gap-2 rounded-full border border-svc-data-border bg-svc-data-dim px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-svc-data">
           <span className="size-1.5 rounded-full bg-svc-data shadow-[0_0_6px_var(--color-svc-data)]" />
-          Invite-based access
+          Access is by invitation only
         </span>
         <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">
           Create your admin account.
