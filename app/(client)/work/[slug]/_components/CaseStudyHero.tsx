@@ -80,6 +80,62 @@ export function ScreenshotPlaceholder({
   );
 }
 
+function HeroScreenshot({ project: p }: { project: Project }) {
+  const { classes: c } = p;
+  const shot = p.screenshots[0];
+  const isMobileApp = p.service === "mobile";
+
+  if (!shot?.src) {
+    return (
+      <ScreenshotPlaceholder
+        alt={shot?.alt ?? `${p.title} - hero screenshot`}
+        caption={shot?.caption ?? "Hero screenshot"}
+        accent={c.accent}
+        dimBg={c.dimBg}
+        border={c.border}
+      />
+    );
+  }
+
+  if (isMobileApp) {
+    return (
+      <figure className="mx-auto max-w-105">
+        <div
+          className={`relative mx-auto rounded-[2rem] border ${c.border}
+            bg-page p-2 shadow-[0_24px_80px_rgba(0,0,0,0.28)]`}
+        >
+          <div className="pointer-events-none absolute left-1/2 top-3 z-10 h-1.5 w-16 -translate-x-1/2 rounded-full bg-line" />
+          <div className="relative aspect-9/19.5 overflow-hidden rounded-[1.55rem] bg-surface-hi">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={shot.src}
+              alt={shot.alt}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        </div>
+        <figcaption className="mt-3 font-sans text-xs text-ink-faint text-center">
+          {shot.caption}
+        </figcaption>
+      </figure>
+    );
+  }
+
+  return (
+    <figure>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={shot.src}
+        alt={shot.alt}
+        className="w-full rounded-2xl border border-line object-cover"
+      />
+      <figcaption className="mt-3 font-sans text-xs text-ink-faint text-center">
+        {shot.caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 // case study hero
 
 export function CaseStudyHero({ project: p }: { project: Project }) {
@@ -193,16 +249,16 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
           {/* Results strip */}
           <motion.div
             variants={fadeUp(0.26)}
-            className={`grid grid-cols-2 md:grid-cols-4 gap-0
+            className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0
               border ${c.border} rounded-2xl overflow-hidden mb-16`}
           >
             {p.results.map((r, i) => (
               <div
                 key={r.label}
-                className={`p-6 ${c.dimBg}
+                className={`p-5 ${c.dimBg}
                   ${i < p.results.length - 1 ? `border-r ${c.border} max-md:even:border-r-0 max-md:border-b` : ""}`}
               >
-                <div className={`font-display font-extrabold text-[36px] tracking-tight
+                <div className={`font-display font-extrabold text-xl sm:text-[30px] md:text-[36px] tracking-tight
                   leading-none mb-1.5 drop-shadow-[0_0_20px_currentColor] ${c.accent}`}>
                   {r.metric}
                 </div>
@@ -215,6 +271,9 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
           {/* Hero screenshot — always wide */}
           <motion.div variants={fadeUp(0.32)}>
             {p.screenshots[0]?.src ? (
+              p.service === "mobile" ? (
+                <HeroScreenshot project={p} />
+              ) : (
               <figure>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -226,6 +285,7 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                   {p.screenshots[0].caption}
                 </figcaption>
               </figure>
+              )
             ) : (
               <ScreenshotPlaceholder
                 alt={p.screenshots[0]?.alt ?? `${p.title} — hero screenshot`}

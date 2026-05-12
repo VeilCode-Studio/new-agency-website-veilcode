@@ -12,24 +12,51 @@ function Shot({
   accent,
   dimBg,
   border,
+  variant = "standard",
 }: {
   shot:   ProjectScreenshot;
   accent: string;
   dimBg:  string;
   border: string;
+  variant?: "standard" | "phone";
 }) {
   if (shot.src) {
+    if (variant === "phone") {
+      return (
+        <figure className="mx-auto w-full max-w-70">
+          <div
+            className={`relative rounded-[1.75rem] border ${border}
+              bg-page p-2 shadow-[0_18px_54px_rgba(0,0,0,0.22)]`}
+          >
+            <div className="pointer-events-none absolute left-1/2 top-3 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-line" />
+            <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.25rem] bg-surface-hi">
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                fill
+                loading="lazy"
+                sizes="(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px"
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="mt-2.5 font-sans text-xs text-ink-faint text-center">
+            {shot.caption}
+          </figcaption>
+        </figure>
+      );
+    }
+
     return (
       <figure className="w-full">
-        <div className="relative w-full overflow-hidden rounded-xl border border-line
-          bg-surface-hi min-h-60 max-w-5xl mx-auto">
+        <div className="relative w-full overflow-hidden rounded-xl border border-line bg-surface-hi aspect-[16/10] max-w-5xl mx-auto">
           <Image
             src={shot.src}
             alt={shot.alt}
             fill
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-            className="object-contain object-fill"
+            className="object-contain"
           />
         </div>
         <figcaption className="mt-2.5 font-sans text-xs text-ink-faint text-center">
@@ -55,6 +82,7 @@ function Shot({
 export function ScreenshotGallery({ project: p }: { project: Project }) {
   const [ref, inView] = useReveal("-40px");
   const { classes: c } = p;
+  const isMobileApp = p.service === "mobile";
 
   // Skip hero shot (index 0) — already rendered in CaseStudyHero
   const shots = p.screenshots.slice(1);
@@ -97,36 +125,52 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
           </motion.div>
 
           {/* Gallery */}
-          <div className="space-y-6">
-            {groups.map((group, gi) =>
-              group.type === "wide" ? (
-                <motion.div key={gi} variants={fadeUp(gi * 0.07)}>
+          {isMobileApp ? (
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {shots.map((shot, i) => (
+                <motion.div key={`${shot.caption}-${i}`} variants={fadeUp(i * 0.07)}>
                   <Shot
-                    shot={group.shot}
+                    shot={shot}
                     accent={c.accent}
                     dimBg={c.dimBg}
                     border={c.border}
+                    variant="phone"
                   />
                 </motion.div>
-              ) : (
-                <motion.div
-                  key={gi}
-                  variants={fadeUp(gi * 0.07)}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
-                >
-                  {group.shots.map((shot, si) => (
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {groups.map((group, gi) =>
+                group.type === "wide" ? (
+                  <motion.div key={gi} variants={fadeUp(gi * 0.07)}>
                     <Shot
-                      key={si}
-                      shot={shot}
+                      shot={group.shot}
                       accent={c.accent}
                       dimBg={c.dimBg}
                       border={c.border}
                     />
-                  ))}
-                </motion.div>
-              )
-            )}
-          </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={gi}
+                    variants={fadeUp(gi * 0.07)}
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
+                  >
+                    {group.shots.map((shot, si) => (
+                      <Shot
+                        key={si}
+                        shot={shot}
+                        accent={c.accent}
+                        dimBg={c.dimBg}
+                        border={c.border}
+                      />
+                    ))}
+                  </motion.div>
+                )
+              )}
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

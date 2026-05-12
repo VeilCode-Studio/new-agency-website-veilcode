@@ -1,6 +1,8 @@
 import React from 'react'
-import { PROJECTS } from '@/constants/projects'
 import { notFound } from 'next/navigation';
+import { and, asc, eq } from 'drizzle-orm';
+import { db } from '@/db/drizzle';
+import { projects } from '@/db/schema';
 import { CaseStudyHero } from './_components/CaseStudyHero';
 import { CaseStudyBody } from './_components/CaseStudyBody';
 import { ScreenshotGallery } from './_components/ScreenShotGallery';
@@ -12,15 +14,22 @@ interface Params {
   params: Promise<{slug: string}>
 }
 
-// get static params
-export function generateStaticParams() {
-  return PROJECTS.map(project => ({ slug: project.slug }));
+export const dynamic = "force-dynamic";
+
+async function getPublishedProject(slug: string) {
+  const [project] = await db
+    .select()
+    .from(projects)
+    .where(and(eq(projects.slug, slug), eq(projects.published, true)))
+    .limit(1);
+
+  return project ?? null;
 }
 
 // generate metadata
 export async function generateMetadata({ params }: Params) {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
+  const project = await getPublishedProject(slug);
 
   if (!project) return {};
 
@@ -32,10 +41,21 @@ export async function generateMetadata({ params }: Params) {
 
 const page = async ({ params }: Params) => {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
+  const project = await getPublishedProject(slug);
 
   if (!project) return notFound();
 
+  let nextProject = null;
+  if (project.nextSlug) {
+    const [next] = await db
+      .select()
+      .from(projects)
+      .where(and(eq(projects.slug, project.nextSlug), eq(projects.published, true)))
+      .orderBy(asc(projects.sortOrder))
+      .limit(1);
+
+    nextProject = next ?? null;
+  }
   
   return (
     <>
@@ -44,7 +64,7 @@ const page = async ({ params }: Params) => {
       <ScreenshotGallery project={project} />
       <CaseStudyTestimonial project={project} />
       <CTA />
-      <NextProject project={project} />
+      <NextProject project={project} nextProject={nextProject} />
     </>
   )
 }
