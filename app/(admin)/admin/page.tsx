@@ -13,6 +13,7 @@ import {
 } from "@/db/schema";
 import { PageHeader } from "@/components/admin/PageHeader";
 import { requireAdmin } from "@/lib/auth/admin";
+import { RecentActivity } from "@/components/admin/dashboard/RecentActivity";
 
 async function safeCount(table: PgTable, label: string): Promise<number | null> {
   try {
@@ -135,6 +136,8 @@ export default async function AdminDashboardPage() {
           </Link>
         </div>
       </div>
+
+      <RecentActivity />
     </>
   );
 }
