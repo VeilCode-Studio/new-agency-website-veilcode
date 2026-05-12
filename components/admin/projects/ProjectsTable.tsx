@@ -116,8 +116,8 @@ export function ProjectsTable({ rows: initialRows }: { rows: ProjectListRow[] })
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-line">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto rounded-xl border border-line">
+      <table className="min-w-245 w-full text-sm">
         <thead className="bg-surface/40 text-left text-[11px] uppercase tracking-wider text-ink-muted">
           <tr>
             <th className="px-4 py-3 w-10 text-center">#</th>
@@ -261,15 +261,7 @@ export function ProjectsTable({ rows: initialRows }: { rows: ProjectListRow[] })
                     <div className="flex items-center justify-end gap-1.5">
                       <Link
                         href={`/admin/projects/${row.id}/preview`}
-                        target="_blank"
                         title="Preview case study"
-                        className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
-                      >
-                        <Eye className="size-3.5" />
-                      </Link>
-                      <Link
-                        href={`/projects/${row.slug}`}
-                        title="View live case study"
                         className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
                       >
                         <ExternalLink className="size-3.5" />
