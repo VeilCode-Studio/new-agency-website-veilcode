@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { desc } from "drizzle-orm";
-import { Plus } from "lucide-react";
+import { Plus, Eye } from "lucide-react";
 import { db } from "@/db/drizzle";
 import { blogPosts } from "@/db/schema";
 import { requireAdmin } from "@/lib/auth/admin";
@@ -45,13 +45,15 @@ export default async function BlogPage() {
         title="Blog"
         description="Manage articles shown on the public blog."
         action={
-          <div className="flex items-center gap-2">
-          <Link
-            href="/admin/blog/preview"
-            className="inline-flex items-center gap-1.5 rounded-md border border-line px-3.5 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90 hover:bg-surface"
-          >
-            Preview Blog
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/admin/blog/preview"
+              target="_blank"
+              className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
+            >
+              <Eye className="size-4" />
+              Preview Blog
+            </Link>
           <Link
             href="/admin/blog/new"
             className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"

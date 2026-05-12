@@ -192,6 +192,14 @@ export function ServicesTable({ rows: initialRows }: { rows: ServiceListRow[] })
                   <td className="px-4 py-3 text-right">
                     <div className="flex items-center justify-end gap-1.5">
                       <Link
+                        href={`/admin/services/${row.id}/preview`}
+                        target="_blank"
+                        title="Preview service"
+                        className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+                      >
+                        <Eye className="size-3.5" />
+                      </Link>
+                      <Link
                         href={`/admin/services/${row.id}/edit`}
                         title="Edit service"
                         className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"

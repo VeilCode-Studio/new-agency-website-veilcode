@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { asc } from "drizzle-orm";
-import { Plus } from "lucide-react";
+import { Plus, Eye } from "lucide-react";
 import { db } from "@/db/drizzle";
 import { services } from "@/db/schema";
 import { requireAdmin } from "@/lib/auth/admin";
@@ -46,8 +46,10 @@ export default async function ServicesPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/admin/services/preview"
-              className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
+              target="_blank"
+              className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
             >
+              <Eye className="size-4" />
               Live preview
             </Link>
             <Link

@@ -5,14 +5,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
+import type { InferSelectModel } from "drizzle-orm";
+import { projects } from "@/db/schema";
+
+type ProjectType = InferSelectModel<typeof projects>;
 
 interface Props {
-  project: Project;
+  project: ProjectType;
 }
 
 /* ─── VISUAL PANEL ────────────────────────────────────────────────────────── */
 
-function FeaturedVisual({ project: p }: { project: Project }) {
+function FeaturedVisual({ project: p }: { project: ProjectType }) {
   const { classes: c } = p;
   const heroShot = p.screenshots?.[0];
   const hasImage = !!heroShot?.src;

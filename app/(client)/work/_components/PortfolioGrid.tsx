@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { stagger, useReveal } from "@/lib/motion";
-import { PROJECTS, type FilterKey } from "@/constants/projects";
+import { type FilterKey } from "@/constants/projects";
 import { WorkFilters } from "./WorkFilters";
 import { FeaturedCard } from "./FeaturedCard";
 import { ProjectCard } from "./ProjectCard";
+import type { InferSelectModel } from "drizzle-orm";
+import { projects as projectsSchema } from "@/db/schema";
 
+type ProjectType = InferSelectModel<typeof projectsSchema>;
 
 function EmptyState({ filter }: { filter: FilterKey }) {
   return (
@@ -33,15 +36,15 @@ function EmptyState({ filter }: { filter: FilterKey }) {
 }
 
 
-export function PortfolioGrid() {
+export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const [ref, inView] = useReveal();
 
   /* Filter logic */
   const filtered =
     activeFilter === "all"
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.service === activeFilter);
+      ? projects
+      : projects.filter((p) => p.service === activeFilter);
 
   /* Split: featured first, rest go to grid */
   const featured  = filtered.find((p) => p.featured) ?? filtered[0] ?? null;

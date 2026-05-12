@@ -260,8 +260,15 @@ export function ProjectsTable({ rows: initialRows }: { rows: ProjectListRow[] })
                   <td className="px-4 py-3 text-right">
                     <div className="flex items-center justify-end gap-1.5">
                       <Link
-                        href={`/work/${row.slug}`}
+                        href={`/admin/projects/${row.id}/preview`}
                         target="_blank"
+                        title="Preview case study"
+                        className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+                      >
+                        <Eye className="size-3.5" />
+                      </Link>
+                      <Link
+                        href={`/projects/${row.slug}`}
                         title="View live case study"
                         className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
                       >

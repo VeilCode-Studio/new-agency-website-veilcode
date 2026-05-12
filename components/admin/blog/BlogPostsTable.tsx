@@ -205,10 +205,11 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                     <div className="flex items-center justify-end gap-1.5">
                       <Link
                         href={`/admin/blog/${row.id}/preview`}
+                        target="_blank"
                         title="Preview post"
                         className="inline-grid size-7 place-items-center rounded-md border border-line text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
                       >
-                        <ExternalLink className="size-3.5" />
+                        <Eye className="size-3.5" />
                       </Link>
                       <Link
                         href={`/admin/blog/${row.id}/edit`}

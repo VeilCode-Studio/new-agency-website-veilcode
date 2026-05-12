@@ -6,16 +6,20 @@ import Image from "next/image";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
 import Link from "next/link";
+import type { InferSelectModel } from "drizzle-orm";
+import { projects } from "@/db/schema";
+
+type ProjectType = InferSelectModel<typeof projects>;
 
 interface Props {
-    project: Project;
+    project: ProjectType;
     index: number;
 }
 
 /* ─── VISUAL PANEL ────────────────────────────────────────────────────────── */
 /* Shows the first screenshot if src is set, otherwise the animated rings.    */
 
-function CardVisual({ project: p }: { project: Project }) {
+function CardVisual({ project: p }: { project: ProjectType }) {
     const { classes: c } = p;
     const heroShot = p.screenshots?.[0];
     const hasImage = !!heroShot?.src;

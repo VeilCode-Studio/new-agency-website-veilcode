@@ -5,13 +5,19 @@ import { motion } from "framer-motion";
 import { fadeUp, useReveal } from "@/lib/motion";
 import { PROJECTS } from "@/constants/projects";
 
-export function NextProject({ project: p }: { project: Project }) {
+export function NextProject({ 
+  project: p, 
+  nextProject: nextOverride 
+}: { 
+  project: Project; 
+  nextProject?: Project | null;
+}) {
   const [ref, inView] = useReveal("-40px");
   const [hovered, setHovered] = useState(false);
 
-  const next = p.nextSlug
-    ? PROJECTS.find((x) => x.slug === p.nextSlug) ?? null
-    : null;
+  const next = nextOverride !== undefined 
+    ? nextOverride 
+    : (p.nextSlug ? PROJECTS.find((x) => x.slug === p.nextSlug) ?? null : null);
 
   if (!next) return null;
 
