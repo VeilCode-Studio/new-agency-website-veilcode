@@ -3,11 +3,12 @@
 import { motion } from "framer-motion";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
-import { OVERVIEW_CARDS } from "@/constants";
 import { OverviewCard } from "./OverviewCard";
+import type { InferSelectModel } from "drizzle-orm";
+import { services } from "@/db/schema";
 
 
-export function ServicesOverview() {
+export function ServicesOverview({ serviceList }: { serviceList: InferSelectModel<typeof services>[] }) {
   const [ref, inView] = useReveal();
 
   return (
@@ -45,12 +46,12 @@ export function ServicesOverview() {
           animate={inView ? "visible" : "hidden"}
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            {OVERVIEW_CARDS.slice(0, 3).map((c, i) => (
+            {serviceList.slice(0, 3).map((c, i) => (
               <OverviewCard key={c.id} card={c} index={i} />
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-205 mx-auto">
-            {OVERVIEW_CARDS.slice(3).map((c, i) => (
+            {serviceList.slice(3).map((c, i) => (
               <OverviewCard key={c.id} card={c} index={i + 3} />
             ))}
           </div>

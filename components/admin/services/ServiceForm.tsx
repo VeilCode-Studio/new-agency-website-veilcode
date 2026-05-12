@@ -654,6 +654,16 @@ export function ServiceForm(props: ServiceFormProps) {
             {isPending && <Loader2 className="size-4 animate-spin" />}
             {isPending ? "Saving…" : props.mode === "edit" ? "Save changes" : "Create service"}
           </button>
+          
+          {props.mode === "edit" && props.id && (
+            <Link
+              href={`/admin/services/${props.id}/preview`}
+              className="mt-2 flex w-full items-center justify-center gap-2 rounded-md border border-line bg-surface py-2.5 text-sm font-medium text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
+            >
+              <Eye className="size-4" />
+              Preview Layout
+            </Link>
+          )}
         </div>
       </div>
     </form>

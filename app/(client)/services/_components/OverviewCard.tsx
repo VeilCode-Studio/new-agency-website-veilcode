@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
-import { OVERVIEW_CARDS } from "@/constants";
 import { fadeUp } from "@/lib/motion";
+import type { InferSelectModel } from "drizzle-orm";
+import { services } from "@/db/schema";
 
 
 export function OverviewCard({
   card,
   index,
 }: {
-  card: (typeof OVERVIEW_CARDS)[number];
+  card: InferSelectModel<typeof services>;
   index: number;
 }) {
   const [hovered, setHovered] = useState(false);
+  const c = card.overviewClasses;
 
   return (
     <motion.a
@@ -23,7 +25,7 @@ export function OverviewCard({
       className={`group relative flex flex-col rounded-xl p-8 bg-surface border border-line
         overflow-hidden no-underline cursor-pointer
         transition-all duration-300 hover:bg-surface-hi
-        ${card.hoverBorder} ${card.hoverShadow}`}
+        ${c.hoverBorder} ${c.hoverShadow}`}
     >
       {/* Number watermark */}
       <span
@@ -31,13 +33,13 @@ export function OverviewCard({
         className={`absolute -top-2 right-4 font-display font-extrabold
           text-[80px] leading-none tracking-tight select-none pointer-events-none
           opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-300
-          ${card.accent}`}
+          ${c.accent}`}
       >
         {card.number}
       </span>
 
       {/* Icon */}
-      <span className={`text-[28px] leading-none mb-5 block ${card.accent}`} aria-hidden>
+      <span className={`text-[28px] leading-none mb-5 block ${c.accent}`} aria-hidden>
         {card.icon}
       </span>
 
@@ -45,7 +47,7 @@ export function OverviewCard({
       <span
         className={`font-mono text-[10px] tracking-widest uppercase mb-3
           px-2.5 py-1 rounded border self-start
-          ${card.dimBg} ${card.border} ${card.accent}`}
+          ${c.dimBg} ${c.border} ${c.accent}`}
       >
         {card.tagline}
       </span>
@@ -64,14 +66,14 @@ export function OverviewCard({
       <ul className="space-y-1.5 mb-7 list-none p-0 m-0">
         {card.bullets.map((b) => (
           <li key={b} className="flex items-center gap-2.5 font-sans text-sm text-ink-muted">
-            <span className={`size-1 rounded-full shrink-0 bg-current ${card.accent}`} aria-hidden />
+            <span className={`size-1 rounded-full shrink-0 bg-current ${c.accent}`} aria-hidden />
             {b}
           </li>
         ))}
       </ul>
 
       {/* CTA */}
-      <div className={`flex items-center gap-1.5 font-sans text-sm font-medium ${card.accent}`}>
+      <div className={`flex items-center gap-1.5 font-sans text-sm font-medium ${c.accent}`}>
         <span>View full details</span>
         <AnimatedArrow hovered={hovered} />
       </div>

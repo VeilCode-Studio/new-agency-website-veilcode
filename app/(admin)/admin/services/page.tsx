@@ -43,13 +43,21 @@ export default async function ServicesPage() {
         title="Services"
         description="Manage the services shown on the public services page."
         action={
-          <Link
-            href="/admin/services/new"
-            className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"
-          >
-            <Plus className="size-4" />
-            New service
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/admin/services/preview"
+              className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
+            >
+              Live preview
+            </Link>
+            <Link
+              href="/admin/services/new"
+              className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"
+            >
+              <Plus className="size-4" />
+              New service
+            </Link>
+          </div>
         }
       />
 

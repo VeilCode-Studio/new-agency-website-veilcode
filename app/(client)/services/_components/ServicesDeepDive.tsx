@@ -1,12 +1,12 @@
 "use client";
-import { DEEP_DIVES } from "@/constants";
 import { ServiceDeepDiveCard } from "./ServicesDeepDiveCard";
+import type { InferSelectModel } from "drizzle-orm";
+import { services } from "@/db/schema";
 
-
-export function ServiceDeepDives() {
+export function ServiceDeepDives({ serviceList }: { serviceList: InferSelectModel<typeof services>[] }) {
   return (
     <>
-      {DEEP_DIVES.map((d, i) => (
+      {serviceList.map((d, i) => (
         <ServiceDeepDiveCard key={d.id} data={d} flipped={i % 2 !== 0} />
       ))}
     </>
