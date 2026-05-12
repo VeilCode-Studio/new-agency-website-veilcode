@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -11,6 +12,8 @@ import {
   Inbox,
   Mail,
   ShieldCheck,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,16 +30,33 @@ const NAV = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 border-r border-line bg-surface/40 px-3 py-5 md:flex md:flex-col">
-      <Link href="/admin" className="mb-6 flex items-center gap-2 px-2">
-        <span className="grid size-7 place-items-center rounded-md border border-brand-border bg-brand-dim font-display text-sm font-bold text-brand">
+    <aside
+      className={cn(
+        "sticky top-0 hidden h-dvh shrink-0 border-r border-line bg-surface/40 py-5 transition-all duration-300 md:flex md:flex-col relative",
+        isCollapsed ? "w-16 px-2" : "w-60 px-3"
+      )}
+    >
+      {/* Toggle button */}
+      <button
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="absolute -right-3 top-6 z-10 flex size-6 items-center justify-center rounded-full border border-line bg-surface text-ink-muted hover:text-ink shadow-sm transition-transform hover:scale-105 cursor-pointer"
+        aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+      >
+        {isCollapsed ? <ChevronRight className="size-3" /> : <ChevronLeft className="size-3" />}
+      </button>
+
+      <Link href="/admin" className={cn("mb-6 flex items-center gap-2", isCollapsed ? "justify-center px-0" : "px-2")}>
+        <span className="grid size-7 shrink-0 place-items-center rounded-md border border-brand-border bg-brand-dim font-display text-sm font-bold text-brand">
           V
         </span>
-        <span className="font-display text-sm font-semibold tracking-wide text-ink">
-          VeilCode Admin
-        </span>
+        {!isCollapsed && (
+          <span className="font-display text-sm font-semibold tracking-wide text-ink truncate transition-opacity duration-300">
+            VeilCode Admin
+          </span>
+        )}
       </Link>
 
       <nav className="flex flex-col gap-0.5">
@@ -47,23 +67,27 @@ export function AdminSidebar() {
             <Link
               key={href}
               href={href}
+              title={isCollapsed ? label : undefined}
               className={cn(
-                "group flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm transition-colors",
+                "group flex items-center rounded-md text-sm transition-colors",
+                isCollapsed ? "justify-center p-2" : "gap-2.5 px-2.5 py-2",
                 active
                   ? "bg-brand-dim text-brand"
                   : "text-ink-muted hover:bg-surface-hi hover:text-ink",
               )}
             >
               <Icon className="size-4 shrink-0" />
-              <span>{label}</span>
+              {!isCollapsed && <span className="truncate">{label}</span>}
             </Link>
           );
         })}
       </nav>
 
-      <div className="mt-auto rounded-md border border-line bg-surface px-3 py-2.5 text-[11px] leading-relaxed text-ink-faint">
-        VeilCode internal. Do not share credentials.
-      </div>
+      {!isCollapsed && (
+        <div className="mt-auto rounded-md border border-line bg-surface px-3 py-2.5 text-[11px] leading-relaxed text-ink-faint truncate transition-opacity duration-300">
+          VeilCode internal. Do not share credentials.
+        </div>
+      )}
     </aside>
   );
 }
