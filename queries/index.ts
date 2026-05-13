@@ -34,6 +34,7 @@ export const getAllProjects = async () => {
   return allProjects;
 };
 
+
 // blog database queries
 export const getPublishedBlogs = async () => {
   const blogsData = await db
@@ -42,4 +43,13 @@ export const getPublishedBlogs = async () => {
     .where(eq(blogPosts.published, true))
     .orderBy(desc(blogPosts.publishedAt));
   return blogsData;
+};
+
+export const getBlogBySlug = async (slug: string) => {
+  const blog = await db
+    .select()
+    .from(blogPosts)
+    .where(eq(blogPosts.slug, slug))
+    .limit(1);
+  return blog[0];
 };
