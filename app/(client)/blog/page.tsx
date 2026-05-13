@@ -27,10 +27,21 @@ const page = async () => {
   const categories = Array.from(new Set(allPosts.map((p) => p.category))).sort();
   const tags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort();
 
+  const totalReadingMinutes = allPosts.reduce((total, blog) => {
+    const minutes = Number.parseInt(blog.readTime, 10);
+    return total + (Number.isNaN(minutes) ? 0 : minutes);
+  }, 0);
+
 
   return (
     <>
-      <BlogHero />
+      <BlogHero
+        stats={{
+          articlesPublished: allPosts.length,
+          disciplinesCovered: categories.length,
+          readingMinutes: totalReadingMinutes,
+        }}
+      />
       <FeaturedPost post={featured} />
 
       <PostGrid
@@ -38,7 +49,7 @@ const page = async () => {
         categories={categories}
         tags={tags}
       />
-      
+
       <NewsletterCTA />
     </>
   )

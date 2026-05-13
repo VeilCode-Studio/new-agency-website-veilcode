@@ -40,6 +40,8 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const [ref, inView] = useReveal();
 
+  console.log("All projects:", projects);
+
   /* Filter logic */
   const filtered =
     activeFilter === "all"
@@ -50,10 +52,12 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
   const featured  = filtered.find((p) => p.featured) ?? filtered[0] ?? null;
   const gridItems = filtered.filter((p) => p !== featured);
 
+
+
   return (
     <>
       {/* Sticky filter bar */}
-      <WorkFilters active={activeFilter} onChange={setActiveFilter} />
+      <WorkFilters active={activeFilter} onChange={setActiveFilter} projects={projects} />
 
       {/* Content */}
       <section className="py-16 px-6 md:px-10">
@@ -85,7 +89,7 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
 
                   {/* Grid */}
                   {gridItems.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
                       {gridItems.map((p, i) => (
                         <ProjectCard key={p.slug} project={p} index={i} />
                       ))}

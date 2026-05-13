@@ -8,32 +8,47 @@ import {
   AccentLine,
 } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
-import { POSTS } from "@/constants/blog";
 
-interface BlogHeroProps {
+type BlogHeroStats = {
   articlesPublished: number;
   disciplinesCovered: number;
   readingMinutes: number;
-}
+};
 
-const STATS = [
-  { value: `${POSTS.length}`,          label: "Articles published" },
-  { value: "3",                         label: "Disciplines covered" },
-  { value: `${POSTS.length * 9} min+`,  label: "Of reading material" },
-] as const;
+export function BlogHero({ stats }: { stats: BlogHeroStats }) {
+  const statItems = [
+    {
+      value: `${stats.articlesPublished}`,
+      label: "Articles published",
+    },
+    {
+      value: `${stats.disciplinesCovered}`,
+      label: "Disciplines covered",
+    },
+    {
+      value: `${stats.readingMinutes} min+`,
+      label: "Of reading material",
+    },
+  ] as const;
 
-export function BlogHero() {
   return (
     <section className="relative min-h-[62vh] flex items-center overflow-hidden">
       <GridBg />
-      <GlowOrb color="rgba(0,229,255,0.10)"   size={500} top="5%"   left="56%" />
-      <GlowOrb color="rgba(129,140,248,0.07)" size={360} bottom="0%" left="2%" delay="2s" />
+      <GlowOrb color="rgba(0,229,255,0.10)" size={500} top="5%" left="56%" />
+      <GlowOrb
+        color="rgba(129,140,248,0.07)"
+        size={360}
+        bottom="0%"
+        left="2%"
+        delay="2s"
+      />
 
-      {/* Scan line */}
-      <div aria-hidden
+      <div
+        aria-hidden
         className="absolute inset-x-0 h-px pointer-events-none
           bg-linear-to-r from-transparent via-brand/20 to-transparent
-          animate-scan" />
+          animate-scan"
+      />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-20">
         <motion.div
@@ -63,17 +78,17 @@ export function BlogHero() {
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-140 mb-12"
           >
-            Engineering deep-dives, design thinking, and practical AI — written
-            by the team that builds VeilCode&apos;s products. No content marketing.
-            Just things we genuinely wanted to write.
+            Engineering deep dives, design thinking, and practical AI written by
+            the team behind VeilCode products.
           </motion.p>
 
-          {/* Stats */}
           <motion.div variants={fadeUp(0.24)} className="flex flex-wrap gap-10">
-            {STATS.map(({ value, label }) => (
+            {statItems.map(({ value, label }) => (
               <div key={label} className="flex flex-col gap-1">
-                <span className="font-display font-extrabold text-3xl tracking-tight
-                  text-brand drop-shadow-[0_0_14px_var(--color-brand-glow)]">
+                <span
+                  className="font-display font-extrabold text-3xl tracking-tight
+                  text-brand drop-shadow-[0_0_14px_var(--color-brand-glow)]"
+                >
                   {value}
                 </span>
                 <span className="font-sans text-xs text-ink-muted tracking-wide">
@@ -85,9 +100,11 @@ export function BlogHero() {
         </motion.div>
       </div>
 
-      <div aria-hidden
+      <div
+        aria-hidden
         className="absolute bottom-0 inset-x-0 h-28
-          bg-linear-to-t from-page to-transparent pointer-events-none" />
+          bg-linear-to-t from-page to-transparent pointer-events-none"
+      />
     </section>
   );
 }

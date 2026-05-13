@@ -1214,24 +1214,6 @@ export const FILTER_TABS: FilterTab[] = [
     },
   },
   {
-    key: "data",
-    label: "Data Analytics",
-    classes: {
-      active: "bg-svc-data-dim border-svc-data-border text-svc-data",
-      dot: "bg-svc-data",
-      dotGlow: "shadow-[0_0_6px_var(--color-svc-data)]",
-    },
-  },
-  {
-    key: "social",
-    label: "Social Media",
-    classes: {
-      active: "bg-svc-social-dim border-svc-social-border text-svc-social",
-      dot: "bg-svc-social",
-      dotGlow: "shadow-[0_0_6px_var(--color-svc-social)]",
-    },
-  },
-  {
     key: "ai",
     label: "AI Automation",
     classes: {
