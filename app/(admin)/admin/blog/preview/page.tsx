@@ -44,6 +44,11 @@ export default async function AdminBlogIndexPreviewPage() {
   const categories = Array.from(new Set(allPosts.map((p) => p.category))).sort();
   const tags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort();
 
+  const totalReadingMinutes = allPosts.reduce((total, post) => {
+  const minutes = Number.parseInt(post.readTime, 10);
+  return total + (Number.isNaN(minutes) ? 0 : minutes);
+}, 0);
+
   return (
     <div className="rounded-2xl border border-line bg-page overflow-clip">
       {/* Admin Preview Banner */}
@@ -60,7 +65,13 @@ export default async function AdminBlogIndexPreviewPage() {
 
       {/* Main Client Content */}
       <div className="pb-12">
-        <BlogHero />
+        <BlogHero
+          stats={{
+            articlesPublished: allPosts.length,
+            disciplinesCovered: categories.length,
+            readingMinutes: totalReadingMinutes,
+          }}
+        />
         {featured && <FeaturedPost post={featured} />}
         <PostGrid posts={gridPosts} categories={categories} tags={tags} />
         <NewsletterCTA />
