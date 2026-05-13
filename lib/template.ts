@@ -452,7 +452,7 @@ export const clientContactFormTemplate = async ({
                       <a href="https://veilcode.studio"
                         style="color: #555; text-decoration: underline;
                           text-underline-offset: 2px;">
-                        veilcodestudio.vercel.app
+                        https://veilcode.studio
                       </a>
                     </p>
                   </td>
