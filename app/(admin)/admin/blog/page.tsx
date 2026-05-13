@@ -27,6 +27,7 @@ export default async function BlogPage() {
         excerpt: blogPosts.excerpt,
         category: blogPosts.category,
         heroSrc: blogPosts.heroSrc,
+        featured: blogPosts.featured,
         publishedAt: blogPosts.publishedAt,
         readTime: blogPosts.readTime,
         published: blogPosts.published,

@@ -36,6 +36,7 @@ export interface BlogPost {
   excerpt: string;
   category: string;
   tags: string[];
+  featured: boolean;
   publishedAt: string; // ISO date string
   readTime: string;
   author: BlogAuthor;
@@ -101,6 +102,7 @@ export const POSTS: BlogPost[] = [
       "Performance optimisation isn't a nice-to-have when your users are on 3G in Kampala or Nairobi. Here's the exact stack and techniques we use to build sub-2s load times across East Africa.",
     category: "Engineering",
     tags: ["Next.js", "Performance", "Web Development", "East Africa"],
+    featured: true,
     publishedAt: "2024-11-14",
     readTime: "9 min read",
     author: FRANK,
@@ -363,6 +365,7 @@ export default function RootLayout({ children }) {
       "Building an LLM prototype takes an afternoon. Getting it to production takes months. After shipping 6 agent systems this year, here's the gap between the demo and reality.",
     category: "AI & Automation",
     tags: ["AI", "LangChain", "LangGraph", "Production", "Architecture"],
+    featured: false,
     publishedAt: "2024-10-02",
     readTime: "12 min read",
     author: RONALD,
@@ -538,6 +541,7 @@ graph.add_conditional_edges("process", should_escalate)`,
       "Most design systems start as a solution and end up as a problem. Here's how we build component libraries that teams actually want to use — and keep using.",
     category: "Design",
     tags: ["Design Systems", "Tailwind CSS", "React", "Component Design"],
+    featured: false,
     publishedAt: "2024-08-19",
     readTime: "8 min read",
     author: AISHA,
@@ -731,7 +735,7 @@ export function getPostsByCategory(category: string): BlogPost[] {
 }
 
 export function getFeaturedPost(): BlogPost {
-  return POSTS[0];
+  return POSTS.find((p) => p.featured) ?? POSTS[0];
 }
 
 export function getRecentPosts(exclude?: string, limit = 20): BlogPost[] {

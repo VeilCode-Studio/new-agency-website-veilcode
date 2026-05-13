@@ -38,8 +38,8 @@ export default async function AdminBlogIndexPreviewPage() {
   }
 
   const allPosts = rows.map(mapDbPostToClientPost);
-  const featured = allPosts[0];
-  const gridPosts = allPosts.slice(1);
+  const featured = allPosts.find((post) => post.featured) ?? allPosts[0];
+  const gridPosts = allPosts.filter((post) => post.slug !== featured.slug);
 
   const categories = Array.from(new Set(allPosts.map((p) => p.category))).sort();
   const tags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort();

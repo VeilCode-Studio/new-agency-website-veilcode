@@ -7,11 +7,12 @@ import Link from "next/link";
 import { toast } from "sonner";
 import {
   Plus, Trash2, Upload, Loader2, ChevronUp, ChevronDown,
-  RefreshCw, Eye, EyeOff, RotateCcw,
+  RefreshCw, Eye, EyeOff, RotateCcw, Star,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { BlogAuthor, TocEntry, ContentBlock } from "@/constants/blog";
 import type { BlogPostClasses } from "@/types/content";
+import { Button } from "@/components/ui/button";
 
 // Form data type
 
@@ -21,6 +22,7 @@ export type BlogFormData = {
   excerpt: string;
   category: string;
   tags: string[];
+  featured: boolean;
   publishedAt: string; // YYYY-MM-DD
   readTime: string;
   author: BlogAuthor;
@@ -92,6 +94,7 @@ const EMPTY: BlogFormData = {
   excerpt: "",
   category: "",
   tags: [],
+  featured: false,
   publishedAt: new Date().toISOString().slice(0, 10),
   readTime: "",
   author: AUTHOR_PRESETS.frank,
@@ -176,7 +179,7 @@ function ChipEditor({
 
   return (
     <Field label={label}>
-      <div className="flex min-h-[42px] flex-wrap gap-1.5 rounded-md border border-line bg-page p-2">
+      <div className="flex min-h-10.5 flex-wrap gap-1.5 rounded-md border border-line bg-page p-2">
         {values.map((v) => (
           <span
             key={v}
@@ -490,6 +493,7 @@ function BlockEditor({
       {/* Block header */}
       <div className="flex items-center gap-2 border-b border-line px-3 py-2">
         <select
+          title="Block type"
           value={block.type}
           onChange={(e) => changeType(e.target.value as BlockType)}
           className="rounded border border-line bg-surface px-2 py-0.5 text-[11px] font-medium text-ink-muted focus:outline-none"
@@ -499,29 +503,29 @@ function BlockEditor({
           ))}
         </select>
         <div className="ml-auto flex items-center gap-0.5">
-          <button
+          <Button
             type="button"
             onClick={onUp}
             disabled={!canUp}
             className="rounded p-1 text-ink-faint transition-colors hover:text-ink disabled:opacity-25"
           >
             <ChevronUp className="size-3.5" />
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={onDown}
             disabled={!canDown}
             className="rounded p-1 text-ink-faint transition-colors hover:text-ink disabled:opacity-25"
           >
             <ChevronDown className="size-3.5" />
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             onClick={onRemove}
             className="rounded p-1 text-ink-faint hover:text-destructive"
           >
             <Trash2 className="size-3.5" />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -571,7 +575,7 @@ function BlockEditor({
                   placeholder="List item HTML…"
                   className={cn(inputCls, "flex-1 text-xs")}
                 />
-                <button
+                <Button
                   type="button"
                   onClick={() => {
                     const next = block.items.filter((_, idx) => idx !== i);
@@ -580,16 +584,16 @@ function BlockEditor({
                   className="shrink-0 text-ink-faint hover:text-destructive"
                 >
                   <Trash2 className="size-3.5" />
-                </button>
+                </Button>
               </div>
             ))}
-            <button
+            <Button
               type="button"
               onClick={() => onUpdate({ ...block, items: [...block.items, ""] } as ContentBlock)}
               className="flex items-center gap-1.5 rounded-md border border-dashed border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:border-brand hover:text-brand"
             >
               <Plus className="size-3" /> Add item
-            </button>
+            </Button>
           </div>
         )}
 
@@ -618,6 +622,7 @@ function BlockEditor({
         {block.type === "callout" && (
           <div className="space-y-2">
             <select
+              title="Callout variant"
               value={block.variant}
               onChange={(e) =>
                 onUpdate({ ...block, variant: e.target.value as "info" | "warning" | "tip" })
@@ -1003,6 +1008,29 @@ export function BlogPostForm(props: BlogFormProps) {
             >
               <span>{data.published ? "Published" : "Draft"}</span>
               {data.published ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
+            </button>
+          </div>
+
+          {/* Featured */}
+          <div className="rounded-xl border border-line bg-surface/40 p-4">
+            <h3 className="mb-3 font-display text-xs font-semibold uppercase tracking-wider text-ink-muted">
+              Featured
+            </h3>
+            <button
+              type="button"
+              onClick={() => set("featured", !data.featured)}
+              className={cn(
+                "flex w-full items-center justify-between rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors",
+                data.featured
+                  ? "border-brand-border bg-brand-dim text-brand"
+                  : "border-line text-ink-muted hover:border-line-hi",
+              )}
+            >
+              <span>{data.featured ? "Featured" : "Not featured"}</span>
+              <Star
+                className="size-4"
+                fill={data.featured ? "currentColor" : "none"}
+              />
             </button>
           </div>
 

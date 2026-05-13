@@ -132,11 +132,6 @@ export const FOOTER_COLS = [
     links: [
       { label: "Web Solutions", href: "/services/#web-solutions" },
       { label: "Mobile Applications", href: "/services/#mobile-applications" },
-      { label: "Data Analytics", href: "/services/#data-analytics" },
-      {
-        label: "Social Media Marketing",
-        href: "/services/#social-media-marketing",
-      },
       { label: "AI Automation", href: "/services/#ai-automation" },
     ],
   },

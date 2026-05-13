@@ -10,6 +10,12 @@ import {
 import { fadeUp, stagger } from "@/lib/motion";
 import { POSTS } from "@/constants/blog";
 
+interface BlogHeroProps {
+  articlesPublished: number;
+  disciplinesCovered: number;
+  readingMinutes: number;
+}
+
 const STATS = [
   { value: `${POSTS.length}`,          label: "Articles published" },
   { value: "3",                         label: "Disciplines covered" },

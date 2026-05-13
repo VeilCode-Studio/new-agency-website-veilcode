@@ -9,6 +9,7 @@ export function mapDbPostToClientPost(row: InferSelectModel<typeof blogPosts>): 
     excerpt: row.excerpt,
     category: row.category,
     tags: row.tags,
+    featured: row.featured,
     publishedAt: row.publishedAt instanceof Date ? row.publishedAt.toISOString() : row.publishedAt,
     readTime: row.readTime,
     author: row.author,

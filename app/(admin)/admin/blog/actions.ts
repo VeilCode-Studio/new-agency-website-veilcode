@@ -40,3 +40,21 @@ export async function togglePublishPostAction(
     return { error: "Failed to update post" };
   }
 }
+
+export async function toggleFeaturedPostAction(
+  id: number,
+  featured: boolean,
+): Promise<{ error?: string }> {
+  try {
+    await guardAdmin();
+    await db
+      .update(blogPosts)
+      .set({ featured, updatedAt: new Date() })
+      .where(eq(blogPosts.id, id));
+    revalidatePath("/admin/blog");
+    return {};
+  } catch (err) {
+    console.error("[admin/blog] toggleFeatured error:", err);
+    return { error: "Failed to update post" };
+  }
+}

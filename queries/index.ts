@@ -1,8 +1,8 @@
 // import "server-only";
 
-import { projects, services } from "@/db/schema";
+import { blogPosts, projects, services } from "@/db/schema";
 import { db } from "@/db/drizzle";
-import { eq, asc } from "drizzle-orm";
+import { eq, asc, desc } from "drizzle-orm";
 
 // service database queries
 export const getPublishedServices = async () => {
@@ -22,3 +22,12 @@ export const getPublishedProjects = async () => {
     return projectsData;
 }
 
+
+// blog database queries
+export const getPublishedBlogs = async () => {
+    const blogsData = await db.select()
+        .from(blogPosts)
+        .where(eq(blogPosts.published, true))
+        .orderBy(desc(blogPosts.publishedAt))
+    return blogsData;
+}

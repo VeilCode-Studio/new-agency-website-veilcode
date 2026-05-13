@@ -225,6 +225,7 @@ export const blogPosts = pgTable("blog_posts", {
   excerpt: text("excerpt").notNull(),
   category: text("category").notNull(),
   tags: text("tags").array().notNull(),
+  featured: boolean("featured").default(false).notNull(),
   publishedAt: timestamp("published_at").notNull(),
   readTime: text("read_time").notNull(),
   author: jsonb("author").$type<BlogAuthor>().notNull(),
@@ -238,3 +239,5 @@ export const blogPosts = pgTable("blog_posts", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
+
+export type BlogPost = typeof blogPosts.$inferSelect;

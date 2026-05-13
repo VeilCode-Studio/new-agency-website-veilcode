@@ -33,6 +33,7 @@ export default async function EditBlogPostPage({
     excerpt: row.excerpt,
     category: row.category,
     tags: row.tags ?? [],
+    featured: row.featured,
     publishedAt: new Date(row.publishedAt).toISOString().slice(0, 10),
     readTime: row.readTime,
     author: row.author,

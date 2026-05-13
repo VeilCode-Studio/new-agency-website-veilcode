@@ -4,10 +4,11 @@ import React, { useState, useTransition } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "sonner";
-import { Pencil, Trash2, Eye, EyeOff, ExternalLink } from "lucide-react";
+import { Pencil, Trash2, Eye, EyeOff, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   deletePostAction,
+  toggleFeaturedPostAction,
   togglePublishPostAction,
 } from "@/app/(admin)/admin/blog/actions";
 
@@ -18,6 +19,7 @@ export type BlogPostListRow = {
   excerpt: string;
   category: string;
   heroSrc: string | null;
+  featured: boolean;
   publishedAt: Date;
   readTime: string;
   published: boolean;
@@ -55,6 +57,20 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
         toast.error(res.error);
       } else {
         toast.success(next ? "Post published" : "Post set to draft");
+      }
+    });
+  }
+
+  function handleToggleFeatured(row: BlogPostListRow) {
+    const next = !row.featured;
+    setRows((prev) => prev.map((r) => (r.id === row.id ? { ...r, featured: next } : r)));
+    startTransition(async () => {
+      const res = await toggleFeaturedPostAction(row.id, next);
+      if (res.error) {
+        setRows((prev) => prev.map((r) => (r.id === row.id ? { ...r, featured: row.featured } : r)));
+        toast.error(res.error);
+      } else {
+        toast.success(next ? "Marked as featured" : "Removed from featured");
       }
     });
   }
@@ -103,6 +119,7 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
             <th className="hidden px-4 py-3 lg:table-cell">Category</th>
             <th className="hidden px-4 py-3 md:table-cell">Published</th>
             <th className="hidden px-4 py-3 md:table-cell">Read time</th>
+            <th className="px-4 py-3 text-center">Featured</th>
             <th className="px-4 py-3 text-center">Status</th>
             <th className="px-4 py-3 text-right">Actions</th>
           </tr>
@@ -170,6 +187,27 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                   {/* Read time */}
                   <td className="hidden px-4 py-3 text-xs text-ink-faint md:table-cell">
                     {row.readTime}
+                  </td>
+
+                  {/* Featured toggle */}
+                  <td className="px-4 py-3 text-center">
+                    <button
+                      type="button"
+                      onClick={() => handleToggleFeatured(row)}
+                      disabled={isPending}
+                      title={row.featured ? "Remove from featured" : "Mark as featured"}
+                      className={cn(
+                        "inline-grid size-7 place-items-center rounded-md border transition-colors",
+                        row.featured
+                          ? "border-brand-border bg-brand-dim text-brand"
+                          : "border-line text-ink-faint hover:text-ink-muted",
+                      )}
+                    >
+                      <Star
+                        className="size-3.5"
+                        fill={row.featured ? "currentColor" : "none"}
+                      />
+                    </button>
                   </td>
 
                   {/* Published toggle */}
@@ -240,7 +278,7 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                 {/* Inline delete confirmation */}
                 {isConfirming && (
                   <tr className="border-t border-destructive/20 bg-destructive/5">
-                    <td colSpan={6} className="px-4 py-2.5">
+                    <td colSpan={7} className="px-4 py-2.5">
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-xs text-ink-muted">
                           Permanently delete{" "}
