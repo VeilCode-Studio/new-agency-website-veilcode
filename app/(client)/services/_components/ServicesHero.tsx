@@ -12,8 +12,6 @@ import { fadeUp, stagger } from "@/lib/motion";
 const SERVICE_PILLS = [
   { label: "Web Solutions",          accent: "text-svc-web    bg-svc-web-dim    border-svc-web-border"    },
   { label: "Mobile Applications",    accent: "text-svc-mobile bg-svc-mobile-dim border-svc-mobile-border" },
-  { label: "Data Analytics",         accent: "text-svc-data   bg-svc-data-dim   border-svc-data-border"   },
-  { label: "Social Media Marketing", accent: "text-svc-social bg-svc-social-dim border-svc-social-border" },
   { label: "AI Automation",          accent: "text-svc-ai     bg-svc-ai-dim     border-svc-ai-border"     },
 ] as const;
 

@@ -35,7 +35,7 @@ export default async function InquiriesPage() {
         title="Inquiries"
         description="All project enquiries submitted through the contact form."
       />
-      <InquiriesTable rows={rows} />
+      <InquiriesTable rows={rows} key={rows.map((row) => row.id).join("-")} />
     </>
   );
 }

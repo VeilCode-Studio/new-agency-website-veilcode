@@ -60,7 +60,7 @@ export async function POST(
         const token = generateUnsubscribeToken(sub.email);
         const unsubUrl = `${frontendUrl}/api/newsletter/unsubscribe?email=${encodeURIComponent(sub.email)}&token=${token}`;
         return {
-          from: "VeilCode <hello@veilcode.studio>",
+          from: "VeilCode <frank@veilcode.studio>",
           to: sub.email,
           subject: campaign.subject,
           html: buildCampaignHtml({

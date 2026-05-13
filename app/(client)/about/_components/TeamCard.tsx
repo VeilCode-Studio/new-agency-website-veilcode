@@ -97,14 +97,14 @@ export function TeamCard({
           </div>
 
           {/* Social links */}
-          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          {/* <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <SocialLink href={member.linkedin} label={`${member.name} on LinkedIn`}>
               <LinkedInIcon />
             </SocialLink>
             <SocialLink href={member.twitter} label={`${member.name} on Twitter`}>
               <TwitterIcon />
             </SocialLink>
-          </div>
+          </div> */}
         </div>
 
         {/* Name + role */}

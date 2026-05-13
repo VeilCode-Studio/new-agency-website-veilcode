@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
         // send a confirmation to the client
         const { error: clientError } = await resend.emails.send({
-            from: "VeilCode <hello@veilcode.studio>",
+            from: "VeilCode <frank@veilcode.studio>",
             to: [email],
             subject: "Thank you for reaching out - VeilCode",
             html: await clientContactFormTemplate({ name, service, budget, timeline, company })
@@ -47,8 +47,8 @@ export async function POST(req: NextRequest) {
 
         // send a lead email to the admin
         const { error: adminError } = await resend.emails.send({
-            from: "VeilCode <hello@veilcode.studio>",
-            to: ["ecommercedock@gmail.com", "hello@veilcode.studio"],
+            from: "VeilCode <frank@veilcode.studio>",
+            to: ["ecommercedock@gmail.com", "frank@veilcode.studio"],
             subject: `New Project Enquiry from ${name}`,
             html: await adminLeadConfirmationTemplate({ name, service, budget, timeline, company, email, message })
         });

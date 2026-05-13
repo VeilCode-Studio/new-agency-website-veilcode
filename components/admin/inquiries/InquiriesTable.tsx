@@ -1,10 +1,23 @@
 "use client";
 
 import React, { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Trash2, ChevronDown, Copy, Mail, Building2, Target } from "lucide-react";
+import {
+  Trash2,
+  ChevronDown,
+  Copy,
+  Mail,
+  Building2,
+  Target,
+  RefreshCw,
+  Loader2,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
-import { deleteInquiryAction } from "@/app/(admin)/admin/inquiries/actions";
+import {
+  deleteInquiriesAction,
+  deleteInquiryAction,
+} from "@/app/(admin)/admin/inquiries/actions";
 
 export type InquiryRow = {
   id: number;
@@ -168,10 +181,16 @@ function DetailPanel({ row }: { row: InquiryRow }) {
 // Main table
 
 export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
+  const router = useRouter();
   const [rows, setRows] = useState(initialRows);
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<number | null>(null);
+  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
+  const [confirmBulkDelete, setConfirmBulkDelete] = useState(false);
   const [isPending, startTransition] = useTransition();
+
+  const selectedCount = selectedIds.size;
+  const allSelected = rows.length > 0 && selectedCount === rows.length;
 
   function toggleExpand(id: number) {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -183,9 +202,42 @@ export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
     navigator.clipboard.writeText(email).then(() => toast.success("Email copied"));
   }
 
+  function handleRefresh() {
+    router.refresh();
+    toast.success("Inquiries refreshed");
+  }
+
+  function toggleSelect(id: number) {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+    setConfirmBulkDelete(false);
+  }
+
+  function toggleSelectAll() {
+    setSelectedIds((prev) => {
+      if (rows.length > 0 && prev.size === rows.length) return new Set();
+      return new Set(rows.map((row) => row.id));
+    });
+    setConfirmBulkDelete(false);
+  }
+
+  function clearSelection() {
+    setSelectedIds(new Set());
+    setConfirmBulkDelete(false);
+  }
+
   function handleDelete(row: InquiryRow) {
     setRows((prev) => prev.filter((r) => r.id !== row.id));
     setConfirmDeleteId(null);
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      next.delete(row.id);
+      return next;
+    });
     if (expandedId === row.id) setExpandedId(null);
     startTransition(async () => {
       const res = await deleteInquiryAction(row.id);
@@ -199,14 +251,54 @@ export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
     });
   }
 
+  function handleBulkDelete() {
+    const ids = Array.from(selectedIds);
+    const deletedRows = rows.filter((row) => selectedIds.has(row.id));
+
+    setRows((prev) => prev.filter((row) => !selectedIds.has(row.id)));
+    setSelectedIds(new Set());
+    setConfirmBulkDelete(false);
+    if (expandedId && selectedIds.has(expandedId)) setExpandedId(null);
+    if (confirmDeleteId && selectedIds.has(confirmDeleteId)) setConfirmDeleteId(null);
+
+    startTransition(async () => {
+      const res = await deleteInquiriesAction(ids);
+      if (res.error) {
+        setRows((prev) =>
+          [...deletedRows, ...prev].sort(
+            (a, b) =>
+              new Date(b.createAt ?? 0).getTime() - new Date(a.createAt ?? 0).getTime(),
+          ),
+        );
+        setSelectedIds(new Set(ids));
+        toast.error(res.error);
+      } else {
+        toast.success(`${ids.length} ${ids.length === 1 ? "inquiry" : "inquiries"} deleted`);
+      }
+    });
+  }
+
   if (rows.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-line bg-surface/40 py-24 text-center">
-        <div className="font-display text-lg font-semibold text-ink">No inquiries yet</div>
-        <p className="mt-1.5 max-w-xs text-sm text-ink-muted">
-          Submissions from the contact form will appear here.
-        </p>
-      </div>
+      <>
+        <div className="mb-4 flex justify-end">
+          <button
+            type="button"
+            onClick={handleRefresh}
+            disabled={isPending}
+            className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi disabled:opacity-50"
+          >
+            <RefreshCw className="size-4" />
+            Refresh
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center rounded-xl border border-line bg-surface/40 py-24 text-center">
+          <div className="font-display text-lg font-semibold text-ink">No inquiries yet</div>
+          <p className="mt-1.5 max-w-xs text-sm text-ink-muted">
+            Submissions from the contact form will appear here.
+          </p>
+        </div>
+      </>
     );
   }
 
@@ -214,10 +306,80 @@ export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
     <>
       <InquiryStats rows={rows} />
 
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+        <div className="min-h-9">
+          {selectedCount > 0 ? (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-ink-muted">
+                {selectedCount} selected
+              </span>
+              {confirmBulkDelete ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={handleBulkDelete}
+                    disabled={isPending}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  >
+                    {isPending ? <Loader2 className="size-3 animate-spin" /> : <Trash2 className="size-3" />}
+                    Confirm delete
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setConfirmBulkDelete(false)}
+                    disabled={isPending}
+                    className="rounded-md border border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:text-ink disabled:opacity-50"
+                  >
+                    Cancel
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setConfirmBulkDelete(true)}
+                  disabled={isPending}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 px-3 py-1.5 text-xs font-medium text-destructive transition-colors hover:bg-destructive/10 disabled:opacity-50"
+                >
+                  <Trash2 className="size-3" />
+                  Delete selected
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={clearSelection}
+                disabled={isPending}
+                className="rounded-md border border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:text-ink disabled:opacity-50"
+              >
+                Clear
+              </button>
+            </div>
+          ) : null}
+        </div>
+
+        <button
+          type="button"
+          onClick={handleRefresh}
+          disabled={isPending}
+          className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi disabled:opacity-50"
+        >
+          <RefreshCw className="size-4" />
+          Refresh
+        </button>
+      </div>
+
       <div className="overflow-hidden rounded-xl border border-line">
         <table className="w-full text-sm">
           <thead className="bg-surface/40 text-left text-[11px] uppercase tracking-wider text-ink-muted">
             <tr>
+              <th className="w-10 px-4 py-3">
+                <input
+                  type="checkbox"
+                  checked={allSelected}
+                  onChange={toggleSelectAll}
+                  aria-label="Select all inquiries"
+                  className="size-4 rounded border-line bg-page text-brand accent-brand"
+                />
+              </th>
               <th className="px-4 py-3">Name</th>
               <th className="hidden px-4 py-3 md:table-cell">Email</th>
               <th className="px-4 py-3">Service</th>
@@ -242,9 +404,24 @@ export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
                       isExpanded
                         ? "bg-brand-dim/30 hover:bg-brand-dim/40"
                         : "hover:bg-surface/30",
+                      selectedIds.has(row.id) && "bg-surface/50",
                       isConfirming && "bg-destructive/5",
                     )}
                   >
+                    {/* Selection */}
+                    <td
+                      className="px-4 py-3"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.has(row.id)}
+                        onChange={() => toggleSelect(row.id)}
+                        aria-label={`Select inquiry from ${row.name}`}
+                        className="size-4 rounded border-line bg-page text-brand accent-brand"
+                      />
+                    </td>
+
                     {/* Name + expand chevron */}
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
@@ -343,7 +520,7 @@ export function InquiriesTable({ rows: initialRows }: { rows: InquiryRow[] }) {
                   {/* Inline delete confirmation */}
                   {isConfirming && (
                     <tr className="border-t border-destructive/20 bg-destructive/5">
-                      <td colSpan={6} className="px-4 py-2.5">
+                      <td colSpan={7} className="px-4 py-2.5">
                         <div className="flex items-center justify-between gap-4">
                           <p className="text-xs text-ink-muted">
                             Permanently delete inquiry from{" "}

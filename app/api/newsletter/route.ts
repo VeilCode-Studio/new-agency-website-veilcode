@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
         const confirmUrl = `${process.env.FRONTEND_URL}/api/newsletter/confirm?token=${confirmToken}`;
 
         const { error } = await resend.emails.send({
-            from: "VeilCode <hello@veilcode.studio>",
+            from: "VeilCode <frank@veilcode.studio>",
             to: email,
             subject: "Confirm your VeilCode Newsletter subscription",
             html: await clientNewsletterConfirmationTemplate(confirmUrl)
@@ -76,6 +76,6 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             success: false,
             message: (error as Error).message || "Something went wrong!"
-        })
+        }, { status: 500 })
     }
 }

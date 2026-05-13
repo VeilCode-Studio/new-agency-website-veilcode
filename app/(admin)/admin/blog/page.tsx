@@ -49,7 +49,6 @@ export default async function BlogPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/admin/blog/preview"
-              target="_blank"
               className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi"
             >
               <Eye className="size-4" />
