@@ -629,6 +629,17 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = [
         desc: "Ongoing maintenance plan to handle OS updates, dependency upgrades, and feature iterations.",
       },
     ],
+    bullets: [
+      "Cross platform iOS and Android apps from one maintainable codebase",
+      "Fast, intuitive mobile interfaces designed around real user flows",
+      "React Native and Expo development for scalable product delivery",
+      "Authentication, storage, APIs, payments, and push notification integration",
+      "Offline aware architecture for unstable network conditions",
+      "Clean app navigation, role based access, and secure user sessions",
+      "Performance optimization for both high end and low end devices",
+      "App Store and Google Play deployment support",
+      "Post launch maintenance, updates, and feature iteration",
+    ],
     stack: [
       "React Native",
       "Expo",

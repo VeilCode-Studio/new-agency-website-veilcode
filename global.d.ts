@@ -65,6 +65,7 @@ interface ServiceDeepDiveData {
   challenge:  string;
   approach:   string;
   deliverables: DeliverableItem[];
+  bullets?: string[];
   stack:      string[];
   metric:     string;
   metricLabel:string;
