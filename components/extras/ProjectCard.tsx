@@ -6,17 +6,20 @@ import { fadeUp } from "@/lib/motion";
 import { AnimatedArrow } from "./Primitives";
 import Image from "next/image";
 import Link from "next/link";
+import type { Project } from "@/db/schema";
 
 
 export function ProjectCard({
   project,
   index,
 }: {
-  project: SampleProjects;
+  project: Project;
   index: number;
 }) {
   const [hovered, setHovered] = useState(false);
   const { classes: c } = project;
+
+  const firstScreenshot = project.screenshots?.[0]?.src || "";
 
 
   return (
@@ -31,7 +34,7 @@ export function ProjectCard({
       {/* Visual / Image Panel */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <Image
-          src={project.screenShot ?? ""}
+          src={firstScreenshot}
           alt={`${project.title} preview`}
           fill
           className="object-cover object-center transition-transform duration-700
@@ -47,9 +50,9 @@ export function ProjectCard({
         <div className="absolute top-5 left-5 z-20">
           <span
             className={`font-mono text-[10px] tracking-widest uppercase
-              px-3 py-1.5 rounded border ${c.tag}`}
+              px-3 py-1.5 rounded border ${project.tags.length > 0 && "bg-black text-white" }`}
           >
-            {project.tag}
+            {project.tags[0] || "Uncategorized"}
           </span>
         </div>
 
@@ -57,7 +60,7 @@ export function ProjectCard({
         {project.metric && (
           <div className="absolute bottom-5 right-5 z-20 text-right">
             <div
-              className={`font-display font-extrabold text-3xl tracking-tight leading-none ${c.metric}`}
+              className={`font-display font-extrabold text-3xl tracking-tight leading-none ${project.metric.length > 4 ? "text-2xl" : ""} ${project.metricLabel} drop-shadow-md`}
             >
               {project.metric}
             </div>
@@ -74,11 +77,11 @@ export function ProjectCard({
           {project.title}
         </h3>
         <p className="font-sans text-sm text-ink-muted leading-relaxed mb-5">
-          {project.desc}
+          {project.summary.length > 200 ? project.summary.slice(0, 200) + "..." : project.summary}
         </p>
         <Link
           href={`/work/${project.slug}`}
-          className={`flex items-center gap-1.5 text-[13px] font-medium font-sans ${c.link}`}
+          className={`flex items-center gap-1.5 text-[13px] font-medium font-sans ${project.tags.length > 0 ? "text-brand hover:text-brand-hover" : "text-white/80 hover:text-white"}`}
         >
           <span>Case Study</span>
           <AnimatedArrow hovered={hovered} />

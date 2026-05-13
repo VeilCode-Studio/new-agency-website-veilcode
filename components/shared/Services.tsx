@@ -8,12 +8,12 @@ import {
 } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ServiceCard } from "../extras/ServiceCard";
-import { SERVICES } from "@/constants";
 import Link from "next/link";
+import { Service } from "@/db/schema";
 
 
 
-export function Services() {
+export function Services({services} : { services: Service[]}) {
   const [ref, inView] = useReveal();
 
   return (
@@ -57,12 +57,12 @@ export function Services() {
 
         {/* Grid: 3-col top row, 2-col centred bottom row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {SERVICES.slice(0, 3).map((s, i) => (
+          {services.slice(0, 3).map((s, i) => (
             <ServiceCard key={s.title} service={s} index={i} />
           ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-205 mx-auto">
-          {SERVICES.slice(3).map((s, i) => (
+          {services.slice(3).map((s, i) => (
             <ServiceCard key={s.title} service={s} index={i + 3} />
           ))}
         </div>

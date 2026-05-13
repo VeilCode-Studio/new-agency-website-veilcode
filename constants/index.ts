@@ -225,9 +225,7 @@ export const SOCIALS = [
 export const TYPEWRITER_WORDS = [
   "Web Solutions.",
   "Mobile Apps.",
-  "Data Analytics.",
-  "AI Automation.",
-  "Digital Growth.",
+  "AI Automation & Systems"
 ] as const;
 
 export const STATS = [
@@ -785,32 +783,41 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = [
     title: "AI Automation",
     tagline: "Intelligent Workflows",
     intro:
-      "AI is not a feature — it's an operating model shift. We identify the processes in your business where intelligent automation creates the highest leverage, then we build and integrate the systems that run them.",
+      "AI is not just another feature. It changes how work gets done. We help businesses identify repetitive, high value processes, then build AI powered systems that reduce manual work, improve response times, and turn scattered workflows into reliable operations.",
     challenge:
-      "Most businesses are sitting on massive automation opportunities — manual data entry, repetitive reporting, document processing, customer triage — that eat hours of skilled time every week. The tools to automate these now exist, but most teams don't have the engineering depth to implement them safely and reliably.",
+      "Most businesses lose hours every week to manual data entry, repetitive reporting, document processing, customer triage, follow ups, and disconnected tools. The problem is not only wasted time. It is poor visibility. Teams cannot clearly see what is stuck, what is working, or where operations are leaking revenue.",
     approach:
-      "We run a structured automation audit to find your highest-ROI opportunities, then we build sequentially — starting with the changes that deliver the fastest payback. Every system we build is explainable, auditable, and handed over with full documentation.",
+      "We run a structured automation audit to identify the workflows with the highest operational and financial impact. Then we build sequentially, starting with the systems that deliver the fastest payback. Every automation is designed with clear logic, human review where needed, documentation, and reporting so the business can track performance over time.",
     deliverables: [
       {
         title: "Automation opportunity audit",
-        desc: "A structured review of your workflows to identify and rank automation opportunities by ROI and implementation effort.",
+        desc: "A structured review of your workflows to identify and rank automation opportunities by business impact, implementation effort, and payback potential.",
       },
       {
-        title: "LLM integration & custom agents",
-        desc: "Custom AI agents built with OpenAI, Anthropic, or open-source models — integrated into your existing tools and workflows.",
+        title: "LLM integration and custom agents",
+        desc: "Custom AI assistants and agents built with leading language models, connected to your existing tools, data, and business workflows.",
       },
       {
-        title: "Document & data processing",
-        desc: "Intelligent pipelines that read, classify, extract, and route information from documents, emails, and forms automatically.",
+        title: "Document and data processing",
+        desc: "Intelligent pipelines that read, classify, extract, summarize, and route information from documents, emails, forms, and internal records.",
       },
       {
         title: "Workflow automation",
-        desc: "n8n, Zapier, or custom-built orchestration connecting your tools into automated sequences that run without human intervention.",
+        desc: "Automated systems that connect your CRMs, forms, email, WhatsApp, dashboards, databases, and approval flows into repeatable business processes.",
       },
       {
-        title: "Monitoring & observability",
-        desc: "Dashboards and alerting so you can see what your automations are doing — and catch issues before they become problems.",
+        title: "Reporting and workflow visibility",
+        desc: "Dashboards, logs, alerts, and performance reporting so your team can see what the automations are doing, where work is stuck, and what needs attention.",
       },
+    ],
+    bullets: [
+      "AI powered workflow automation for repetitive business tasks",
+      "Internal copilots for operations, support, sales, and admin work",
+      "Chatbots that answer questions, qualify leads, and route requests",
+      "Automated follow ups, approvals, summaries, and status updates",
+      "Integrations with CRMs, email, WhatsApp, forms, and databases",
+      "Workflow dashboards that show task status, bottlenecks, and outcomes",
+      "Cleaner operations with less manual work and fewer missed tasks",
     ],
     stack: [
       "OpenAI API",
@@ -822,9 +829,10 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = [
       "n8n",
       "Supabase",
     ],
-    metric: "80%",
-    metricLabel: "Average task automation rate",
-    metricSub: "achieved for clients in our AI Automation practice",
+    metric: "1 System",
+    metricLabel: "Unified automation layer",
+    metricSub:
+      "connecting workflows, AI assistants, reporting, and operational visibility",
     classes: {
       accent: "text-svc-ai",
       dimBg: "bg-svc-ai-dim",

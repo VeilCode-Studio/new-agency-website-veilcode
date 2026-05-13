@@ -8,11 +8,11 @@ import {
   GhostButton,
 } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
-import { PROJECTS } from "@/constants";
 import { ProjectCard } from "../extras/ProjectCard";
+import type { Project } from "@/db/schema";
 
 
-export function Work() {
+export function Work({ projects }: { projects: Project[] }) {
   const [ref, inView] = useReveal();
 
   return (
@@ -59,7 +59,7 @@ export function Work() {
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {PROJECTS.map((p, i) => (
+          {projects.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} />
           ))}
         </motion.div>

@@ -1,8 +1,9 @@
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedArrow } from "./Primitives";
 import { fadeUp, useReveal } from "@/lib/motion";
-import Link from "next/link";
+import { Service } from "@/db/schema";
 
 export function ServiceCard({
   service,
@@ -14,7 +15,7 @@ export function ServiceCard({
   const [hovered, setHovered] = useState(false);
   const [ref, inView] = useReveal();
 
-  const { classes: c } = service;
+  const c = service.cardClasses; // shorthand for classes from DB
 
   return (
     <motion.article

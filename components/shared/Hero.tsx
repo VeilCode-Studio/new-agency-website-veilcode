@@ -10,9 +10,9 @@ import Link from "next/link";
 
 
 function useTypewriter(words: readonly string[]) {
-  const [text,     setText]     = useState("");
-  const [wordIdx,  setWordIdx]  = useState(0);
-  const [charIdx,  setCharIdx]  = useState(0);
+  const [text, setText] = useState("");
+  const [wordIdx, setWordIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
@@ -54,11 +54,11 @@ export function Hero() {
   const typedText = useTypewriter(TYPEWRITER_WORDS);
 
   const { scrollY } = useScroll();
-  const y       = useTransform(scrollY, [0, 700], [0, 80]);
+  const y = useTransform(scrollY, [0, 700], [0, 80]);
   const opacity = useTransform(scrollY, [300, 800], [1, 0]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden pb-16">
 
       {/* Grid */}
       <GridBg />
@@ -89,7 +89,7 @@ export function Hero() {
               shadow-[0_0_8px_var(--color-brand)]
               animate-[pulse-glow_2s_ease-in-out_infinite]" />
             <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-brand">
-              Available for new projects · 2026
+              Available for web, mobile and AI projects
             </span>
           </div>
         </motion.div>
@@ -135,27 +135,20 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           className="font-sans text-lg font-light text-ink-muted
-            max-w-140 leading-relaxed mb-12"
+    max-w-140 leading-relaxed mb-12"
         >
-          VeilCode is a premium digital agency crafting high-performance web &amp;
-          mobile solutions, intelligent automation, and data-driven strategies
-          for ambitious brands.
+          VeilCode Studio builds conversion focused websites, mobile applications,
+          and AI automation systems for businesses that need better digital
+          infrastructure, not more disconnected tools.
         </motion.p>
 
         {/* CTAs */}
-        <motion.div
-          variants={fadeUp(0.40)}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap items-center gap-4 mb-20"
-        >
-          <PrimaryButton className="text-[15px]! px-8! py-4!">
-            <Link href="/start">Start a Project →</Link>
-          </PrimaryButton>
-          <GhostButton className="text-[15px]! px-8! py-4!">
-            <Link href="/work">View Our Work</Link>
-          </GhostButton>
-        </motion.div>
+        <PrimaryButton className="text-[15px]! px-8! py-4!">
+          <Link href="/start">Start a Project</Link>
+        </PrimaryButton>
+        <GhostButton className="text-[15px]! px-8! py-4! ml-2">
+          <Link href="/work">See Case Studies</Link>
+        </GhostButton>
 
         {/* Stats */}
         <AccentLine width={60} />
@@ -163,7 +156,7 @@ export function Hero() {
           variants={stagger}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap gap-10 md:gap-16"
+          className="flex flex-wrap gap-10 md:gap-16 mb-10 mt-5"
         >
           {STATS.map((s) => (
             <StatItem key={s.val} {...s} />
@@ -176,7 +169,7 @@ export function Hero() {
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2
-          flex flex-col items-center gap-2"
+          flex flex-col items-center gap-2 pointer-events-none"
         aria-hidden
       >
         <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-faint">

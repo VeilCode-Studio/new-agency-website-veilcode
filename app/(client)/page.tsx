@@ -6,15 +6,22 @@ import { Services } from "@/components/shared/Services";
 import { TechStack } from "@/components/shared/TechStack";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { Work } from "@/components/shared/Work";
+import { getPublishedProjects, getPublishedServices } from "@/queries";
 
-export default function Home() {
+export default async function Home() {
+
+  const [services, projects] = await Promise.all([
+    getPublishedServices(),
+    getPublishedProjects(),
+  ]);
+
   return (
     <>
       <Hero />
       <Marquee />
-      <Services />
+      <Services services={services} />
       <Process />
-      <Work />
+      <Work projects={projects} />
       <TechStack />
       <Testimonials />
       <CTA />

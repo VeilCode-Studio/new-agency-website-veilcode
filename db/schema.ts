@@ -148,6 +148,8 @@ export const services = pgTable("services", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export type Service = typeof services.$inferSelect;
+
 // PROJECTS
 
 export const projects = pgTable("projects", {
@@ -180,6 +182,8 @@ export const projects = pgTable("projects", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
+
+export type Project = typeof projects.$inferSelect;
 
 // NEWSLETTER CAMPAIGNS
 
