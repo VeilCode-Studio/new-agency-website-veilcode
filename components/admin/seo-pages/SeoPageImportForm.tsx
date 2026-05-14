@@ -8,6 +8,7 @@ import { Field } from "@/components/admin/forms/Field";
 type PreviewResponse = {
   ok: true;
   mode: "preview";
+  publishMode: "draft" | "live";
   total: number;
   create: number;
   update: number;
@@ -32,6 +33,7 @@ type ImportResponse =
 
 export function SeoPageImportForm() {
   const [text, setText] = useState("");
+  const [publishMode, setPublishMode] = useState<"draft" | "live">("draft");
   const [isPending, startTransition] = useTransition();
   const [preview, setPreview] = useState<PreviewResponse | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -62,7 +64,7 @@ export function SeoPageImportForm() {
         const res = await fetch("/api/admin/seo-pages/import", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ pages: payload, publishMode }),
         });
 
         const json = (await res.json()) as ImportResponse;
@@ -93,7 +95,7 @@ export function SeoPageImportForm() {
         const res = await fetch("/api/admin/seo-pages/import?mode=preview", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ pages: payload, publishMode }),
         });
         const json = (await res.json()) as PreviewResponse | { error: string };
         if (!res.ok) {
@@ -150,6 +152,41 @@ export function SeoPageImportForm() {
           />
         </Field>
 
+        <Field label="Import mode">
+          <div className="grid grid-cols-2 gap-2 rounded-md border border-line bg-page p-1">
+            {[
+              {
+                value: "draft" as const,
+                label: "Import as draft",
+                description: "Creates or updates pages without publishing them.",
+              },
+              {
+                value: "live" as const,
+                label: "Import as live",
+                description: "Creates or updates pages and publishes them immediately.",
+              },
+            ].map((option) => {
+              const active = publishMode === option.value;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => setPublishMode(option.value)}
+                  className={[
+                    "rounded-md border px-3 py-2 text-left transition-colors",
+                    active
+                      ? "border-brand bg-brand-dim text-ink"
+                      : "border-transparent bg-transparent text-ink-muted hover:border-line-hi hover:bg-surface/40 hover:text-ink",
+                  ].join(" ")}
+                >
+                  <div className="text-sm font-semibold">{option.label}</div>
+                  <div className="mt-1 text-xs leading-relaxed">{option.description}</div>
+                </button>
+              );
+            })}
+          </div>
+        </Field>
+
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-xs text-ink-faint">
             This is the quickest way to seed the first market pages without manual entry.
@@ -186,6 +223,9 @@ export function SeoPageImportForm() {
                 <p className="mt-1 text-sm text-ink-muted">
                   {preview.total} total, {preview.create} create, {preview.update} update,{" "}
                   {preview.errors} error(s), {preview.warnings} warning(s)
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-ink-faint">
+                  Import will save as {preview.publishMode}
                 </p>
               </div>
               {preview.errors > 0 ? (
@@ -225,6 +265,9 @@ export function SeoPageImportForm() {
                     <p className="mt-2 text-xs leading-relaxed text-ink-muted">
                       {item.input.countryName || "No country"}{" "}
                       {item.input.serviceId ? `- service: ${item.input.serviceId}` : ""}
+                    </p>
+                    <p className="mt-2 inline-flex rounded-full border border-line px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                      {preview.publishMode}
                     </p>
                     {item.issues.length > 0 ? (
                       <ul className="mt-3 space-y-1">

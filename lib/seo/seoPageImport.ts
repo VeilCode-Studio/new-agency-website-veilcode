@@ -22,6 +22,7 @@ export type SeoPageImportSummary = {
   update: number;
   errors: number;
   warnings: number;
+  publishMode: "draft" | "live";
   items: SeoPageImportItem[];
 };
 
@@ -48,8 +49,24 @@ function isValidCountryCode(value: string | null) {
   return value === null || /^[A-Z]{2}$/.test(value);
 }
 
+function readPublishMode(payload: unknown): "draft" | "live" {
+  if (payload && typeof payload === "object" && !Array.isArray(payload) && "publishMode" in payload) {
+    const value = (payload as { publishMode?: unknown }).publishMode;
+    if (value === "live" || value === "draft") return value;
+  }
+  return "draft";
+}
+
+function applyPublishMode(input: SeoPageInput, publishMode: "draft" | "live") {
+  return {
+    ...input,
+    published: publishMode === "live",
+  };
+}
+
 export async function analyzeSeoPageImport(payload: unknown) {
   const entries = readPagesPayload(payload);
+  const publishMode = readPublishMode(payload);
   const issues: SeoPageImportIssue[] = [];
 
   if (entries.length === 0) {
@@ -59,8 +76,8 @@ export async function analyzeSeoPageImport(payload: unknown) {
       update: 0,
       errors: 1,
       warnings: 0,
+      publishMode,
       items: [],
-      issues: [{ slug: "", level: "error" as const, message: "No SEO pages were provided" }],
     };
   }
 
@@ -81,7 +98,10 @@ export async function analyzeSeoPageImport(payload: unknown) {
       continue;
     }
 
-    const input = normalizeSeoPageInput(entry as Record<string, unknown>);
+    const input = applyPublishMode(
+      normalizeSeoPageInput(entry as Record<string, unknown>),
+      publishMode,
+    );
     const itemIssues: SeoPageImportIssue[] = [];
 
     if (!input.slug) {
@@ -139,6 +159,7 @@ export async function analyzeSeoPageImport(payload: unknown) {
     update: items.filter((item) => item.action === "update").length,
     errors: items.reduce((count, item) => count + item.issues.filter((i) => i.level === "error").length, 0),
     warnings: items.reduce((count, item) => count + item.issues.filter((i) => i.level === "warning").length, 0),
+    publishMode,
     items,
   };
 
