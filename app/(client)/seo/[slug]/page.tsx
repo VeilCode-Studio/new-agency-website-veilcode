@@ -164,11 +164,75 @@ export default async function SeoPage({ params }: Params) {
       {page.body.length > 0 && (
         <section className="border-t border-line px-6 py-20 md:px-10">
           <div className="mx-auto max-w-300">
-            <div className="max-w-180">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
-                Overview
+            <div className="mb-10 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-160">
+                <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
+                  Overview
+                </p>
+                <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
+                  What this page covers
+                </h2>
+              </div>
+              <p className="max-w-120 text-sm leading-relaxed text-ink-muted">
+                This section is structured to support search intent, internal linking, and a clearer
+                reading path for visitors.
               </p>
-              <ArticleBody blocks={page.body} />
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+              <article className="overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_18px_56px_rgba(15,23,42,0.08)]">
+                <div className="h-1 bg-linear-to-r from-brand via-brand/60 to-svc-data" />
+                <div className="px-6 py-7 md:px-8 md:py-8">
+                  <div className="mb-6 flex flex-wrap gap-2.5">
+                    {page.countryName ? (
+                      <span className="rounded-full border border-line bg-page px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+                        {page.countryName}
+                      </span>
+                    ) : null}
+                    <span className="rounded-full border border-line bg-page px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+                      {pageTypeLabel(page.pageType)}
+                    </span>
+                    {page.serviceId ? (
+                      <span className="rounded-full border border-line bg-page px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+                        {page.serviceId}
+                      </span>
+                    ) : null}
+                  </div>
+
+                  <div className="max-w-190">
+                    <ArticleBody blocks={page.body} />
+                  </div>
+                </div>
+              </article>
+
+              <aside className="space-y-4">
+                <div className="rounded-2xl border border-line bg-surface p-6">
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+                    Page focus
+                  </p>
+                  <div className="space-y-3 text-sm leading-relaxed text-ink-muted">
+                    <p>
+                      Search target:{" "}
+                      <span className="font-medium text-ink">{page.title}</span>
+                    </p>
+                    <p>
+                      Primary angle: {page.serviceId || pageTypeLabel(page.pageType).toLowerCase()}{" "}
+                      positioning for {page.countryName || "global"} search intent.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-line bg-page p-6">
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+                    What to expect
+                  </p>
+                  <ul className="space-y-3 text-sm leading-relaxed text-ink-muted">
+                    <li>Clear positioning for the market and service combination.</li>
+                    <li>Readable sections that support both visitors and search engines.</li>
+                    <li>Internal links to services, projects, and related articles.</li>
+                  </ul>
+                </div>
+              </aside>
             </div>
           </div>
         </section>
