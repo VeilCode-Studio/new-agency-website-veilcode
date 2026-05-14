@@ -10,16 +10,27 @@ import { mapDbPostToClientPost } from "@/lib/blog/mappers";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { POSTS } from "@/constants/blog";
 
 interface Params {
   params: Promise<{ slug: string }>;
 }
 
 export const generateStaticParams = async () => {
-  const blogs = await getPublishedBlogs();
+  try {
+    const blogs = await getPublishedBlogs();
 
-  return blogs.map((blog) => ({
-    slug: blog.slug,
+    if (blogs.length > 0) {
+      return blogs.map((blog) => ({
+        slug: blog.slug,
+      }));
+    }
+  } catch (error) {
+    console.warn("[blog/[slug]] falling back to static post slugs:", error);
+  }
+
+  return POSTS.map((post) => ({
+    slug: post.slug,
   }));
 };
 

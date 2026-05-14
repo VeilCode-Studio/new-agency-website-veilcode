@@ -268,16 +268,69 @@ export function LocationBody({
       )}
 
       <section className="border-t border-line px-6 py-24 md:px-10">
-        <div className="mx-auto max-w-220 rounded-xl border border-line bg-surface p-8 text-center">
-          <h2 className="font-display text-[clamp(28px,4vw,44px)] font-extrabold tracking-tight text-ink">
-            {market.ctaCopy}
-          </h2>
-          <Link
-            href="/start"
-            className="mt-7 inline-flex rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
-          >
-            {market.ctaLabel}
-          </Link>
+        <div className="mx-auto max-w-220 overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_18px_56px_rgba(15,23,42,0.08)]">
+          <div className="grid gap-0 lg:grid-cols-[1.3fr_0.7fr]">
+            <div className="relative px-8 py-8 md:px-10 md:py-10">
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-linear-to-br from-brand-dim/70 via-transparent to-svc-data-dim/40"
+              />
+              <div
+                aria-hidden
+                className="absolute -right-10 top-6 size-32 rounded-full bg-brand-dim/40 blur-3xl"
+              />
+              <div className="relative z-10">
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-brand">
+                  Next step
+                </p>
+                <h2 className="max-w-120 font-display text-[clamp(24px,3vw,36px)] font-extrabold leading-tight tracking-tight text-ink">
+                  {market.ctaCopy}
+                </h2>
+                <p className="mt-4 max-w-115 text-sm leading-relaxed text-ink-muted">
+                  We will scope the opportunity, recommend the right service mix,
+                  and map a practical launch path.
+                </p>
+              </div>
+            </div>
+
+            <div className="border-t border-line bg-page px-8 py-8 md:px-10 lg:border-l lg:border-t-0">
+              <div className="flex h-full flex-col justify-between gap-6">
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="rounded-lg border border-line bg-surface p-3">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                        Scope
+                      </p>
+                      <p className="mt-1 font-medium text-ink">Clarify the build</p>
+                    </div>
+                    <div className="rounded-lg border border-line bg-surface p-3">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                        Response
+                      </p>
+                      <p className="mt-1 font-medium text-ink">Practical next step</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {market.serviceFocus.map((service) => (
+                      <span
+                        key={service}
+                        className="rounded border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink-faint"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  href="/start"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
+                >
+                  {market.ctaLabel}
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
