@@ -234,5 +234,237 @@
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
+  },
+  {
+    "slug": "uganda-mobile-app-development",
+    "pageType": "service-location",
+    "countryCode": "UG",
+    "countryName": "Uganda",
+    "serviceId": "mobile",
+    "title": "Mobile App Development in Uganda | VeilCode",
+    "metaDescription": "VeilCode builds mobile app development products in Uganda for businesses that need better customer journeys, mobile-first UX, and practical delivery.",
+    "h1": "Mobile app development in Uganda for businesses that need a stronger customer experience",
+    "heroCopy": "We help Ugandan businesses design and ship mobile applications that support sales, service delivery, and daily operations across local user journeys.",
+    "bodyText": "## Mobile app development in Uganda\nThis page targets mobile app development in Uganda, app design Uganda, and mobile product delivery for local businesses.\n\n## What it covers\nMobile-first journeys, practical UX, and products that fit how Ugandan teams and customers actually work.\n\n## Why it matters\nA focused landing page helps searchers understand the service and helps Google connect VeilCode to the keyword.",
+    "faqs": [
+      {
+        "question": "Can you build for mobile-first users in Uganda?",
+        "answer": "Yes. We design around mobile traffic, low-bandwidth conditions, and common local usage patterns."
+      },
+      {
+        "question": "Can the app support WhatsApp or mobile money flows?",
+        "answer": "Yes. We can connect the product to the tools and workflows that are practical for Ugandan businesses."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["mobile", "web"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "usa-mobile-app-development",
+    "pageType": "service-location",
+    "countryCode": "US",
+    "countryName": "United States",
+    "serviceId": "mobile",
+    "title": "Mobile App Development Agency for US Companies | VeilCode",
+    "metaDescription": "VeilCode delivers mobile app development for US companies that need fast execution, clear communication, and polished product delivery.",
+    "h1": "Mobile app development for US companies that want senior execution",
+    "heroCopy": "We partner with US teams to ship mobile apps that support customer acquisition, retention, and internal operations without heavyweight agency overhead.",
+    "bodyText": "## Mobile app development agency in the USA\nThis page targets mobile app development agency, app design, and mobile product delivery searches in the United States.\n\n## What we solve\nSlow delivery, unclear scopes, and apps that do not connect cleanly to the rest of the business.\n\n## How we work\nSenior, remote-first delivery with practical handoff and measurable progress.",
+    "faqs": [
+      {
+        "question": "Can you work with US product teams?",
+        "answer": "Yes. We can collaborate with internal product, design, and marketing teams or work as the delivery partner."
+      },
+      {
+        "question": "Can you integrate with existing US systems?",
+        "answer": "Yes. We commonly connect CRMs, analytics, payment systems, and custom APIs to the mobile product."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["mobile", "web", "ai"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["ai-agents-production"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "usa-web-solutions-agency",
+    "pageType": "service-location",
+    "countryCode": "US",
+    "countryName": "United States",
+    "serviceId": "web",
+    "title": "Web Solutions Agency for US Companies | VeilCode",
+    "metaDescription": "VeilCode builds web solutions for US companies that need fast websites, product portals, and conversion-focused digital experiences.",
+    "h1": "Web solutions for US companies that need performance and clarity",
+    "heroCopy": "We help US companies build web platforms that improve conversion, support sales teams, and make complex services easier to understand online.",
+    "bodyText": "## Web solutions agency in the USA\nThis page targets web solutions agency, website development, and web design searches in the United States.\n\n## What it covers\nFast, credible websites and web platforms built for competitive search markets.\n\n## Why it works\nThe page aligns with buyer intent and gives VeilCode a clean keyword match for this service-market combination.",
+    "faqs": [
+      {
+        "question": "Do you work with startups and established companies?",
+        "answer": "Yes. We work with founders, operators, and internal teams depending on the project scope."
+      },
+      {
+        "question": "Can you support ongoing improvements after launch?",
+        "answer": "Yes. We can continue with iteration, content updates, and feature growth after the initial release."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "ai"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["next-js-performance-east-africa"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "uk-web-solutions-agency",
+    "pageType": "service-location",
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "serviceId": "web",
+    "title": "Web Solutions Agency for UK Businesses | VeilCode",
+    "metaDescription": "VeilCode builds web solutions for UK businesses that need stronger digital credibility, better conversion, and clearer service presentation.",
+    "h1": "Web solutions for UK businesses that want better search visibility",
+    "heroCopy": "We help UK companies improve websites, landing pages, and web platforms so their digital presence converts more of the right traffic into leads.",
+    "bodyText": "## Web solutions agency in the UK\nThis page is aimed at web solutions agency, web design, and website development searches in the United Kingdom.\n\n## What we solve\nWeak service pages, slow sites, and unclear conversion paths.\n\n## The result\nA focused page that connects VeilCode to UK buyers looking for serious web delivery.",
+    "faqs": [
+      {
+        "question": "Can you work with UK businesses remotely?",
+        "answer": "Yes. We use a structured remote model with written updates and planned review windows."
+      },
+      {
+        "question": "Can you help with existing websites?",
+        "answer": "Yes. We can audit, improve, or rebuild the current site depending on what is most practical."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "mobile"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["design-systems-scale"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "uk-ai-automation",
+    "pageType": "service-location",
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "serviceId": "ai",
+    "title": "AI Automation Agency for UK Businesses | VeilCode",
+    "metaDescription": "VeilCode builds AI automation systems for UK businesses that need practical workflow automation and better operational visibility.",
+    "h1": "AI automation for UK businesses that want practical efficiency",
+    "heroCopy": "We help UK businesses automate repetitive work, connect tools, and build clearer reporting flows without turning the system into a black box.",
+    "bodyText": "## AI automation agency in the UK\nThis page targets AI automation agency, workflow automation, and business automation searches in the United Kingdom.\n\n## What it solves\nManual admin, disconnected systems, and slow handoffs across the business.\n\n## Why it matters\nIt gives VeilCode a strong match for companies looking for applied AI and automation delivery.",
+    "faqs": [
+      {
+        "question": "Can you automate reporting and admin work?",
+        "answer": "Yes. We can automate reporting, handoffs, notifications, and other repetitive tasks."
+      },
+      {
+        "question": "Can the automations stay maintainable?",
+        "answer": "Yes. We build with documentation, clear ownership, and simple operating rules."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["ai", "web"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["ai-agents-production"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "canada-web-solutions-agency",
+    "pageType": "service-location",
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "serviceId": "web",
+    "title": "Web Solutions Agency for Canadian Companies | VeilCode",
+    "metaDescription": "VeilCode builds web solutions for Canadian companies that need fast performance, clear messaging, and reliable remote delivery.",
+    "h1": "Web solutions for Canadian companies that want better conversion",
+    "heroCopy": "We help Canadian businesses ship web platforms that support sales, service delivery, and customer education with a clean, maintainable structure.",
+    "bodyText": "## Web solutions agency in Canada\nThis page targets web solutions agency, website development, and web design searches in Canada.\n\n## What we solve\nSites that are slow, hard to update, or not persuasive enough for the market.\n\n## Why it works\nThe page combines service relevance with Canadian search intent and a clear delivery model.",
+    "faqs": [
+      {
+        "question": "Can you support remote collaboration across Canada?",
+        "answer": "Yes. We work remotely with clear documentation and review milestones."
+      },
+      {
+        "question": "Can you help with bilingual site structure?",
+        "answer": "Yes. We can structure the site for multilingual content and handoff to language specialists."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "ai"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["next-js-performance-east-africa"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "canada-mobile-app-development",
+    "pageType": "service-location",
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "serviceId": "mobile",
+    "title": "Mobile App Development Agency for Canadian Companies | VeilCode",
+    "metaDescription": "VeilCode delivers mobile app development for Canadian companies that need clean product execution and dependable remote collaboration.",
+    "h1": "Mobile app development for Canadian companies with practical goals",
+    "heroCopy": "We help Canadian teams ship mobile applications that improve customer experience, internal workflow, and digital delivery across distributed teams.",
+    "bodyText": "## Mobile app development agency in Canada\nThis page targets mobile app development agency, app design, and mobile product delivery in Canada.\n\n## What it covers\nCustomer-facing apps, internal tools, and practical product delivery paths.\n\n## Why it matters\nIt gives search engines a clear service and market match, and gives buyers a reason to engage.",
+    "faqs": [
+      {
+        "question": "Can you work remotely with Canadian teams?",
+        "answer": "Yes. We work well with remote-first teams that need clear communication and strong handoff."
+      },
+      {
+        "question": "Can you connect the app to business systems?",
+        "answer": "Yes. We can integrate the app with your reporting, CRM, and automation stack."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["mobile", "web"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["ai-agents-production"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "australia-mobile-app-development",
+    "pageType": "service-location",
+    "countryCode": "AU",
+    "countryName": "Australia",
+    "serviceId": "mobile",
+    "title": "Mobile App Development Agency for Australian Companies | VeilCode",
+    "metaDescription": "VeilCode builds mobile app development solutions for Australian companies that need clean delivery, practical communication, and strong execution.",
+    "h1": "Mobile app development for Australian companies that need reliable delivery",
+    "heroCopy": "We help Australian businesses launch mobile applications that support customers, internal teams, and service workflows with a disciplined remote model.",
+    "bodyText": "## Mobile app development in Australia\nThis page targets mobile app development agency, app design, and mobile product delivery searches in Australia.\n\n## What we solve\nLong delivery cycles, weak handover, and mobile products that do not hold up over time.\n\n## The value\nA focused landing page that connects VeilCode to high-intent searches in the Australian market.",
+    "faqs": [
+      {
+        "question": "Can you manage timezone differences with Australia?",
+        "answer": "Yes. We rely on structured async communication and schedule live sessions where overlap exists."
+      },
+      {
+        "question": "Can you support product updates after launch?",
+        "answer": "Yes. We can continue with iteration, improvements, and maintenance after the initial release."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["mobile", "web"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["next-js-performance-east-africa"],
+    "published": true,
+    "indexable": true
   }
 ]
