@@ -59,12 +59,12 @@ export default async function AdminSingleProjectPreviewPage({
 
       {/* Main Client Content */}
       <div className="pb-12">
-        <CaseStudyHero project={project as any} />
-        <CaseStudyBody project={project as any} />
-        <ScreenshotGallery project={project as any} />
-        <CaseStudyTestimonial project={project as any} />
+        <CaseStudyHero project={project} />
+        <CaseStudyBody project={project} />
+        <ScreenshotGallery project={project} />
+        <CaseStudyTestimonial project={project} />
         <CTA />
-        <NextProject project={project as any} nextProject={nextProject as any} />
+        <NextProject project={project} nextProject={nextProject} />
       </div>
     </div>
   );

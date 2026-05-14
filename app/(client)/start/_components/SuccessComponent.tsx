@@ -78,12 +78,12 @@ export function SuccessScreen({ name }: { name: string }) {
             hover:border-line-hi hover:text-ink transition-all duration-200">
           ← Back to Home
         </Link>
-        <a href="/work"
+        <Link href="/work"
           className="font-sans text-sm text-brand border border-brand-border
             bg-brand-dim px-6 py-3 rounded-xl no-underline
             hover:bg-brand hover:text-page transition-all duration-200">
           See Our Work →
-        </a>
+        </Link>
       </div>
     </motion.div>
   );

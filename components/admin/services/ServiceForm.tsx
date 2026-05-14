@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
-import { Plus, Trash2, Loader2, RotateCcw, Eye, EyeOff } from "lucide-react";
+import { Plus, Trash2, Loader2, Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type {
   ServiceCardClasses,
@@ -21,6 +21,10 @@ export type ServiceFormData = {
   number: string;
   icon: string;
   title: string;
+  slug: string | null;
+  seoTitle: string | null;
+  metaDescription: string | null;
+  h1: string | null;
   tagline: string;
   desc: string;
   intro: string;
@@ -33,6 +37,9 @@ export type ServiceFormData = {
   metric: string;
   metricLabel: string;
   metricSub: string;
+  supportingCapabilities: string[];
+  faqs: { question: string; answer: string }[];
+  seoEnabled: boolean;
   cardClasses: ServiceCardClasses;
   overviewClasses: ServiceOverviewClasses;
   deepDiveClasses: ServiceDeepDiveClasses;
@@ -192,6 +199,10 @@ const EMPTY: ServiceFormData = {
   number: "01",
   icon: "🌐",
   title: "",
+  slug: "web-solutions",
+  seoTitle: "",
+  metaDescription: "",
+  h1: "",
   tagline: "",
   desc: "",
   intro: "",
@@ -204,6 +215,9 @@ const EMPTY: ServiceFormData = {
   metric: "",
   metricLabel: "",
   metricSub: "",
+  supportingCapabilities: [],
+  faqs: [],
+  seoEnabled: true,
   cardClasses: CLASS_PRESETS.web.card,
   overviewClasses: CLASS_PRESETS.web.overview,
   deepDiveClasses: CLASS_PRESETS.web.deepDive,
@@ -254,6 +268,12 @@ const DEEP_DIVE_FIELDS: { key: keyof ServiceDeepDiveClasses; label: string; hint
   { key: "divider",     label: "Divider",       hint: "e.g. bg-svc-web" },
 ];
 
+const DEFAULT_SLUGS: Partial<Record<ServiceId, string>> = {
+  web: "web-solutions",
+  mobile: "mobile-applications",
+  ai: "ai-automation",
+};
+
 // Main form
 
 export function ServiceForm(props: ServiceFormProps) {
@@ -273,6 +293,8 @@ export function ServiceForm(props: ServiceFormProps) {
       setData((prev) => ({
         ...prev,
         id,
+        slug: DEFAULT_SLUGS[id as ServiceId] ?? null,
+        seoEnabled: Boolean(DEFAULT_SLUGS[id as ServiceId]),
         cardClasses: preset.card,
         overviewClasses: preset.overview,
         deepDiveClasses: preset.deepDive,
@@ -459,6 +481,116 @@ export function ServiceForm(props: ServiceFormProps) {
             </div>
           </SectionCard>
 
+          <SectionCard
+            title="SEO"
+            description="Controls the optional public service detail page."
+          >
+            <div className="space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Public slug">
+                  <input
+                    type="text"
+                    value={data.slug ?? ""}
+                    onChange={(e) => set("slug", e.target.value.trim() || null)}
+                    placeholder="web-solutions"
+                    className={cn(inputCls, "font-mono text-xs")}
+                  />
+                </Field>
+                <Field label="H1">
+                  <input
+                    type="text"
+                    value={data.h1 ?? ""}
+                    onChange={(e) => set("h1", e.target.value)}
+                    placeholder="Web solutions for ambitious businesses"
+                    className={inputCls}
+                  />
+                </Field>
+              </div>
+              <Field label="SEO title">
+                <input
+                  type="text"
+                  value={data.seoTitle ?? ""}
+                  onChange={(e) => set("seoTitle", e.target.value)}
+                  placeholder="Web Solutions Agency | VeilCode"
+                  className={inputCls}
+                />
+              </Field>
+              <Field label="Meta description">
+                <textarea
+                  value={data.metaDescription ?? ""}
+                  onChange={(e) => set("metaDescription", e.target.value)}
+                  placeholder="Short search result description for this service page."
+                  rows={3}
+                  className={textareaCls}
+                />
+              </Field>
+              <ChipEditor
+                label="Supporting capabilities"
+                values={data.supportingCapabilities}
+                onChange={(v) => set("supportingCapabilities", v)}
+                placeholder="Technical SEO, API integrations, reporting..."
+              />
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-medium text-ink-muted">FAQs</p>
+                  <button
+                    type="button"
+                    onClick={() => set("faqs", [...data.faqs, { question: "", answer: "" }])}
+                    className="inline-flex items-center gap-1 rounded-md border border-line px-2.5 py-1 text-xs text-ink-muted hover:text-ink"
+                  >
+                    <Plus className="size-3" />
+                    Add FAQ
+                  </button>
+                </div>
+                {data.faqs.map((faq, index) => (
+                  <div key={index} className="rounded-lg border border-line bg-page p-3">
+                    <div className="mb-2 flex items-center justify-between gap-2">
+                      <span className="font-mono text-[11px] text-ink-faint">
+                        FAQ {index + 1}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          set(
+                            "faqs",
+                            data.faqs.filter((_, itemIndex) => itemIndex !== index),
+                          )
+                        }
+                        className="text-ink-faint hover:text-destructive"
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </div>
+                    <div className="space-y-2">
+                      <input
+                        type="text"
+                        value={faq.question}
+                        onChange={(e) => {
+                          const next = [...data.faqs];
+                          next[index] = { ...faq, question: e.target.value };
+                          set("faqs", next);
+                        }}
+                        placeholder="Question"
+                        className={inputCls}
+                      />
+                      <textarea
+                        value={faq.answer}
+                        onChange={(e) => {
+                          const next = [...data.faqs];
+                          next[index] = { ...faq, answer: e.target.value };
+                          set("faqs", next);
+                        }}
+                        placeholder="Answer"
+                        rows={3}
+                        className={textareaCls}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </SectionCard>
+
           {/* 3. Narrative */}
           <SectionCard
             title="Narrative"
@@ -626,6 +758,32 @@ export function ServiceForm(props: ServiceFormProps) {
                 <EyeOff className="size-4" />
               )}
             </button>
+          </div>
+
+          <div className="rounded-xl border border-line bg-surface/40 p-4">
+            <h3 className="mb-3 font-display text-xs font-semibold uppercase tracking-wider text-ink-muted">
+              SEO page
+            </h3>
+            <button
+              type="button"
+              onClick={() => set("seoEnabled", !data.seoEnabled)}
+              className={cn(
+                "flex w-full items-center justify-between rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors",
+                data.seoEnabled
+                  ? "border-brand-border bg-brand-dim text-brand"
+                  : "border-line text-ink-muted hover:border-line-hi",
+              )}
+            >
+              <span>{data.seoEnabled ? "Enabled" : "Disabled"}</span>
+              {data.seoEnabled ? (
+                <Eye className="size-4" />
+              ) : (
+                <EyeOff className="size-4" />
+              )}
+            </button>
+            <p className="mt-2 text-[11px] leading-relaxed text-ink-faint">
+              Enable only for core services with useful, unique page content.
+            </p>
           </div>
 
           {/* Sort order */}

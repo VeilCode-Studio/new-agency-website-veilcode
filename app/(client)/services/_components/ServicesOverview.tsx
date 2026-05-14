@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { OverviewCard } from "./OverviewCard";
-import type { InferSelectModel } from "drizzle-orm";
-import { services } from "@/db/schema";
+import type { Service } from "@/db/schema";
 
 
-export function ServicesOverview({ serviceList }: { serviceList: InferSelectModel<typeof services>[] }) {
+export function ServicesOverview({ serviceList }: { serviceList: Service[] }) {
   const [ref, inView] = useReveal();
 
   return (

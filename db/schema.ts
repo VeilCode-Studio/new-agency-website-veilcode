@@ -16,6 +16,7 @@ import type {
   ServiceOverviewClasses,
   ServiceDeepDiveClasses,
   EmailBlock,
+  SeoFaq,
 } from "@/types/content";
 
 // Newsletter subscriptions
@@ -127,6 +128,10 @@ export const services = pgTable("services", {
   number: text("number").notNull(),
   icon: text("icon").notNull(),
   title: text("title").notNull(),
+  slug: text("slug").unique(),
+  seoTitle: text("seo_title"),
+  metaDescription: text("meta_description"),
+  h1: text("h1"),
   tagline: text("tagline").notNull(),
   desc: text("desc").notNull(),
   intro: text("intro").notNull(),
@@ -139,6 +144,9 @@ export const services = pgTable("services", {
   metric: text("metric").notNull(),
   metricLabel: text("metric_label").notNull(),
   metricSub: text("metric_sub").notNull(),
+  supportingCapabilities: text("supporting_capabilities").array().default([]).notNull(),
+  faqs: jsonb("faqs").$type<SeoFaq[]>().default([]).notNull(),
+  seoEnabled: boolean("seo_enabled").default(false).notNull(),
   cardClasses: jsonb("card_classes").$type<ServiceCardClasses>().notNull(),
   overviewClasses: jsonb("overview_classes").$type<ServiceOverviewClasses>().notNull(),
   deepDiveClasses: jsonb("deep_dive_classes").$type<ServiceDeepDiveClasses>().notNull(),

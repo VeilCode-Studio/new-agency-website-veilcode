@@ -5,6 +5,8 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import Image from "next/image";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { StructuredData } from "@/lib/seo/StructuredData";
+import { organizationJsonLd } from "@/lib/seo/jsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,31 +81,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Veilcode",
-    "url": "https://veilcode.studio",
-    "logo": "https://veilcode.studio/assets/logo.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Frank Tamale"
-    },
-    "sameAs": [
-      "https://facebook.com/veilcode",
-      "https://instagram.com/veilcodestudio"
-    ],
-  };
-
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <StructuredData data={organizationJsonLd()} />
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
           !function(f,b,e,v,n,t,s)

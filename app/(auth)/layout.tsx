@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { AuthBrandPanel } from "@/components/auth/AuthBrandPanel";
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -28,12 +29,12 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                 </span>
               </div>
             </div>
-            <a
+            <Link
               href="/"
               className="text-[11px] uppercase tracking-widest text-ink-muted hover:text-ink"
             >
               ← Site
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-1 items-center justify-center px-5 py-10 md:px-10">

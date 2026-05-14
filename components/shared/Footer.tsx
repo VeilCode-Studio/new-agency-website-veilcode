@@ -16,7 +16,7 @@ export function Footer() {
       <div className="max-w-30Link mx-auto relative z-5">
 
         {/* Top grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 mb-16">
 
           {/* Brand column */}
           <div>

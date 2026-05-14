@@ -1167,7 +1167,7 @@ export function ProjectForm(props: ProjectFormProps) {
               />
             </Field>
             <p className="mt-1.5 text-[11px] text-ink-faint">
-              Shown as the "Next case study" link at the end of this project.
+              Shown as the &quot;Next case study&quot; link at the end of this project.
             </p>
           </div>
 

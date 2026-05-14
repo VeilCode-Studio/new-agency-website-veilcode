@@ -7,6 +7,9 @@ import { NewsletterCTA } from "./Newsletter";
 import { RelatedPosts } from "./RelatedPosts";
 import { getBlogBySlug, getPublishedBlogs } from "@/queries";
 import { mapDbPostToClientPost } from "@/lib/blog/mappers";
+import { StructuredData } from "@/lib/seo/StructuredData";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonLd";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -26,23 +29,22 @@ export const generateMetadata = async ({ params }: Params) => {
 
   if (!blog) return {};
 
-  return {
+  const metadata = buildPageMetadata({
     title: blog.title,
     description: blog.excerpt,
+    path: `/blog/${blog.slug}`,
+    image: blog.heroSrc,
+    type: "article",
+  });
+
+  return {
+    ...metadata,
     openGraph: {
-      title: blog.title,
-      description: blog.excerpt,
+      ...metadata.openGraph,
       type: "article",
-      publishedTime: blog.publishedAt,
+      publishedTime: blog.publishedAt.toISOString(),
       authors: [blog.author.name],
       tags: blog.tags,
-      images: [
-        {
-          url: `/api/og?title=${encodeURIComponent(blog.title)}`,
-          width: 1200,
-          height: 630,
-        },
-      ],
     },
   };
 };
@@ -70,6 +72,24 @@ const SingleBlogPage = async ({ params }: Params) => {
 
   return (
     <>
+      <StructuredData
+        data={articleJsonLd({
+          title: blog.title,
+          description: blog.excerpt,
+          path: `/blog/${blog.slug}`,
+          publishedAt: blog.publishedAt,
+          updatedAt: blog.updatedAt,
+          authorName: blog.author.name,
+          image: blog.heroSrc,
+        })}
+      />
+      <StructuredData
+        data={breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: blog.title, href: `/blog/${blog.slug}` },
+        ])}
+      />
       <BlogPostHero post={post} />
 
       <section className="py-16 px-6 md:px-10 xl:px-20 border-t border-line">
