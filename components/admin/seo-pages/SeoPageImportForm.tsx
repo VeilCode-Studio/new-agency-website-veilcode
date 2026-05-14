@@ -48,6 +48,23 @@ export function SeoPageImportForm() {
     void file.text().then(setText);
   }
 
+  function handleLoadSeed() {
+    startTransition(async () => {
+      try {
+        const res = await fetch("/api/admin/seo-pages/seed");
+        const json = (await res.json()) as { ok?: boolean; pages?: unknown; error?: string };
+        if (!res.ok) {
+          throw new Error(json.error ?? "Failed to load seed data");
+        }
+
+        setText(JSON.stringify(json.pages, null, 2));
+        toast.success("Loaded SEO seed data");
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : "Failed to load seed data");
+      }
+    });
+  }
+
   function handleSubmit() {
     startTransition(async () => {
       try {
@@ -139,6 +156,16 @@ export function SeoPageImportForm() {
             onChange={(e) => handleFileChange(e.target.files?.[0])}
           />
         </label>
+
+        <button
+          type="button"
+          onClick={handleLoadSeed}
+          disabled={isPending}
+          className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink disabled:opacity-60"
+        >
+          <FileText className="size-4" />
+          Load seed data
+        </button>
       </div>
 
       <div className="mt-4 space-y-4">
