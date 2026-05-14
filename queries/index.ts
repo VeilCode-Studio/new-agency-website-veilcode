@@ -1,4 +1,4 @@
-// import "server-only";
+import "server-only";
 
 import { blogPosts, projects, services } from "@/db/schema";
 import { db } from "@/db/drizzle";
@@ -20,7 +20,7 @@ export const getPublishedProjects = async () => {
     .select()
     .from(projects)
     .where(eq(projects.published, true))
-    .orderBy(asc(projects.year))
+    .orderBy(asc(projects.sortOrder))
     .limit(3);
   return projectsData;
 };

@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { CTA } from "@/components/shared/CTA";
 import { Hero } from "@/components/shared/Hero";
 import { Marquee } from "@/components/shared/Marquee";
