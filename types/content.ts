@@ -43,6 +43,16 @@ export type ServiceDeepDiveClasses = {
   divider: string;
 };
 
+export type SeoFaq = {
+  question: string;
+  answer: string;
+};
+
+export type SeoPageCta = {
+  label: string;
+  href: string;
+};
+
 export type BlogAuthorJSON = BlogAuthor;
 export type TocEntryJSON = TocEntry;
 export type ContentBlockJSON = ContentBlock;

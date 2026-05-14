@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
-import type { InferSelectModel } from "drizzle-orm";
-import { services } from "@/db/schema";
+import type { Service } from "@/db/schema";
 
 
 export function OverviewCard({
   card,
   index,
 }: {
-  card: InferSelectModel<typeof services>;
+  card: Service;
   index: number;
 }) {
   const [hovered, setHovered] = useState(false);
   const c = card.overviewClasses;
+  const href = card.seoEnabled && card.slug ? `/services/${card.slug}` : `#${card.id}`;
 
   return (
     <motion.a
-      href={`#${card.id}`}
+      href={href}
       variants={fadeUp(index * 0.07)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

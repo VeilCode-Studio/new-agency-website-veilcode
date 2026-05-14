@@ -9,6 +9,9 @@ import { ScreenshotGallery } from './_components/ScreenShotGallery';
 import { CaseStudyTestimonial } from './_components/CaseStudyTestimonial';
 import { CTA } from '@/components/shared/CTA';
 import { NextProject } from './_components/NextProject';
+import { StructuredData } from '@/lib/seo/StructuredData';
+import { breadcrumbJsonLd, webPageJsonLd } from '@/lib/seo/jsonLd';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 
 interface Params {
   params: Promise<{slug: string}>
@@ -33,10 +36,12 @@ export async function generateMetadata({ params }: Params) {
 
   if (!project) return {};
 
-  return {
+  return buildPageMetadata({
     title: `${project.title} - VeilCode Case Study`,
-    description: project.summary
-  }
+    description: project.summary,
+    path: `/work/${project.slug}`,
+    image: project.screenshots[0]?.src,
+  });
 }
 
 const page = async ({ params }: Params) => {
@@ -59,6 +64,20 @@ const page = async ({ params }: Params) => {
   
   return (
     <>
+      <StructuredData
+        data={webPageJsonLd({
+          name: `${project.title} - VeilCode Case Study`,
+          description: project.summary,
+          path: `/work/${project.slug}`,
+        })}
+      />
+      <StructuredData
+        data={breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Work", href: "/work" },
+          { name: project.title, href: `/work/${project.slug}` },
+        ])}
+      />
       <CaseStudyHero project={project} />
       <CaseStudyBody project={project} />
       <ScreenshotGallery project={project} />

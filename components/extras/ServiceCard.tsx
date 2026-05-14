@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedArrow } from "./Primitives";
 import { fadeUp, useReveal } from "@/lib/motion";
-import { Service } from "@/db/schema";
+import type { Service } from "@/db/schema";
 
 export function ServiceCard({
   service,
@@ -16,6 +16,7 @@ export function ServiceCard({
   const [ref, inView] = useReveal();
 
   const c = service.cardClasses; // shorthand for classes from DB
+  const href = service.seoEnabled && service.slug ? `/services/${service.slug}` : "/services";
 
   return (
     <motion.article
@@ -71,7 +72,7 @@ export function ServiceCard({
       </ul>
 
       {/* Link */}
-      <Link href={"/services"} className={`flex items-center gap-1.5 text-[13px] font-medium font-sans ${c.link}`}>
+      <Link href={href} className={`flex items-center gap-1.5 text-[13px] font-medium font-sans ${c.link}`}>
         <span>Explore service</span>
         <AnimatedArrow hovered={hovered} />
       </Link>

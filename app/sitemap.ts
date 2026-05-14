@@ -1,32 +1,60 @@
 import { MetadataRoute } from "next";
+import {
+  getAllProjects,
+  getPublishedBlogs,
+  getPublishedSeoServices,
+} from "@/queries";
+import { LOCATION_MARKETS } from "@/constants/locations";
+import { SITE_URL } from "@/lib/seo/site";
 
-export default function sitemap(): MetadataRoute.Sitemap{
-    const baseUrl = `https://veilcode.studio`;
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date();
 
-    // add projects to sitemap
-    const projects = [
-        {slug: "prestige-properties", lastModified: new Date()},
-        {slug: "inspire-me-salon", lastModified: new Date()},
-        { slug: "nexus-commerce", lastModified: new Date() },
-        { slug: "flowmetrics-dashboard", lastModified: new Date() },
-        { slug: "vantage-ai-agents", lastModified: new Date() },
-        { slug: "tradepost-mobile", lastModified: new Date() },
-        { slug: "brewed-social", lastModified: new Date() },
-    ]
+  const [serviceResult, projectResult, blogResult] = await Promise.allSettled([
+    getPublishedSeoServices(),
+    getAllProjects(),
+    getPublishedBlogs(),
+  ]);
 
-    const projectUrls = projects.map(project => ({
-        url: `${baseUrl}/work/${project.slug}`,
-        lastModified: project.lastModified,
-    }))
+  const serviceRows =
+    serviceResult.status === "fulfilled" ? serviceResult.value : [];
+  const projectRows =
+    projectResult.status === "fulfilled" ? projectResult.value : [];
+  const blogRows = blogResult.status === "fulfilled" ? blogResult.value : [];
 
-    return [
-        { url: baseUrl, lastModified: new Date() },
-        { url: `${baseUrl}/work`, lastModified: new Date() },
-        { url: `${baseUrl}/services`, lastModified: new Date() },
-        { url: `${baseUrl}/contact`, lastModified: new Date() },
-        {url: `${baseUrl}/about`, lastModified: new Date()},
-        {url: `${baseUrl}/start`, lastModified: new Date()},
-        { url: `${baseUrl}/blog`, lastModified: new Date() },
-        ...projectUrls
-    ]
+  const serviceUrls = serviceRows
+    .filter((service) => service.slug)
+    .map((service) => ({
+      url: `${SITE_URL}/services/${service.slug}`,
+      lastModified: service.updatedAt ?? now,
+    }));
+
+  const projectUrls = projectRows.map((project) => ({
+    url: `${SITE_URL}/work/${project.slug}`,
+    lastModified: project.updatedAt ?? now,
+  }));
+
+  const blogUrls = blogRows.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.updatedAt ?? post.publishedAt ?? now,
+  }));
+
+  const locationUrls = LOCATION_MARKETS.map((market) => ({
+    url: `${SITE_URL}/locations/${market.slug}`,
+    lastModified: now,
+  }));
+
+  return [
+    { url: SITE_URL, lastModified: now },
+    { url: `${SITE_URL}/work`, lastModified: now },
+    { url: `${SITE_URL}/services`, lastModified: now },
+    { url: `${SITE_URL}/contact`, lastModified: now },
+    { url: `${SITE_URL}/about`, lastModified: now },
+    { url: `${SITE_URL}/start`, lastModified: now },
+    { url: `${SITE_URL}/blog`, lastModified: now },
+    ...serviceUrls,
+    ...locationUrls,
+    ...projectUrls,
+    ...blogUrls,
+  ];
 }

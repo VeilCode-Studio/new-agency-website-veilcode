@@ -130,9 +130,19 @@ export const FOOTER_COLS = [
   {
     heading: "Services",
     links: [
-      { label: "Web Solutions", href: "/services/#web-solutions" },
-      { label: "Mobile Applications", href: "/services/#mobile-applications" },
-      { label: "AI Automation", href: "/services/#ai-automation" },
+      { label: "Web Solutions", href: "/services/web-solutions" },
+      { label: "Mobile Applications", href: "/services/mobile-applications" },
+      { label: "AI Automation", href: "/services/ai-automation" },
+    ],
+  },
+  {
+    heading: "Markets",
+    links: [
+      { label: "Uganda", href: "/locations/uganda" },
+      { label: "USA", href: "/locations/united-states" },
+      { label: "UK", href: "/locations/united-kingdom" },
+      { label: "Canada", href: "/locations/canada" },
+      { label: "Australia", href: "/locations/australia" },
     ],
   },
   {

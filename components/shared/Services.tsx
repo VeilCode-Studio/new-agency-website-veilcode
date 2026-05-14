@@ -9,7 +9,7 @@ import {
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ServiceCard } from "../extras/ServiceCard";
 import Link from "next/link";
-import { Service } from "@/db/schema";
+import type { Service } from "@/db/schema";
 
 
 

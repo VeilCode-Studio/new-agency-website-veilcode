@@ -2,15 +2,14 @@ import { motion } from "framer-motion";
 import { PrimaryButton, GhostButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import Link from "next/link";
-import type { InferSelectModel } from "drizzle-orm";
-import { services } from "@/db/schema";
+import type { Service } from "@/db/schema";
 
 
 export function ServiceDeepDiveCard({
   data,
   flipped,
 }: {
-  data: InferSelectModel<typeof services>;
+  data: Service;
   flipped: boolean;
 }) {
   const [ref, inView] = useReveal();

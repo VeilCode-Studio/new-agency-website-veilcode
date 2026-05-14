@@ -2,7 +2,7 @@ import "server-only";
 
 import { blogPosts, projects, services } from "@/db/schema";
 import { db } from "@/db/drizzle";
-import { eq, asc, desc } from "drizzle-orm";
+import { and, eq, asc, desc } from "drizzle-orm";
 
 // service database queries
 export const getPublishedServices = async () => {
@@ -12,6 +12,31 @@ export const getPublishedServices = async () => {
     .where(eq(services.published, true))
     .orderBy(asc(services.sortOrder));
   return servicesData;
+};
+
+export const getPublishedSeoServices = async () => {
+  const servicesData = await db
+    .select()
+    .from(services)
+    .where(and(eq(services.published, true), eq(services.seoEnabled, true)))
+    .orderBy(asc(services.sortOrder));
+  return servicesData;
+};
+
+export const getPublishedServiceBySlug = async (slug: string) => {
+  const [service] = await db
+    .select()
+    .from(services)
+    .where(
+      and(
+        eq(services.slug, slug),
+        eq(services.published, true),
+        eq(services.seoEnabled, true),
+      ),
+    )
+    .limit(1);
+
+  return service ?? null;
 };
 
 // project database queries
@@ -32,6 +57,16 @@ export const getAllProjects = async () => {
     .where(eq(projects.published, true))
     .orderBy(asc(projects.sortOrder));
   return allProjects;
+};
+
+export const getProjectBySlug = async (slug: string) => {
+  const [project] = await db
+    .select()
+    .from(projects)
+    .where(and(eq(projects.slug, slug), eq(projects.published, true)))
+    .limit(1);
+
+  return project ?? null;
 };
 
 

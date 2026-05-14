@@ -10,9 +10,9 @@ import {
 import { fadeUp, stagger } from "@/lib/motion";
 
 const SERVICE_PILLS = [
-  { label: "Web Solutions",          accent: "text-svc-web    bg-svc-web-dim    border-svc-web-border"    },
-  { label: "Mobile Applications",    accent: "text-svc-mobile bg-svc-mobile-dim border-svc-mobile-border" },
-  { label: "AI Automation",          accent: "text-svc-ai     bg-svc-ai-dim     border-svc-ai-border"     },
+  { label: "Web Solutions", href: "/services/web-solutions", accent: "text-svc-web    bg-svc-web-dim    border-svc-web-border"    },
+  { label: "Mobile Applications", href: "/services/mobile-applications", accent: "text-svc-mobile bg-svc-mobile-dim border-svc-mobile-border" },
+  { label: "AI Automation", href: "/services/ai-automation", accent: "text-svc-ai     bg-svc-ai-dim     border-svc-ai-border"     },
 ] as const;
 
 export function ServicesHero() {
@@ -70,10 +70,10 @@ export function ServicesHero() {
             variants={fadeUp(0.24)}
             className="flex flex-wrap gap-2.5"
           >
-            {SERVICE_PILLS.map(({ label, accent }) => (
+            {SERVICE_PILLS.map(({ label, href, accent }) => (
               <a
                 key={label}
-                href={`#${label.toLowerCase().replace(/\s+/g, "-")}`}
+                href={href}
                 className={`font-mono text-[11px] tracking-widest uppercase
                   px-3.5 py-1.5 rounded border no-underline
                   transition-all duration-200 hover:opacity-80
