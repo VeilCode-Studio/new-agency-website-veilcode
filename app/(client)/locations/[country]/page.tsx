@@ -32,10 +32,26 @@ export default async function LocationPage({ params }: Params) {
 
   if (!market) return notFound();
 
-  const [services, projects] = await Promise.all([
+  const [servicesResult, projectsResult] = await Promise.allSettled([
     getPublishedServices(),
     getAllProjects(),
   ]);
+
+  const servicesUnavailable = servicesResult.status === "rejected";
+  const projectsUnavailable = projectsResult.status === "rejected";
+  const services =
+    servicesResult.status === "fulfilled" ? servicesResult.value : [];
+  const projects =
+    projectsResult.status === "fulfilled" ? projectsResult.value : [];
+
+  if (servicesUnavailable) {
+    console.error("[locations] failed to load services:", servicesResult.reason);
+  }
+
+  if (projectsUnavailable) {
+    console.error("[locations] failed to load projects:", projectsResult.reason);
+  }
+
   const relevantServices = services.filter((service) =>
     market.serviceFocus.includes(service.id),
   );
@@ -57,7 +73,13 @@ export default async function LocationPage({ params }: Params) {
         ])}
       />
       <LocationHero market={market} />
-      <LocationBody market={market} services={relevantServices} projects={projects} />
+      <LocationBody
+        market={market}
+        services={relevantServices}
+        projects={projects}
+        servicesUnavailable={servicesUnavailable}
+        projectsUnavailable={projectsUnavailable}
+      />
     </>
   );
 }

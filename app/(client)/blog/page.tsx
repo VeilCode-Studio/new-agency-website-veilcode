@@ -4,6 +4,7 @@ import { BlogHero } from './_components/BlogHero';
 import { FeaturedPost } from './_components/FeaturedPost';
 import { NewsletterCTA } from './[slug]/Newsletter';
 import { PostGrid } from './_components/PostGrid';
+import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice';
 import { getPublishedBlogs } from '@/queries';
 import { mapDbPostToClientPost } from '@/lib/blog/mappers';
 
@@ -14,12 +15,14 @@ export const metadata = {
 
 const page = async () => {
   let allPosts = POSTS;
+  let usedFallbackPosts = false;
 
   try {
     const blogs = await getPublishedBlogs();
     if (blogs.length > 0) allPosts = blogs.map(mapDbPostToClientPost);
   } catch (err) {
     console.warn("[blog] Falling back to static posts:", err);
+    usedFallbackPosts = true;
   }
 
   const featured = allPosts.find((post) => post.featured) ?? allPosts[0];
@@ -42,6 +45,14 @@ const page = async () => {
           readingMinutes: totalReadingMinutes,
         }}
       />
+      {usedFallbackPosts && (
+        <DataRecoveryNotice
+          eyebrow="Blog fallback"
+          title="We loaded a backup set of posts."
+          description="The live blog feed could not be loaded just now, so we are showing the built-in posts instead. Refresh the page in a moment if you want the latest entries."
+          retryLabel="Reload blog"
+        />
+      )}
       <FeaturedPost post={featured} />
 
       <PostGrid

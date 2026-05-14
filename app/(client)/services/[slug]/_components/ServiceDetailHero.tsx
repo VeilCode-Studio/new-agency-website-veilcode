@@ -1,25 +1,62 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
+import { fadeUp, stagger } from "@/lib/motion";
 import type { Service } from "@/db/schema";
 
 export function ServiceDetailHero({ service }: { service: Service }) {
   return (
-    <section className="relative overflow-hidden border-b border-line px-6 pb-20 pt-36 md:px-10">
+    <section className="relative min-h-[72vh] overflow-hidden flex items-center">
+      <GridBg />
+      <GlowOrb color="rgba(0,229,255,0.10)" size={560} top="5%" left="58%" />
+      <GlowOrb
+        color="rgba(192,132,252,0.07)"
+        size={400}
+        bottom="0%"
+        left="0%"
+        delay="2s"
+      />
+
       <div
         aria-hidden
-        className={`absolute right-[-10%] top-20 h-80 w-80 rounded-full blur-3xl ${service.deepDiveClasses.glow}`}
+        className="absolute inset-x-0 h-px pointer-events-none bg-linear-to-r from-transparent via-brand/20 to-transparent animate-scan"
       />
-      <div className="relative z-10 mx-auto grid max-w-300 gap-12 lg:grid-cols-[1fr_360px] lg:items-end">
-        <div>
-          <p className={`mb-5 font-mono text-xs uppercase tracking-[0.18em] ${service.deepDiveClasses.accent}`}>
-            {service.tagline}
-          </p>
-          <h1 className="max-w-190 font-display text-[clamp(42px,6vw,78px)] font-extrabold leading-[1.02] tracking-tight text-ink">
+
+      <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-205">
+          <motion.div variants={fadeUp(0)}>
+            <SectionTag>{service.tagline}</SectionTag>
+            <AccentLine width={56} />
+          </motion.div>
+
+          <motion.h1
+            variants={fadeUp(0.08)}
+            className="font-display font-extrabold leading-[1.02] tracking-tight text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
+          >
             {service.h1 || service.title}
-          </h1>
-          <p className="mt-7 max-w-170 text-lg leading-relaxed text-ink-muted">
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp(0.16)}
+            className="font-sans font-light text-lg text-ink-muted leading-relaxed max-w-145 mb-10"
+          >
             {service.intro}
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          </motion.p>
+
+          <motion.div variants={fadeUp(0.22)} className="flex flex-wrap gap-2.5">
+            {service.supportingCapabilities.slice(0, 4).map((item) => (
+              <span
+                key={item}
+                className={`font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border ${service.deepDiveClasses.dimBg} ${service.deepDiveClasses.border} ${service.deepDiveClasses.accent}`}
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/start"
               className="rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
@@ -27,22 +64,19 @@ export function ServiceDetailHero({ service }: { service: Service }) {
               Start a project
             </Link>
             <Link
-              href="/work"
+              href="/services"
               className="rounded-md border border-line px-5 py-3 text-sm font-semibold text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
             >
-              View related work
+              Explore services
             </Link>
-          </div>
-        </div>
-
-        <div className="rounded-xl border border-line bg-surface/60 p-6">
-          <div className={`mb-3 font-display text-5xl font-extrabold ${service.deepDiveClasses.metricText}`}>
-            {service.metric}
-          </div>
-          <p className="font-medium text-ink">{service.metricLabel}</p>
-          <p className="mt-1 text-sm text-ink-muted">{service.metricSub}</p>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
+
+      <div
+        aria-hidden
+        className="absolute bottom-0 inset-x-0 h-28 bg-linear-to-t from-page to-transparent pointer-events-none"
+      />
     </section>
   );
 }

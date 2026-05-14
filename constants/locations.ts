@@ -62,7 +62,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
           "Yes. We can start with a Uganda-focused product and structure the codebase, analytics, and content model for future markets.",
       },
     ],
-    ctaLabel: "Start a Uganda project",
+    ctaLabel: "Let's Discuss your Project",
     ctaCopy: "Bring us the business goal. We will help map the product, scope, and launch path.",
   },
   {
@@ -107,7 +107,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
           "Yes. We commonly connect CRMs, payment systems, analytics tools, email platforms, automation tools, and custom APIs.",
       },
     ],
-    ctaLabel: "Plan a US project",
+    ctaLabel: "Let's Discuss your Project",
     ctaCopy: "Tell us what needs to launch, improve, or automate. We will respond with a practical next step.",
   },
   {
@@ -152,7 +152,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
           "Yes. We can audit the current stack, stabilize it, and then plan improvements or rebuilds where that is more practical.",
       },
     ],
-    ctaLabel: "Discuss a UK project",
+    ctaLabel: "Let's Discuss your Project",
     ctaCopy: "Share the project context and we will help clarify the best delivery path.",
   },
   {
@@ -197,7 +197,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
           "Yes. Reporting, dashboards, and workflow visibility are treated as supporting capabilities inside web, mobile, and AI automation projects.",
       },
     ],
-    ctaLabel: "Plan a Canada project",
+    ctaLabel: "Let's Discuss your Project",
     ctaCopy: "Send the current challenge and we will outline a practical project route.",
   },
   {
@@ -242,7 +242,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
           "Yes. Final deliverables include source code, implementation notes, and handover documentation based on the project scope.",
       },
     ],
-    ctaLabel: "Start an Australia project",
+    ctaLabel: "Let's Discuss your Project",
     ctaCopy: "Share what you are trying to improve and we will help map the next useful step.",
   },
 ];

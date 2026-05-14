@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { LocationMarket } from "@/constants/locations";
 import type { Project, Service } from "@/db/schema";
+import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
 
 function LocationWorkCard({
   project,
@@ -99,13 +100,26 @@ export function LocationBody({
   market,
   services,
   projects,
+  servicesUnavailable = false,
+  projectsUnavailable = false,
 }: {
   market: LocationMarket;
   services: Service[];
   projects: Project[];
+  servicesUnavailable?: boolean;
+  projectsUnavailable?: boolean;
 }) {
   return (
     <>
+      {(servicesUnavailable || projectsUnavailable) && (
+        <DataRecoveryNotice
+          eyebrow="Location data issue"
+          title="Some location content could not load."
+          description="The page is still usable, but one or more content sections are temporarily unavailable. Refresh the page in a moment or contact us if the problem continues."
+          retryLabel="Retry page"
+        />
+      )}
+
       <section className="px-6 py-24 md:px-10">
         <div className="mx-auto grid max-w-300 gap-8 lg:grid-cols-[1fr_420px]">
           <div>
@@ -232,6 +246,23 @@ export function LocationBody({
                 />
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {projectsUnavailable && projects.length === 0 && (
+        <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
+          <div className="mx-auto max-w-220 rounded-xl border border-line bg-page p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-brand">
+              Work examples unavailable
+            </p>
+            <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-ink">
+              We could not load the relevant work examples just now.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+              Refresh the page or come back shortly. The rest of the location page
+              is still available.
+            </p>
           </div>
         </section>
       )}

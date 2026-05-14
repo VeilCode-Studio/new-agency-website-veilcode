@@ -5,8 +5,10 @@ import { ServiceDeepDives } from './_components/ServicesDeepDive'
 import { DeliveryProcess } from './_components/DeliveryProcess'
 import { PricingTiers } from './_components/PricingTiers'
 import { FAQ } from './_components/FAQ'
+import { ServicesDataError } from './_components/ServicesDataError'
 import { getPublishedServices } from '@/queries'
 import { buildPageMetadata } from '@/lib/seo/metadata'
+import type { Service } from '@/db/schema'
 
 export const dynamic = "force-dynamic";
 
@@ -18,13 +20,27 @@ export const metadata = buildPageMetadata({
 });
 
 const page = async () => {
-  const serviceList = await getPublishedServices();
+  let serviceList: Service[] = []
+  let servicesUnavailable = false
+
+  try {
+    serviceList = await getPublishedServices();
+  } catch (error) {
+    servicesUnavailable = true;
+    console.error("[services] failed to load published services:", error);
+  }
 
   return (
     <>
       <ServicesHero />
-      <ServicesOverview serviceList={serviceList} />
-      <ServiceDeepDives serviceList={serviceList} />
+      {servicesUnavailable ? (
+        <ServicesDataError />
+      ) : (
+        <>
+          <ServicesOverview serviceList={serviceList} />
+          <ServiceDeepDives serviceList={serviceList} />
+        </>
+      )}
       <DeliveryProcess />
       <PricingTiers />
       <FAQ />
