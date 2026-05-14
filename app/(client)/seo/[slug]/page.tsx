@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   getAllProjects,
   getPublishedBlogs,
+  getPublishedSeoPages,
   getPublishedServices,
   getSeoPageBySlug,
 } from "@/queries";
@@ -55,10 +56,11 @@ export default async function SeoPage({ params }: Params) {
 
   if (!page) return notFound();
 
-  const [servicesResult, projectsResult, blogsResult] = await Promise.allSettled([
+  const [servicesResult, projectsResult, blogsResult, seoPagesResult] = await Promise.allSettled([
     getPublishedServices(),
     getAllProjects(),
     getPublishedBlogs(),
+    getPublishedSeoPages(),
   ]);
 
   const services = servicesResult.status === "fulfilled" ? servicesResult.value : [];
@@ -76,6 +78,17 @@ export default async function SeoPage({ params }: Params) {
   const relatedBlogs = page.relatedBlogSlugs
     .map((blogSlug) => blogs.find((blog) => blog.slug === blogSlug))
     .filter((blog): blog is NonNullable<typeof blog> => Boolean(blog));
+
+  const seoPages = seoPagesResult.status === "fulfilled" ? seoPagesResult.value : [];
+
+  const relatedSeoPages = seoPages
+    .filter((item) => item.slug !== page.slug)
+    .filter((item) => {
+      if (page.countryName && item.countryName === page.countryName) return true;
+      if (page.serviceId && item.serviceId === page.serviceId) return true;
+      return false;
+    })
+    .slice(0, 6);
 
   return (
     <>
@@ -335,6 +348,51 @@ export default async function SeoPage({ params }: Params) {
                   </div>
                 </div>
               ) : null}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {relatedSeoPages.length > 0 && (
+        <section className="border-t border-line bg-surface px-6 py-20 md:px-10">
+          <div className="mx-auto max-w-300">
+            <div className="mb-8">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
+                Related SEO pages
+              </p>
+              <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
+                More pages in this market cluster
+              </h2>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {relatedSeoPages.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/seo/${item.slug}`}
+                  className="rounded-xl border border-line bg-page p-5 transition-colors hover:border-line-hi"
+                >
+                  <div className="flex flex-wrap gap-2">
+                    {item.countryName ? (
+                      <span className="rounded-full border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                        {item.countryName}
+                      </span>
+                    ) : null}
+                    <span className="rounded-full border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                      {pageTypeLabel(item.pageType)}
+                    </span>
+                    {item.serviceId ? (
+                      <span className="rounded-full border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                        {item.serviceId}
+                      </span>
+                    ) : null}
+                  </div>
+                  <h3 className="mt-3 font-display text-lg font-bold text-ink">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {item.metaDescription}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

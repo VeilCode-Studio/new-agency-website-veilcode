@@ -5,6 +5,7 @@ import { db } from "@/db/drizzle";
 import { seoPages } from "@/db/schema";
 import { requireAdmin } from "@/lib/auth/admin";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { SeoPageGeneratorForm } from "@/components/admin/seo-pages/SeoPageGeneratorForm";
 import { SeoPageImportForm } from "@/components/admin/seo-pages/SeoPageImportForm";
 import { SeoPagesTable, type SeoPageListRow } from "@/components/admin/seo-pages/SeoPagesTable";
 
@@ -52,6 +53,7 @@ export default async function SeoPagesAdminPage() {
       />
 
       <div className="mb-6 space-y-3">
+        <SeoPageGeneratorForm />
         <SeoPageImportForm />
         <div className="rounded-xl border border-line bg-surface/20 p-4 text-sm text-ink-muted">
           Seed file path{" "}
