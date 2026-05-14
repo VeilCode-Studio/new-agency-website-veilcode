@@ -3,6 +3,7 @@ import {
   getAllProjects,
   getPublishedBlogs,
   getPublishedSeoServices,
+  getPublishedSeoPages,
 } from "@/queries";
 import { LOCATION_MARKETS } from "@/constants/locations";
 import { SITE_URL } from "@/lib/seo/site";
@@ -10,10 +11,11 @@ import { SITE_URL } from "@/lib/seo/site";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
-  const [serviceResult, projectResult, blogResult] = await Promise.allSettled([
+  const [serviceResult, projectResult, blogResult, seoPageResult] = await Promise.allSettled([
     getPublishedSeoServices(),
     getAllProjects(),
     getPublishedBlogs(),
+    getPublishedSeoPages(),
   ]);
 
   const serviceRows =
@@ -21,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRows =
     projectResult.status === "fulfilled" ? projectResult.value : [];
   const blogRows = blogResult.status === "fulfilled" ? blogResult.value : [];
+  const seoPageRows = seoPageResult.status === "fulfilled" ? seoPageResult.value : [];
 
   const serviceUrls = serviceRows
     .filter((service) => service.slug)
@@ -39,6 +42,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.updatedAt ?? post.publishedAt ?? now,
   }));
 
+  const seoPageUrls = seoPageRows.map((page) => ({
+    url: `${SITE_URL}/seo/${page.slug}`,
+    lastModified: page.updatedAt ?? now,
+  }));
+
   const locationUrls = LOCATION_MARKETS.map((market) => ({
     url: `${SITE_URL}/locations/${market.slug}`,
     lastModified: now,
@@ -52,8 +60,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/about`, lastModified: now },
     { url: `${SITE_URL}/start`, lastModified: now },
     { url: `${SITE_URL}/blog`, lastModified: now },
+    { url: `${SITE_URL}/seo`, lastModified: now },
     ...serviceUrls,
     ...locationUrls,
+    ...seoPageUrls,
     ...projectUrls,
     ...blogUrls,
   ];

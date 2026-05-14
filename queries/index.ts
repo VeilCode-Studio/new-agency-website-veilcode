@@ -1,6 +1,6 @@
 import "server-only";
 
-import { blogPosts, projects, services } from "@/db/schema";
+import { blogPosts, projects, services, seoPages } from "@/db/schema";
 import { db } from "@/db/drizzle";
 import { and, eq, asc, desc } from "drizzle-orm";
 
@@ -37,6 +37,26 @@ export const getPublishedServiceBySlug = async (slug: string) => {
     .limit(1);
 
   return service ?? null;
+};
+
+export const getPublishedSeoPages = async () => {
+  const pages = await db
+    .select()
+    .from(seoPages)
+    .where(and(eq(seoPages.published, true), eq(seoPages.indexable, true)))
+    .orderBy(asc(seoPages.updatedAt));
+
+  return pages;
+};
+
+export const getSeoPageBySlug = async (slug: string) => {
+  const [page] = await db
+    .select()
+    .from(seoPages)
+    .where(and(eq(seoPages.slug, slug), eq(seoPages.published, true)))
+    .limit(1);
+
+  return page ?? null;
 };
 
 // project database queries

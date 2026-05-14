@@ -17,6 +17,7 @@ import type {
   ServiceDeepDiveClasses,
   EmailBlock,
   SeoFaq,
+  SeoPageCta,
 } from "@/types/content";
 
 // Newsletter subscriptions
@@ -77,6 +78,13 @@ export const serviceSlugEnum = pgEnum("service_slug", [
   "data",
   "social",
   "ai",
+]);
+
+export const seoPageTypeEnum = pgEnum("seo_page_type", [
+  "location",
+  "service-location",
+  "industry",
+  "custom",
 ]);
 
 // Client inquiries
@@ -157,6 +165,33 @@ export const services = pgTable("services", {
 });
 
 export type Service = typeof services.$inferSelect;
+
+// SEO PAGES
+
+export const seoPages = pgTable("seo_pages", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").unique().notNull(),
+  pageType: seoPageTypeEnum("page_type").notNull(),
+  countryCode: text("country_code"),
+  countryName: text("country_name"),
+  serviceId: text("service_id"),
+  title: text("title").notNull(),
+  metaDescription: text("meta_description").notNull(),
+  h1: text("h1").notNull(),
+  heroCopy: text("hero_copy").notNull(),
+  body: jsonb("body").$type<ContentBlock[]>().default([]).notNull(),
+  faqs: jsonb("faqs").$type<SeoFaq[]>().default([]).notNull(),
+  cta: jsonb("cta").$type<SeoPageCta>().notNull(),
+  relatedServiceIds: text("related_service_ids").array().default([]).notNull(),
+  relatedProjectSlugs: text("related_project_slugs").array().default([]).notNull(),
+  relatedBlogSlugs: text("related_blog_slugs").array().default([]).notNull(),
+  published: boolean("published").default(false).notNull(),
+  indexable: boolean("indexable").default(true).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export type SeoPage = typeof seoPages.$inferSelect;
 
 // PROJECTS
 
