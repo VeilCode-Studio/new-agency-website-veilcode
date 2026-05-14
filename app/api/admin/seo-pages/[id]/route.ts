@@ -86,7 +86,7 @@ export async function PATCH(
     const [current] = await db.select().from(seoPages).where(eq(seoPages.id, numId)).limit(1);
     if (!current) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-    const body = normalizeBody(await req.json(), current);
+    const body = normalizeSeoPageInput(await req.json(), current);
     const [updated] = await db
       .update(seoPages)
       .set({

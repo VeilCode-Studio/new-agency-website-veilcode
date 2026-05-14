@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Image from "next/image";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { organizationJsonLd } from "@/lib/seo/jsonLd";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://veilcode.studio"),
@@ -101,7 +90,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="antialiased"
       >
         <noscript>
           <Image

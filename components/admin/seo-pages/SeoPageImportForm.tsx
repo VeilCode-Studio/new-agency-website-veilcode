@@ -35,6 +35,10 @@ export function SeoPageImportForm() {
           throw new Error("error" in json ? json.error : "Import failed");
         }
 
+        if (!("ok" in json)) {
+          throw new Error("Import failed");
+        }
+
         toast.success(`Imported ${json.count} SEO pages`);
         setText("");
         if (inputRef.current) {
