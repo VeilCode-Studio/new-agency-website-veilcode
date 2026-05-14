@@ -1,0 +1,238 @@
+[
+  {
+    "slug": "uganda-digital-product-agency",
+    "pageType": "location",
+    "countryCode": "UG",
+    "countryName": "Uganda",
+    "serviceId": "",
+    "title": "Digital Product Agency in Uganda | VeilCode",
+    "metaDescription": "VeilCode is a Uganda-based digital product agency building web solutions, mobile apps, and AI automation for businesses that want practical growth.",
+    "h1": "Digital product strategy and engineering for Ugandan businesses",
+    "heroCopy": "We help Ugandan teams modernize websites, launch mobile products, and automate operational work with systems designed for local constraints and regional growth.",
+    "bodyText": "## Digital product agency in Uganda\nVeilCode helps Ugandan businesses find a digital product agency that can handle web development, mobile app development, and AI automation.\n\n## What this page supports\nIt is built for searches around digital product agency in Uganda, web solutions Uganda, and mobile app development Uganda.\n\n## How we work\nWe focus on performance, mobile-first user journeys, and clear conversion paths for leads, bookings, and sales.",
+    "faqs": [
+      {
+        "question": "Do you work with businesses outside Kampala?",
+        "answer": "Yes. We work with teams across Uganda and can run remote discovery, design reviews, and delivery for businesses outside Kampala."
+      },
+      {
+        "question": "Can you build for mobile-first Ugandan customers?",
+        "answer": "Yes. We design around mobile traffic, performance, accessibility, WhatsApp workflows, and local payment patterns."
+      },
+      {
+        "question": "Can you support growth beyond Uganda later?",
+        "answer": "Yes. We can structure the content model, analytics, and codebase so the same brand can expand to other countries later."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "mobile", "ai"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform", "reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "uganda-web-solutions",
+    "pageType": "service-location",
+    "countryCode": "UG",
+    "countryName": "Uganda",
+    "serviceId": "web",
+    "title": "Web Solutions in Uganda | VeilCode",
+    "metaDescription": "VeilCode builds web solutions in Uganda for businesses that need better visibility, stronger conversion, and a reliable digital presence.",
+    "h1": "Web solutions in Uganda for businesses that need credibility and conversion",
+    "heroCopy": "We build websites and web platforms for Ugandan companies that need to turn search visibility into leads, sales, and operational clarity.",
+    "bodyText": "## Web solutions in Uganda\nThis page targets web solutions in Uganda, web design Uganda, and web development Uganda.\n\n## What we solve\nCredibility gaps, slow websites, unclear service pages, and weak conversion journeys.\n\n## Why it matters\nThe page speaks to the problems Ugandan businesses actually have and gives search engines a clear match for the topic.",
+    "faqs": [
+      {
+        "question": "Do you only work in Kampala?",
+        "answer": "No. We work with businesses across Uganda and can support remote discovery and delivery."
+      },
+      {
+        "question": "Can you build for mobile money and WhatsApp workflows?",
+        "answer": "Yes. We can design around the tools and habits common in Ugandan business operations."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "mobile"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "usa-web-development-agency",
+    "pageType": "service-location",
+    "countryCode": "US",
+    "countryName": "United States",
+    "serviceId": "web",
+    "title": "Web Development Agency for US Companies | VeilCode",
+    "metaDescription": "VeilCode builds fast, conversion-focused web development and digital product systems for US companies that need senior execution without bloated agency overhead.",
+    "h1": "Web development for US companies that need speed and senior execution",
+    "heroCopy": "We partner with US founders and operators who need lean, senior delivery for websites, portals, internal tools, and AI-powered workflows.",
+    "bodyText": "## Web development agency in the USA\nThis page targets web development agency, website design, product engineering, and digital product delivery for US companies.\n\n## Why VeilCode fits\nWe combine strategy, design, and engineering to ship fast, measurable work that improves conversion and reduces operational drag.\n\n## What you can expect\nClear scopes, practical communication, and delivery that works with distributed teams and US time zones.",
+    "faqs": [
+      {
+        "question": "Can you work with US time zones?",
+        "answer": "Yes. We work asynchronously by default and schedule overlap windows for discovery, reviews, and launch coordination."
+      },
+      {
+        "question": "Do you sign NDAs or vendor agreements?",
+        "answer": "Yes. We can review reasonable NDAs, vendor onboarding requirements, and project agreements before work begins."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "ai"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "usa-ai-automation",
+    "pageType": "service-location",
+    "countryCode": "US",
+    "countryName": "United States",
+    "serviceId": "ai",
+    "title": "AI Automation Agency in the USA | VeilCode",
+    "metaDescription": "VeilCode builds AI automation systems for US companies that want to streamline reporting, customer operations, and internal workflows.",
+    "h1": "AI automation in the USA for teams that want to move faster",
+    "heroCopy": "We help US founders and operators automate manual work, connect tools, and reduce the overhead that slows growth teams down.",
+    "bodyText": "## AI automation agency in the USA\nThe page targets AI automation agency, workflow automation, and business automation searches in the USA.\n\n## What we solve\nManual reporting, disconnected systems, and repetitive operations that waste time.\n\n## How we work\nSenior, remote-first delivery with clear written scopes and measurable milestones.",
+    "faqs": [
+      {
+        "question": "Can you work with US SaaS tools?",
+        "answer": "Yes. We connect CRMs, payment systems, analytics tools, email platforms, automation tools, and custom APIs."
+      },
+      {
+        "question": "Can you start with one workflow and expand later?",
+        "answer": "Yes. We can begin with one business-critical workflow and expand once the first automation proves useful."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["ai", "web"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "uk-digital-product-agency",
+    "pageType": "location",
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "serviceId": "",
+    "title": "Digital Product Agency for UK Businesses | VeilCode",
+    "metaDescription": "VeilCode builds web solutions, mobile applications, and AI automation systems for UK businesses that need senior remote product delivery.",
+    "h1": "Digital product delivery for UK businesses with practical growth goals",
+    "heroCopy": "We help UK SMEs, agencies, and growth-stage teams ship polished digital products, modernize customer journeys, and reduce repetitive operations through automation.",
+    "bodyText": "## Digital product agency in the UK\nVeilCode helps UK companies find a digital product agency that can handle web, mobile, and automation work.\n\n## Search intent\nThis page is built for UK businesses searching for a digital product agency, web development agency, or mobile app development partner.\n\n## The value\nIt combines credibility, practical delivery language, and a clear route to contact the team.",
+    "faqs": [
+      {
+        "question": "Can you collaborate with our UK marketing or product team?",
+        "answer": "Yes. We can work as the delivery partner for your internal team or alongside an existing agency partner."
+      },
+      {
+        "question": "Can you take over an existing website or app?",
+        "answer": "Yes. We can audit the current stack, stabilize it, and then plan improvements or rebuilds where that is more practical."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "mobile", "ai"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "uk-mobile-app-development",
+    "pageType": "service-location",
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "serviceId": "mobile",
+    "title": "Mobile App Development Agency for UK Businesses | VeilCode",
+    "metaDescription": "VeilCode delivers mobile app development, product design, and automation systems for UK businesses that need clear remote collaboration and dependable execution.",
+    "h1": "Mobile app development for UK businesses with practical growth goals",
+    "heroCopy": "We help UK SMEs, agencies, and growth-stage teams ship polished mobile apps, modernize customer journeys, and reduce repetitive operations through automation.",
+    "bodyText": "## Mobile app development in the UK\nThis page is aimed at searches for mobile app development agency, app design, and digital product delivery in the United Kingdom.\n\n## Our approach\nWe keep delivery structured, accessible, and measurable while supporting the expectations UK teams have for quality and maintainability.\n\n## What makes the page useful\nIt explains the service, the delivery model, and the outcomes in language that matches the search intent.",
+    "faqs": [
+      {
+        "question": "Can you collaborate with our UK product team?",
+        "answer": "Yes. We can work as the delivery partner for your internal team or alongside an existing agency partner."
+      },
+      {
+        "question": "Do you support accessibility-conscious builds?",
+        "answer": "Yes. We build with semantic markup, performance, and maintainable content structures in mind."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["mobile", "web"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "canada-ai-automation",
+    "pageType": "service-location",
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "serviceId": "ai",
+    "title": "AI Automation Agency for Canadian Companies | VeilCode",
+    "metaDescription": "VeilCode builds AI automation systems for Canadian companies that need reporting, workflow automation, and product delivery across remote teams.",
+    "h1": "AI automation for Canadian teams that want practical business outcomes",
+    "heroCopy": "We support Canadian businesses that need focused engineering support for automation workflows, internal tools, dashboards, and operational systems.",
+    "bodyText": "## AI automation agency in Canada\nThis landing page is built for searches around AI automation agency, workflow automation, and product engineering for Canadian companies.\n\n## What we solve\nManual reporting, disconnected tools, and slow follow-up loops that make growth harder than it should be.\n\n## How we deliver\nSenior, remote-first execution with clear documentation and a practical handover path.",
+    "faqs": [
+      {
+        "question": "Can you support Canadian startups and SMEs remotely?",
+        "answer": "Yes. Our delivery model is remote-first and works well for teams that value clear documentation and review points."
+      },
+      {
+        "question": "Can you help automate internal reporting?",
+        "answer": "Yes. Reporting, dashboards, and workflow visibility are part of our web, mobile, and AI automation work."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["ai", "web"],
+    "relatedProjectSlugs": ["reachflow-lead-tracking-crm"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  },
+  {
+    "slug": "australia-web-solutions",
+    "pageType": "service-location",
+    "countryCode": "AU",
+    "countryName": "Australia",
+    "serviceId": "web",
+    "title": "Web Solutions Agency for Australian Businesses | VeilCode",
+    "metaDescription": "VeilCode helps Australian businesses build web solutions, mobile applications, and automation systems through clear remote delivery and practical execution.",
+    "h1": "Web solutions for Australian businesses that need reliable remote delivery",
+    "heroCopy": "We help Australian teams improve customer journeys, launch digital products, and reduce repetitive work with well-scoped remote engineering engagements.",
+    "bodyText": "## Web solutions agency in Australia\nThis page targets searches for web solutions agency, web design, and digital product delivery in Australia.\n\n## Why it works\nIt combines clear positioning, regional intent, and practical delivery language that matches how buyers search.\n\n## Delivery style\nAsync-first collaboration, clear written updates, and handover notes that keep the work maintainable.",
+    "faqs": [
+      {
+        "question": "How do you handle the timezone difference with Australia?",
+        "answer": "We rely on strong async updates and schedule live sessions for discovery, demos, and decision points when overlap is available."
+      },
+      {
+        "question": "Will we own the code and documentation?",
+        "answer": "Yes. Final deliverables include source code, implementation notes, and handover documentation based on the project scope."
+      }
+    ],
+    "ctaLabel": "Let's Discuss your Project",
+    "ctaHref": "/start",
+    "relatedServiceIds": ["web", "mobile", "ai"],
+    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
+    "published": true,
+    "indexable": true
+  }
+]

@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getSeoPageBySlug } from "@/queries";
+import {
+  getAllProjects,
+  getPublishedBlogs,
+  getPublishedServices,
+  getSeoPageBySlug,
+} from "@/queries";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -49,6 +54,28 @@ export default async function SeoPage({ params }: Params) {
   const page = await getSeoPageBySlug(slug);
 
   if (!page) return notFound();
+
+  const [servicesResult, projectsResult, blogsResult] = await Promise.allSettled([
+    getPublishedServices(),
+    getAllProjects(),
+    getPublishedBlogs(),
+  ]);
+
+  const services = servicesResult.status === "fulfilled" ? servicesResult.value : [];
+  const projects = projectsResult.status === "fulfilled" ? projectsResult.value : [];
+  const blogs = blogsResult.status === "fulfilled" ? blogsResult.value : [];
+
+  const relatedServices = page.relatedServiceIds
+    .map((serviceId) => services.find((service) => service.id === serviceId))
+    .filter((service): service is NonNullable<typeof service> => Boolean(service));
+
+  const relatedProjects = page.relatedProjectSlugs
+    .map((projectSlug) => projects.find((project) => project.slug === projectSlug))
+    .filter((project): project is NonNullable<typeof project> => Boolean(project));
+
+  const relatedBlogs = page.relatedBlogSlugs
+    .map((blogSlug) => blogs.find((blog) => blog.slug === blogSlug))
+    .filter((blog): blog is NonNullable<typeof blog> => Boolean(blog));
 
   return (
     <>
@@ -142,6 +169,108 @@ export default async function SeoPage({ params }: Params) {
                 Overview
               </p>
               <ArticleBody blocks={page.body} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {(relatedServices.length > 0 || relatedProjects.length > 0 || relatedBlogs.length > 0) && (
+        <section className="border-t border-line px-6 py-20 md:px-10">
+          <div className="mx-auto max-w-300">
+            <div className="mb-8">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
+                Related content
+              </p>
+              <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
+                Internal links that support this page
+              </h2>
+            </div>
+
+            <div className="grid gap-8 xl:grid-cols-3">
+              {relatedServices.length > 0 ? (
+                <div>
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                    Services
+                  </p>
+                  <div className="space-y-3">
+                    {relatedServices.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={service.slug ? `/services/${service.slug}` : "/services"}
+                        className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="min-w-0">
+                            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                              {service.id}
+                            </p>
+                            <h3 className="mt-2 font-display text-lg font-bold text-ink">
+                              {service.title}
+                            </h3>
+                          </div>
+                          <span className="mt-0.5 rounded-full border border-line px-2 py-0.5 text-[10px] text-ink-faint">
+                            Service
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {relatedProjects.length > 0 ? (
+                <div>
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                    Projects
+                  </p>
+                  <div className="space-y-3">
+                    {relatedProjects.map((project) => (
+                      <Link
+                        key={project.slug}
+                        href={`/work/${project.slug}`}
+                        className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
+                      >
+                        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                          {project.serviceLabel}
+                        </p>
+                        <h3 className="mt-2 font-display text-lg font-bold text-ink">
+                          {project.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                          {project.summary}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {relatedBlogs.length > 0 ? (
+                <div>
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                    Articles
+                  </p>
+                  <div className="space-y-3">
+                    {relatedBlogs.map((blog) => (
+                      <Link
+                        key={blog.slug}
+                        href={`/blog/${blog.slug}`}
+                        className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
+                      >
+                        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                          {blog.category}
+                        </p>
+                        <h3 className="mt-2 font-display text-lg font-bold text-ink">
+                          {blog.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                          {blog.excerpt}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { db } from "@/db/drizzle";
 import { seoPages } from "@/db/schema";
 import { requireAdmin } from "@/lib/auth/admin";
 import { PageHeader } from "@/components/admin/PageHeader";
+import { SeoPageImportForm } from "@/components/admin/seo-pages/SeoPageImportForm";
 import { SeoPagesTable, type SeoPageListRow } from "@/components/admin/seo-pages/SeoPagesTable";
 
 export const dynamic = "force-dynamic";
@@ -49,6 +50,16 @@ export default async function SeoPagesAdminPage() {
           </Link>
         }
       />
+
+      <div className="mb-6 space-y-3">
+        <SeoPageImportForm />
+        <div className="rounded-xl border border-line bg-surface/20 p-4 text-sm text-ink-muted">
+          Seed file path{" "}
+          <code className="rounded bg-page px-1.5 py-0.5 text-ink">
+            docs/seo/veilcode-seo-page-seed-data.json
+          </code>
+        </div>
+      </div>
 
       {schemaMissing ? (
         <div className="rounded-xl border border-svc-social-border bg-svc-social-dim p-4 text-sm text-svc-social">
