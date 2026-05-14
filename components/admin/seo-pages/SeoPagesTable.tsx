@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import React, { useMemo, useState, useTransition } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Eye, EyeOff, Pencil, Trash2 } from "lucide-react";
+import { CheckSquare2, Eye, EyeOff, Pencil, RefreshCw, Square, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type SeoPageListRow = {
@@ -54,10 +55,31 @@ async function deleteSeoPage(id: number) {
   throw new Error(json.error ?? "Delete failed");
 }
 
+async function deleteSeoPages(ids: number[]) {
+  const res = await fetch("/api/admin/seo-pages/bulk-delete", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ids }),
+  });
+
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.error ?? "Bulk delete failed");
+  return json as { ok: true; deleted: number };
+}
+
 export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] }) {
+  const router = useRouter();
   const [rows, setRows] = useState(initialRows);
   const [confirmDeleteId, setConfirmDeleteId] = useState<number | null>(null);
+  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
+  const [confirmBulkDelete, setConfirmBulkDelete] = useState(false);
   const [isPending, startTransition] = useTransition();
+
+  const selectedCount = selectedIds.size;
+  const allSelected = useMemo(
+    () => rows.length > 0 && selectedCount === rows.length,
+    [rows.length, selectedCount],
+  );
 
   function handleToggle(row: SeoPageListRow, field: "published" | "indexable") {
     const nextValue = !row[field];
@@ -74,9 +96,37 @@ export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] })
     });
   }
 
+  function toggleSelect(id: number) {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+    setConfirmBulkDelete(false);
+  }
+
+  function toggleSelectAll() {
+    setSelectedIds((prev) => {
+      if (rows.length > 0 && prev.size === rows.length) return new Set();
+      return new Set(rows.map((row) => row.id));
+    });
+    setConfirmBulkDelete(false);
+  }
+
+  function clearSelection() {
+    setSelectedIds(new Set());
+    setConfirmBulkDelete(false);
+  }
+
   function handleDelete(row: SeoPageListRow) {
     setRows((prev) => prev.filter((item) => item.id !== row.id));
     setConfirmDeleteId(null);
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      next.delete(row.id);
+      return next;
+    });
 
     startTransition(async () => {
       try {
@@ -85,6 +135,33 @@ export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] })
       } catch (error) {
         setRows((prev) => [...prev, row].sort((a, b) => a.title.localeCompare(b.title)));
         toast.error(error instanceof Error ? error.message : "Delete failed");
+      }
+    });
+  }
+
+  function handleBulkDelete() {
+    const ids = Array.from(selectedIds);
+    const deletedRows = rows.filter((row) => selectedIds.has(row.id));
+
+    setRows((prev) => prev.filter((row) => !selectedIds.has(row.id)));
+    setSelectedIds(new Set());
+    setConfirmBulkDelete(false);
+    if (confirmDeleteId && selectedIds.has(confirmDeleteId)) {
+      setConfirmDeleteId(null);
+    }
+
+    startTransition(async () => {
+      try {
+        const result = await deleteSeoPages(ids);
+        toast.success(`${result.deleted} SEO page${result.deleted === 1 ? "" : "s"} deleted`);
+      } catch (error) {
+        setRows((prev) =>
+          [...deletedRows, ...prev].sort(
+            (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+          ),
+        );
+        setSelectedIds(new Set(ids));
+        toast.error(error instanceof Error ? error.message : "Bulk delete failed");
       }
     });
   }
@@ -108,9 +185,79 @@ export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] })
 
   return (
     <div className="overflow-hidden rounded-xl border border-line">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-surface/40 px-4 py-3">
+        <div className="min-h-8">
+          {selectedCount > 0 ? (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-ink-muted">
+                {selectedCount} selected
+              </span>
+              {confirmBulkDelete ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={handleBulkDelete}
+                    disabled={isPending}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  >
+                    <Trash2 className="size-3" />
+                    Confirm delete
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setConfirmBulkDelete(false)}
+                    disabled={isPending}
+                    className="rounded-md border border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:text-ink disabled:opacity-50"
+                  >
+                    Cancel
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setConfirmBulkDelete(true)}
+                  disabled={isPending}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 px-3 py-1.5 text-xs font-medium text-destructive transition-colors hover:bg-destructive/10 disabled:opacity-50"
+                >
+                  <Trash2 className="size-3" />
+                  Delete selected
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={clearSelection}
+                disabled={isPending}
+                className="rounded-md border border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:text-ink disabled:opacity-50"
+              >
+                Clear
+              </button>
+            </div>
+          ) : null}
+        </div>
+        <button
+          type="button"
+          onClick={() => router.refresh()}
+          disabled={isPending}
+          className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-line-hi hover:bg-surface-hi disabled:opacity-50"
+        >
+          <RefreshCw className="size-4" />
+          Refresh
+        </button>
+      </div>
+
       <table className="w-full text-sm">
         <thead className="bg-surface/40 text-left text-[11px] uppercase tracking-wider text-ink-muted">
           <tr>
+            <th className="w-10 px-4 py-3">
+              <button
+                type="button"
+                onClick={toggleSelectAll}
+                aria-label="Select all SEO pages"
+                className="inline-grid size-4 place-items-center text-ink-muted transition-colors hover:text-ink"
+              >
+                {allSelected ? <CheckSquare2 className="size-4" /> : <Square className="size-4" />}
+              </button>
+            </th>
             <th className="px-4 py-3">Page</th>
             <th className="px-4 py-3 hidden md:table-cell">Type</th>
             <th className="px-4 py-3 hidden lg:table-cell">Updated</th>
@@ -129,8 +276,25 @@ export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] })
                   className={cn(
                     "border-t border-line transition-colors hover:bg-surface/30",
                     isConfirming && "bg-destructive/5",
+                    selectedIds.has(row.id) && "bg-surface/50",
                   )}
                 >
+                  <td className="px-4 py-3">
+                    <button
+                      type="button"
+                      onClick={() => toggleSelect(row.id)}
+                      disabled={isPending}
+                      aria-label={`Select SEO page ${row.title}`}
+                      className="inline-grid size-4 place-items-center text-ink-muted transition-colors hover:text-ink disabled:opacity-50"
+                    >
+                      {selectedIds.has(row.id) ? (
+                        <CheckSquare2 className="size-4" />
+                      ) : (
+                        <Square className="size-4" />
+                      )}
+                    </button>
+                  </td>
+
                   <td className="px-4 py-3">
                     <div className="min-w-0">
                       <div className="truncate font-medium text-ink">{row.title}</div>
@@ -247,7 +411,7 @@ export function SeoPagesTable({ rows: initialRows }: { rows: SeoPageListRow[] })
 
                 {isConfirming && (
                   <tr className="border-t border-destructive/20 bg-destructive/5">
-                    <td colSpan={6} className="px-4 py-2.5">
+                    <td colSpan={7} className="px-4 py-2.5">
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-xs text-ink-muted">
                           Permanently delete <span className="font-medium text-ink">{row.title}</span>?
