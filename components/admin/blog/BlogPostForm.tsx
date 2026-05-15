@@ -7,12 +7,13 @@ import Link from "next/link";
 import { toast } from "sonner";
 import {
   Plus, Trash2, Upload, Loader2, ChevronUp, ChevronDown,
-  RefreshCw, Eye, EyeOff, RotateCcw, Star,
+  RefreshCw, Eye, EyeOff, RotateCcw, Star, FileJson, Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { BlogAuthor, TocEntry, ContentBlock } from "@/constants/blog";
 import type { BlogPostClasses } from "@/types/content";
 import { Button } from "@/components/ui/button";
+import { parseBlogJsonForForm } from "@/lib/blog/importJson";
 
 // Form data type
 
@@ -1070,10 +1071,13 @@ function buildTocFromBody(body: ContentBlock[]): TocEntry[] {
 
 export function BlogPostForm(props: BlogFormProps) {
   const router = useRouter();
+  const importFileRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState<BlogFormData>(
     props.mode === "edit" ? props.initialData : EMPTY,
   );
   const [slugManual, setSlugManual] = useState(props.mode === "edit");
+  const [importOpen, setImportOpen] = useState(false);
+  const [importDraft, setImportDraft] = useState("");
   const [isPending, startTransition] = useTransition();
 
   function set<K extends keyof BlogFormData>(key: K, value: BlogFormData[K]) {
@@ -1093,6 +1097,36 @@ export function BlogPostForm(props: BlogFormProps) {
   function regenerateToc() {
     set("toc", buildTocFromBody(data.body));
     toast.success("TOC regenerated from headings");
+  }
+
+  function importBlogJson(raw: string) {
+    const result = parseBlogJsonForForm(raw);
+
+    if (!result.ok) {
+      toast.error(result.error);
+      return;
+    }
+
+    setData(result.data);
+    setSlugManual(Boolean(result.data.slug));
+    setImportDraft(JSON.stringify(result.data, null, 2));
+    setImportOpen(false);
+    toast.success("Blog JSON imported");
+  }
+
+  async function handleImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+      setImportDraft(text);
+      importBlogJson(text);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not read JSON file");
+    } finally {
+      if (importFileRef.current) importFileRef.current.value = "";
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -1154,6 +1188,71 @@ export function BlogPostForm(props: BlogFormProps) {
             {isPending ? "Saving…" : props.mode === "edit" ? "Save changes" : "Publish post"}
           </button>
         </div>
+      </div>
+
+      <div className="mb-6">
+        <SectionCard
+          title="Import JSON"
+          description="Paste a complete blog payload or load a .json file to prefill this form."
+        >
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setImportOpen((open) => !open)}
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <FileJson className="size-4" />
+                {importOpen ? "Hide JSON" : "Paste JSON"}
+              </button>
+              <button
+                type="button"
+                onClick={() => importFileRef.current?.click()}
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <Upload className="size-4" />
+                Load JSON file
+              </button>
+              <a
+                href="/api/admin/blog/sample-json"
+                download
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <Download className="size-4" />
+                Download sample
+              </a>
+              <input
+                ref={importFileRef}
+                type="file"
+                accept="application/json,.json"
+                className="hidden"
+                onChange={handleImportFile}
+              />
+            </div>
+
+            {importOpen && (
+              <div className="space-y-2">
+                <textarea
+                  value={importDraft}
+                  onChange={(e) => setImportDraft(e.target.value)}
+                  rows={10}
+                  placeholder='{"slug":"new-post","title":"New post",...}'
+                  className={cn(textareaCls, "font-mono text-xs")}
+                />
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => importBlogJson(importDraft)}
+                    className="inline-flex items-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"
+                  >
+                    <FileJson className="size-4" />
+                    Import into form
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </SectionCard>
       </div>
 
       {/* Two-column layout */}
