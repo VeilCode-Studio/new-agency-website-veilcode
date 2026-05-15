@@ -86,7 +86,7 @@ export interface BlogPost {
   };
 }
 
-/* ─── AUTHORS ─────────────────────────────────────────────────────────────── */
+// authors
 
 const FRANK: BlogAuthor = {
   name: "Frank Tamale",
@@ -124,10 +124,10 @@ const AISHA: BlogAuthor = {
   border: "border-svc-mobile-border",
 };
 
-/* ─── POSTS ───────────────────────────────────────────────────────────────── */
+// posts
 
 export const POSTS: BlogPost[] = [
-  /* ── 01 ─────────────────────────────────────────────────────────────────── */
+// 01
   {
     slug: "next-js-performance-east-africa",
     title: "Building Fast Web Apps for Low-Bandwidth Markets",
@@ -390,7 +390,7 @@ export default function RootLayout({ children }) {
     ],
   },
 
-  /* ── 02 ─────────────────────────────────────────────────────────────────── */
+// 02
   {
     slug: "ai-agents-production",
     title: "Shipping AI Agents to Production: What Nobody Tells You",
@@ -566,7 +566,7 @@ graph.add_conditional_edges("process", should_escalate)`,
     ],
   },
 
-  /* ── 03 ─────────────────────────────────────────────────────────────────── */
+// 03
   {
     slug: "design-systems-scale",
     title: "Design Systems That Don't Become a Burden",
@@ -734,7 +734,7 @@ function PrimaryButton({ children, className = "", ...props }) {
   },
 ];
 
-/* ─── HELPERS ─────────────────────────────────────────────────────────────── */
+// HELPERS
 
 export function getPost(slug: string): BlogPost | undefined {
   return POSTS.find((p) => p.slug === slug);
@@ -779,3 +779,5 @@ export function getRecentPosts(exclude?: string, limit = 20): BlogPost[] {
     )
     .slice(0, limit);
 }
+
+
