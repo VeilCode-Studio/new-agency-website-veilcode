@@ -1,6 +1,7 @@
 "use client";
 
 import { type ContentBlock } from "@/constants/blog";
+import { ArticleChart, ArticleStatGrid } from "./DataVisualizations";
 
 /* ─── SYNTAX HIGHLIGHT ────────────────────────────────────────────────────── */
 /* Lightweight tokeniser — no external dep. Covers the languages we use:
@@ -250,6 +251,12 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
 
           case "callout":
             return <Callout key={i} variant={block.variant} html={block.html} />;
+
+          case "stat-grid":
+            return <ArticleStatGrid key={i} block={block} />;
+
+          case "chart":
+            return <ArticleChart key={i} block={block} />;
 
           case "divider":
             return (

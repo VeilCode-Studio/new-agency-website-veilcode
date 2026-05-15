@@ -445,10 +445,23 @@ const BLOCK_LABELS: Record<BlockType, string> = {
   ol: "Numbered list",
   code: "Code block",
   callout: "Callout",
+  "stat-grid": "Stat grid",
+  chart: "Chart",
   divider: "Divider",
 };
 
-const BLOCK_TYPE_OPTIONS: BlockType[] = ["h2", "h3", "p", "ul", "ol", "code", "callout", "divider"];
+const BLOCK_TYPE_OPTIONS: BlockType[] = [
+  "h2",
+  "h3",
+  "p",
+  "ul",
+  "ol",
+  "code",
+  "callout",
+  "stat-grid",
+  "chart",
+  "divider",
+];
 
 function slugifyText(t: string) {
   return t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -463,8 +476,83 @@ function emptyBlock(type: BlockType): ContentBlock {
     case "ol":      return { type: "ol", items: [""] };
     case "code":    return { type: "code", lang: "tsx", code: "" };
     case "callout": return { type: "callout", variant: "info", html: "" };
+    case "stat-grid":
+      return {
+        type: "stat-grid",
+        title: "",
+        description: "",
+        items: [{ label: "Conversion lift", value: "32%", helper: "Measured over 30 days" }],
+      };
+    case "chart":
+      return {
+        type: "chart",
+        chartType: "bar",
+        title: "Performance by channel",
+        description: "",
+        xKey: "label",
+        series: [{ key: "value", label: "Value" }],
+        data: [
+          { label: "Organic", value: 42 },
+          { label: "Paid", value: 31 },
+          { label: "Referral", value: 18 },
+        ],
+        caption: "",
+        source: "",
+      };
     case "divider": return { type: "divider" };
   }
+}
+
+type ChartBlock = Extract<ContentBlock, { type: "chart" }>;
+type StatGridBlock = Extract<ContentBlock, { type: "stat-grid" }>;
+
+function DataJsonEditor({
+  data,
+  onChange,
+}: {
+  data: ChartBlock["data"];
+  onChange: (data: ChartBlock["data"]) => void;
+}) {
+  const [draft, setDraft] = useState(() => JSON.stringify(data, null, 2));
+
+  function commit() {
+    try {
+      const parsed = JSON.parse(draft);
+      if (!Array.isArray(parsed)) throw new Error("Data must be a JSON array");
+      if (
+        !parsed.every((row) =>
+          row &&
+          typeof row === "object" &&
+          !Array.isArray(row) &&
+          Object.values(row).every(
+            (value) => typeof value === "string" || typeof value === "number",
+          )
+        )
+      ) {
+        throw new Error("Rows can only contain string or number values");
+      }
+      onChange(parsed as ChartBlock["data"]);
+      toast.success("Chart data updated");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Invalid chart data");
+      setDraft(JSON.stringify(data, null, 2));
+    }
+  }
+
+  return (
+    <Field label="Data rows">
+      <textarea
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        onBlur={commit}
+        rows={8}
+        className={cn(textareaCls, "font-mono text-xs")}
+      />
+      <p className="mt-1 text-[11px] text-ink-faint">
+        Use a JSON array. Each row must include the X key and every series key.
+      </p>
+    </Field>
+  );
 }
 
 function BlockEditor({
@@ -640,6 +728,266 @@ function BlockEditor({
               rows={3}
               className={textareaCls}
             />
+          </div>
+        )}
+
+        {block.type === "stat-grid" && (
+          <div className="space-y-3">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Field label="Title">
+                <input
+                  type="text"
+                  value={block.title ?? ""}
+                  onChange={(e) =>
+                    onUpdate({ ...block, title: e.target.value } as StatGridBlock)
+                  }
+                  placeholder="Key results"
+                  className={inputCls}
+                />
+              </Field>
+              <Field label="Description">
+                <input
+                  type="text"
+                  value={block.description ?? ""}
+                  onChange={(e) =>
+                    onUpdate({ ...block, description: e.target.value } as StatGridBlock)
+                  }
+                  placeholder="Optional supporting context"
+                  className={inputCls}
+                />
+              </Field>
+            </div>
+            <div className="space-y-2">
+              {block.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="grid gap-2 rounded-md border border-line bg-surface/50 p-3 sm:grid-cols-[1fr_120px_1fr_auto]"
+                >
+                  <input
+                    type="text"
+                    value={item.label}
+                    onChange={(e) => {
+                      const next = [...block.items];
+                      next[index] = { ...item, label: e.target.value };
+                      onUpdate({ ...block, items: next } as StatGridBlock);
+                    }}
+                    placeholder="Label"
+                    className={inputCls}
+                  />
+                  <input
+                    type="text"
+                    value={item.value}
+                    onChange={(e) => {
+                      const next = [...block.items];
+                      next[index] = { ...item, value: e.target.value };
+                      onUpdate({ ...block, items: next } as StatGridBlock);
+                    }}
+                    placeholder="32%"
+                    className={inputCls}
+                  />
+                  <input
+                    type="text"
+                    value={item.helper ?? ""}
+                    onChange={(e) => {
+                      const next = [...block.items];
+                      next[index] = { ...item, helper: e.target.value };
+                      onUpdate({ ...block, items: next } as StatGridBlock);
+                    }}
+                    placeholder="Helper text"
+                    className={inputCls}
+                  />
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      const next = block.items.filter((_, idx) => idx !== index);
+                      onUpdate({
+                        ...block,
+                        items: next.length ? next : [{ label: "", value: "", helper: "" }],
+                      } as StatGridBlock);
+                    }}
+                    className="text-ink-faint hover:text-destructive"
+                  >
+                    <Trash2 className="size-3.5" />
+                  </Button>
+                </div>
+              ))}
+              <Button
+                type="button"
+                onClick={() =>
+                  onUpdate({
+                    ...block,
+                    items: [...block.items, { label: "", value: "", helper: "" }],
+                  } as StatGridBlock)
+                }
+                className="flex items-center gap-1.5 rounded-md border border-dashed border-line px-3 py-1.5 text-xs text-ink-muted transition-colors hover:border-brand hover:text-brand"
+              >
+                <Plus className="size-3" /> Add stat
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {block.type === "chart" && (
+          <div className="space-y-3">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Field label="Chart type" required>
+                <select
+                  value={block.chartType}
+                  onChange={(e) =>
+                    onUpdate({
+                      ...block,
+                      chartType: e.target.value as ChartBlock["chartType"],
+                    } as ChartBlock)
+                  }
+                  className={inputCls}
+                >
+                  <option value="bar">Bar chart</option>
+                  <option value="line">Line chart</option>
+                  <option value="donut">Donut chart</option>
+                </select>
+              </Field>
+              <Field label="X key" required>
+                <input
+                  type="text"
+                  value={block.xKey}
+                  onChange={(e) =>
+                    onUpdate({ ...block, xKey: e.target.value } as ChartBlock)
+                  }
+                  placeholder="label"
+                  className={cn(inputCls, "font-mono text-xs")}
+                />
+              </Field>
+            </div>
+            <Field label="Title" required>
+              <input
+                type="text"
+                value={block.title}
+                onChange={(e) =>
+                  onUpdate({ ...block, title: e.target.value } as ChartBlock)
+                }
+                placeholder="Performance by channel"
+                className={inputCls}
+              />
+            </Field>
+            <Field label="Description">
+              <input
+                type="text"
+                value={block.description ?? ""}
+                onChange={(e) =>
+                  onUpdate({ ...block, description: e.target.value } as ChartBlock)
+                }
+                placeholder="Optional context shown above the chart"
+                className={inputCls}
+              />
+            </Field>
+
+            <div className="rounded-md border border-line bg-surface/50 p-3">
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-xs font-medium text-ink-muted">Series</p>
+                <Button
+                  type="button"
+                  onClick={() =>
+                    onUpdate({
+                      ...block,
+                      series: [
+                        ...block.series,
+                        { key: `value${block.series.length + 1}`, label: "Value" },
+                      ],
+                    } as ChartBlock)
+                  }
+                  className="flex items-center gap-1 text-xs text-ink-muted hover:text-brand"
+                >
+                  <Plus className="size-3" /> Add series
+                </Button>
+              </div>
+              <div className="space-y-2">
+                {block.series.map((series, index) => (
+                  <div
+                    key={index}
+                    className="grid gap-2 sm:grid-cols-[1fr_1fr_110px_auto]"
+                  >
+                    <input
+                      type="text"
+                      value={series.key}
+                      onChange={(e) => {
+                        const next = [...block.series];
+                        next[index] = { ...series, key: e.target.value };
+                        onUpdate({ ...block, series: next } as ChartBlock);
+                      }}
+                      placeholder="value"
+                      className={cn(inputCls, "font-mono text-xs")}
+                    />
+                    <input
+                      type="text"
+                      value={series.label}
+                      onChange={(e) => {
+                        const next = [...block.series];
+                        next[index] = { ...series, label: e.target.value };
+                        onUpdate({ ...block, series: next } as ChartBlock);
+                      }}
+                      placeholder="Value"
+                      className={inputCls}
+                    />
+                    <input
+                      type="text"
+                      value={series.color ?? ""}
+                      onChange={(e) => {
+                        const next = [...block.series];
+                        next[index] = { ...series, color: e.target.value };
+                        onUpdate({ ...block, series: next } as ChartBlock);
+                      }}
+                      placeholder="#00E5FF"
+                      className={cn(inputCls, "font-mono text-xs")}
+                    />
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        const next = block.series.filter((_, idx) => idx !== index);
+                        onUpdate({
+                          ...block,
+                          series: next.length ? next : [{ key: "value", label: "Value" }],
+                        } as ChartBlock);
+                      }}
+                      className="text-ink-faint hover:text-destructive"
+                    >
+                      <Trash2 className="size-3.5" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <DataJsonEditor
+              data={block.data}
+              onChange={(dataRows) =>
+                onUpdate({ ...block, data: dataRows } as ChartBlock)
+              }
+            />
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Field label="Caption">
+                <input
+                  type="text"
+                  value={block.caption ?? ""}
+                  onChange={(e) =>
+                    onUpdate({ ...block, caption: e.target.value } as ChartBlock)
+                  }
+                  placeholder="Optional chart note"
+                  className={inputCls}
+                />
+              </Field>
+              <Field label="Source">
+                <input
+                  type="text"
+                  value={block.source ?? ""}
+                  onChange={(e) =>
+                    onUpdate({ ...block, source: e.target.value } as ChartBlock)
+                  }
+                  placeholder="Google Analytics, CRM export, etc."
+                  className={inputCls}
+                />
+              </Field>
+            </div>
           </div>
         )}
 

@@ -20,6 +20,22 @@ export interface TocEntry {
 }
 
 /** A single content block in the article body */
+export type ChartType = "bar" | "line" | "donut";
+
+export type ChartSeries = {
+  key: string;
+  label: string;
+  color?: string;
+};
+
+export type ChartDataRow = Record<string, string | number>;
+
+export type StatGridItem = {
+  label: string;
+  value: string;
+  helper?: string;
+};
+
 export type ContentBlock =
   | { type: "h2"; id: string; text: string }
   | { type: "h3"; id: string; text: string }
@@ -28,6 +44,23 @@ export type ContentBlock =
   | { type: "ol"; items: string[] }
   | { type: "code"; lang: string; code: string }
   | { type: "callout"; variant: "info" | "warning" | "tip"; html: string }
+  | {
+      type: "stat-grid";
+      title?: string;
+      description?: string;
+      items: StatGridItem[];
+    }
+  | {
+      type: "chart";
+      chartType: ChartType;
+      title: string;
+      description?: string;
+      xKey: string;
+      series: ChartSeries[];
+      data: ChartDataRow[];
+      caption?: string;
+      source?: string;
+    }
   | { type: "divider" };
 
 export interface BlogPost {

@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/db/drizzle";
 import { blogPosts } from "@/db/schema";
 import { getAdminContext } from "@/lib/auth/admin";
+import { blogPostInputSchema, formatBlogValidationError } from "@/lib/blog/validation";
 
 export const runtime = "nodejs";
 
@@ -39,11 +40,18 @@ export async function PUT(
   if (isNaN(numId)) return NextResponse.json({ error: "Invalid id" }, { status: 400 });
 
   try {
-    const body = await req.json();
-    const { id: _id, createdAt: _ca, ...rest } = body;
+    const payload = await req.json();
+    const parsed = blogPostInputSchema.safeParse(payload);
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: formatBlogValidationError(parsed.error) },
+        { status: 400 },
+      );
+    }
+
     const values = {
-      ...rest,
-      publishedAt: new Date(rest.publishedAt),
+      ...parsed.data,
       updatedAt: new Date(),
     };
     const [updated] = await db
