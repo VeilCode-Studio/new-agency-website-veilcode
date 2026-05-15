@@ -111,17 +111,17 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-line">
-      <table className="w-full text-sm">
+    <div className="max-w-full overflow-x-auto rounded-xl border border-line">
+      <table className="min-w-[920px] w-full text-sm">
         <thead className="bg-surface/40 text-left text-[11px] uppercase tracking-wider text-ink-muted">
           <tr>
-            <th className="px-4 py-3">Post</th>
-            <th className="hidden px-4 py-3 lg:table-cell">Category</th>
-            <th className="hidden px-4 py-3 md:table-cell">Published</th>
-            <th className="hidden px-4 py-3 md:table-cell">Read time</th>
-            <th className="px-4 py-3 text-center">Featured</th>
-            <th className="px-4 py-3 text-center">Status</th>
-            <th className="px-4 py-3 text-right">Actions</th>
+            <th className="min-w-[320px] px-4 py-3">Post</th>
+            <th className="min-w-[140px] px-4 py-3">Category</th>
+            <th className="min-w-[120px] px-4 py-3">Published</th>
+            <th className="min-w-[110px] px-4 py-3">Read time</th>
+            <th className="min-w-[100px] px-4 py-3 text-center">Featured</th>
+            <th className="min-w-[100px] px-4 py-3 text-center">Status</th>
+            <th className="min-w-[120px] px-4 py-3 text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -168,10 +168,10 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                   </td>
 
                   {/* Category */}
-                  <td className="hidden px-4 py-3 lg:table-cell">
+                  <td className="px-4 py-3">
                     <span
                       className={cn(
-                        "inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium",
+                        "inline-flex whitespace-nowrap rounded-full border px-2 py-0.5 text-[10px] font-medium",
                         badgeCls,
                       )}
                     >
@@ -180,12 +180,12 @@ export function BlogPostsTable({ rows: initialRows }: { rows: BlogPostListRow[] 
                   </td>
 
                   {/* Published date */}
-                  <td className="hidden px-4 py-3 text-xs text-ink-muted md:table-cell">
+                  <td className="px-4 py-3 text-xs text-ink-muted">
                     {formatDate(row.publishedAt)}
                   </td>
 
                   {/* Read time */}
-                  <td className="hidden px-4 py-3 text-xs text-ink-faint md:table-cell">
+                  <td className="px-4 py-3 text-xs text-ink-faint">
                     {row.readTime}
                   </td>
 

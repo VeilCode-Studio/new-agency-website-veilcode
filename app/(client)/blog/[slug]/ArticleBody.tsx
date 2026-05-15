@@ -84,27 +84,27 @@ function CodeBlock({ lang, code }: { lang: string; code: string }) {
   const tokenised = tokenise(code, lang);
 
   return (
-    <div className="group relative my-6 rounded-xl overflow-hidden
-      border border-line bg-surface">
+    <div className="group relative my-6 min-w-0 max-w-full overflow-hidden
+      rounded-xl border border-line bg-surface">
       {/* Header bar */}
-      <div className="flex items-center justify-between px-5 py-3
+      <div className="flex min-w-0 items-center justify-between gap-4 px-5 py-3
         border-b border-line bg-surface-hi">
         {/* Traffic lights */}
-        <div className="flex items-center gap-1.5" aria-hidden>
+        <div className="flex shrink-0 items-center gap-1.5" aria-hidden>
           {["bg-red-500/40", "bg-svc-social/40", "bg-svc-data/40"].map((c) => (
             <div key={c} className={`size-2.5 rounded-full ${c}`} />
           ))}
         </div>
         {/* Language label */}
-        <span className="font-mono text-[10px] tracking-widest uppercase text-ink-faint">
+        <span className="min-w-0 truncate font-mono text-[10px] tracking-widest uppercase text-ink-faint">
           {label}
         </span>
       </div>
 
       {/* Code */}
-      <pre className="overflow-x-auto px-5 py-5 text-[13px] leading-[1.75]
-        font-mono scrollbar-thin">
-        <code
+      <pre className="w-full max-w-full overflow-x-auto px-5 py-5 text-[13px]
+        leading-[1.75] font-mono scrollbar-thin">
+        <code className="block w-max min-w-full whitespace-pre"
           /* Safe — we escape HTML before tokenising */
           dangerouslySetInnerHTML={{ __html: tokenised }}
         />
@@ -167,6 +167,7 @@ function Callout({ variant, html }: { variant: "info" | "warning" | "tip"; html:
 const proseInline =
   "[&_code]:font-mono [&_code]:text-[13px] [&_code]:text-brand " +
   "[&_code]:bg-brand-dim [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded " +
+  "[&_code]:break-words " +
   "[&_strong]:font-semibold [&_strong]:text-ink " +
   "[&_em]:italic [&_em]:text-ink-muted " +
   "[&_a]:text-brand [&_a]:underline [&_a]:underline-offset-2 " +
@@ -174,7 +175,7 @@ const proseInline =
 
 export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
   return (
-    <div className="min-w-0">
+    <div className="min-w-0 max-w-full">
       {blocks.map((block, i) => {
         switch (block.type) {
 
