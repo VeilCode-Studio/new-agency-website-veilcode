@@ -17,7 +17,7 @@ function RelatedCard({ post: p, index }: { post: BlogPost; index: number }) {
       variants={fadeUp(index * 0.1)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`group relative flex flex-col rounded-xl overflow-hidden
+      className={`group relative flex min-w-0 flex-col overflow-hidden rounded-xl
         border border-line bg-surface transition-all duration-300
         hover:bg-surface-hi ${c.border.replace("border-", "hover:border-")}`}
     >
@@ -49,12 +49,12 @@ function RelatedCard({ post: p, index }: { post: BlogPost; index: number }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex min-w-0 flex-1 flex-col p-6">
         <h3 className="font-display text-[17px] font-bold tracking-tight
-          text-ink mb-2 leading-snug">
+          text-ink mb-2 leading-snug break-words">
           {p.title}
         </h3>
-        <p className="font-sans text-sm text-ink-muted leading-relaxed mb-5 flex-1 line-clamp-2">
+        <p className="font-sans text-sm text-ink-muted leading-relaxed mb-5 flex-1 line-clamp-2 break-words">
           {p.excerpt}
         </p>
 
@@ -87,8 +87,8 @@ export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 md:px-10 xl:px-20 border-t border-line">
-      <div className="max-w-300 mx-auto">
+    <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-24 sm:px-6 md:px-10 xl:px-20">
+      <div className="mx-auto w-full min-w-0 max-w-300">
         <motion.div
           ref={ref}
           variants={stagger}
@@ -109,7 +109,7 @@ export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2">
             {posts.map((p, i) => (
               <RelatedCard key={p.slug} post={p} index={i} />
             ))}

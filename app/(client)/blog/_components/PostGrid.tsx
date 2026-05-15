@@ -77,7 +77,7 @@ export function PostGrid({ posts, categories, tags }: PostGridProps) {
   }
 
   return (
-    <section>
+    <section className="w-full min-w-0 max-w-full overflow-x-clip">
       {/* Sticky filter bar */}
       <FilterBar
         categories={categories}
@@ -89,7 +89,7 @@ export function PostGrid({ posts, categories, tags }: PostGridProps) {
       />
 
       {/* Grid */}
-      <div className="max-w-300 mx-auto px-6 md:px-10 py-14">
+      <div className="mx-auto w-full min-w-0 max-w-300 px-5 py-14 sm:px-6 md:px-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={`${filter.category}-${filter.tag}`}

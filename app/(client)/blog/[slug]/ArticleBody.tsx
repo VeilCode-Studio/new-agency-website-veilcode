@@ -145,13 +145,13 @@ const CALLOUT_STYLES = {
 function Callout({ variant, html }: { variant: "info" | "warning" | "tip"; html: string }) {
   const s = CALLOUT_STYLES[variant];
   return (
-    <div className={`my-6 rounded-xl border p-5 ${s.border} ${s.bg}`}>
-      <div className="flex items-start gap-3">
+    <div className={`my-6 min-w-0 max-w-full rounded-xl border p-5 ${s.border} ${s.bg}`}>
+      <div className="flex min-w-0 items-start gap-3">
         <span className={`text-base leading-none mt-0.5 ${s.text}`} aria-hidden>
           {s.icon}
         </span>
         <p
-          className="font-sans text-sm text-ink-muted leading-relaxed
+          className="min-w-0 break-words font-sans text-sm text-ink-muted leading-relaxed
             [&_code]:font-mono [&_code]:text-[12px] [&_code]:text-brand
             [&_code]:bg-brand-dim [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded
             [&_strong]:font-semibold [&_strong]:text-ink"
@@ -185,7 +185,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 key={i}
                 id={block.id}
                 className="font-display text-[clamp(20px,2.5vw,28px)] font-bold
-                  tracking-tight text-ink mt-12 mb-4 scroll-mt-28"
+                  tracking-tight text-ink mt-12 mb-4 scroll-mt-28 break-words"
               >
                 {block.text}
               </h2>
@@ -197,7 +197,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                 key={i}
                 id={block.id}
                 className="font-display text-[18px] font-bold tracking-tight
-                  text-ink mt-8 mb-3 scroll-mt-28"
+                  text-ink mt-8 mb-3 scroll-mt-28 break-words"
               >
                 {block.text}
               </h3>
@@ -208,7 +208,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <p
                 key={i}
                 className={`font-sans text-[16px] font-light text-ink-muted
-                  leading-[1.9] mb-5 ${proseInline}`}
+                  leading-[1.9] mb-5 break-words ${proseInline}`}
                 dangerouslySetInnerHTML={{ __html: block.html }}
               />
             );
@@ -218,11 +218,11 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <ul key={i} className="mb-5 space-y-2 list-none pl-0">
                 {block.items.map((item, j) => (
                   <li key={j}
-                    className={`flex items-start gap-3 font-sans text-[15px]
+                    className={`flex min-w-0 items-start gap-3 font-sans text-[15px]
                       font-light text-ink-muted leading-relaxed ${proseInline}`}
                   >
                     <span className="mt-1.75 size-1.5 rounded-full bg-brand shrink-0" aria-hidden />
-                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                    <span className="min-w-0 break-words" dangerouslySetInnerHTML={{ __html: item }} />
                   </li>
                 ))}
               </ul>
@@ -233,7 +233,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
               <ol key={i} className="mb-5 space-y-2 list-none pl-0 counter-reset-[item]">
                 {block.items.map((item, j) => (
                   <li key={j}
-                    className={`flex items-start gap-3 font-sans text-[15px]
+                    className={`flex min-w-0 items-start gap-3 font-sans text-[15px]
                       font-light text-ink-muted leading-relaxed ${proseInline}`}
                   >
                     <span className="mt-0.5 font-mono text-[12px] text-brand shrink-0
@@ -241,7 +241,7 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
                       bg-brand-dim border border-brand-border">
                       {j + 1}
                     </span>
-                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                    <span className="min-w-0 break-words" dangerouslySetInnerHTML={{ __html: item }} />
                   </li>
                 ))}
               </ol>

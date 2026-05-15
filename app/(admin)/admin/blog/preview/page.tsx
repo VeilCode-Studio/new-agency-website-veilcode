@@ -50,21 +50,21 @@ export default async function AdminBlogIndexPreviewPage() {
 }, 0);
 
   return (
-    <div className="rounded-2xl border border-line bg-page overflow-clip">
+    <div className="min-w-0 max-w-full rounded-2xl border border-line bg-page">
       {/* Admin Preview Banner */}
-      <div className="flex items-center justify-between border-b border-brand/20 bg-brand/5 px-6 py-3 text-sm text-brand">
-        <div className="flex items-center gap-4">
+      <div className="flex min-w-0 items-center justify-between border-b border-brand/20 bg-brand/5 px-4 py-3 text-sm text-brand sm:px-6">
+        <div className="flex min-w-0 flex-wrap items-center gap-3 sm:gap-4">
           <Link href="/admin/blog" className="flex items-center gap-1 font-medium hover:underline">
             <ChevronLeft className="size-4" />
             Back to Dashboard
           </Link>
           <span className="h-4 w-px bg-brand/20"></span>
-          <span className="font-semibold">Live Preview: Blog Feed</span>
+          <span className="min-w-0 font-semibold">Live Preview: Blog Feed</span>
         </div>
       </div>
 
       {/* Main Client Content */}
-      <div className="pb-12">
+      <div className="min-w-0 max-w-full pb-12">
         <BlogHero
           stats={{
             articlesPublished: allPosts.length,

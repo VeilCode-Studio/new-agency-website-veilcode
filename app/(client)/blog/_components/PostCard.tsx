@@ -86,7 +86,7 @@ export function PostCard({
       variants={fadeUp(index * 0.06)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`group flex flex-col rounded-xl overflow-hidden border
+      className={`group flex min-w-0 flex-col rounded-xl overflow-hidden border
         border-line bg-surface transition-all duration-300
         hover:bg-surface-hi hover:border-opacity-60
         ${c.border.replace("border-", "hover:shadow-[0_0_32px_var(--color-brand-dim)] hover:border-")}`}
@@ -99,7 +99,7 @@ export function PostCard({
       <CardVisual post={p} />
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex min-w-0 flex-1 flex-col p-6">
         {/* Author + meta */}
         <div className="flex items-center gap-2.5 mb-4">
           <div className={`size-7 rounded-md border flex items-center justify-center
@@ -119,12 +119,12 @@ export function PostCard({
         </div>
 
         <h3 className="font-display text-[17px] font-bold tracking-tight
-          text-ink leading-snug mb-2.5 line-clamp-2">
+          text-ink leading-snug mb-2.5 line-clamp-2 break-words">
           {p.title}
         </h3>
 
         <p className="font-sans text-sm text-ink-muted font-light
-          leading-relaxed mb-5 flex-1 line-clamp-3">
+          leading-relaxed mb-5 flex-1 line-clamp-3 break-words">
           {p.excerpt}
         </p>
 

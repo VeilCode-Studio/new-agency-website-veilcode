@@ -32,7 +32,7 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
   ] as const;
 
   return (
-    <section className="relative min-h-[62vh] flex items-center overflow-hidden">
+    <section className="relative flex min-h-[62vh] w-full min-w-0 max-w-full items-center overflow-hidden">
       <GridBg />
       <GlowOrb color="rgba(0,229,255,0.10)" size={500} top="5%" left="56%" />
       <GlowOrb
@@ -50,12 +50,12 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
           animate-scan"
       />
 
-      <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-20">
+      <div className="relative z-10 mx-auto w-full min-w-0 max-w-300 px-5 pt-36 pb-20 sm:px-6 md:px-10">
         <motion.div
           variants={stagger}
           initial="hidden"
           animate="visible"
-          className="max-w-190"
+          className="max-w-190 min-w-0"
         >
           <motion.div variants={fadeUp(0)}>
             <SectionTag>The VeilCode Blog</SectionTag>
@@ -65,7 +65,7 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
           <motion.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
-              text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
+              text-[clamp(40px,6.5vw,80px)] text-ink mb-6 break-words"
           >
             Ideas Worth{" "}
             <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">

@@ -91,8 +91,8 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
   const { classes: c } = p;
 
   return (
-    <section className="px-6 md:px-10 pb-8 border-b border-line">
-      <div className="max-w-300 mx-auto">
+    <section className="w-full min-w-0 max-w-full overflow-x-clip border-b border-line px-5 pb-8 sm:px-6 md:px-10">
+      <div className="mx-auto w-full min-w-0 max-w-300">
         <motion.div
           ref={ref}
           variants={fadeUp()}
@@ -109,7 +109,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
           <article
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`group relative grid grid-cols-1 lg:grid-cols-2
+            className={`group relative grid min-w-0 grid-cols-1 lg:grid-cols-2
               rounded-2xl overflow-hidden border transition-all duration-300
               border-line hover:${c.border.replace("border-", "border-")}`}
           >
@@ -124,7 +124,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
             </div>
 
             {/* Content panel */}
-            <div className={`flex flex-col justify-between p-8 md:p-10
+            <div className={`flex min-w-0 flex-col justify-between p-6 sm:p-8 md:p-10
               bg-surface group-hover:bg-surface-hi transition-colors duration-300`}>
 
               {/* Top — meta */}
@@ -147,12 +147,12 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
                 </div>
 
                 <h2 className="font-display text-[clamp(22px,3vw,36px)] font-extrabold
-                  tracking-tight leading-[1.1] text-ink mb-4">
+                  tracking-tight leading-[1.1] text-ink mb-4 break-words">
                   {p.title}
                 </h2>
 
                 <p className="font-sans text-[15px] font-light text-ink-muted
-                  leading-relaxed mb-6">
+                  leading-relaxed mb-6 break-words">
                   {p.excerpt}
                 </p>
 

@@ -106,10 +106,10 @@ const SingleBlogPage = async ({ params }: Params) => {
       />
       <BlogPostHero post={post} />
 
-      <section className="py-16 px-6 md:px-10 xl:px-20 border-t border-line">
-        <div className="max-w-300 mx-auto">
-          <div className="flex flex-col lg:flex-row gap-14 xl:gap-20 items-start">
-            <div className="min-w-0 flex-1 relative">
+      <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-16 sm:px-6 md:px-10 xl:px-20">
+        <div className="mx-auto w-full min-w-0 max-w-300">
+          <div className="flex w-full min-w-0 flex-col items-start gap-14 lg:flex-row xl:gap-20">
+            <div className="relative w-full min-w-0 flex-1">
               <SocialShare post={post} />
               <ArticleBody blocks={post.body} />
             </div>

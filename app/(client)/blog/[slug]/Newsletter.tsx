@@ -55,15 +55,15 @@ export function NewsletterCTA() {
   }
 
   return (
-    <section className="py-20 px-6 md:px-10 xl:px-20 border-t border-line bg-surface" id="newsletter">
-      <div className="max-w-300 mx-auto">
+    <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line bg-surface px-5 py-20 sm:px-6 md:px-10 xl:px-20" id="newsletter">
+      <div className="mx-auto w-full min-w-0 max-w-300">
         <motion.div
           ref={ref}
           variants={fadeUp()}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="relative overflow-hidden rounded-2xl border border-line
-            bg-page px-8 md:px-16 py-14 max-w-180 mx-auto text-center"
+          className="relative mx-auto min-w-0 max-w-180 overflow-hidden rounded-2xl border border-line
+            bg-page px-5 py-14 text-center sm:px-8 md:px-16"
         >
           {/* Ambient glow */}
           <div aria-hidden
@@ -82,10 +82,10 @@ export function NewsletterCTA() {
             </div>
 
             <h3 className="font-display text-[clamp(22px,3vw,36px)] font-extrabold
-              tracking-tight text-ink mb-3">
+              tracking-tight text-ink mb-3 break-words">
               Stay Sharp on What Matters
             </h3>
-            <p className="font-sans text-[15px] text-ink-muted leading-relaxed mb-8 max-w-110 mx-auto">
+            <p className="mx-auto mb-8 max-w-110 break-words font-sans text-[15px] leading-relaxed text-ink-muted">
               Engineering deep-dives, design thinking, and practical AI — written for
               builders who care about craft. No fluff. No spray.
             </p>

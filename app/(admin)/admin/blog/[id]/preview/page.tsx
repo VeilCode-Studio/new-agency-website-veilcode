@@ -48,27 +48,27 @@ export default async function AdminSinglePostPreviewPage({
   const related = relatedRows.map(mapDbPostToClientPost);
 
   return (
-    <div className="rounded-2xl border border-line bg-page overflow-clip">
+    <div className="min-w-0 max-w-full rounded-2xl border border-line bg-page">
       {/* Admin Preview Banner */}
-      <div className="flex items-center justify-between border-b border-brand/20 bg-brand/5 px-6 py-3 text-sm text-brand">
-        <div className="flex items-center gap-4">
+      <div className="flex min-w-0 items-center justify-between border-b border-brand/20 bg-brand/5 px-4 py-3 text-sm text-brand sm:px-6">
+        <div className="flex min-w-0 flex-wrap items-center gap-3 sm:gap-4">
           <Link href="/admin/blog" className="flex items-center gap-1 font-medium hover:underline">
             <ChevronLeft className="size-4" />
             Back to Dashboard
           </Link>
           <span className="h-4 w-px bg-brand/20"></span>
-          <span className="font-semibold">Live Preview: {post.title}</span>
+          <span className="min-w-0 break-words font-semibold">Live Preview: {post.title}</span>
         </div>
       </div>
 
       {/* Main Client Content */}
-      <div className="pb-12">
+      <div className="min-w-0 max-w-full pb-12">
         <BlogPostHero post={post} />
-        <section className="py-16 px-6 md:px-10 xl:px-20 border-t border-line">
-          <div className="max-w-300 mx-auto">
-            <div className="flex flex-col lg:flex-row gap-14 xl:gap-20 items-start">
+        <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-16 sm:px-6 md:px-10 xl:px-20">
+          <div className="mx-auto w-full min-w-0 max-w-300">
+            <div className="flex w-full min-w-0 flex-col items-start gap-14 lg:flex-row xl:gap-20">
               {/* Article column */}
-              <div className="min-w-0 flex-1 relative">
+              <div className="relative w-full min-w-0 flex-1">
                 <SocialShare post={post} />
                 <ArticleBody blocks={post.body} />
               </div>

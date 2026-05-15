@@ -40,13 +40,13 @@ function ChartFrame({
   children: React.ReactNode;
 }) {
   return (
-    <figure className="my-8 rounded-xl border border-line bg-surface/60 p-5">
+    <figure className="my-8 min-w-0 max-w-full overflow-hidden rounded-xl border border-line bg-surface/60 p-5">
       <figcaption className="mb-5">
         <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
           {block.title}
         </h3>
         {block.description ? (
-          <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+          <p className="mt-1 break-words text-sm leading-relaxed text-ink-muted">
             {block.description}
           </p>
         ) : null}
@@ -361,7 +361,7 @@ function DataTable({ block }: { block: ChartBlock }) {
       <summary className="cursor-pointer px-3 py-2 text-xs font-medium text-ink-muted">
         View chart data
       </summary>
-      <div className="overflow-x-auto border-t border-line">
+      <div className="max-w-full overflow-x-auto border-t border-line">
         <table className="min-w-full text-left text-xs">
           <thead className="bg-surface-hi text-ink-faint">
             <tr>
@@ -416,7 +416,7 @@ function Legend({ block }: { block: ChartBlock }) {
 
 export function ArticleStatGrid({ block }: { block: StatGridBlock }) {
   return (
-    <section className="my-8 rounded-xl border border-line bg-surface/50 p-5">
+    <section className="my-8 min-w-0 max-w-full overflow-hidden rounded-xl border border-line bg-surface/50 p-5">
       {(block.title || block.description) ? (
         <div className="mb-4">
           {block.title ? (
@@ -425,7 +425,7 @@ export function ArticleStatGrid({ block }: { block: StatGridBlock }) {
             </h3>
           ) : null}
           {block.description ? (
-            <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+            <p className="mt-1 break-words text-sm leading-relaxed text-ink-muted">
               {block.description}
             </p>
           ) : null}
@@ -435,16 +435,16 @@ export function ArticleStatGrid({ block }: { block: StatGridBlock }) {
         {block.items.map((item, index) => (
           <div
             key={`${item.label}-${index}`}
-            className="rounded-lg border border-line bg-page/70 p-4"
+            className="min-w-0 rounded-lg border border-line bg-page/70 p-4"
           >
-            <p className="text-xs uppercase tracking-wider text-ink-faint">
+            <p className="break-words text-xs uppercase tracking-wider text-ink-faint">
               {item.label}
             </p>
-            <p className="mt-2 font-display text-2xl font-semibold tracking-tight text-ink">
+            <p className="mt-2 break-words font-display text-2xl font-semibold tracking-tight text-ink">
               {item.value}
             </p>
             {item.helper ? (
-              <p className="mt-1 text-xs leading-relaxed text-ink-muted">
+              <p className="mt-1 break-words text-xs leading-relaxed text-ink-muted">
                 {item.helper}
               </p>
             ) : null}
@@ -463,7 +463,7 @@ export function ArticleChart({ block }: { block: ChartBlock }) {
       <Legend block={block} />
       <div
         className={cn(
-          "overflow-hidden rounded-lg border border-line bg-page/70 p-3",
+          "min-w-0 max-w-full overflow-hidden rounded-lg border border-line bg-page/70 p-3",
           block.chartType === "donut" && "p-5",
         )}
       >

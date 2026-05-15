@@ -52,11 +52,11 @@ export function FilterBar({
   }
 
   return (
-    <div className="sticky top-18 z-20 border-b border-line bg-page/90 backdrop-blur-md">
-      <div className="max-w-300 mx-auto px-6 md:px-10 py-4 space-y-3">
+    <div className="sticky top-18 z-20 w-full min-w-0 max-w-full border-b border-line bg-page/90 backdrop-blur-md">
+      <div className="mx-auto w-full min-w-0 max-w-300 space-y-3 px-5 py-4 sm:px-6 md:px-10">
 
         {/* ── Category row ─────────────────────────────────────────────── */}
-        <div className="flex items-center gap-2 flex-wrap"
+        <div className="flex min-w-0 flex-wrap items-center gap-2"
           aria-label="Filter by category">
           {allCats.map((cat) => {
             const isActive = state.category === cat;
@@ -67,7 +67,7 @@ export function FilterBar({
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setCategory(cat)}
-                className={`relative inline-flex items-center gap-2 px-4 py-2 rounded-lg
+                className={`relative inline-flex max-w-full items-center gap-2 rounded-lg px-4 py-2
                   font-sans text-[13px] font-medium border cursor-pointer
                   transition-all duration-200 outline-none
                   focus-visible:ring-2 focus-visible:ring-brand
@@ -104,7 +104,7 @@ export function FilterBar({
         </div>
 
         {/* ── Tag row ──────────────────────────────────────────────────── */}
-        <div className="flex items-center gap-1.5 flex-wrap">
+        <div className="flex min-w-0 flex-wrap items-center gap-1.5">
           <span className="font-mono text-[10px] tracking-widest uppercase
             text-ink-faint mr-1">
             Tags
@@ -116,7 +116,7 @@ export function FilterBar({
                 key={tag}
                 onClick={() => toggleTag(tag)}
                 className={`font-mono text-[10px] tracking-widest uppercase
-                  px-2.5 py-1 rounded border cursor-pointer
+                  max-w-full break-words px-2.5 py-1 rounded border cursor-pointer
                   transition-all duration-150 outline-none
                   focus-visible:ring-2 focus-visible:ring-brand
                   ${isActive
