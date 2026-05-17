@@ -42,7 +42,7 @@ const page = async () => {
         </>
       )}
       <DeliveryProcess />
-      <PricingTiers />
+      {/* <PricingTiers /> */}
       <FAQ />
     </>
   )

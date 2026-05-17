@@ -73,9 +73,9 @@ export function CTA() {
               <PrimaryButton className="text-[15px]! px-9! py-4!">
                 <Link href={"/start"}>Book a Discovery Call →</Link>
               </PrimaryButton>
-              <PrimaryButton className="text-[15px]! px-9! py-4!">
+              {/* <PrimaryButton className="text-[15px]! px-9! py-4!">
                 <Link href={"/services/#pricing"}>View Pricing</Link>
-              </PrimaryButton>
+              </PrimaryButton> */}
             </motion.div>
           </div>
         </motion.div>
