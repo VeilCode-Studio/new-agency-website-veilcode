@@ -16,10 +16,13 @@ import {
   Eye,
   EyeOff,
   RotateCcw,
+  FileJson,
+  Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ProjectClasses } from "@/types/content";
 import { Input } from "@/components/ui/input";
+import { parseProjectJsonForForm } from "@/lib/projects/importJson";
 
 // types/ interfaces
 
@@ -650,10 +653,13 @@ function ClassesEditor({
 
 export function ProjectForm(props: ProjectFormProps) {
   const router = useRouter();
+  const importFileRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState<ProjectFormData>(
     props.mode === "edit" ? props.initialData : EMPTY,
   );
   const [slugManual, setSlugManual] = useState(props.mode === "edit");
+  const [importOpen, setImportOpen] = useState(false);
+  const [importDraft, setImportDraft] = useState("");
   const [isPending, startTransition] = useTransition();
 
   /* helpers */
@@ -686,6 +692,36 @@ export function ProjectForm(props: ProjectFormProps) {
       "testimonial",
       enabled ? { quote: "", name: "", role: "", initials: "" } : null,
     );
+  }
+
+  function importProjectJson(raw: string) {
+    const result = parseProjectJsonForForm(raw);
+
+    if (!result.ok) {
+      toast.error(result.error);
+      return;
+    }
+
+    setData(result.data);
+    setSlugManual(Boolean(result.data.slug));
+    setImportDraft(JSON.stringify(result.data, null, 2));
+    setImportOpen(false);
+    toast.success("Project JSON imported");
+  }
+
+  async function handleImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+      setImportDraft(text);
+      importProjectJson(text);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not read JSON file");
+    } finally {
+      if (importFileRef.current) importFileRef.current.value = "";
+    }
   }
 
   /* submit */
@@ -753,6 +789,71 @@ export function ProjectForm(props: ProjectFormProps) {
             {isPending ? "Saving…" : props.mode === "edit" ? "Save changes" : "Create project"}
           </button>
         </div>
+      </div>
+
+      <div className="mb-6">
+        <SectionCard
+          title="Import JSON"
+          description="Paste a complete project payload or load a .json file to prefill this form."
+        >
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setImportOpen((open) => !open)}
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <FileJson className="size-4" />
+                {importOpen ? "Hide JSON" : "Paste JSON"}
+              </button>
+              <button
+                type="button"
+                onClick={() => importFileRef.current?.click()}
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <Upload className="size-4" />
+                Load JSON file
+              </button>
+              <a
+                href="/api/admin/projects/sample-json"
+                download
+                className="inline-flex items-center gap-2 rounded-md border border-line px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+              >
+                <Download className="size-4" />
+                Download sample
+              </a>
+              <input
+                ref={importFileRef}
+                type="file"
+                accept="application/json,.json"
+                className="hidden"
+                onChange={handleImportFile}
+              />
+            </div>
+
+            {importOpen && (
+              <div className="space-y-2">
+                <textarea
+                  value={importDraft}
+                  onChange={(e) => setImportDraft(e.target.value)}
+                  rows={10}
+                  placeholder='{"slug":"project-slug","title":"Project title",...}'
+                  className={cn(textareaCls, "font-mono text-xs")}
+                />
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => importProjectJson(importDraft)}
+                    className="inline-flex items-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90"
+                  >
+                    <FileJson className="size-4" />
+                    Import into form
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </SectionCard>
       </div>
 
       {/* ── Two-column layout ── */}
