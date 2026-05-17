@@ -17,7 +17,7 @@ export function FaqItem({
   return (
     <motion.div
       variants={fadeUp(index * 0.05)}
-      className={`border-b border-line last:border-b-0`}
+      className={`border-b border-line last:border-b-0 py-3`}
     >
       <Button
         onClick={onToggle}

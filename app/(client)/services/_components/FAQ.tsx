@@ -76,7 +76,7 @@ export function FAQ() {
             {/* Right accordion */}
             <motion.div
               variants={stagger}
-              className="flex-1 bg-page rounded-xl border border-line px-6 divide-y-0"
+              className="flex-1 bg-page rounded-xl border border-line px-6 py-10 divide-y-0"
             >
               {FAQS.map((faq, i) => (
                 <FaqItem
