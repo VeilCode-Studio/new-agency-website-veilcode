@@ -6,10 +6,11 @@ import { POSTS } from '@/constants/blog'
 import { BlogHero } from './_components/BlogHero';
 import { FeaturedPost } from './_components/FeaturedPost';
 import { NewsletterCTA } from './[slug]/Newsletter';
-import { PostGrid } from './_components/PostGrid';
+import { BlogGrid } from '@/components/shared/BlogGrid';
 import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice';
 import { getPublishedBlogs } from '@/queries';
 import { mapDbPostToClientPost } from '@/lib/blog/mappers';
+import { getBlogGridPosts, toBlogGridPost } from '@/lib/blog/grid';
 
 export const metadata = {
   title: "Blog — VeilCode",
@@ -29,7 +30,7 @@ const page = async () => {
   }
 
   const featured = allPosts.find((post) => post.featured) ?? allPosts[0];
-  const gridPosts = allPosts.filter((post) => post.slug !== featured.slug);
+  const gridPosts = getBlogGridPosts(allPosts, { excludeSlug: featured.slug }).map(toBlogGridPost);
   const categories = Array.from(new Set(allPosts.map((p) => p.category))).sort();
   const tags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort();
 
@@ -58,10 +59,12 @@ const page = async () => {
       )}
       <FeaturedPost post={featured} />
 
-      <PostGrid
+      <BlogGrid
         posts={gridPosts}
         categories={categories}
         tags={tags}
+        showFilters
+        className="px-0 py-0"
       />
 
       <NewsletterCTA />
