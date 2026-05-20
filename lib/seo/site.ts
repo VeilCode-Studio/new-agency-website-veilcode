@@ -1,4 +1,4 @@
-export const SITE_URL = "https://veilcode.studio";
+export const SITE_URL = "https://www.veilcode.studio";
 export const SITE_NAME = "VeilCode";
 
 export function absoluteUrl(path = "/") {
