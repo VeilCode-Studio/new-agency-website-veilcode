@@ -6,14 +6,15 @@ import Image from "next/image";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { organizationJsonLd } from "@/lib/seo/jsonLd";
+import { SITE_URL } from "@/lib/seo/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veilcode.studio"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "VeilCode Digital Solutions Agency - AI, Web development, Data Analytics, Mobile Applications Development & Automation",
+    default: "VeilCode Digital Solutions Agency - AI, Web development, Mobile Applications Development & Automation",
     template: "%s | VeilCode"
   },
-  description: "VeilCode builds high-performance web applications,and Mobile Applications,  AI automation systems, Data Analytics and Digital Marketing",
+  description: "VeilCode builds high performance websites, web applications, mobile apps, AI automation systems",
 
   keywords: [
     "Next.js development",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VeilCode - Digital Solutions agency - builds high performance digital products - Websites and Web applications, Mobile Apps, Data Analytics tools, AI Automated systems, and Digital Marketing.",
     description: "VeilCode - Digital Solutions agency - builds high performance digital products - Websites and Web applications, Mobile Apps, Data Analytics tools, AI Automated systems, and Digital Marketing.",
-    url: "https://veilcode.studio",
+    url: SITE_URL,
     siteName: "VeilCode",
     images: [
       {
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "VeilCode Agency",
-    description: "VeilCode builds high-performance web applications,and Mobile Applications,  AI automation systems, Data Analytics and Digital Marketing",
+    description: "VeilCode builds high performance websites, web applications, mobile apps, AI automation systems, data analytics tools, and digital marketing systems.",
     images: ["/assets/logo.png", "/assets/health-pulse-app/image-1.jpg", "/assets/nexus-project/image-1.jpg"]
   },
 };
