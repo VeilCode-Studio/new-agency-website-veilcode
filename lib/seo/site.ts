@@ -1,5 +1,5 @@
 export const SITE_URL = "https://www.veilcode.studio";
-export const SITE_NAME = "VeilCode";
+export const SITE_NAME = "VeilCode Studio";
 
 export function absoluteUrl(path = "/") {
   if (path.startsWith("http://") || path.startsWith("https://")) return path;

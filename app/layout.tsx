@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "sonner";
-import Image from "next/image";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { organizationJsonLd } from "@/lib/seo/jsonLd";
-import { SITE_URL } from "@/lib/seo/site";
+import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "VeilCode Digital Solutions Agency - AI, Web development, Mobile Applications Development & Automation",
+    default: `${SITE_NAME} - Digital Solutions Agency`,
     template: "%s | VeilCode"
   },
-  description: "VeilCode builds high performance websites, web applications, mobile apps, AI automation systems",
+  description: "VeilCode builds websites, web apps, mobile apps, AI automation systems, and analytics tools for growing businesses",
 
   keywords: [
     "Next.js development",
@@ -29,42 +28,32 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "VeilCode - Digital Solutions agency - builds high performance digital products - Websites and Web applications, Mobile Apps, Data Analytics tools, AI Automated systems, and Digital Marketing.",
-    description: "VeilCode - Digital Solutions agency - builds high performance digital products - Websites and Web applications, Mobile Apps, Data Analytics tools, AI Automated systems, and Digital Marketing.",
+    title: "VeilCode Digital Solutions Agency",
+    description:
+      "VeilCode builds websites, web apps, mobile apps, AI automation systems, analytics tools, and digital marketing systems.",
     url: SITE_URL,
-    siteName: "VeilCode",
+    siteName: SITE_NAME,
     images: [
-      {
-        url: "/assets/logo.png",
-        width: 100,
-        height: 100
-      },
       {
         url: "/assets/nexus-project/image-client-1.jpg",
         width: 1200,
-        height: 630
+        height: 630,
+        alt: "VeilCode digital product showcase",
       },
-      {
-        url: "/assets/agridata-project/image-1.jpg",
-        width: 1200,
-        height: 630
-      },
-      {
-        url: "/assets/brewed-coffee-project/image-1.png",
-        width: 1200,
-        height: 630
-      }
     ],
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "VeilCode Agency",
-    description: "VeilCode builds high performance websites, web applications, mobile apps, AI automation systems, data analytics tools, and digital marketing systems.",
-    images: ["/assets/logo.png", "/assets/health-pulse-app/image-1.jpg", "/assets/nexus-project/image-1.jpg"]
+    title: "VeilCode Digital Solutions Agency",
+    description:
+      "VeilCode builds websites, web apps, mobile apps, AI automation systems, analytics tools, and digital marketing systems.",
+    images: ["/assets/nexus-project/image-client-1.jpg"],
   },
 };
+
+
 
 export default function RootLayout({
   children,
@@ -94,7 +83,7 @@ export default function RootLayout({
         className="antialiased"
       >
         <noscript>
-          <Image
+          <img
             src="https://www.facebook.com/tr?id=1233482635537855&ev=PageView&noscript=1"
             alt="facebook pixel"
             height="1"
@@ -103,10 +92,10 @@ export default function RootLayout({
           />
         </noscript>
         <ThemeProvider>
-            <main className="max-w-400 mx-auto">
-              {children}
-              <Toaster />
-            </main>
+          <main className="max-w-400 mx-auto">
+            {children}
+            <Toaster />
+          </main>
         </ThemeProvider>
       </body>
     </html>
