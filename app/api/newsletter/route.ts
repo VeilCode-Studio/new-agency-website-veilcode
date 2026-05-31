@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
         }
 
         // send confirmation email 
-        const confirmUrl = `${process.env.FRONTEND_URL}/api/newsletter/confirm?token=${confirmToken}`;
+        const confirmUrl = `${process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL : "http://localhost:3000"}/api/newsletter/confirm?token=${confirmToken}`;
 
         const { error } = await resend.emails.send({
             from: "VeilCode <frank@veilcode.studio>",

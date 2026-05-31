@@ -3,7 +3,7 @@ import { db } from "@/db/drizzle";
 import { newsletterSubscriptionTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+const baseUrl = process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL! : "http://localhost:3000";
 
 export async function GET(req: NextRequest) {
     try {
