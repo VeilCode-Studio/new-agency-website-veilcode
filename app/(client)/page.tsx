@@ -14,6 +14,7 @@ import { POSTS } from "@/constants/blog";
 import { getBlogGridPosts, toBlogGridPost } from "@/lib/blog/grid";
 import { mapDbPostToClientPost } from "@/lib/blog/mappers";
 import { getPublishedBlogs, getPublishedProjects, getPublishedServices } from "@/queries";
+import { NewsletterCTA } from "./blog/[slug]/Newsletter";
 
 async function getHomeBlogPosts() {
   try {
@@ -60,6 +61,7 @@ export default async function Home() {
       <TechStack />
       <Testimonials />
       <CTA />
+      <NewsletterCTA />
     </>
   )
 }
