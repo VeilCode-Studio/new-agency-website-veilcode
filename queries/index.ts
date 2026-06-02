@@ -1,6 +1,6 @@
 import "server-only";
 
-import { blogPosts, projects, services, seoPages } from "@/db/schema";
+import { blogPosts, projects, services, seoPages, testimonials } from "@/db/schema";
 import { db } from "@/db/drizzle";
 import { and, eq, asc, desc } from "drizzle-orm";
 
@@ -87,6 +87,16 @@ export const getProjectBySlug = async (slug: string) => {
     .limit(1);
 
   return project ?? null;
+};
+
+// testimonial database queries
+export const getTestimonials = async () => {
+  const rows = await db
+    .select()
+    .from(testimonials)
+    .orderBy(asc(testimonials.createdAt));
+
+  return rows;
 };
 
 

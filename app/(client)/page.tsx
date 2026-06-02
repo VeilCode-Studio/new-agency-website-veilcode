@@ -10,10 +10,17 @@ import { Services } from "@/components/shared/Services";
 import { TechStack } from "@/components/shared/TechStack";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { Work } from "@/components/shared/Work";
+import { TESTIMONIALS } from "@/constants";
 import { POSTS } from "@/constants/blog";
 import { getBlogGridPosts, toBlogGridPost } from "@/lib/blog/grid";
 import { mapDbPostToClientPost } from "@/lib/blog/mappers";
-import { getPublishedBlogs, getPublishedProjects, getPublishedServices } from "@/queries";
+import { toDisplayTestimonial, type DisplayTestimonial } from "@/lib/testimonials/display";
+import {
+  getPublishedBlogs,
+  getPublishedProjects,
+  getPublishedServices,
+  getTestimonials,
+} from "@/queries";
 import { NewsletterCTA } from "./blog/[slug]/Newsletter";
 
 async function getHomeBlogPosts() {
@@ -27,12 +34,27 @@ async function getHomeBlogPosts() {
   return POSTS;
 }
 
+async function getHomeTestimonials(): Promise<DisplayTestimonial[]> {
+  try {
+    const rows = await getTestimonials();
+    if (rows.length > 0) return rows.map(toDisplayTestimonial);
+  } catch (error) {
+    console.warn("[home] Falling back to static testimonials:", error);
+  }
+
+  return TESTIMONIALS.map((item) => ({
+    ...item,
+    avatar: null,
+  }));
+}
+
 export default async function Home() {
 
-  const [services, projects, blogs] = await Promise.all([
+  const [services, projects, blogs, testimonials] = await Promise.all([
     getPublishedServices(),
     getPublishedProjects(),
     getHomeBlogPosts(),
+    getHomeTestimonials(),
   ]);
   const homeBlogPosts = getBlogGridPosts(blogs, { limit: 3 }).map(toBlogGridPost);
 
@@ -59,7 +81,7 @@ export default async function Home() {
         ctaLabel="View All Posts ->"
       />
       <TechStack />
-      <Testimonials />
+      <Testimonials items={testimonials} />
       <CTA />
       <NewsletterCTA />
     </>
