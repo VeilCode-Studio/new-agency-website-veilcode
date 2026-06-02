@@ -25,7 +25,7 @@ export function Testimonials({ items }: { items: DisplayTestimonial[] }) {
   if (items.length === 0) return null;
 
   return (
-    <section className="py-32 px-6 md:px-10 bg-surface border-y border-line">
+    <section className="py-32 px-6 md:px-10 bg-surface border-y border-line" id="testimonials">
       <div className="max-w-205 mx-auto text-center">
         <motion.div
           ref={ref}

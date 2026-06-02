@@ -60,7 +60,7 @@ export function ServicesHero() {
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-145 mb-10"
           >
-            From the first pixel to the last pipeline — VeilCode delivers five
+            From the first pixel to the last pipeline — VeilCode delivers three
             integrated service practices that cover the full spectrum of modern
             digital business. Built to work independently or as a unified stack.
           </motion.p>

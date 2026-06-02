@@ -31,7 +31,7 @@ export function ServicesOverview({ serviceList }: { serviceList: Service[] }) {
             className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
               tracking-tight text-ink leading-[1.1] max-w-140"
           >
-            Five Practices.{" "}
+            Three Practices.{" "}
             <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
               One Unified Partner.
             </span>
