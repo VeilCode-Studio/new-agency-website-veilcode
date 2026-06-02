@@ -284,3 +284,16 @@ export const blogPosts = pgTable("blog_posts", {
 });
 
 export type BlogPost = typeof blogPosts.$inferSelect;
+
+export const testimonials = pgTable("testimonials", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  role: text("role").notNull(),
+  company: text("company").notNull(),
+  quote: text("quote").notNull(),
+  avatar: text("avatar"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export type Testimonial = typeof testimonials.$inferSelect;

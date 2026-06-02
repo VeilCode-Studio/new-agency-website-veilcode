@@ -5,20 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SectionTag } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { Button } from "../ui/button";
-import { TESTIMONIALS } from "@/constants";
 import { TestimonialCard } from "../extras/TestimonialCard";
+import type { DisplayTestimonial } from "@/lib/testimonials/display";
 
-export function Testimonials() {
+export function Testimonials({ items }: { items: DisplayTestimonial[] }) {
   const [active, setActive] = useState(0);
   const [ref, inView] = useReveal();
+  const activeIndex = Math.min(active, Math.max(items.length - 1, 0));
 
   useEffect(() => {
+    if (items.length <= 1) return;
     const id = setInterval(
-      () => setActive((a) => (a + 1) % TESTIMONIALS.length),
+      () => setActive((a) => (a + 1) % items.length),
       5200
     );
     return () => clearInterval(id);
-  }, []);
+  }, [items.length]);
+
+  if (items.length === 0) return null;
 
   return (
     <section className="py-32 px-6 md:px-10 bg-surface border-y border-line">
@@ -50,8 +54,8 @@ export function Testimonials() {
           <motion.div variants={fadeUp(0.2)}>
             <AnimatePresence mode="wait">
               <TestimonialCard
-                key={TESTIMONIALS[active].name}
-                item={TESTIMONIALS[active]}
+                key={items[activeIndex].name}
+                item={items[activeIndex]}
               />
             </AnimatePresence>
 
@@ -61,7 +65,7 @@ export function Testimonials() {
               // role="tablist"
               aria-label="Testimonials"
             >
-              {TESTIMONIALS.map((t, i) => (
+              {items.map((t, i) => (
                 <Button
                   key={t.name}
                   role="tab"

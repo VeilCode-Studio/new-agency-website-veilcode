@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { TESTIMONIALS } from "@/constants";
+import type { DisplayTestimonial } from "@/lib/testimonials/display";
 
-export function TestimonialCard({ item }: { item: (typeof TESTIMONIALS)[number] }) {
+export function TestimonialCard({ item }: { item: DisplayTestimonial }) {
   return (
     <motion.blockquote
       key={item.name}
@@ -31,9 +31,17 @@ export function TestimonialCard({ item }: { item: (typeof TESTIMONIALS)[number] 
           className="size-11 rounded-full flex items-center justify-center shrink-0
             bg-linear-to-br from-brand/20 to-brand/5
             border border-brand-border
-            font-mono text-[12px] font-medium text-brand"
+            overflow-hidden font-mono text-[12px] font-medium text-brand"
         >
-          {item.initials}
+          {item.avatar ? (
+            <span
+              aria-hidden
+              className="size-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${item.avatar})` }}
+            />
+          ) : (
+            item.initials
+          )}
         </div>
         <div className="text-left">
           <cite className="not-italic font-sans text-[14px] font-medium text-ink block">
