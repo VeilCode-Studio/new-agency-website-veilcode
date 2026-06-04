@@ -1,0 +1,40 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VeilCode workflow card template</title>
+  <desc id="desc">Editable workflow diagram card for automation project diagrams.</desc>
+  <rect width="1600" height="1000" fill="#F4F6F9"/>
+  <rect x="64" y="64" width="1472" height="872" rx="36" fill="#FFFFFF" stroke="#E2E6EC"/>
+  <rect x="112" y="112" width="62" height="62" rx="14" fill="#00B8D4"/>
+  <path d="M143 129L160 139V159L143 169L126 159V139L143 129Z" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M143 144L152 149V158L143 163L134 158V149L143 144Z" fill="#FFFFFF"/>
+  <text x="198" y="155" fill="#0B111B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">veil</text>
+  <text x="264" y="155" fill="#00B8D4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">code</text>
+  <text x="112" y="252" fill="#0B111B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="54" font-weight="850" letter-spacing="-1">Workflow automation map</text>
+  <text x="114" y="307" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24">Replace node labels with the client workflow: trigger, agent, human review, action, report.</text>
+  <g transform="translate(152 420)">
+    <rect width="220" height="104" rx="20" fill="#E8FBFE" stroke="#00B8D4"/>
+    <text x="40" y="48" fill="#006C78" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700">01 TRIGGER</text>
+    <text x="40" y="76" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Form, email, CRM</text>
+  </g>
+  <g transform="translate(484 420)">
+    <rect width="220" height="104" rx="20" fill="#ECFDF6" stroke="#10B981"/>
+    <text x="40" y="48" fill="#14532D" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700">02 AGENT</text>
+    <text x="40" y="76" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Classify and route</text>
+  </g>
+  <g transform="translate(816 420)">
+    <rect width="220" height="104" rx="20" fill="#F4ECFE" stroke="#8B5CF6"/>
+    <text x="40" y="48" fill="#5B21B6" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700">03 REVIEW</text>
+    <text x="40" y="76" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Approve exceptions</text>
+  </g>
+  <g transform="translate(1148 420)">
+    <rect width="220" height="104" rx="20" fill="#FFF6E6" stroke="#F5A623"/>
+    <text x="40" y="48" fill="#92400E" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700">04 ACTION</text>
+    <text x="40" y="76" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Update systems</text>
+  </g>
+  <path d="M372 472H484M704 472H816M1036 472H1148" stroke="#C6CCD4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M458 458L484 472L458 486M790 458L816 472L790 486M1122 458L1148 472L1122 486" stroke="#C6CCD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(152 650)">
+    <rect width="1216" height="116" rx="22" fill="#F4F6F9" stroke="#E2E6EC"/>
+    <text x="36" y="50" fill="#0B111B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="750">Outcome metric</text>
+    <text x="36" y="84" fill="#54627A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21">Example: 20 hours saved per week, 80 percent faster response time, 95 percent fewer missed follow-ups.</text>
+  </g>
+</svg>

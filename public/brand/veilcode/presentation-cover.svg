@@ -1,0 +1,37 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VeilCode presentation cover</title>
+  <desc id="desc">Reusable cover slide for proposals, pitch decks, and AI automation project documents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080A0F"/>
+      <stop offset="0.62" stop-color="#0A0F1E"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="96" y="96" width="1728" height="888" rx="44" stroke="#00E5FF" stroke-opacity="0.18" stroke-width="2"/>
+  <g opacity="0.14" stroke="#2A3547">
+    <path d="M0 180H1920M0 360H1920M0 540H1920M0 720H1920M0 900H1920"/>
+    <path d="M240 0V1080M480 0V1080M720 0V1080M960 0V1080M1200 0V1080M1440 0V1080M1680 0V1080"/>
+  </g>
+  <circle cx="1430" cy="270" r="392" fill="#00E5FF" fill-opacity="0.12"/>
+  <circle cx="1618" cy="782" r="260" fill="#10D9A0" fill-opacity="0.10"/>
+  <rect x="156" y="152" width="80" height="80" rx="18" fill="#00E5FF"/>
+  <path d="M196 174L218 187V213L196 226L174 213V187L196 174Z" stroke="#080A0F" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M196 192L207 199V212L196 219L185 212V199L196 192Z" fill="#080A0F"/>
+  <text x="260" y="207" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="800">veil</text>
+  <text x="342" y="207" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="800">code</text>
+  <text x="156" y="404" fill="#00E5FF" font-family="Consolas, Menlo, monospace" font-size="28" font-weight="700" letter-spacing="6">PROPOSAL TEMPLATE</text>
+  <text x="150" y="514" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="86" font-weight="850" letter-spacing="-2">AI automation systems</text>
+  <text x="150" y="620" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="86" font-weight="850" letter-spacing="-2">for serious operations.</text>
+  <text x="156" y="710" fill="#8A9BB0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34">Use this cover for decks, proposals, audits, project roadmaps, and client reports.</text>
+  <g transform="translate(1294 396)">
+    <rect width="392" height="292" rx="28" fill="#0D1117" stroke="#00E5FF" stroke-opacity="0.28"/>
+    <path d="M60 90H332M60 146H332M60 202H332" stroke="#2A3547" stroke-width="2"/>
+    <circle cx="98" cy="90" r="12" fill="#00E5FF"/>
+    <circle cx="216" cy="146" r="12" fill="#10D9A0"/>
+    <circle cx="296" cy="202" r="12" fill="#C084FC"/>
+    <path d="M98 90L216 146L296 202" stroke="#8A9BB0" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="156" y="908" fill="#54627A" font-family="Consolas, Menlo, monospace" font-size="24" letter-spacing="4">VEILCODE.STUDIO</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VeilCode automation social square</title>
+  <desc id="desc">Square social media asset for AI automation offers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1080" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080A0F"/>
+      <stop offset="1" stop-color="#0F1528"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="830" cy="178" r="284" fill="#00E5FF" fill-opacity="0.16"/>
+  <circle cx="180" cy="852" r="260" fill="#10D9A0" fill-opacity="0.10"/>
+  <g opacity="0.16" stroke="#2A3547" stroke-width="2">
+    <path d="M90 180H990M90 300H990M90 420H990M90 540H990M90 660H990M90 780H990M90 900H990"/>
+    <path d="M180 90V990M300 90V990M420 90V990M540 90V990M660 90V990M780 90V990M900 90V990"/>
+  </g>
+  <rect x="76" y="74" width="66" height="66" rx="14" fill="#00E5FF"/>
+  <path d="M109 92L126 102V121L109 131L92 121V102L109 92Z" stroke="#080A0F" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M109 107L117 112V121L109 126L101 121V112L109 107Z" fill="#080A0F"/>
+  <text x="162" y="119" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="33" font-weight="800">veil</text>
+  <text x="227" y="119" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="33" font-weight="800">code</text>
+  <text x="78" y="266" fill="#00E5FF" font-family="Consolas, Menlo, monospace" font-size="22" font-weight="700" letter-spacing="4">AUTOMATION AUDIT</text>
+  <text x="76" y="374" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="74" font-weight="850" letter-spacing="-2">Find the work</text>
+  <text x="76" y="458" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="74" font-weight="850" letter-spacing="-2">your team should</text>
+  <text x="76" y="542" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="74" font-weight="850" letter-spacing="-2">never do twice.</text>
+  <g transform="translate(78 650)">
+    <rect width="924" height="222" rx="28" fill="#0D1117" stroke="#00E5FF" stroke-opacity="0.26"/>
+    <text x="40" y="68" fill="#8A9BB0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27">We map repetitive workflows, rank automation ROI,</text>
+    <text x="40" y="112" fill="#8A9BB0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27">and design the AI systems that reduce manual work.</text>
+    <rect x="40" y="148" width="218" height="44" rx="12" fill="#00E5FF" fill-opacity="0.13" stroke="#00E5FF" stroke-opacity="0.36"/>
+    <text x="63" y="177" fill="#00E5FF" font-family="Consolas, Menlo, monospace" font-size="17">AGENTS</text>
+    <rect x="278" y="148" width="218" height="44" rx="12" fill="#10D9A0" fill-opacity="0.12" stroke="#10D9A0" stroke-opacity="0.36"/>
+    <text x="301" y="177" fill="#10D9A0" font-family="Consolas, Menlo, monospace" font-size="17">DASHBOARDS</text>
+    <rect x="516" y="148" width="218" height="44" rx="12" fill="#C084FC" fill-opacity="0.12" stroke="#C084FC" stroke-opacity="0.36"/>
+    <text x="539" y="177" fill="#C084FC" font-family="Consolas, Menlo, monospace" font-size="17">WORKFLOWS</text>
+  </g>
+  <text x="78" y="990" fill="#54627A" font-family="Consolas, Menlo, monospace" font-size="22" letter-spacing="3">VEILCODE.STUDIO</text>
+</svg>

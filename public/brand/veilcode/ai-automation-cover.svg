@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VeilCode AI automation cover</title>
+  <desc id="desc">Marketing cover image for AI automation projects.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080A0F"/>
+      <stop offset="0.58" stop-color="#0A0F1E"/>
+      <stop offset="1" stop-color="#101928"/>
+    </linearGradient>
+    <radialGradient id="cyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(870 162) rotate(125) scale(420 320)">
+      <stop stop-color="#00E5FF" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="green" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(958 486) rotate(160) scale(300 220)">
+      <stop stop-color="#10D9A0" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#10D9A0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#cyan)"/>
+  <rect width="1200" height="630" fill="url(#green)"/>
+  <g opacity="0.18" stroke="#2A3547" stroke-width="1">
+    <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200"/>
+    <path d="M100 0V630M200 0V630M300 0V630M400 0V630M500 0V630M600 0V630M700 0V630M800 0V630M900 0V630M1000 0V630M1100 0V630"/>
+  </g>
+  <rect x="72" y="72" width="72" height="72" rx="16" fill="#00E5FF"/>
+  <path d="M108 91L126 102V124L108 135L90 124V102L108 91Z" stroke="#080A0F" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M108 107L117 112V123L108 128L99 123V112L108 107Z" fill="#080A0F"/>
+  <text x="168" y="120" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="36" font-weight="800">veil</text>
+  <text x="240" y="120" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="36" font-weight="800">code</text>
+  <text x="74" y="224" fill="#00E5FF" font-family="Consolas, Menlo, monospace" font-size="20" font-weight="600" letter-spacing="4">AI AUTOMATION SYSTEMS</text>
+  <text x="72" y="310" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="66" font-weight="850" letter-spacing="-2">Turn workflows</text>
+  <text x="72" y="386" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="66" font-weight="850" letter-spacing="-2">into intelligent</text>
+  <text x="72" y="462" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="66" font-weight="850" letter-spacing="-2">operating systems.</text>
+  <text x="76" y="538" fill="#8A9BB0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400">Agents, dashboards, integrations, and automated decisions for growing teams.</text>
+  <g transform="translate(748 178)">
+    <rect x="0" y="0" width="352" height="284" rx="24" fill="#0D1117" stroke="#00E5FF" stroke-opacity="0.32"/>
+    <rect x="32" y="34" width="116" height="38" rx="10" fill="#00E5FF" fill-opacity="0.13" stroke="#00E5FF" stroke-opacity="0.36"/>
+    <text x="52" y="59" fill="#00E5FF" font-family="Consolas, Menlo, monospace" font-size="14">TRIGGER</text>
+    <rect x="204" y="34" width="116" height="38" rx="10" fill="#10D9A0" fill-opacity="0.12" stroke="#10D9A0" stroke-opacity="0.36"/>
+    <text x="233" y="59" fill="#10D9A0" font-family="Consolas, Menlo, monospace" font-size="14">AGENT</text>
+    <rect x="118" y="122" width="116" height="38" rx="10" fill="#C084FC" fill-opacity="0.12" stroke="#C084FC" stroke-opacity="0.36"/>
+    <text x="143" y="147" fill="#C084FC" font-family="Consolas, Menlo, monospace" font-size="14">REVIEW</text>
+    <rect x="32" y="210" width="116" height="38" rx="10" fill="#F5A623" fill-opacity="0.12" stroke="#F5A623" stroke-opacity="0.36"/>
+    <text x="56" y="235" fill="#F5A623" font-family="Consolas, Menlo, monospace" font-size="14">ACTION</text>
+    <rect x="204" y="210" width="116" height="38" rx="10" fill="#818CF8" fill-opacity="0.12" stroke="#818CF8" stroke-opacity="0.36"/>
+    <text x="224" y="235" fill="#A5B4FC" font-family="Consolas, Menlo, monospace" font-size="14">REPORT</text>
+    <path d="M148 53H204M262 72L188 122M176 160L90 210M176 160L262 210" stroke="#8A9BB0" stroke-opacity="0.54" stroke-width="2"/>
+  </g>
+</svg>

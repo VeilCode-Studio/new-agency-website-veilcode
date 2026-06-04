@@ -1,0 +1,22 @@
+<svg width="1320" height="360" viewBox="0 0 1320 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">VeilCode Studio horizontal logo for dark backgrounds</title>
+  <desc id="desc">VeilCode Studio wordmark with cyan code mark.</desc>
+  <defs>
+    <linearGradient id="mark-bg" x1="72" y1="56" x2="278" y2="288" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#006D7A"/>
+    </linearGradient>
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0 0 0 0 0 0.898 0 0 0 0 1 0 0 0 0.45 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1320" height="360" rx="44" fill="#080A0F"/>
+  <rect x="82" y="76" width="208" height="208" rx="44" fill="url(#mark-bg)" filter="url(#cyan-glow)"/>
+  <path d="M186 116L238 146V206L186 236L134 206V146L186 116Z" stroke="#080A0F" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M186 158L212 173V203L186 218L160 203V173L186 158Z" fill="#080A0F"/>
+  <text x="344" y="201" fill="#F0F4F8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-2">veil</text>
+  <text x="535" y="201" fill="#00E5FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-2">code</text>
+  <text x="351" y="254" fill="#8A9BB0" font-family="Consolas, Menlo, monospace" font-size="26" font-weight="500" letter-spacing="5">DIGITAL SOLUTIONS STUDIO</text>
+</svg>

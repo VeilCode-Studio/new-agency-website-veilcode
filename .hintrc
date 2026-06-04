@@ -9,6 +9,14 @@
       {
         "label": "off"
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "border: 1px solid color-mix(in srgb, var(--vc-brand), transparent 72%)"
+        ]
+      }
     ]
   }
 }

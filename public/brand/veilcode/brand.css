@@ -1,0 +1,32 @@
+:root {
+  --vc-brand: #00E5FF;
+  --vc-brand-accessible-light: #00B8D4;
+  --vc-page-dark: #080A0F;
+  --vc-page-midnight: #0A0F1E;
+  --vc-page-light: #FFFFFF;
+  --vc-surface-dark: #0D1117;
+  --vc-surface-light: #F4F6F9;
+  --vc-ink-dark: #F0F4F8;
+  --vc-ink-light: #0B111B;
+  --vc-ink-muted-dark: #8A9BB0;
+  --vc-ink-muted-light: #54627A;
+  --vc-service-web: #00E5FF;
+  --vc-service-mobile: #818CF8;
+  --vc-service-data: #10D9A0;
+  --vc-service-social: #F5A623;
+  --vc-service-ai: #C084FC;
+  --vc-radius-sm: 6px;
+  --vc-radius-md: 8px;
+  --vc-radius-lg: 12px;
+}
+
+.vc-brand-frame {
+  background: var(--vc-page-dark);
+  color: var(--vc-ink-dark);
+  border: 1px solid color-mix(in srgb, var(--vc-brand), transparent 72%);
+  border-radius: var(--vc-radius-lg);
+}
+
+.vc-brand-accent {
+  color: var(--vc-brand);
+}
