@@ -1,5 +1,6 @@
 import { Footer } from '@/components/shared/Footer';
 import { Nav } from '@/components/shared/Navbar';
+import { ChatbotWidget } from '@/components/chatbot/ChatbotWidget';
 import React, { ReactNode } from 'react'
 
 interface ClientLayoutProps {
@@ -13,6 +14,7 @@ const ClientLayout: React.FC<ClientLayoutProps> = ({ children }) => {
             <main>
                 {children}
             </main>
+            <ChatbotWidget />
             <Footer />
         </>
     )
