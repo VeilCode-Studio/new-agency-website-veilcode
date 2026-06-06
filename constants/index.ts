@@ -235,10 +235,10 @@ export const TYPEWRITER_WORDS = [
 ] as const;
 
 export const STATS = [
-  { val: "25+", label: "Projects Delivered" },
+  { val: "45+", label: "Projects Delivered" },
   { val: "98%", label: "Client Satisfaction" },
   { val: "4×", label: "Avg. ROI Achieved" },
-  { val: "5 yrs", label: "Industry Experience" },
+  { val: "3 yrs", label: "Industry Experience" },
 ] as const;
 
 // about page data
