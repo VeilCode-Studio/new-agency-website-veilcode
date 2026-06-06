@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 
-/* ─── DATA ────────────────────────────────────────────────────────────────── */
 
 const TRUST_ITEMS = [
-  { value: "120+",  label: "Projects delivered" },
+  { value: "45+",  label: "Projects delivered" },
   { value: "98%",   label: "Client satisfaction" },
   { value: "6",     label: "Countries served" },
   { value: "< 24h", label: "Avg. response time" },
-  { value: "5 yrs", label: "In operation" },
+  // { value: "5 yrs", label: "In operation" },
 ] as const;
 
 export function TrustStrip() {
