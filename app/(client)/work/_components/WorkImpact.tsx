@@ -15,7 +15,7 @@ const IMPACT_STATS = [
     border: "border-svc-web-border",
   },
   {
-    metric: "50M+",
+    metric: "10M+",
     label:  "Events processed daily",
     sub:    "data pipeline project",
     accent: "text-svc-data",
@@ -31,21 +31,21 @@ const IMPACT_STATS = [
     border: "border-svc-ai-border",
   },
   {
-    metric: "4.7★",
+    metric: "4.5★",
     label:  "App Store rating",
     sub:    "mobile app launch",
     accent: "text-svc-mobile",
     bg:     "bg-svc-mobile-dim",
     border: "border-svc-mobile-border",
   },
-  {
-    metric: "6.8×",
-    label:  "ROAS on paid social",
-    sub:    "brand launch campaign",
-    accent: "text-svc-social",
-    bg:     "bg-svc-social-dim",
-    border: "border-svc-social-border",
-  },
+  // {
+  //   metric: "6.8×",
+  //   label:  "ROAS on paid social",
+  //   sub:    "brand launch campaign",
+  //   accent: "text-svc-social",
+  //   bg:     "bg-svc-social-dim",
+  //   border: "border-svc-social-border",
+  // },
 ] as const;
 
 
@@ -91,7 +91,7 @@ export function WorkImpact() {
           {/* Stats grid */}
           <motion.div
             variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
             {IMPACT_STATS.map((s, i) => (
               <ImpactStatCard key={s.metric} stat={s} index={i} />

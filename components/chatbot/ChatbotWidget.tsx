@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Loader2, MessageCircle, Send, X } from "lucide-react";
+import { Bot, MessageCircle, Send, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -39,6 +39,71 @@ const STARTER_MESSAGES: ChatMessage[] = [
   },
 ];
 
+type ChoiceGroup = {
+  label: string;
+  options: string[];
+};
+
+const SERVICE_OPTIONS = [
+  "Web Solutions",
+  "Mobile Applications",
+  "AI Automation",
+  "Data Analytics",
+  "Social Media Marketing",
+];
+
+const COMPETITOR_OUTPUT_OPTIONS = [
+  "Feature gaps",
+  "Pricing changes",
+  "Content/SEO moves",
+  "Automation opportunities",
+  "Dashboard with alerts",
+];
+
+const AUTOMATION_PROCESS_OPTIONS = [
+  "Lead qualification",
+  "Support triage",
+  "Reporting",
+  "Document processing",
+  "Approvals",
+  "Follow-ups",
+];
+
+const PROJECT_OUTCOME_OPTIONS = [
+  "Reduce manual work",
+  "Find market gaps",
+  "Monitor competitors",
+  "Improve reporting",
+  "Speed up decisions",
+];
+
+const DATA_SOURCE_OPTIONS = [
+  "Competitor websites",
+  "Social channels",
+  "Search results",
+  "Public pricing pages",
+  "Internal spreadsheets",
+  "CRM data",
+];
+
+const BUDGET_OPTIONS = [
+  "Under $1,500",
+  "$1,500 - $5,000",
+  "$5,000 - $15,000",
+  "$15,000 - $30,000",
+  "$30,000 - $60,000",
+  "$60,000+",
+  "Let's discuss",
+];
+
+const TIMELINE_OPTIONS = [
+  "ASAP",
+  "Within 1 month",
+  "1-3 months",
+  "3-6 months",
+  "Just exploring",
+];
+
 type StoredChatSession = {
   conversationId: string;
   messages: ChatMessage[];
@@ -63,6 +128,67 @@ function createConversationId() {
   }
 
   return `chat-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function getLatestAssistantMessage(messages: ChatMessage[]) {
+  return [...messages].reverse().find((message) => message.role === "assistant");
+}
+
+function getChoiceGroup(messages: ChatMessage[]): ChoiceGroup | null {
+  const latestAssistant = getLatestAssistantMessage(messages);
+  if (!latestAssistant) return null;
+
+  const content = latestAssistant.content.toLowerCase();
+
+  if (
+    content.includes("choose a service") ||
+    content.includes("which one best matches") ||
+    content.includes("which service are you interested") ||
+    content.includes("core services")
+  ) {
+    return { label: "Select one or more services", options: SERVICE_OPTIONS };
+  }
+
+  if (content.includes("what output matters most first")) {
+    return {
+      label: "Select one or more outputs",
+      options: COMPETITOR_OUTPUT_OPTIONS,
+    };
+  }
+
+  if (
+    content.includes("what process should") ||
+    content.includes("main process you want automated")
+  ) {
+    return {
+      label: "Select one or more processes",
+      options: AUTOMATION_PROCESS_OPTIONS,
+    };
+  }
+
+  if (content.includes("main outcome") || content.includes("primary outcome")) {
+    return {
+      label: "Select one or more outcomes",
+      options: PROJECT_OUTCOME_OPTIONS,
+    };
+  }
+
+  if (content.includes("data sources")) {
+    return {
+      label: "Select one or more data sources",
+      options: DATA_SOURCE_OPTIONS,
+    };
+  }
+
+  if (content.includes("budget")) {
+    return { label: "Select a budget range", options: BUDGET_OPTIONS };
+  }
+
+  if (content.includes("timeline")) {
+    return { label: "Select a timeline", options: TIMELINE_OPTIONS };
+  }
+
+  return null;
 }
 
 function getInitialSession(): StoredChatSession {
@@ -108,9 +234,11 @@ export function ChatbotWidget() {
   const [conversationId] = useState(initialSession.conversationId);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const hidden = shouldHide(pathname);
+  const choiceGroup = useMemo(() => getChoiceGroup(messages), [messages]);
 
   useEffect(() => {
     if (hidden || !conversationId) return;
@@ -135,13 +263,24 @@ export function ChatbotWidget() {
     return "Online";
   }, [leadDraft.email, leadSubmitted]);
 
+  function toggleOption(option: string) {
+    setSelectedOptions((current) =>
+      current.includes(option)
+        ? current.filter((item) => item !== option)
+        : [...current, option],
+    );
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const content = input.trim();
+    const typedContent = input.trim();
+    const selectedContent = selectedOptions.join(", ");
+    const content = [selectedContent, typedContent].filter(Boolean).join(". ");
     if (!content || loading) return;
 
     const nextMessages: ChatMessage[] = [...messages, { role: "user", content }];
     setInput("");
+    setSelectedOptions([]);
     setError(null);
     setMessages(nextMessages);
     setLoading(true);
@@ -194,11 +333,11 @@ export function ChatbotWidget() {
   if (hidden) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-4 right-4 z-50 flex max-h-[calc(100dvh-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6 sm:max-h-[calc(100dvh-3rem)]">
       {open && (
         <section
           aria-label="VeilCode project assistant"
-          className="w-[calc(100vw-2.5rem)] max-w-96 overflow-hidden rounded-2xl border border-line bg-page/95 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+          className="flex max-h-[calc(100dvh-6rem)] w-[calc(100vw-2rem)] max-w-96 flex-col overflow-hidden rounded-2xl border border-line bg-page/95 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:max-h-[calc(100dvh-7rem)]"
         >
           <header className="flex items-center justify-between border-b border-line bg-surface px-4 py-3">
             <div className="flex min-w-0 items-center gap-3">
@@ -226,7 +365,7 @@ export function ChatbotWidget() {
 
           <div
             ref={scrollRef}
-            className="flex max-h-110 min-h-80 flex-col gap-3 overflow-y-auto px-4 py-4"
+            className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-4 py-4"
           >
             {messages.map((message, index) => (
               <div
@@ -243,12 +382,49 @@ export function ChatbotWidget() {
             ))}
 
             {loading && (
-              <div className="mr-auto inline-flex items-center gap-2 rounded-2xl border border-line bg-surface px-3.5 py-2.5 text-sm text-ink-muted">
-                <Loader2 className="size-3.5 animate-spin text-brand" />
-                Thinking
+              <div
+                aria-label="Assistant is loading"
+                className="mr-auto inline-flex items-center gap-1.5 rounded-2xl border border-line bg-surface px-3.5 py-3"
+              >
+                <span className="size-1.5 animate-bounce rounded-full bg-brand [animation-delay:-0.2s]" />
+                <span className="size-1.5 animate-bounce rounded-full bg-brand [animation-delay:-0.1s]" />
+                <span className="size-1.5 animate-bounce rounded-full bg-brand" />
               </div>
             )}
           </div>
+
+          {choiceGroup && !loading && (
+            <div className="border-t border-line bg-surface/60 px-4 py-3">
+              <p className="mb-2 text-xs font-medium text-ink-muted">
+                {choiceGroup.label}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {choiceGroup.options.map((option) => {
+                  const selected = selectedOptions.includes(option);
+
+                  return (
+                    <button
+                      key={option}
+                      type="button"
+                      aria-pressed={selected}
+                      onClick={() => toggleOption(option)}
+                      className={cn(
+                        "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
+                        selected
+                          ? "border-brand bg-brand text-page"
+                          : "border-line bg-page text-ink-muted hover:border-brand hover:text-ink",
+                      )}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+              <p className="mt-2 text-[11px] leading-relaxed text-ink-faint">
+                Select any that apply, or type your own answer below.
+              </p>
+            </div>
+          )}
 
           {error && (
             <p className="border-t border-line px-4 py-2 text-xs text-red-400">
@@ -281,11 +457,19 @@ export function ChatbotWidget() {
             />
             <button
               type="submit"
-              disabled={loading || !input.trim()}
+              disabled={loading || (!input.trim() && selectedOptions.length === 0)}
               aria-label="Send message"
               className="grid size-10 shrink-0 place-items-center rounded-xl border border-brand text-brand transition-colors hover:bg-brand hover:text-page disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {loading ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
+              {loading ? (
+                <span className="flex items-center gap-0.5" aria-hidden="true">
+                  <span className="size-1 animate-bounce rounded-full bg-current [animation-delay:-0.2s]" />
+                  <span className="size-1 animate-bounce rounded-full bg-current [animation-delay:-0.1s]" />
+                  <span className="size-1 animate-bounce rounded-full bg-current" />
+                </span>
+              ) : (
+                <Send className="size-4" />
+              )}
             </button>
           </form>
         </section>
