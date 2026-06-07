@@ -27,8 +27,10 @@ export type LocationMarket = {
   deliveryNotes: string[];
   pricingContext: string;
   detailSections?: Array<{ title: string; body: string; ctaLabel?: string; ctaHref?: string }>;
+  detailTitle?: string;
   industriesTitle?: string;
   industries: Array<string | { title: string; desc: string; href?: string }>;
+  servicesTitle?: string;
   serviceCards?: Array<{ title: string; desc: string; href: string; accentClass?: string }>;
   serviceFocus: string[];
   portfolioTitle?: string;
@@ -186,46 +188,137 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "united-states",
     countryName: "United States",
     shortName: "USA",
-    metaTitle: "Web, Mobile, and AI Automation Agency for US Companies | VeilCode",
+    metaTitle: "Remote Web, Mobile & AI Automation Agency for US Companies | VeilCode",
     metaDescription:
-      "VeilCode helps US companies design and build high-performance web platforms, mobile apps, and AI automation systems with a remote-first delivery model.",
-    eyebrow: "Remote delivery for US teams",
-    h1: "Product engineering for US companies that need speed and senior execution",
+      "VeilCode partners with US founders and operators who need senior web, mobile, and AI automation delivery without the cost of a large domestic agency. Remote-first, outcome-driven.",
+    ogImage: "/assets/og/united-states.jpg",
+    schemaType: "ProfessionalService",
+    areaServed: "US",
+    eyebrow: "Remote delivery for US teams · EST overlap available",
+    h1: "Senior product engineering for US founders who need to move fast",
     heroCopy:
-      "We partner with US founders and operators who need lean, senior delivery for websites, customer portals, mobile products, internal tools, and AI-powered workflows.",
+      "We partner with US startups, operators, and growth teams to ship web platforms, mobile apps, and AI automation systems - lean delivery, senior execution, no bloated agency overhead.",
+    primaryCtaLabel: "Book a Discovery Call",
+    primaryCtaHref: "/start",
+    secondaryCtaLabel: "See Case Studies",
+    secondaryCtaHref: "/work",
+    statLine: "NDA-ready · Milestone billing · IP ownership included · EST overlap available",
+    stats: ["NDA-ready", "Milestone billing", "IP ownership included", "EST overlap available"],
+    whyTitle: "Best fit for US teams",
     painPoints: [
-      "Growth teams need fast launches without adding long-term engineering overhead.",
-      "Operations teams need automation that connects CRMs, forms, email, reporting, and support workflows.",
-      "Marketing sites and web apps must be fast, measurable, and credible in competitive search markets.",
+      {
+        title: "Early-stage founders",
+        body: "You have funding, a clear product vision, and a 90-day launch target. You need a senior team that can move without handholding.",
+      },
+      {
+        title: "Operators scaling ops",
+        body: "You're running growth and your internal team is maxed out. You need a reliable delivery partner for the build while your team focuses on the business.",
+      },
+      {
+        title: "Agencies with overflow",
+        body: "You have client work you can't staff internally. We act as your engineering execution layer with clean, documented code you can hand back to the client.",
+      },
     ],
+    detailSections: [
+      {
+        title: "Timezone",
+        body: "Our morning (EAT) overlaps with your evening. We batch async updates daily and schedule live reviews at US-friendly times - typically 7-9 AM ET or 5-7 PM ET. You'll never go 24 hours without a status update.",
+      },
+      {
+        title: "Accountability",
+        body: "Every project runs on a written scope, milestone delivery plan, and a shared project dashboard. You know what's being built, when it's due, and what it costs - before a line of code is written.",
+      },
+      {
+        title: "Quality",
+        body: "Our stack (Next.js, React Native, TypeScript, Supabase) is the same stack US engineering teams use. Code is documented, tested, and structured for handover or in-house continuation. We know US buyers may not see a long list of US testimonials yet, so we lead with scope clarity, process documentation, and work you can inspect.",
+      },
+    ],
+    detailTitle: "The remote concerns - addressed directly",
+    deliveryTitle: "What working with us looks like",
     deliveryNotes: [
-      "Async-first delivery with planned overlap for Eastern and Central time collaboration.",
-      "Clear written scopes, milestone reviews, and handover documentation for distributed teams.",
-      "Built-in analytics, performance checks, and conversion-focused iteration paths.",
+      "Discovery (Week 1): scoped proposal, NDA, and tech stack confirmation before the build starts.",
+      "Build (Weeks 2-8): milestone sprints, async updates, and weekly review calls keep progress visible.",
+      "QA & Launch (Week 8-9): testing, staging review, and production deployment happen before final sign-off.",
+      "Handover (Week 10): source code, documentation, analytics setup, and ownership details are transferred.",
     ],
     pricingContext:
       "US clients usually engage us when they want senior product execution without the cost structure of a large domestic agency.",
-    industries: ["SaaS", "E-commerce", "Real estate", "Healthcare", "Professional services"],
-    serviceFocus: ["web", "mobile", "ai"],
-    faqs: [
+    industriesTitle: "Common US engagement types",
+    industries: [
+      "SaaS MVPs and customer portals",
+      "Startup marketing sites and dashboards",
+      "E-commerce and subscription workflows",
+      "Healthcare and professional service platforms",
+      "Agency delivery overflow",
+    ],
+    servicesTitle: "What US teams hire us for",
+    serviceCards: [
       {
-        question: "Can you work with US time zones?",
-        answer:
-          "Yes. We work asynchronously by default and schedule reliable overlap windows for discovery, reviews, and launch coordination.",
+        title: "Web Solutions",
+        desc: "Marketing sites, SaaS dashboards, customer portals, and internal tools built on Next.js - optimised for performance, SEO, and conversion in competitive US markets.",
+        href: "/services/web-solutions",
+        accentClass: "text-svc-web",
       },
       {
-        question: "Do you sign NDAs or vendor agreements?",
-        answer:
-          "Yes. We can review reasonable NDAs, vendor onboarding requirements, and project agreements before work begins.",
+        title: "Mobile Applications",
+        desc: "Cross-platform iOS and Android apps built with React Native. Designed for the App Store, built for retention, delivered with documentation your team can maintain.",
+        href: "/services/mobile-applications",
+        accentClass: "text-svc-mobile",
       },
       {
-        question: "Can you integrate with US SaaS tools?",
-        answer:
-          "Yes. We commonly connect CRMs, payment systems, analytics tools, email platforms, automation tools, and custom APIs.",
+        title: "AI Automation",
+        desc: "Workflow automation connecting your CRM, email, forms, support queue, and reporting. LLM integrations and custom AI agents that reduce manual ops without creating new fragility.",
+        href: "/services/ai-automation",
+        accentClass: "text-svc-ai",
       },
     ],
-    ctaLabel: "Let's Discuss your Project",
-    ctaCopy: "Tell us what needs to launch, improve, or automate. We will respond with a practical next step.",
+    serviceFocus: ["web", "mobile", "ai"],
+    portfolioTitle: "Case studies with measurable outcomes",
+    portfolioCta: "Need a web development agency for US startups or a remote software agency for US companies? Start with a written scope.",
+    faqTitle: "What US clients ask before they hire us",
+    faqs: [
+      {
+        question: "You're based in Uganda - why would we hire you over a US agency?",
+        answer:
+          "Because geography doesn't determine quality. Our stack, process, and delivery standards are identical to what a senior US engineering team would produce - at a cost structure that makes more sense for a founder or operator who needs results, not overhead. We don't ask you to take that on faith: we scope everything in writing before work begins, you own all IP from day one, and you can stop at any milestone.",
+      },
+      {
+        question: "How do you handle the timezone difference?",
+        answer:
+          "We work morning-biased schedules (EAT) that give us evening overlap with East Coast time. We batch all async updates daily and schedule live calls at times that work for you. In practice, US clients tell us the async model keeps them less interrupted than working with a local agency that calls at 2 PM.",
+      },
+      {
+        question: "Do you sign NDAs?",
+        answer:
+          "Yes, before any project detail is shared. We can review your standard NDA or provide ours.",
+      },
+      {
+        question: "Who owns the code?",
+        answer:
+          "You do. Full IP transfer is standard. The codebase, designs, and documentation are yours on final payment.",
+      },
+      {
+        question: "Can you integrate with our existing US SaaS tools?",
+        answer:
+          "Yes. We commonly connect HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion, and custom APIs. If you use it, we've likely integrated it.",
+      },
+      {
+        question: "What's your typical project size?",
+        answer:
+          "Most US engagements run between $5,000 and $30,000 depending on scope. We don't do $500 jobs and we don't pad $5,000 jobs into $50,000 ones. Scope is fixed in writing before we start.",
+      },
+    ],
+    ctaLabel: "Book a Call",
+    ctaCopy: "Book a no-commitment discovery call.",
+    ctaBody:
+      "30 minutes. You explain the goal. We tell you whether we're the right fit and what it would take. No sales deck, no pressure.",
+    crossMarketLabel: "Also serving:",
+    crossMarketLinks: [
+      { label: "Uganda", href: "/locations/uganda" },
+      { label: "United Kingdom", href: "/locations/united-kingdom" },
+      { label: "Canada", href: "/locations/canada" },
+      { label: "Australia", href: "/locations/australia" },
+    ],
   },
   {
     slug: "united-kingdom",

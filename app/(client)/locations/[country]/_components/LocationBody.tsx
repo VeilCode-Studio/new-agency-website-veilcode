@@ -201,7 +201,18 @@ export function LocationBody({
 
       {market.detailSections?.length ? (
         <section className="border-t border-line px-6 py-24 md:px-10">
-          <div className="mx-auto grid max-w-300 gap-5 lg:grid-cols-3">
+          <div className="mx-auto max-w-300">
+            {market.detailTitle && (
+              <div className="mb-10 max-w-170">
+                <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
+                  Remote model
+                </p>
+                <h2 className="font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
+                  {market.detailTitle}
+                </h2>
+              </div>
+            )}
+            <div className="grid gap-5 lg:grid-cols-3">
             {market.detailSections.map((section) => (
               <article key={section.title} className="rounded-xl border border-line bg-surface/50 p-6">
                 <h2 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-ink">
@@ -221,6 +232,7 @@ export function LocationBody({
                 )}
               </article>
             ))}
+            </div>
           </div>
         </section>
       ) : null}
@@ -232,7 +244,7 @@ export function LocationBody({
               Services
             </p>
             <h2 className="font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
-              Services relevant to {market.shortName}
+              {market.servicesTitle ?? `Services relevant to ${market.shortName}`}
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">

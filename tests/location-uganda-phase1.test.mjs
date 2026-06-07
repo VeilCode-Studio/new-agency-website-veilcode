@@ -103,3 +103,60 @@ test("Australia location has Phase 5 SEO, schema, and offshore trust requirement
   assert.match(body, /market\.detailSections/);
   assert.match(body, /market\.serviceCards/);
 });
+
+test("United States location has Phase 2 SEO, schema, and remote trust requirements", () => {
+  assert.match(
+    locationData,
+    /metaTitle:\s*"Remote Web, Mobile & AI Automation Agency for US Companies \| VeilCode"/,
+  );
+  assert.match(
+    locationData,
+    /metaDescription:\s*"VeilCode partners with US founders and operators who need senior web, mobile, and AI automation delivery without the cost of a large domestic agency\. Remote-first, outcome-driven\."/,
+  );
+  assert.match(locationData, /ogImage:\s*"\/assets\/og\/united-states\.jpg"/);
+  assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
+  assert.match(locationData, /areaServed:\s*"US"/);
+  assert.match(locationData, /Remote delivery for US teams/);
+  assert.match(locationData, /EST overlap available/);
+  assert.match(
+    locationData,
+    /Senior product engineering for US founders who need to move fast/,
+  );
+  assert.match(locationData, /Book a Discovery Call/);
+  assert.match(locationData, /NDA-ready/);
+  assert.match(locationData, /Milestone billing/);
+  assert.match(locationData, /IP ownership included/);
+});
+
+test("United States location includes the requested Phase 2 content sections", () => {
+  assert.match(locationData, /Best fit for US teams/);
+  assert.match(locationData, /Early-stage founders/);
+  assert.match(locationData, /Operators scaling ops/);
+  assert.match(locationData, /Agencies with overflow/);
+  assert.match(locationData, /The remote concerns - addressed directly/);
+  assert.match(locationData, /typically 7-9 AM ET or 5-7 PM ET/);
+  assert.match(locationData, /Next\.js, React Native, TypeScript, Supabase/);
+  assert.match(locationData, /What working with us looks like/);
+  assert.match(locationData, /Discovery \(Week 1\)/);
+  assert.match(locationData, /QA & Launch \(Week 8-9\)/);
+  assert.match(locationData, /What US teams hire us for/);
+  assert.match(locationData, /What US clients ask before they hire us/);
+});
+
+test("United States location has US-specific FAQs, services, CTAs, and cross-market links", () => {
+  assert.match(locationData, /You're based in Uganda - why would we hire you over a US agency/);
+  assert.match(locationData, /Do you sign NDAs/);
+  assert.match(locationData, /Who owns the code/);
+  assert.match(locationData, /HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion/);
+  assert.match(locationData, /Most US engagements run between \$5,000 and \$30,000/);
+  assert.match(locationData, /Book a no-commitment discovery call\./);
+  assert.match(locationData, /30 minutes\. You explain the goal\./);
+  assert.match(locationData, /Book a Call/);
+  assert.match(locationData, /\/services\/ai-automation/);
+  assert.match(locationData, /\/work/);
+  assert.match(locationData, /Also serving:/);
+  assert.match(locationData, /\/locations\/uganda/);
+  assert.match(locationData, /\/locations\/united-kingdom/);
+  assert.match(locationData, /\/locations\/canada/);
+  assert.match(locationData, /\/locations\/australia/);
+});
