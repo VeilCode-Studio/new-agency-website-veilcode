@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import type { LocationMarket } from "@/constants/locations";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
@@ -39,6 +40,16 @@ export function LocationHero({ market }: { market: LocationMarket }) {
             <AccentLine width={56} />
           </motion.div>
 
+          {market.locationBadge && (
+            <motion.div
+              variants={fadeUp(0.04)}
+              className="mb-5 inline-flex items-center gap-2 rounded-md border border-brand-border bg-brand-dim px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] text-brand"
+            >
+              <MapPin className="size-3.5" aria-hidden />
+              <span>{market.locationBadge}</span>
+            </motion.div>
+          )}
+
           <motion.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-16 tracking-wider text-[clamp(40px,6vw,64px)] text-ink mb-6"
@@ -71,18 +82,32 @@ export function LocationHero({ market }: { market: LocationMarket }) {
 
           <motion.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/start"
+              href={market.primaryCtaHref ?? "/start"}
               className="rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
             >
-              {market.ctaLabel}
+              {market.primaryCtaLabel ?? "Start a Project"}
             </Link>
             <Link
-              href="/services"
+              href={market.secondaryCtaHref ?? "/services"}
               className="rounded-md border border-line px-5 py-3 text-sm font-semibold text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
             >
-              Explore services
+              {market.secondaryCtaLabel ?? "Explore services"}
             </Link>
           </motion.div>
+
+          {(market.statLine || market.stats?.length) && (
+            <motion.div
+              variants={fadeUp(0.34)}
+              className="mt-8 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface/70 px-4 py-3 text-sm text-ink-muted"
+            >
+              {(market.stats ?? [market.statLine]).filter(Boolean).map((stat, index, list) => (
+                <span key={stat} className="flex items-center gap-3">
+                  <span className="font-medium text-ink">{stat}</span>
+                  {index < list.length - 1 && <span className="text-brand">·</span>}
+                </span>
+              ))}
+            </motion.div>
+          )}
         </motion.div>
       </div>
 

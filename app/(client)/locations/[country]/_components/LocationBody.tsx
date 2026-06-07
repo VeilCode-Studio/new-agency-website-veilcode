@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle } from "lucide-react";
 import type { LocationMarket } from "@/constants/locations";
 import type { Project, Service } from "@/db/schema";
 import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
 
 function LocationWorkCard({
   project,
+  relevanceNote,
 }: {
   project: Project;
+  relevanceNote?: string;
 }) {
   const screenshot = project.screenshots.find((item) => item.src);
   const classes = project.classes;
@@ -53,9 +55,7 @@ function LocationWorkCard({
               <p className="mb-2 text-xs text-ink-faint">
                 {project.client} / {project.industry}
               </p>
-              <h3
-                className="font-display text-xl font-extrabold leading-tight tracking-tight text-ink"
-              >
+              <h3 className="font-display text-xl font-extrabold leading-tight tracking-tight text-ink">
                 {project.title}
               </h3>
             </div>
@@ -67,6 +67,12 @@ function LocationWorkCard({
           <p className="line-clamp-3 text-sm leading-relaxed text-ink-muted">
             {project.summary}
           </p>
+
+          {relevanceNote && (
+            <p className="mt-4 rounded-lg border border-brand-border bg-brand-dim p-3 text-xs leading-relaxed text-ink-muted">
+              {relevanceNote}
+            </p>
+          )}
 
           <div className="mt-5 grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-line bg-surface/60 p-3.5">
             <div className={`font-display text-2xl font-extrabold leading-none ${classes.accent}`}>
@@ -96,6 +102,34 @@ function LocationWorkCard({
   );
 }
 
+function getPainPoint(point: LocationMarket["painPoints"][number]) {
+  return typeof point === "string" ? { title: null, body: point } : point;
+}
+
+function getIndustry(industry: LocationMarket["industries"][number]) {
+  return typeof industry === "string"
+    ? { title: industry, desc: null, href: null }
+    : industry;
+}
+
+function getSelectedProjects(market: LocationMarket, projects: Project[]) {
+  if (!market.portfolioItems?.length) {
+    return projects.slice(0, 3).map((project) => ({
+      project,
+      relevanceNote: undefined,
+    }));
+  }
+
+  const projectMap = new Map(projects.map((project) => [project.slug, project]));
+
+  return market.portfolioItems
+    .map((item) => {
+      const project = projectMap.get(item.slug);
+      return project ? { project, relevanceNote: item.relevanceNote } : null;
+    })
+    .filter((item): item is { project: Project; relevanceNote: string } => item !== null);
+}
+
 export function LocationBody({
   market,
   services,
@@ -109,6 +143,8 @@ export function LocationBody({
   servicesUnavailable?: boolean;
   projectsUnavailable?: boolean;
 }) {
+  const selectedProjects = getSelectedProjects(market, projects);
+
   return (
     <>
       {(servicesUnavailable || projectsUnavailable) && (
@@ -127,35 +163,67 @@ export function LocationBody({
               Market context
             </p>
             <h2 className="mb-8 font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
-              What we optimize for in {market.shortName}
+              {market.whyTitle ?? `What we optimize for in ${market.shortName}`}
             </h2>
-            <div className="grid gap-4">
-              {market.painPoints.map((point) => (
-                <article key={point} className="rounded-xl border border-line bg-surface/40 p-5">
-                  <p className="leading-relaxed text-ink-muted">{point}</p>
-                </article>
-              ))}
+            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
+              {market.painPoints.map((point) => {
+                const painPoint = getPainPoint(point);
+
+                return (
+                  <article key={painPoint.body} className="rounded-xl border border-line bg-surface/40 p-5">
+                    {painPoint.title && (
+                      <h3 className="mb-3 font-display text-xl font-bold text-ink">
+                        {painPoint.title}
+                      </h3>
+                    )}
+                    <p className="leading-relaxed text-ink-muted">{painPoint.body}</p>
+                  </article>
+                );
+              })}
             </div>
           </div>
 
           <aside className="rounded-xl border border-line bg-surface p-6">
-            <p className="mb-3 font-display text-xl font-bold text-ink">Delivery model</p>
+            <p className="mb-3 font-display text-xl font-bold text-ink">
+              {market.deliveryTitle ?? "Delivery model"}
+            </p>
             <ul className="space-y-3">
               {market.deliveryNotes.map((note) => (
-                <li key={note} className="text-sm leading-relaxed text-ink-muted">
-                  {note}
+                <li key={note} className="flex gap-3 text-sm leading-relaxed text-ink-muted">
+                  <CheckCircle className="mt-1 size-4 shrink-0 text-brand" aria-hidden />
+                  <span>{note}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 border-t border-line pt-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-                Pricing context
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{market.pricingContext}</p>
-            </div>
           </aside>
         </div>
       </section>
+
+      {market.detailSections?.length ? (
+        <section className="border-t border-line px-6 py-24 md:px-10">
+          <div className="mx-auto grid max-w-300 gap-5 lg:grid-cols-3">
+            {market.detailSections.map((section) => (
+              <article key={section.title} className="rounded-xl border border-line bg-surface/50 p-6">
+                <h2 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-ink">
+                  {section.title}
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+                  {section.body}
+                </p>
+                {section.ctaLabel && section.ctaHref && (
+                  <Link
+                    href={section.ctaHref}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
+                  >
+                    {section.ctaLabel}
+                    <ArrowUpRight className="size-4" aria-hidden />
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
         <div className="mx-auto max-w-300">
@@ -168,7 +236,21 @@ export function LocationBody({
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
-            {services.map((service) => (
+            {market.serviceCards
+              ? market.serviceCards.map((service) => (
+                  <Link
+                    key={service.title}
+                    href={service.href}
+                    className="rounded-xl border border-line bg-page p-5 transition-colors hover:border-line-hi"
+                  >
+                    <p className={`mb-3 font-mono text-[11px] uppercase tracking-[0.14em] ${service.accentClass ?? "text-brand"}`}>
+                      {service.title}
+                    </p>
+                    <h3 className="font-display text-xl font-bold text-ink">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-ink-muted">{service.desc}</p>
+                  </Link>
+                ))
+              : services.map((service) => (
               <Link
                 key={service.id}
                 href={service.seoEnabled && service.slug ? `/services/${service.slug}` : "/services"}
@@ -180,29 +262,48 @@ export function LocationBody({
                 <h3 className="font-display text-xl font-bold text-ink">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-muted">{service.desc}</p>
               </Link>
-            ))}
+                ))}
           </div>
         </div>
       </section>
 
       <section className="px-6 py-24 md:px-10">
-        <div className="mx-auto grid max-w-300 gap-10 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-300 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
               Industries
             </p>
             <h2 className="mb-6 font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
-              Common fit
+              {market.industriesTitle ?? "Common fit"}
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {market.industries.map((industry) => (
-                <span
-                  key={industry}
-                  className="rounded border border-line bg-surface px-3 py-1.5 text-sm text-ink-muted"
-                >
-                  {industry}
-                </span>
-              ))}
+            <div className="grid gap-3">
+              {market.industries.map((industry) => {
+                const item = getIndustry(industry);
+                const content = (
+                  <>
+                    <span className="font-display text-base font-bold text-ink">{item.title}</span>
+                    {item.desc && (
+                      <span className="mt-1 block text-sm leading-relaxed text-ink-muted">
+                        {item.desc}
+                      </span>
+                    )}
+                  </>
+                );
+
+                return item.href ? (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={item.title} className="rounded-xl border border-line bg-surface p-4">
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -210,6 +311,9 @@ export function LocationBody({
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
               FAQ
             </p>
+            <h2 className="mb-6 font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
+              {market.faqTitle ?? "Common questions"}
+            </h2>
             <div className="divide-y divide-line rounded-xl border border-line bg-surface/40">
               {market.faqs.map((faq) => (
                 <article key={faq.question} className="p-5">
@@ -222,7 +326,7 @@ export function LocationBody({
         </div>
       </section>
 
-      {projects.length > 0 && (
+      {selectedProjects.length > 0 && (
         <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
           <div className="mx-auto max-w-300">
             <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -231,7 +335,7 @@ export function LocationBody({
                   Proof
                 </p>
                 <h2 className="font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
-                  Relevant work
+                  {market.portfolioTitle ?? "Relevant work"}
                 </h2>
               </div>
               <Link href="/work" className="text-sm font-semibold text-brand hover:underline">
@@ -239,13 +343,24 @@ export function LocationBody({
               </Link>
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {projects.slice(0, 3).map((project) => (
+              {selectedProjects.map(({ project, relevanceNote }) => (
                 <LocationWorkCard
                   key={project.slug}
                   project={project}
+                  relevanceNote={relevanceNote}
                 />
               ))}
             </div>
+            {market.portfolioCta && (
+              <div className="mt-8 rounded-xl border border-brand-border bg-page p-6">
+                <p className="font-display text-2xl font-extrabold tracking-tight text-ink">
+                  {market.portfolioCta}
+                </p>
+                <Link href="/start" className="mt-4 inline-flex text-sm font-semibold text-brand hover:underline">
+                  Start a Project
+                </Link>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -260,8 +375,8 @@ export function LocationBody({
               We could not load the relevant work examples just now.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-              Refresh the page or come back shortly. The rest of the location page
-              is still available.
+              Refresh the page or come back shortly. The rest of the location page is still
+              available.
             </p>
           </div>
         </section>
@@ -287,8 +402,8 @@ export function LocationBody({
                   {market.ctaCopy}
                 </h2>
                 <p className="mt-4 max-w-115 text-sm leading-relaxed text-ink-muted">
-                  We will scope the opportunity, recommend the right service mix,
-                  and map a practical launch path.
+                  {market.ctaBody ??
+                    "We will scope the opportunity, recommend the right service mix, and map a practical launch path."}
                 </p>
               </div>
             </div>
@@ -333,6 +448,27 @@ export function LocationBody({
           </div>
         </div>
       </section>
+
+      {market.crossMarketLinks?.length ? (
+        <section className="border-t border-line bg-surface px-6 py-12 md:px-10">
+          <div className="mx-auto flex max-w-300 flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
+              {market.crossMarketLabel ?? "Also serving clients in:"}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {market.crossMarketLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded border border-line bg-page px-3 py-2 text-sm text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

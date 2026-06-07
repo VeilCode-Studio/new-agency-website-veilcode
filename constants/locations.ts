@@ -6,17 +6,41 @@ export type LocationMarket = {
   shortName: string;
   metaTitle: string;
   metaDescription: string;
+  ogImage?: string;
+  schemaType?: "LocalBusiness" | "ProfessionalService";
+  areaServed?: string | string[];
+  addressLocality?: string;
+  addressCountry?: string;
   eyebrow: string;
+  locationBadge?: string;
   h1: string;
   heroCopy: string;
-  painPoints: string[];
+  primaryCtaLabel?: string;
+  primaryCtaHref?: string;
+  statLine?: string;
+  stats?: string[];
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  whyTitle?: string;
+  painPoints: Array<string | { title: string; body: string }>;
+  deliveryTitle?: string;
   deliveryNotes: string[];
   pricingContext: string;
-  industries: string[];
+  detailSections?: Array<{ title: string; body: string; ctaLabel?: string; ctaHref?: string }>;
+  industriesTitle?: string;
+  industries: Array<string | { title: string; desc: string; href?: string }>;
+  serviceCards?: Array<{ title: string; desc: string; href: string; accentClass?: string }>;
   serviceFocus: string[];
+  portfolioTitle?: string;
+  portfolioItems?: Array<{ slug: string; relevanceNote: string }>;
+  portfolioCta?: string;
+  faqTitle?: string;
   faqs: SeoFaq[];
   ctaLabel: string;
   ctaCopy: string;
+  ctaBody?: string;
+  crossMarketLabel?: string;
+  crossMarketLinks?: Array<{ label: string; href: string }>;
 };
 
 export const LOCATION_MARKETS: LocationMarket[] = [
@@ -24,46 +48,139 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "uganda",
     countryName: "Uganda",
     shortName: "Uganda",
-    metaTitle: "Digital Product Agency in Uganda | VeilCode",
+    metaTitle: "Web Development & AI Automation Agency in Kampala | VeilCode",
     metaDescription:
-      "VeilCode is a Uganda-based digital product agency building web solutions, mobile applications, and AI automation for ambitious local and regional businesses.",
-    eyebrow: "Built from Kampala",
-    h1: "Digital product strategy and engineering for Ugandan businesses",
+      "VeilCode is Kampala's digital product agency. We build conversion-focused websites, mobile apps, and AI automation systems for Ugandan businesses ready to grow.",
+    ogImage: "/assets/og/uganda.jpg",
+    schemaType: "LocalBusiness",
+    addressLocality: "Kampala",
+    addressCountry: "UG",
+    eyebrow: "Based in Kampala · Serving Uganda & East Africa",
+    locationBadge: "Kampala, Uganda",
+    h1: "Kampala's digital product agency for businesses built to grow",
     heroCopy:
-      "We help Ugandan teams modernize websites, launch mobile products, and automate operational work with systems designed for local constraints and regional growth.",
+      "We build websites, mobile apps, and AI automation systems that give Ugandan businesses a real competitive edge - built for local realities, engineered to global standards.",
+    statLine: "5+ Years in Kampala · 45+ Projects Delivered · Mobile-First by Default",
+    stats: ["5+ Years in Kampala", "45+ Projects Delivered", "Mobile-First by Default"],
+    secondaryCtaLabel: "See Our Work",
+    secondaryCtaHref: "/work",
+    whyTitle: "Built for how Uganda does business",
     painPoints: [
-      "Businesses need credible digital channels that convert trust into inquiries and sales.",
-      "Teams often rely on manual reporting, disconnected spreadsheets, and slow follow-up loops.",
-      "Products must perform well on mixed devices, mobile-first traffic, and inconsistent network conditions.",
+      {
+        title: "Most business happens on mobile",
+        body: "70%+ of Ugandan web traffic is mobile. We design mobile-first, optimise for slower connections, and integrate WhatsApp workflows where your customers already are.",
+      },
+      {
+        title: "Trust is earned locally",
+        body: "Ugandan buyers need to know who they're dealing with. We're Kampala-based, available for in-person discovery, and our work is publicly verifiable.",
+      },
+      {
+        title: "The digital gap is your opportunity",
+        body: "Most competitors in your industry still have weak or non-existent digital infrastructure. A well-built website or mobile app is a significant competitive advantage right now.",
+      },
     ],
+    deliveryTitle: "How we work with Ugandan clients",
     deliveryNotes: [
-      "Kampala-based collaboration with in-person discovery available when useful.",
-      "Support for mobile money, local payment flows, WhatsApp-led operations, and low-bandwidth UX.",
-      "Builds can be structured for Uganda-first launch with regional expansion paths.",
+      "In-person discovery and kickoff are available in Kampala for teams that want a local partner they can meet before the build starts.",
+      "Mobile money payment flows, including MTN MoMo and Airtel Money, can be supported in websites, mobile apps, and billing systems.",
+      "WhatsApp-first communication and project updates are available if that is how your team already works.",
+      "Low-bandwidth performance optimisation is included by default so launches work for real Ugandan network conditions.",
+      "We can support a Uganda-first launch with an East Africa expansion path when your product is ready to grow beyond the home market.",
     ],
     pricingContext:
       "We scope projects around local business realities while keeping the engineering standard suitable for global markets.",
-    industries: ["Real estate", "Healthcare", "Education", "Retail", "Professional services"],
-    serviceFocus: ["web", "mobile", "ai"],
-    faqs: [
+    industriesTitle: "Industries we serve in Uganda",
+    industries: [
       {
-        question: "Do you only work with companies in Kampala?",
-        answer:
-          "No. We work with businesses across Uganda and can run remote discovery, design reviews, and delivery for teams outside Kampala.",
+        title: "Real Estate",
+        desc: "Property listing platforms, inquiry systems, and lead-generating web development Uganda teams can manage.",
+        href: "/services/web-solutions",
       },
       {
-        question: "Can you build for mobile-first Ugandan customers?",
-        answer:
-          "Yes. We design around mobile traffic, performance, accessibility, WhatsApp workflows, and payment patterns common in Uganda.",
+        title: "Healthcare",
+        desc: "Appointment systems, patient portals, mHealth, and mobile app development Uganda clinics can roll out in stages.",
+        href: "/services/mobile-applications",
       },
       {
-        question: "Can you support a Ugandan launch and later global expansion?",
-        answer:
-          "Yes. We can start with a Uganda-focused product and structure the codebase, analytics, and content model for future markets.",
+        title: "Education",
+        desc: "LMS platforms, school management systems, parent portals, and performance-conscious student experiences.",
+        href: "/services/web-solutions",
+      },
+      {
+        title: "Financial Services / Fintech",
+        desc: "Mobile money integrations, lending platforms, and AI automation Uganda finance teams can audit and control.",
+        href: "/services/ai-automation",
+      },
+      {
+        title: "Retail & E-commerce",
+        desc: "Online stores optimised for product discovery, conversion, local payment methods, and WhatsApp-assisted sales.",
+        href: "/services/web-solutions",
+      },
+      {
+        title: "Professional Services",
+        desc: "Conversion-focused sites for law firms, consultancies, accounting practices, and B2B service providers.",
+        href: "/services/web-solutions",
       },
     ],
-    ctaLabel: "Let's Discuss your Project",
-    ctaCopy: "Bring us the business goal. We will help map the product, scope, and launch path.",
+    serviceFocus: ["web", "mobile", "ai"],
+    portfolioTitle: "Work that performs",
+    portfolioItems: [
+      {
+        slug: "prestige-properties",
+        relevanceNote:
+          "Real estate platforms like this give property businesses in Uganda 24/7 inquiry generation - without relying on phone calls alone.",
+      },
+      {
+        slug: "nexus-commerce",
+        relevanceNote:
+          "E-commerce built for product discovery and conversion - applicable to Ugandan retail businesses moving online.",
+      },
+      {
+        slug: "vantage-ai-agents",
+        relevanceNote:
+          "AI-powered outreach and workflow tools built from Kampala - proof that world-class SaaS products can be built here.",
+      },
+    ],
+    portfolioCta: "Building something for the Ugandan market? Let's talk.",
+    faqTitle: "Questions from Ugandan businesses",
+    faqs: [
+      {
+        question: "Are you actually based in Uganda, or is this just an online listing?",
+        answer:
+          "We're based in Kampala. VeilCode Studio operates locally, and in-person discovery and project meetings are available for clients who prefer face-to-face engagement. You can reach us directly before committing to anything.",
+      },
+      {
+        question: "Can you integrate MTN Mobile Money or Airtel Money into our platform?",
+        answer:
+          "Yes. Mobile money payment integration is a core capability for Ugandan builds. We've worked with local payment flows and can structure your checkout or billing system around the payment methods your customers already use.",
+      },
+      {
+        question: "Do you only build for Kampala businesses?",
+        answer:
+          "No. We work with businesses across Uganda, and can run remote discovery, design reviews, and full delivery for teams outside Kampala. We've also helped clients position for East African expansion beyond Uganda.",
+      },
+      {
+        question: "How do your prices compare to local agencies?",
+        answer:
+          "We scope projects around local business realities. We're not the cheapest option - we're the option that delivers measurable outcomes. We're transparent about scope and cost before any work begins.",
+      },
+      {
+        question: "Can you take over an existing website that isn't performing?",
+        answer:
+          "Yes. We can audit what exists, identify what's holding it back, and either improve or rebuild from there depending on what makes more business sense.",
+      },
+    ],
+    ctaLabel: "Start a Conversation",
+    ctaCopy: "Your business deserves infrastructure that works.",
+    ctaBody:
+      "Whether you're starting from scratch or replacing something broken, we'll give you a clear scope, honest timeline, and a product your customers will actually use.",
+    crossMarketLabel: "Also serving clients in:",
+    crossMarketLinks: [
+      { label: "United States", href: "/locations/united-states" },
+      { label: "United Kingdom", href: "/locations/united-kingdom" },
+      { label: "Canada", href: "/locations/canada" },
+      { label: "Australia", href: "/locations/australia" },
+    ],
   },
   {
     slug: "united-states",
@@ -204,46 +321,152 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "australia",
     countryName: "Australia",
     shortName: "Australia",
-    metaTitle: "Digital Product Agency for Australian Businesses | VeilCode",
+    metaTitle: "Web, Mobile & AI Automation Agency for Australian Businesses | VeilCode",
     metaDescription:
-      "VeilCode helps Australian businesses build web solutions, mobile applications, and AI automation systems through clear remote delivery.",
-    eyebrow: "Remote delivery for Australia",
-    h1: "Web, mobile, and automation systems for Australian businesses",
+      "VeilCode helps Australian businesses ship web platforms, mobile apps, and automation systems with senior remote delivery, full IP ownership, and the process discipline offshore work often lacks.",
+    ogImage: "/assets/og/australia.jpg",
+    schemaType: "ProfessionalService",
+    areaServed: "AU",
+    eyebrow: "Remote delivery for Australian teams · AEDT/AEST overlap scheduled",
+    h1: "Offshore development done right - for Australian businesses that have been burned before",
     heroCopy:
-      "We help Australian teams improve customer journeys, launch digital products, and reduce repetitive work with well-scoped remote engineering engagements.",
-    painPoints: [
-      "Businesses need digital products that work across mobile-heavy customer journeys.",
-      "Teams want automation that saves time without creating fragile black-box systems.",
-      "Remote delivery needs clear documentation, timezone-aware communication, and disciplined review cycles.",
+      "We're not the cheapest offshore option. We're the one that delivers what's in the scope, documents everything, and gives you full ownership of the output. Australian businesses that have had bad offshore experiences find us a different kind of partner.",
+    primaryCtaLabel: "Start with a Discovery Sprint",
+    primaryCtaHref: "/start",
+    secondaryCtaLabel: "See Our Work",
+    secondaryCtaHref: "/work",
+    statLine: "Full IP ownership · Pilot project available · Written scopes · AEDT overlap scheduled",
+    stats: [
+      "Full IP ownership",
+      "Pilot project available",
+      "Written scopes",
+      "AEDT overlap scheduled",
     ],
+    whyTitle: "What goes wrong with offshore development - and how we're different",
+    painPoints: [
+      {
+        title: "Vague scope, scope creep, surprise invoices",
+        body: "VeilCode works from a written scope and fixed milestone pricing before work begins. Changes are scoped and priced separately so offshore web development Australia teams can evaluate stays commercially clear.",
+      },
+      {
+        title: "Work disappears into a timezone black hole",
+        body: "VeilCode uses daily async updates, scheduled review calls at AEDT-compatible times, and a shared project board you can check at any time.",
+      },
+      {
+        title: "You don't own the code after the project",
+        body: "VeilCode includes full IP transfer on final payment. Source code, documentation, design files, and deployment access are handed over to your business.",
+      },
+      {
+        title: "Quality doesn't match the samples shown in the pitch",
+        body: "VeilCode offers a Discovery Sprint before any full engagement. Assess our thinking, communication, and technical direction before you commit to a larger build.",
+      },
+    ],
+    detailSections: [
+      {
+        title: "Start small. Trust what you see.",
+        body: "We offer a scoped Discovery Sprint: a 1-2 week engagement covering requirements mapping, technical architecture, wireframes or prototypes, and a full project plan. You see exactly how we think and work before committing to a full build. If you're not satisfied with the output, you don't proceed. Most Australian clients who start with a sprint convert to full projects.",
+        ctaLabel: "Ask about a Discovery Sprint",
+        ctaHref: "/start",
+      },
+      {
+        title: "Timezone management - honest and practical",
+        body: "Australia and Uganda have a 5-8 hour offset depending on your state. We won't pretend that's nothing. Daily written project updates are sent each morning EAT, which lands in your inbox during Australian business hours. Review calls are scheduled for early morning AEDT, which is Uganda afternoon or evening. For AEST and Perth clients we work flexible evening hours when needed. You won't lose a working day waiting for a response.",
+      },
+      {
+        title: "Agency project work vs. offshore hiring",
+        body: "After Pascua v Doessel, Australian businesses are right to ask how offshore work is structured. VeilCode engages Australian clients as a project-based service provider under a standard agency agreement - not as a direct hire arrangement. This is a straightforward commercial services relationship with clear IP and IP transfer terms. We recommend you review our agreement with your legal team before engagement.",
+      },
+    ],
+    deliveryTitle: "How Australian engagements run",
     deliveryNotes: [
-      "Async-first collaboration with clear written updates for timezone distance.",
-      "Review calls scheduled around practical overlap windows when real-time discussion is needed.",
-      "Every build includes handover notes so teams are not locked into unclear systems.",
+      "Week 1-2: Discovery Sprint, optional but recommended - requirements, architecture, prototypes, and project plan.",
+      "Week 3-8: Build - milestone sprints, daily async updates, and weekly review calls scheduled for AEDT-compatible overlap.",
+      "Week 8-9: QA and staging review - your team tests on staging and signs off before production.",
+      "Week 10: Handover - full source code, documentation, deployment access, and IP ownership transferred.",
     ],
     pricingContext:
-      "Australian clients usually benefit from our remote model when they need senior execution and predictable scope without local agency overhead.",
+      "Australian clients usually benefit from our remote software development agency Australia model when they need senior execution and predictable scope without local agency overhead.",
+    serviceCards: [
+      {
+        title: "Web Solutions",
+        desc: "Web platforms built on Next.js for the Australian market. Fast, accessible, technically sound, and optimised for mobile-first Australian traffic patterns.",
+        href: "/services/web-solutions",
+        accentClass: "text-svc-web",
+      },
+      {
+        title: "Mobile Applications",
+        desc: "iOS and Android apps built with React Native. Designed for the quality bar of the Australian App Store market, with full handover documentation.",
+        href: "/services/mobile-applications",
+        accentClass: "text-svc-mobile",
+      },
+      {
+        title: "AI Automation",
+        desc: "Workflow automation that eliminates the manual admin, reporting, and communication overhead that slows Australian service businesses down - without creating fragile black-box systems.",
+        href: "/services/ai-automation",
+        accentClass: "text-svc-ai",
+      },
+    ],
+    industriesTitle: "Australian teams we fit best",
     industries: ["Property", "Retail", "Professional services", "Education", "Health and wellness"],
+    portfolioTitle: "Work with clear ownership and measurable outcomes",
+    portfolioItems: [
+      {
+        slug: "prestige-properties",
+        relevanceNote:
+          "Property platforms like this show how a digital agency for Australian businesses can turn search, listings, and inquiries into a measurable sales channel.",
+      },
+      {
+        slug: "nexus-commerce",
+        relevanceNote:
+          "Mobile-first commerce and checkout performance are directly relevant for Sydney, Melbourne, and regional Australian retailers competing online.",
+      },
+      {
+        slug: "vantage-ai-agents",
+        relevanceNote:
+          "AI automation work like this reduces manual review and reporting overhead without creating a black-box system your team cannot own.",
+      },
+    ],
+    portfolioCta: "Want to assess us before a full build? Start with a Discovery Sprint.",
+    faqTitle: "Questions from Australian businesses",
     serviceFocus: ["web", "mobile", "ai"],
     faqs: [
       {
-        question: "How do you handle the timezone difference with Australia?",
+        question: "We've had bad experiences with offshore agencies before. Why would this be different?",
         answer:
-          "We rely on strong async updates and schedule live sessions for discovery, demos, and decision points when overlap is available.",
+          "Because we structure things differently. We won't start work without a written scope. We bill by milestone, not by the month. You own everything we build. And we offer a Discovery Sprint so you can see how we work before you commit to a full project. If that process isn't reassuring enough, we're probably not the right fit - and we'd rather tell you that upfront.",
       },
       {
-        question: "Can you build mobile-first customer experiences?",
+        question: "How do you handle the timezone gap?",
         answer:
-          "Yes. Mobile-first web and React Native app delivery are core parts of our service model.",
+          "Honestly. There is a 5-8 hour offset between Uganda and Australia. Our response: daily written updates arrive in your inbox during Australian business hours. Review calls are scheduled for early AEDT morning, which is our afternoon. We don't pretend the timezone doesn't exist - we design the workflow around it.",
       },
       {
-        question: "Will we own the code and documentation?",
+        question: "Do we own the code at the end?",
         answer:
-          "Yes. Final deliverables include source code, implementation notes, and handover documentation based on the project scope.",
+          "Yes. Full IP transfer on final payment is standard in our agreements. Source code, design files, deployment access - everything.",
+      },
+      {
+        question: "Can we start small to test the relationship?",
+        answer:
+          "Yes. We recommend it. Our Discovery Sprint, usually 1-2 weeks, produces requirements documentation, a technical architecture plan, and prototypes or wireframes. Most Australian clients who start with a sprint convert to full builds.",
+      },
+      {
+        question: "Is this a direct hire arrangement or a project engagement?",
+        answer:
+          "It's a commercial project engagement between VeilCode Studio (Uganda) and your business. Not a direct hire arrangement. We provide deliverables under a standard agency services agreement, which includes IP transfer terms.",
       },
     ],
-    ctaLabel: "Let's Discuss your Project",
-    ctaCopy: "Share what you are trying to improve and we will help map the next useful step.",
+    ctaLabel: "Book a Discovery Sprint",
+    ctaCopy: "Not ready for a full build? Start with a Discovery Sprint.",
+    ctaBody:
+      "Two weeks. Written requirements, technical architecture, prototypes. You see exactly how we work - before committing to anything larger.",
+    crossMarketLabel: "Also serving clients in:",
+    crossMarketLinks: [
+      { label: "Uganda", href: "/locations/uganda" },
+      { label: "United States", href: "/locations/united-states" },
+      { label: "United Kingdom", href: "/locations/united-kingdom" },
+      { label: "Canada", href: "/locations/canada" },
+    ],
   },
 ];
 

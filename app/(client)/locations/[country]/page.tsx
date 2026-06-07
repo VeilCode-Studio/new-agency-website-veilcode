@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getAllProjects, getPublishedServices } from "@/queries";
 import { getLocationMarket } from "@/constants/locations";
 import { StructuredData } from "@/lib/seo/StructuredData";
-import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
+import { breadcrumbJsonLd, localBusinessJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { LocationBody } from "./_components/LocationBody";
 import { LocationHero } from "./_components/LocationHero";
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Params) {
     title: market.metaTitle,
     description: market.metaDescription,
     path: `/locations/${market.slug}`,
+    image: market.ogImage,
   });
 }
 
@@ -71,6 +72,17 @@ export default async function LocationPage({ params }: Params) {
           { name: "Locations", href: "/locations" },
           { name: market.countryName, href: `/locations/${market.slug}` },
         ])}
+      />
+      <StructuredData
+        data={localBusinessJsonLd({
+          name: "VeilCode Studio",
+          description: market.metaDescription,
+          path: `/locations/${market.slug}`,
+          schemaType: market.schemaType,
+          areaServed: market.areaServed,
+          addressLocality: market.addressLocality,
+          addressCountry: market.addressCountry,
+        })}
       />
       <LocationHero market={market} />
       <LocationBody

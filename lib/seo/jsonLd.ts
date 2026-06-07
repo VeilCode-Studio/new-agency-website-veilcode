@@ -28,6 +28,16 @@ type ServiceJsonLdInput = {
   areaServed?: string | string[];
 };
 
+type LocalBusinessJsonLdInput = {
+  name: string;
+  description: string;
+  path: string;
+  schemaType?: "LocalBusiness" | "ProfessionalService";
+  areaServed?: string | string[];
+  addressLocality?: string;
+  addressCountry?: string;
+};
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -125,5 +135,32 @@ export function serviceJsonLd({
       url: SITE_URL,
     },
     areaServed,
+  };
+}
+
+export function localBusinessJsonLd({
+  name,
+  description,
+  path,
+  schemaType = "ProfessionalService",
+  areaServed,
+  addressLocality,
+  addressCountry,
+}: LocalBusinessJsonLdInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": schemaType,
+    name,
+    description,
+    url: absoluteUrl(path),
+    address:
+      addressLocality || addressCountry
+        ? {
+            "@type": "PostalAddress",
+            addressLocality,
+            addressCountry,
+          }
+        : undefined,
+    areaServed: areaServed || addressCountry || "Global",
   };
 }
