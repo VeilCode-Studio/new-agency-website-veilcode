@@ -30,6 +30,8 @@ test("buildGuidedChatbotFallback answers service summaries with a follow-up", ()
 
   assert.equal(result.leadDraft.service, "AI Automation");
   assert.match(result.reply, /Our core services/);
+  assert.doesNotMatch(result.reply, /^- Data Analytics:/m);
+  assert.doesNotMatch(result.reply, /^- Social Media Marketing:/m);
   assert.match(result.reply, /Which one best matches/);
 });
 

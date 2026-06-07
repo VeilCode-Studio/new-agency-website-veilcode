@@ -4,8 +4,8 @@ const SERVICE_LIST_REPLY = `Our core services:
 - Web Solutions: conversion-focused websites and web platforms.
 - Mobile Applications: cross-platform iOS and Android apps.
 - AI Automation: AI assistants, workflow automation, internal copilots, and business process tools.
-- Data Analytics: dashboards, reporting, data pipelines, and insight systems that support the core build.
-- Social Media Marketing: content strategy, campaign execution, and growth support.
+
+Data analytics, reporting, dashboards, and social media support are available as supporting capabilities inside those core services when they fit the project.
 
 Which one best matches what you are trying to improve?`;
 

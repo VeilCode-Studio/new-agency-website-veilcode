@@ -18,7 +18,7 @@ import { toDisplayTestimonial, type DisplayTestimonial } from "@/lib/testimonial
 import {
   getPublishedBlogs,
   getPublishedProjects,
-  getPublishedServices,
+  getPublishedSeoServices,
   getTestimonials,
 } from "@/queries";
 import { NewsletterCTA } from "./blog/[slug]/Newsletter";
@@ -51,7 +51,7 @@ async function getHomeTestimonials(): Promise<DisplayTestimonial[]> {
 export default async function Home() {
 
   const [services, projects, blogs, testimonials] = await Promise.all([
-    getPublishedServices(),
+    getPublishedSeoServices(),
     getPublishedProjects(),
     getHomeBlogPosts(),
     getHomeTestimonials(),

@@ -28,6 +28,11 @@ test("normalizeInquiryService falls back to Not Sure Yet for unknown values", ()
   assert.equal(normalizeInquiryService(" "), "Not Sure Yet");
 });
 
+test("normalizeInquiryService does not store supporting capabilities as major services", () => {
+  assert.equal(normalizeInquiryService("Data Analytics"), "Not Sure Yet");
+  assert.equal(normalizeInquiryService("Social Media Marketing"), "Not Sure Yet");
+});
+
 test("normalizeInquiryBudget and normalizeInquiryTimeline keep only enum-compatible values", () => {
   assert.equal(normalizeInquiryBudget("$5,000 – $15,000"), "$5,000 – $15,000");
   assert.equal(normalizeInquiryBudget("$60,000+"), "$60,000");

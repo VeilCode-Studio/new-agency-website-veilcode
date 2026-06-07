@@ -1,9 +1,11 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Bot, MessageCircle, Send, X } from "lucide-react";
+import { Bot, Maximize2, MessageCircle, Minimize2, Send, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { getChoiceGroup } from "@/lib/chatbot/choiceGroups";
+import { getChatbotPanelClassName } from "@/lib/chatbot/panelLayout";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -39,71 +41,6 @@ const STARTER_MESSAGES: ChatMessage[] = [
   },
 ];
 
-type ChoiceGroup = {
-  label: string;
-  options: string[];
-};
-
-const SERVICE_OPTIONS = [
-  "Web Solutions",
-  "Mobile Applications",
-  "AI Automation",
-  "Data Analytics",
-  "Social Media Marketing",
-];
-
-const COMPETITOR_OUTPUT_OPTIONS = [
-  "Feature gaps",
-  "Pricing changes",
-  "Content/SEO moves",
-  "Automation opportunities",
-  "Dashboard with alerts",
-];
-
-const AUTOMATION_PROCESS_OPTIONS = [
-  "Lead qualification",
-  "Support triage",
-  "Reporting",
-  "Document processing",
-  "Approvals",
-  "Follow-ups",
-];
-
-const PROJECT_OUTCOME_OPTIONS = [
-  "Reduce manual work",
-  "Find market gaps",
-  "Monitor competitors",
-  "Improve reporting",
-  "Speed up decisions",
-];
-
-const DATA_SOURCE_OPTIONS = [
-  "Competitor websites",
-  "Social channels",
-  "Search results",
-  "Public pricing pages",
-  "Internal spreadsheets",
-  "CRM data",
-];
-
-const BUDGET_OPTIONS = [
-  "Under $1,500",
-  "$1,500 - $5,000",
-  "$5,000 - $15,000",
-  "$15,000 - $30,000",
-  "$30,000 - $60,000",
-  "$60,000+",
-  "Let's discuss",
-];
-
-const TIMELINE_OPTIONS = [
-  "ASAP",
-  "Within 1 month",
-  "1-3 months",
-  "3-6 months",
-  "Just exploring",
-];
-
 type StoredChatSession = {
   conversationId: string;
   messages: ChatMessage[];
@@ -128,67 +65,6 @@ function createConversationId() {
   }
 
   return `chat-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-}
-
-function getLatestAssistantMessage(messages: ChatMessage[]) {
-  return [...messages].reverse().find((message) => message.role === "assistant");
-}
-
-function getChoiceGroup(messages: ChatMessage[]): ChoiceGroup | null {
-  const latestAssistant = getLatestAssistantMessage(messages);
-  if (!latestAssistant) return null;
-
-  const content = latestAssistant.content.toLowerCase();
-
-  if (
-    content.includes("choose a service") ||
-    content.includes("which one best matches") ||
-    content.includes("which service are you interested") ||
-    content.includes("core services")
-  ) {
-    return { label: "Select one or more services", options: SERVICE_OPTIONS };
-  }
-
-  if (content.includes("what output matters most first")) {
-    return {
-      label: "Select one or more outputs",
-      options: COMPETITOR_OUTPUT_OPTIONS,
-    };
-  }
-
-  if (
-    content.includes("what process should") ||
-    content.includes("main process you want automated")
-  ) {
-    return {
-      label: "Select one or more processes",
-      options: AUTOMATION_PROCESS_OPTIONS,
-    };
-  }
-
-  if (content.includes("main outcome") || content.includes("primary outcome")) {
-    return {
-      label: "Select one or more outcomes",
-      options: PROJECT_OUTCOME_OPTIONS,
-    };
-  }
-
-  if (content.includes("data sources")) {
-    return {
-      label: "Select one or more data sources",
-      options: DATA_SOURCE_OPTIONS,
-    };
-  }
-
-  if (content.includes("budget")) {
-    return { label: "Select a budget range", options: BUDGET_OPTIONS };
-  }
-
-  if (content.includes("timeline")) {
-    return { label: "Select a timeline", options: TIMELINE_OPTIONS };
-  }
-
-  return null;
 }
 
 function getInitialSession(): StoredChatSession {
@@ -221,6 +97,7 @@ export function ChatbotWidget() {
   const pathname = usePathname();
   const initialSession = useMemo(() => getInitialSession(), []);
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(
     initialSession.messages,
@@ -269,6 +146,18 @@ export function ChatbotWidget() {
         ? current.filter((item) => item !== option)
         : [...current, option],
     );
+  }
+
+  function closeChatbot() {
+    setOpen(false);
+    setExpanded(false);
+  }
+
+  function toggleChatbot() {
+    if (open) {
+      setExpanded(false);
+    }
+    setOpen((value) => !value);
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -337,7 +226,7 @@ export function ChatbotWidget() {
       {open && (
         <section
           aria-label="VeilCode project assistant"
-          className="flex max-h-[calc(100dvh-6rem)] w-[calc(100vw-2rem)] max-w-96 flex-col overflow-hidden rounded-2xl border border-line bg-page/95 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:max-h-[calc(100dvh-7rem)]"
+          className={getChatbotPanelClassName(expanded)}
         >
           <header className="flex items-center justify-between border-b border-line bg-surface px-4 py-3">
             <div className="flex min-w-0 items-center gap-3">
@@ -353,14 +242,29 @@ export function ChatbotWidget() {
                 </p>
               </div>
             </div>
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              aria-label="Close chatbot"
-              className="grid size-8 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
-            >
-              <X className="size-4" />
-            </button>
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setExpanded((value) => !value)}
+                aria-label={expanded ? "Collapse chatbot" : "Expand chatbot"}
+                title={expanded ? "Collapse" : "Expand"}
+                className="grid size-8 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
+              >
+                {expanded ? (
+                  <Minimize2 className="size-4" />
+                ) : (
+                  <Maximize2 className="size-4" />
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={closeChatbot}
+                aria-label="Close chatbot"
+                className="grid size-8 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
+              >
+                <X className="size-4" />
+              </button>
+            </div>
           </header>
 
           <div
@@ -371,7 +275,8 @@ export function ChatbotWidget() {
               <div
                 key={`${message.role}-${index}`}
                 className={cn(
-                  "max-w-[86%] rounded-2xl px-3.5 py-2.5 font-sans text-sm leading-relaxed",
+                  "rounded-2xl px-3.5 py-2.5 font-sans text-sm leading-relaxed",
+                  expanded ? "max-w-[min(42rem,86%)]" : "max-w-[86%]",
                   message.role === "user"
                     ? "ml-auto bg-brand text-page"
                     : "mr-auto border border-line bg-surface text-ink-muted",
@@ -477,7 +382,7 @@ export function ChatbotWidget() {
 
       <button
         type="button"
-        onClick={() => setOpen((value) => !value)}
+        onClick={toggleChatbot}
         aria-label={open ? "Hide VeilCode assistant" : "Open VeilCode assistant"}
         className="inline-flex items-center gap-2 rounded-full border border-brand bg-page px-4 py-3 font-sans text-sm font-medium text-brand shadow-[0_0_30px_var(--color-brand-dim)] transition-all hover:bg-brand hover:text-page"
       >

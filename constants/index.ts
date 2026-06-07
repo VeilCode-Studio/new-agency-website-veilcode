@@ -7,7 +7,7 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const SERVICES: Service[] = [
+export const SERVICES: Service[] = ([
   {
     icon: "◈",
     title: "Web Solutions",
@@ -78,7 +78,11 @@ export const SERVICES: Service[] = [
       link: "text-svc-ai",
     },
   },
-];
+] as Service[]).filter(
+  (service) =>
+    service.title !== "Data Analytics" &&
+    service.title !== "Social Media Marketing",
+);
 
 export const TESTIMONIALS = [
   {
@@ -539,9 +543,13 @@ export const OVERVIEW_CARDS = [
     hoverBorder: "hover:border-[var(--color-svc-ai-border)]",
     hoverShadow: "hover:shadow-[0_0_36px_var(--color-svc-ai-dim)]",
   },
-] as const;
+].filter(
+  (service) =>
+    service.title !== "Data Analytics" &&
+    service.title !== "Social Media Marketing",
+);
 
-export const DEEP_DIVES: ServiceDeepDiveData[] = [
+export const DEEP_DIVES: ServiceDeepDiveData[] = ([
   {
     id: "web-solutions",
     number: "01",
@@ -850,7 +858,11 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = [
       divider: "bg-svc-ai",
     },
   },
-];
+] as ServiceDeepDiveData[]).filter(
+  (service) =>
+    service.title !== "Data Analytics" &&
+    service.title !== "Social Media Marketing",
+);
 
 export const PHASES = [
   {

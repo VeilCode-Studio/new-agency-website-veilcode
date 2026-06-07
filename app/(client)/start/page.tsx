@@ -53,33 +53,6 @@ export const SERVICES = [
     activeBg: "bg-svc-mobile-dim", activeBorder: "border-svc-mobile-border", activeText: "text-svc-mobile",
   },
   {
-    id: "data",
-    label: "Data Analytics",
-    sub: "Pipelines & dashboards",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    accent: "text-svc-data", dimBg: "bg-svc-data-dim", border: "border-svc-data-border",
-    activeBg: "bg-svc-data-dim", activeBorder: "border-svc-data-border", activeText: "text-svc-data",
-  },
-  // {
-  //   id: "social",
-  //   label: "Social Media Marketing",
-  //   sub: "Strategy & execution",
-  //   icon: (
-  //     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-  //       <circle cx="18" cy="5" r="3" stroke="currentColor" strokeWidth="1.5" />
-  //       <circle cx="6" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-  //       <circle cx="18" cy="19" r="3" stroke="currentColor" strokeWidth="1.5" />
-  //       <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" strokeWidth="1.5" />
-  //     </svg>
-  //   ),
-  //   accent: "text-svc-social", dimBg: "bg-svc-social-dim", border: "border-svc-social-border",
-  //   activeBg: "bg-svc-social-dim", activeBorder: "border-svc-social-border", activeText: "text-svc-social",
-  // },
-  {
     id: "ai",
     label: "AI Automation",
     sub: "Agents & workflows",

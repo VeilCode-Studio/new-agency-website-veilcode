@@ -3,10 +3,9 @@ import { ServicesHero } from './_components/ServicesHero'
 import { ServicesOverview } from './_components/ServicesOverview'
 import { ServiceDeepDives } from './_components/ServicesDeepDive'
 import { DeliveryProcess } from './_components/DeliveryProcess'
-import { PricingTiers } from './_components/PricingTiers'
 import { FAQ } from './_components/FAQ'
 import { ServicesDataError } from './_components/ServicesDataError'
-import { getPublishedServices } from '@/queries'
+import { getPublishedSeoServices } from '@/queries'
 import { buildPageMetadata } from '@/lib/seo/metadata'
 import type { Service } from '@/db/schema'
 
@@ -24,7 +23,7 @@ const page = async () => {
   let servicesUnavailable = false
 
   try {
-    serviceList = await getPublishedServices();
+    serviceList = await getPublishedSeoServices();
   } catch (error) {
     servicesUnavailable = true;
     console.error("[services] failed to load published services:", error);
