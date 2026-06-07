@@ -160,3 +160,115 @@ test("United States location has US-specific FAQs, services, CTAs, and cross-mar
   assert.match(locationData, /\/locations\/canada/);
   assert.match(locationData, /\/locations\/australia/);
 });
+
+test("Canada location has Phase 3 SEO, schema, and documentation trust requirements", () => {
+  assert.match(
+    locationData,
+    /metaTitle:\s*"Web, Mobile & AI Automation Agency for Canadian Companies \| VeilCode"/,
+  );
+  assert.match(
+    locationData,
+    /metaDescription:\s*"VeilCode helps Canadian businesses build web platforms, mobile apps, and AI automation systems with senior remote delivery, clear documentation, and practical scope control\."/,
+  );
+  assert.match(locationData, /ogImage:\s*"\/assets\/og\/canada\.jpg"/);
+  assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
+  assert.match(locationData, /areaServed:\s*"CA"/);
+  assert.match(locationData, /Remote delivery for Canadian teams/);
+  assert.match(locationData, /Eastern & Pacific overlap available/);
+  assert.match(
+    locationData,
+    /Senior digital product delivery for Canadian businesses that need focused execution/,
+  );
+  assert.match(locationData, /Full IP ownership/);
+  assert.match(locationData, /Written scopes/);
+  assert.match(locationData, /Bilingual-capable builds/);
+  assert.match(locationData, /Documented handover/);
+});
+
+test("Canada location includes the requested Phase 3 content sections", () => {
+  assert.match(locationData, /What we optimise for in the Canadian market/);
+  assert.match(locationData, /Documentation is not optional/);
+  assert.match(locationData, /Bilingual capability when you need it/);
+  assert.match(locationData, /Scope control over open-ended retainers/);
+  assert.match(locationData, /Working across Canadian timezones/);
+  assert.match(locationData, /Ontario and Quebec/);
+  assert.match(locationData, /Pacific overlap for BC clients/);
+  assert.match(locationData, /How we work with Canadian clients/);
+  assert.match(locationData, /Written scope and cost estimate/);
+  assert.match(locationData, /Post-launch support window/);
+  assert.match(locationData, /What Canadian teams hire us for/);
+});
+
+test("Canada location has Canadian FAQs, services, CTA, and cross-market links", () => {
+  assert.match(locationData, /You're based in Uganda - why should a Canadian business work with you/);
+  assert.match(locationData, /Can you build bilingual \(English and French\) websites/);
+  assert.match(locationData, /What does documentation look like at handover/);
+  assert.match(locationData, /What payment methods do you accept from Canadian clients/);
+  assert.match(locationData, /CAD invoicing/);
+  assert.match(locationData, /Clear scope\. Clean delivery\. No surprises\./);
+  assert.match(locationData, /Get a Project Scope/);
+  assert.match(locationData, /web development agency Canada/);
+  assert.match(locationData, /digital agency for Canadian startups/);
+  assert.match(locationData, /remote software agency Canada/);
+  assert.match(locationData, /Toronto, Vancouver, and Montreal/);
+  assert.match(locationData, /\/locations\/uganda/);
+  assert.match(locationData, /\/locations\/united-states/);
+  assert.match(locationData, /\/locations\/united-kingdom/);
+  assert.match(locationData, /\/locations\/australia/);
+});
+
+test("United Kingdom location has Phase 4 SEO, schema, and UK trust requirements", () => {
+  assert.match(
+    locationData,
+    /metaTitle:\s*"Digital Product Agency for UK Businesses \| Web, Mobile & AI \| VeilCode"/,
+  );
+  assert.match(
+    locationData,
+    /metaDescription:\s*"VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses\. GDPR-aware delivery, accessibility-conscious builds, measurable outcomes\."/,
+  );
+  assert.match(locationData, /ogImage:\s*"\/assets\/og\/united-kingdom\.jpg"/);
+  assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
+  assert.match(locationData, /areaServed:\s*"GB"/);
+  assert.match(locationData, /Remote delivery for UK teams/);
+  assert.match(locationData, /GMT\+3 \(2hr ahead of BST\)/);
+  assert.match(
+    locationData,
+    /Web, mobile and AI systems for UK businesses with measurable growth targets/,
+  );
+  assert.match(locationData, /GDPR-aware builds/);
+  assert.match(locationData, /Accessible by default/);
+  assert.match(locationData, /ROI-focused delivery/);
+  assert.match(locationData, /Only 2hrs ahead of BST/);
+});
+
+test("United Kingdom location includes the requested Phase 4 content sections", () => {
+  assert.match(locationData, /What we optimise for in the UK market/);
+  assert.match(locationData, /Digital credibility that closes deals/);
+  assert.match(locationData, /Compliance is not optional/);
+  assert.match(locationData, /ROI over aesthetics/);
+  assert.match(locationData, /The timezone advantage/);
+  assert.match(locationData, /only 2 hours ahead of UK time/);
+  assert.match(locationData, /How delivery works for UK clients/);
+  assert.match(locationData, /Accessibility and GDPR-conscious builds included by default/);
+  assert.match(locationData, /Analytics and conversion tracking set up at launch/);
+  assert.match(locationData, /What UK teams hire us for/);
+  assert.match(locationData, /Sectors we work with in the UK/);
+});
+
+test("United Kingdom location has UK FAQs, services, CTA, and cross-market links", () => {
+  assert.match(locationData, /You're based in Uganda - is that a problem for a UK business/);
+  assert.match(locationData, /Do you build GDPR-compliant websites/);
+  assert.match(locationData, /Do you build to WCAG accessibility standards/);
+  assert.match(locationData, /Can you work alongside our existing UK marketing or product team/);
+  assert.match(locationData, /Tell us what needs to perform better\./);
+  assert.match(locationData, /Start the conversation/);
+  assert.match(locationData, /digital agency for UK businesses/);
+  assert.match(locationData, /web development agency UK/);
+  assert.match(locationData, /AI automation UK SME/);
+  assert.match(locationData, /\/blog/);
+  assert.match(locationData, /\/services\/web-solutions/);
+  assert.match(locationData, /\/locations\/uganda/);
+  assert.match(locationData, /\/locations\/united-states/);
+  assert.match(locationData, /\/locations\/canada/);
+  assert.match(locationData, /\/locations\/australia/);
+});

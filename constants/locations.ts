@@ -324,91 +324,250 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "united-kingdom",
     countryName: "United Kingdom",
     shortName: "UK",
-    metaTitle: "Digital Product Agency for UK Businesses | VeilCode",
+    metaTitle: "Digital Product Agency for UK Businesses | Web, Mobile & AI | VeilCode",
     metaDescription:
-      "VeilCode builds web solutions, mobile applications, and AI automation systems for UK businesses that need senior remote product delivery.",
-    eyebrow: "Product delivery for UK teams",
-    h1: "Web, mobile, and AI systems for UK businesses with practical growth goals",
+      "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware delivery, accessibility-conscious builds, measurable outcomes.",
+    ogImage: "/assets/og/united-kingdom.jpg",
+    schemaType: "ProfessionalService",
+    areaServed: "GB",
+    eyebrow: "Remote delivery for UK teams · GMT+3 (2hr ahead of BST)",
+    h1: "Web, mobile and AI systems for UK businesses with measurable growth targets",
     heroCopy:
-      "We help UK SMEs, agencies, and growth-stage teams ship polished digital products, modernize customer journeys, and reduce repetitive operations through automation.",
-    painPoints: [
-      "Service businesses need stronger digital credibility and clearer conversion journeys.",
-      "Teams need systems that reduce manual admin without disrupting existing operations.",
-      "Digital products must meet high expectations for usability, accessibility, privacy, and performance.",
+      "We help UK SMEs, agencies, and growth-stage teams ship digital products that convert, automate the work that slows them down, and build the kind of digital credibility that closes deals.",
+    primaryCtaLabel: "Start a Project",
+    primaryCtaHref: "/start",
+    secondaryCtaLabel: "View Case Studies",
+    secondaryCtaHref: "/work",
+    statLine: "GDPR-aware builds · Accessible by default · ROI-focused delivery · Only 2hrs ahead of BST",
+    stats: [
+      "GDPR-aware builds",
+      "Accessible by default",
+      "ROI-focused delivery",
+      "Only 2hrs ahead of BST",
     ],
+    whyTitle: "What we optimise for in the UK market",
+    painPoints: [
+      {
+        title: "Digital credibility that closes deals",
+        body: "UK buyers research online before they pick up the phone. Your website, portfolio, and digital presence either build trust in the first 5 seconds or lose the lead. We build for first impressions that hold up under scrutiny.",
+      },
+      {
+        title: "Compliance is not optional",
+        body: "GDPR, cookie consent, data handling, and accessibility (WCAG 2.1 AA) aren't afterthoughts in the UK market. We build them in from the start - not as bolt-ons after launch.",
+      },
+      {
+        title: "ROI over aesthetics",
+        body: "UK buyers want to know what the website does for the business, not just how it looks. We build with conversion paths, analytics, and measurement built in - so you can answer that question.",
+      },
+    ],
+    detailSections: [
+      {
+        title: "The timezone advantage",
+        body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional. UK clients consistently tell us this makes collaboration feel almost local.",
+        ctaLabel: "Read our SEO thinking",
+        ctaHref: "/blog",
+      },
+    ],
+    deliveryTitle: "How delivery works for UK clients",
     deliveryNotes: [
-      "Reliable overlap with UK working hours for discovery, demos, and launch reviews.",
-      "Structured delivery documents that make stakeholder review and sign-off easier.",
-      "Attention to accessibility, consent patterns, analytics, and practical maintainability.",
+      "Written scope and fixed milestone structure are agreed before any work begins.",
+      "Real-time availability during UK business hours is practical given the 2-hour timezone gap.",
+      "Structured handover documentation is prepared for internal teams or future agency partners.",
+      "Accessibility and GDPR-conscious builds included by default.",
+      "Analytics and conversion tracking set up at launch, not retrospectively.",
     ],
     pricingContext:
-      "UK clients usually come to us for senior execution, clear scope control, and high quality delivery without bloated agency overhead.",
-    industries: ["Professional services", "Property", "Education", "Healthcare", "B2B services"],
-    serviceFocus: ["web", "mobile", "ai"],
-    faqs: [
+      "UK clients usually come to us for senior execution, clear scope control, and measurable commercial outcomes. This page is written for digital agency for UK businesses, web development agency UK, and AI automation UK SME searches while still reading like a serious British business page.",
+    industriesTitle: "Sectors we work with in the UK",
+    industries: [
+      "Professional Services (law, accounting, consulting)",
+      "Property & Real Estate",
+      "Education & EdTech",
+      "Healthcare & Health Tech",
+      "B2B SaaS",
+      "E-commerce",
+    ],
+    servicesTitle: "What UK teams hire us for",
+    serviceCards: [
       {
-        question: "Can you collaborate with our UK marketing or product team?",
-        answer:
-          "Yes. We can work as the delivery partner for your internal team or alongside an existing agency partner.",
+        title: "Web Solutions",
+        desc: "High-performance websites and web platforms built on Next.js. Fast, technically sound, SEO-optimised, and designed for the conversion paths that UK buyers follow.",
+        href: "/services/web-solutions",
+        accentClass: "text-svc-web",
       },
       {
-        question: "Do you support accessibility and privacy-conscious builds?",
-        answer:
-          "Yes. We build with semantic markup, performance, consent-aware analytics, and maintainable content structures in mind.",
+        title: "Mobile Applications",
+        desc: "Cross-platform iOS and Android apps built for the UK consumer market. We design for the high usability expectations of UK app users - clean, accessible, and fast.",
+        href: "/services/mobile-applications",
+        accentClass: "text-svc-mobile",
       },
       {
-        question: "Can you take over an existing website or app?",
-        answer:
-          "Yes. We can audit the current stack, stabilize it, and then plan improvements or rebuilds where that is more practical.",
+        title: "AI Automation",
+        desc: "Internal workflow automation, CRM integration, reporting systems, and custom AI agents. We help UK service businesses reduce admin overhead without introducing new complexity.",
+        href: "/services/ai-automation",
+        accentClass: "text-svc-ai",
       },
     ],
-    ctaLabel: "Let's Discuss your Project",
-    ctaCopy: "Share the project context and we will help clarify the best delivery path.",
+    serviceFocus: ["web", "mobile", "ai"],
+    faqTitle: "Questions UK clients ask",
+    faqs: [
+      {
+        question: "You're based in Uganda - is that a problem for a UK business?",
+        answer:
+          "Practically, no. We're only 2 hours ahead of UK BST, which means real-time collaboration during business hours is straightforward. We've structured our delivery model around written scopes, milestone reviews, and reliable async updates - the same discipline a good UK agency should apply. The work is the same. The overhead is lower.",
+      },
+      {
+        question: "Do you build GDPR-compliant websites?",
+        answer:
+          "Yes. Cookie consent management, privacy policy integration, data handling practices, and analytics setup are all part of our standard delivery for UK clients. We won't ship a site that puts your business at compliance risk.",
+      },
+      {
+        question: "Do you build to WCAG accessibility standards?",
+        answer:
+          "Yes. Semantic HTML, keyboard navigation, colour contrast, and screen reader compatibility are part of our build standards - not an optional extra.",
+      },
+      {
+        question: "Can you work alongside our existing UK marketing or product team?",
+        answer:
+          "Yes. We can operate as a delivery partner for your internal team, as a white-label resource for a UK agency, or as the primary build team. We adapt to the structure that makes sense for your project.",
+      },
+      {
+        question: "Can you take over an existing website?",
+        answer:
+          "Yes. We audit the current stack, identify what's holding it back, and recommend whether improvement or a rebuild makes better commercial sense. We won't recommend a rebuild to inflate the invoice.",
+      },
+    ],
+    ctaLabel: "Start the conversation",
+    ctaCopy: "Tell us what needs to perform better.",
+    ctaBody:
+      "We'll scope it, price it, and tell you honestly whether we're the right fit - before you commit to anything.",
+    crossMarketLabel: "Also serving:",
+    crossMarketLinks: [
+      { label: "Uganda", href: "/locations/uganda" },
+      { label: "United States", href: "/locations/united-states" },
+      { label: "Canada", href: "/locations/canada" },
+      { label: "Australia", href: "/locations/australia" },
+    ],
   },
   {
     slug: "canada",
     countryName: "Canada",
     shortName: "Canada",
-    metaTitle: "Web, Mobile, and AI Automation Agency for Canadian Companies | VeilCode",
+    metaTitle: "Web, Mobile & AI Automation Agency for Canadian Companies | VeilCode",
     metaDescription:
-      "VeilCode works with Canadian companies on web platforms, mobile apps, and AI automation systems designed for remote collaboration and measurable outcomes.",
-    eyebrow: "Remote product delivery for Canada",
-    h1: "Senior digital product delivery for Canadian teams",
+      "VeilCode helps Canadian businesses build web platforms, mobile apps, and AI automation systems with senior remote delivery, clear documentation, and practical scope control.",
+    ogImage: "/assets/og/canada.jpg",
+    schemaType: "ProfessionalService",
+    areaServed: "CA",
+    eyebrow: "Remote delivery for Canadian teams · Eastern & Pacific overlap available",
+    h1: "Senior digital product delivery for Canadian businesses that need focused execution",
     heroCopy:
-      "We support Canadian businesses that need focused engineering support for web experiences, mobile apps, dashboards, internal tools, and automation workflows.",
-    painPoints: [
-      "Teams need dependable delivery partners who can document decisions and work across distance.",
-      "Customer-facing platforms must be fast, trustworthy, and easy to update after launch.",
-      "Operational work often sits across disconnected tools, making reporting and follow-up slower than necessary.",
+      "We partner with Canadian startups, SMEs, and operators to build web platforms, mobile products, and workflow automation - with the documentation, scope discipline, and handover standards Canadian teams expect.",
+    primaryCtaLabel: "Start a Project",
+    primaryCtaHref: "/start",
+    secondaryCtaLabel: "See Our Process",
+    secondaryCtaHref: "/services",
+    statLine: "Full IP ownership · Written scopes · Bilingual-capable builds · Documented handover",
+    stats: [
+      "Full IP ownership",
+      "Written scopes",
+      "Bilingual-capable builds",
+      "Documented handover",
     ],
+    whyTitle: "What we optimise for in the Canadian market",
+    painPoints: [
+      {
+        title: "Documentation is not optional",
+        body: "Canadian clients expect written specs, milestone plans, and handover notes they can pass to their internal team or a future agency. We document everything - not as a courtesy, but as a delivery standard.",
+      },
+      {
+        title: "Bilingual capability when you need it",
+        body: "We can structure products for multilingual content management from the start. French-language interface text and localisation requirements are scoped clearly - with translation reviewed by qualified specialists.",
+      },
+      {
+        title: "Scope control over open-ended retainers",
+        body: "Canadian SMEs don't want a billing relationship that never ends. We work in defined scopes with milestone billing - so you always know what's being built, what it costs, and when you're done.",
+      },
+    ],
+    detailSections: [
+      {
+        title: "Working across Canadian timezones",
+        body: "Canada spans multiple time zones. We schedule Eastern overlap for Ontario and Quebec clients, where morning EAT can support late Eastern evening updates or flexible early Eastern morning calls. Pacific overlap for BC clients is available with afternoon scheduling. We work async-first and document everything in writing - so timezone difference never creates a blocker.",
+      },
+    ],
+    deliveryTitle: "How we work with Canadian clients",
     deliveryNotes: [
-      "Async delivery with planned overlap for Eastern time and flexible review windows.",
-      "Documentation-first handover so internal teams can maintain the product confidently.",
-      "Analytics and reporting included where measurement is part of the business case.",
+      "Written scope and cost estimate are agreed before any work begins - no verbal commitments.",
+      "Milestone-based delivery includes client sign-off at each stage.",
+      "Full source code and documentation are transferred at project completion.",
+      "Analytics and reporting are set up at launch when measurement is part of the business case.",
+      "Post-launch support window available on request, typically 30 or 60 days.",
     ],
     pricingContext:
-      "Canadian clients can use us for focused senior delivery when hiring a full internal product team is not the right step yet.",
+      "Canadian clients in Toronto, Vancouver, and Montreal often need senior delivery without building a full engineering team first. We frame the value around clean output, documentation, and ownership - not cheap labour. This page supports web development agency Canada, digital agency for Canadian startups, and remote software agency Canada searches without turning the copy into keyword stuffing.",
+    industriesTitle: "Canadian sectors we fit best",
     industries: ["SaaS", "Healthcare", "Education", "Retail", "B2B services"],
-    serviceFocus: ["web", "mobile", "ai"],
-    faqs: [
+    servicesTitle: "What Canadian teams hire us for",
+    serviceCards: [
       {
-        question: "Can you support Canadian startups and SMEs remotely?",
-        answer:
-          "Yes. Our delivery model is remote-first and works well for teams that value clear documentation and scheduled review points.",
+        title: "Web Solutions",
+        desc: "High-performance web platforms built for the Canadian digital market. Technical SEO, accessibility, performance, and conversion - delivered clean enough that your internal team can maintain it.",
+        href: "/services/web-solutions",
+        accentClass: "text-svc-web",
       },
       {
-        question: "Can you build bilingual websites?",
-        answer:
-          "We can structure products for multilingual content. French copy and localization should be reviewed by native or specialist translators.",
+        title: "Mobile Applications",
+        desc: "Cross-platform iOS and Android apps built with React Native. Designed to meet the high quality bar of Canadian app users across both English and French markets.",
+        href: "/services/mobile-applications",
+        accentClass: "text-svc-mobile",
       },
       {
-        question: "Can you help automate internal reporting?",
-        answer:
-          "Yes. Reporting, dashboards, and workflow visibility are treated as supporting capabilities inside web, mobile, and AI automation projects.",
+        title: "AI Automation",
+        desc: "Workflow automation that connects your CRM, reporting, customer comms, and operations into systems that reduce admin overhead and surface better data for decisions.",
+        href: "/services/ai-automation",
+        accentClass: "text-svc-ai",
       },
     ],
-    ctaLabel: "Let's Discuss your Project",
-    ctaCopy: "Send the current challenge and we will outline a practical project route.",
+    serviceFocus: ["web", "mobile", "ai"],
+    faqTitle: "Questions Canadian clients ask",
+    faqs: [
+      {
+        question: "You're based in Uganda - why should a Canadian business work with you?",
+        answer:
+          "Because you're paying for the output, not the postcode. Our delivery process - written scopes, milestone billing, documented handover - is the same discipline you'd expect from a senior Canadian agency, at a cost structure that makes sense for a company that's not ready to hire a full engineering team. You own everything we build, from day one.",
+      },
+      {
+        question: "Can you build bilingual (English and French) websites?",
+        answer:
+          "Yes. We architect products to support multilingual content from the start - meaning French localisation can be added without rebuilding the site. We strongly recommend working with a qualified French-language translator for the copy itself. We scope the technical requirement; you source the language expertise.",
+      },
+      {
+        question: "What does documentation look like at handover?",
+        answer:
+          "Every project includes: component-level code comments, a README with setup and deployment instructions, environment variable documentation, and a handover brief covering the key decisions made during build. Your team or any future developer should be able to pick it up without calling us.",
+      },
+      {
+        question: "Do you offer post-launch support?",
+        answer:
+          "Yes. We offer defined post-launch support windows, typically 30 or 60 days, and can scope ongoing maintenance or feature development as a separate engagement after the initial build.",
+      },
+      {
+        question: "What payment methods do you accept from Canadian clients?",
+        answer:
+          "We accept international wire transfer and major online payment platforms. Invoices are issued in USD. We're happy to discuss CAD invoicing for larger engagements.",
+      },
+    ],
+    ctaLabel: "Get a Project Scope",
+    ctaCopy: "Clear scope. Clean delivery. No surprises.",
+    ctaBody:
+      "Tell us what you're building. We'll come back with an honest scope, a realistic timeline, and a clear price.",
+    crossMarketLabel: "Also serving:",
+    crossMarketLinks: [
+      { label: "Uganda", href: "/locations/uganda" },
+      { label: "United States", href: "/locations/united-states" },
+      { label: "United Kingdom", href: "/locations/united-kingdom" },
+      { label: "Australia", href: "/locations/australia" },
+    ],
   },
   {
     slug: "australia",
