@@ -157,7 +157,7 @@ export function LocationBody({
       )}
 
       <section className="px-6 py-24 md:px-10">
-        <div className="mx-auto grid max-w-300 gap-8 lg:grid-cols-[1fr_420px]">
+        <div className="mx-auto grid max-w-[88rem] gap-8 xl:grid-cols-[minmax(0,0.85fr)_minmax(520px,1fr)]">
           <div>
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
               Market context
@@ -183,15 +183,25 @@ export function LocationBody({
             </div>
           </div>
 
-          <aside className="rounded-xl border border-line bg-surface p-6">
-            <p className="mb-3 font-display text-xl font-bold text-ink">
+          <aside className="rounded-2xl border border-brand-border bg-linear-to-br from-surface via-surface to-brand-dim/40 p-6 shadow-[0_18px_56px_rgba(15,23,42,0.08)] md:p-8 xl:p-10">
+            <p className="mb-6 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl">
               {market.deliveryTitle ?? "Delivery model"}
             </p>
-            <ul className="space-y-3">
-              {market.deliveryNotes.map((note) => (
-                <li key={note} className="flex gap-3 text-sm leading-relaxed text-ink-muted">
-                  <CheckCircle className="mt-1 size-4 shrink-0 text-brand" aria-hidden />
-                  <span>{note}</span>
+            <ul className="grid gap-4">
+              {market.deliveryNotes.map((note, index) => (
+                <li
+                  key={note}
+                  className="grid gap-4 rounded-xl border border-line bg-page/75 p-4 text-[15px] leading-8 text-ink shadow-sm sm:grid-cols-[auto_1fr] sm:p-5 md:text-base"
+                >
+                  <span className="flex items-center gap-3 sm:block">
+                    <span className="grid size-9 place-items-center rounded-full border border-brand-border bg-brand-dim font-mono text-[11px] font-semibold text-brand">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </span>
+                  <span className="min-w-0">
+                    <CheckCircle className="mr-2 inline size-4 align-[-2px] text-brand" aria-hidden />
+                    {note}
+                  </span>
                 </li>
               ))}
             </ul>
