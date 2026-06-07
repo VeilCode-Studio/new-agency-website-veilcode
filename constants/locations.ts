@@ -243,7 +243,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ],
     pricingContext:
       "US clients usually engage us when they want senior product execution without the cost structure of a large domestic agency.",
-    industriesTitle: "Common US engagement types",
+    industriesTitle: "Products we build for US markets",
     industries: [
       "SaaS MVPs and customer portals",
       "Startup marketing sites and dashboards",
@@ -305,7 +305,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "What's your typical project size?",
         answer:
-          "Most US engagements run between $5,000 and $30,000 depending on scope. We don't do $500 jobs and we don't pad $5,000 jobs into $50,000 ones. Scope is fixed in writing before we start.",
+          "Most US engagements run between $5,000 and $30,000 depending on scope. We don't pad $5,000 jobs into $50,000 ones. Scope is fixed in writing before we start.",
       },
     ],
     ctaLabel: "Book a Call",
@@ -365,7 +365,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
         title: "The timezone advantage",
         body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional. UK clients consistently tell us this makes collaboration feel almost local.",
         ctaLabel: "Read our SEO thinking",
-        ctaHref: "/blog",
+        ctaHref: "/blog/seo-thinking-for-business-websites",
       },
     ],
     deliveryTitle: "How delivery works for UK clients",

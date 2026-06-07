@@ -9,6 +9,10 @@ type BuildMetadataInput = {
   type?: "website" | "article";
 };
 
+function titleIncludesBrand(title: string) {
+  return /\bVeilCode\b/i.test(title);
+}
+
 export function buildPageMetadata({
   title,
   description,
@@ -20,7 +24,7 @@ export function buildPageMetadata({
   const imageUrl = image ? absoluteUrl(image) : absoluteUrl("/assets/logo.png");
 
   return {
-    title,
+    title: titleIncludesBrand(title) ? { absolute: title } : title,
     description,
     alternates: {
       canonical,

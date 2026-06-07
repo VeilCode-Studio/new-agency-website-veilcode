@@ -12,6 +12,7 @@ const body = readFileSync(
   "app/(client)/locations/[country]/_components/LocationBody.tsx",
   "utf8",
 );
+const metadataHelper = readFileSync("lib/seo/metadata.ts", "utf8");
 
 test("Uganda location has Phase 1 SEO and schema requirements", () => {
   assert.match(
@@ -28,6 +29,11 @@ test("Uganda location has Phase 1 SEO and schema requirements", () => {
   assert.match(locationData, /schemaType:\s*"LocalBusiness"/);
   assert.match(locationData, /addressLocality:\s*"Kampala"/);
   assert.match(locationData, /addressCountry:\s*"UG"/);
+});
+
+test("branded location metadata uses absolute titles to avoid duplicate VeilCode suffixes", () => {
+  assert.match(page, /title:\s*market\.metaTitle/);
+  assert.match(metadataHelper, /titleIncludesBrand\(title\)\s*\?\s*\{\s*absolute:\s*title\s*\}/);
 });
 
 test("Uganda hero contains the required local trust signals", () => {
