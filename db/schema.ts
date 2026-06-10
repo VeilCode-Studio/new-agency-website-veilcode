@@ -20,6 +20,14 @@ import type {
   SeoPageCta,
 } from "@/types/content";
 
+// APP SETTINGS
+
+export const appSettings = pgTable("app_settings", {
+  key: text("key").primaryKey(),
+  value: text("value").notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 // Newsletter subscriptions
 
 export const newsletterSubscriptionTable = pgTable("newsletter_subscription", {

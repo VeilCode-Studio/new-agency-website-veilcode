@@ -14,6 +14,7 @@ import {
   Inbox,
   Mail,
   ShieldCheck,
+  Settings,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -29,6 +30,7 @@ const NAV = [
   { href: "/admin/careers",    label: "Careers",     icon: UserRoundSearch },
   { href: "/admin/inquiries",  label: "Inquiries",   icon: Inbox },
   { href: "/admin/newsletter", label: "Newsletter",  icon: Mail },
+  { href: "/admin/settings",   label: "Settings",    icon: Settings },
   { href: "/admin/access",     label: "Team Access", icon: ShieldCheck },
 ] as const;
 

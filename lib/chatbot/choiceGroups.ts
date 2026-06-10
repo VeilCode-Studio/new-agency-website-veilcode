@@ -37,11 +37,11 @@ export const PROJECT_OUTCOME_OPTIONS = [
 ];
 
 export const USER_AUDIENCE_OPTIONS = [
-  "General consumers",
-  "Athletes",
-  "Patients/clinical users",
-  "Corporate wellness participants",
-  "Coaches/nutritionists",
+  "Customers",
+  "Internal team",
+  "Admins/managers",
+  "Partners/vendors",
+  "Field staff",
 ];
 
 export const DATA_SOURCE_OPTIONS = [

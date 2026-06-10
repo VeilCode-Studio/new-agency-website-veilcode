@@ -13,11 +13,30 @@ test("getChoiceGroup uses the active question instead of recap keywords", () => 
 
   assert.equal(group?.label, "Select one or more user groups");
   assert.deepEqual(group?.options, [
-    "General consumers",
-    "Athletes",
-    "Patients/clinical users",
-    "Corporate wellness participants",
-    "Coaches/nutritionists",
+    "Customers",
+    "Internal team",
+    "Admins/managers",
+    "Partners/vendors",
+    "Field staff",
+  ]);
+});
+
+test("getChoiceGroup uses neutral audience options for general scoping questions", () => {
+  const group = getChoiceGroup([
+    {
+      role: "assistant",
+      content:
+        "I can help scope that. What outcome are you trying to achieve, and who will use the finished tool or system?",
+    },
+  ]);
+
+  assert.equal(group?.label, "Select one or more user groups");
+  assert.deepEqual(group?.options, [
+    "Customers",
+    "Internal team",
+    "Admins/managers",
+    "Partners/vendors",
+    "Field staff",
   ]);
 });
 

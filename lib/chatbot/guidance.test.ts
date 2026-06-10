@@ -35,6 +35,42 @@ test("buildGuidedChatbotFallback answers service summaries with a follow-up", ()
   assert.match(result.reply, /Which one best matches/);
 });
 
+test("buildGuidedChatbotFallback routes website estimate requests to web solutions", () => {
+  const result = buildGuidedChatbotFallback(
+    [
+      {
+        role: "user",
+        content: "I need a website a real estate project, give me an estimate",
+      },
+    ],
+    {},
+  );
+
+  assert.equal(result.leadDraft.service, "Web Solutions");
+  assert.match(result.leadDraft.message ?? "", /real estate project/);
+  assert.match(result.reply, /Web Solutions/);
+  assert.match(result.reply, /estimate/i);
+  assert.doesNotMatch(result.reply, /finished tool or system/i);
+});
+
+test("buildGuidedChatbotFallback routes mobile cost requests to mobile applications", () => {
+  const result = buildGuidedChatbotFallback(
+    [
+      {
+        role: "user",
+        content: "I need a mobile application, what's the cost?",
+      },
+    ],
+    {},
+  );
+
+  assert.equal(result.leadDraft.service, "Mobile Applications");
+  assert.match(result.leadDraft.message ?? "", /mobile application/);
+  assert.match(result.reply, /Mobile Applications/);
+  assert.match(result.reply, /cost|budget|range/i);
+  assert.doesNotMatch(result.reply, /finished tool or system/i);
+});
+
 test("buildGuidedChatbotFallback asks for the next scoping detail", () => {
   const result = buildGuidedChatbotFallback(
     [{ role: "user", content: "What is the next step?" }],

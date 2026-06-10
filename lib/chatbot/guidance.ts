@@ -17,6 +17,31 @@ function includesAny(value: string, terms: string[]) {
   return terms.some((term) => value.includes(term));
 }
 
+function isWebSolutionsRequest(value: string) {
+  return includesAny(value, [
+    "web solution",
+    "website",
+    "web site",
+    "web app",
+    "landing page",
+    "e-commerce",
+    "ecommerce",
+    "real estate",
+    "property listing",
+  ]);
+}
+
+function isMobileApplicationsRequest(value: string) {
+  return includesAny(value, [
+    "mobile application",
+    "mobile app",
+    "app development",
+    "ios app",
+    "android app",
+    "react native",
+  ]);
+}
+
 function uniqueGoals(existing: string[] | undefined, next: string[]) {
   return [...new Set([...(existing ?? []), ...next])];
 }
@@ -46,6 +71,30 @@ export function buildGuidedChatbotFallback(
   ) {
     return {
       reply: SERVICE_LIST_REPLY,
+      leadDraft: draft,
+    };
+  }
+
+  if (isWebSolutionsRequest(lower)) {
+    draft.service = draft.service || "Web Solutions";
+    draft.message = mergeMessage(draft.message, latest);
+    draft.goals = uniqueGoals(draft.goals, ["Launch a new product"]);
+
+    return {
+      reply:
+        "That fits Web Solutions. A real estate website can range from a smaller marketing/listing site starting around $2,500 to a custom property platform from around $8,000+, depending on listings, search filters, CMS, maps, inquiries, and admin tools. To estimate it properly, do you need a brochure site, a searchable property listing platform, or a full web app with user accounts?",
+      leadDraft: draft,
+    };
+  }
+
+  if (isMobileApplicationsRequest(lower)) {
+    draft.service = draft.service || "Mobile Applications";
+    draft.message = mergeMessage(draft.message, latest);
+    draft.goals = uniqueGoals(draft.goals, ["Launch a new product"]);
+
+    return {
+      reply:
+        "That fits Mobile Applications. Mobile app projects usually start around the Growth range, from about $8,000+, with the final cost depending on features, platforms, backend/API needs, authentication, payments, push notifications, and launch support. Is this for iOS, Android, or both, and what are the core features for version one?",
       leadDraft: draft,
     };
   }
