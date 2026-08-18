@@ -138,7 +138,7 @@ export default function NewsletterExpired() {
         >
           Need help?{" "}
           <a
-            href="mailto:hello@veilcode.studio"
+            href="mailto:support@veilcode.studio"
             className="underline underline-offset-2 hover:text-[#777] transition-colors"
           >
             Contact us

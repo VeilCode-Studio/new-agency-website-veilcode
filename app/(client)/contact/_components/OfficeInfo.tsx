@@ -9,14 +9,15 @@ import { EmailIcon } from "@/components/icons/EmailIcon";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { MapPinIcon } from "@/components/icons/MapPinIcon";
 import { ClockIcon } from "@/components/icons/ClockIcon";
+import { XIcon } from "@/components/icons/XIcon";
 
 
 export const CONTACT_DETAILS = [
   {
     icon: <EmailIcon />,
     label: "Email Us",
-    value: "hello@veilcode.io",
-    href: "mailto:hello@veilcode.io",
+    value: "support@veilcode.io",
+    href: "mailto:support@veilcode.io",
     sub: "For project enquiries & partnerships",
   },
   {
@@ -45,6 +46,7 @@ export const CONTACT_DETAILS = [
 const SOCIALS = [
   { label: "Facebook",   icon: <FacebookIcon />, href: "https://facebook.com/veilcode" },
   { label: "Instagram", icon: <InstagramIcon />, href: "https://www.instagram.com/veilcodestudio" },
+  { label: "X / Twitter", icon: <XIcon />, href: "https://x.com/veilcodestudio" },
 ] as const;
 
 

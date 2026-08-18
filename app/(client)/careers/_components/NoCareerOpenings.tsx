@@ -32,7 +32,7 @@ const NoCareersOpenings = () => {
     <PrimaryButton
       className="mt-10 bg-brand hover:bg-brand/90 text-black font-medium px-10"
     >
-      <Link href="mailto:hello@veilcode.studio">
+      <Link href="mailto:support@veilcode.studio">
         Send Your Application Anyway
       </Link>
     </PrimaryButton>

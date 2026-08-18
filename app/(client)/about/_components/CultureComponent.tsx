@@ -153,7 +153,7 @@ export function Culture() {
                   <Link href={"/careers"}>See Open Positions →</Link>
                 </PrimaryButton>
                 <Link
-                  href="mailto:hello@veilcode.studio"
+                  href="mailto:support@veilcode.studio"
                   className="inline-flex items-center gap-2 font-sans text-sm
                     font-medium text-ink-muted border border-line px-8 py-4
                     rounded-md no-underline hover:text-ink hover:border-line-hi

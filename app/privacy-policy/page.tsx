@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
               </CardHeader>
               <CardContent className="text-ink-muted text-sm leading-relaxed">
                 You have the right to access, correct, delete, or restrict your personal data. 
-                To exercise these rights, contact us at privacy@veilcode.studio. We respond within 30 days.
+                To exercise these rights, contact us at support@veilcode.studio. We respond within 30 days.
               </CardContent>
             </Card>
 
@@ -154,7 +154,7 @@ export default function PrivacyPolicyPage() {
                 className="mt-6 bg-brand hover:bg-brand/90 text-black font-medium px-10"
                 asChild
               >
-                <a href="mailto:hello@veilcode.studio">Contact Our Privacy Team</a>
+                <a href="mailto:support@veilcode.studio">Contact Our Privacy Team</a>
               </Button>
             </div>
           </div>

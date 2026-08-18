@@ -6,7 +6,7 @@ import { GhostButton, PrimaryButton } from '@/components/extras/Primitives';
 
 const links = [
     { linkUrl: "#", linkText: "Follow us on LinkedIn", type: "linkedIn", classNames: "text-[15px]! px-8! py-4!" },
-    { linkUrl: "mailto:hello@veilcode.studio", linkText: "Email Us Your CV", type: "email", classNames: "text-[15px]! px-8! py-4!" }
+    { linkUrl: "mailto:support@veilcode.studio", linkText: "Email Us Your CV", type: "email", classNames: "text-[15px]! px-8! py-4!" }
 ]
 
 const CareersCTA = () => {

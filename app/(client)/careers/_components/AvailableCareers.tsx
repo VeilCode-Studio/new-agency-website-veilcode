@@ -86,7 +86,7 @@ const AvailableCareers: React.FC<AvailableCareersProps> = ({ openings }) => {
                                             className="bg-brand hover:bg-brand/90 text-black font-medium px-10"
                                             asChild
                                         >
-                                            <Link href={`mailto:hello@veilcode.studio?subject=Application for ${job.title}`}>
+                                            <Link href={`mailto:support@veilcode.studio?subject=Application for ${job.title}`}>
                                                 Apply Now
                                             </Link>
                                         </Button>
