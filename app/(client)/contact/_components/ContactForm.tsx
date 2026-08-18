@@ -407,8 +407,8 @@ export function ContactForm() {
                   <p className="mb-4 font-sans text-sm text-red-400 bg-red-500/10
                     border border-red-500/20 rounded-lg px-4 py-3">
                     Something went wrong. Please try again or email us directly at{" "}
-                    <a href="mailto:hello@veilcode.io" className="underline">
-                      hello@veilcode.io
+                    <a href="mailto:support@veilcode.studio" className="underline">
+                      support@veilcode.studio
                     </a>
                   </p>
                 )}

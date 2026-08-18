@@ -195,8 +195,8 @@ export function ContactFormVariant() {
                 {submitState === "error" && (
                   <p className="mb-4 text-sm text-red-400 bg-red-500/5 border border-red-500/20 rounded-lg p-4">
                     Something went wrong. Please try again or email us at{" "}
-                    <a href="mailto:hello@veilcode.io" className="underline">
-                      hello@veilcode.io
+                    <a href="mailto:support@veilcode.studio" className="underline">
+                      support@veilcode.studio
                     </a>
                   </p>
                 )}

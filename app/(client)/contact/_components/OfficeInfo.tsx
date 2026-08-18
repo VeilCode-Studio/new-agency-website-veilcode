@@ -16,8 +16,8 @@ export const CONTACT_DETAILS = [
   {
     icon: <EmailIcon />,
     label: "Email Us",
-    value: "support@veilcode.io",
-    href: "mailto:support@veilcode.io",
+    value: "support@veilcode.studio",
+    href: "mailto:support@veilcode.studio",
     sub: "For project enquiries & partnerships",
   },
   {
