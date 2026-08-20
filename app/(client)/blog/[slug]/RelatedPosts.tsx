@@ -51,10 +51,10 @@ function RelatedCard({ post: p, index }: { post: BlogPost; index: number }) {
       {/* Content */}
       <div className="flex min-w-0 flex-1 flex-col p-6">
         <h3 className="font-display text-[17px] font-bold tracking-tight
-          text-ink mb-2 leading-snug break-words">
+          text-ink mb-2 leading-snug wrap-break-word">
           {p.title}
         </h3>
-        <p className="font-sans text-sm text-ink-muted leading-relaxed mb-5 flex-1 line-clamp-2 break-words">
+        <p className="font-sans text-sm text-ink-muted leading-relaxed mb-5 flex-1 line-clamp-2 wrap-break-word">
           {p.excerpt}
         </p>
 

@@ -82,10 +82,10 @@ export function NewsletterCTA() {
             </div>
 
             <h3 className="font-display text-[clamp(22px,3vw,36px)] font-extrabold
-              tracking-tight text-ink mb-3 break-words">
+              tracking-tight text-ink mb-3 wrap-break-word">
               Stay Sharp on What Matters
             </h3>
-            <p className="mx-auto mb-8 max-w-110 break-words font-sans text-[15px] leading-relaxed text-ink-muted">
+            <p className="mx-auto mb-8 max-w-110 wrap-break-word font-sans text-[15px] leading-relaxed text-ink-muted">
               Engineering deep-dives, design thinking, and practical AI — written for
               builders who care about craft. No fluff. No spray.
             </p>

@@ -86,7 +86,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
               Blog
             </Link>
             <span className="text-ink-faint" aria-hidden>/</span>
-            <span className={`min-w-0 break-words font-mono text-[11px] tracking-widest uppercase ${c.accent}`}>
+            <span className={`min-w-0 wrap-break-word font-mono text-[11px] tracking-widest uppercase ${c.accent}`}>
               {p.category}
             </span>
           </motion.div>
@@ -101,7 +101,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
           <motion.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.05] tracking-tight
-              text-[clamp(32px,5vw,64px)] text-ink mb-6 max-w-225 break-words"
+              text-[clamp(32px,5vw,64px)] text-ink mb-6 max-w-225 wrap-break-word"
           >
             {p.title}
           </motion.h1>
@@ -110,7 +110,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
           <motion.p
             variants={fadeUp(0.14)}
             className="font-sans font-light text-lg text-ink-muted
-              leading-relaxed max-w-160 mb-8 break-words"
+              leading-relaxed max-w-160 mb-8 wrap-break-word"
           >
             {p.excerpt}
           </motion.p>
@@ -161,7 +161,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
           <motion.div variants={fadeUp(0.22)} className="mb-12 flex min-w-0 flex-wrap gap-2">
             {p.tags.map((tag) => (
               <span key={tag}
-                className="max-w-full break-words font-mono text-[10px] tracking-widest uppercase
+                className="max-w-full wrap-break-word font-mono text-[10px] tracking-widest uppercase
                   px-3 py-1.5 rounded border border-line bg-surface text-ink-faint
                   hover:border-line-hi hover:text-ink-muted transition-colors duration-150">
                 {tag}
