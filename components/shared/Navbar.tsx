@@ -101,8 +101,8 @@ export function Nav() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0,  opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 inset-x-0 z-40 flex items-center justify-between
-          h-16 sm:h-18 px-4 sm:px-6 lg:px-8 xl:px-10 transition-all duration-400
+        className={`fixed top-0 inset-x-0 z-40
+          h-16 sm:h-18 transition-all duration-400
           ${
             scrolled
               ? "bg-page/90 backdrop-blur-xl border-b border-line"
@@ -110,6 +110,7 @@ export function Nav() {
           }`}
         id="navbar"
       >
+        <div className="mx-auto flex h-full w-full max-w-300 items-center justify-between px-4 sm:px-6 md:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
           <LogoMark size={32} />
@@ -144,6 +145,7 @@ export function Nav() {
               onClick={() => setDrawerOpen((v) => !v)}
             />
           </div>
+        </div>
         </div>
       </motion.header>
 
