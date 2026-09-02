@@ -104,7 +104,7 @@ export function Hero() {
           className="font-display font-extrabold leading-none tracking-tight
             text-[clamp(42px,7vw,86px)] text-ink mb-2 max-w-225"
         >
-          We Build
+          We are
         </motion.h1>
 
         {/* Typewriter line */}
@@ -121,23 +121,13 @@ export function Hero() {
           <span className="text-brand animate-blink">|</span>
         </motion.div>
 
-        <motion.h2
-          variants={fadeUp(0.24)}
-          initial="hidden"
-          animate="visible"
-          className="font-display font-extrabold leading-none tracking-tight
-            text-[clamp(42px,7vw,86px)] text-ink-faint mb-10"
-        >
-          That Scale.
-        </motion.h2>
-
         {/* Sub copy */}
         <motion.p
           variants={fadeUp(0.32)}
           initial="hidden"
           animate="visible"
           className="font-sans text-lg font-light text-ink-muted
-    max-w-140 leading-relaxed mb-12"
+    max-w-140 leading-relaxed mb-12 pt-3"
         >
           VeilCode Studio builds conversion focused websites, mobile applications,
           and AI automation systems for businesses that need better digital

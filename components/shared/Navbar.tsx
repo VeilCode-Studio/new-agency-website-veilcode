@@ -110,7 +110,7 @@ export function Nav() {
           }`}
         id="navbar"
       >
-        <div className="mx-auto flex h-full w-full max-w-300 items-center justify-between px-4 sm:px-6 md:px-10">
+        <div className="mx-auto flex h-full w-full max-w-350 items-center justify-between px-4 sm:px-6 md:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
           <LogoMark size={32} />
