@@ -25,21 +25,21 @@ export const CONTACT_DETAILS = [
     label: "Call Us",
     value: "+256 750 242 627",
     href: "tel:+256750242627",
-    sub: "Mon–Fri, 9am–6pm EAT",
+    sub: "Calls and WhatsApp by appointment",
   },
   {
     icon: <MapPinIcon />,
-    label: "Our Studio",
-    value: "Kampala, Uganda",
-    href: "https://maps.google.com",
-    sub: "Plot 12, Kololo Hill Drive",
+    label: "Where We Work",
+    value: "Uganda-based · Working globally",
+    href: null,
+    sub: "Serving clients across Africa, Europe and North America",
   },
   {
     icon: <ClockIcon />,
-    label: "Office Hours",
-    value: "Mon – Fri, 9am – 6pm",
+    label: "Availability",
+    value: "Flexible across time zones",
     href: null,
-    sub: "East Africa Time (UTC+3)",
+    sub: "Calls scheduled around your working day",
   },
 ] as const;
 
@@ -65,7 +65,7 @@ export function OfficeInfo() {
       {/* Header */}
       <motion.div variants={fadeUp()}>
         <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
-          Contact Details
+          Work With Us
         </p>
         <div className="flex flex-col gap-3">
           {CONTACT_DETAILS.map((d) => (
