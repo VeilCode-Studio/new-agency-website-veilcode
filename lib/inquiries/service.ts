@@ -43,6 +43,7 @@ type EmailPayload = {
   to: string[];
   subject: string;
   html: string;
+  replyTo?: string;
 };
 
 export type InquiryServiceDeps = {
@@ -120,6 +121,7 @@ export async function createClientInquiry(
   const adminEmail = await mail({
     from: "VeilCode <frank@veilcode.studio>",
     to: ["ecommercedock@gmail.com", "frank@veilcode.studio"],
+    replyTo: values.email,
     subject: `New Project Enquiry from ${values.name}`,
     html: await adminLeadConfirmationTemplate(templateProps),
   });
