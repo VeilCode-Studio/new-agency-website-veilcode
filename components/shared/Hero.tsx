@@ -7,6 +7,7 @@ import { fadeUp, stagger } from "@/lib/motion";
 import { StatItem } from "../extras/StatItem";
 import { STATS, TYPEWRITER_WORDS } from "@/constants";
 import Link from "next/link";
+import { ServiceVisualField } from "@/components/extras/ServiceVisualField";
 
 
 function useTypewriter(words: readonly string[]) {
@@ -62,6 +63,7 @@ export function Hero() {
 
       {/* Grid */}
       <GridBg />
+      <ServiceVisualField />
 
       {/* Orbs */}
       <GlowOrb color="rgba(0,229,255,0.12)" size={600} top="12%" left="55%" />

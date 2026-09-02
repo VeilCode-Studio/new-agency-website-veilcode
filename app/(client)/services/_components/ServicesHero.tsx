@@ -8,6 +8,7 @@ import {
   AccentLine,
 } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
+import { ServiceVisualField } from "@/components/extras/ServiceVisualField";
 
 const SERVICE_PILLS = [
   { label: "Web Solutions", href: "/services/web-solutions", accent: "text-svc-web    bg-svc-web-dim    border-svc-web-border"    },
@@ -19,6 +20,7 @@ export function ServicesHero() {
   return (
     <section className="relative min-h-[72vh] flex items-center overflow-hidden">
       <GridBg />
+      <ServiceVisualField />
       <GlowOrb color="rgba(0,229,255,0.10)" size={560} top="5%"  left="58%" />
       <GlowOrb color="rgba(192,132,252,0.07)" size={400} bottom="0%" left="0%" delay="2s" />
 
