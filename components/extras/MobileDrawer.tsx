@@ -19,6 +19,17 @@ export function MobileDrawer({
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -33,7 +44,6 @@ export function MobileDrawer({
             onClick={onClose}
             className="fixed inset-0 z-40 bg-page/80 backdrop-blur-sm"
             aria-hidden
-            id="navbar"
           />
 
           {/* Drawer panel */}
@@ -44,13 +54,16 @@ export function MobileDrawer({
             animate="visible"
             exit="exit"
             className="fixed top-0 left-0 z-50 flex flex-col
-              h-full w-75 max-w-[85vw]
+              h-dvh w-80 max-w-[88vw] sm:w-90
               bg-surface border-r border-line
               shadow-[4px_0_40px_rgba(0,0,0,0.6)]"
             aria-label="Mobile navigation"
+            aria-modal="true"
+            role="dialog"
+            id="mobile-navigation"
           >
             {/* Drawer header */}
-            <div className="flex items-center justify-between px-6 h-18 border-b border-line shrink-0">
+            <div className="flex items-center justify-between px-4 sm:px-6 h-16 sm:h-18 border-b border-line shrink-0">
               <Link href="/" className="flex items-center gap-2.5 no-underline" onClick={onClose}>
                 <LogoMark size={28} />
                 <WordMark />
