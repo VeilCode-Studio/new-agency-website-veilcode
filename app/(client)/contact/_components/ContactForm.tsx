@@ -207,10 +207,11 @@ const EMPTY: FormData = {
   service: "", budget: "", timeline: "", message: "",
 };
 
-export function ContactForm() {
+export function ContactForm({ standalone = false }: { standalone?: boolean }) {
   const [formData, setFormData] = useState<FormData>(EMPTY);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [showDetails, setShowDetails] = useState(false);
   const [ref, inView] = useReveal();
 
   function handleChange(
@@ -232,6 +233,7 @@ export function ContactForm() {
     setFormData(EMPTY);
     setErrors({});
     setSubmitState("idle");
+    setShowDetails(false);
   };
 
   async function handleSubmit(e: SyntheticEvent) {
@@ -253,6 +255,7 @@ export function ContactForm() {
       }
     } catch (error) {
       console.log("Something went wrong!", error);
+      setSubmitState("error");
       toast.error((error as Error).message || "Something went wrong! Try again!");
     }
   }
@@ -260,7 +263,7 @@ export function ContactForm() {
   return (
     <div
       ref={ref}
-      className="lg:col-span-7"
+      className={standalone ? "w-full" : "lg:col-span-7"}
       id="form-message"
     >
       <motion.div
@@ -327,21 +330,6 @@ export function ContactForm() {
 
               {/* Row 2 — Company */}
               <motion.div variants={fadeUp(0.10)}>
-                <Label htmlFor="company">Company / Organisation</Label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  autoComplete="organization"
-                  placeholder="VeilCode Studio (optional)"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className={inputBase}
-                />
-              </motion.div>
-
-              {/* Row 3 — Service */}
-              <motion.div variants={fadeUp(0.14)}>
                 <Label htmlFor="service-group" required>
                   Which service are you interested in?
                 </Label>
@@ -354,40 +342,14 @@ export function ContactForm() {
                 />
               </motion.div>
 
-              {/* Row 4 — Budget */}
-              <motion.div variants={fadeUp(0.18)}>
-                <Label htmlFor="budget-group">Approximate Budget</Label>
-                <PillSelector
-                  id="budget-group"
-                  options={BUDGETS}
-                  value={formData.budget}
-                  onChange={(val) =>
-                    setFormData((prev) => ({ ...prev, budget: val }))
-                  }
-                />
-              </motion.div>
-
-              {/* Row 5 — Timeline */}
-              <motion.div variants={fadeUp(0.22)}>
-                <Label htmlFor="timeline-group">Project Timeline</Label>
-                <PillSelector
-                  id="timeline-group"
-                  options={TIMELINES}
-                  value={formData.timeline}
-                  onChange={(val) =>
-                    setFormData((prev) => ({ ...prev, timeline: val }))
-                  }
-                />
-              </motion.div>
-
-              {/* Row 6 — Message */}
-              <motion.div variants={fadeUp(0.26)}>
+              {/* Project context */}
+              <motion.div variants={fadeUp(0.14)}>
                 <Label htmlFor="message" required>Tell Us About Your Project</Label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
-                  placeholder="Give us a sense of what you're building, what problem you're solving, or what outcome you're hoping for. The more context, the better."
+                  rows={4}
+                  placeholder="What are you building, or what problem would you like us to solve?"
                   value={formData.message}
                   onChange={handleChange}
                   className={`${inputBase} resize-none ${errors.message ? inputError : ""
@@ -401,8 +363,44 @@ export function ContactForm() {
                 </div>
               </motion.div>
 
+              <motion.div variants={fadeUp(0.18)} className="border-t border-line pt-5">
+                <button type="button" onClick={() => setShowDetails((value) => !value)}
+                  aria-expanded={showDetails} aria-controls="optional-project-details"
+                  className="flex w-full items-center justify-between text-left font-sans text-sm font-medium
+                    text-ink-muted hover:text-ink transition-colors cursor-pointer">
+                  <span>Add project details <span className="font-normal text-ink-faint">(optional)</span></span>
+                  <span aria-hidden className={`text-brand transition-transform duration-200 ${showDetails ? "rotate-45" : ""}`}>+</span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {showDetails && (
+                    <motion.div id="optional-project-details" initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden">
+                      <div className="space-y-6 pt-6">
+                        <div>
+                          <Label htmlFor="company">Company / Organisation</Label>
+                          <input id="company" name="company" type="text" autoComplete="organization"
+                            placeholder="Your company (optional)" value={formData.company}
+                            onChange={handleChange} className={inputBase} />
+                        </div>
+                        <div>
+                          <Label htmlFor="budget-group">Approximate Budget</Label>
+                          <PillSelector id="budget-group" options={BUDGETS} value={formData.budget}
+                            onChange={(val) => setFormData((prev) => ({ ...prev, budget: val }))} />
+                        </div>
+                        <div>
+                          <Label htmlFor="timeline-group">Project Timeline</Label>
+                          <PillSelector id="timeline-group" options={TIMELINES} value={formData.timeline}
+                            onChange={(val) => setFormData((prev) => ({ ...prev, timeline: val }))} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
               {/* Submit */}
-              <motion.div variants={fadeUp(0.30)}>
+              <motion.div variants={fadeUp(0.22)}>
                 {submitState === "error" && (
                   <p className="mb-4 font-sans text-sm text-red-400 bg-red-500/10
                     border border-red-500/20 rounded-lg px-4 py-3">
@@ -436,7 +434,7 @@ export function ContactForm() {
                       Sending…
                     </span>
                   ) : (
-                    "Send Message →"
+                    "Start the conversation →"
                   )}
                 </PrimaryButton>
 

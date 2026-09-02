@@ -94,23 +94,6 @@ interface PricingTier {
 }
 
 
-// start page
-interface WizardData {
-  /* Step 1 */
-  service:     string;
-  /* Step 2 */
-  budget:      string;
-  timeline:    string;
-  /* Step 3 */
-  name:        string;
-  email:       string;
-  company:     string;
-  /* Step 4 */
-  message: string;
-  goals:       string[];
-}
-
-
 // project data 
 interface ProjectScreenshot {
   src:     string | null;
