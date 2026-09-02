@@ -15,7 +15,6 @@ type Option = {
 
 const OPTIONS: Option[] = [
   { value: "light",    label: "Light",    hint: "Clean · bright",          icon: Sun },
-  { value: "dark",     label: "Dark",     hint: "Electric · signature",    icon: Moon },
   { value: "midnight", label: "Midnight", hint: "Deep navy · bespoke",     icon: MoonStar },
   { value: "linen",    label: "Linen",    hint: "Warm cream · editorial",  icon: BookOpen },
 ];
