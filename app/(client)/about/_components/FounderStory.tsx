@@ -4,22 +4,19 @@ import { motion } from "framer-motion";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, staggerChildren, useReveal } from "@/lib/motion";
 
-/**
- * Placeholder copy. Each paragraph is marked TODO-FRANK and must be replaced
- * with Frank's own words before this page ships.
- */
+
 const PARAGRAPHS = [
   {
     id: "why",
-    text: "TODO-FRANK: Why I started VeilCode. What I kept seeing in the work that made me want to build products a different way, and what I decided this studio would do instead.",
+    text: "I started VeilCode after five years of watching businesses pay for software that looked polished and did very little for the business behind it. Before VeilCode I worked as a Solutions Delivery Officer at I&M Bank Uganda. I build software that fixes a real operational problem or changes how customers deal with a company, and I judge it by whether people actually use it.",
   },
   {
     id: "background",
-    text: "TODO-FRANK: My background. Where I learned to build, the kinds of systems I have shipped, and what those years taught me about what actually holds up in production.",
+    text: "My work spans web platforms built with React and Node, cross-platform mobile apps built with React Native, and AI automation. You can see it on the work page: a real estate platform, a CRM with AI-drafted outreach, a property management system, an e-commerce store, a fitness app and an AI phone receptionist for plumbers. Building complete products taught me to think past individual features to how the whole system behaves once real people use it.",
   },
   {
     id: "today",
-    text: "TODO-FRANK: How I work today. What an engagement looks like from the first call onward, who you talk to, and how decisions about your product get made.",
+    text: "I build every VeilCode project myself. From the first conversation I work to understand the business problem, agree on what should actually be built, and make the technical decisions that shape it. You talk to the person writing the code, so questions get answered the same day and nothing gets lost in a handoff.",
   },
 ] as const;
 

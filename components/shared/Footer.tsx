@@ -26,8 +26,8 @@ export function Footer() {
             </Link>
 
             <p className="font-sans text-sm text-ink-muted leading-relaxed max-w-70 mb-6">
-              Premium digital agency building web &amp; mobile solutions,
-              analytics, and AI automation for ambitious businesses.
+              Founder-led studio in Kampala building web platforms, mobile apps
+              and AI automation.
             </p>
 
             <FooterSocials />

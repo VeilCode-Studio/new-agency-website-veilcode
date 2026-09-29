@@ -315,7 +315,7 @@ export const VALUES = [
     icon: "◎",
     title: "Ownership Mentality",
     short: "We treat your business like ours.",
-    desc: "Every engineer on your project thinks like a founder. We ask the uncomfortable questions, flag the downstream risks, and celebrate your wins as if they were our own — because in a real sense, they are.",
+    desc: "The person building your project is the founder. We ask the uncomfortable questions, flag the downstream risks, and celebrate your wins as if they were our own — because in a real sense, they are.",
     accent: "text-svc-data",
     tagBg: "bg-svc-data-dim",
     tagBorder: "border-svc-data-border",

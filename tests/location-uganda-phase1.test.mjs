@@ -236,7 +236,7 @@ test("United Kingdom location has Phase 4 SEO, schema, and UK trust requirements
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
   assert.match(locationData, /areaServed:\s*"GB"/);
   assert.match(locationData, /Remote delivery for UK teams/);
-  assert.match(locationData, /GMT\+3 \(2hr ahead of BST\)/);
+  assert.match(locationData, /Remote delivery for UK teams · 2 hours ahead of the UK in summer, 3 in winter/);
   assert.match(
     locationData,
     /Web, mobile and AI systems for UK businesses with measurable growth targets/,

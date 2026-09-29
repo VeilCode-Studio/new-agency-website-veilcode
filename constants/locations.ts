@@ -330,7 +330,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ogImage: "/assets/og/united-kingdom.jpg",
     schemaType: "ProfessionalService",
     areaServed: "GB",
-    eyebrow: "Remote delivery for UK teams · GMT+3 (2hr ahead of BST)",
+    eyebrow: "Remote delivery for UK teams · 2 hours ahead of the UK in summer, 3 in winter",
     h1: "Web, mobile and AI systems for UK businesses with measurable growth targets",
     heroCopy:
       "We help UK SMEs, agencies, and growth-stage teams ship digital products that convert, automate the work that slows them down, and build the kind of digital credibility that closes deals.",
