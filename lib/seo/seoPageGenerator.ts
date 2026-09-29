@@ -50,7 +50,7 @@ const COUNTRY_CODES: Record<string, string> = {
 };
 
 const DEFAULT_RELATED_PROJECTS = [
-  "prestige-properties-real-estate-platform",
+  "bienvenidos-apartments",
   "reachflow-lead-tracking-crm",
 ];
 

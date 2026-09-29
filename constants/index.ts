@@ -2,7 +2,6 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Testimonials", href: "/#testimonials" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -233,7 +232,7 @@ export const SOCIALS = [
 ] as const;
 
 export const TYPEWRITER_WORDS = [
-  "a Web Development Company",
+"a Web Development Company",
   "a Mobile App Development Company",
   "an AI Automation Agency"
 ] as const;

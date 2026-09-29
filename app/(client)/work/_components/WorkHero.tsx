@@ -8,17 +8,9 @@ import {
   AccentLine,
 } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
-import { PROJECTS } from "@/constants/projects";
+import type { WorkStat } from "@/lib/projects/kind";
 
-
-const STATS = [
-  { value: `${PROJECTS.length}+`, label: "Case Studies"        },
-  { value: "5",                   label: "Service Disciplines"  },
-  { value: "6",                   label: "Countries Reached"    },
-  { value: "2022–24",             label: "Active Portfolio"     },
-] as const;
-
-export function WorkHero() {
+export function WorkHero({ stats }: { stats: WorkStat[] }) {
   return (
     <section className="relative min-h-[68vh] flex items-center overflow-hidden">
       <GridBg />
@@ -64,17 +56,18 @@ export function WorkHero() {
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-145 mb-12"
           >
-            Every project in this portfolio was built to solve a real problem and
-            deliver a measurable result. Not just something that looks good in a
-            screenshot — something that changed a business.
+            Client work, our own products, and concept builds for the industries
+            we serve. Each one shows how we&apos;d approach your project. Ask for a
+            walkthrough of any build.
           </motion.p>
 
           {/* Stats */}
+          {stats.length > 0 && (
           <motion.div
             variants={fadeUp(0.24)}
             className="flex flex-wrap gap-10"
           >
-            {STATS.map(({ value, label }) => (
+            {stats.map(({ value, label }) => (
               <div key={label} className="flex flex-col gap-1">
                 <span
                   className="font-display font-extrabold text-3xl tracking-tight
@@ -88,6 +81,7 @@ export function WorkHero() {
               </div>
             ))}
           </motion.div>
+          )}
         </motion.div>
       </div>
 

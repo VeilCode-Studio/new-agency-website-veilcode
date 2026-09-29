@@ -8,6 +8,7 @@ import { fadeUp } from "@/lib/motion";
 import Link from "next/link";
 import type { InferSelectModel } from "drizzle-orm";
 import { projects } from "@/db/schema";
+import { getProjectKindLabel } from "@/lib/projects/kind";
 
 type ProjectType = InferSelectModel<typeof projects>;
 
@@ -86,14 +87,21 @@ function CardVisual({ project: p }: { project: ProjectType }) {
                 </>
             )}
 
-            {/* Service badge — always visible */}
-            <div className="absolute top-3 left-3 z-10">
+            {/* Service + build-kind badges — always visible */}
+            <div className="absolute top-3 left-3 z-10 flex flex-wrap items-center gap-1.5">
                 <span
                     className={`font-mono text-[9px] tracking-widest uppercase
                         px-2 py-1 rounded border backdrop-blur-sm
                         ${c.dimBg} ${c.border} ${c.accent}`}
                 >
                     {p.serviceLabel}
+                </span>
+                <span
+                    className="font-mono text-[9px] tracking-widest uppercase
+                        px-2 py-1 rounded border backdrop-blur-sm
+                        bg-surface/80 border-line text-ink-muted"
+                >
+                    {getProjectKindLabel(p.client)}
                 </span>
             </div>
 

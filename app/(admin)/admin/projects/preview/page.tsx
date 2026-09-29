@@ -7,8 +7,8 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { WorkHero } from "@/app/(client)/work/_components/WorkHero";
 import { PortfolioGrid } from "@/app/(client)/work/_components/PortfolioGrid";
-import { WorkImpact } from "@/app/(client)/work/_components/WorkImpact";
 import { CTA } from "@/components/shared/CTA";
+import { getWorkStats } from "@/lib/projects/kind";
 
 export const dynamic = "force-dynamic";
 
@@ -37,9 +37,8 @@ export default async function AdminProjectsPreviewPage() {
 
       {/* Main Client Content */}
       <div className="pb-12">
-        <WorkHero />
+        <WorkHero stats={getWorkStats(allProjects)} />
         <PortfolioGrid projects={allProjects} />
-        <WorkImpact />
         <CTA />
       </div>
     </div>

@@ -69,13 +69,13 @@ export function Testimonials({ items }: { items: DisplayTestimonial[] }) {
                 <Button
                   key={t.name}
                   role="tab"
-                  aria-selected={i === active}
+                  aria-selected={i === activeIndex}
                   aria-label={`Show testimonial from ${t.name}`}
                   onClick={() => setActive(i)}
                   className={`h-2 rounded-full border-none cursor-pointer p-0
                     transition-all duration-300 outline-none
                     focus-visible:ring-2 focus-visible:ring-brand
-                    ${i === active ? "w-6 bg-brand" : "w-2 bg-line hover:bg-line-hi"}`}
+                    ${i === activeIndex ? "w-6 bg-brand" : "w-2 bg-line hover:bg-line-hi"}`}
                 />
               ))}
             </div>

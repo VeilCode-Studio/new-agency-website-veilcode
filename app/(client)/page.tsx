@@ -10,7 +10,6 @@ import { Services } from "@/components/shared/Services";
 import { TechStack } from "@/components/shared/TechStack";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { Work } from "@/components/shared/Work";
-import { TESTIMONIALS } from "@/constants";
 import { POSTS } from "@/constants/blog";
 import { getBlogGridPosts, toBlogGridPost } from "@/lib/blog/grid";
 import { mapDbPostToClientPost } from "@/lib/blog/mappers";
@@ -37,15 +36,11 @@ async function getHomeBlogPosts() {
 async function getHomeTestimonials(): Promise<DisplayTestimonial[]> {
   try {
     const rows = await getTestimonials();
-    if (rows.length > 0) return rows.map(toDisplayTestimonial);
+    return rows.map(toDisplayTestimonial);
   } catch (error) {
-    console.warn("[home] Falling back to static testimonials:", error);
+    console.warn("[home] Could not load testimonials:", error);
+    return [];
   }
-
-  return TESTIMONIALS.map((item) => ({
-    ...item,
-    avatar: null,
-  }));
 }
 
 export default async function Home() {

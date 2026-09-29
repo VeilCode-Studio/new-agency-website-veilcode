@@ -57,7 +57,7 @@ PAGE STRUCTURE TO BUILD:
 6. PORTFOLIO SECTION
    - Title: "Work that performs"
    - Show the 3 existing case studies but add a market relevance note to each:
-     · Prestige Properties: "Real estate platforms like this give property businesses in Uganda 24/7 inquiry generation — without relying on phone calls alone."
+     · Bienvenidos Apartments: "Real estate platforms like this give property businesses in Uganda 24/7 inquiry generation — without relying on phone calls alone."
      · Cartix Ecommerce: "E-commerce built for product discovery and conversion — applicable to Ugandan retail businesses moving online."
      · ReachFlow CRM: "AI-powered outreach tools built in Kampala — proof that world-class SaaS products can be built here."
    - Add a CTA: "Building something for the Ugandan market? Let's talk."

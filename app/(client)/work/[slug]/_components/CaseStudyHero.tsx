@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
+import { getProjectKindLabel } from "@/lib/projects/kind";
 
 // image placeholder
 
@@ -138,6 +139,25 @@ function HeroScreenshot({ project: p }: { project: Project }) {
 
 // case study hero
 
+// Results strip layout — a project may carry anywhere from 1 to 4+ results,
+// so both the column count and the cell dividers are derived from the total.
+function resultsGridCols(count: number) {
+  if (count === 1) return "grid-cols-1";
+  if (count === 2) return "grid-cols-2";
+  if (count === 3) return "grid-cols-1 sm:grid-cols-3";
+  return "grid-cols-2 md:grid-cols-3 lg:grid-cols-4";
+}
+
+function resultsCellBorder(i: number, count: number, border: string) {
+  if (count === 1) return "";
+  if (count === 2) return i === 0 ? `border-r ${border}` : "";
+  if (count === 3)
+    return i < 2 ? `border-b sm:border-b-0 sm:border-r ${border}` : "";
+  return i < count - 1
+    ? `border-r ${border} max-md:even:border-r-0 max-md:border-b`
+    : "";
+}
+
 export function CaseStudyHero({ project: p }: { project: Project }) {
   const { classes: c } = p;
 
@@ -177,9 +197,15 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
             </span>
           </motion.div>
 
-          {/* Tag */}
+          {/* Tag + build kind */}
           <motion.div variants={fadeUp(0.04)}>
-            <SectionTag>{p.serviceLabel}</SectionTag>
+            <div className="flex flex-wrap items-center gap-3">
+              <SectionTag>{p.serviceLabel}</SectionTag>
+              <span className="font-mono text-[10px] tracking-widest uppercase
+                text-ink-muted bg-surface border border-line px-3 py-1.5 rounded">
+                {getProjectKindLabel(p.client)}
+              </span>
+            </div>
             <AccentLine width={48} />
           </motion.div>
 
@@ -246,17 +272,17 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
             ))}
           </motion.div>
 
-          {/* Results strip */}
+          {/* Results strip — column count follows the number of results */}
+          {p.results.length > 0 && (
           <motion.div
             variants={fadeUp(0.26)}
-            className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0
+            className={`grid gap-0 ${resultsGridCols(p.results.length)}
               border ${c.border} rounded-2xl overflow-hidden mb-16`}
           >
             {p.results.map((r, i) => (
               <div
                 key={r.label}
-                className={`p-5 ${c.dimBg}
-                  ${i < p.results.length - 1 ? `border-r ${c.border} max-md:even:border-r-0 max-md:border-b` : ""}`}
+                className={`p-5 ${c.dimBg} ${resultsCellBorder(i, p.results.length, c.border)}`}
               >
                 <div className={`font-display font-extrabold text-xl sm:text-[30px] md:text-[36px] tracking-tight
                   leading-none mb-1.5 drop-shadow-[0_0_20px_currentColor] ${c.accent}`}>
@@ -267,6 +293,7 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
               </div>
             ))}
           </motion.div>
+          )}
 
           {/* Hero screenshot — always wide */}
           <motion.div variants={fadeUp(0.32)}>

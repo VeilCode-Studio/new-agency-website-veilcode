@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
       {
         hostname: "res.cloudinary.com"
     }]
+  },
+  async redirects() {
+    return [
+      // Project renamed in the database — keep the old case-study URL alive.
+      {
+        source: "/work/prestige-properties-real-estate-platform",
+        destination: "/work/bienvenidos-apartments",
+        permanent: true,
+      },
+    ];
   }
 };
 

@@ -1,14 +1,14 @@
 export type ServiceSlug = "web" | "mobile" | "data" | "social" | "ai";
 
 export const PROJECTS: Project[] = [
-  // PRESTIGE PROPERTIES PROJECT
+  // BIENVENIDOS APARTMENTS PROJECT
   {
-    slug: "prestige-properties",
+    slug: "bienvenidos-apartments",
     service: "web",
     serviceLabel: "Web Application",
     year: "2025",
-    title: "Prestige Properties Real Estate Platform",
-    client: "Prestige Properties",
+    title: "Bienvenidos Apartments Real Estate Platform",
+    client: "Bienvenidos Apartments",
     industry: "Real Estate",
     duration: "6 weeks",
     team: "2 engineers, 1 designer",
@@ -17,13 +17,13 @@ export const PROJECTS: Project[] = [
       "A modern real estate web application designed to help users discover, explore, and inquire about premium properties — transforming property browsing into a seamless, high-conversion digital experience.",
 
     challenge:
-      "Prestige Properties lacked a centralized digital platform to showcase listings, manage property inquiries, and provide a seamless user experience. Property discovery was fragmented across social media and offline channels, making it difficult for potential buyers and renters to explore listings efficiently. The brand also needed a premium, trust-driven online presence to compete in a growing real estate market.",
+      "Bienvenidos Apartments lacked a centralized digital platform to showcase listings, manage property inquiries, and provide a seamless user experience. Property discovery was fragmented across social media and offline channels, making it difficult for potential buyers and renters to explore listings efficiently. The brand also needed a premium, trust-driven online presence to compete in a growing real estate market.",
 
     approach:
       "We started with a product-focused discovery phase to define user flows for property search, filtering, and inquiries. The platform was designed with a clean, modern interface that emphasizes property visuals and ease of navigation. We implemented advanced filtering, dynamic property pages, and integrated WhatsApp/contact inquiry flows for instant communication. Performance optimization and SEO were prioritized to ensure fast load times and strong visibility in property-related searches.",
 
     outcome:
-      "Delivered a high-performance real estate platform with advanced property browsing, seamless inquiry flows, and a premium user experience. The platform significantly improved user engagement, lead generation, and positioned Prestige Properties as a modern real estate brand.",
+      "Delivered a high-performance real estate platform with advanced property browsing, seamless inquiry flows, and a premium user experience. The platform significantly improved user engagement, lead generation, and positioned Bienvenidos Apartments as a modern real estate brand.",
 
     metric: "+210%",
     metricLabel: "Property Inquiries",
@@ -91,44 +91,38 @@ export const PROJECTS: Project[] = [
 
     screenshots: [
       {
-        src: "/assets/prestige-realestate/homepage-hero-hd.png",
-        alt: "Prestige Properties homepage",
+        src: "/assets/bienvenidos-apartments/homepage-hero-hd.png",
+        alt: "Bienvenidos Apartments homepage",
         caption: "Homepage — premium property showcase",
         size: "wide",
       },
       {
-        src: "/assets/prestige-realestate/agents-page.png",
+        src: "/assets/bienvenidos-apartments/agents-page.png",
         alt: "Property homepage on mobile",
         caption: "Property listings with filters",
         size: "half",
       },
       {
-        src: "/assets/prestige-realestate/featured-section.png",
+        src: "/assets/bienvenidos-apartments/featured-section.png",
         alt: "Property details page",
         caption: "Detailed property view",
         size: "half",
       },
       {
-        src: "/assets/prestige-realestate/testimonials.png",
+        src: "/assets/bienvenidos-apartments/testimonials.png",
         alt: "Mobile property browsing",
         caption: "Mobile experience",
         size: "half",
       },
       {
-        src: "/assets/prestige-realestate/browse-listings.png",
+        src: "/assets/bienvenidos-apartments/browse-listings.png",
         alt: "Inquiry section",
         caption: "Lead generation & inquiry flow",
         size: "half",
       },
     ],
 
-    testimonial: {
-      quote:
-        "Veilcode delivered beyond our expectations. Our platform now makes it incredibly easy for clients to explore properties and reach out instantly. We've seen a massive increase in serious inquiries.",
-      name: "Managing Director",
-      role: "Prestige Properties",
-      initials: "PP",
-    },
+    testimonial: null,
 
     nextSlug: "flowmetrics-dashboard",
 

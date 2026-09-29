@@ -128,7 +128,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     portfolioTitle: "Work that performs",
     portfolioItems: [
       {
-        slug: "prestige-properties",
+        slug: "bienvenidos-apartments",
         relevanceNote:
           "Real estate platforms like this give property businesses in Uganda 24/7 inquiry generation - without relying on phone calls alone.",
       },
@@ -663,7 +663,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     portfolioTitle: "Work with clear ownership and measurable outcomes",
     portfolioItems: [
       {
-        slug: "prestige-properties",
+        slug: "bienvenidos-apartments",
         relevanceNote:
           "Property platforms like this show how a digital agency for Australian businesses can turn search, listings, and inquiries into a measurable sales channel.",
       },

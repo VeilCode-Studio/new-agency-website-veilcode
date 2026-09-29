@@ -7,6 +7,7 @@ import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
 import type { InferSelectModel } from "drizzle-orm";
 import { projects } from "@/db/schema";
+import { getProjectKindLabel } from "@/lib/projects/kind";
 
 type ProjectType = InferSelectModel<typeof projects>;
 
@@ -99,12 +100,17 @@ function FeaturedVisual({ project: p }: { project: ProjectType }) {
         {p.year}
       </span>
 
-      {/* Featured badge — always shown */}
-      <div className="absolute top-5 left-5 z-10">
+      {/* Featured + build-kind badges — always shown */}
+      <div className="absolute top-5 left-5 z-10 flex flex-wrap items-center gap-2">
         <span className="font-mono text-[10px] tracking-widest uppercase
           text-brand bg-brand-dim border border-brand-border
           px-3 py-1.5 rounded backdrop-blur-sm">
           Featured Project
+        </span>
+        <span className="font-mono text-[10px] tracking-widest uppercase
+          text-ink-muted bg-surface/80 border border-line
+          px-3 py-1.5 rounded backdrop-blur-sm">
+          {getProjectKindLabel(p.client)}
         </span>
       </div>
     </div>

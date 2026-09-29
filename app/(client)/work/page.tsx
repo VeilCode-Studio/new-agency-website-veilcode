@@ -1,9 +1,9 @@
 import React from 'react'
 import { WorkHero } from './_components/WorkHero'
 import { PortfolioGrid } from './_components/PortfolioGrid'
-import { WorkImpact } from './_components/WorkImpact'
 import { CTA } from '@/components/shared/CTA'
 import { getAllProjects } from '@/queries'
+import { getWorkStats } from '@/lib/projects/kind'
 import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice'
 import type { Project } from '@/db/schema'
 
@@ -22,7 +22,7 @@ const page = async () => {
 
   return (
       <>
-          <WorkHero />
+          <WorkHero stats={getWorkStats(allProjects)} />
           {projectsUnavailable ? (
             <DataRecoveryNotice
               eyebrow="Work data unavailable"
@@ -33,7 +33,6 @@ const page = async () => {
           ) : (
             <PortfolioGrid projects={allProjects} />
           )}
-          <WorkImpact />
           <CTA />
       </>
   )

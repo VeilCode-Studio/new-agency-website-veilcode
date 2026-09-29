@@ -7,7 +7,9 @@ export function CaseStudyTestimonial({ project: p }: { project: Project }) {
   const [ref, inView] = useReveal("-40px");
   const { classes: c } = p;
   const t = p.testimonial;
-  if (!t) return null;
+  // A project may ship without a testimonial, or with a half-filled one —
+  // no quote means no block at all.
+  if (!t?.quote?.trim()) return null;
 
   return (
     <section className="py-24 px-6 md:px-10">
@@ -54,7 +56,7 @@ export function CaseStudyTestimonial({ project: p }: { project: Project }) {
                   font-display font-bold text-[15px] tracking-tight shrink-0
                   ${c.dimBg} ${c.border} ${c.accent}`}
               >
-                {t.initials}
+                {t.initials || t.name?.trim().charAt(0).toUpperCase()}
               </div>
               <div>
                 <p className="font-sans text-sm font-medium text-ink">{t.name}</p>

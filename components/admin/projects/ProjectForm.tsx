@@ -873,7 +873,7 @@ export function ProjectForm(props: ProjectFormProps) {
                     type="text"
                     value={data.title}
                     onChange={(e) => handleTitleChange(e.target.value)}
-                    placeholder="Prestige Properties Platform"
+                    placeholder="Bienvenidos Apartments Platform"
                     required
                     className={inputCls}
                   />
@@ -884,7 +884,7 @@ export function ProjectForm(props: ProjectFormProps) {
                   type="text"
                   value={data.slug}
                   onChange={(e) => handleSlugChange(e.target.value)}
-                  placeholder="prestige-properties"
+                  placeholder="bienvenidos-apartments"
                   required
                   className={cn(inputCls, "font-mono text-xs")}
                 />
@@ -910,7 +910,7 @@ export function ProjectForm(props: ProjectFormProps) {
                   type="text"
                   value={data.client}
                   onChange={(e) => set("client", e.target.value)}
-                  placeholder="Prestige Properties Ltd"
+                  placeholder="Bienvenidos Apartments Ltd"
                   required
                   className={inputCls}
                 />
@@ -1153,7 +1153,7 @@ export function ProjectForm(props: ProjectFormProps) {
                         onChange={(e) =>
                           set("testimonial", { ...data.testimonial!, role: e.target.value })
                         }
-                        placeholder="CEO, Prestige Properties"
+                        placeholder="CEO, Bienvenidos Apartments"
                         className={inputCls}
                       />
                     </Field>

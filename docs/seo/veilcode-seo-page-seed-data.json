@@ -27,7 +27,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "mobile", "ai"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform", "reachflow-lead-tracking-crm"],
+    "relatedProjectSlugs": ["bienvenidos-apartments", "reachflow-lead-tracking-crm"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -56,7 +56,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "mobile"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -143,7 +143,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "mobile", "ai"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -172,7 +172,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["mobile", "web"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -230,7 +230,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "mobile", "ai"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -259,7 +259,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["mobile", "web"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["building-fast-web-apps-for-low-bandwidth-markets"],
     "published": true,
     "indexable": true
@@ -346,7 +346,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "mobile"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["design-systems-scale"],
     "published": true,
     "indexable": true
@@ -404,7 +404,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["web", "ai"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["next-js-performance-east-africa"],
     "published": true,
     "indexable": true
@@ -462,7 +462,7 @@
     "ctaLabel": "Let's Discuss your Project",
     "ctaHref": "/start",
     "relatedServiceIds": ["mobile", "web"],
-    "relatedProjectSlugs": ["prestige-properties-real-estate-platform"],
+    "relatedProjectSlugs": ["bienvenidos-apartments"],
     "relatedBlogSlugs": ["next-js-performance-east-africa"],
     "published": true,
     "indexable": true

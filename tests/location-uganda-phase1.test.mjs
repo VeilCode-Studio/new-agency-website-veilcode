@@ -65,7 +65,7 @@ test("Uganda content has internal service links, portfolio relevance, FAQs, and 
   assert.match(locationData, /\/services\/web-solutions/);
   assert.match(locationData, /\/services\/mobile-applications/);
   assert.match(locationData, /\/services\/ai-automation/);
-  assert.match(locationData, /prestige-properties/);
+  assert.match(locationData, /bienvenidos-apartments/);
   assert.match(locationData, /nexus-commerce/);
   assert.match(locationData, /vantage-ai-agents/);
   assert.match(locationData, /Are you actually based in Uganda/);
