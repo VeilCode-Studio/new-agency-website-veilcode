@@ -44,9 +44,9 @@ export function Testimonials({ items }: { items: DisplayTestimonial[] }) {
             className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
               tracking-tight text-ink leading-[1.1] mb-16"
           >
-            Trusted by Builders{" "}
+            What clients{" "}
             <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
-              &amp; Visionaries
+              say
             </span>
           </motion.h2>
 

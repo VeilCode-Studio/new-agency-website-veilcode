@@ -139,7 +139,7 @@ export function Hero() {
           <Link href="/start">Start a Project</Link>
         </PrimaryButton>
         <GhostButton className="text-[15px]! px-8! py-4! ml-2">
-          <Link href="/work">See Case Studies</Link>
+          <Link href="/work">See our work</Link>
         </GhostButton>
 
         {/* Stats */}

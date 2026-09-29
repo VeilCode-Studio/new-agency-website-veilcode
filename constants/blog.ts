@@ -92,7 +92,7 @@ const FRANK: BlogAuthor = {
   name: "Frank Tamale",
   role: "Founder & Lead Engineer",
   initials: "DK",
-  bio: "Full-stack engineer with a decade of experience building products that scale. Writes about software architecture, performance engineering, and building digital products in Africa.",
+  bio: "Full-stack engineer and founder of VeilCode Studio. Writes about software architecture, performance engineering, and building digital products in Africa.",
   linkedin: "#",
   twitter: "#",
   accent: "text-brand",

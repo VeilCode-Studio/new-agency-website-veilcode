@@ -3,26 +3,22 @@ import { AboutHeroSection } from './_components/AboutHeroSection'
 import { MissionVision } from './_components/MissionVision'
 import { CoreValues } from './_components/CoreValues'
 import { Team } from './_components/TeamComponent'
-import { Culture } from './_components/CultureComponent'
-import { StoryVariant } from '@/components/variants/StoryVariant'
-// import { Story } from './_components/StoryComponent'
+import { FounderStory } from './_components/FounderStory'
 
 export const metadata = {
   title: "About Us — VeilCode",
   description:
-    "Learn about VeilCode — our story, mission, values, team, and the culture that drives our work.",
+    "Learn about VeilCode Studio — a founder-led product studio in Kampala. Our story, mission, values, and the engineer behind the work.",
 };
 
 const AboutUsPage = () => {
   return (
       <>
           <AboutHeroSection />
-          {/* <Story /> */}
-          <StoryVariant />
+          <FounderStory />
           <MissionVision />
           <CoreValues />
           <Team />
-          <Culture />
       </>
   )
 }

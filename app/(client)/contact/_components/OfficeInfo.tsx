@@ -32,7 +32,7 @@ export const CONTACT_DETAILS = [
     label: "Where We Work",
     value: "Uganda-based · Working globally",
     href: null,
-    sub: "Serving clients across Africa, Europe and North America",
+    sub: "Working with teams in any time zone",
   },
   {
     icon: <ClockIcon />,

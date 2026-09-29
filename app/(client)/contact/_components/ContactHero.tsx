@@ -11,7 +11,7 @@ import { fadeUp, stagger } from "@/lib/motion";
 
 const QUICK_STATS = [
   { value: "< 24h",  label: "Response time"       },
-  { value: "100%",   label: "Project ownership"    },
+  { value: "100%",   label: "You own the code"     },
   { value: "Free",   label: "Discovery call"       },
 ] as const;
 

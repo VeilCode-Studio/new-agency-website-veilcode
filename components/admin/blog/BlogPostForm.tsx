@@ -47,7 +47,7 @@ const AUTHOR_PRESETS: Record<string, BlogAuthor> = {
     name: "Frank Tamale",
     role: "Founder & Lead Engineer",
     initials: "DK",
-    bio: "Full-stack engineer with a decade of experience building products that scale.",
+    bio: "Full-stack engineer and founder of VeilCode Studio.",
     linkedin: "#",
     twitter: "#",
     accent: "text-brand",

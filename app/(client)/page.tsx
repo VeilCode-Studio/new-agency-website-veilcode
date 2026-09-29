@@ -71,7 +71,7 @@ export default async function Home() {
             </span>
           </>
         }
-        description="Engineering, design, automation, and growth lessons from real client work."
+        description="Engineering, design, automation, and growth lessons from the studio."
         ctaHref="/blog"
         ctaLabel="View All Posts ->"
       />

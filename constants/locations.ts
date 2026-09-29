@@ -62,19 +62,19 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     h1: "Kampala's digital product agency for businesses built to grow",
     heroCopy:
       "We build websites, mobile apps, and AI automation systems that give Ugandan businesses a real competitive edge - built for local realities, engineered to global standards.",
-    statLine: "5+ Years in Kampala · 45+ Projects Delivered · Mobile-First by Default",
-    stats: ["5+ Years in Kampala", "45+ Projects Delivered", "Mobile-First by Default"],
+    statLine: "Kampala-based · Meet in person · Mobile-first by default",
+    stats: ["Kampala-based", "Meet in person", "Mobile-first by default"],
     secondaryCtaLabel: "See Our Work",
     secondaryCtaHref: "/work",
     whyTitle: "Built for how Uganda does business",
     painPoints: [
       {
         title: "Most business happens on mobile",
-        body: "70%+ of Ugandan web traffic is mobile. We design mobile-first, optimise for slower connections, and integrate WhatsApp workflows where your customers already are.",
+        body: "Most Ugandan web traffic is mobile. We design mobile-first, optimise for slower connections, and integrate WhatsApp workflows where your customers already are.",
       },
       {
         title: "Trust is earned locally",
-        body: "Ugandan buyers need to know who they're dealing with. We're Kampala-based, available for in-person discovery, and our work is publicly verifiable.",
+        body: "Ugandan buyers need to know who they're dealing with. We're Kampala-based, available for in-person discovery, and you can see our builds before you commit.",
       },
       {
         title: "The digital gap is your opportunity",
@@ -154,17 +154,17 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "Can you integrate MTN Mobile Money or Airtel Money into our platform?",
         answer:
-          "Yes. Mobile money payment integration is a core capability for Ugandan builds. We've worked with local payment flows and can structure your checkout or billing system around the payment methods your customers already use.",
+          "Yes. Mobile money payment integration is a core capability for Ugandan builds. We can structure your checkout or billing system around the payment methods your customers already use.",
       },
       {
         question: "Do you only build for Kampala businesses?",
         answer:
-          "No. We work with businesses across Uganda, and can run remote discovery, design reviews, and full delivery for teams outside Kampala. We've also helped clients position for East African expansion beyond Uganda.",
+          "No. We work with businesses across Uganda, and can run remote discovery, design reviews, and full delivery for teams outside Kampala. We can structure your product for expansion beyond Uganda.",
       },
       {
         question: "How do your prices compare to local agencies?",
         answer:
-          "We scope projects around local business realities. We're not the cheapest option - we're the option that delivers measurable outcomes. We're transparent about scope and cost before any work begins.",
+          "We scope projects around local business realities. We're not the cheapest option - we're the option that delivers what's in the scope. We're transparent about scope and cost before any work begins.",
       },
       {
         question: "Can you take over an existing website that isn't performing?",
@@ -222,7 +222,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     detailSections: [
       {
         title: "Timezone",
-        body: "Our morning (EAT) overlaps with your evening. We batch async updates daily and schedule live reviews at US-friendly times - typically 7-9 AM ET or 5-7 PM ET. You'll never go 24 hours without a status update.",
+        body: "Our afternoon overlaps with your morning. Live reviews run 8 to 11 AM Eastern (3 to 6 PM in Kampala), and written updates land before your day starts.",
       },
       {
         title: "Accountability",
@@ -273,7 +273,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       },
     ],
     serviceFocus: ["web", "mobile", "ai"],
-    portfolioTitle: "Case studies with measurable outcomes",
+    portfolioTitle: "Work you can inspect",
     portfolioCta: "Need a web development agency for US startups or a remote software agency for US companies? Start with a written scope.",
     faqTitle: "What US clients ask before they hire us",
     faqs: [
@@ -285,7 +285,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "How do you handle the timezone difference?",
         answer:
-          "We work morning-biased schedules (EAT) that give us evening overlap with East Coast time. We batch all async updates daily and schedule live calls at times that work for you. In practice, US clients tell us the async model keeps them less interrupted than working with a local agency that calls at 2 PM.",
+          "We schedule live calls in your morning, which is our afternoon, and send a written update every day.",
       },
       {
         question: "Do you sign NDAs?",
@@ -300,7 +300,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "Can you integrate with our existing US SaaS tools?",
         answer:
-          "Yes. We commonly connect HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion, and custom APIs. If you use it, we've likely integrated it.",
+          "Yes. We commonly connect HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion, and custom APIs. If it has an API, we can integrate it.",
       },
       {
         question: "What's your typical project size?",
@@ -326,7 +326,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     shortName: "UK",
     metaTitle: "Digital Product Agency for UK Businesses | Web, Mobile & AI | VeilCode",
     metaDescription:
-      "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware delivery, accessibility-conscious builds, measurable outcomes.",
+      "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware delivery, accessibility-conscious builds, documented delivery.",
     ogImage: "/assets/og/united-kingdom.jpg",
     schemaType: "ProfessionalService",
     areaServed: "GB",
@@ -338,12 +338,12 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     primaryCtaHref: "/start",
     secondaryCtaLabel: "View Case Studies",
     secondaryCtaHref: "/work",
-    statLine: "GDPR-aware builds · Accessible by default · ROI-focused delivery · Only 2hrs ahead of BST",
+    statLine: "GDPR-aware builds · Accessible by default · ROI-focused delivery · 2 hours ahead of the UK in summer, 3 in winter",
     stats: [
       "GDPR-aware builds",
       "Accessible by default",
       "ROI-focused delivery",
-      "Only 2hrs ahead of BST",
+      "2 hours ahead of the UK in summer, 3 in winter",
     ],
     whyTitle: "What we optimise for in the UK market",
     painPoints: [
@@ -362,8 +362,8 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ],
     detailSections: [
       {
-        title: "The timezone advantage",
-        body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional. UK clients consistently tell us this makes collaboration feel almost local.",
+        title: "2 hours ahead of the UK in summer, 3 in winter",
+        body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional.",
         ctaLabel: "Read our SEO thinking",
         ctaHref: "/blog/seo-thinking-for-business-websites",
       },
@@ -414,7 +414,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "You're based in Uganda - is that a problem for a UK business?",
         answer:
-          "Practically, no. We're only 2 hours ahead of UK BST, which means real-time collaboration during business hours is straightforward. We've structured our delivery model around written scopes, milestone reviews, and reliable async updates - the same discipline a good UK agency should apply. The work is the same. The overhead is lower.",
+          "Practically, no. We're 2 hours ahead of UK time in summer and 3 in winter, which means real-time collaboration during business hours is straightforward. We've structured our delivery model around written scopes, milestone reviews, and reliable async updates - the same discipline a good UK agency should apply. The work is the same. The overhead is lower.",
       },
       {
         question: "Do you build GDPR-compliant websites?",
@@ -492,7 +492,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     detailSections: [
       {
         title: "Working across Canadian timezones",
-        body: "Canada spans multiple time zones. We schedule Eastern overlap for Ontario and Quebec clients, where morning EAT can support late Eastern evening updates or flexible early Eastern morning calls. Pacific overlap for BC clients is available with afternoon scheduling. We work async-first and document everything in writing - so timezone difference never creates a blocker.",
+        body: "Our afternoon overlaps with Eastern mornings (8 to 11 AM ET). Pacific clients get early calls, 8 to 9 AM PT, which is our evening. We work async-first and document everything in writing.",
       },
     ],
     deliveryTitle: "How we work with Canadian clients",
@@ -582,7 +582,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     eyebrow: "Remote delivery for Australian teams · AEDT/AEST overlap scheduled",
     h1: "Offshore development done right - for Australian businesses that have been burned before",
     heroCopy:
-      "We're not the cheapest offshore option. We're the one that delivers what's in the scope, documents everything, and gives you full ownership of the output. Australian businesses that have had bad offshore experiences find us a different kind of partner.",
+      "We're not the cheapest offshore option. We're the one that delivers what's in the scope, documents everything, and gives you full ownership of the output. If you've had a bad offshore experience, here is how we work differently.",
     primaryCtaLabel: "Start with a Discovery Sprint",
     primaryCtaHref: "/start",
     secondaryCtaLabel: "See Our Work",
@@ -616,13 +616,13 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     detailSections: [
       {
         title: "Start small. Trust what you see.",
-        body: "We offer a scoped Discovery Sprint: a 1-2 week engagement covering requirements mapping, technical architecture, wireframes or prototypes, and a full project plan. You see exactly how we think and work before committing to a full build. If you're not satisfied with the output, you don't proceed. Most Australian clients who start with a sprint convert to full projects.",
+        body: "We offer a scoped Discovery Sprint: a 1-2 week engagement covering requirements mapping, technical architecture, wireframes or prototypes, and a full project plan. You see exactly how we think and work before committing to a full build. If you're not satisfied with the output, you don't proceed. The sprint is priced on its own, so you can stop there if it isn't a fit.",
         ctaLabel: "Ask about a Discovery Sprint",
         ctaHref: "/start",
       },
       {
         title: "Timezone management - honest and practical",
-        body: "Australia and Uganda have a 5-8 hour offset depending on your state. We won't pretend that's nothing. Daily written project updates are sent each morning EAT, which lands in your inbox during Australian business hours. Review calls are scheduled for early morning AEDT, which is Uganda afternoon or evening. For AEST and Perth clients we work flexible evening hours when needed. You won't lose a working day waiting for a response.",
+        body: "Australia and Uganda have a 5-8 hour offset depending on your state. We won't pretend that's nothing. Daily written project updates are sent each morning EAT, which lands in your inbox during Australian business hours. Review calls run in your late afternoon, which is our morning: 4 to 6 PM AEDT, 1 to 3 PM in Perth. For AEST and Perth clients we work flexible evening hours when needed. You won't lose a working day waiting for a response.",
       },
       {
         title: "Agency project work vs. offshore hiring",
@@ -660,7 +660,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ],
     industriesTitle: "Australian teams we fit best",
     industries: ["Property", "Retail", "Professional services", "Education", "Health and wellness"],
-    portfolioTitle: "Work with clear ownership and measurable outcomes",
+    portfolioTitle: "Work with clear ownership and documented scope",
     portfolioItems: [
       {
         slug: "bienvenidos-apartments",
@@ -690,7 +690,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "How do you handle the timezone gap?",
         answer:
-          "Honestly. There is a 5-8 hour offset between Uganda and Australia. Our response: daily written updates arrive in your inbox during Australian business hours. Review calls are scheduled for early AEDT morning, which is our afternoon. We don't pretend the timezone doesn't exist - we design the workflow around it.",
+          "Honestly. There is a 5-8 hour offset between Uganda and Australia. Our response: daily written updates arrive in your inbox during Australian business hours. Review calls run in your late afternoon, which is our morning: 4 to 6 PM AEDT, 1 to 3 PM in Perth. We don't pretend the timezone doesn't exist - we design the workflow around it.",
       },
       {
         question: "Do we own the code at the end?",
@@ -700,7 +700,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "Can we start small to test the relationship?",
         answer:
-          "Yes. We recommend it. Our Discovery Sprint, usually 1-2 weeks, produces requirements documentation, a technical architecture plan, and prototypes or wireframes. Most Australian clients who start with a sprint convert to full builds.",
+          "Yes. We recommend it. Our Discovery Sprint, usually 1-2 weeks, produces requirements documentation, a technical architecture plan, and prototypes or wireframes. The sprint is priced on its own, so you can stop there if it isn't a fit.",
       },
       {
         question: "Is this a direct hire arrangement or a project engagement?",

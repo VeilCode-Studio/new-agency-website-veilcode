@@ -196,9 +196,9 @@ export function Work({ projects }: { projects: Project[] }) {
               className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
                 tracking-tight text-ink leading-[1.1]"
             >
-              Results That{" "}
+              Products{" "}
               <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
-                Speak Loudly
+                we&apos;ve built
               </span>
             </motion.h2>
 

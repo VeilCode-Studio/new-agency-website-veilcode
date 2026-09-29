@@ -155,7 +155,6 @@ export const FOOTER_COLS = [
       { label: "About", href: "/about" },
       { label: "Work", href: "/work" },
       { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
     ],
   },
   {
@@ -238,45 +237,12 @@ export const TYPEWRITER_WORDS = [
 ] as const;
 
 export const STATS = [
-  { val: "45+", label: "Projects Delivered" },
-  { val: "98%", label: "Client Satisfaction" },
-  { val: "4×", label: "Avg. ROI Achieved" },
-  // { val: "3 yrs", label: "Industry Experience" },
+  { val: "Fixed",   label: "Price agreed before we build" },
+  { val: "100%",    label: "Code ownership on final payment" },
+  { val: "Kampala", label: "Based here, working worldwide" },
 ] as const;
 
 // about page data
-export const MILESTONES = [
-  {
-    year: "2020",
-    title: "The Beginning",
-    desc: "Started as a two-person freelance operation out of Kampala — a developer and a designer with a shared obsession for craft and a conviction that African businesses deserved world-class digital products.",
-  },
-  {
-    year: "2021",
-    title: "First Major Product",
-    desc: "Launched our first enterprise web platform, processing over 1M transactions in its first year. The project proved that premium engineering wasn't just a luxury — it was a competitive advantage.",
-  },
-  {
-    year: "2022",
-    title: "Expanding the Team",
-    desc: "Grew to a full-service team of 8, adding mobile development, data analytics, and marketing capabilities. Moved into our first dedicated studio space and formalised our agency structure.",
-  },
-  {
-    year: "2023",
-    title: "AI & Automation Practice",
-    desc: "Launched our AI Automation practice ahead of the curve. Built Uganda's first LLM-powered business intelligence system for a regional financial institution.",
-  },
-  {
-    year: "2024",
-    title: "Going Regional",
-    desc: "Expanded our client base across East Africa and secured our first international partnerships. Delivered 40+ projects across 6 countries while maintaining our 98% client satisfaction rate.",
-  },
-  {
-    year: "2025",
-    title: "What We Are Today",
-    desc: "A trusted premium digital partner for ambitious brands — from early-stage startups to established enterprises. Still obsessed with craft. Still refusing to build ordinary things.",
-  },
-] as const;
 
 export const PILLARS = [
   {
@@ -592,9 +558,9 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = ([
       "Vercel",
       "PostgreSQL",
     ],
-    metric: "3.2×",
-    metricLabel: "Average conversion lift",
-    metricSub: "across web projects vs. client's prior site",
+    metric: "Fixed",
+    metricLabel: "Price agreed before we build",
+    metricSub: "no hourly billing, no surprise invoices",
     classes: {
       accent: "text-svc-web",
       dimBg: "bg-svc-web-dim",
@@ -660,9 +626,9 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = ([
       "Supabase",
       "Firebase FCM",
     ],
-    metric: "4.8★",
-    metricLabel: "Average App Store rating",
-    metricSub: "across all VeilCode-built mobile apps",
+    metric: "1",
+    metricLabel: "Codebase for iOS and Android",
+    metricSub: "built with React Native and Expo",
     classes: {
       accent: "text-svc-mobile",
       dimBg: "bg-svc-mobile-dim",
@@ -718,9 +684,9 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = ([
       "Apache Airflow",
       "Pandas",
     ],
-    metric: "50M+",
-    metricLabel: "Events processed daily",
-    metricSub: "by our largest active data pipeline",
+    metric: "Documented",
+    metricLabel: "Pipelines you can audit",
+    metricSub: "every transformation is version-controlled and reviewable",
     classes: {
       accent: "text-svc-data",
       dimBg: "bg-svc-data-dim",
@@ -775,9 +741,9 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = ([
       "Hootsuite",
       "GA4",
     ],
-    metric: "6.4×",
-    metricLabel: "Average ROAS on paid social",
-    metricSub: "across active campaigns managed by VeilCode",
+    metric: "Tracked",
+    metricLabel: "Campaigns report their own numbers",
+    metricSub: "you see the raw platform data, not a summary",
     classes: {
       accent: "text-svc-social",
       dimBg: "bg-svc-social-dim",
@@ -842,10 +808,10 @@ export const DEEP_DIVES: ServiceDeepDiveData[] = ([
       "n8n",
       "Supabase",
     ],
-    metric: "1 System",
-    metricLabel: "Unified automation layer",
+    metric: "Human",
+    metricLabel: "Review on sensitive steps",
     metricSub:
-      "connecting workflows, AI assistants, reporting, and operational visibility",
+      "anything touching customers or money gets an approval step",
     classes: {
       accent: "text-svc-ai",
       dimBg: "bg-svc-ai-dim",
@@ -970,7 +936,7 @@ export const TIERS: PricingTier[] = [
 export const FAQS = [
   {
     q: "Do you work with clients outside Uganda / East Africa?",
-    a: "Absolutely. We work with clients globally — our team is remote-first and we have active clients across Africa, Europe, and North America. Time zone overlap is usually manageable and we're experienced in async-first collaboration.",
+    a: "Yes. We work remotely with teams anywhere, using written scopes, async updates and live reviews in your working hours.",
   },
   {
     q: "How does fixed-price project billing work?",

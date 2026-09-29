@@ -79,7 +79,7 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
               leading-relaxed max-w-140 mb-12"
           >
             Engineering deep dives, design thinking, and practical AI written by
-            the team behind VeilCode products.
+            Frank Tamale, founder of VeilCode Studio.
           </motion.p>
 
           <motion.div variants={fadeUp(0.24)} className="flex flex-wrap gap-10">

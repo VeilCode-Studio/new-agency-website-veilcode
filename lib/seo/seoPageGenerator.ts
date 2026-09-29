@@ -61,7 +61,7 @@ const SERVICE_CONFIG: Record<SeoPageGeneratorServiceId, ServiceConfig> = {
     title: "Web Solutions Agency",
     h1: "Web solutions that make {country} businesses faster to launch and easier to trust",
     heroCopy:
-      "We build fast, maintainable websites and web apps for teams that need senior execution, clear scopes, and measurable outcomes.",
+      "We build fast, maintainable websites and web apps for teams that need senior execution, clear scopes, and documented delivery.",
     slugSuffix: (market) => (market.shortName === "USA" ? "web-development-agency" : market.shortName === "Uganda" ? "web-solutions" : "web-solutions-agency"),
     bodyLead:
       "Web work usually starts when a business needs a better first impression, faster delivery, or a site that can support actual lead generation.",

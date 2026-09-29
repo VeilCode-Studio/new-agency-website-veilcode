@@ -45,7 +45,7 @@ test("Uganda hero contains the required local trust signals", () => {
   assert.match(locationData, /Kampala, Uganda/);
   assert.match(
     locationData,
-    /5\+ Years in Kampala · 45\+ Projects Delivered · Mobile-First by Default/,
+    /Kampala-based · Meet in person · Mobile-first by default/,
   );
   assert.match(hero, /locationBadge/);
   assert.match(hero, /stats/);
@@ -140,7 +140,7 @@ test("United States location includes the requested Phase 2 content sections", (
   assert.match(locationData, /Operators scaling ops/);
   assert.match(locationData, /Agencies with overflow/);
   assert.match(locationData, /The remote concerns - addressed directly/);
-  assert.match(locationData, /typically 7-9 AM ET or 5-7 PM ET/);
+  assert.match(locationData, /8 to 11 AM Eastern \(3 to 6 PM in Kampala\)/);
   assert.match(locationData, /Next\.js, React Native, TypeScript, Supabase/);
   assert.match(locationData, /What working with us looks like/);
   assert.match(locationData, /Discovery \(Week 1\)/);
@@ -197,8 +197,8 @@ test("Canada location includes the requested Phase 3 content sections", () => {
   assert.match(locationData, /Bilingual capability when you need it/);
   assert.match(locationData, /Scope control over open-ended retainers/);
   assert.match(locationData, /Working across Canadian timezones/);
-  assert.match(locationData, /Ontario and Quebec/);
-  assert.match(locationData, /Pacific overlap for BC clients/);
+  assert.match(locationData, /Our afternoon overlaps with Eastern mornings/);
+  assert.match(locationData, /Pacific clients get early calls/);
   assert.match(locationData, /How we work with Canadian clients/);
   assert.match(locationData, /Written scope and cost estimate/);
   assert.match(locationData, /Post-launch support window/);
@@ -230,7 +230,7 @@ test("United Kingdom location has Phase 4 SEO, schema, and UK trust requirements
   );
   assert.match(
     locationData,
-    /metaDescription:\s*"VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses\. GDPR-aware delivery, accessibility-conscious builds, measurable outcomes\."/,
+    /metaDescription:\s*"VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses\. GDPR-aware delivery, accessibility-conscious builds, documented delivery\."/,
   );
   assert.match(locationData, /ogImage:\s*"\/assets\/og\/united-kingdom\.jpg"/);
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
@@ -244,7 +244,7 @@ test("United Kingdom location has Phase 4 SEO, schema, and UK trust requirements
   assert.match(locationData, /GDPR-aware builds/);
   assert.match(locationData, /Accessible by default/);
   assert.match(locationData, /ROI-focused delivery/);
-  assert.match(locationData, /Only 2hrs ahead of BST/);
+  assert.match(locationData, /2 hours ahead of the UK in summer, 3 in winter/);
 });
 
 test("United Kingdom location includes the requested Phase 4 content sections", () => {
@@ -252,7 +252,7 @@ test("United Kingdom location includes the requested Phase 4 content sections", 
   assert.match(locationData, /Digital credibility that closes deals/);
   assert.match(locationData, /Compliance is not optional/);
   assert.match(locationData, /ROI over aesthetics/);
-  assert.match(locationData, /The timezone advantage/);
+  assert.match(locationData, /2 hours ahead of the UK in summer, 3 in winter/);
   assert.match(locationData, /only 2 hours ahead of UK time/);
   assert.match(locationData, /How delivery works for UK clients/);
   assert.match(locationData, /Accessibility and GDPR-conscious builds included by default/);

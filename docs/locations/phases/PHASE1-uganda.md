@@ -7,7 +7,7 @@ MARKET RESEARCH CONTEXT (use this to write authentic, specific copy):
 - Google, Microsoft, and SAP all have Kampala offices — Uganda is becoming a serious East African tech hub
 - Key local market realities: mobile-first traffic, MTN/Airtel mobile money payment flows, WhatsApp as primary B2B communication, inconsistent bandwidth in some areas, fintech and e-commerce are the dominant growth verticals
 - Local businesses' #1 trust signal: a verifiable local presence (address, phone, in-person availability)
-- Biggest competitor gap: most Kampala agencies have no visible case studies with measurable outcomes — VeilCode should lean into results hard
+- Competitor context: many Kampala agencies provide limited project detail — VeilCode should explain its process and deliverables clearly
 - Uganda is the home market — this page should be the most confident, specific, and locally-grounded of all five
 
 PAGE STRUCTURE TO BUILD:
@@ -26,7 +26,7 @@ PAGE STRUCTURE TO BUILD:
    - Subheadline: "We build websites, mobile apps, and AI automation systems that give Ugandan businesses a real competitive edge — built for local realities, engineered to global standards."
    - Two CTAs: "Start a Project" (primary) + "See Our Work" (secondary)
    - Visual signal: show "Kampala, Uganda 🇺🇬" as a location badge near the headline — this is a trust anchor for local searchers
-   - Stat bar below hero: "5+ Years in Kampala · 45+ Projects Delivered · Mobile-First by Default"
+   - Capability bar below hero: "Kampala-Based · Web, Mobile & AI · Mobile-First by Default"
 
 3. "WHY THIS MATTERS IN UGANDA" SECTION
    - Section title: "Built for how Uganda does business"
@@ -76,7 +76,7 @@ PAGE STRUCTURE TO BUILD:
    A: No. We work with businesses across Uganda, and can run discovery, design reviews, and full delivery remotely for teams outside Kampala. We've also helped clients position for East African expansion beyond Uganda.
 
    Q: How do your prices compare to local agencies?
-   A: We scope projects around local business realities. We're not the cheapest option — we're the option that delivers measurable outcomes. We're transparent about scope and cost before any work begins.
+   A: We scope projects around local business realities. We agree the scope, deliverables, and cost before any work begins so you can evaluate the fit clearly.
 
    Q: Can you take over an existing website that isn't performing?
    A: Yes. We can audit what exists, identify what's holding it back, and either improve or rebuild from there depending on what makes more business sense.

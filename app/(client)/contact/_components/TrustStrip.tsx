@@ -5,11 +5,7 @@ import { fadeUp, stagger, useReveal } from "@/lib/motion";
 
 
 const TRUST_ITEMS = [
-  { value: "45+",  label: "Projects delivered" },
-  { value: "98%",   label: "Client satisfaction" },
-  { value: "6",     label: "Countries served" },
   { value: "< 24h", label: "Avg. response time" },
-  // { value: "5 yrs", label: "In operation" },
 ] as const;
 
 export function TrustStrip() {
@@ -25,7 +21,7 @@ export function TrustStrip() {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         className="max-w-300 mx-auto
-          flex flex-wrap justify-center md:justify-between items-center gap-8"
+          flex flex-wrap justify-center items-center gap-8"
       >
         {TRUST_ITEMS.map(({ value, label }, i) => (
           <motion.div

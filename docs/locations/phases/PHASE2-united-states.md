@@ -64,7 +64,7 @@ PAGE STRUCTURE TO BUILD:
    A: Because geography doesn't determine quality. Our stack, process, and delivery standards are identical to what a senior US engineering team would produce — at a cost structure that makes more sense for a founder or operator who needs results, not overhead. We don't ask you to take that on faith: we scope everything in writing before work begins, you own all IP from day one, and you can stop at any milestone.
 
    Q: How do you handle the timezone difference?
-   A: We work morning-biased schedules (EAT) that give us evening overlap with East Coast time. We batch all async updates daily and schedule live calls at times that work for you. In practice, US clients tell us the async model keeps them less interrupted than working with a local agency that calls at 2 PM.
+   A: We work morning-biased schedules (EAT) that provide evening overlap with East Coast time. We batch async updates and schedule live calls at mutually convenient times to keep communication predictable.
 
    Q: Do you sign NDAs?
    A: Yes, before any project detail is shared. We can review your standard NDA or provide ours.

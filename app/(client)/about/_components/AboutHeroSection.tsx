@@ -63,9 +63,8 @@ export function AboutHeroSection() {
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-150 mb-10"
           >
-            VeilCode is a team of engineers, designers, and strategists who believe
-            that exceptional digital craft is the highest leverage a business has.
-            We partner with founders and teams who refuse to settle for ordinary.
+            VeilCode Studio is a founder-led product studio in Kampala. You work
+            directly with the engineer building your product.
           </motion.p>
 
           {/* CTAs */}

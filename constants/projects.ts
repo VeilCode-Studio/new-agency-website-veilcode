@@ -293,15 +293,15 @@ export const PROJECTS: Project[] = [
       "We started with a two-week discovery sprint: analytics audit, session recordings, and user interviews across three cities. The data pointed clearly to mobile performance and checkout friction as the primary revenue leaks. We rebuilt on Next.js 14 with a headless Shopify backend, implementing incremental static regeneration for product pages, an edge-cached cart API, and a streamlined 2-step checkout flow designed specifically for mobile users on slow connections.",
     outcome:
       "Delivered a Next.js-powered storefront with edge-cached product pages, AI-driven recommendations, and a custom checkout flow. Load time dropped to 1.2s on 3G. Conversion rate tripled within 60 days of launch.",
-    metric: "+312%",
-    metricLabel: "Conversion Rate",
+    metric: "Streamlined",
+    metricLabel: "Checkout Flow",
     tags: ["Next.js", "TypeScript", "Stripe", "AI Recommendations", "Vercel"],
     featured: true,
     results: [
       {
-        metric: "+312%",
-        label: "Conversion rate",
-        sub: "vs 60 days pre-launch",
+        metric: "Streamlined",
+        label: "Checkout flow",
+        sub: "designed for mobile shoppers",
       },
       {
         metric: "1.2s",

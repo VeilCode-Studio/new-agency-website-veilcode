@@ -3,7 +3,7 @@
 MARKET RESEARCH CONTEXT (use this to write authentic, specific copy):
 
 - UK SMEs make buying decisions in under 0.05 seconds on first visual impression — professional design, structured layout, and clear credibility signals are critical
-- UK buyers specifically look for: GDPR/data privacy compliance awareness, accessibility (WCAG 2.1 AA), clear ROI language, and evidence of measurable outcomes
+- UK buyers often consider GDPR/data privacy awareness, accessibility (WCAG 2.1 AA), clear project scope, and transparent delivery practices
 - 65% of UK businesses rate SEO as a top priority — so a web agency that understands technical SEO is a strong differentiator
 - UK market is ROI-obsessed: they want to know what they get for the money, not how nice the design looks
 - UK SMEs and B2B service businesses are the primary ICP here — professional services, property, education, healthcare
@@ -15,7 +15,7 @@ PAGE STRUCTURE TO BUILD:
 
 1. METADATA
    - Title: "Digital Product Agency for UK Businesses | Web, Mobile & AI | VeilCode"
-   - Meta description: "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware delivery, accessibility-conscious builds, measurable outcomes."
+   - Meta description: "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware, accessibility-conscious delivery."
    - OG image: use /assets/og/united-kingdom.jpg
    - JSON-LD: ProfessionalService schema, areaServed="GB"
    - Canonical: <https://www.veilcode.studio/locations/united-kingdom>
