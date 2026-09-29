@@ -33,7 +33,9 @@ test("Uganda location has Phase 1 SEO and schema requirements", () => {
 
 test("branded location metadata uses absolute titles to avoid duplicate VeilCode suffixes", () => {
   assert.match(page, /title:\s*market\.metaTitle/);
-  assert.match(metadataHelper, /titleIncludesBrand\(title\)\s*\?\s*\{\s*absolute:\s*title\s*\}/);
+  // Branded titles are used as-is; everything else gets the suffix once.
+  assert.match(metadataHelper, /titleIncludesBrand\(title\)\s*\?\s*title\s*:\s*`\$\{title\}\$\{TITLE_SUFFIX\}`/);
+  assert.match(metadataHelper, /title:\s*\{\s*absolute:\s*fullTitle\s*\}/);
 });
 
 test("Uganda hero contains the required local trust signals", () => {

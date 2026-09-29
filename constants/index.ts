@@ -231,9 +231,9 @@ export const SOCIALS = [
 ] as const;
 
 export const TYPEWRITER_WORDS = [
-"a Web Development Company",
-  "a Mobile App Development Company",
-  "an AI Automation Agency"
+  "web platforms",
+  "mobile apps",
+  "AI automation",
 ] as const;
 
 export const STATS = [

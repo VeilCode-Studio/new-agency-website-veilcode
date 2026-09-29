@@ -6,6 +6,16 @@ import { getAllProjects } from '@/queries'
 import { getWorkStats } from '@/lib/projects/kind'
 import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice'
 import type { Project } from '@/db/schema'
+import { buildPageMetadata } from '@/lib/seo/metadata'
+import { DEFAULT_OG_IMAGE } from '@/lib/seo/site'
+
+export const metadata = buildPageMetadata({
+  title: "Our Work",
+  description:
+    "Client work, our own products, and concept builds for the industries we serve. Each one shows how we'd approach your project.",
+  path: "/work",
+  image: DEFAULT_OG_IMAGE,
+});
 
 export const dynamic = "force-dynamic";
 

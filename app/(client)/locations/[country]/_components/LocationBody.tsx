@@ -134,12 +134,14 @@ export function LocationBody({
   market,
   services,
   projects,
+  seoPages = [],
   servicesUnavailable = false,
   projectsUnavailable = false,
 }: {
   market: LocationMarket;
   services: Service[];
   projects: Project[];
+  seoPages?: Array<{ slug: string; title: string }>;
   servicesUnavailable?: boolean;
   projectsUnavailable?: boolean;
 }) {
@@ -470,6 +472,27 @@ export function LocationBody({
           </div>
         </div>
       </section>
+
+      {seoPages.length > 0 ? (
+        <section className="border-t border-line px-6 py-12 md:px-10">
+          <div className="mx-auto flex max-w-300 flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
+              {market.shortName} service pages:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {seoPages.map((page) => (
+                <Link
+                  key={page.slug}
+                  href={`/seo/${page.slug}`}
+                  className="rounded border border-line bg-surface px-3 py-2 text-sm text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
+                >
+                  {page.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {market.crossMarketLinks?.length ? (
         <section className="border-t border-line bg-surface px-6 py-12 md:px-10">

@@ -13,6 +13,7 @@ import { mapDbPostToClientPost } from "@/lib/blog/mappers";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { FOUNDER_NAME } from "@/lib/seo/site";
 import { POSTS } from "@/constants/blog";
 
 interface Params {
@@ -57,7 +58,7 @@ export const generateMetadata = async ({ params }: Params) => {
       ...metadata.openGraph,
       type: "article",
       publishedTime: blog.publishedAt.toISOString(),
-      authors: [blog.author.name],
+      authors: [FOUNDER_NAME],
       tags: blog.tags,
     },
   };
@@ -93,7 +94,7 @@ const SingleBlogPage = async ({ params }: Params) => {
           path: `/blog/${blog.slug}`,
           publishedAt: blog.publishedAt,
           updatedAt: blog.updatedAt,
-          authorName: blog.author.name,
+          authorName: FOUNDER_NAME,
           image: blog.heroSrc,
         })}
       />

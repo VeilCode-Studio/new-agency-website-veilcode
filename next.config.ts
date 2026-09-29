@@ -16,7 +16,8 @@ const nextConfig: NextConfig = {
       {
         source: "/work/prestige-properties-real-estate-platform",
         destination: "/work/bienvenidos-apartments",
-        permanent: true,
+        // Explicit 301; `permanent: true` would send a 308.
+        statusCode: 301,
       },
     ];
   }

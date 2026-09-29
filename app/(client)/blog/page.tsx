@@ -11,11 +11,16 @@ import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice';
 import { getPublishedBlogs } from '@/queries';
 import { mapDbPostToClientPost } from '@/lib/blog/mappers';
 import { getBlogGridPosts, toBlogGridPost } from '@/lib/blog/grid';
+import { buildPageMetadata } from '@/lib/seo/metadata';
+import { DEFAULT_OG_IMAGE } from '@/lib/seo/site';
 
-export const metadata = {
-  title: "Blog — VeilCode",
-  description: "Engineering deep-dives, design thinking, and practical AI from the VeilCode team."
-}
+export const metadata = buildPageMetadata({
+  title: "Blog",
+  description:
+    "Engineering deep dives, design thinking, and practical AI written by Frank Tamale, founder of VeilCode Studio.",
+  path: "/blog",
+  image: DEFAULT_OG_IMAGE,
+});
 
 const page = async () => {
   let allPosts = POSTS;

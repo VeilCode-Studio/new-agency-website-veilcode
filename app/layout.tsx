@@ -5,37 +5,41 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { organizationJsonLd } from "@/lib/seo/jsonLd";
-import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  TITLE_SUFFIX,
+} from "@/lib/seo/site";
+
+const ROOT_TITLE = "VeilCode Studio | Web, Mobile & AI Automation from Kampala";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} - Digital Solutions Agency`,
-    template: "%s | VeilCode"
+    default: ROOT_TITLE,
+    template: `%s${TITLE_SUFFIX}`,
   },
-  description: "VeilCode builds websites, web apps, mobile apps, AI automation systems, and analytics tools for growing businesses",
+  description: SITE_DESCRIPTION,
 
   keywords: [
     "Next.js development",
     "AI automation",
     "web development",
     "software engineering",
-    "LangGraph AI agents",
     "Website development",
-    "Data Analysis Services",
-    "Social Media Marketing",
     "Mobile Applications development"
   ],
 
   openGraph: {
-    title: "VeilCode Digital Solutions Agency",
-    description:
-      "VeilCode builds websites, web apps, mobile apps, AI automation systems, analytics tools, and digital marketing systems.",
+    title: ROOT_TITLE,
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [
       {
-        url: "/assets/nexus-project/image-client-1.jpg",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "VeilCode digital product showcase",
@@ -46,10 +50,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "VeilCode Digital Solutions Agency",
-    description:
-      "VeilCode builds websites, web apps, mobile apps, AI automation systems, analytics tools, and digital marketing systems.",
-    images: ["/assets/nexus-project/image-client-1.jpg"],
+    title: ROOT_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

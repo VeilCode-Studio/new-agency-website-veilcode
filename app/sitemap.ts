@@ -6,61 +6,81 @@ import {
   getPublishedSeoPages,
 } from "@/queries";
 import { LOCATION_MARKETS } from "@/constants/locations";
-import { SITE_URL } from "@/lib/seo/site";
+import { pageUrl } from "@/lib/seo/site";
+
+// Regenerate hourly so URLs and DB-driven lastmod values track the database
+// instead of freezing at build time.
+export const revalidate = 3600;
+
+/**
+ * Last-modified dates for pages whose content lives in code. Update a date
+ * only when that page's content actually changes, so lastmod stays truthful.
+ */
+const STATIC_PAGE_LASTMOD: Record<string, string> = {
+  "/": "2026-09-29",
+  "/work": "2026-09-29",
+  "/services": "2026-09-29",
+  "/contact": "2026-09-29",
+  "/about": "2026-09-29",
+  "/start": "2026-09-29",
+  "/blog": "2026-09-29",
+  "/seo": "2026-09-29",
+};
+
+/** Same idea for the location pages, keyed by market slug. */
+const LOCATION_LASTMOD: Record<string, string> = {
+  uganda: "2026-09-29",
+  "united-states": "2026-09-29",
+  "united-kingdom": "2026-09-29",
+  canada: "2026-09-29",
+  australia: "2026-09-29",
+};
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
-
-  const [serviceResult, projectResult, blogResult, seoPageResult] = await Promise.allSettled([
+  // Fail loudly rather than publish a partial sitemap: if any query throws,
+  // revalidation keeps serving the last complete sitemap.
+  const [serviceRows, projectRows, blogRows, seoPageRows] = await Promise.all([
     getPublishedSeoServices(),
     getAllProjects(),
     getPublishedBlogs(),
     getPublishedSeoPages(),
   ]);
 
-  const serviceRows =
-    serviceResult.status === "fulfilled" ? serviceResult.value : [];
-  const projectRows =
-    projectResult.status === "fulfilled" ? projectResult.value : [];
-  const blogRows = blogResult.status === "fulfilled" ? blogResult.value : [];
-  const seoPageRows = seoPageResult.status === "fulfilled" ? seoPageResult.value : [];
+  const staticUrls = Object.entries(STATIC_PAGE_LASTMOD).map(([path, date]) => ({
+    url: pageUrl(path),
+    lastModified: date,
+  }));
 
   const serviceUrls = serviceRows
     .filter((service) => service.slug)
     .map((service) => ({
-      url: `${SITE_URL}/services/${service.slug}`,
-      lastModified: service.updatedAt ?? now,
+      url: pageUrl(`/services/${service.slug}`),
+      lastModified: service.updatedAt,
     }));
 
-  const projectUrls = projectRows.map((project) => ({
-    url: `${SITE_URL}/work/${project.slug}`,
-    lastModified: project.updatedAt ?? now,
-  }));
-
-  const blogUrls = blogRows.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: post.updatedAt ?? post.publishedAt ?? now,
+  const locationUrls = LOCATION_MARKETS.map((market) => ({
+    url: pageUrl(`/locations/${market.slug}`),
+    // Omit lastmod rather than invent one for a market missing from the map.
+    ...(LOCATION_LASTMOD[market.slug] ? { lastModified: LOCATION_LASTMOD[market.slug] } : {}),
   }));
 
   const seoPageUrls = seoPageRows.map((page) => ({
-    url: `${SITE_URL}/seo/${page.slug}`,
-    lastModified: page.updatedAt ?? now,
+    url: pageUrl(`/seo/${page.slug}`),
+    lastModified: page.updatedAt,
   }));
 
-  const locationUrls = LOCATION_MARKETS.map((market) => ({
-    url: `${SITE_URL}/locations/${market.slug}`,
-    lastModified: now,
+  const projectUrls = projectRows.map((project) => ({
+    url: pageUrl(`/work/${project.slug}`),
+    lastModified: project.updatedAt,
+  }));
+
+  const blogUrls = blogRows.map((post) => ({
+    url: pageUrl(`/blog/${post.slug}`),
+    lastModified: post.updatedAt,
   }));
 
   return [
-    { url: SITE_URL, lastModified: now },
-    { url: `${SITE_URL}/work`, lastModified: now },
-    { url: `${SITE_URL}/services`, lastModified: now },
-    { url: `${SITE_URL}/contact`, lastModified: now },
-    { url: `${SITE_URL}/about`, lastModified: now },
-    { url: `${SITE_URL}/start`, lastModified: now },
-    { url: `${SITE_URL}/blog`, lastModified: now },
-    { url: `${SITE_URL}/seo`, lastModified: now },
+    ...staticUrls,
     ...serviceUrls,
     ...locationUrls,
     ...seoPageUrls,

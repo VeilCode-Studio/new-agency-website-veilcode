@@ -8,7 +8,7 @@ import type { SeoPage } from "@/db/schema";
 export const dynamic = "force-dynamic";
 
 export const metadata = buildPageMetadata({
-  title: "SEO Pages | VeilCode",
+  title: "SEO Pages",
   description: "Search-focused landing pages for locations, industries, and service combinations.",
   path: "/seo",
 });

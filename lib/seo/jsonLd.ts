@@ -1,4 +1,4 @@
-import { absoluteUrl, SITE_NAME, SITE_URL } from "./site";
+import { absoluteUrl, FOUNDER_NAME, SITE_NAME, SITE_URL } from "./site";
 
 type BreadcrumbItem = {
   name: string;
@@ -42,12 +42,17 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "VeilCode",
+    name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl("/assets/logo.png"),
     founder: {
       "@type": "Person",
-      name: "Frank Tamale",
+      name: FOUNDER_NAME,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kampala",
+      addressCountry: "UG",
     },
     sameAs: [
       "https://facebook.com/veilcode",

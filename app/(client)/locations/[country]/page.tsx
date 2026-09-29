@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
-import { getAllProjects, getPublishedServices } from "@/queries";
-import { getLocationMarket } from "@/constants/locations";
+import { getAllProjects, getPublishedSeoPages, getPublishedServices } from "@/queries";
+import { getLocationMarket, getMarketCountryCode } from "@/constants/locations";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { breadcrumbJsonLd, localBusinessJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { SITE_NAME } from "@/lib/seo/site";
 import { LocationBody } from "./_components/LocationBody";
 import { LocationHero } from "./_components/LocationHero";
 
@@ -33,9 +34,10 @@ export default async function LocationPage({ params }: Params) {
 
   if (!market) return notFound();
 
-  const [servicesResult, projectsResult] = await Promise.allSettled([
+  const [servicesResult, projectsResult, seoPagesResult] = await Promise.allSettled([
     getPublishedServices(),
     getAllProjects(),
+    getPublishedSeoPages(),
   ]);
 
   const servicesUnavailable = servicesResult.status === "rejected";
@@ -57,6 +59,15 @@ export default async function LocationPage({ params }: Params) {
     market.serviceFocus.includes(service.id),
   );
 
+  // Link back to every published SEO page targeting this market's country.
+  const marketCountryCode = getMarketCountryCode(market);
+  const marketSeoPages =
+    seoPagesResult.status === "fulfilled" && marketCountryCode
+      ? seoPagesResult.value.filter(
+          (page) => page.countryCode?.toUpperCase() === marketCountryCode,
+        )
+      : [];
+
   return (
     <>
       <StructuredData
@@ -75,7 +86,7 @@ export default async function LocationPage({ params }: Params) {
       />
       <StructuredData
         data={localBusinessJsonLd({
-          name: "VeilCode Studio",
+          name: SITE_NAME,
           description: market.metaDescription,
           path: `/locations/${market.slug}`,
           schemaType: market.schemaType,
@@ -89,6 +100,7 @@ export default async function LocationPage({ params }: Params) {
         market={market}
         services={relevantServices}
         projects={projects}
+        seoPages={marketSeoPages}
         servicesUnavailable={servicesUnavailable}
         projectsUnavailable={projectsUnavailable}
       />

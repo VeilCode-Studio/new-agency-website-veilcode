@@ -12,6 +12,7 @@ import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { ArticleBody } from "../../blog/[slug]/ArticleBody";
+import { getLocationMarketByCountryCode } from "@/constants/locations";
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -81,6 +82,14 @@ export default async function SeoPage({ params }: Params) {
 
   const seoPages = seoPagesResult.status === "fulfilled" ? seoPagesResult.value : [];
 
+  // Every service-location page links to its location page and its service page.
+  const locationMarket = getLocationMarketByCountryCode(page.countryCode);
+  const primaryService = page.serviceId
+    ? services.find((service) => service.id === page.serviceId)
+    : undefined;
+  const primaryServiceHref =
+    primaryService?.seoEnabled && primaryService.slug ? `/services/${primaryService.slug}` : null;
+
   const relatedSeoPages = seoPages
     .filter((item) => item.slug !== page.slug)
     .filter((item) => {
@@ -132,14 +141,32 @@ export default async function SeoPage({ params }: Params) {
 
             <div className="flex flex-wrap gap-2.5">
               {page.countryName ? (
-                <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
-                  {page.countryName}
-                </span>
+                locationMarket ? (
+                  <Link
+                    href={`/locations/${locationMarket.slug}`}
+                    className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint transition-colors hover:border-line-hi hover:text-ink"
+                  >
+                    {page.countryName}
+                  </Link>
+                ) : (
+                  <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
+                    {page.countryName}
+                  </span>
+                )
               ) : null}
               {page.serviceId ? (
-                <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
-                  {page.serviceId}
-                </span>
+                primaryService && primaryServiceHref ? (
+                  <Link
+                    href={primaryServiceHref}
+                    className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint transition-colors hover:border-line-hi hover:text-ink"
+                  >
+                    {primaryService.title}
+                  </Link>
+                ) : (
+                  <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
+                    {page.serviceId}
+                  </span>
+                )
               ) : null}
               {page.relatedServiceIds.slice(0, 3).map((serviceId) => (
                 <span

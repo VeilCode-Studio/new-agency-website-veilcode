@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, canonicalPath } from "./site";
+import { absoluteUrl, pageUrl, SITE_NAME, TITLE_SUFFIX } from "./site";
 
 type BuildMetadataInput = {
   title: string;
@@ -13,6 +13,15 @@ function titleIncludesBrand(title: string) {
   return /\bVeilCode\b/i.test(title);
 }
 
+/**
+ * The exact title a page renders with. Titles that already name the brand are
+ * used as-is; everything else gets the site suffix, matching the root
+ * template. The same string is used for <title>, og:title and twitter:title.
+ */
+export function fullPageTitle(title: string) {
+  return titleIncludesBrand(title) ? title : `${title}${TITLE_SUFFIX}`;
+}
+
 export function buildPageMetadata({
   title,
   description,
@@ -20,20 +29,21 @@ export function buildPageMetadata({
   image,
   type = "website",
 }: BuildMetadataInput): Metadata {
-  const canonical = canonicalPath(path);
+  const url = pageUrl(path);
+  const fullTitle = fullPageTitle(title);
   const imageUrl = image ? absoluteUrl(image) : absoluteUrl("/assets/logo.png");
 
   return {
-    title: titleIncludesBrand(title) ? { absolute: title } : title,
+    title: { absolute: fullTitle },
     description,
     alternates: {
-      canonical,
+      canonical: url,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
-      url: absoluteUrl(canonical),
-      siteName: "VeilCode",
+      url,
+      siteName: SITE_NAME,
       type,
       images: [
         {
@@ -45,7 +55,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [imageUrl],
     },

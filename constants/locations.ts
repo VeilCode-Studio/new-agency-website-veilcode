@@ -371,7 +371,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     deliveryTitle: "How delivery works for UK clients",
     deliveryNotes: [
       "Written scope and fixed milestone structure are agreed before any work begins.",
-      "Real-time availability during UK business hours is practical given the 2-hour timezone gap during summer and 3 in the winter.",
+      "Real-time availability during UK business hours is practical given the 2 to 3 hour time difference.",
       "Structured handover documentation is prepared for internal teams or future agency partners.",
       "Accessibility and GDPR-conscious builds included by default.",
       "Analytics and conversion tracking set up at launch, not retrospectively.",
@@ -724,4 +724,17 @@ export const LOCATION_MARKETS: LocationMarket[] = [
 
 export function getLocationMarket(slug: string) {
   return LOCATION_MARKETS.find((market) => market.slug === slug) ?? null;
+}
+
+/** ISO country code a market targets, e.g. "US" for /locations/united-states. */
+export function getMarketCountryCode(market: LocationMarket) {
+  const served = Array.isArray(market.areaServed) ? market.areaServed[0] : market.areaServed;
+  return (served ?? market.addressCountry ?? null)?.toUpperCase() ?? null;
+}
+
+/** Finds the location market for an SEO page's country code. */
+export function getLocationMarketByCountryCode(code: string | null | undefined) {
+  if (!code) return null;
+  const upper = code.toUpperCase();
+  return LOCATION_MARKETS.find((market) => getMarketCountryCode(market) === upper) ?? null;
 }

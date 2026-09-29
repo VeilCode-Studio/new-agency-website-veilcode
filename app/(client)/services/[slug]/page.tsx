@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Params) {
   if (!service) return {};
 
   return buildPageMetadata({
-    title: service.seoTitle || `${service.title} | VeilCode`,
+    title: service.seoTitle || service.title,
     description: service.metaDescription || service.desc,
     path: `/services/${service.slug}`,
   });

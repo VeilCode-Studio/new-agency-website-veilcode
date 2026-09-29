@@ -1,63 +1,14 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { PrimaryButton, GhostButton, GridBg, GlowOrb, AccentLine } from "@/components/extras/Primitives";
-import { fadeUp, stagger } from "@/lib/motion";
-import { StatItem } from "../extras/StatItem";
-import { STATS, TYPEWRITER_WORDS } from "@/constants";
 import Link from "next/link";
+import { PrimaryButton, GhostButton, GridBg, GlowOrb, AccentLine } from "@/components/extras/Primitives";
 import { ServiceVisualField } from "@/components/extras/ServiceVisualField";
+import { TYPEWRITER_WORDS } from "@/constants";
+import { HeroParallax, HeroScrollCue, HeroStats, HeroTypewriter } from "./HeroMotion";
 
-
-function useTypewriter(words: readonly string[]) {
-  const [text, setText] = useState("");
-  const [wordIdx, setWordIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = words[wordIdx];
-    const id = setTimeout(
-      () => {
-        if (!deleting) {
-          setText(current.slice(0, charIdx + 1));
-          if (charIdx + 1 === current.length) {
-            setTimeout(() => setDeleting(true), 1800);
-          } else {
-            setCharIdx((c) => c + 1);
-          }
-        } else {
-          setText(current.slice(0, charIdx - 1));
-          if (charIdx - 1 === 0) {
-            setDeleting(false);
-            setWordIdx((i) => (i + 1) % words.length);
-            setCharIdx(0);
-          } else {
-            setCharIdx((c) => c - 1);
-          }
-        }
-      },
-      deleting ? 38 : 78
-    );
-    return () => clearTimeout(id);
-  }, [charIdx, deleting, wordIdx, words]);
-
-  return text;
-}
-
-
-
-
-// hero section with typewriter effect, scroll parallax, and animated stats
+// Server component: the H1 and intro paragraph are static, server-rendered
+// HTML. Motion (parallax, typewriter, stats, scroll cue) lives in client
+// islands from ./HeroMotion.
 
 export function Hero() {
-  const typedText = useTypewriter(TYPEWRITER_WORDS);
-
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 700], [0, 80]);
-  const opacity = useTransform(scrollY, [300, 800], [1, 0]);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pb-16">
 
@@ -78,61 +29,34 @@ export function Hero() {
       />
 
       {/* Parallax wrapper */}
-      <motion.div
-        style={{ y, opacity }}
-        className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24"
-      >
+      <HeroParallax className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
         {/* Available badge */}
-        <motion.div variants={fadeUp(0)} initial="hidden" animate="visible">
-          <div className="inline-flex items-center gap-2.5
-            bg-brand-dim border border-brand-border
-            rounded-full px-4 py-1.5 mb-10">
-            <span className="size-1.5 rounded-full bg-brand
-              shadow-[0_0_8px_var(--color-brand)]
-              animate-[pulse-glow_2s_ease-in-out_infinite]" />
-            <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-brand">
-              Available for web, mobile and AI projects
-            </span>
-          </div>
-        </motion.div>
+        <div className="inline-flex items-center gap-2.5
+          bg-brand-dim border border-brand-border
+          rounded-full px-4 py-1.5 mb-10">
+          <span className="size-1.5 rounded-full bg-brand
+            shadow-[0_0_8px_var(--color-brand)]
+            animate-[pulse-glow_2s_ease-in-out_infinite]" />
+          <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-brand">
+            Available for web, mobile and AI projects
+          </span>
+        </div>
 
         {/* Headline */}
-        <motion.h1
-          variants={fadeUp(0.1)}
-          initial="hidden"
-          animate="visible"
-          className="font-display font-extrabold leading-none tracking-tight
-            text-[clamp(42px,7vw,86px)] text-ink mb-2 max-w-225"
+        <h1
+          className="font-display font-extrabold leading-[1.05] tracking-tight
+            text-[clamp(36px,5.6vw,72px)] text-ink mb-6 max-w-225"
         >
-          We are
-        </motion.h1>
+          Web development, mobile apps and AI automation!
+        </h1>
 
-        {/* Typewriter line */}
-        <motion.div
-          variants={fadeUp(0.18)}
-          initial="hidden"
-          animate="visible"
-          className="font-display font-extrabold leading-none tracking-tight
-            text-[clamp(42px,7vw,86px)] mb-4"
-        >
-          <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
-            {typedText}
-          </span>
-          <span className="text-brand animate-blink">|</span>
-        </motion.div>
+        {/* Intro */}
+        <p className="font-sans text-lg font-light text-ink-muted max-w-140 leading-relaxed mb-4">
+          Founder-led studio. You work directly with the engineer building your product.
+        </p>
 
-        {/* Sub copy */}
-        <motion.p
-          variants={fadeUp(0.32)}
-          initial="hidden"
-          animate="visible"
-          className="font-sans text-lg font-light text-ink-muted
-    max-w-140 leading-relaxed mb-12 pt-3"
-        >
-          VeilCode Studio builds conversion focused websites, mobile applications,
-          and AI automation systems for businesses that need better digital
-          infrastructure, not more disconnected tools.
-        </motion.p>
+        {/* Decorative typewriter (aria-hidden) */}
+        <HeroTypewriter words={TYPEWRITER_WORDS} />
 
         {/* CTAs */}
         <PrimaryButton className="text-[15px]! px-8! py-4!">
@@ -144,31 +68,11 @@ export function Hero() {
 
         {/* Stats */}
         <AccentLine width={60} />
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap gap-10 md:gap-16 mb-10 mt-5"
-        >
-          {STATS.map((s) => (
-            <StatItem key={s.val} {...s} />
-          ))}
-        </motion.div>
-      </motion.div>
+        <HeroStats />
+      </HeroParallax>
 
       {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2
-          flex flex-col items-center gap-2 pointer-events-none"
-        aria-hidden
-      >
-        <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-faint">
-          Scroll
-        </span>
-        <div className="w-px h-10 bg-linear-to-b from-brand to-transparent" />
-      </motion.div>
+      <HeroScrollCue />
     </section>
   );
 }

@@ -2,6 +2,8 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 import { CTA } from "@/components/shared/CTA";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { DEFAULT_OG_IMAGE, SITE_DESCRIPTION } from "@/lib/seo/site";
 import { BlogGrid } from "@/components/shared/BlogGrid";
 import { Hero } from "@/components/shared/Hero";
 import { Marquee } from "@/components/shared/Marquee";
@@ -21,6 +23,13 @@ import {
   getTestimonials,
 } from "@/queries";
 import { NewsletterCTA } from "./blog/[slug]/Newsletter";
+
+export const metadata = buildPageMetadata({
+  title: "VeilCode Studio | Web, Mobile & AI Automation from Kampala",
+  description: SITE_DESCRIPTION,
+  path: "/",
+  image: DEFAULT_OG_IMAGE,
+});
 
 async function getHomeBlogPosts() {
   try {
