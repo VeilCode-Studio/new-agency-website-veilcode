@@ -371,7 +371,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     deliveryTitle: "How delivery works for UK clients",
     deliveryNotes: [
       "Written scope and fixed milestone structure are agreed before any work begins.",
-      "Real-time availability during UK business hours is practical given the 2-hour timezone gap.",
+      "Real-time availability during UK business hours is practical given the 2-hour timezone gap during summer and 3 in the winter.",
       "Structured handover documentation is prepared for internal teams or future agency partners.",
       "Accessibility and GDPR-conscious builds included by default.",
       "Analytics and conversion tracking set up at launch, not retrospectively.",
