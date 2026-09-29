@@ -363,7 +363,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     detailSections: [
       {
         title: "2 hours ahead of the UK in summer, 3 in winter",
-        body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional.",
+        body: "Unlike agencies based in Asia or the Americas, we're only 2 hours ahead of UK time during the summer and 3 in the winter. Morning standups, same-day feedback, and real-time reviews are practical - not exceptional.",
         ctaLabel: "Read our SEO thinking",
         ctaHref: "/blog/seo-thinking-for-business-websites",
       },
