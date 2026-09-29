@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Eye, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { PrimaryButton } from '@/components/extras/Primitives';
+import { SITE_URL } from '@/lib/seo/site';
 import InfoCollected from './_components/InfoCollected';
 import HowWeUseInfo from './_components/HowWeUseInfo';
 import InfoSharingAndDisclosure from './_components/InfoSharingAndDisclosure';
@@ -66,7 +67,7 @@ export default function PrivacyPolicyPage() {
             <CardContent className="text-ink-muted leading-relaxed space-y-6">
               <p>
                 VeilCode Studio Ltd (&ldquo;VeilCode&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) 
-                operates the website <span className="text-brand">https://veilcode.studio</span> and provides premium 
+                operates the website <span className="text-brand">{SITE_URL}</span> and provides premium 
                 digital solutions including web development, mobile applications, data analytics, 
                 marketing, and AI automation.
               </p>

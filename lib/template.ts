@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/seo/site";
+
 const escapeEmailHtml = (value: string | undefined) =>
   (value ?? "")
     .replaceAll("&", "&amp;")
@@ -534,10 +536,10 @@ export const clientContactFormTemplate = async ({
                     </p>
                     <p style="margin: 0; font-size: 12px; color: #aaa; line-height: 1.6;">
                       Building purposeful digital experiences.<br />
-                      <a href="https://veilcode.studio"
+                      <a href="${SITE_URL}"
                         style="color: #555; text-decoration: underline;
                           text-underline-offset: 2px;">
-                        https://veilcode.studio
+                        ${SITE_URL}
                       </a>
                     </p>
                   </td>

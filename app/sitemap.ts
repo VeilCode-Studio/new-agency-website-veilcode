@@ -25,6 +25,7 @@ const STATIC_PAGE_LASTMOD: Record<string, string> = {
   "/start": "2026-09-29",
   "/blog": "2026-09-29",
   "/seo": "2026-09-29",
+  "/privacy-policy": "2026-09-29",
 };
 
 /** Same idea for the location pages, keyed by market slug. */

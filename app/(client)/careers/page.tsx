@@ -8,6 +8,13 @@ import { CareersHero } from "./_components/CareersHero";
 
 export const dynamic = "force-dynamic";
 
+// Kept out of the index and the sitemap while there are no published
+// openings. To index it: swap this for buildPageMetadata({ path: "/careers", ... })
+// and add "/careers" to STATIC_PAGE_LASTMOD in app/sitemap.ts.
+export const metadata = {
+  robots: { index: false, follow: true },
+};
+
 function timeAgo(date: Date): string {
   const days = Math.floor((Date.now() - new Date(date).getTime()) / 86_400_000);
   if (days === 0) return "today";
