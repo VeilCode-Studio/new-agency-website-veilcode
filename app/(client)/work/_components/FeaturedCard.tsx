@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
 import type { InferSelectModel } from "drizzle-orm";
@@ -35,7 +35,7 @@ function FeaturedVisual({ project: p }: { project: ProjectType }) {
             src={heroShot!.src!}
             alt={heroShot!.alt}
             fill
-            priority
+            loading="lazy"
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-top
               transition-transform duration-700 group-hover:scale-[1.03]"
@@ -124,17 +124,17 @@ export function FeaturedCard({ project: p }: Props) {
   const { classes: c } = p;
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUp(0)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative rounded-2xl overflow-hidden border border-line
-        bg-surface transition-all duration-350 cursor-pointer
+        bg-surface transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-350 cursor-pointer
         ${c.hoverBorder} ${c.hoverShadow}`}
     >
       {/* Top accent bar */}
       <div
-        className={`h-0.75 w-0 group-hover:w-full transition-all duration-500
+        className={`h-0.75 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500
           bg-linear-to-r from-current to-transparent ${c.accent}`}
       />
 
@@ -214,6 +214,6 @@ export function FeaturedCard({ project: p }: Props) {
           </a>
         </div>
       </div>
-    </motion.article>
+    </m.article>
   );
 }

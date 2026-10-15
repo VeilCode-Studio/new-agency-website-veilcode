@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/db/drizzle";
@@ -60,6 +61,7 @@ export async function PUT(
       .where(eq(blogPosts.id, numId))
       .returning();
     if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    revalidatePath("/");
     return NextResponse.json(updated);
   } catch (err) {
     console.error("[api/admin/blog/[id]] PUT error:", err);
@@ -80,6 +82,7 @@ export async function DELETE(
 
   try {
     await db.delete(blogPosts).where(eq(blogPosts.id, numId));
+    revalidatePath("/");
     return new NextResponse(null, { status: 204 });
   } catch (err) {
     console.error("[api/admin/blog/[id]] DELETE error:", err);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp } from "@/lib/motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { formatDate, type BlogPost } from "@/constants/blog";
@@ -82,17 +82,17 @@ export function PostCard({
   const { classes: c } = p;
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUp(index * 0.06)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group flex min-w-0 flex-col rounded-xl overflow-hidden border
-        border-line bg-surface transition-all duration-300
+        border-line bg-surface transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi hover:border-opacity-60
         ${c.border.replace("border-", "hover:shadow-[0_0_32px_var(--color-brand-dim)] hover:border-")}`}
     >
       {/* Top accent bar */}
-      <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500
+      <div className={`h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500
         bg-linear-to-r from-current to-transparent ${c.accent}`} />
 
       {/* Visual */}
@@ -165,6 +165,6 @@ export function PostCard({
           </a>
         </div>
       </div>
-    </motion.article>
+    </m.article>
   );
 }

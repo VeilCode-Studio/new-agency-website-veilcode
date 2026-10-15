@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { PHASES } from "@/constants";
@@ -15,19 +15,19 @@ export function DeliveryProcess() {
     <section className="py-32 px-6 md:px-10 bg-surface border-y border-line">
       <div className="max-w-300 mx-auto">
 
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>How We Deliver</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             variants={fadeUp(0.1)}
             className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16"
           >
@@ -42,27 +42,27 @@ export function DeliveryProcess() {
               Every engagement follows the same structured process — regardless
               of size or service. Predictable, transparent, and repeatable.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Phase grid */}
-          <motion.div
+          <m.div
             variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {PHASES.map((p, i) => (
               <PhaseCard key={p.num} phase={p} index={i} />
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Bottom note */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.3)}
             className="mt-10 text-center font-sans text-sm text-ink-faint max-w-140 mx-auto"
           >
             Timeline varies by project scope. All projects include a fixed-price
             proposal — no hourly billing, no surprise invoices.
-          </motion.p>
-        </motion.div>
+          </m.p>
+        </m.div>
       </div>
     </section>
   );

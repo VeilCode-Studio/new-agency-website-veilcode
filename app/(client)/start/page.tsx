@@ -4,7 +4,7 @@ import { ContactForm } from "../contact/_components/ContactForm";
 
 export default function StartProjectPage() {
   return (
-    <main className="min-h-dvh bg-page px-4 py-10 sm:px-6 sm:py-16">
+    <div className="min-h-dvh bg-page px-4 py-10 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-180">
         <div className="mb-8 text-center sm:mb-10">
           <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-brand">Start a project</p>
@@ -17,6 +17,6 @@ export default function StartProjectPage() {
         </div>
         <ContactForm standalone />
       </div>
-    </main>
+    </div>
   );
 }

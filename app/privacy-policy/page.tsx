@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import * as m from "framer-motion/m";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
@@ -18,21 +18,21 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-page pt-20 pb-24 text-ink">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back Link */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="mb-12"
         >
-          <PrimaryButton>
+          <PrimaryButton asChild>
             <Link href="/" className='flex gap-2 items-center justify-start'>
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
               Back to VeilCode
             </Link>
           </PrimaryButton>
-        </motion.div>
+        </m.div>
 
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
             At VeilCode, we build with precision and protect with purpose. 
             Your privacy is foundational to the trust we earn with every project.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="prose prose-invert max-w-none">
           {/* Introduction */}

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { PHASES } from "@/constants";
 import { fadeUp } from "@/lib/motion";
 
@@ -10,11 +10,11 @@ export function PhaseCard({
   index: number;
 }) {
   return (
-    <motion.div
+    <m.div
       variants={fadeUp(index * 0.07)}
       className="group relative p-7 rounded-xl bg-page border border-line
         hover:bg-surface-hi hover:border-line-hi
-        transition-all duration-200"
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
     >
       {/* Number + duration */}
       <div className="flex items-center justify-between mb-5">
@@ -30,7 +30,7 @@ export function PhaseCard({
 
       {/* Accent bar */}
       <div className="w-8 h-0.5 bg-linear-to-r from-brand to-transparent mb-4
-        group-hover:w-12 transition-all duration-300" />
+        group-hover:w-12 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300" />
 
       {/* Icon + title */}
       <div className="flex items-center gap-2.5 mb-3">
@@ -43,6 +43,6 @@ export function PhaseCard({
       <p className="font-sans text-sm text-ink-muted leading-relaxed">
         {phase.desc}
       </p>
-    </motion.div>
+    </m.div>
   );
 }

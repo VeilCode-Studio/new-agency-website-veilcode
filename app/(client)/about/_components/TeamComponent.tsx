@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { TeamCard } from "./TeamCard";
@@ -30,20 +30,20 @@ export function Team() {
       <div className="max-w-300 mx-auto">
 
         {/* Header */}
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-16"
         >
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>The Team</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
-            <motion.h2
+            <m.h2
               variants={fadeUp(0.1)}
               className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
                 tracking-tight text-ink leading-[1.1] max-w-120"
@@ -52,20 +52,20 @@ export function Team() {
               <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                 Work With
               </span>
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               variants={fadeUp(0.18)}
               className="font-sans text-[15px] text-ink-muted max-w-90 leading-relaxed"
             >
               No account managers in the middle — you work directly with the
               engineer building your product.
-            </motion.p>
+            </m.p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Cards */}
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -74,7 +74,7 @@ export function Team() {
           {TEAM.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} />
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

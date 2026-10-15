@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 import { stagger } from "@/lib/motion";
 import { FilterBar, type FilterState } from "./FilterBar";
 import { PostCard } from "./PostCard";
@@ -11,7 +12,7 @@ import type { BlogPost } from "@/constants/blog";
 
 function EmptyState({ onReset }: { onReset: () => void }) {
   return (
-    <motion.div
+    <m.div
       key="empty"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -41,11 +42,11 @@ function EmptyState({ onReset }: { onReset: () => void }) {
         onClick={onReset}
         className="font-sans text-sm text-brand border border-brand-border
           bg-brand-dim px-5 py-2.5 rounded-lg cursor-pointer
-          hover:bg-brand hover:text-page transition-all duration-200"
+          hover:bg-brand hover:text-page transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
       >
         Clear filters
       </button>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -91,7 +92,7 @@ export function PostGrid({ posts, categories, tags }: PostGridProps) {
       {/* Grid */}
       <div className="mx-auto w-full min-w-0 max-w-300 px-5 py-14 sm:px-6 md:px-10">
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={`${filter.category}-${filter.tag}`}
             variants={stagger}
             initial="hidden"
@@ -106,7 +107,7 @@ export function PostGrid({ posts, categories, tags }: PostGridProps) {
             ) : (
               <EmptyState onReset={reset} />
             )}
-          </motion.div>
+          </m.div>
         </AnimatePresence>
       </div>
     </section>

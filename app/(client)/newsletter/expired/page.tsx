@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 const fadeUp = (delay = 0) => ({
   hidden:  { opacity: 0, y: 20 },
@@ -10,7 +10,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function NewsletterExpired() {
   return (
-    <main className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
       {/* Subtle grid texture */}
       <div
         aria-hidden
@@ -24,7 +24,7 @@ export default function NewsletterExpired() {
 
       <div className="relative z-10 w-full max-w-lg text-center">
         {/* Icon */}
-        <motion.div
+        <m.div
           variants={fadeUp(0)}
           initial="hidden"
           animate="visible"
@@ -35,7 +35,7 @@ export default function NewsletterExpired() {
             {/* Clock face */}
             <circle cx="18" cy="18" r="13" stroke="#1a1a1a" strokeWidth="1.8" fill="none"/>
             {/* Clock hands */}
-            <motion.path
+            <m.path
               d="M18 10v8l5 3"
               stroke="#1a1a1a"
               strokeWidth="1.8"
@@ -51,7 +51,7 @@ export default function NewsletterExpired() {
             {/* Warning badge */}
             <circle cx="27" cy="27" r="7" fill="#f9f8f6" stroke="#f9f8f6" strokeWidth="2"/>
             <circle cx="27" cy="27" r="6" fill="#d97706"/>
-            <motion.path
+            <m.path
               d="M27 24v3M27 29.5v.5"
               stroke="white"
               strokeWidth="1.8"
@@ -62,10 +62,10 @@ export default function NewsletterExpired() {
               transition={{ delay: 0.7 }}
             />
           </svg>
-        </motion.div>
+        </m.div>
 
         {/* Tag */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.1)}
           initial="hidden"
           animate="visible"
@@ -76,10 +76,10 @@ export default function NewsletterExpired() {
           <span className="font-mono text-[10px] tracking-widest uppercase text-amber-700">
             Link Expired
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Heading */}
-        <motion.h1
+        <m.h1
           variants={fadeUp(0.18)}
           initial="hidden"
           animate="visible"
@@ -88,9 +88,9 @@ export default function NewsletterExpired() {
           style={{ fontFamily: "'Fraunces', Georgia, serif" }}
         >
           This link has expired.
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           variants={fadeUp(0.26)}
           initial="hidden"
           animate="visible"
@@ -99,10 +99,10 @@ export default function NewsletterExpired() {
         >
           Confirmation links are only valid for 24 hours. Yours has passed its
           window — but it only takes a second to get a new one.
-        </motion.p>
+        </m.p>
 
         {/* CTAs */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.34)}
           initial="hidden"
           animate="visible"
@@ -126,10 +126,10 @@ export default function NewsletterExpired() {
           >
             ← Back to homepage
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Footer note */}
-        <motion.p
+        <m.p
           variants={fadeUp(0.42)}
           initial="hidden"
           animate="visible"
@@ -143,8 +143,8 @@ export default function NewsletterExpired() {
           >
             Contact us
           </a>
-        </motion.p>
+        </m.p>
       </div>
-    </main>
+    </div>
   );
 }

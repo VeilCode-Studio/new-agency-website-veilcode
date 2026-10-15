@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ScreenshotPlaceholder } from "./CaseStudyHero";
@@ -112,23 +112,23 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
   return (
     <section className="py-24 px-6 md:px-10 bg-surface border-y border-line">
       <div className="max-w-300 mx-auto">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>Project Screenshots</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
           {/* Gallery */}
           {isMobileApp ? (
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {shots.map((shot, i) => (
-                <motion.div key={`${shot.caption}-${i}`} variants={fadeUp(i * 0.07)}>
+                <m.div key={`${shot.caption}-${i}`} variants={fadeUp(i * 0.07)}>
                   <Shot
                     shot={shot}
                     accent={c.accent}
@@ -136,23 +136,23 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
                     border={c.border}
                     variant="phone"
                   />
-                </motion.div>
+                </m.div>
               ))}
             </div>
           ) : (
             <div className="space-y-6">
               {groups.map((group, gi) =>
                 group.type === "wide" ? (
-                  <motion.div key={gi} variants={fadeUp(gi * 0.07)}>
+                  <m.div key={gi} variants={fadeUp(gi * 0.07)}>
                     <Shot
                       shot={group.shot}
                       accent={c.accent}
                       dimBg={c.dimBg}
                       border={c.border}
                     />
-                  </motion.div>
+                  </m.div>
                 ) : (
-                  <motion.div
+                  <m.div
                     key={gi}
                     variants={fadeUp(gi * 0.07)}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
@@ -166,12 +166,12 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
                         border={c.border}
                       />
                     ))}
-                  </motion.div>
+                  </m.div>
                 )
               )}
             </div>
           )}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

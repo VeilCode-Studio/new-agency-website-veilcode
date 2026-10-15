@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import Link from 'next/link';
-import { motion } from 'framer-motion'
+import * as m from "framer-motion/m";
 import { GhostButton, PrimaryButton } from '@/components/extras/Primitives';
 
 const links = [
@@ -12,7 +12,7 @@ const links = [
 const CareersCTA = () => {
     return (
         <div className="py-20 border-t border-line mt-12">
-            <motion.div
+            <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -30,18 +30,18 @@ const CareersCTA = () => {
                     {links.map((link, index) => (
                         link.type === "linkedIn" ? (
                             link.type === "linkedIn" && link.linkUrl !== "#" && (
-                                <PrimaryButton key={link.linkUrl + index}>
+                                <PrimaryButton asChild key={link.linkUrl + index}>
                                     <Link target="_blank" href={link.linkUrl}>{link.linkText}</Link>
                                 </PrimaryButton>
                             )
                         ) : (
-                            <GhostButton key={link.linkUrl + index}>
+                            <GhostButton asChild key={link.linkUrl + index}>
                                 <Link href={link.linkUrl}>{link.linkText}</Link>
                             </GhostButton>
                         )
                     ))}
                 </div>
-            </motion.div>
+            </m.div>
         </div>
     )
 }

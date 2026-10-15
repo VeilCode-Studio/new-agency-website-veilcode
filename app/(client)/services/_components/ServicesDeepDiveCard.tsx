@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { PrimaryButton, GhostButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import Link from "next/link";
@@ -22,14 +22,14 @@ export function ServiceDeepDiveCard({
         ${flipped ? "bg-surface" : "bg-page"}`}
     >
       <div className="max-w-300 mx-auto">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           {/* Section label row */}
-          <motion.div
+          <m.div
             variants={fadeUp()}
             className="flex items-center gap-4 mb-12"
           >
@@ -43,10 +43,10 @@ export function ServiceDeepDiveCard({
             >
               {data.tagline}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Headline row */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.08)}
             className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
           >
@@ -71,13 +71,13 @@ export function ServiceDeepDiveCard({
                 {data.metricSub}
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Two-column body */}
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 mb-16">
 
             {/* Left — intro, challenge, approach */}
-            <motion.div variants={fadeUp(0.12)} className="space-y-8">
+            <m.div variants={fadeUp(0.12)} className="space-y-8">
               <p className="font-sans text-[17px] font-light text-ink leading-[1.8]">
                 {data.intro}
               </p>
@@ -101,10 +101,10 @@ export function ServiceDeepDiveCard({
                   {data.approach}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Right — deliverables */}
-            <motion.div variants={fadeUp(0.18)}>
+            <m.div variants={fadeUp(0.18)}>
               <h4 className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-5">
                 What You Get
               </h4>
@@ -130,11 +130,11 @@ export function ServiceDeepDiveCard({
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Tech stack */}
-          <motion.div variants={fadeUp(0.22)}>
+          <m.div variants={fadeUp(0.22)}>
             <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
               Technologies & Tools
             </p>
@@ -150,21 +150,21 @@ export function ServiceDeepDiveCard({
                 </span>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* CTA row */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.28)}
             className="flex flex-wrap items-center gap-4"
           >
-            <PrimaryButton className="text-[14px]! px-7! py-3.5!">
+            <PrimaryButton asChild className="text-[14px]! px-7! py-3.5!">
               <Link href="/start">Start a {data.title} Project →</Link>
             </PrimaryButton>
-            <GhostButton className="text-[14px]! px-7! py-3.5!">
+            <GhostButton asChild className="text-[14px]! px-7! py-3.5!">
               <Link href={"/work"}>See Related Work</Link>
             </GhostButton>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

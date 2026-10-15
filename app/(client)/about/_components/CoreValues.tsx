@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ValueCard } from "./ValueCard";
@@ -14,20 +14,20 @@ export function CoreValues() {
       <div className="max-w-300 mx-auto">
 
         {/* Header */}
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-16"
         >
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>Core Values</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
-            <motion.h2
+            <m.h2
               variants={fadeUp(0.1)}
               className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
                 tracking-tight text-ink leading-[1.1] max-w-120"
@@ -36,20 +36,20 @@ export function CoreValues() {
               <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                 Refuse to Compromise
               </span>
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               variants={fadeUp(0.18)}
               className="font-sans text-[15px] text-ink-muted max-w-90 leading-relaxed"
             >
               These aren&apos;t aspirational statements. They&apos;re operational
               commitments that shape how we hire, how we work, and how we deliver.
-            </motion.p>
+            </m.p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Cards grid — 3 × 2 */}
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -58,7 +58,7 @@ export function CoreValues() {
           {VALUES.map((v, i) => (
             <ValueCard key={v.number} value={v} index={i} />
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

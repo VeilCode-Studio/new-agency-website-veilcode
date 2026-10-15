@@ -1,20 +1,15 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { STEPS } from "@/constants";
-import { fadeUp } from "@/lib/motion";
 
 export function StepCard({
   step,
-  index,
   isLast,
 }: {
   step: (typeof STEPS)[number];
-  index: number;
   isLast: boolean;
 }) {
   return (
-    <motion.div
-      variants={fadeUp(index * 0.1)}
+    <div
       className={`py-8 pr-8 ${!isLast ? "border-r border-line" : ""}`}
     >
       {/* Step number */}
@@ -34,6 +29,6 @@ export function StepCard({
       <p className="font-sans text-sm text-ink-muted leading-relaxed">
         {step.desc}
       </p>
-    </motion.div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import Image from "next/image";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
@@ -121,17 +121,17 @@ export function ProjectCard({ project: p, index }: Props) {
     const { classes: c } = p;
 
     return (
-        <motion.article
+        <m.article
             variants={fadeUp(index * 0.08)}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className={`group relative flex flex-col rounded-xl overflow-hidden
                 border border-line bg-surface cursor-pointer
-                transition-all duration-300 hover:bg-surface-hi
+                transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 hover:bg-surface-hi
                 ${c.hoverBorder} ${c.hoverShadow}`}
         >
             <div
-                className={`h-0.5 w-0 group-hover:w-full transition-all duration-500
+                className={`h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500
                     bg-linear-to-r from-current to-transparent ${c.accent}`}
             />
 
@@ -180,6 +180,6 @@ export function ProjectCard({ project: p, index }: Props) {
                     <AnimatedArrow hovered={hovered} />
                 </Link>
             </div>
-        </motion.article>
+        </m.article>
     );
 }

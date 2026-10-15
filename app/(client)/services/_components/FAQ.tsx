@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { FaqItem } from "./FAQItem";
@@ -15,22 +15,22 @@ export function FAQ() {
   return (
     <section className="py-32 px-6 md:px-10 bg-surface border-t border-line">
       <div className="max-w-300 mx-auto">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>FAQ</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-col lg:flex-row lg:gap-24 gap-12">
             {/* Left label column */}
             <div className="lg:w-[320px] shrink-0">
-              <motion.h2
+              <m.h2
                 variants={fadeUp(0.1)}
                 className="font-display text-[clamp(26px,3vw,42px)] font-extrabold
                   tracking-tight text-ink leading-[1.1] mb-4"
@@ -40,8 +40,8 @@ export function FAQ() {
                   Get Asked
                 </span>{" "}
                 a Lot
-              </motion.h2>
-              <motion.p
+              </m.h2>
+              <m.p
                 variants={fadeUp(0.18)}
                 className="font-sans text-sm text-ink-muted leading-relaxed mb-6"
               >
@@ -53,10 +53,10 @@ export function FAQ() {
                   Send us a message
                 </a>{" "}
                 and we&apos;ll reply within one business day.
-              </motion.p>
+              </m.p>
 
               {/* Decorative stat */}
-              <motion.div
+              <m.div
                 variants={fadeUp(0.24)}
                 className="hidden lg:block p-6 rounded-xl border border-line bg-page"
               >
@@ -70,11 +70,11 @@ export function FAQ() {
                 <div className="font-sans text-xs text-ink-muted">
                   to all new project enquiries
                 </div>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Right accordion */}
-            <motion.div
+            <m.div
               variants={stagger}
               className="flex-1 bg-page rounded-xl border border-line px-6 py-10 divide-y-0"
             >
@@ -87,9 +87,9 @@ export function FAQ() {
                   onToggle={() => setOpen(open === i ? null : i)}
                 />
               ))}
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

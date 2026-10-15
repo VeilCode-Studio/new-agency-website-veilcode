@@ -1,15 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
 import type { DisplayTestimonial } from "@/lib/testimonials/display";
 
 export function TestimonialCard({ item }: { item: DisplayTestimonial }) {
   return (
-    <motion.blockquote
+    <blockquote
       key={item.name}
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -16 }}
-      transition={{ duration: 0.45 }}
       className="bg-page border border-line rounded-2xl px-8 md:px-14 py-12 m-0"
     >
       {/* Open quote */}
@@ -50,6 +45,6 @@ export function TestimonialCard({ item }: { item: DisplayTestimonial }) {
           <span className="font-sans text-[12px] text-ink-muted">{item.role}</span>
         </div>
       </footer>
-    </motion.blockquote>
+    </blockquote>
   );
 }

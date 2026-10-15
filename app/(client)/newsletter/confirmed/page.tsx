@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 const fadeUp = (delay = 0) => ({
   hidden:  { opacity: 0, y: 20 },
@@ -17,7 +17,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function NewsletterConfirmed() {
   return (
-    <main className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
       {/* Subtle grid texture */}
       <div
         aria-hidden
@@ -31,7 +31,7 @@ export default function NewsletterConfirmed() {
 
       <div className="relative z-10 w-full max-w-lg text-center">
         {/* Icon */}
-        <motion.div
+        <m.div
           variants={fadeUp(0)}
           initial="hidden"
           animate="visible"
@@ -46,7 +46,7 @@ export default function NewsletterConfirmed() {
             {/* Checkmark badge */}
             <circle cx="27" cy="26" r="7" fill="#f9f8f6" stroke="#f9f8f6" strokeWidth="2"/>
             <circle cx="27" cy="26" r="6" fill="#18794e"/>
-            <motion.path
+            <m.path
               d="M24 26l2 2 4-4"
               stroke="white"
               strokeWidth="1.6"
@@ -58,10 +58,10 @@ export default function NewsletterConfirmed() {
               transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             />
           </svg>
-        </motion.div>
+        </m.div>
 
         {/* Tag */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.1)}
           initial="hidden"
           animate="visible"
@@ -72,10 +72,10 @@ export default function NewsletterConfirmed() {
           <span className="font-mono text-[10px] tracking-widest uppercase text-emerald-700">
             Subscription Confirmed
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Heading */}
-        <motion.h1
+        <m.h1
           variants={fadeUp(0.18)}
           initial="hidden"
           animate="visible"
@@ -84,9 +84,9 @@ export default function NewsletterConfirmed() {
           style={{ fontFamily: "'Fraunces', Georgia, serif" }}
         >
           You&apos;re in.
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           variants={fadeUp(0.26)}
           initial="hidden"
           animate="visible"
@@ -96,10 +96,10 @@ export default function NewsletterConfirmed() {
           Welcome to the VeilCode newsletter. Expect engineering deep-dives,
           design thinking, and practical AI — straight to your inbox.
           No fluff. Ever.
-        </motion.p>
+        </m.p>
 
         {/* CTA */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.34)}
           initial="hidden"
           animate="visible"
@@ -114,10 +114,10 @@ export default function NewsletterConfirmed() {
           >
             ← Back to homepage
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Footer note */}
-        <motion.p
+        <m.p
           variants={fadeUp(0.42)}
           initial="hidden"
           animate="visible"
@@ -125,8 +125,8 @@ export default function NewsletterConfirmed() {
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           You can unsubscribe at any time from any email we send.
-        </motion.p>
+        </m.p>
       </div>
-    </main>
+    </div>
   );
 }

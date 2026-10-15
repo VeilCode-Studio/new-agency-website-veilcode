@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 const fadeUp = (delay = 0) => ({
   hidden:  { opacity: 0, y: 20 },
@@ -17,7 +17,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function NewsletterInvalid() {
   return (
-    <main className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#f9f8f6] flex items-center justify-center px-6">
       {/* Subtle grid texture */}
       <div
         aria-hidden
@@ -31,7 +31,7 @@ export default function NewsletterInvalid() {
 
       <div className="relative z-10 w-full max-w-lg text-center">
         {/* Icon */}
-        <motion.div
+        <m.div
           variants={fadeUp(0)}
           initial="hidden"
           animate="visible"
@@ -45,7 +45,7 @@ export default function NewsletterInvalid() {
             {/* X badge */}
             <circle cx="27" cy="26" r="7" fill="#f9f8f6" stroke="#f9f8f6" strokeWidth="2"/>
             <circle cx="27" cy="26" r="6" fill="#c0392b"/>
-            <motion.path
+            <m.path
               d="M24.5 23.5l5 5M29.5 23.5l-5 5"
               stroke="white"
               strokeWidth="1.6"
@@ -56,10 +56,10 @@ export default function NewsletterInvalid() {
               transition={{ duration: 0.45, delay: 0.5, ease: "easeOut" }}
             />
           </svg>
-        </motion.div>
+        </m.div>
 
         {/* Tag */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.1)}
           initial="hidden"
           animate="visible"
@@ -70,10 +70,10 @@ export default function NewsletterInvalid() {
           <span className="font-mono text-[10px] tracking-widest uppercase text-red-700">
             Invalid Link
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Heading */}
-        <motion.h1
+        <m.h1
           variants={fadeUp(0.18)}
           initial="hidden"
           animate="visible"
@@ -82,9 +82,9 @@ export default function NewsletterInvalid() {
           style={{ fontFamily: "'Fraunces', Georgia, serif" }}
         >
           This link isn&apos;t valid.
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           variants={fadeUp(0.26)}
           initial="hidden"
           animate="visible"
@@ -94,10 +94,10 @@ export default function NewsletterInvalid() {
           The confirmation link you used is malformed or doesn&apos;t exist.
           This can happen if the link was copied incorrectly. Try subscribing
           again and we&apos;ll send you a fresh one.
-        </motion.p>
+        </m.p>
 
         {/* CTAs */}
-        <motion.div
+        <m.div
           variants={fadeUp(0.34)}
           initial="hidden"
           animate="visible"
@@ -121,10 +121,10 @@ export default function NewsletterInvalid() {
           >
             ← Back to homepage
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Footer note */}
-        <motion.p
+        <m.p
           variants={fadeUp(0.42)}
           initial="hidden"
           animate="visible"
@@ -138,8 +138,8 @@ export default function NewsletterInvalid() {
           >
             Contact us
           </a>
-        </motion.p>
+        </m.p>
       </div>
-    </main>
+    </div>
   );
 }

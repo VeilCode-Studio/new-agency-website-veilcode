@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { asc } from "drizzle-orm";
 import { db } from "@/db/drizzle";
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
     // TODO: validate body shape
     console.log("[api/admin/projects] Creating project with data:", body);
     const [created] = await db.insert(projects).values(body).returning();
+    revalidatePath("/");
     return NextResponse.json(created, { status: 201 });
   } catch (err) {
     console.error("[api/admin/projects] POST error:", err);

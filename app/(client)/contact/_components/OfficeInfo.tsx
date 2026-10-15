@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ContactDetailRow } from "./ContactDetailRow";
 import { FacebookIcon } from "@/components/icons/FacebookIcon";
@@ -55,7 +55,7 @@ export function OfficeInfo() {
   const [ref, inView] = useReveal();
 
   return (
-    <motion.aside
+    <m.aside
       ref={ref}
       variants={stagger}
       initial="hidden"
@@ -63,7 +63,7 @@ export function OfficeInfo() {
       className="lg:col-span-5 flex flex-col gap-6"
     >
       {/* Header */}
-      <motion.div variants={fadeUp()}>
+      <m.div variants={fadeUp()}>
         <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
           Work With Us
         </p>
@@ -72,16 +72,16 @@ export function OfficeInfo() {
             <ContactDetailRow key={d.label} detail={d} />
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Divider */}
-      <motion.div
+      <m.div
         variants={fadeUp(0.1)}
         className="h-px bg-line"
       />
 
       {/* Social links */}
-      <motion.div variants={fadeUp(0.14)}>
+      <m.div variants={fadeUp(0.14)}>
         <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
           Follow Our Work
         </p>
@@ -96,23 +96,23 @@ export function OfficeInfo() {
               className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg
                 border border-line bg-surface-hi text-ink-muted
                 hover:border-brand-border hover:bg-brand-dim hover:text-brand
-                transition-all duration-200 no-underline font-sans text-sm"
+                transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 no-underline font-sans text-sm"
             >
               {icon}
               <span>{label}</span>
             </a>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Divider */}
-      <motion.div
+      <m.div
         variants={fadeUp(0.18)}
         className="h-px bg-line"
       />
 
       {/* Response promise */}
-      <motion.div
+      <m.div
         variants={fadeUp(0.22)}
         className="relative overflow-hidden rounded-xl border border-line bg-surface p-6"
       >
@@ -137,7 +137,7 @@ export function OfficeInfo() {
             point you somewhere that is.
           </p>
         </div>
-      </motion.div>
-    </motion.aside>
+      </m.div>
+    </m.aside>
   );
 }

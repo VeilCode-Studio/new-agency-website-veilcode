@@ -1,9 +1,9 @@
 // components/contact/SuccessMessage.tsx
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 export function SuccessMessage() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
@@ -12,7 +12,7 @@ export function SuccessMessage() {
       <div className="size-16 rounded-full bg-brand/10 border border-brand/30
         flex items-center justify-center mb-6">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <motion.path
+          <m.path
             d="M5 13l4 4L19 7"
             stroke="var(--color-brand)"
             strokeWidth="2.5"
@@ -35,6 +35,6 @@ export function SuccessMessage() {
         text-brand bg-brand/10 border border-brand/20 px-5 py-2.5 rounded-md">
         Check your inbox for confirmation
       </div>
-    </motion.div>
+    </m.div>
   );
 }

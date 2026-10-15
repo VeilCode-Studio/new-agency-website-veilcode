@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, useReveal } from "@/lib/motion";
 import { PROJECTS } from "@/constants/projects";
 
@@ -25,7 +25,7 @@ export function NextProject({
 
   return (
     <section className="border-t border-line bg-surface">
-      <motion.div
+      <m.div
         ref={ref}
         variants={fadeUp()}
         initial="hidden"
@@ -66,17 +66,17 @@ export function NextProject({
           <div className={`flex items-center gap-3 font-sans text-lg
             font-medium shrink-0 ${nc.accent}`}>
             <span>View Case Study</span>
-            <motion.span
+            <m.span
               animate={{ x: hovered ? 8 : 0 }}
               transition={{ duration: 0.25 }}
               className="text-2xl"
               aria-hidden
             >
               →
-            </motion.span>
+            </m.span>
           </div>
         </a>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

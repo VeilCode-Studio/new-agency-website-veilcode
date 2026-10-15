@@ -1,15 +1,12 @@
-"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import {
   SectionTag,
   AccentLine,
   GhostButton,
 } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/db/schema";
 
@@ -71,11 +68,10 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
   const shot = project.screenshots?.find((item) => item.src);
 
   return (
-    <motion.article
-      variants={fadeUp(index * 0.08)}
+    <article
       className={cn(
         "group relative isolate overflow-hidden rounded-xl border border-line bg-surface",
-        "transition-all duration-300 hover:-translate-y-1 hover:border-line-hi",
+        "transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 hover:-translate-y-1 hover:border-line-hi",
         c.hoverBorder,
         c.hoverShadow,
         layout.card
@@ -97,7 +93,7 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
                 ? "(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 58vw"
                 : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 34vw"
             }
-            priority={index < 2}
+            loading="lazy"
           />
         ) : (
           <div className={cn("absolute inset-0 bg-linear-to-br to-surface", c.gradFrom)} />
@@ -117,7 +113,7 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
         <div
           aria-hidden
           className={cn(
-            "absolute left-0 top-0 h-1 w-0 bg-linear-to-r from-current to-transparent transition-all duration-500 group-hover:w-full",
+            "absolute left-0 top-0 h-1 w-full origin-left scale-x-0 bg-linear-to-r from-current to-transparent transition-transform duration-500 group-hover:scale-x-100",
             c.accent
           )}
         />
@@ -152,7 +148,7 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
                   {project.metricLabel}
                 </p>
               </div>
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-white/15">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white backdrop-blur-md transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-white/15">
                 <ArrowUpRight className="size-4" aria-hidden />
               </span>
             </div>
@@ -166,33 +162,27 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
           </div>
         </div>
       </Link>
-    </motion.article>
+    </article>
   );
 }
 
 export function Work({ projects }: { projects: Project[] }) {
-  const [ref, inView] = useReveal();
 
   return (
     <section id="work" className="py-32 px-6 md:px-10">
       <div className="max-w-300 mx-auto">
 
         {/* Header */}
-        <motion.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+        <div
           className="mb-16"
         >
-          <motion.div variants={fadeUp()}>
+          <div>
             <SectionTag>Selected Work</SectionTag>
             <AccentLine />
-          </motion.div>
+          </div>
 
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
-            <motion.h2
-              variants={fadeUp(0.1)}
+            <h2
               className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
                 tracking-tight text-ink leading-[1.1]"
             >
@@ -200,39 +190,33 @@ export function Work({ projects }: { projects: Project[] }) {
               <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                 we&apos;ve built
               </span>
-            </motion.h2>
+            </h2>
 
-            <motion.div variants={fadeUp(0.18)}>
-              <GhostButton>
+            <div>
+              <GhostButton asChild>
                 <Link href={"/work"}>View All Projects →</Link>
               </GhostButton>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         {projects.length > 0 ? (
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+          <div
             className="grid grid-cols-1 gap-5 md:grid-cols-6 xl:grid-cols-12"
           >
             {projects.map((p, i) => (
               <WorkBentoCard key={p.slug} project={p} index={i} />
             ))}
-          </motion.div>
+          </div>
         ) : (
-          <motion.div
-            variants={fadeUp(0.1)}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+          <div
             className="rounded-xl border border-line bg-surface px-6 py-10 text-center"
           >
             <p className="font-display text-xl font-bold text-ink">No selected work yet.</p>
             <p className="mt-2 font-sans text-sm text-ink-muted">
               Published projects will appear here once they are available.
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

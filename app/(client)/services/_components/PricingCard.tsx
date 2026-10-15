@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 import {
   PrimaryButton,
@@ -10,10 +10,10 @@ import Link from "next/link";
 export function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
 
   return (
-    <motion.div
+    <m.div
       variants={fadeUp(index * 0.1)}
       className={`relative flex flex-col rounded-xl overflow-hidden
-        transition-all duration-300
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         ${
           tier.featured
             ? "bg-surface border-2 border-brand shadow-[0_0_48px_var(--color-brand-dim)] scale-[1.02]"
@@ -78,15 +78,15 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
 
         {/* CTA */}
         {tier.featured ? (
-          <PrimaryButton className="w-full justify-center py-3.5!">
+          <PrimaryButton asChild className="w-full justify-center py-3.5!">
             <Link href={"/start"}>{tier.cta} →</Link>
           </PrimaryButton>
         ) : (
-          <GhostButton className="w-full justify-center py-3.5!">
+          <GhostButton asChild className="w-full justify-center py-3.5!">
             <Link href={"/start"}>{tier.cta} →</Link>
           </GhostButton>
         )}
       </div>
-    </motion.div>
+    </m.div>
   );
 }

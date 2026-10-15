@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 export type FilterState = {
   category: string; // "All" or a category name
@@ -69,7 +69,7 @@ export function FilterBar({
                 onClick={() => setCategory(cat)}
                 className={`relative inline-flex max-w-full items-center gap-2 rounded-lg px-4 py-2
                   font-sans text-[13px] font-medium border cursor-pointer
-                  transition-all duration-200 outline-none
+                  transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 outline-none
                   focus-visible:ring-2 focus-visible:ring-brand
                   ${isActive
                     ? styles.active
@@ -78,8 +78,7 @@ export function FilterBar({
               >
                 {/* Active dot */}
                 {isActive && (
-                  <motion.span
-                    layoutId="blog-filter-dot"
+                  <m.span
                     className={`size-1.5 rounded-full ${styles.dot}`}
                     aria-hidden
                   />
@@ -117,7 +116,7 @@ export function FilterBar({
                 onClick={() => toggleTag(tag)}
                 className={`font-mono text-[10px] tracking-widest uppercase
                   max-w-full break-words px-2.5 py-1 rounded border cursor-pointer
-                  transition-all duration-150 outline-none
+                  transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-150 outline-none
                   focus-visible:ring-2 focus-visible:ring-brand
                   ${isActive
                     ? "bg-brand-dim border-brand-border text-brand"

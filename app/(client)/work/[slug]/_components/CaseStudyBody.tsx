@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 
 
@@ -11,7 +11,7 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
   return (
     <section className="py-24 px-6 md:px-10 border-t border-line">
       <div className="max-w-300 mx-auto">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
@@ -22,7 +22,7 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
           <div className="space-y-14">
 
             {/* Challenge */}
-            <motion.div variants={fadeUp(0)}>
+            <m.div variants={fadeUp(0)}>
               <div className="flex items-center gap-3 mb-5">
                 <span className={`font-mono text-[13px] tracking-widest ${c.accent}`}>01</span>
                 <div className={`h-px w-10 bg-current ${c.accent}`} />
@@ -33,10 +33,10 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
               <p className="font-sans text-[16px] font-light text-ink-muted leading-[1.85]">
                 {p.challenge}
               </p>
-            </motion.div>
+            </m.div>
 
             {/* Approach */}
-            <motion.div variants={fadeUp(0.08)}>
+            <m.div variants={fadeUp(0.08)}>
               <div className="flex items-center gap-3 mb-5">
                 <span className={`font-mono text-[13px] tracking-widest ${c.accent}`}>02</span>
                 <div className={`h-px w-10 bg-current ${c.accent}`} />
@@ -47,10 +47,10 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
               <p className="font-sans text-[16px] font-light text-ink-muted leading-[1.85]">
                 {p.approach}
               </p>
-            </motion.div>
+            </m.div>
 
             {/* Outcome */}
-            <motion.div variants={fadeUp(0.16)}>
+            <m.div variants={fadeUp(0.16)}>
               <div className="flex items-center gap-3 mb-5">
                 <span className={`font-mono text-[13px] tracking-widest ${c.accent}`}>03</span>
                 <div className={`h-px w-10 bg-current ${c.accent}`} />
@@ -63,11 +63,11 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
                   {p.outcome}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* ── Right — deliverables sidebar ──────────────────────────────── */}
-          <motion.aside
+          <m.aside
             variants={fadeUp(0.1)}
             className="lg:sticky lg:top-28 self-start"
           >
@@ -118,8 +118,8 @@ export function CaseStudyBody({ project: p }: { project: Project }) {
                 </div>
               </div>
             </div>
-          </motion.aside>
-        </motion.div>
+          </m.aside>
+        </m.div>
       </div>
     </section>
   );

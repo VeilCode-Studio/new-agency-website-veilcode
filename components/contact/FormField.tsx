@@ -1,6 +1,7 @@
 // components/contact/FormField.tsx
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 
 interface FormFieldProps {
   label: string;
@@ -29,7 +30,7 @@ export function FormField({
       {children}
       <AnimatePresence>
         {error && (
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
@@ -37,7 +38,7 @@ export function FormField({
             role="alert"
           >
             {error}
-          </motion.p>
+          </m.p>
         )}
       </AnimatePresence>
     </div>

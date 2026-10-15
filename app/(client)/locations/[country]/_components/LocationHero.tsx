@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import type { LocationMarket } from "@/constants/locations";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
@@ -34,37 +34,37 @@ export function LocationHero({ market }: { market: LocationMarket }) {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-205">
-          <motion.div variants={fadeUp(0)}>
+        <m.div variants={stagger} initial="hidden" animate="visible" className="max-w-205">
+          <m.div variants={fadeUp(0)}>
             <SectionTag>{market.eyebrow}</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
           {market.locationBadge && (
-            <motion.div
+            <m.div
               variants={fadeUp(0.04)}
               className="mb-5 inline-flex items-center gap-2 rounded-md border border-brand-border bg-brand-dim px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] text-brand"
             >
               <MapPin className="size-3.5" aria-hidden />
               <span>{market.locationBadge}</span>
-            </motion.div>
+            </m.div>
           )}
 
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-16 tracking-wider text-[clamp(40px,6vw,64px)] text-ink mb-6"
           >
             {market.h1}
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted leading-relaxed max-w-145 mb-10"
           >
             {market.heroCopy}
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={fadeUp(0.22)} className="flex flex-wrap gap-2.5">
+          <m.div variants={fadeUp(0.22)} className="flex flex-wrap gap-2.5">
             {market.serviceFocus.map((service) => {
               const item = SERVICE_LABELS[service] ?? { label: service, href: "/services" };
 
@@ -78,9 +78,9 @@ export function LocationHero({ market }: { market: LocationMarket }) {
                 </Link>
               );
             })}
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
+          <m.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
             <Link
               href={market.primaryCtaHref ?? "/start"}
               className="rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
@@ -93,10 +93,10 @@ export function LocationHero({ market }: { market: LocationMarket }) {
             >
               {market.secondaryCtaLabel ?? "Explore services"}
             </Link>
-          </motion.div>
+          </m.div>
 
           {(market.statLine || market.stats?.length) && (
-            <motion.div
+            <m.div
               variants={fadeUp(0.34)}
               className="mt-8 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface/70 px-4 py-3 text-sm text-ink-muted"
             >
@@ -106,9 +106,9 @@ export function LocationHero({ market }: { market: LocationMarket }) {
                   {index < list.length - 1 && <span className="text-brand">·</span>}
                 </span>
               ))}
-            </motion.div>
+            </m.div>
           )}
-        </motion.div>
+        </m.div>
       </div>
 
       <div

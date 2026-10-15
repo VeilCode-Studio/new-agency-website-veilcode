@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { OverviewCard } from "./OverviewCard";
@@ -15,18 +15,18 @@ export function ServicesOverview({ serviceList }: { serviceList: Service[] }) {
       <div className="max-w-300 mx-auto">
 
         {/* Header */}
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-14"
         >
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>Service Overview</SectionTag>
             <AccentLine />
-          </motion.div>
-          <motion.h2
+          </m.div>
+          <m.h2
             variants={fadeUp(0.1)}
             className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
               tracking-tight text-ink leading-[1.1] max-w-140"
@@ -35,11 +35,11 @@ export function ServicesOverview({ serviceList }: { serviceList: Service[] }) {
             <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
               One Unified Partner.
             </span>
-          </motion.h2>
-        </motion.div>
+          </m.h2>
+        </m.div>
 
         {/* Grid — 3 top, 2 bottom centred */}
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -54,7 +54,7 @@ export function ServicesOverview({ serviceList }: { serviceList: Service[] }) {
               <OverviewCard key={c.id} card={c} index={i + 3} />
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

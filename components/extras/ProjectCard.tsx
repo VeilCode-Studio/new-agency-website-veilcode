@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp } from "@/lib/motion";
 import { AnimatedArrow } from "./Primitives";
 import Image from "next/image";
@@ -23,12 +23,12 @@ export function ProjectCard({
 
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUp(index * 0.12)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`rounded-xl overflow-hidden bg-surface border border-line
-        transition-all duration-300 cursor-pointer group relative
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 cursor-pointer group relative
         ${c.hoverBorder} ${c.hoverShadow}`}
     >
       {/* Visual / Image Panel */}
@@ -40,7 +40,7 @@ export function ProjectCard({
           className="object-cover object-center transition-transform duration-700
             group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={index < 3} // faster load for first 3 cards
+          loading="lazy"
         />
 
         {/* Subtle overlay gradient for better text/icon contrast */}
@@ -87,6 +87,6 @@ export function ProjectCard({
           <AnimatedArrow hovered={hovered} />
         </Link>
       </div>
-    </motion.article>
+    </m.article>
   );
 }

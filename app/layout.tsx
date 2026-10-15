@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -67,38 +67,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData data={organizationJsonLd()} />
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '1233482635537855');
-          fbq('track', 'PageView');
-        `}
-        </Script>
+        <noscript><style>{`[style*="opacity:0;"], [style$="opacity:0"], [style*="opacity: 0;"] { opacity: 1 !important; transform: none !important; }`}</style></noscript>
+
       </head>
       <body
         className="antialiased"
       >
-        <noscript>
-          <img
-            src="https://www.facebook.com/tr?id=1233482635537855&ev=PageView&noscript=1"
-            alt="facebook pixel"
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-          />
-        </noscript>
+        <MetaPixel />
         <ThemeProvider>
-          <main className="max-w-400 mx-auto">
+          <div id="top" className="max-w-400 mx-auto">
             {children}
             <Toaster />
-          </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>

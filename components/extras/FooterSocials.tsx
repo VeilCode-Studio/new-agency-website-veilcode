@@ -9,12 +9,13 @@ const FooterSocials = () => {
                     <a
                         key={s.abbr}
                         href={s.href}
-                        aria-label={s.label}
-                        className="size-9 flex items-center justify-center rounded-md
+                        aria-label={`${s.abbr} ? ${s.label}`}
+                        className="size-11 flex items-center justify-center rounded-md
                         border border-line text-ink-faint
                         hover:border-line-hi hover:text-ink-muted
                         transition-colors duration-200 no-underline"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <span className="font-mono text-[10px] tracking-wide">{s.abbr}</span>
                     </a>

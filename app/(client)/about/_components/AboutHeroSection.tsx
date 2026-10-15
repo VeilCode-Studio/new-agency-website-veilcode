@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { GridBg, GlowOrb, SectionTag, AccentLine, PrimaryButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
 
@@ -21,20 +21,20 @@ export function AboutHeroSection() {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
           className="max-w-195"
         >
           {/* Tag */}
-          <motion.div variants={fadeUp(0)}>
+          <m.div variants={fadeUp(0)}>
             <SectionTag>About VeilCode</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
           {/* Headline */}
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
@@ -55,20 +55,20 @@ export function AboutHeroSection() {
                   rounded-full"
               />
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* Sub copy */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-150 mb-10"
           >
             VeilCode Studio is a founder-led product studio in Kampala. You work
             directly with the engineer building your product.
-          </motion.p>
+          </m.p>
 
           {/* CTAs */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.24)}
             className="flex flex-wrap items-center gap-4"
           >
@@ -85,8 +85,8 @@ export function AboutHeroSection() {
                 ↓
               </span>
             </a>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Bottom fade */}

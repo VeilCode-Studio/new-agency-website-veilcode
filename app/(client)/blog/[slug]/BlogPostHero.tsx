@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
 import { formatDate, type BlogPost } from "@/constants/blog";
@@ -76,10 +76,10 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
         animate-scan" />
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-300 px-5 pt-36 pb-16 sm:px-6 md:px-10 xl:px-20">
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="min-w-0">
+        <m.div variants={stagger} initial="hidden" animate="visible" className="min-w-0">
 
           {/* Breadcrumb */}
-          <motion.div variants={fadeUp(0)} className="mb-8 flex min-w-0 flex-wrap items-center gap-2">
+          <m.div variants={fadeUp(0)} className="mb-8 flex min-w-0 flex-wrap items-center gap-2">
             <Link href="/blog"
               className="font-mono text-[11px] tracking-widest uppercase
                 text-ink-faint hover:text-ink transition-colors duration-200 no-underline">
@@ -89,34 +89,34 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
             <span className={`min-w-0 wrap-break-word font-mono text-[11px] tracking-widest uppercase ${c.accent}`}>
               {p.category}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Category tag */}
-          <motion.div variants={fadeUp(0.04)}>
+          <m.div variants={fadeUp(0.04)}>
             <SectionTag>{p.category}</SectionTag>
             <AccentLine width={48} />
-          </motion.div>
+          </m.div>
 
           {/* Title */}
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.05] tracking-tight
               text-[clamp(32px,5vw,64px)] text-ink mb-6 max-w-225 wrap-break-word"
           >
             {p.title}
-          </motion.h1>
+          </m.h1>
 
           {/* Excerpt */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.14)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-160 mb-8 wrap-break-word"
           >
             {p.excerpt}
-          </motion.p>
+          </m.p>
 
           {/* Meta row */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.18)}
             className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10"
           >
@@ -155,10 +155,10 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
               </svg>
               {p.readTime}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Tags */}
-          <motion.div variants={fadeUp(0.22)} className="mb-12 flex min-w-0 flex-wrap gap-2">
+          <m.div variants={fadeUp(0.22)} className="mb-12 flex min-w-0 flex-wrap gap-2">
             {p.tags.map((tag) => (
               <span key={tag}
                 className="max-w-full wrap-break-word font-mono text-[10px] tracking-widest uppercase
@@ -167,10 +167,10 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
                 {tag}
               </span>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Hero image */}
-          <motion.div variants={fadeUp(0.28)}>
+          <m.div variants={fadeUp(0.28)}>
             {p.heroSrc ? (
               <div className="w-full rounded-2xl overflow-hidden border border-line">
                 <Image src={p.heroSrc} alt={p.heroAlt} width={1408} height={768}
@@ -179,8 +179,8 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
             ) : (
               <HeroImagePlaceholder post={p} />
             )}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       <div aria-hidden className="absolute bottom-0 inset-x-0 h-24

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { MEETING_TYPES } from "@/constants";
 import { fadeUp } from "@/lib/motion";
 
@@ -15,12 +15,12 @@ export function MeetingCard({
   onSelect: () => void;
 }) {
   return (
-    <motion.button
+    <m.button
       variants={fadeUp(index * 0.1)}
       onClick={onSelect}
       type="button"
       className={`w-full text-left rounded-xl p-6 border cursor-pointer
-        outline-none transition-all duration-200
+        outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
         focus-visible:ring-offset-page
         ${selected
@@ -56,6 +56,6 @@ export function MeetingCard({
           Selected
         </div>
       )}
-    </motion.button>
+    </m.button>
   );
 }

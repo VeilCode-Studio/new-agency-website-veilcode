@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp } from "@/lib/motion";
 import type { BlogPost } from "@/constants/blog";
 
@@ -48,7 +48,7 @@ function TableOfContents({ post: p }: { post: BlogPost }) {
               >
                 {/* Active indicator */}
                 <span
-                  className={`mt-1.75 size-1.5 rounded-full shrink-0 transition-all duration-200
+                  className={`mt-1.75 size-1.5 rounded-full shrink-0 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200
                     ${isActive ? "bg-brand shadow-[0_0_6px_var(--color-brand)]" : "bg-line-hi group-hover:bg-ink-faint"}`}
                   aria-hidden
                 />
@@ -124,7 +124,7 @@ function AuthorBio({ post: p }: { post: BlogPost }) {
               className="size-8 flex items-center justify-center rounded-lg
                 border border-line text-ink-faint no-underline
                 hover:border-brand-border hover:text-brand hover:bg-brand-dim
-                transition-all duration-150">
+                transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-150">
               {icon}
             </a>
           ))}
@@ -138,7 +138,7 @@ function AuthorBio({ post: p }: { post: BlogPost }) {
 
 export function ArticleSidebar({ post }: { post: BlogPost }) {
   return (
-    <motion.aside
+    <m.aside
       variants={fadeUp(0.12)}
       initial="hidden"
       animate="visible"
@@ -151,6 +151,6 @@ export function ArticleSidebar({ post }: { post: BlogPost }) {
 
       {/* Author card */}
       <AuthorBio post={post} />
-    </motion.aside>
+    </m.aside>
   );
 }

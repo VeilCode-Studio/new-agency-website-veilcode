@@ -13,17 +13,17 @@ export const staggerChildren: Variants = {
 };
 
 export const fadeUp = (delay = 0): Variants => ({
-  hidden:  { opacity: 0, y: 24 },
+  hidden:  { opacity: 1, y: 0 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.25, delay, ease: [0.22, 1, 0.36, 1] },
   },
 });
 
 export const fadeIn = (delay = 0): Variants => ({
-  hidden:  { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5, delay } },
+  hidden:  { opacity: 1 },
+  visible: { opacity: 1, transition: { duration: 0.25, delay } },
 });
 
 export const stagger: Variants = {

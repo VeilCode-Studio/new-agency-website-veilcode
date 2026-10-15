@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { slideInLeft, overlayVariants } from "@/lib/motion";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { LogoMark, PrimaryButton, WordMark } from "./Primitives";
 import { NAV_LINKS } from "@/constants";
@@ -13,6 +11,7 @@ export function MobileDrawer({
   open: boolean;
   onClose: () => void;
 }) {
+  const panel = useRef<HTMLElement>(null);
   /* Lock scroll when drawer is open */
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -21,39 +20,47 @@ export function MobileDrawer({
 
   useEffect(() => {
     if (!open) return;
-
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const controls = () => Array.from(panel.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), [tabindex="0"]') ?? []).filter((element) => element.getClientRects().length > 0);
+    const frame = requestAnimationFrame(() => controls()[0]?.focus({ preventScroll: true }));
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") { event.preventDefault(); onClose(); }
+      if (event.key !== "Tab") return;
+      const elements = controls();
+      const first = elements[0];
+      const last = elements.at(-1);
+      if (event.shiftKey && (document.activeElement === first || !panel.current?.contains(document.activeElement))) {
+        event.preventDefault(); last?.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !panel.current?.contains(document.activeElement))) {
+        event.preventDefault(); first?.focus();
+      }
     };
 
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("keydown", onKeyDown);
+      previousFocus?.focus({ preventScroll: true });
+    };
   }, [open, onClose]);
 
   return (
-    <AnimatePresence>
+    <>
       {open && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <div
             key="backdrop"
-            variants={overlayVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
             onClick={onClose}
             className="fixed inset-0 z-40 bg-page/80 backdrop-blur-sm"
             aria-hidden
           />
 
           {/* Drawer panel */}
-          <motion.aside
+          <aside
+            ref={panel}
             key="drawer"
-            variants={slideInLeft}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed top-0 left-0 z-50 flex flex-col
+            className="drawer-enter fixed top-0 left-0 z-50 flex flex-col
               h-dvh w-80 max-w-[88vw] sm:w-90
               bg-surface border-r border-line
               shadow-[4px_0_40px_rgba(0,0,0,0.6)]"
@@ -73,7 +80,7 @@ export function MobileDrawer({
                 <button
                   onClick={onClose}
                   aria-label="Close menu"
-                  className="flex items-center justify-center size-8 rounded-md
+                  className="flex items-center justify-center size-11 rounded-md
                     border border-line text-ink-muted
                     hover:border-line-hi hover:text-ink
                     transition-colors duration-200 cursor-pointer
@@ -89,14 +96,11 @@ export function MobileDrawer({
 
             {/* Nav links */}
             <nav className="flex flex-col px-4 py-6 gap-1 flex-1 overflow-y-auto">
-              {NAV_LINKS.map(({ label, href }, i) => (
-                <motion.a
+              {NAV_LINKS.map(({ label, href }) => (
+                <a
                   key={label}
                   href={href}
                   onClick={onClose}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.06, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   className="flex items-center justify-between px-4 py-3.5 rounded-lg
                     font-sans text-base font-normal text-ink-muted
                     hover:text-ink hover:bg-surface-hi
@@ -106,31 +110,28 @@ export function MobileDrawer({
                   <span className="text-ink-faint transition-colors duration-150 group-hover:text-brand text-sm">
                     →
                   </span>
-                </motion.a>
+                </a>
               ))}
             </nav>
 
             {/* Drawer footer CTA */}
             <div className="px-6 py-6 border-t border-line shrink-0">
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.35 }}
+              <div
               >
-                <PrimaryButton
+                <PrimaryButton asChild
                   className="w-full justify-center py-3!"
                   onClick={onClose}
                 >
                   <Link href={"/start"}>Start a Project →</Link>
                 </PrimaryButton>
-              </motion.div>
+              </div>
               <p className="text-center font-mono text-[10px] tracking-widest uppercase text-ink-faint mt-4">
                 support@veilcode.studio
               </p>
             </div>
-          </motion.aside>
+          </aside>
         </>
       )}
-    </AnimatePresence>
+    </>
   );
 }

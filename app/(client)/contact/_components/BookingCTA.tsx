@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine, PrimaryButton, GhostButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { MeetingCard } from "./MeetingCard";
@@ -16,23 +16,23 @@ export function BookingCTA() {
   return (
     <section className="py-32 px-6 md:px-10 bg-surface border-t border-line">
       <div className="max-w-300 mx-auto">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>Book a Call</SectionTag>
             <AccentLine />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-20 gap-12">
 
             {/* Left — copy */}
             <div className="lg:w-100 shrink-0">
-              <motion.h2
+              <m.h2
                 variants={fadeUp(0.1)}
                 className="font-display text-[clamp(28px,3.5vw,46px)] font-extrabold
                   tracking-tight text-ink leading-[1.1] mb-5"
@@ -41,19 +41,19 @@ export function BookingCTA() {
                 <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                   Talk First?
                 </span>
-              </motion.h2>
+              </m.h2>
 
-              <motion.p
+              <m.p
                 variants={fadeUp(0.16)}
                 className="font-sans text-[15px] text-ink-muted leading-relaxed mb-8"
               >
                 Some projects need a conversation before they need a brief.
                 Pick the session type that fits your situation — all calls are
                 free, focused, and never a sales pitch.
-              </motion.p>
+              </m.p>
 
               {/* What to expect */}
-              <motion.div
+              <m.div
                 variants={fadeUp(0.22)}
                 className="bg-page rounded-xl border border-line p-6"
               >
@@ -80,13 +80,13 @@ export function BookingCTA() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Right — meeting type selector + booking */}
             <div className="flex-1">
               {/* Meeting type cards */}
-              <motion.div
+              <m.div
                 variants={stagger}
                 className="grid grid-cols-1 gap-4 mb-8"
               >
@@ -99,31 +99,31 @@ export function BookingCTA() {
                     onSelect={() => setSelected(i)}
                   />
                 ))}
-              </motion.div>
+              </m.div>
 
               {/* Book button */}
-              <motion.div
+              <m.div
                 variants={fadeUp(0.3)}
                 className="flex flex-wrap gap-4"
               >
-                <PrimaryButton className="text-[15px]! px-8! py-4!">
+                <PrimaryButton asChild className="text-[15px]! px-8! py-4!">
                   <Link href={"/start"}>Book a {MEETING_TYPES[selected].title} →</Link>
                 </PrimaryButton>
-                <GhostButton className="text-[15px]! px-8! py-4!">
+                <GhostButton asChild className="text-[15px]! px-8! py-4!">
                   <Link href={"#form-message"}>Send a Message Instead</Link>
                 </GhostButton>
-              </motion.div>
+              </m.div>
 
-              <motion.p
+              <m.p
                 variants={fadeUp(0.34)}
                 className="mt-4 font-sans text-xs text-ink-faint"
               >
                 Calls are conducted via Google Meet or Zoom. A calendar link will
                 be sent to your email after booking.
-              </motion.p>
+              </m.p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 import { FAQS } from "@/constants";
 import { fadeUp } from "@/lib/motion";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,7 @@ export function FaqItem({
   onToggle: () => void;
 }) {
   return (
-    <motion.div
+    <m.div
       variants={fadeUp(index * 0.05)}
       className={`border-b border-line last:border-b-0 py-3`}
     >
@@ -38,7 +39,7 @@ export function FaqItem({
         {/* +/− icon */}
         <span
           className={`shrink-0 size-7 rounded-md border flex items-center justify-center
-            transition-all duration-200 font-mono text-lg leading-none
+            transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 font-mono text-lg leading-none
             ${isOpen
               ? "border-brand-border bg-brand-dim text-brand"
               : "border-line bg-surface-hi text-ink-faint group-hover:border-line-hi group-hover:text-ink-muted"
@@ -51,7 +52,7 @@ export function FaqItem({
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             key="answer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -62,9 +63,9 @@ export function FaqItem({
             <p className="font-sans text-sm text-ink-muted leading-relaxed pb-6 pr-12">
               {faq.a}
             </p>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </m.div>
   );
 }

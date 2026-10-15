@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type ChangeEvent, type SyntheticEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 import { PrimaryButton } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { toast } from "sonner";
@@ -58,7 +59,7 @@ const TIMELINES = [
 const inputBase =
   "w-full bg-surface-hi border border-line rounded-lg px-4 py-3.5 \
   font-sans text-sm text-ink placeholder:text-ink-faint \
-  outline-none transition-all duration-200 \
+  outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 \
   focus:border-brand focus:shadow-[0_0_0_3px_var(--color-brand-dim)] \
   hover:border-line-hi";
 
@@ -91,7 +92,7 @@ function FieldError({ message }: { message?: string }) {
   return (
     <AnimatePresence>
       {message && (
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
@@ -100,7 +101,7 @@ function FieldError({ message }: { message?: string }) {
           role="alert"
         >
           {message}
-        </motion.p>
+        </m.p>
       )}
     </AnimatePresence>
   );
@@ -133,7 +134,7 @@ function PillSelector<T extends string>({
             type="button"
             onClick={() => onChange(opt)}
             className={`font-sans text-[13px] px-3.5 py-2 rounded-lg border
-              transition-all duration-150 cursor-pointer outline-none
+              transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-150 cursor-pointer outline-none
               focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
               focus-visible:ring-offset-page
               ${value === opt
@@ -167,7 +168,7 @@ function validate(data: FormData): FormErrors {
 
 function SuccessMessage({ onReset }: { onReset: () => void }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
@@ -176,7 +177,7 @@ function SuccessMessage({ onReset }: { onReset: () => void }) {
       <div className="size-16 rounded-full bg-brand-dim border border-brand-border
         flex items-center justify-center mb-6">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <motion.path
+          <m.path
             d="M5 13l4 4L19 7"
             stroke="var(--color-brand)"
             strokeWidth="2"
@@ -197,7 +198,7 @@ function SuccessMessage({ onReset }: { onReset: () => void }) {
       <PrimaryButton onClick={onReset} className="px-8 py-3">
         Send Another Message
       </PrimaryButton>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -266,14 +267,14 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
       className={standalone ? "w-full" : "lg:col-span-7"}
       id="form-message"
     >
-      <motion.div
+      <m.div
         variants={stagger}
         // initial="hidden"
         animate={inView ? "visible" : "hidden"}
         className="bg-surface border border-line rounded-2xl overflow-hidden"
       >
         {/* Form header */}
-        <motion.div
+        <m.div
           variants={fadeUp()}
           className="px-8 py-6 border-b border-line flex items-center gap-3"
         >
@@ -281,20 +282,20 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
           <span className="font-mono text-[11px] tracking-widest uppercase text-ink-muted">
             Project Enquiry Form
           </span>
-        </motion.div>
+        </m.div>
 
         <AnimatePresence mode="wait">
           {submitState === "success" ? (
             <SuccessMessage key="success" onReset={resetForm} />
           ) : (
-            <motion.form
+            <m.form
               key="form"
               onSubmit={handleSubmit}
               noValidate
               className="p-8 space-y-7"
             >
               {/* Row 1 — Name + Email */}
-              <motion.div
+              <m.div
                 variants={fadeUp(0.06)}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-5"
               >
@@ -326,10 +327,10 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                   />
                   <FieldError message={errors.email} />
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Row 2 — Company */}
-              <motion.div variants={fadeUp(0.10)}>
+              <m.div variants={fadeUp(0.10)}>
                 <Label htmlFor="service-group" required>
                   Which service are you interested in?
                 </Label>
@@ -340,10 +341,10 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                   onChange={handleServiceChange}
                   error={errors.service}
                 />
-              </motion.div>
+              </m.div>
 
               {/* Project context */}
-              <motion.div variants={fadeUp(0.14)}>
+              <m.div variants={fadeUp(0.14)}>
                 <Label htmlFor="message" required>Tell Us About Your Project</Label>
                 <textarea
                   id="message"
@@ -361,9 +362,9 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                     {formData.message.length} chars
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div variants={fadeUp(0.18)} className="border-t border-line pt-5">
+              <m.div variants={fadeUp(0.18)} className="border-t border-line pt-5">
                 <button type="button" onClick={() => setShowDetails((value) => !value)}
                   aria-expanded={showDetails} aria-controls="optional-project-details"
                   className="flex w-full items-center justify-between text-left font-sans text-sm font-medium
@@ -373,7 +374,7 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                 </button>
                 <AnimatePresence initial={false}>
                   {showDetails && (
-                    <motion.div id="optional-project-details" initial={{ height: 0, opacity: 0 }}
+                    <m.div id="optional-project-details" initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden">
                       <div className="space-y-6 pt-6">
@@ -394,13 +395,13 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                             onChange={(val) => setFormData((prev) => ({ ...prev, timeline: val }))} />
                         </div>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
 
               {/* Submit */}
-              <motion.div variants={fadeUp(0.22)}>
+              <m.div variants={fadeUp(0.22)}>
                 {submitState === "error" && (
                   <p className="mb-4 font-sans text-sm text-red-400 bg-red-500/10
                     border border-red-500/20 rounded-lg px-4 py-3">
@@ -441,11 +442,11 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                 <p className="mt-4 text-center font-sans text-[12px] text-ink-faint">
                   We respond within one business day. No spam, ever.
                 </p>
-              </motion.div>
-            </motion.form>
+              </m.div>
+            </m.form>
           )}
         </AnimatePresence>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

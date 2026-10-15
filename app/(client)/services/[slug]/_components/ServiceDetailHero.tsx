@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
 import type { Service } from "@/db/schema";
@@ -25,27 +25,27 @@ export function ServiceDetailHero({ service }: { service: Service }) {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-205">
-          <motion.div variants={fadeUp(0)}>
+        <m.div variants={stagger} initial="hidden" animate="visible" className="max-w-205">
+          <m.div variants={fadeUp(0)}>
             <SectionTag>{service.tagline}</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
           >
             {service.h1 || service.title}
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted leading-relaxed max-w-145 mb-10"
           >
             {service.intro}
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={fadeUp(0.22)} className="flex flex-wrap gap-2.5">
+          <m.div variants={fadeUp(0.22)} className="flex flex-wrap gap-2.5">
             {service.supportingCapabilities.slice(0, 4).map((item) => (
               <span
                 key={item}
@@ -54,9 +54,9 @@ export function ServiceDetailHero({ service }: { service: Service }) {
                 {item}
               </span>
             ))}
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
+          <m.div variants={fadeUp(0.28)} className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/start"
               className="rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
@@ -69,8 +69,8 @@ export function ServiceDetailHero({ service }: { service: Service }) {
             >
               Explore services
             </Link>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       <div

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, useReveal } from "@/lib/motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { formatDate, type BlogPost } from "@/constants/blog";
@@ -48,7 +48,8 @@ function FeaturedVisual({ post: p }: { post: BlogPost }) {
           alt={p.heroAlt}
           className="absolute inset-0 w-full h-full object-cover"
           fill
-          priority
+          loading="lazy"
+          sizes="(min-width: 1024px) 50vw, 100vw"
         />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
@@ -93,7 +94,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
   return (
     <section className="w-full min-w-0 max-w-full overflow-x-clip border-b border-line px-5 pb-8 sm:px-6 md:px-10">
       <div className="mx-auto w-full min-w-0 max-w-300">
-        <motion.div
+        <m.div
           ref={ref}
           variants={fadeUp()}
           initial="hidden"
@@ -110,13 +111,13 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className={`group relative grid min-w-0 grid-cols-1 lg:grid-cols-2
-              rounded-2xl overflow-hidden border transition-all duration-300
+              rounded-2xl overflow-hidden border transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
               border-line hover:${c.border.replace("border-", "border-")}`}
           >
             {/* Top accent bar — slides in on hover */}
             <div className={`absolute top-0 inset-x-0 h-0.5 z-10
               bg-linear-to-r from-current via-current to-transparent
-              w-0 group-hover:w-full transition-all duration-500 ${c.accent}`} />
+              w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500 ${c.accent}`} />
 
             {/* Visual panel */}
             <div className="lg:order-2 aspect-11/6 lg:aspect-auto">
@@ -178,7 +179,7 @@ export function FeaturedPost({ post: p }: { post: BlogPost }) {
               </a>
             </div>
           </article>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

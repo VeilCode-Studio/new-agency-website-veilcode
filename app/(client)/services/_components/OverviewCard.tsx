@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { fadeUp } from "@/lib/motion";
 import type { Service } from "@/db/schema";
@@ -17,14 +17,14 @@ export function OverviewCard({
   const href = card.seoEnabled && card.slug ? `/services/${card.slug}` : `#${card.id}`;
 
   return (
-    <motion.a
+    <m.a
       href={href}
       variants={fadeUp(index * 0.07)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative flex flex-col rounded-xl p-8 bg-surface border border-line
         overflow-hidden no-underline cursor-pointer
-        transition-all duration-300 hover:bg-surface-hi
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 hover:bg-surface-hi
         ${c.hoverBorder} ${c.hoverShadow}`}
     >
       {/* Number watermark */}
@@ -77,6 +77,6 @@ export function OverviewCard({
         <span>View full details</span>
         <AnimatedArrow hovered={hovered} />
       </div>
-    </motion.a>
+    </m.a>
   );
 }

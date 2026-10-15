@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, useReveal } from "@/lib/motion";
 
 export function CaseStudyTestimonial({ project: p }: { project: Project }) {
@@ -15,7 +15,7 @@ export function CaseStudyTestimonial({ project: p }: { project: Project }) {
     <section className="py-24 px-6 md:px-10">
       <div className="max-w-225 mx-auto">
         <div ref={ref} className="max-w-225 mx-auto">
-        <motion.blockquote
+        <m.blockquote
           variants={fadeUp()}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -64,7 +64,7 @@ export function CaseStudyTestimonial({ project: p }: { project: Project }) {
               </div>
             </div>
           </div>
-        </motion.blockquote>
+        </m.blockquote>
         </div>
       </div>
     </section>

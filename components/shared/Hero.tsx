@@ -2,15 +2,13 @@ import Link from "next/link";
 import { PrimaryButton, GhostButton, GridBg, GlowOrb, AccentLine } from "@/components/extras/Primitives";
 import { ServiceVisualField } from "@/components/extras/ServiceVisualField";
 import { TYPEWRITER_WORDS } from "@/constants";
-import { HeroParallax, HeroScrollCue, HeroStats, HeroTypewriter } from "./HeroMotion";
+import { HeroContent, HeroScrollCue, HeroStats, HeroTypewriter } from "./HeroMotion";
 
-// Server component: the H1 and intro paragraph are static, server-rendered
-// HTML. Motion (parallax, typewriter, stats, scroll cue) lives in client
-// islands from ./HeroMotion.
+// The hero remains readable before JavaScript or optional motion features load.
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pb-16">
+    <section data-ambient className="relative min-h-screen flex items-center overflow-hidden pb-16">
 
       {/* Grid */}
       <GridBg />
@@ -29,7 +27,7 @@ export function Hero() {
       />
 
       {/* Parallax wrapper */}
-      <HeroParallax className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
+      <HeroContent className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
         {/* Available badge */}
         <div className="inline-flex items-center gap-2.5
           bg-brand-dim border border-brand-border
@@ -59,17 +57,17 @@ export function Hero() {
         <HeroTypewriter words={TYPEWRITER_WORDS} />
 
         {/* CTAs */}
-        <PrimaryButton className="text-[15px]! px-8! py-4!">
-          <Link href="/start">Start a Project</Link>
+        <PrimaryButton asChild className="text-[15px]! px-8! py-4!">
+          <Link href="/start" prefetch={false}>Start a Project</Link>
         </PrimaryButton>
-        <GhostButton className="text-[15px]! px-8! py-4! ml-2">
-          <Link href="/work">See our work</Link>
+        <GhostButton asChild className="text-[15px]! px-8! py-4! ml-2">
+          <Link href="/work" prefetch={false}>See our work</Link>
         </GhostButton>
 
         {/* Stats */}
         <AccentLine width={60} />
         <HeroStats />
-      </HeroParallax>
+      </HeroContent>
 
       {/* Scroll indicator */}
       <HeroScrollCue />

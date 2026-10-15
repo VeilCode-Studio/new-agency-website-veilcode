@@ -4,9 +4,7 @@ import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { AnimatedArrow, AccentLine, GhostButton, SectionTag } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { formatDate } from "@/constants/blog";
 import type { BlogGridPost } from "@/lib/blog/grid";
 import { cn } from "@/lib/utils";
@@ -96,15 +94,14 @@ function BlogGridFilterBar({
                 aria-selected={isActive}
                 onClick={() => setCategory(category)}
                 className={cn(
-                  "relative inline-flex max-w-full cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 font-sans text-[13px] font-medium outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand",
+                  "relative inline-flex max-w-full cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 font-sans text-[13px] font-medium outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 focus-visible:ring-2 focus-visible:ring-brand",
                   isActive
                     ? styles.active
                     : "border-line bg-surface text-ink-faint hover:border-line-hi hover:text-ink-muted",
                 )}
               >
                 {isActive && (
-                  <motion.span
-                    layoutId="blog-filter-dot"
+                  <span
                     className={cn("size-1.5 rounded-full", styles.dot)}
                     aria-hidden
                   />
@@ -142,7 +139,7 @@ function BlogGridFilterBar({
                   type="button"
                   onClick={() => toggleTag(tag)}
                   className={cn(
-                    "max-w-full cursor-pointer rounded border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest outline-none transition-all duration-150 focus-visible:ring-2 focus-visible:ring-brand",
+                    "max-w-full cursor-pointer rounded border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-150 focus-visible:ring-2 focus-visible:ring-brand",
                     isActive
                       ? "border-brand-border bg-brand-dim text-brand"
                       : "border-line bg-surface text-ink-faint hover:border-line-hi hover:text-ink-muted",
@@ -170,11 +167,8 @@ function EmptyState({
   onReset: () => void;
 }) {
   return (
-    <motion.div
+    <div
       key="empty"
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 16 }}
       className="col-span-full flex flex-col items-center gap-5 py-24 text-center"
     >
       <div className="flex size-16 items-center justify-center rounded-2xl border border-line bg-surface">
@@ -191,11 +185,11 @@ function EmptyState({
       <button
         type="button"
         onClick={onReset}
-        className="cursor-pointer rounded-lg border border-brand-border bg-brand-dim px-5 py-2.5 font-sans text-sm text-brand transition-all duration-200 hover:bg-brand hover:text-page"
+        className="cursor-pointer rounded-lg border border-brand-border bg-brand-dim px-5 py-2.5 font-sans text-sm text-brand transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-brand hover:text-page"
       >
         Clear filters
       </button>
-    </motion.div>
+    </div>
   );
 }
 
@@ -258,21 +252,20 @@ function CardVisual({ post }: { post: BlogGridPost }) {
   );
 }
 
-function BlogCard({ post, index = 0 }: { post: BlogGridPost; index?: number }) {
+function BlogCard({ post }: { post: BlogGridPost }) {
   const [hovered, setHovered] = useState(false);
   const { classes } = post;
 
   return (
-    <motion.article
-      variants={fadeUp(index * 0.06)}
+    <article
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "group flex min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface transition-all duration-300 hover:bg-surface-hi",
+        "group flex min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 hover:bg-surface-hi",
         classes.border.replace("border-", "hover:border-"),
       )}
     >
-      <div className={cn("h-0.5 w-0 bg-linear-to-r from-current to-transparent transition-all duration-500 group-hover:w-full", classes.accent)} />
+      <div className={cn("h-0.5 w-full origin-left scale-x-0 bg-linear-to-r from-current to-transparent transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500 group-hover:scale-x-100", classes.accent)} />
 
       <CardVisual post={post} />
 
@@ -342,7 +335,7 @@ function BlogCard({ post, index = 0 }: { post: BlogGridPost; index?: number }) {
           </Link>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
@@ -360,7 +353,6 @@ export function BlogGrid({
   emptyDescription = "Try a different category or clear the tag filter.",
   className,
 }: BlogGridProps) {
-  const [ref, inView] = useReveal();
   const [filter, setFilter] = useState<BlogFilterState>({ category: "All", tag: "" });
   const derivedCategories = useMemo(() => categories ?? uniqueValues(posts.map((post) => post.category)), [categories, posts]);
   const derivedTags = useMemo(() => tags ?? uniqueValues(posts.flatMap((post) => post.tags)), [tags, posts]);
@@ -383,47 +375,41 @@ export function BlogGrid({
     <section className={cn("w-full min-w-0 max-w-full overflow-x-clip px-6 py-32 md:px-10", className)}>
       <div className="mx-auto w-full max-w-300">
         {(title || description || ctaHref) && (
-          <motion.div
-            ref={ref}
-            variants={stagger}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+          <div
             className="mb-16"
           >
-            <motion.div variants={fadeUp()}>
+            <div>
               <SectionTag>{eyebrow}</SectionTag>
               <AccentLine />
-            </motion.div>
+            </div>
 
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
                 {title && (
-                  <motion.h2
-                    variants={fadeUp(0.1)}
+                  <h2
                     className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold leading-[1.1] tracking-tight text-ink"
                   >
                     {title}
-                  </motion.h2>
+                  </h2>
                 )}
                 {description && (
-                  <motion.p
-                    variants={fadeUp(0.16)}
+                  <p
                     className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-ink-muted"
                   >
                     {description}
-                  </motion.p>
+                  </p>
                 )}
               </div>
 
               {ctaHref && (
-                <motion.div variants={fadeUp(0.18)} className="shrink-0">
-                  <GhostButton>
+                <div className="shrink-0">
+                  <GhostButton asChild>
                     <Link href={ctaHref}>{ctaLabel}</Link>
                   </GhostButton>
-                </motion.div>
+                </div>
               )}
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
 
@@ -444,24 +430,20 @@ export function BlogGrid({
           showFilters && "px-5 pt-14 sm:px-6 md:px-10",
         )}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
+        <>
+          <div
             key={`${filter.category}-${filter.tag}-${showFilters ? "filtered" : "static"}`}
-            variants={stagger}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0, transition: { duration: 0.15 } }}
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
           >
             {filteredPosts.length > 0 ? (
-              filteredPosts.map((post, index) => (
-                <BlogCard key={post.slug} post={post} index={index} />
+              filteredPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
               ))
             ) : (
               <EmptyState title={emptyTitle} description={emptyDescription} onReset={reset} />
             )}
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </>
       </div>
     </section>
   );

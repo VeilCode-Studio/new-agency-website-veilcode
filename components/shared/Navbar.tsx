@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { LogoMark, WordMark } from "@/components/extras/Primitives";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -26,9 +25,9 @@ function DesktopNavLink({ label, href }: { label: string; href: string }) {
     >
       {label}
       <span
-        className="absolute -bottom-0.5 left-0 h-px w-0 bg-brand
-          transition-all duration-250 group-hover:w-full group-focus-visible:w-full"
-        style={{ width: active ? "100%" : undefined }}
+        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-brand
+          transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-250 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+        style={{ transform: active ? "scaleX(1)" : undefined }}
       />
     </Link>
   );
@@ -50,7 +49,7 @@ function HamburgerButton({
       aria-expanded={open}
       aria-controls="mobile-navigation"
       className="relative flex flex-col justify-center items-center
-        size-10 rounded-md border border-line bg-transparent
+        size-11 rounded-md border border-line bg-transparent
         cursor-pointer transition-colors duration-200
         hover:border-line-hi hover:bg-surface-hi
         focus-visible:outline-none focus-visible:ring-2
@@ -59,17 +58,17 @@ function HamburgerButton({
     >
       <span
         className={`block h-[1.5px] w-5 bg-ink-muted rounded-full
-          transition-all duration-300 origin-center
+          transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 origin-center
           ${open ? "translate-y-0.75 rotate-45" : "-translate-y-0.75"}`}
       />
       <span
         className={`block h-[1.5px] w-5 bg-ink-muted rounded-full
-          transition-all duration-300
+          transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
           ${open ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"}`}
       />
       <span
         className={`block h-[1.5px] w-5 bg-ink-muted rounded-full
-          transition-all duration-300 origin-center
+          transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 origin-center
           ${open ? "-translate-y-0.75 -rotate-45" : "translate-y-0.75"}`}
       />
     </Button>
@@ -97,12 +96,9 @@ export function Nav() {
   
   return (
     <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0,  opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      <header
         className={`fixed top-0 inset-x-0 z-40
-          h-16 sm:h-18 transition-all duration-400
+          h-16 sm:h-18 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-400
           ${
             scrolled
               ? "bg-page/90 backdrop-blur-xl border-b border-line"
@@ -112,7 +108,7 @@ export function Nav() {
       >
         <div className="mx-auto flex h-full w-full max-w-350 items-center justify-between px-4 sm:px-6 md:px-10">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
+        <Link href="/" prefetch={false} className="flex items-center gap-2.5 no-underline shrink-0">
           <LogoMark size={32} />
           <WordMark />
         </Link>
@@ -134,7 +130,7 @@ export function Nav() {
               border border-brand text-brand no-underline
               hover:bg-brand hover:text-page
               hover:shadow-[0_0_20px_var(--color-brand-glow)]
-              transition-all duration-200">
+              transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200">
             Start a Project →
           </Link>
 
@@ -147,7 +143,7 @@ export function Nav() {
           </div>
         </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile drawer */}
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />

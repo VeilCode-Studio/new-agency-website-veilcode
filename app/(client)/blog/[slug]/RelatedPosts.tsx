@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { AnimatedArrow } from "@/components/extras/Primitives";
 import { formatDate, type BlogPost } from "@/constants/blog";
@@ -13,16 +13,16 @@ function RelatedCard({ post: p, index }: { post: BlogPost; index: number }) {
   const { classes: c } = p;
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUp(index * 0.1)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative flex min-w-0 flex-col overflow-hidden rounded-xl
-        border border-line bg-surface transition-all duration-300
+        border border-line bg-surface transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi ${c.border.replace("border-", "hover:border-")}`}
     >
       {/* Top accent bar */}
-      <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500
+      <div className={`h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500
         bg-linear-to-r from-current to-transparent ${c.accent}`} />
 
       {/* Hero placeholder */}
@@ -76,7 +76,7 @@ function RelatedCard({ post: p, index }: { post: BlogPost; index: number }) {
           <AnimatedArrow hovered={hovered} />
         </a>
       </div>
-    </motion.article>
+    </m.article>
   );
 }
 
@@ -89,13 +89,13 @@ export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
   return (
     <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-24 sm:px-6 md:px-10 xl:px-20">
       <div className="mx-auto w-full min-w-0 max-w-300">
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <motion.div variants={fadeUp()} className="mb-10">
+          <m.div variants={fadeUp()} className="mb-10">
             <p className="font-mono text-[11px] tracking-widest uppercase
               text-ink-faint mb-2">
               Continue Reading
@@ -107,14 +107,14 @@ export function RelatedPosts({ posts }: { posts: BlogPost[] }) {
                 Articles
               </span>
             </h2>
-          </motion.div>
+          </m.div>
 
           <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2">
             {posts.map((p, i) => (
               <RelatedCard key={p.slug} post={p} index={i} />
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

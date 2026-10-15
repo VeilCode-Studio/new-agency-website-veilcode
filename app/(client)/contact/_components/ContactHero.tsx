@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import {
   GridBg,
   GlowOrb,
@@ -31,20 +31,20 @@ export function ContactHero() {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-20">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
           className="max-w-190"
         >
           {/* Tag */}
-          <motion.div variants={fadeUp(0)}>
+          <m.div variants={fadeUp(0)}>
             <SectionTag>Get In Touch</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
           {/* Headline */}
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
@@ -53,10 +53,10 @@ export function ContactHero() {
             <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
               Worth Talking About.
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* Sub */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-140 mb-12"
@@ -64,10 +64,10 @@ export function ContactHero() {
             Whether you have a fully scoped brief or just an idea on a napkin —
             we&apos;re happy to have the conversation. Tell us about your project and
             we&apos;ll come back to you within one business day.
-          </motion.p>
+          </m.p>
 
           {/* Quick stats row */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.24)}
             className="flex flex-wrap gap-8"
           >
@@ -82,8 +82,8 @@ export function ContactHero() {
                 </span>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Bottom fade */}

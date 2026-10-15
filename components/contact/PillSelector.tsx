@@ -1,6 +1,7 @@
 // components/contact/PillSelector.tsx
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 
 interface PillSelectorProps<T extends string> {
   id: string;
@@ -29,7 +30,7 @@ export function PillSelector<T extends string>({
             key={opt}
             type="button"
             onClick={() => onChange(opt as T)}
-            className={`font-sans text-sm px-4 py-2.5 rounded-lg border transition-all
+            className={`font-sans text-sm px-4 py-2.5 rounded-lg border transition-[color,background-color,border-color,box-shadow,transform,opacity]
               focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
               focus-visible:ring-offset-page outline-none cursor-pointer
               ${value === opt
@@ -43,7 +44,7 @@ export function PillSelector<T extends string>({
       </div>
       <AnimatePresence>
         {error && (
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
@@ -51,7 +52,7 @@ export function PillSelector<T extends string>({
             role="alert"
           >
             {error}
-          </motion.p>
+          </m.p>
         )}
       </AnimatePresence>
     </div>

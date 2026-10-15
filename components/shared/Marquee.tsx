@@ -20,6 +20,7 @@ export function Marquee() {
 
   return (
     <div
+      data-ambient
       aria-hidden
       className="border-y border-line bg-surface overflow-hidden py-4"
     >

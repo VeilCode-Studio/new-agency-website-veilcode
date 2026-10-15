@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import * as m from "framer-motion/m";
 import { Clock, MapPin, Users } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -23,13 +23,13 @@ const AvailableCareers: React.FC<AvailableCareersProps> = ({ openings }) => {
 
                 <div className="grid gap-6">
                     {openings.map((job, index) => (
-                        <motion.div
+                        <m.div
                             key={job.id}
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Card className="group bg-surface border-line hover:border-brand-border transition-all duration-300 overflow-hidden">
+                            <Card className="group bg-surface border-line hover:border-brand-border transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300 overflow-hidden">
                                 <CardHeader>
                                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                                         <div className='space-y-6'>
@@ -93,7 +93,7 @@ const AvailableCareers: React.FC<AvailableCareersProps> = ({ openings }) => {
                                     </div>
                                 </CardContent>
                             </Card>
-                        </motion.div>
+                        </m.div>
                     ))}
                 </div>
             </div>

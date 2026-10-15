@@ -1,34 +1,20 @@
-import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { AnimatedArrow } from "./Primitives";
-import { fadeUp, useReveal } from "@/lib/motion";
 import type { Service } from "@/db/schema";
 
 export function ServiceCard({
   service,
-  index,
 }: {
   service: Service;
-  index: number;
 }) {
-  const [hovered, setHovered] = useState(false);
-  const [ref, inView] = useReveal();
 
   const c = service.cardClasses; // shorthand for classes from DB
   const href = service.seoEnabled && service.slug ? `/services/${service.slug}` : "/services";
 
   return (
-    <motion.article
-      ref={ref}
-      variants={fadeUp(index * 0.08)}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative rounded-xl p-9 cursor-pointer overflow-hidden
+    <article
+      className={`group relative rounded-xl p-9 cursor-pointer overflow-hidden
         bg-surface border border-line
-        transition-all duration-300
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi
         ${c.hoverBorder}
         ${c.hoverShadow}`}
@@ -37,9 +23,9 @@ export function ServiceCard({
       <div
         aria-hidden
         className={`absolute top-0 right-0 pointer-events-none
-          transition-all duration-400 rounded-bl-full
+          transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-400 rounded-bl-full
           ${c.glow}
-          ${hovered ? "w-36 h-36 opacity-100" : "w-16 h-16 opacity-0"}`}
+          w-36 h-36 opacity-0 group-hover:opacity-100`}
       />
 
       {/* Icon */}
@@ -74,8 +60,8 @@ export function ServiceCard({
       {/* Link */}
       <Link href={href} className={`flex items-center gap-1.5 text-[13px] font-medium font-sans ${c.link}`}>
         <span>Explore service</span>
-        <AnimatedArrow hovered={hovered} />
+        <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
       </Link>
-    </motion.article>
+    </article>
   );
 }

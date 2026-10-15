@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import {
   type FilterKey,
   type FilterTab,
@@ -43,7 +43,7 @@ export function WorkFilters({ active, onChange, projects }: Props) {
                 onClick={() => onChange(tab.key)}
                 className={`relative inline-flex items-center gap-2
                   font-sans text-[13px] font-medium px-4 py-2 rounded-lg border
-                  cursor-pointer outline-none transition-all duration-200
+                  cursor-pointer outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200
                   focus-visible:ring-2 focus-visible:ring-brand
                   focus-visible:ring-offset-2 focus-visible:ring-offset-page
                   ${
@@ -53,8 +53,7 @@ export function WorkFilters({ active, onChange, projects }: Props) {
                   }`}
               >
                 {isActive && (
-                  <motion.span
-                    layoutId="filter-dot"
+                  <m.span
                     className={`size-1.5 rounded-full shrink-0
                       ${tab.classes.dot} ${tab.classes.dotGlow}`}
                   />

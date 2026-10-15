@@ -1,0 +1,155 @@
+{
+  "base": "http://localhost:3100",
+  "date": "2026-10-15T05:48:14.690Z",
+  "themes": {
+    "light": [],
+    "dark": [],
+    "midnight": [],
+    "linen": []
+  },
+  "routes": [
+    {
+      "path": "/services",
+      "status": 200,
+      "h1": "Every Tool You Needto Win Digitally.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/work",
+      "status": 200,
+      "h1": "Work That Moves the Needle.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "h1": "Ideas Worth Building On.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "h1": "We Don't Just Build Products. We Build Futures.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/careers",
+      "status": 200,
+      "h1": "Build the Future.With Us.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "h1": "Let's Build Something Worth Talking About.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/start",
+      "status": 200,
+      "h1": "Tell us what you need.",
+      "nestedControls": 0
+    },
+    {
+      "path": "/locations/uganda",
+      "status": 200,
+      "h1": "Kampala's digital product agency for businesses built to grow",
+      "nestedControls": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "h1": "Privacy Policy",
+      "nestedControls": 0
+    },
+    {
+      "path": "/not-a-real-page",
+      "status": 404,
+      "h1": "Page Not Found",
+      "nestedControls": 0
+    },
+    {
+      "path": "/work/not-a-real-project",
+      "status": 404,
+      "h1": "Page Not Found",
+      "nestedControls": 0
+    },
+    {
+      "path": "/services/web-solutions",
+      "status": 200,
+      "h1": "Web solutions for ambitious businesses",
+      "nestedControls": 0
+    },
+    {
+      "path": "/services/mobile-applications",
+      "status": 200,
+      "h1": "Mobile applications built for real users and real operations",
+      "nestedControls": 0
+    },
+    {
+      "path": "/services/ai-automation",
+      "status": 200,
+      "h1": "AI automation systems for teams ready to reduce manual work",
+      "nestedControls": 0
+    },
+    {
+      "path": "/work/bienvenidos-apartments",
+      "status": 200,
+      "h1": "Bienvenidos Apartments Platform",
+      "nestedControls": 0
+    },
+    {
+      "path": "/work/reachflow-lead-tracking-crm",
+      "status": 200,
+      "h1": "ReachFlow Lead Tracking CRM",
+      "nestedControls": 0
+    },
+    {
+      "path": "/work/dreamhomes-property-management-solution",
+      "status": 200,
+      "h1": "DreamHomes Property Management Solution",
+      "nestedControls": 0
+    },
+    {
+      "path": "/blog/seo-thinking-for-business-websites",
+      "status": 200,
+      "h1": "Why Is My Business Website Not Ranking on Google? A Practical SEO Guide",
+      "nestedControls": 0
+    },
+    {
+      "path": "/blog/affiliate-landing-page-generator",
+      "status": 200,
+      "h1": "Why Affiliate Marketers Need Landing Pages Instead of Raw Affiliate Links",
+      "nestedControls": 0
+    },
+    {
+      "path": "/blog/how-do-i-choose-the-right-web-development-agency-for-my-business",
+      "status": 200,
+      "h1": "How Do I Choose the Right Web Development Agency for My Business?",
+      "nestedControls": 0
+    }
+  ],
+  "errors": [],
+  "network": {
+    "initialScriptCount": 18,
+    "newScriptsOnChatOpen": [
+      "http://localhost:3100/_next/static/chunks/1215.3fadf8a897dc5b99.js"
+    ],
+    "facebookRequests": []
+  },
+  "slowPanel": "Accessible loading feedback shown during a delayed panel download",
+  "clientNavigation": "Chat draft survives static/animated navigation and hidden project-form routes",
+  "reducedMotionActiveAnimations": 0,
+  "backToTop": "Native anchor scrolls to the page top without route prefetching",
+  "noJavaScript": "Homepage heading, service links and CTAs remain present",
+  "deferredFeaturesFallback": {
+    "headingVisible": true,
+    "serviceHeadingVisible": true,
+    "blockedChunks": 2,
+    "menuUsable": true
+  },
+  "disabledChatbot": "No launcher or panel chunk",
+  "failedChatbot": "Failed panel download offers the project form and can be dismissed",
+  "newsletter": "Mocked duplicate and success responses; optional HTTP client loads on submission",
+  "robots": "Three complete 200 text/plain responses"
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import type { BlogPost } from "@/constants/blog";
 
 /* ─── SHARE ICONS ─────────────────────────────────────────────────────────── */
@@ -61,7 +61,7 @@ function ShareBtn({
       aria-label={label}
       title={label}
       className={`group size-10 flex items-center justify-center rounded-xl
-        border cursor-pointer outline-none transition-all duration-200
+        border cursor-pointer outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
         focus-visible:ring-offset-page
         ${active
@@ -105,7 +105,7 @@ export function SocialShare({ post }: { post: BlogPost }) {
     <>
       {/* ── Desktop: floating left rail ─────────────────────────────────── */}
       <div className="hidden xl:block absolute -left-16 top-0 bottom-0 z-20">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.4 }}
@@ -122,7 +122,7 @@ export function SocialShare({ post }: { post: BlogPost }) {
             {copied ? <CheckIcon /> : <CopyLinkIcon />}
           </ShareBtn>
           <div className="h-12 w-px bg-linear-to-t from-transparent to-line" />
-        </motion.div>
+        </m.div>
       </div>
 
       {/* ── Mobile / tablet: inline strip below hero ────────────────────── */}

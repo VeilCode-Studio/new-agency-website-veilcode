@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import {
   GridBg,
   GlowOrb,
@@ -51,18 +51,18 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
       />
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-300 px-5 pt-36 pb-20 sm:px-6 md:px-10">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
           className="max-w-190 min-w-0"
         >
-          <motion.div variants={fadeUp(0)}>
+          <m.div variants={fadeUp(0)}>
             <SectionTag>The VeilCode Blog</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(40px,6.5vw,80px)] text-ink mb-6 break-words"
@@ -71,18 +71,18 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
             <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
               Building On.
             </span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-140 mb-12"
           >
             Engineering deep dives, design thinking, and practical AI written by
             Frank Tamale, founder of VeilCode Studio.
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={fadeUp(0.24)} className="flex flex-wrap gap-10">
+          <m.div variants={fadeUp(0.24)} className="flex flex-wrap gap-10">
             {statItems.map(({ value, label }) => (
               <div key={label} className="flex flex-col gap-1">
                 <span
@@ -96,8 +96,8 @@ export function BlogHero({ stats }: { stats: BlogHeroStats }) {
                 </span>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       <div

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 import { PrimaryButton } from "@/components/extras/Primitives";
 import { stagger, useReveal } from "@/lib/motion";
 import { toast } from "sonner";
@@ -75,7 +76,7 @@ export function ContactFormVariant() {
 
   return (
     <div ref={ref} className="lg:col-span-7" id="form-message">
-      <motion.div
+      <m.div
         variants={stagger}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -87,7 +88,7 @@ export function ContactFormVariant() {
           {submitState === "success" ? (
             <SuccessMessage key="success" />
           ) : (
-            <motion.form
+            <m.form
               key="form"
               onSubmit={handleSubmit}
               noValidate
@@ -222,10 +223,10 @@ export function ContactFormVariant() {
                   We respond within one business day. No spam, ever.
                 </p>
               </div>
-            </motion.form>
+            </m.form>
           )}
         </AnimatePresence>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

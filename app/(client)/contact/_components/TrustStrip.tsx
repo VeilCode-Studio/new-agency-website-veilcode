@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 
 
@@ -16,7 +16,7 @@ export function TrustStrip() {
       ref={ref}
       className="border-y border-line bg-surface py-8 px-6 md:px-10 overflow-hidden"
     >
-      <motion.div
+      <m.div
         variants={stagger}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -24,7 +24,7 @@ export function TrustStrip() {
           flex flex-wrap justify-center items-center gap-8"
       >
         {TRUST_ITEMS.map(({ value, label }, i) => (
-          <motion.div
+          <m.div
             key={label}
             variants={fadeUp(i * 0.06)}
             className="flex flex-col items-center gap-1 text-center"
@@ -36,9 +36,9 @@ export function TrustStrip() {
             <span className="font-sans text-xs text-ink-muted tracking-wide capitalize">
               {label}
             </span>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 }

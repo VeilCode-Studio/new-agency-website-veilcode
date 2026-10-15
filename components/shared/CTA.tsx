@@ -1,21 +1,13 @@
-"use client";
 
-import { motion } from "framer-motion";
 import { SectionTag, AccentLine, PrimaryButton } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import Link from "next/link";
 
 export function CTA() {
-  const [ref, inView] = useReveal();
 
   return (
     <section className="px-6 md:px-10 py-24">
       <div className="max-w-300 mx-auto">
-        <motion.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+        <div
           className="relative overflow-hidden rounded-[20px]
             bg-surface border border-line
             px-8 md:px-16 py-20 text-center"
@@ -41,13 +33,12 @@ export function CTA() {
 
           {/* Content */}
           <div className="relative z-10">
-            <motion.div variants={fadeUp()} className="flex justify-center">
+            <div className="flex justify-center">
               <SectionTag>Ready to Build?</SectionTag>
-            </motion.div>
+            </div>
             <AccentLine width={32} />
 
-            <motion.h2
-              variants={fadeUp(0.1)}
+            <h2
               className="font-display text-[clamp(30px,4vw,58px)] font-extrabold
                 tracking-tight text-ink leading-[1.05] mb-5"
             >
@@ -55,30 +46,28 @@ export function CTA() {
               <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
                 Extraordinary Together
               </span>
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              variants={fadeUp(0.18)}
+            <p
               className="font-sans text-[16px] text-ink-muted max-w-120
                 mx-auto leading-relaxed mb-10"
             >
               Whether you need a full product build, an analytics overhaul, or
               intelligent automation — we&apos;re ready to move fast.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={fadeUp(0.28)}
+            <div
               className="flex flex-wrap justify-center gap-4"
             >
-              <PrimaryButton className="text-[15px]! px-9! py-4!">
+              <PrimaryButton asChild className="text-[15px]! px-9! py-4!">
                 <Link href={"/start"}>Book a Discovery Call →</Link>
               </PrimaryButton>
-              {/* <PrimaryButton className="text-[15px]! px-9! py-4!">
+              {/* <PrimaryButton asChild className="text-[15px]! px-9! py-4!">
                 <Link href={"/services/#pricing"}>View Pricing</Link>
               </PrimaryButton> */}
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

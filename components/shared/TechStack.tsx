@@ -1,7 +1,4 @@
-"use client";
 
-import { motion } from "framer-motion";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { TechBadge } from "../extras/TechBadge";
 
 /* ─── DATA ────────────────────────────────────────────────────────────────── */
@@ -15,34 +12,27 @@ const STACK = [
 
 
 export function TechStack() {
-  const [ref, inView] = useReveal();
 
   return (
     <section className="py-20 px-6 md:px-10 border-y border-line">
       <div className="max-w-300 mx-auto">
-        <motion.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+        <div
         >
-          <motion.p
-            variants={fadeUp()}
+          <p
             className="font-mono text-[11px] tracking-[0.14em] uppercase
               text-ink-faint text-center mb-10"
           >
             Our Technology Stack
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={stagger}
+          <div
             className="flex flex-wrap justify-center gap-3"
           >
-            {STACK.map((label, i) => (
-              <TechBadge key={label} label={label} delay={i * 0.03} />
+            {STACK.map((label) => (
+              <TechBadge key={label} label={label} />
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

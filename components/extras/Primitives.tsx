@@ -1,7 +1,5 @@
-"use client";
-
-import { type ReactNode, type ButtonHTMLAttributes } from "react";
-import { motion } from "framer-motion";
+import { cloneElement, isValidElement, type ReactElement, type ReactNode, type ButtonHTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
 
 // LOGO MARK
 
@@ -71,56 +69,30 @@ export function SectionTag({ children }: { children: ReactNode }) {
 
 type BtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
+  asChild?: boolean;
 };
 
-export function PrimaryButton({ children, className = "", ...props }: BtnProps) {
-  return (
-    <button
-      {...props}
-      className={`group inline-flex items-center gap-2 px-7 py-3.5 rounded-md
-        font-sans text-sm font-medium tracking-wide cursor-pointer
-        border border-brand text-brand bg-transparent
-        transition-all duration-200 outline-none
-        hover:bg-brand hover:text-page hover:shadow-[0_0_24px_var(--color-brand-glow)]
-        focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-page
-        ${className}`}
-    >
-      {children}
-    </button>
-  );
+function StyledButton({ children, className, asChild, ...props }: BtnProps) {
+  if (asChild && isValidElement(children)) {
+    const child = children as ReactElement<{ className?: string }>;
+    return cloneElement(child, { ...props, className: cn(className, child.props.className) });
+  }
+  return <button {...props} className={className}>{children}</button>;
 }
 
-export function GhostButton({ children, className = "", ...props }: BtnProps) {
-  return (
-    <button
-      {...props}
-      className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-md
-        font-sans text-sm font-medium cursor-pointer
-        border border-line text-ink-muted bg-transparent
-        transition-all duration-200 outline-none
-        hover:border-line-hi hover:text-ink hover:bg-surface-hi
-        focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
-        focus-visible:ring-offset-page
-        ${className}`}
-    >
-      {children}
-    </button>
-  );
+export function PrimaryButton({ className, ...props }: BtnProps) {
+  return <StyledButton {...props} className={cn(
+    "group inline-flex min-h-11 items-center justify-center gap-2 px-7 py-3.5 rounded-md font-sans text-sm font-medium tracking-wide cursor-pointer border border-brand text-brand bg-transparent transition-[color,background-color,border-color,box-shadow] duration-200 outline-none hover:bg-brand hover:text-page hover:shadow-[0_0_24px_var(--color-brand-glow)] focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-page", className)} />;
 }
 
-// ANIMATED ARROW
+export function GhostButton({ className, ...props }: BtnProps) {
+  return <StyledButton {...props} className={cn(
+    "inline-flex min-h-11 items-center justify-center gap-2 px-7 py-3.5 rounded-md font-sans text-sm font-medium cursor-pointer border border-line text-ink-muted bg-transparent transition-[color,background-color,border-color] duration-200 outline-none hover:border-line-hi hover:text-ink hover:bg-surface-hi focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-page", className)} />;
+}
 
+// Predetermined hover motion does not need a JavaScript animation engine.
 export function AnimatedArrow({ hovered }: { hovered: boolean }) {
-  return (
-    <motion.span
-      animate={{ x: hovered ? 4 : 0 }}
-      transition={{ duration: 0.2 }}
-      aria-hidden
-    >
-      →
-    </motion.span>
-  );
+  return <span aria-hidden className="inline-block transition-transform duration-200 motion-reduce:transform-none" style={{ transform: hovered ? "translateX(4px)" : undefined }}>&rarr;</span>;
 }
 
 // GRID BACKGROUND

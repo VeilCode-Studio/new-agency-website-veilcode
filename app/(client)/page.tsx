@@ -1,5 +1,5 @@
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Public content is regenerated every five minutes and invalidated by CMS writes.
+export const revalidate = 300;
 
 import { CTA } from "@/components/shared/CTA";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -12,7 +12,6 @@ import { Services } from "@/components/shared/Services";
 import { TechStack } from "@/components/shared/TechStack";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { Work } from "@/components/shared/Work";
-import { POSTS } from "@/constants/blog";
 import { getBlogGridPosts, toBlogGridPost } from "@/lib/blog/grid";
 import { mapDbPostToClientPost } from "@/lib/blog/mappers";
 import { toDisplayTestimonial, type DisplayTestimonial } from "@/lib/testimonials/display";
@@ -31,25 +30,14 @@ export const metadata = buildPageMetadata({
   image: DEFAULT_OG_IMAGE,
 });
 
+// Query failures must throw so ISR retains the last good page instead of
+// caching fallback content after an outage or republishing removed seed posts.
 async function getHomeBlogPosts() {
-  try {
-    const blogs = await getPublishedBlogs();
-    if (blogs.length > 0) return blogs.map(mapDbPostToClientPost);
-  } catch (error) {
-    console.warn("[home] Falling back to static blog posts:", error);
-  }
-
-  return POSTS;
+  return (await getPublishedBlogs()).map(mapDbPostToClientPost);
 }
 
 async function getHomeTestimonials(): Promise<DisplayTestimonial[]> {
-  try {
-    const rows = await getTestimonials();
-    return rows.map(toDisplayTestimonial);
-  } catch (error) {
-    console.warn("[home] Could not load testimonials:", error);
-    return [];
-  }
+  return (await getTestimonials()).map(toDisplayTestimonial);
 }
 
 export default async function Home() {

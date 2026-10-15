@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import * as m from "framer-motion/m";
+import { AnimatePresence } from "framer-motion";
 import { stagger, useReveal } from "@/lib/motion";
 import { type FilterKey } from "@/constants/projects";
 import { WorkFilters } from "./WorkFilters";
@@ -14,7 +15,7 @@ type ProjectType = InferSelectModel<typeof projectsSchema>;
 
 function EmptyState({ filter }: { filter: FilterKey }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y:  0 }}
       exit={{    opacity: 0, y: -8 }}
@@ -31,7 +32,7 @@ function EmptyState({ filter }: { filter: FilterKey }) {
         <span className="text-ink capitalize">{filter}</span> yet — but we&apos;re
         working on them. Check back soon.
       </p>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -66,7 +67,7 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
           className="max-w-300 mx-auto"
         >
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={activeFilter}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -78,7 +79,7 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
                   <EmptyState filter={activeFilter} />
                 </div>
               ) : (
-                <motion.div
+                <m.div
                   variants={stagger}
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
@@ -95,9 +96,9 @@ export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
                       ))}
                     </div>
                   )}
-                </motion.div>
+                </m.div>
               )}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
       </section>

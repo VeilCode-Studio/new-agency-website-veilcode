@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { VALUES } from "@/constants";
 import { fadeUp } from "@/lib/motion";
 
@@ -14,12 +14,12 @@ export function ValueCard({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div
+    <m.div
       variants={fadeUp(index * 0.07)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative rounded-xl p-8 bg-surface border border-line
-        overflow-hidden cursor-default transition-all duration-300
+        overflow-hidden cursor-default transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi ${value.hoverBorder} ${value.hoverGlow}`}
     >
       {/* Number watermark */}
@@ -48,7 +48,7 @@ export function ValueCard({
 
       {/* Accent bar */}
       <div
-        className={`w-8 h-0.5 mb-4 rounded-full transition-all duration-300
+        className={`w-8 h-0.5 mb-4 rounded-full transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
           ${hovered ? "w-12" : "w-8"}
           bg-linear-to-r from-current to-transparent ${value.accent}`}
       />
@@ -62,6 +62,6 @@ export function ValueCard({
       <p className="font-sans text-sm text-ink-muted leading-relaxed">
         {value.desc}
       </p>
-    </motion.div>
+    </m.div>
   );
 }

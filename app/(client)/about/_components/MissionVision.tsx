@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { PILLARS, COMMITMENTS } from "@/constants";
@@ -16,18 +16,18 @@ export function MissionVision() {
       <div className="max-w-300 mx-auto">
 
         {/* Header */}
-        <motion.div
+        <m.div
           ref={ref}
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-16"
         >
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <SectionTag>Mission &amp; Vision</SectionTag>
             <AccentLine />
-          </motion.div>
-          <motion.h2
+          </m.div>
+          <m.h2
             variants={fadeUp(0.1)}
             className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
               tracking-tight text-ink leading-[1.1] max-w-140"
@@ -39,22 +39,22 @@ export function MissionVision() {
             &amp; Where We&apos;re{" "}
             <span className="text-ink">Going
             </span>
-          </motion.h2>
-        </motion.div>
+          </m.h2>
+        </m.div>
 
         {/* Mission / Vision cards */}
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24"
         >
           {PILLARS.map((p, i) => (
-            <motion.div
+            <m.div
               key={p.label}
               variants={fadeUp(i * 0.12)}
               className={`relative rounded-xl p-10 border overflow-hidden
-                bg-surface transition-all duration-300
+                bg-surface transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
                 hover:bg-surface-hi ${p.border} ${p.glow}`}
             >
               {/* Corner glow */}
@@ -84,26 +84,26 @@ export function MissionVision() {
               <p className="font-sans text-sm text-ink-muted leading-relaxed">
                 {p.body}
               </p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Commitments */}
-        <motion.div
+        <m.div
           ref={commitRef}
           variants={stagger}
           initial="hidden"
           animate={commitInView ? "visible" : "hidden"}
         >
-          <motion.div variants={fadeUp()}>
+          <m.div variants={fadeUp()}>
             <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-ink-faint mb-8">
               What we commit to every client
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-line rounded-xl overflow-hidden">
             {COMMITMENTS.map((c, i) => (
-              <motion.div
+              <m.div
                 key={c.num}
                 variants={fadeUp(i * 0.1)}
                 className={`p-8 bg-surface hover:bg-surface-hi transition-colors duration-200
@@ -119,10 +119,10 @@ export function MissionVision() {
                 <p className="font-sans text-sm text-ink-muted leading-relaxed">
                   {c.desc}
                 </p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

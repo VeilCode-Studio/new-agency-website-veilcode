@@ -20,7 +20,7 @@ export function Footer() {
 
           {/* Brand column */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5 no-underline mb-5">
+            <Link href="/" prefetch={false} className="flex items-center gap-2.5 no-underline mb-5">
               <LogoMark size={28} />
               <WordMark />
             </Link>
@@ -68,18 +68,19 @@ export function Footer() {
         </div>
       </div>
       {/* can you better position and make it better in general */}
-      <Link
-        href="#navbar"
+      <a
+        href="#top"
+        aria-label="Back to top"
         className="fixed bottom-6 left-6 z-50
         flex items-center justify-center
         w-12 h-12 rounded-full
         bg-brand text-black
         shadow-lg shadow-black/20
         hover:scale-110 hover:bg-brand/90
-        transition-all duration-300 ease-out"
+        transition-[transform,background-color] duration-300 ease-out"
       >
-        <ArrowUp size={20} />
-      </Link>
+        <ArrowUp size={20} aria-hidden="true" />
+      </a>
     </footer>
   );
 }

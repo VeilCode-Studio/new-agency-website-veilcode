@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import {
   GridBg,
   GlowOrb,
@@ -26,20 +26,20 @@ export function WorkHero({ stats }: { stats: WorkStat[] }) {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-20">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
           className="max-w-200"
         >
           {/* Tag */}
-          <motion.div variants={fadeUp(0)}>
+          <m.div variants={fadeUp(0)}>
             <SectionTag>Our Work</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
           {/* Headline */}
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
@@ -48,10 +48,10 @@ export function WorkHero({ stats }: { stats: WorkStat[] }) {
             <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
               the Needle.
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* Sub */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-145 mb-12"
@@ -59,11 +59,11 @@ export function WorkHero({ stats }: { stats: WorkStat[] }) {
             Client work, our own products, and concept builds for the industries
             we serve. Each one shows how we&apos;d approach your project. Ask for a
             walkthrough of any build.
-          </motion.p>
+          </m.p>
 
           {/* Stats */}
           {stats.length > 0 && (
-          <motion.div
+          <m.div
             variants={fadeUp(0.24)}
             className="flex flex-wrap gap-10"
           >
@@ -80,9 +80,9 @@ export function WorkHero({ stats }: { stats: WorkStat[] }) {
                 </span>
               </div>
             ))}
-          </motion.div>
+          </m.div>
           )}
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Bottom fade */}

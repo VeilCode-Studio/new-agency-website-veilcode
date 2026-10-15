@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { desc } from "drizzle-orm";
 import { db } from "@/db/drizzle";
@@ -39,6 +40,7 @@ export async function POST(req: Request) {
     }
 
     const [created] = await db.insert(blogPosts).values(parsed.data).returning();
+    revalidatePath("/");
     return NextResponse.json(created, { status: 201 });
   } catch (err) {
     console.error("[api/admin/blog] POST error:", err);

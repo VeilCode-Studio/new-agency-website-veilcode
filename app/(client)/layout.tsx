@@ -1,3 +1,4 @@
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import { Footer } from '@/components/shared/Footer';
 import { Nav } from '@/components/shared/Navbar';
 import { ChatbotGate } from '@/components/chatbot/ChatbotGate';
@@ -12,7 +13,7 @@ const ClientLayout: React.FC<ClientLayoutProps> = ({ children }) => {
         <>
             <Nav />
             <main>
-                {children}
+                <MotionProvider>{children}</MotionProvider>
             </main>
             <ChatbotGate />
             <Footer />

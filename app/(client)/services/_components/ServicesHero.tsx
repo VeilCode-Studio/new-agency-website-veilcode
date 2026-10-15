@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import {
   GridBg,
   GlowOrb,
@@ -33,18 +33,18 @@ export function ServicesHero() {
       />
 
       <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
           className="max-w-205"
         >
-          <motion.div variants={fadeUp(0)}>
+          <m.div variants={fadeUp(0)}>
             <SectionTag>Our Services</SectionTag>
             <AccentLine width={56} />
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(40px,6.5vw,80px)] text-ink mb-6"
@@ -55,9 +55,9 @@ export function ServicesHero() {
             <span className="text-brand drop-shadow-[0_0_28px_var(--color-brand-glow)]">
               Win Digitally.
             </span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-145 mb-10"
@@ -65,10 +65,10 @@ export function ServicesHero() {
             From the first pixel to the last pipeline — VeilCode delivers three
             integrated service practices that cover the full spectrum of modern
             digital business. Built to work independently or as a unified stack.
-          </motion.p>
+          </m.p>
 
           {/* Service pills */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.24)}
             className="flex flex-wrap gap-2.5"
           >
@@ -78,14 +78,14 @@ export function ServicesHero() {
                 href={href}
                 className={`font-mono text-[11px] tracking-widest uppercase
                   px-3.5 py-1.5 rounded border no-underline
-                  transition-all duration-200 hover:opacity-80
+                  transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:opacity-80
                   ${accent}`}
               >
                 {label}
               </a>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       <div

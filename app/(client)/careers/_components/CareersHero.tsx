@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 
 export function CareersHero() {
   return (
     <div className="relative overflow-hidden border-b border-line">
       <div className="max-w-5xl mx-auto px-6 py-24">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -27,7 +27,7 @@ export function CareersHero() {
             and automate the impossible with AI. We&apos;re looking for visionaries who move
             fast and think deeper.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

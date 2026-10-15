@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
 import { fadeUp, stagger } from "@/lib/motion";
 import { getProjectKindLabel } from "@/lib/projects/kind";
@@ -28,7 +28,7 @@ export function ScreenshotPlaceholder({
         className={`relative w-full overflow-hidden rounded-xl border ${border}
           bg-linear-to-br ${dimBg} to-surface-hi
           flex flex-col items-center justify-center gap-4
-          min-h-60 sm:min-h-80 transition-all duration-300
+          min-h-60 sm:min-h-80 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
           hover:border-opacity-60`}
         role="img"
         aria-label={alt}
@@ -111,6 +111,10 @@ function HeroScreenshot({ project: p }: { project: Project }) {
             <img
               src={shot.src}
               alt={shot.alt}
+              loading="lazy"
+              decoding="async"
+              width={420}
+              height={910}
               className="h-full w-full object-contain"
             />
           </div>
@@ -128,6 +132,8 @@ function HeroScreenshot({ project: p }: { project: Project }) {
       <img
         src={shot.src}
         alt={shot.alt}
+        loading="lazy"
+        decoding="async"
         className="w-full rounded-2xl border border-line object-cover"
       />
       <figcaption className="mt-3 font-sans text-xs text-ink-faint text-center">
@@ -179,13 +185,13 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
         animate-scan" />
 
       <div className="relative z-10 max-w-300 mx-auto px-6 md:px-10 pt-36 pb-16">
-        <motion.div
+        <m.div
           variants={stagger}
           initial="hidden"
           animate="visible"
         >
           {/* Breadcrumb */}
-          <motion.div variants={fadeUp(0)} className="flex items-center gap-2 mb-8">
+          <m.div variants={fadeUp(0)} className="flex items-center gap-2 mb-8">
             <Link href="/work"
               className="font-mono text-[11px] tracking-widest uppercase
                 text-ink-faint hover:text-ink transition-colors duration-200 no-underline">
@@ -195,10 +201,10 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
             <span className={`font-mono text-[11px] tracking-widest uppercase ${c.accent}`}>
               {p.title}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Tag + build kind */}
-          <motion.div variants={fadeUp(0.04)}>
+          <m.div variants={fadeUp(0.04)}>
             <div className="flex flex-wrap items-center gap-3">
               <SectionTag>{p.serviceLabel}</SectionTag>
               <span className="font-mono text-[10px] tracking-widest uppercase
@@ -207,19 +213,19 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
               </span>
             </div>
             <AccentLine width={48} />
-          </motion.div>
+          </m.div>
 
           {/* Headline */}
-          <motion.h1
+          <m.h1
             variants={fadeUp(0.08)}
             className="font-display font-extrabold leading-[1.02] tracking-tight
               text-[clamp(36px,5.5vw,72px)] text-ink mb-4 max-w-220"
           >
             {p.title}
-          </motion.h1>
+          </m.h1>
 
           {/* Client / industry / year row */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.12)}
             className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-8"
           >
@@ -228,19 +234,19 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
             <span className="font-sans text-sm text-ink-muted">{p.industry}</span>
             <span className="size-1 rounded-full bg-line" aria-hidden />
             <span className="font-sans text-sm text-ink-muted">{p.year}</span>
-          </motion.div>
+          </m.div>
 
           {/* Summary */}
-          <motion.p
+          <m.p
             variants={fadeUp(0.16)}
             className="font-sans font-light text-lg text-ink-muted
               leading-relaxed max-w-170 mb-10"
           >
             {p.summary}
-          </motion.p>
+          </m.p>
 
           {/* Meta row — duration, team, tags */}
-          <motion.div
+          <m.div
             variants={fadeUp(0.2)}
             className="flex flex-wrap gap-2 mb-14"
           >
@@ -270,11 +276,11 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                 {tag}
               </span>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Results strip — column count follows the number of results */}
           {p.results.length > 0 && (
-          <motion.div
+          <m.div
             variants={fadeUp(0.26)}
             className={`grid gap-0 ${resultsGridCols(p.results.length)}
               border ${c.border} rounded-2xl overflow-hidden mb-16`}
@@ -292,11 +298,11 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                 <div className="font-sans text-xs text-ink-faint">{r.sub}</div>
               </div>
             ))}
-          </motion.div>
+          </m.div>
           )}
 
           {/* Hero screenshot — always wide */}
-          <motion.div variants={fadeUp(0.32)}>
+          <m.div variants={fadeUp(0.32)}>
             {p.screenshots[0]?.src ? (
               p.service === "mobile" ? (
                 <HeroScreenshot project={p} />
@@ -306,6 +312,8 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                 <img
                   src={p.screenshots[0].src}
                   alt={p.screenshots[0].alt}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full rounded-2xl border border-line object-cover"
                 />
                 <figcaption className="mt-3 font-sans text-xs text-ink-faint text-center">
@@ -322,8 +330,8 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                 border={c.border}
               />
             )}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Bottom fade */}

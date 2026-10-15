@@ -70,8 +70,8 @@
   /* shadcn bridge tokens (also switchable via :root / .dark) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans-base);
+  --font-mono: var(--font-mono-base);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -119,7 +119,7 @@
   --font-mono-base: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
   /* Brand */
-  --brand:         #00E5FF;
+  --brand:         #006B7A;
   --brand-dim:     #00E5FF1F;   /* ~12% alpha — slightly more fill on white */
   --brand-border:  #00E5FF4D;   /* ~30% alpha */
   --brand-glow:    #00E5FF66;   /* ~40% alpha */
@@ -137,14 +137,14 @@
   /* Ink */
   --ink:           #0B111B;
   --ink-muted:     #54627A;
-  --ink-faint:     #8D97A6;
+  --ink-faint:     #5D6879;
 
   /* Service accents (text-hue chosen for AA on white; fills keep original hue) */
-  --svc-web:        #00B8D4;
+  --svc-web:        #006B7A;
   --svc-web-dim:    #00E5FF1F;
   --svc-web-border: #00E5FF4D;
 
-  --svc-mobile:        #5058E6;
+  --svc-mobile:        #4148CC;
   --svc-mobile-dim:    #818CF824;
   --svc-mobile-border: #818CF84D;
 
@@ -156,7 +156,7 @@
   --svc-social-dim:    #F5A62326;
   --svc-social-border: #F5A62354;
 
-  --svc-ai:        #8B5CF6;
+  --svc-ai:        #6935C6;
   --svc-ai-dim:    #C084FC24;
   --svc-ai-border: #C084FC54;
 
@@ -218,7 +218,7 @@
   /* Ink */
   --ink:           #F0F4F8;
   --ink-muted:     #8A9BB0;
-  --ink-faint:     #4A5568;
+  --ink-faint:     #8A9BB0;
 
   /* Service accents — dark */
   --svc-web:        #00E5FF;
@@ -298,7 +298,7 @@
   /* Ink — warmer than .dark for editorial feel */
   --ink:           #EEF0F7;
   --ink-muted:     #8892B5;
-  --ink-faint:     #4C567C;
+  --ink-faint:     #8892B5;
 
   /* Service accents */
   --svc-web:        #22D3EE;
@@ -360,7 +360,7 @@
    ------------------------------------------------------------- */
 .linen {
   /* Brand — slightly deeper cyan for legibility on cream */
-  --brand:         #00B8D4;
+  --brand:         #006875;
   --brand-dim:     #00B8D426;
   --brand-border:  #00B8D454;
   --brand-glow:    #00E5FF5C;
@@ -378,7 +378,7 @@
   /* Ink — deep warm charcoal */
   --ink:           #1B1914;
   --ink-muted:     #5C564B;
-  --ink-faint:     #8F8876;
+  --ink-faint:     #6B6355;
 
   /* Service accents — editorial tones (deep, warm, saturated) */
   --svc-web:        #006C78;
@@ -519,3 +519,40 @@ body::after {
     @apply font-sans;
   }
 }
+
+/* Ambient decoration is static until visible, and runs only on larger screens.
+   Finite cycles avoid an endlessly moving page and stop work after the intro. */
+[data-ambient] { --ambient-play-state: paused; }
+[data-ambient][data-active="true"] { --ambient-play-state: running; }
+[data-ambient] [class*="animate-"], .ambient-float {
+  animation-play-state: var(--ambient-play-state, paused);
+  animation-iteration-count: 2;
+}
+.ambient-float { animation: float 9s ease-in-out 2; animation-play-state: var(--ambient-play-state, paused); }
+@media (max-width: 767px) {
+  [data-ambient] [class*="animate-"], .ambient-float { animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-ambient] [class*="animate-"], .ambient-float { animation: none !important; }
+}
+
+/* If the optional Motion chunk fails, all mounted content stays operable. */
+[data-motion-failed] [style*="opacity:0;"],
+[data-motion-failed] [style$="opacity:0"],
+[data-motion-failed] [style*="opacity: 0;"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@keyframes drawer-enter {
+  from { transform: translateX(-100%); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.drawer-enter { animation: drawer-enter 200ms cubic-bezier(0.32, 0.72, 0, 1); }

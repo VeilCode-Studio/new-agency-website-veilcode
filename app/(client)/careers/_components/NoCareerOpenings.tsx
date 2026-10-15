@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { motion } from 'framer-motion'
+import * as m from "framer-motion/m";
 import { Sparkles } from 'lucide-react'
 import { PrimaryButton } from '@/components/extras/Primitives'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const NoCareersOpenings = () => {
   return (
-    <motion.div
+    <m.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     className="flex flex-col items-center justify-center py-24 text-center"
@@ -29,14 +29,14 @@ const NoCareersOpenings = () => {
       we keep the best ones close.
     </p>
 
-    <PrimaryButton
+    <PrimaryButton asChild
       className="mt-10 bg-brand hover:bg-brand/90 text-black font-medium px-10"
     >
       <Link href="mailto:support@veilcode.studio">
         Send Your Application Anyway
       </Link>
     </PrimaryButton>
-  </motion.div>
+  </m.div>
   )
 }
 

@@ -1,12 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
-const float = (y: number, duration: number, delay = 0) => ({
-  y: [0, -y, 0], rotate: [0, y > 10 ? 0.5 : -0.4, 0],
-  transition: { duration, delay, repeat: Infinity, ease: "easeInOut" as const },
-});
-
 function CommerceDashboard() {
   return (
     <div className="w-[31rem] overflow-hidden rounded-xl border border-line-hi bg-surface shadow-[0_30px_100px_var(--color-brand-dim)]">
@@ -55,19 +46,18 @@ function AiOperationsApp() {
       <div className="flex items-center justify-between border-b border-line bg-surface-hi px-3 py-2"><div><p className="text-[6px] uppercase tracking-[.16em] text-svc-ai">VeilOps</p><p className="text-[9px] font-bold text-ink">Automation control</p></div><span className="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-[6px] text-emerald-500">All systems healthy</span></div>
       <div className="p-3"><div className="mb-2 grid grid-cols-3 gap-1.5">{[['Runs today','1,842'],['Success rate','99.2%'],['Hours saved','126h']].map(([a,b])=><div key={a} className="rounded-md border border-line bg-surface-hi p-2"><p className="text-[5px] text-ink-faint">{a}</p><p className="mt-1 text-[10px] font-bold text-ink">{b}</p></div>)}</div>
         <p className="mb-2 mt-3 text-[7px] font-semibold text-ink">Live workflows</p>
-        {[['Lead qualification','CRM → AI scoring','Running'],['Invoice processing','Inbox → Finance','Running'],['Support triage','Helpdesk → Routing','Review']].map(([name,path,status],i)=><div key={name} className="mb-1.5 grid grid-cols-[1fr_auto] items-center rounded-lg border border-line bg-surface-hi p-2"><div><div className="flex items-center gap-1.5"><motion.span animate={{opacity:[.35,1,.35]}} transition={{duration:2,repeat:Infinity,delay:i*.3}} className={`size-1.5 rounded-full ${status==='Review'?'bg-amber-400':'bg-svc-ai'}`}/><p className="text-[7px] font-semibold text-ink">{name}</p></div><p className="ml-3 mt-0.5 text-[5px] text-ink-faint">{path}</p></div><span className="text-[5px] text-ink-muted">{status}</span></div>)}
+        {[['Lead qualification','CRM → AI scoring','Running'],['Invoice processing','Inbox → Finance','Running'],['Support triage','Helpdesk → Routing','Review']].map(([name,path,status])=><div key={name} className="mb-1.5 grid grid-cols-[1fr_auto] items-center rounded-lg border border-line bg-surface-hi p-2"><div><div className="flex items-center gap-1.5"><span className={`size-1.5 rounded-full ${status==='Review'?'bg-amber-400':'bg-svc-ai'}`}/><p className="text-[7px] font-semibold text-ink">{name}</p></div><p className="ml-3 mt-0.5 text-[5px] text-ink-faint">{path}</p></div><span className="text-[5px] text-ink-muted">{status}</span></div>)}
       </div>
     </div>
   );
 }
 
 export function ServiceVisualField() {
-  const reduced = useReducedMotion();
   return <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
     <div className="absolute inset-0 z-10 bg-linear-to-r from-page via-page/95 to-page/15 sm:via-page/82 lg:via-page/65" />
-    <motion.div animate={reduced ? undefined : float(13, 9)} className="absolute right-[-13rem] top-[12%] opacity-35 sm:right-[-7rem] sm:opacity-50 lg:right-[1%] lg:opacity-80"><CommerceDashboard /></motion.div>
-    <motion.div animate={reduced ? undefined : float(9, 7, .7)} className="absolute right-[2%] top-[55%] z-20 hidden opacity-80 sm:block lg:right-[5%]"><MobileBankingApp /></motion.div>
-    <motion.div animate={reduced ? undefined : float(7, 10, 1.2)} className="absolute right-[23%] top-[62%] z-20 hidden opacity-70 lg:block xl:right-[28%]"><AiOperationsApp /></motion.div>
+    <div className="ambient-float absolute right-[-13rem] top-[12%] opacity-35 sm:right-[-7rem] sm:opacity-50 lg:right-[1%] lg:opacity-80"><CommerceDashboard /></div>
+    <div className="ambient-float absolute right-[2%] top-[55%] z-20 hidden opacity-80 sm:block lg:right-[5%]"><MobileBankingApp /></div>
+    <div className="ambient-float absolute right-[23%] top-[62%] z-20 hidden opacity-70 lg:block xl:right-[28%]"><AiOperationsApp /></div>
     <div className="absolute inset-x-0 bottom-0 z-30 h-44 bg-linear-to-t from-page to-transparent" />
   </div>;
 }

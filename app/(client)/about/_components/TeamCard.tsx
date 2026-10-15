@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { fadeUp } from "@/lib/motion";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ function SocialLink({
       className="size-8 flex items-center justify-center rounded-md
         border border-line text-ink-faint
         hover:border-brand-border hover:text-brand
-        transition-all duration-200 no-underline"
+        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 no-underline"
     >
       {children}
     </Link>
@@ -69,17 +69,17 @@ export function TeamCard({
 }) {
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUp(index * 0.1)}
       className="group relative rounded-xl bg-surface border border-line
-        overflow-hidden transition-all duration-300
+        overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi hover:border-line-hi
         hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
     >
       {/* Top bar — accent colour on hover */}
       <div
         aria-hidden
-        className={`h-0.5 w-0 group-hover:w-full transition-all duration-500
+        className={`h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500
           bg-linear-to-r from-current to-transparent ${member.accentClass}`}
       />
 
@@ -136,6 +136,6 @@ export function TeamCard({
           ))}
         </ul>
       </div>
-    </motion.article>
+    </m.article>
   );
 }

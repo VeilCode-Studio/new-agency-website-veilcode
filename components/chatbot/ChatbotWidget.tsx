@@ -1,8 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Maximize2, MessageCircle, Minimize2, Send, X } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { Bot, Maximize2, Minimize2, Send, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getChoiceGroup } from "@/lib/chatbot/choiceGroups";
 import { getChatbotPanelClassName } from "@/lib/chatbot/panelLayout";
@@ -48,17 +47,6 @@ type StoredChatSession = {
   leadSubmitted: boolean;
 };
 
-function shouldHide(pathname: string) {
-  return (
-    pathname === "/start" ||
-    pathname.startsWith("/newsletter") ||
-    pathname.startsWith("/admin") ||
-    pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/sign-up") ||
-    pathname.startsWith("/no-access")
-  );
-}
-
 function createConversationId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
@@ -93,10 +81,8 @@ function getInitialSession(): StoredChatSession {
   }
 }
 
-export function ChatbotWidget() {
-  const pathname = usePathname();
+export function ChatbotWidget({ open, onClose }: { open: boolean; onClose: () => void }) {
   const initialSession = useMemo(() => getInitialSession(), []);
-  const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(
@@ -114,23 +100,22 @@ export function ChatbotWidget() {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const hidden = shouldHide(pathname);
   const choiceGroup = useMemo(() => getChoiceGroup(messages), [messages]);
 
   useEffect(() => {
-    if (hidden || !conversationId) return;
+    if (!conversationId) return;
 
-    sessionStorage.setItem(
+    try { sessionStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({ conversationId, messages, leadDraft, leadSubmitted }),
-    );
-  }, [conversationId, hidden, leadDraft, leadSubmitted, messages]);
+    ); } catch { /* The conversation remains usable when storage is unavailable. */ }
+  }, [conversationId, leadDraft, leadSubmitted, messages]);
 
   useEffect(() => {
     if (!open) return;
     scrollRef.current?.scrollTo({
       top: scrollRef.current.scrollHeight,
-      behavior: "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
     });
   }, [messages, open]);
 
@@ -149,16 +134,20 @@ export function ChatbotWidget() {
   }
 
   function closeChatbot() {
-    setOpen(false);
     setExpanded(false);
+    onClose();
   }
 
-  function toggleChatbot() {
-    if (open) {
-      setExpanded(false);
-    }
-    setOpen((value) => !value);
-  }
+  useEffect(() => {
+    if (!open) return;
+    const input = document.getElementById("chatbot-message");
+    input?.focus();
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open, onClose]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -219,12 +208,12 @@ export function ChatbotWidget() {
     }
   }
 
-  if (hidden) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex max-h-[calc(100dvh-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6 sm:max-h-[calc(100dvh-3rem)]">
+    <>
       {open && (
         <section
+          id="veilcode-assistant"
           aria-label="VeilCode project assistant"
           className={getChatbotPanelClassName(expanded)}
         >
@@ -248,7 +237,7 @@ export function ChatbotWidget() {
                 onClick={() => setExpanded((value) => !value)}
                 aria-label={expanded ? "Collapse chatbot" : "Expand chatbot"}
                 title={expanded ? "Collapse" : "Expand"}
-                className="grid size-8 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
+                className="grid size-11 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
               >
                 {expanded ? (
                   <Minimize2 className="size-4" />
@@ -260,7 +249,7 @@ export function ChatbotWidget() {
                 type="button"
                 onClick={closeChatbot}
                 aria-label="Close chatbot"
-                className="grid size-8 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
+                className="grid size-11 place-items-center rounded-lg border border-line text-ink-muted transition-colors hover:border-line-hi hover:bg-surface-hi hover:text-ink"
               >
                 <X className="size-4" />
               </button>
@@ -349,6 +338,8 @@ export function ChatbotWidget() {
 
           <form onSubmit={handleSubmit} className="flex gap-2 border-t border-line p-3">
             <input
+              id="chatbot-message"
+              aria-label="Your message"
               value={input}
               onChange={(event) => setInput(event.target.value)}
               disabled={loading}
@@ -364,7 +355,7 @@ export function ChatbotWidget() {
               type="submit"
               disabled={loading || (!input.trim() && selectedOptions.length === 0)}
               aria-label="Send message"
-              className="grid size-10 shrink-0 place-items-center rounded-xl border border-brand text-brand transition-colors hover:bg-brand hover:text-page disabled:cursor-not-allowed disabled:opacity-50"
+              className="grid size-11 shrink-0 place-items-center rounded-xl border border-brand text-brand transition-colors hover:bg-brand hover:text-page disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? (
                 <span className="flex items-center gap-0.5" aria-hidden="true">
@@ -380,15 +371,6 @@ export function ChatbotWidget() {
         </section>
       )}
 
-      <button
-        type="button"
-        onClick={toggleChatbot}
-        aria-label={open ? "Hide VeilCode assistant" : "Open VeilCode assistant"}
-        className="inline-flex items-center gap-2 rounded-full border border-brand bg-page px-4 py-3 font-sans text-sm font-medium text-brand shadow-[0_0_30px_var(--color-brand-dim)] transition-all hover:bg-brand hover:text-page"
-      >
-        <MessageCircle className="size-4" />
-        <span className="hidden sm:inline">Ask VeilCode</span>
-      </button>
-    </div>
+    </>
   );
 }

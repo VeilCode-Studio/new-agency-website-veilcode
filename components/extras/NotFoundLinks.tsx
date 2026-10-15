@@ -46,7 +46,7 @@ const NotFoundLinks = () => {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-line">
-                    <PrimaryButton>
+                    <PrimaryButton asChild>
                         <Link href="/" className='flex gap-2 justify-center items-center'>
                             <ArrowLeft className="w-4 h-4" /> Back to VeilCode Studio
                         </Link>
