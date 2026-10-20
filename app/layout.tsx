@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     template: `%s${TITLE_SUFFIX}`,
   },
   description: SITE_DESCRIPTION,
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+  },
 
   keywords: [
     "Next.js development",

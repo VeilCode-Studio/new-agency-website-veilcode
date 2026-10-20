@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Params) {
 
   return {
     ...metadata,
-    robots: page.indexable ? undefined : { index: false, follow: false },
+    ...(page.indexable ? {} : { robots: { index: false, follow: false } }),
   };
 }
 
