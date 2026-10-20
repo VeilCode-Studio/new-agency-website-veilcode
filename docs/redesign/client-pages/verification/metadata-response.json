@@ -1,0 +1,16 @@
+[
+  {
+    "route": "/work/cartix-ecommerce-platform",
+    "userAgent": "Mozilla/5.0 Chrome/142.0.0.0 Safari/537.36",
+    "status": 200,
+    "description": "A modern ecommerce storefront built to help customers browse product categories, view product details, and move from discovery to purchase with less friction.",
+    "inHead": false
+  },
+  {
+    "route": "/work/cartix-ecommerce-platform",
+    "userAgent": "facebookexternalhit/1.1",
+    "status": 200,
+    "description": "A modern ecommerce storefront built to help customers browse product categories, view product details, and move from discovery to purchase with less friction.",
+    "inHead": true
+  }
+]

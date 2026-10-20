@@ -127,7 +127,7 @@ const AISHA: BlogAuthor = {
 // posts
 
 export const POSTS: BlogPost[] = [
-// 01
+  // 01
   {
     slug: "next-js-performance-east-africa",
     title: "Building Fast Web Apps for Low-Bandwidth Markets",
@@ -390,7 +390,7 @@ export default function RootLayout({ children }) {
     ],
   },
 
-// 02
+  // 02
   {
     slug: "ai-agents-production",
     title: "Shipping AI Agents to Production: What Nobody Tells You",
@@ -566,7 +566,7 @@ graph.add_conditional_edges("process", should_escalate)`,
     ],
   },
 
-// 03
+  // 03
   {
     slug: "design-systems-scale",
     title: "Design Systems That Don't Become a Burden",
@@ -749,6 +749,7 @@ export function getRelatedPosts(post: BlogPost): BlogPost[] {
 
 export function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", {
+    timeZone: "UTC",
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -779,5 +780,3 @@ export function getRecentPosts(exclude?: string, limit = 20): BlogPost[] {
     )
     .slice(0, limit);
 }
-
-

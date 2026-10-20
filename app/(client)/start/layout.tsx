@@ -1,4 +1,4 @@
-import { AnimationBoundary } from "@/components/providers/AnimationBoundary";
+import { PublicShell } from "@/components/public/PublicShell";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { DEFAULT_OG_IMAGE } from "@/lib/seo/site";
@@ -16,5 +16,5 @@ export default function StartLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <AnimationBoundary>{children}</AnimationBoundary>;
+  return <PublicShell>{children}</PublicShell>;
 }

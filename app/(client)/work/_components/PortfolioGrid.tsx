@@ -1,107 +1,110 @@
 "use client";
 
+import { publicImageSource } from "@/lib/public-image";
 import { useState } from "react";
-import * as m from "framer-motion/m";
-import { AnimatePresence } from "framer-motion";
-import { stagger, useReveal } from "@/lib/motion";
-import { type FilterKey } from "@/constants/projects";
-import { WorkFilters } from "./WorkFilters";
-import { FeaturedCard } from "./FeaturedCard";
-import { ProjectCard } from "./ProjectCard";
-import type { InferSelectModel } from "drizzle-orm";
-import { projects as projectsSchema } from "@/db/schema";
-
-type ProjectType = InferSelectModel<typeof projectsSchema>;
-
-function EmptyState({ filter }: { filter: FilterKey }) {
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y:  0 }}
-      exit={{    opacity: 0, y: -8 }}
-      transition={{ duration: 0.35 }}
-      className="col-span-full flex flex-col items-center justify-center
-        py-24 text-center"
-    >
-      <span className="text-4xl mb-4 text-ink-faint" aria-hidden>◎</span>
-      <h4 className="font-display text-xl font-bold text-ink mb-2">
-        No projects yet
-      </h4>
-      <p className="font-sans text-sm text-ink-muted max-w-[320px]">
-        We don&apos;t have published case studies for{" "}
-        <span className="text-ink capitalize">{filter}</span> yet — but we&apos;re
-        working on them. Check back soon.
-      </p>
-    </m.div>
+import Link from "next/link";
+import Image from "next/image";
+import { FILTER_TABS, type FilterKey } from "@/constants/projects";
+import { getProjectKindLabel } from "@/lib/projects/kind";
+import type { Project } from "@/db/schema";
+export type PortfolioProject = Pick<
+  Project,
+  | "slug"
+  | "service"
+  | "serviceLabel"
+  | "title"
+  | "client"
+  | "summary"
+  | "screenshots"
+  | "industry"
+  | "featured"
+>;
+export function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
+  const [active, setActive] = useState<FilterKey>("all");
+  const filtered = projects.filter(
+    (p) => active === "all" || p.service === active,
   );
-}
-
-
-export function PortfolioGrid({ projects }: { projects: ProjectType[] }) {
-  const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
-  const [ref, inView] = useReveal();
-
-  console.log("All projects:", projects);
-
-  /* Filter logic */
-  const filtered =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.service === activeFilter);
-
-  /* Split: featured first, rest go to grid */
-  const featured  = filtered.find((p) => p.featured) ?? filtered[0] ?? null;
-  const gridItems = filtered.filter((p) => p !== featured);
-
-
-
   return (
-    <>
-      {/* Sticky filter bar */}
-      <WorkFilters active={activeFilter} onChange={setActiveFilter} projects={projects} />
-
-      {/* Content */}
-      <section className="py-16 px-6 md:px-10">
+    <div className="public-portfolio" id="portfolio">
+      <div className="public-filter">
         <div
-          ref={ref}
-          className="max-w-300 mx-auto"
+          className="public-container"
+          role="group"
+          aria-label="Filter projects by service"
         >
-          <AnimatePresence mode="wait">
-            <m.div
-              key={activeFilter}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{    opacity: 0 }}
-              transition={{ duration: 0.25 }}
+          {FILTER_TABS.map((tab) => (
+            <button
+              type="button"
+              key={tab.key}
+              aria-pressed={active === tab.key}
+              onClick={() => setActive(tab.key)}
             >
-              {filtered.length === 0 ? (
-                <div className="grid">
-                  <EmptyState filter={activeFilter} />
-                </div>
-              ) : (
-                <m.div
-                  variants={stagger}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                  className="space-y-6"
-                >
-                  {/* Featured card */}
-                  {featured && <FeaturedCard project={featured} />}
-
-                  {/* Grid */}
-                  {gridItems.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
-                      {gridItems.map((p, i) => (
-                        <ProjectCard key={p.slug} project={p} index={i} />
-                      ))}
-                    </div>
-                  )}
-                </m.div>
-              )}
-            </m.div>
-          </AnimatePresence>
+              {tab.label}{" "}
+              <span>
+                (
+                {
+                  projects.filter(
+                    (p) => tab.key === "all" || p.service === tab.key,
+                  ).length
+                }
+                )
+              </span>
+            </button>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+      <div className="public-container">
+        <p className="mt-7 text-xs text-ink-muted" role="status">
+          {filtered.length} {filtered.length === 1 ? "project" : "projects"}
+        </p>
+        <div className="public-work-grid">
+          {filtered.map((p) => (
+            <article key={p.slug} className="public-project-card">
+              <div className="public-project-image">
+                {p.screenshots[0]?.src ? (
+                  <Image
+                    src={publicImageSource(p.screenshots[0].src)}
+                    alt={p.screenshots[0].alt || `${p.title} project preview`}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width:700px) calc(100vw - 40px), (max-width:1264px) calc(50vw - 47px), 585px"
+                  />
+                ) : (
+                  <div className="p-8 text-sm text-ink-muted">
+                    {p.serviceLabel}
+                  </div>
+                )}
+              </div>
+              <div className="public-project-copy">
+                <p>
+                  {getProjectKindLabel(p.client)} · {p.industry}
+                </p>
+                <h2>
+                  <Link href={`/work/${p.slug}`}>{p.title}</Link>
+                </h2>
+                <p>{p.summary}</p>
+                <Link href={`/work/${p.slug}`}>
+                  Explore the build <span aria-hidden="true">&#8599;</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+        {!filtered.length && (
+          <div className="py-16">
+            <h2>No published projects in this category yet.</h2>
+            <p className="mt-4 text-ink-muted">
+              Try another service, or ask us about your project.
+            </p>
+            <button
+              className="public-button mt-6"
+              onClick={() => setActive("all")}
+            >
+              View all projects
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

@@ -76,3 +76,8 @@ The browser tools use the same external audit dependencies as the homepage workf
 - **Plan alignment — PASS:** all five markets and the breadcrumb hub implemented; market-specific content and supported themes retained.
 - **System integrity — PASS:** existing route/query architecture, recovery, metadata helpers, navigation, and non-location pages retained.
 - **Production readiness — ISSUES FOUND:** mobile LCP exceeds the strict budget; direct database latency needs deployment validation; one intermittent hydration observation remains unreproduced. The redesign is reviewable, with these limits recorded rather than an unconditional claim that every check passed.
+
+
+## Client-pages follow-up (20 October 2026)
+
+The remaining public-page redesign includes a targeted Next.js renderer update and an explicit UTC publication-date formatter. The current homepage and all five location browser regressions pass without runtime errors on a normal production server with direct database access. See the [current integration report](../client-pages/results.md) for the final evidence and new performance measurements. The earlier measurements and environment caveats above remain historical records.

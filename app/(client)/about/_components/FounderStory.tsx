@@ -1,10 +1,4 @@
-"use client";
-
-import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
-import { fadeUp, staggerChildren, useReveal } from "@/lib/motion";
-
-
 const PARAGRAPHS = [
   {
     id: "why",
@@ -21,8 +15,6 @@ const PARAGRAPHS = [
 ] as const;
 
 export function FounderStory() {
-  const [ref, inView] = useReveal("-100px");
-
   return (
     <section
       id="story"
@@ -30,24 +22,21 @@ export function FounderStory() {
         bg-surface border-y border-line overflow-hidden"
     >
       {/* Subtle background glow */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-20"
+      >
         <div className="absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl" />
       </div>
 
       <div className="relative max-w-4xl mx-auto">
-        <m.div
-          ref={ref}
-          variants={staggerChildren}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          <m.div variants={fadeUp()}>
+        <div>
+          <div>
             <SectionTag>Our Story</SectionTag>
             <AccentLine width={64} />
-          </m.div>
+          </div>
 
-          <m.h2
-            variants={fadeUp(0.08)}
+          <h2
             className="mt-8 font-display text-[clamp(1.9rem,4.5vw,3.25rem)]
               font-extrabold tracking-tight leading-[1.08] text-ink max-w-3xl"
           >
@@ -55,21 +44,20 @@ export function FounderStory() {
             <span className="text-brand drop-shadow-[0_0_20px_var(--color-brand-glow)]">
               not an account manager
             </span>
-          </m.h2>
+          </h2>
 
           <div className="mt-10 flex flex-col gap-6 max-w-2xl">
-            {PARAGRAPHS.map((paragraph, i) => (
-              <m.p
+            {PARAGRAPHS.map((paragraph) => (
+              <p
                 key={paragraph.id}
-                variants={fadeUp(0.16 + i * 0.08)}
                 className="font-sans text-base md:text-lg font-light
                   text-ink-muted leading-relaxed"
               >
                 {paragraph.text}
-              </m.p>
+              </p>
             ))}
           </div>
-        </m.div>
+        </div>
       </div>
     </section>
   );

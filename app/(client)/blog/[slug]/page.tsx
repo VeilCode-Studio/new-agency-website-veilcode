@@ -80,7 +80,7 @@ const SingleBlogPage = async ({ params }: Params) => {
     .filter(
       (item) =>
         item.category === blog.category ||
-        item.tags.some((tag) => blog.tags.includes(tag))
+        item.tags.some((tag) => blog.tags.includes(tag)),
     )
     .slice(0, 3)
     .map(mapDbPostToClientPost);
@@ -111,11 +111,30 @@ const SingleBlogPage = async ({ params }: Params) => {
         <div className="mx-auto w-full min-w-0 max-w-300">
           <div className="flex w-full min-w-0 flex-col items-start gap-14 lg:flex-row xl:gap-20">
             <div className="relative w-full min-w-0 flex-1">
-              <SocialShare post={post} />
+              <SocialShare post={{ title: post.title }} />
+              {post.toc.length > 0 && (
+                <details className="mb-8 lg:hidden">
+                  <summary className="font-semibold">On this page</summary>
+                  <nav aria-label="Article contents">
+                    <ol className="space-y-2 pb-3">
+                      {post.toc.map((item) => (
+                        <li key={item.id}>
+                          <a
+                            href={`#${item.id}`}
+                            className="inline-flex min-h-11 items-center text-sm text-brand underline"
+                          >
+                            {item.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                </details>
+              )}
               <ArticleBody blocks={post.body} />
             </div>
 
-            <ArticleSidebar post={post} />
+            <ArticleSidebar post={{ toc: post.toc, author: post.author }} />
           </div>
         </div>
       </section>

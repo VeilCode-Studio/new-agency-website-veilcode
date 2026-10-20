@@ -1,6 +1,6 @@
-# Homepage presentation patterns
+# Client presentation patterns
 
-The redesign lives in `components/home/`; `Homepage.tsx` is server-only. `homepage.css` is scoped to `.homepage` and named homepage classes. Other public pages keep their existing visual system.
+The homepage lives in `components/home/`; `Homepage.tsx` is server-only and its CSS is scoped to `.homepage`. Locations use their own scoped presentation. The remaining public routes use `components/public/PublicShell.tsx` and `public-pages.css`, extending these approved patterns while retaining route-specific content and workflows.
 
 | Pattern | Decision |
 | --- | --- |
@@ -15,4 +15,4 @@ The redesign lives in `components/home/`; `Homepage.tsx` is server-only. `homepa
 | Interaction | Server-rendered native FAQ disclosures. Gallery controls scroll existing DOM; no autoplay, hidden-on-scroll text, WebGL, or animation runtime. Form client uses the current JSON API and shows real pending/error/success states. |
 | Theme switching | Keep all four provider themes and saved preferences. Homepage colors are presentation tokens; they do not replace the root theme definitions. |
 
-Keep future page redesigns separate until their own content and performance baseline have been reviewed. These are homepage patterns, not authorization to restyle the admin application.
+The approved client redesign now covers the public route families. Keep admin and authentication styling isolated. Do not introduce global theme overrides, remove server rendering, or change route caching to improve a laboratory score. Public details and galleries retain native links, truthful project kinds, fixed media ratios, and responsive Next.js image delivery. Versioned Cloudinary originals are bounded before Next.js fetches them; signed, transformed and local sources pass through unchanged.

@@ -6,21 +6,24 @@ import { FOOTER_COLS } from "@/constants";
 import FooterSocials from "../extras/FooterSocials";
 import { ArrowUp } from "lucide-react";
 
-
 export function Footer() {
   const pathname = usePathname();
 
   if (pathname === "/start" || pathname.includes("/newsletter")) return null;
   return (
-    <footer className={`border-t border-line bg-surface pt-16 pb-10 px-6 md:px-10 ${pathname === "/" ? "home-footer" : pathname.startsWith("/locations") ? "location-footer" : ""}`}>
+    <footer
+      className={`border-t border-line bg-surface pt-16 pb-10 px-6 md:px-10 ${pathname === "/" ? "home-footer" : pathname.startsWith("/locations") ? "location-footer" : "public-footer"}`}
+    >
       <div className="max-w-30Link mx-auto relative z-5">
-
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 mb-16">
-
           {/* Brand column */}
           <div>
-            <Link href="/" prefetch={false} className="flex items-center gap-2.5 no-underline mb-5">
+            <Link
+              href="/"
+              prefetch={false}
+              className="flex items-center gap-2.5 no-underline mb-5"
+            >
               <LogoMark size={28} />
               <WordMark />
             </Link>
@@ -42,13 +45,13 @@ export function Footer() {
               <ul className="flex flex-col gap-3 list-none p-0 m-0">
                 {col.links.map(({ label, href }) => (
                   <li key={label}>
-                    <a
+                    <Link
                       href={href}
                       className="font-sans text-sm text-ink-muted no-underline
                         hover:text-ink transition-colors duration-150"
                     >
                       {label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -57,8 +60,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-line pt-7 flex flex-col sm:flex-row
-          justify-between items-center gap-4 text-center">
+        <div
+          className="border-t border-line pt-7 flex flex-col sm:flex-row
+          justify-between items-center gap-4 text-center"
+        >
           <p className="font-sans text-[13px] text-ink-faint">
             &copy; {new Date().getFullYear()} VeilCode. All rights reserved.
           </p>

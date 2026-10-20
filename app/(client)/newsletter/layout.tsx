@@ -1,4 +1,4 @@
-import { AnimationBoundary } from "@/components/providers/AnimationBoundary";
+import { PublicShell } from "@/components/public/PublicShell";
 import type { Metadata } from "next";
 
 // One-off transactional pages (confirmed / expired / invalid): keep them out
@@ -12,5 +12,5 @@ export default function NewsletterLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <AnimationBoundary>{children}</AnimationBoundary>;
+  return <PublicShell>{children}</PublicShell>;
 }

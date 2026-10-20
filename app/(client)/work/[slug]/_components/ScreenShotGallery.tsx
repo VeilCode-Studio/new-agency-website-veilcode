@@ -1,11 +1,7 @@
-"use client";
-
+import { publicImageSource } from "@/lib/public-image";
 import Image from "next/image";
-import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ScreenshotPlaceholder } from "./CaseStudyHero";
-
 
 function Shot({
   shot,
@@ -14,9 +10,9 @@ function Shot({
   border,
   variant = "standard",
 }: {
-  shot:   ProjectScreenshot;
+  shot: ProjectScreenshot;
   accent: string;
-  dimBg:  string;
+  dimBg: string;
   border: string;
   variant?: "standard" | "phone";
 }) {
@@ -31,8 +27,8 @@ function Shot({
             <div className="pointer-events-none absolute left-1/2 top-3 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-line" />
             <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.25rem] bg-surface-hi">
               <Image
-                src={shot.src}
-                alt={shot.alt}
+                src={publicImageSource(shot.src)}
+                alt={shot.alt || shot.caption || "Project screenshot"}
                 fill
                 loading="lazy"
                 sizes="(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px"
@@ -51,11 +47,11 @@ function Shot({
       <figure className="w-full">
         <div className="relative w-full overflow-hidden rounded-xl border border-line bg-surface-hi aspect-[16/10] max-w-5xl mx-auto">
           <Image
-            src={shot.src}
-            alt={shot.alt}
+            src={publicImageSource(shot.src)}
+            alt={shot.alt || shot.caption || "Project screenshot"}
             fill
             loading="lazy"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px"
             className="object-contain"
           />
         </div>
@@ -68,7 +64,7 @@ function Shot({
 
   return (
     <ScreenshotPlaceholder
-      alt={shot.alt}
+      alt={shot.alt || shot.caption || "Project screenshot"}
       caption={shot.caption}
       accent={accent}
       dimBg={dimBg}
@@ -80,7 +76,6 @@ function Shot({
 // screenshot gallery
 
 export function ScreenshotGallery({ project: p }: { project: Project }) {
-  const [ref, inView] = useReveal("-40px");
   const { classes: c } = p;
   const isMobileApp = p.service === "mobile";
 
@@ -112,23 +107,18 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
   return (
     <section className="py-24 px-6 md:px-10 bg-surface border-y border-line">
       <div className="max-w-300 mx-auto">
-        <m.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
+        <div>
           {/* Header */}
-          <m.div variants={fadeUp()}>
+          <div>
             <SectionTag>Project Screenshots</SectionTag>
             <AccentLine />
-          </m.div>
+          </div>
 
           {/* Gallery */}
           {isMobileApp ? (
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {shots.map((shot, i) => (
-                <m.div key={`${shot.caption}-${i}`} variants={fadeUp(i * 0.07)}>
+                <div key={`${shot.caption}-${i}`}>
                   <Shot
                     shot={shot}
                     accent={c.accent}
@@ -136,25 +126,24 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
                     border={c.border}
                     variant="phone"
                   />
-                </m.div>
+                </div>
               ))}
             </div>
           ) : (
             <div className="space-y-6">
               {groups.map((group, gi) =>
                 group.type === "wide" ? (
-                  <m.div key={gi} variants={fadeUp(gi * 0.07)}>
+                  <div key={gi}>
                     <Shot
                       shot={group.shot}
                       accent={c.accent}
                       dimBg={c.dimBg}
                       border={c.border}
                     />
-                  </m.div>
+                  </div>
                 ) : (
-                  <m.div
+                  <div
                     key={gi}
-                    variants={fadeUp(gi * 0.07)}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
                   >
                     {group.shots.map((shot, si) => (
@@ -166,12 +155,12 @@ export function ScreenshotGallery({ project: p }: { project: Project }) {
                         border={c.border}
                       />
                     ))}
-                  </m.div>
-                )
+                  </div>
+                ),
               )}
             </div>
           )}
-        </m.div>
+        </div>
       </div>
     </section>
   );

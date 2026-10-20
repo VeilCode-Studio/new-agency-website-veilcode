@@ -1,7 +1,3 @@
-"use client";
-
-import * as m from "framer-motion/m";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { ContactDetailRow } from "./ContactDetailRow";
 import { FacebookIcon } from "@/components/icons/FacebookIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
@@ -10,7 +6,6 @@ import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { MapPinIcon } from "@/components/icons/MapPinIcon";
 import { ClockIcon } from "@/components/icons/ClockIcon";
 import { XIcon } from "@/components/icons/XIcon";
-
 
 export const CONTACT_DETAILS = [
   {
@@ -44,26 +39,28 @@ export const CONTACT_DETAILS = [
 ] as const;
 
 const SOCIALS = [
-  { label: "Facebook",   icon: <FacebookIcon />, href: "https://facebook.com/veilcode" },
-  { label: "Instagram", icon: <InstagramIcon />, href: "https://www.instagram.com/veilcodestudio" },
-  { label: "X / Twitter", icon: <XIcon />, href: "https://x.com/veilcodestudio" },
+  {
+    label: "Facebook",
+    icon: <FacebookIcon />,
+    href: "https://facebook.com/veilcode",
+  },
+  {
+    label: "Instagram",
+    icon: <InstagramIcon />,
+    href: "https://www.instagram.com/veilcodestudio",
+  },
+  {
+    label: "X / Twitter",
+    icon: <XIcon />,
+    href: "https://x.com/veilcodestudio",
+  },
 ] as const;
 
-
-
 export function OfficeInfo() {
-  const [ref, inView] = useReveal();
-
   return (
-    <m.aside
-      ref={ref}
-      variants={stagger}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      className="lg:col-span-5 flex flex-col gap-6"
-    >
+    <aside className="lg:col-span-5 flex flex-col gap-6">
       {/* Header */}
-      <m.div variants={fadeUp()}>
+      <div>
         <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
           Work With Us
         </p>
@@ -72,20 +69,17 @@ export function OfficeInfo() {
             <ContactDetailRow key={d.label} detail={d} />
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Divider */}
-      <m.div
-        variants={fadeUp(0.1)}
-        className="h-px bg-line"
-      />
+      <div className="h-px bg-line" />
 
       {/* Social links */}
-      <m.div variants={fadeUp(0.14)}>
+      <div>
         <p className="font-mono text-[11px] tracking-widest uppercase text-ink-faint mb-4">
           Follow Our Work
         </p>
-        <div className="flex gap-2.5">
+        <div className="flex flex-wrap gap-2.5">
           {SOCIALS.map(({ label, icon, href }) => (
             <a
               key={label}
@@ -103,19 +97,13 @@ export function OfficeInfo() {
             </a>
           ))}
         </div>
-      </m.div>
+      </div>
 
       {/* Divider */}
-      <m.div
-        variants={fadeUp(0.18)}
-        className="h-px bg-line"
-      />
+      <div className="h-px bg-line" />
 
       {/* Response promise */}
-      <m.div
-        variants={fadeUp(0.22)}
-        className="relative overflow-hidden rounded-xl border border-line bg-surface p-6"
-      >
+      <div className="relative overflow-hidden rounded-xl border border-line bg-surface p-6">
         {/* Corner glow */}
         <div
           aria-hidden
@@ -124,20 +112,22 @@ export function OfficeInfo() {
         />
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-3">
-            <div className="size-2 rounded-full bg-brand
+            <div
+              className="size-2 rounded-full bg-brand
               shadow-[0_0_8px_var(--color-brand)]
-              animate-[pulse-glow_2s_ease-in-out_infinite]" />
+              animate-[pulse-glow_2s_ease-in-out_infinite]"
+            />
             <span className="font-mono text-[10px] tracking-widest uppercase text-brand">
               Our Promise
             </span>
           </div>
           <p className="font-sans text-sm text-ink-muted leading-relaxed">
             Every enquiry gets a real, considered response — not a template.
-            We&apos;ll tell you honestly whether we&apos;re the right fit and, if we&apos;re not,
-            point you somewhere that is.
+            We&apos;ll tell you honestly whether we&apos;re the right fit and,
+            if we&apos;re not, point you somewhere that is.
           </p>
         </div>
-      </m.div>
-    </m.aside>
+      </div>
+    </aside>
   );
 }

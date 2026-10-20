@@ -1,0 +1,279 @@
+[
+  {
+    "route": "/about",
+    "mobile": {
+      "performance": 97,
+      "lcp": 2686.12905,
+      "tbt": 45.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/services",
+    "mobile": {
+      "performance": 95,
+      "lcp": 2830.5969999999998,
+      "tbt": 29.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/services/web-solutions",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2712.45215,
+      "tbt": 49.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds",
+      "Desktop performance below 95"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/work",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2708.8356999999996,
+      "tbt": 53.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/work/bienvenidos-apartments",
+    "mobile": {
+      "performance": 95,
+      "lcp": 2909.5082,
+      "tbt": 25.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/blog",
+    "mobile": {
+      "performance": 90,
+      "lcp": 2954.1492500000004,
+      "tbt": 382.92325000000005,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds",
+      "Mobile TBT exceeds 200ms"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/blog/seo-thinking-for-business-websites",
+    "mobile": {
+      "performance": 95,
+      "lcp": 2907.4981000000002,
+      "tbt": 38.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/contact",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2689.3659,
+      "tbt": 78,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/start",
+    "mobile": {
+      "performance": 97,
+      "lcp": 2577.4548000000004,
+      "tbt": 75,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/seo",
+    "mobile": {
+      "performance": 97,
+      "lcp": 2678.6966999999995,
+      "tbt": 35.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/seo/usa-web-development-agency",
+    "mobile": {
+      "performance": 94,
+      "lcp": 2772.0191999999997,
+      "tbt": 84.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/privacy-policy",
+    "mobile": {
+      "performance": 88,
+      "lcp": 2647.5555999999997,
+      "tbt": 451.78559999999993,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile performance below 90",
+      "Mobile LCP exceeds 2.5 seconds",
+      "Mobile TBT exceeds 200ms"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/work/cartix-ecommerce-platform",
+    "mobile": {
+      "performance": 65,
+      "lcp": 2320.7535,
+      "tbt": 3080.0284999999994,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 92
+    },
+    "failures": [
+      "Mobile performance below 90",
+      "Mobile TBT exceeds 200ms",
+      "Desktop performance below 95",
+      "mobile 1 seo below 100",
+      "desktop 1 seo below 100"
+    ],
+    "passed": false
+  },
+  {
+    "route": "/blog/building-fast-web-apps-for-low-bandwidth-markets",
+    "mobile": {
+      "performance": 70,
+      "lcp": 3261.9552000000003,
+      "tbt": 1081.1815999999997,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile performance below 90",
+      "Mobile LCP exceeds 2.5 seconds",
+      "Mobile TBT exceeds 200ms",
+      "Desktop performance below 95"
+    ],
+    "passed": false
+  }
+]

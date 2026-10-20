@@ -1,13 +1,13 @@
-import React from 'react'
-import { WorkHero } from './_components/WorkHero'
-import { PortfolioGrid } from './_components/PortfolioGrid'
-import { CTA } from '@/components/shared/CTA'
-import { getAllProjects } from '@/queries'
-import { getWorkStats } from '@/lib/projects/kind'
-import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice'
-import type { Project } from '@/db/schema'
-import { buildPageMetadata } from '@/lib/seo/metadata'
-import { DEFAULT_OG_IMAGE } from '@/lib/seo/site'
+import React from "react";
+import { WorkHero } from "./_components/WorkHero";
+import { PortfolioGrid } from "./_components/PortfolioGrid";
+import { CTA } from "@/components/shared/CTA";
+import { getAllProjects } from "@/queries";
+import { getWorkStats } from "@/lib/projects/kind";
+import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
+import type { Project } from "@/db/schema";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo/site";
 
 export const metadata = buildPageMetadata({
   title: "Our Work",
@@ -31,21 +31,45 @@ const page = async () => {
   }
 
   return (
-      <>
-          <WorkHero stats={getWorkStats(allProjects)} />
-          {projectsUnavailable ? (
-            <DataRecoveryNotice
-              eyebrow="Work data unavailable"
-              title="We could not load the project list right now."
-              description="This usually means the database is temporarily unavailable or a deployment is still settling. Refresh the page or come back shortly."
-              retryLabel="Retry projects"
-            />
-          ) : (
-            <PortfolioGrid projects={allProjects} />
+    <>
+      <WorkHero stats={getWorkStats(allProjects)} />
+      {projectsUnavailable ? (
+        <DataRecoveryNotice
+          eyebrow="Work data unavailable"
+          title="We could not load the project list right now."
+          description="This usually means the database is temporarily unavailable or a deployment is still settling. Refresh the page or come back shortly."
+          retryLabel="Retry projects"
+        />
+      ) : (
+        <PortfolioGrid
+          projects={allProjects.map(
+            ({
+              slug,
+              service,
+              serviceLabel,
+              title,
+              client,
+              summary,
+              screenshots,
+              industry,
+              featured,
+            }) => ({
+              slug,
+              service,
+              serviceLabel,
+              title,
+              client,
+              summary,
+              screenshots: screenshots.slice(0, 1),
+              industry,
+              featured,
+            }),
           )}
-          <CTA />
-      </>
-  )
-}
+        />
+      )}
+      <CTA />
+    </>
+  );
+};
 
-export default page
+export default page;

@@ -1,5 +1,3 @@
-"use client";
-
 import { type ContentBlock } from "@/constants/blog";
 import { ArticleChart, ArticleStatGrid } from "./DataVisualizations";
 
@@ -9,15 +7,15 @@ import { ArticleChart, ArticleStatGrid } from "./DataVisualizations";
    Produces <span> elements with inline colour classes.               */
 
 const LANG_LABELS: Record<string, string> = {
-  tsx:    "TSX",
-  ts:     "TypeScript",
-  js:     "JavaScript",
-  jsx:    "JSX",
+  tsx: "TSX",
+  ts: "TypeScript",
+  js: "JavaScript",
+  jsx: "JSX",
   python: "Python",
-  py:     "Python",
-  css:    "CSS",
-  bash:   "Bash",
-  sh:     "Shell",
+  py: "Python",
+  css: "CSS",
+  bash: "Bash",
+  sh: "Shell",
 };
 
 /** Very small tokeniser for display-only syntax colouring */
@@ -29,30 +27,48 @@ function tokenise(code: string, lang: string): string {
     .replace(/>/g, "&gt;");
 
   const isPython = lang === "python" || lang === "py";
-  const isCSS    = lang === "css";
-  const isBash   = lang === "bash" || lang === "sh";
+  const isCSS = lang === "css";
+  const isBash = lang === "bash" || lang === "sh";
 
   // Comments
   if (isBash) {
-    html = html.replace(/(#[^\n]*)/g, `<span class="text-ink-faint italic">$1</span>`);
+    html = html.replace(
+      /(#[^\n]*)/g,
+      `<span class="text-ink-faint italic">$1</span>`,
+    );
   } else if (isCSS) {
-    html = html.replace(/(\/\*[\s\S]*?\*\/)/g, `<span class="text-ink-faint italic">$1</span>`);
+    html = html.replace(
+      /(\/\*[\s\S]*?\*\/)/g,
+      `<span class="text-ink-faint italic">$1</span>`,
+    );
   } else {
-    html = html.replace(/(\/\/[^\n]*)/g,        `<span class="text-ink-faint italic">$1</span>`);
-    html = html.replace(/(\/\*[\s\S]*?\*\/)/g,  `<span class="text-ink-faint italic">$1</span>`);
+    html = html.replace(
+      /(\/\/[^\n]*)/g,
+      `<span class="text-ink-faint italic">$1</span>`,
+    );
+    html = html.replace(
+      /(\/\*[\s\S]*?\*\/)/g,
+      `<span class="text-ink-faint italic">$1</span>`,
+    );
   }
 
   // Strings
-  html = html.replace(/("(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*`|'(?:[^'\\]|\\.)*')/g,
-    `<span class="text-svc-data">$1</span>`);
+  html = html.replace(
+    /("(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*`|'(?:[^'\\]|\\.)*')/g,
+    `<span class="text-svc-data">$1</span>`,
+  );
 
   // Numbers
-  html = html.replace(/\b(\d+(?:\.\d+)?)\b/g,
-    `<span class="text-svc-social">$1</span>`);
+  html = html.replace(
+    /\b(\d+(?:\.\d+)?)\b/g,
+    `<span class="text-svc-social">$1</span>`,
+  );
 
   // Keywords
-  const jsKeywords = /\b(import|export|from|const|let|var|function|async|await|return|default|type|interface|class|extends|implements|new|if|else|for|while|of|in|true|false|null|undefined|void|typeof|keyof|as|satisfies)\b/g;
-  const pyKeywords = /\b(def|class|import|from|return|if|elif|else|for|while|in|not|and|or|True|False|None|async|await|with|as|raise|try|except|finally|pass|yield|lambda)\b/g;
+  const jsKeywords =
+    /\b(import|export|from|const|let|var|function|async|await|return|default|type|interface|class|extends|implements|new|if|else|for|while|of|in|true|false|null|undefined|void|typeof|keyof|as|satisfies)\b/g;
+  const pyKeywords =
+    /\b(def|class|import|from|return|if|elif|else|for|while|in|not|and|or|True|False|None|async|await|with|as|raise|try|except|finally|pass|yield|lambda)\b/g;
 
   if (isPython) {
     html = html.replace(pyKeywords, `<span class="text-svc-mobile">$1</span>`);
@@ -61,18 +77,28 @@ function tokenise(code: string, lang: string): string {
   }
 
   // Function/method calls  name(
-  html = html.replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\s*\()/g,
-    `<span class="text-brand">$1</span>`);
+  html = html.replace(
+    /\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\s*\()/g,
+    `<span class="text-brand">$1</span>`,
+  );
 
   // CSS properties
   if (isCSS) {
-    html = html.replace(/(--[a-zA-Z0-9-]+)/g, `<span class="text-svc-ai">$1</span>`);
-    html = html.replace(/([a-zA-Z-]+)(?=\s*:)/g, `<span class="text-svc-mobile">$1</span>`);
+    html = html.replace(
+      /(--[a-zA-Z0-9-]+)/g,
+      `<span class="text-svc-ai">$1</span>`,
+    );
+    html = html.replace(
+      /([a-zA-Z-]+)(?=\s*:)/g,
+      `<span class="text-svc-mobile">$1</span>`,
+    );
   }
 
   // Decorators / annotations  @something
-  html = html.replace(/(@[a-zA-Z_][a-zA-Z0-9_]*)/g,
-    `<span class="text-svc-ai">$1</span>`);
+  html = html.replace(
+    /(@[a-zA-Z_][a-zA-Z0-9_]*)/g,
+    `<span class="text-svc-ai">$1</span>`,
+  );
 
   return html;
 }
@@ -80,15 +106,19 @@ function tokenise(code: string, lang: string): string {
 /* ─── CODE BLOCK ──────────────────────────────────────────────────────────── */
 
 function CodeBlock({ lang, code }: { lang: string; code: string }) {
-  const label     = LANG_LABELS[lang] ?? lang.toUpperCase();
+  const label = LANG_LABELS[lang] ?? lang.toUpperCase();
   const tokenised = tokenise(code, lang);
 
   return (
-    <div className="group relative my-6 min-w-0 max-w-full overflow-hidden
-      rounded-xl border border-line bg-surface">
+    <div
+      className="group relative my-6 min-w-0 max-w-full overflow-hidden
+      rounded-xl border border-line bg-surface"
+    >
       {/* Header bar */}
-      <div className="flex min-w-0 items-center justify-between gap-4 px-5 py-3
-        border-b border-line bg-surface-hi">
+      <div
+        className="flex min-w-0 items-center justify-between gap-4 px-5 py-3
+        border-b border-line bg-surface-hi"
+      >
         {/* Traffic lights */}
         <div className="flex shrink-0 items-center gap-1.5" aria-hidden>
           {["bg-red-500/40", "bg-svc-social/40", "bg-svc-data/40"].map((c) => (
@@ -102,9 +132,14 @@ function CodeBlock({ lang, code }: { lang: string; code: string }) {
       </div>
 
       {/* Code */}
-      <pre className="w-full max-w-full overflow-x-auto px-5 py-5 text-[13px]
-        leading-[1.75] font-mono scrollbar-thin">
-        <code className="block w-max min-w-full whitespace-pre"
+      <pre
+        tabIndex={0}
+        aria-label={`${label} code example`}
+        className="w-full max-w-full overflow-x-auto px-5 py-5 text-[13px]
+        leading-[1.75] font-mono scrollbar-thin"
+      >
+        <code
+          className="block w-max min-w-full whitespace-pre"
           /* Safe — we escape HTML before tokenising */
           dangerouslySetInnerHTML={{ __html: tokenised }}
         />
@@ -118,34 +153,42 @@ function CodeBlock({ lang, code }: { lang: string; code: string }) {
 const CALLOUT_STYLES = {
   info: {
     border: "border-brand-border",
-    bg:     "bg-brand-dim",
-    dot:    "bg-brand",
-    icon:   "ℹ",
-    label:  "Info",
-    text:   "text-brand",
+    bg: "bg-brand-dim",
+    dot: "bg-brand",
+    icon: "ℹ",
+    label: "Info",
+    text: "text-brand",
   },
   warning: {
     border: "border-svc-social-border",
-    bg:     "bg-svc-social-dim",
-    dot:    "bg-svc-social",
-    icon:   "⚠",
-    label:  "Note",
-    text:   "text-svc-social",
+    bg: "bg-svc-social-dim",
+    dot: "bg-svc-social",
+    icon: "⚠",
+    label: "Note",
+    text: "text-svc-social",
   },
   tip: {
     border: "border-svc-data-border",
-    bg:     "bg-svc-data-dim",
-    dot:    "bg-svc-data",
-    icon:   "◎",
-    label:  "Tip",
-    text:   "text-svc-data",
+    bg: "bg-svc-data-dim",
+    dot: "bg-svc-data",
+    icon: "◎",
+    label: "Tip",
+    text: "text-svc-data",
   },
 } as const;
 
-function Callout({ variant, html }: { variant: "info" | "warning" | "tip"; html: string }) {
+function Callout({
+  variant,
+  html,
+}: {
+  variant: "info" | "warning" | "tip";
+  html: string;
+}) {
   const s = CALLOUT_STYLES[variant];
   return (
-    <div className={`my-6 min-w-0 max-w-full rounded-xl border p-5 ${s.border} ${s.bg}`}>
+    <div
+      className={`my-6 min-w-0 max-w-full rounded-xl border p-5 ${s.border} ${s.bg}`}
+    >
       <div className="flex min-w-0 items-start gap-3">
         <span className={`text-base leading-none mt-0.5 ${s.text}`} aria-hidden>
           {s.icon}
@@ -178,7 +221,6 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
     <div className="min-w-0 max-w-full">
       {blocks.map((block, i) => {
         switch (block.type) {
-
           case "h2":
             return (
               <h2
@@ -217,12 +259,19 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return (
               <ul key={i} className="mb-5 space-y-2 list-none pl-0">
                 {block.items.map((item, j) => (
-                  <li key={j}
+                  <li
+                    key={j}
                     className={`flex min-w-0 items-start gap-3 font-sans text-[15px]
                       font-light text-ink-muted leading-relaxed ${proseInline}`}
                   >
-                    <span className="mt-1.75 size-1.5 rounded-full bg-brand shrink-0" aria-hidden />
-                    <span className="min-w-0 break-words" dangerouslySetInnerHTML={{ __html: item }} />
+                    <span
+                      className="mt-1.75 size-1.5 rounded-full bg-brand shrink-0"
+                      aria-hidden
+                    />
+                    <span
+                      className="min-w-0 break-words"
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
                   </li>
                 ))}
               </ul>
@@ -230,18 +279,27 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
 
           case "ol":
             return (
-              <ol key={i} className="mb-5 space-y-2 list-none pl-0 counter-reset-[item]">
+              <ol
+                key={i}
+                className="mb-5 space-y-2 list-none pl-0 counter-reset-[item]"
+              >
                 {block.items.map((item, j) => (
-                  <li key={j}
+                  <li
+                    key={j}
                     className={`flex min-w-0 items-start gap-3 font-sans text-[15px]
                       font-light text-ink-muted leading-relaxed ${proseInline}`}
                   >
-                    <span className="mt-0.5 font-mono text-[12px] text-brand shrink-0
+                    <span
+                      className="mt-0.5 font-mono text-[12px] text-brand shrink-0
                       size-5 rounded flex items-center justify-center
-                      bg-brand-dim border border-brand-border">
+                      bg-brand-dim border border-brand-border"
+                    >
                       {j + 1}
                     </span>
-                    <span className="min-w-0 break-words" dangerouslySetInnerHTML={{ __html: item }} />
+                    <span
+                      className="min-w-0 break-words"
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
                   </li>
                 ))}
               </ol>
@@ -251,7 +309,9 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
             return <CodeBlock key={i} lang={block.lang} code={block.code} />;
 
           case "callout":
-            return <Callout key={i} variant={block.variant} html={block.html} />;
+            return (
+              <Callout key={i} variant={block.variant} html={block.html} />
+            );
 
           case "stat-grid":
             return <ArticleStatGrid key={i} block={block} />;
@@ -261,7 +321,11 @@ export function ArticleBody({ blocks }: { blocks: ContentBlock[] }) {
 
           case "divider":
             return (
-              <div key={i} className="my-10 flex items-center gap-4" aria-hidden>
+              <div
+                key={i}
+                className="my-10 flex items-center gap-4"
+                aria-hidden
+              >
                 <div className="flex-1 h-px bg-line" />
                 <div className="size-1.5 rounded-full bg-brand" />
                 <div className="flex-1 h-px bg-line" />

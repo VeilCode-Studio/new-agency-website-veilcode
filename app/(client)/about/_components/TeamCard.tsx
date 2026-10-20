@@ -1,76 +1,8 @@
 import React from "react";
-import * as m from "framer-motion/m";
-import { fadeUp } from "@/lib/motion";
-import Link from "next/link";
 
-function SocialLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
+export function TeamCard({ member }: { member: TeamMember; index: number }) {
   return (
-    <Link
-      href={href}
-      aria-label={label}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="size-8 flex items-center justify-center rounded-md
-        border border-line text-ink-faint
-        hover:border-brand-border hover:text-brand
-        transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 no-underline"
-    >
-      {children}
-    </Link>
-  );
-}
-
-/* LinkedIn icon */
-function LinkedInIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-/* Twitter / X icon */
-function TwitterIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M4 4l16 16M4 20L20 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-
-
-export function TeamCard({
-  member,
-  index,
-}: {
-  member: TeamMember;
-  index: number;
-}) {
-
-  return (
-    <m.article
-      variants={fadeUp(index * 0.1)}
+    <article
       className="group relative rounded-xl bg-surface border border-line
         overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-300
         hover:bg-surface-hi hover:border-line-hi
@@ -97,21 +29,15 @@ export function TeamCard({
           </div>
 
           {/* Social links */}
-          {/* <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <SocialLink href={member.linkedin} label={`${member.name} on LinkedIn`}>
-              <LinkedInIcon />
-            </SocialLink>
-            <SocialLink href={member.twitter} label={`${member.name} on Twitter`}>
-              <TwitterIcon />
-            </SocialLink>
-          </div> */}
         </div>
 
         {/* Name + role */}
         <h3 className="font-display text-xl font-bold tracking-tight text-ink mb-1">
           {member.name}
         </h3>
-        <p className={`font-mono text-[11px] tracking-widest uppercase mb-4 ${member.accentClass}`}>
+        <p
+          className={`font-mono text-[11px] tracking-widest uppercase mb-4 ${member.accentClass}`}
+        >
           {member.role}
         </p>
 
@@ -124,7 +50,10 @@ export function TeamCard({
         </p>
 
         {/* Skill tags */}
-        <ul className="flex flex-wrap gap-2 list-none p-0 m-0" aria-label="Skills">
+        <ul
+          className="flex flex-wrap gap-2 list-none p-0 m-0"
+          aria-label="Skills"
+        >
           {member.skills.map((skill) => (
             <li
               key={skill}
@@ -136,6 +65,6 @@ export function TeamCard({
           ))}
         </ul>
       </div>
-    </m.article>
+    </article>
   );
 }

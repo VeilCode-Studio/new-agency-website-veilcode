@@ -1,0 +1,929 @@
+{
+  "images": {
+    "/work/bienvenidos-apartments": [
+      {
+        "alt": "Properties Grid",
+        "loaded": true,
+        "naturalWidth": 1014,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "homepage why us section",
+        "loaded": true,
+        "naturalWidth": 959,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "browse properties",
+        "loaded": true,
+        "naturalWidth": 962,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Property listings",
+        "loaded": true,
+        "naturalWidth": 956,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Homepage hero section",
+        "loaded": true,
+        "naturalWidth": 959,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      }
+    ],
+    "/work/reachflow-lead-tracking-crm": [
+      {
+        "alt": "ReachFlow homepage hero section",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "ReachFlow homepage hero section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "ReachFlow Pipeline Dashboard",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "ReachFlow Analytics Dashboard",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "ReachFlow Settings Dashboard",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      }
+    ],
+    "/work/dreamhomes-property-management-solution": [
+      {
+        "alt": "DreamHomes Property Management Solution project preview",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      }
+    ],
+    "/work/inspire-me-salon-website": [
+      {
+        "alt": "Inspire Me salon homepage",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "Inspire Me services section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Inspire Me booking section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Inspire Me Contact section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Inspire Client Testimonials",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      }
+    ],
+    "/work/dean-s-fitness-app": [
+      {
+        "alt": "Client home screen",
+        "loaded": true,
+        "naturalWidth": 330,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:370px) calc(100vw - 40px), 330px",
+        "optimized": true,
+        "renderedWidth": 328
+      },
+      {
+        "alt": "signup page",
+        "loaded": true,
+        "naturalWidth": 280,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px",
+        "optimized": true,
+        "renderedWidth": 262
+      },
+      {
+        "alt": "Client home tab",
+        "loaded": true,
+        "naturalWidth": 280,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px",
+        "optimized": true,
+        "renderedWidth": 262
+      },
+      {
+        "alt": "Workout classes",
+        "loaded": true,
+        "naturalWidth": 280,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px",
+        "optimized": true,
+        "renderedWidth": 262
+      },
+      {
+        "alt": "Free nutritional meal templates",
+        "loaded": true,
+        "naturalWidth": 280,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px",
+        "optimized": true,
+        "renderedWidth": 262
+      },
+      {
+        "alt": "Project screenshot",
+        "loaded": true,
+        "naturalWidth": 280,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px",
+        "optimized": true,
+        "renderedWidth": 262
+      }
+    ],
+    "/work/cartix-ecommerce-platform": [
+      {
+        "alt": "homepage hero section",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "homepage categories section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "homepage select products",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "homepage footer",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "shopping page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "categories hero section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "product categories ",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "admin dashboard page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "admin products page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Admin Create products",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Admin customers page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Admin Analytics page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Add To Card",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Checkout flow shipping",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      },
+      {
+        "alt": "PayPal Intgration",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      }
+    ],
+    "/work/clickfolio-affiliate-landing-page-saas": [
+      {
+        "alt": "Dashboard Overview page",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "Affiliate links page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      },
+      {
+        "alt": "Analytics Pages",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Analytics Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Analytics Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Affiliate Campaigns Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Affiliate Campaigns Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Content Studio",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Content Studio",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Landing Pages",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Billing Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      },
+      {
+        "alt": "Admin Profile Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      },
+      {
+        "alt": "Affiliate Offers Public Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Affiliate Offers Public Page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Landing page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Landing page Pricing ",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      }
+    ],
+    "/work/plumberanswered-ai-receptionist": [
+      {
+        "alt": "PlumberAnswered Landing Page",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "client-dashboard",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "client-business-leads-calls",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "business-calls-details",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "call-transcript-page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "admin-dashboard",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Customers-details",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "customers-details-page",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "customer-create1",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "customer-create2",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "customer-create3",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      }
+    ],
+    "/work/brightsmile-dental-clinic": [
+      {
+        "alt": "Brightsmile Dental homepage",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px), 1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      },
+      {
+        "alt": "Brightsmile Services ",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Brightness Services",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "why-choose-section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "claim-your-offer",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "Results section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "teams section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "testimonials section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "FAQ-section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "location-section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "booking-section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 498
+      },
+      {
+        "alt": "footer-section",
+        "loaded": true,
+        "naturalWidth": 1024,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px",
+        "optimized": true,
+        "renderedWidth": 1022
+      }
+    ],
+    "/blog/seo-thinking-for-business-websites": [
+      {
+        "alt": "Business website SEO strategy showing search intent, technical SEO, content, internal links, authority, and AI search",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px),1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      }
+    ],
+    "/blog/affiliate-landing-page-generator": [
+      {
+        "alt": "Affiliate marketer reviewing generated landing pages, campaign URLs, click analytics, and product promotion content inside a SaaS dashboard",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px),1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      }
+    ],
+    "/blog/how-do-i-choose-the-right-web-development-agency-for-my-business": [
+      {
+        "alt": "Business owner reviewing website strategy, project scope, analytics, SEO plan, and agency proposal before choosing a web development partner",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px),1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      }
+    ],
+    "/blog/automate-business-workflows": [
+      {
+        "alt": "Operations team reviewing an automated workflow map across CRM, email, finance, and customer support systems",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px),1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      }
+    ],
+    "/blog/building-fast-web-apps-for-low-bandwidth-markets": [
+      {
+        "alt": "Code editor showing Next.js configuration with performance annotations",
+        "loaded": true,
+        "naturalWidth": 1200,
+        "loading": "lazy",
+        "srcset": true,
+        "sizes": "(max-width:1264px) calc(100vw - 48px),1200px",
+        "optimized": true,
+        "renderedWidth": 1198
+      }
+    ]
+  },
+  "interactions": {
+    "blogFilters": [
+      "All\n4",
+      "AI & Automation",
+      "Affiliate Marketing",
+      "Engineering",
+      "SEO & Web Development",
+      "Web Development"
+    ],
+    "copyArticleLink": true,
+    "shareOpensCorrectIntent": true,
+    "articleContents": true,
+    "mobileContents": true,
+    "themePersistence": true,
+    "reducedMotion": true
+  },
+  "errors": []
+}

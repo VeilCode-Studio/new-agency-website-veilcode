@@ -1,95 +1,28 @@
-"use client";
-
-import { useState } from "react";
-import * as m from "framer-motion/m";
-import { SectionTag, AccentLine } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
-import { FaqItem } from "./FAQItem";
+import Link from "next/link";
 import { FAQS } from "@/constants";
-
-
 export function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
-  const [ref, inView] = useReveal();
-
   return (
-    <section className="py-32 px-6 md:px-10 bg-surface border-t border-line">
-      <div className="max-w-300 mx-auto">
-        <m.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          {/* Header */}
-          <m.div variants={fadeUp()}>
-            <SectionTag>FAQ</SectionTag>
-            <AccentLine />
-          </m.div>
-
-          <div className="flex flex-col lg:flex-row lg:gap-24 gap-12">
-            {/* Left label column */}
-            <div className="lg:w-[320px] shrink-0">
-              <m.h2
-                variants={fadeUp(0.1)}
-                className="font-display text-[clamp(26px,3vw,42px)] font-extrabold
-                  tracking-tight text-ink leading-[1.1] mb-4"
-              >
-                Questions We{" "}
-                <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
-                  Get Asked
-                </span>{" "}
-                a Lot
-              </m.h2>
-              <m.p
-                variants={fadeUp(0.18)}
-                className="font-sans text-sm text-ink-muted leading-relaxed mb-6"
-              >
-                Can&apos;t find your answer here?{" "}
-                <a
-                  href="/contact"
-                  className="text-brand hover:underline transition-colors duration-150"
-                >
-                  Send us a message
-                </a>{" "}
-                and we&apos;ll reply within one business day.
-              </m.p>
-
-              {/* Decorative stat */}
-              <m.div
-                variants={fadeUp(0.24)}
-                className="hidden lg:block p-6 rounded-xl border border-line bg-page"
-              >
-                <div className="font-display font-extrabold text-[40px] tracking-tight
-                  text-brand leading-none mb-1 drop-shadow-[0_0_16px_var(--color-brand-glow)]">
-                  &lt; 24h
-                </div>
-                <div className="font-sans text-sm font-medium text-ink mb-0.5">
-                  Average response time
-                </div>
-                <div className="font-sans text-xs text-ink-muted">
-                  to all new project enquiries
-                </div>
-              </m.div>
-            </div>
-
-            {/* Right accordion */}
-            <m.div
-              variants={stagger}
-              className="flex-1 bg-page rounded-xl border border-line px-6 py-10 divide-y-0"
-            >
-              {FAQS.map((faq, i) => (
-                <FaqItem
-                  key={i}
-                  faq={faq}
-                  index={i}
-                  isOpen={open === i}
-                  onToggle={() => setOpen(open === i ? null : i)}
-                />
-              ))}
-            </m.div>
-          </div>
-        </m.div>
+    <section className="border-t border-line px-6 py-20 md:px-10">
+      <div className="mx-auto grid max-w-300 gap-12 lg:grid-cols-[320px_minmax(0,1fr)]">
+        <div>
+          <p className="public-eyebrow">Questions, answered</p>
+          <h2>Before we start.</h2>
+          <p className="mt-5 text-sm leading-relaxed text-ink-muted">
+            Have something else in mind?{" "}
+            <Link className="text-brand underline" href="/contact">
+              Send us a message
+            </Link>
+            .
+          </p>
+        </div>
+        <div>
+          {FAQS.map((faq) => (
+            <details key={faq.q} className="py-3">
+              <summary className="font-semibold text-ink">{faq.q}</summary>
+              <p className="mt-3 text-sm text-ink-muted">{faq.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   );

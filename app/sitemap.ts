@@ -19,14 +19,14 @@ export const revalidate = 3600;
 const STATIC_PAGE_LASTMOD: Record<string, string> = {
   "/": "2026-10-20",
   "/locations": "2026-10-20",
-  "/work": "2026-09-29",
-  "/services": "2026-09-29",
-  "/contact": "2026-09-29",
-  "/about": "2026-09-29",
-  "/start": "2026-09-29",
-  "/blog": "2026-09-29",
-  "/seo": "2026-09-29",
-  "/privacy-policy": "2026-09-29",
+  "/work": "2026-10-20",
+  "/services": "2026-10-20",
+  "/contact": "2026-10-20",
+  "/about": "2026-10-20",
+  "/start": "2026-10-20",
+  "/blog": "2026-10-20",
+  "/seo": "2026-10-20",
+  "/privacy-policy": "2026-10-20",
 };
 
 /** Same idea for the location pages, keyed by market slug. */

@@ -1,18 +1,18 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-import React from 'react'
-import { POSTS } from '@/constants/blog'
-import { BlogHero } from './_components/BlogHero';
-import { FeaturedPost } from './_components/FeaturedPost';
-import { NewsletterCTA } from './[slug]/Newsletter';
-import { BlogGrid } from '@/components/shared/BlogGrid';
-import { DataRecoveryNotice } from '@/components/shared/DataRecoveryNotice';
-import { getPublishedBlogs } from '@/queries';
-import { mapDbPostToClientPost } from '@/lib/blog/mappers';
-import { getBlogGridPosts, toBlogGridPost } from '@/lib/blog/grid';
-import { buildPageMetadata } from '@/lib/seo/metadata';
-import { DEFAULT_OG_IMAGE } from '@/lib/seo/site';
+import React from "react";
+import { POSTS } from "@/constants/blog";
+import { BlogHero } from "./_components/BlogHero";
+import { FeaturedPost } from "./_components/FeaturedPost";
+import { NewsletterCTA } from "./[slug]/Newsletter";
+import { BlogGrid } from "@/components/shared/BlogGrid";
+import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
+import { getPublishedBlogs } from "@/queries";
+import { mapDbPostToClientPost } from "@/lib/blog/mappers";
+import { getBlogGridPosts, toBlogGridPost } from "@/lib/blog/grid";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo/site";
 
 export const metadata = buildPageMetadata({
   title: "Blog",
@@ -35,15 +35,18 @@ const page = async () => {
   }
 
   const featured = allPosts.find((post) => post.featured) ?? allPosts[0];
-  const gridPosts = getBlogGridPosts(allPosts, { excludeSlug: featured.slug }).map(toBlogGridPost);
-  const categories = Array.from(new Set(allPosts.map((p) => p.category))).sort();
+  const gridPosts = getBlogGridPosts(allPosts, {
+    excludeSlug: featured.slug,
+  }).map(toBlogGridPost);
+  const categories = Array.from(
+    new Set(allPosts.map((p) => p.category)),
+  ).sort();
   const tags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort();
 
   const totalReadingMinutes = allPosts.reduce((total, blog) => {
     const minutes = Number.parseInt(blog.readTime, 10);
     return total + (Number.isNaN(minutes) ? 0 : minutes);
   }, 0);
-
 
   return (
     <>
@@ -64,17 +67,20 @@ const page = async () => {
       )}
       <FeaturedPost post={featured} />
 
-      <BlogGrid
-        posts={gridPosts}
-        categories={categories}
-        tags={tags}
-        showFilters
-        className="px-0 py-0"
-      />
+      <div id="articles">
+        <BlogGrid
+          title="More from the studio"
+          posts={gridPosts}
+          categories={categories}
+          tags={tags}
+          showFilters
+          className="px-0 py-0"
+        />
+      </div>
 
       <NewsletterCTA />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

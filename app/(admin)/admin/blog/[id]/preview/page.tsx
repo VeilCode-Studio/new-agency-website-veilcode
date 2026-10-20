@@ -1,3 +1,4 @@
+import { PublicShell } from "@/components/public/PublicShell";
 import React from "react";
 import { eq, ne, desc } from "drizzle-orm";
 import { notFound } from "next/navigation";
@@ -44,7 +45,7 @@ export default async function AdminSinglePostPreviewPage({
     .where(ne(blogPosts.id, Number(id)))
     .orderBy(desc(blogPosts.publishedAt))
     .limit(2);
-    
+
   const related = relatedRows.map(mapDbPostToClientPost);
 
   return (
@@ -52,36 +53,43 @@ export default async function AdminSinglePostPreviewPage({
       {/* Admin Preview Banner */}
       <div className="flex min-w-0 items-center justify-between border-b border-brand/20 bg-brand/5 px-4 py-3 text-sm text-brand sm:px-6">
         <div className="flex min-w-0 flex-wrap items-center gap-3 sm:gap-4">
-          <Link href="/admin/blog" className="flex items-center gap-1 font-medium hover:underline">
+          <Link
+            href="/admin/blog"
+            className="flex items-center gap-1 font-medium hover:underline"
+          >
             <ChevronLeft className="size-4" />
             Back to Dashboard
           </Link>
           <span className="h-4 w-px bg-brand/20"></span>
-          <span className="min-w-0 break-words font-semibold">Live Preview: {post.title}</span>
+          <span className="min-w-0 break-words font-semibold">
+            Live Preview: {post.title}
+          </span>
         </div>
       </div>
 
       {/* Main Client Content */}
-      <div className="min-w-0 max-w-full pb-12">
-        <BlogPostHero post={post} />
-        <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-16 sm:px-6 md:px-10 xl:px-20">
-          <div className="mx-auto w-full min-w-0 max-w-300">
-            <div className="flex w-full min-w-0 flex-col items-start gap-14 lg:flex-row xl:gap-20">
-              {/* Article column */}
-              <div className="relative w-full min-w-0 flex-1">
-                <SocialShare post={post} />
-                <ArticleBody blocks={post.body} />
-              </div>
+      <PublicShell>
+        <div className="min-w-0 max-w-full pb-12">
+          <BlogPostHero post={post} />
+          <section className="w-full min-w-0 max-w-full overflow-x-clip border-t border-line px-5 py-16 sm:px-6 md:px-10 xl:px-20">
+            <div className="mx-auto w-full min-w-0 max-w-300">
+              <div className="flex w-full min-w-0 flex-col items-start gap-14 lg:flex-row xl:gap-20">
+                {/* Article column */}
+                <div className="relative w-full min-w-0 flex-1">
+                  <SocialShare post={post} />
+                  <ArticleBody blocks={post.body} />
+                </div>
 
-              {/* Sidebar */}
-              <ArticleSidebar post={post} />
+                {/* Sidebar */}
+                <ArticleSidebar post={post} />
+              </div>
             </div>
-          </div>
-        </section>
-        
-        <NewsletterCTA />
-        {related.length > 0 && <RelatedPosts posts={related} />}
-      </div>
+          </section>
+
+          <NewsletterCTA />
+          {related.length > 0 && <RelatedPosts posts={related} />}
+        </div>
+      </PublicShell>
     </div>
   );
 }

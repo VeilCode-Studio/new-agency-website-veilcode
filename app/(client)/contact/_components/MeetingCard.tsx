@@ -1,11 +1,6 @@
-import * as m from "framer-motion/m";
 import { MEETING_TYPES } from "@/constants";
-import { fadeUp } from "@/lib/motion";
-
-
 export function MeetingCard({
   meeting,
-  index,
   selected,
   onSelect,
 }: {
@@ -15,31 +10,37 @@ export function MeetingCard({
   onSelect: () => void;
 }) {
   return (
-    <m.button
-      variants={fadeUp(index * 0.1)}
+    <button
+      aria-pressed={selected}
       onClick={onSelect}
       type="button"
       className={`w-full text-left rounded-xl p-6 border cursor-pointer
         outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200
         focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
         focus-visible:ring-offset-page
-        ${selected
-          ? `${meeting.bg} ${meeting.border} ${meeting.hoverShadow}`
-          : `bg-surface border-line hover:bg-surface-hi ${meeting.hoverBorder} ${meeting.hoverShadow}`
+        ${
+          selected
+            ? `${meeting.bg} ${meeting.border} ${meeting.hoverShadow}`
+            : `bg-surface border-line hover:bg-surface-hi ${meeting.hoverBorder} ${meeting.hoverShadow}`
         }`}
     >
       <div className="flex items-start justify-between gap-4 mb-3">
         <div className="flex items-center gap-3">
-          <span className={`text-xl leading-none ${meeting.accent}`} aria-hidden>
+          <span
+            className={`text-xl leading-none ${meeting.accent}`}
+            aria-hidden
+          >
             {meeting.icon}
           </span>
-          <h4 className="font-display text-[16px] font-bold tracking-tight text-ink">
+          <span className="font-display text-[16px] font-bold tracking-tight text-ink">
             {meeting.title}
-          </h4>
+          </span>
         </div>
         {/* Duration badge */}
-        <span className={`shrink-0 font-mono text-[10px] tracking-widest uppercase
-          px-2.5 py-1 rounded border ${meeting.bg} ${meeting.border} ${meeting.accent}`}>
+        <span
+          className={`shrink-0 font-mono text-[10px] tracking-widest uppercase
+          px-2.5 py-1 rounded border ${meeting.bg} ${meeting.border} ${meeting.accent}`}
+        >
           {meeting.dur}
         </span>
       </div>
@@ -50,12 +51,14 @@ export function MeetingCard({
 
       {/* Selected indicator */}
       {selected && (
-        <div className={`mt-4 flex items-center gap-2 font-sans text-[13px]
-          font-medium ${meeting.accent}`}>
+        <div
+          className={`mt-4 flex items-center gap-2 font-sans text-[13px]
+          font-medium ${meeting.accent}`}
+        >
           <span className={`size-1.5 rounded-full bg-current`} aria-hidden />
           Selected
         </div>
       )}
-    </m.button>
+    </button>
   );
 }

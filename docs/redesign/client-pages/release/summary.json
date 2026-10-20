@@ -1,0 +1,1631 @@
+[
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/about",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:01:37.583Z",
+    "scores": {
+      "performance": 81,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1081.7559999999999,
+      "largest-contentful-paint": 3411.134,
+      "total-blocking-time": 374,
+      "cumulative-layout-shift": 0,
+      "speed-index": 3435.6763086932765,
+      "total-byte-weight": 325374
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/about",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:01:53.673Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1060.7527,
+      "largest-contentful-paint": 2686.12905,
+      "total-blocking-time": 35,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1060.7527,
+      "total-byte-weight": 325368
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/about",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:02:03.574Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1060.4795,
+      "largest-contentful-paint": 2674.7192499999996,
+      "total-blocking-time": 45.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1060.4795,
+      "total-byte-weight": 325368
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/about",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:02:13.955Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 291.1365,
+      "largest-contentful-paint": 601.20475,
+      "total-blocking-time": 5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 437.3760930638027,
+      "total-byte-weight": 340868
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:02:24.702Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1176.34635,
+      "largest-contentful-paint": 2831.0390500000003,
+      "total-blocking-time": 29.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1863.1722503494848,
+      "total-byte-weight": 340910
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:02:37.407Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1067.444,
+      "largest-contentful-paint": 2676.666,
+      "total-blocking-time": 58.27800000000002,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1447.4444555676369,
+      "total-byte-weight": 340909
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:02:50.958Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1064.398,
+      "largest-contentful-paint": 2830.5969999999998,
+      "total-blocking-time": 29.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2296.6003613334606,
+      "total-byte-weight": 340923
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:03:03.897Z",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 290.346,
+      "largest-contentful-paint": 613.346,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1020.6604004255859,
+      "total-byte-weight": 369480
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services/web-solutions",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:03:19.127Z",
+    "scores": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1111.5421,
+      "largest-contentful-paint": 2758.8131500000004,
+      "total-blocking-time": 172.22894999999994,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2833.5928514597363,
+      "total-byte-weight": 322464
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services/web-solutions",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:03:31.183Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1058.9681,
+      "largest-contentful-paint": 2712.45215,
+      "total-blocking-time": 49.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2130.962140020362,
+      "total-byte-weight": 323247
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services/web-solutions",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:03:44.251Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1059.4588,
+      "largest-contentful-paint": 2676.1882,
+      "total-blocking-time": 31,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2708.5696319459867,
+      "total-byte-weight": 323061
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/services/web-solutions",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:03:56.513Z",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 302.347,
+      "largest-contentful-paint": 614.0205,
+      "total-blocking-time": 13.499999999999943,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2625.82916978246,
+      "total-byte-weight": 344996
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:04:12.406Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1112.2238,
+      "largest-contentful-paint": 2708.8356999999996,
+      "total-blocking-time": 70.3880999999999,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1819.2202948449985,
+      "total-byte-weight": 444821
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:04:28.179Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1068.488,
+      "largest-contentful-paint": 2952.2319999999995,
+      "total-blocking-time": 53.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1938.7299479832172,
+      "total-byte-weight": 444233
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:04:42.282Z",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1067.1042,
+      "largest-contentful-paint": 2343.1562999999996,
+      "total-blocking-time": 34,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2305.3258960242792,
+      "total-byte-weight": 445419
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:04:54.214Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 295.5,
+      "largest-contentful-paint": 623.5,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 652.5596472402364,
+      "total-byte-weight": 505530
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/bienvenidos-apartments",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:05:06.470Z",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1105.6197,
+      "largest-contentful-paint": 2310.7393999999995,
+      "total-blocking-time": 25.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2348.2729660565906,
+      "total-byte-weight": 339433
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/bienvenidos-apartments",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:05:19.738Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1063.89,
+      "largest-contentful-paint": 2942.835,
+      "total-blocking-time": 35.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1351.3153940567968,
+      "total-byte-weight": 338811
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/bienvenidos-apartments",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:05:31.338Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1061.3388,
+      "largest-contentful-paint": 2909.5082,
+      "total-blocking-time": 23.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1302.2735980311825,
+      "total-byte-weight": 338928
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/bienvenidos-apartments",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:05:43.414Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 297.87,
+      "largest-contentful-paint": 666.8050000000001,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 542.0894867465645,
+      "total-byte-weight": 514612
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:05:54.563Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1106.0995,
+      "largest-contentful-paint": 2954.1492500000004,
+      "total-blocking-time": 59,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1773.2179479468348,
+      "total-byte-weight": 424493
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:06:13.300Z",
+    "scores": {
+      "performance": 81,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1135.5242,
+      "largest-contentful-paint": 3003.2862999999998,
+      "total-blocking-time": 407.2379000000001,
+      "cumulative-layout-shift": 0,
+      "speed-index": 4900.4597700491095,
+      "total-byte-weight": 424491
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:06:31.801Z",
+    "scores": {
+      "performance": 90,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1151.1535,
+      "largest-contentful-paint": 1951.7302499999998,
+      "total-blocking-time": 382.92325000000005,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2232.956463314965,
+      "total-byte-weight": 424491
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:06:47.298Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 305.1777,
+      "largest-contentful-paint": 693.26655,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 893.0030067704554,
+      "total-byte-weight": 454733
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/seo-thinking-for-business-websites",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:07:04.286Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1060.9425,
+      "largest-contentful-paint": 2943.91375,
+      "total-blocking-time": 38.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1101.765999494702,
+      "total-byte-weight": 346050
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/seo-thinking-for-business-websites",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:07:16.530Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1059.6654,
+      "largest-contentful-paint": 2907.4981000000002,
+      "total-blocking-time": 34,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1115.364209937958,
+      "total-byte-weight": 346048
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/seo-thinking-for-business-websites",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:07:28.387Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1060.0694,
+      "largest-contentful-paint": 2790.1041000000005,
+      "total-blocking-time": 45,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1060.0694,
+      "total-byte-weight": 346823
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/seo-thinking-for-business-websites",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:07:39.314Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 348.4004,
+      "largest-contentful-paint": 594.8008,
+      "total-blocking-time": 38.799800000000005,
+      "cumulative-layout-shift": 0,
+      "speed-index": 545.0513093003808,
+      "total-byte-weight": 434151
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/contact",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:07:55.392Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 914.7424000000001,
+      "largest-contentful-paint": 2705.1136,
+      "total-blocking-time": 139.62879999999996,
+      "cumulative-layout-shift": 0,
+      "speed-index": 918.12421734234,
+      "total-byte-weight": 312619
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/contact",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:08:07.360Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 912.9105999999999,
+      "largest-contentful-paint": 2689.3659,
+      "total-blocking-time": 74,
+      "cumulative-layout-shift": 0,
+      "speed-index": 912.9105999999999,
+      "total-byte-weight": 312619
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/contact",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:08:16.821Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 910.9212,
+      "largest-contentful-paint": 2566.3818,
+      "total-blocking-time": 78,
+      "cumulative-layout-shift": 0,
+      "speed-index": 910.9212,
+      "total-byte-weight": 312619
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/contact",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:08:26.603Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 252.46050000000002,
+      "largest-contentful-paint": 460.92100000000005,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 287.84734515203775,
+      "total-byte-weight": 338443
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/start",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:08:36.354Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 918.3032000000001,
+      "largest-contentful-paint": 2577.4548000000004,
+      "total-blocking-time": 54,
+      "cumulative-layout-shift": 0,
+      "speed-index": 918.3032000000001,
+      "total-byte-weight": 304839
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/start",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:08:44.791Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 912.8765000000001,
+      "largest-contentful-paint": 2562.8765000000003,
+      "total-blocking-time": 89,
+      "cumulative-layout-shift": 0,
+      "speed-index": 912.8765000000001,
+      "total-byte-weight": 304839
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/start",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:08:53.741Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 912.1310000000001,
+      "largest-contentful-paint": 2693.1965000000005,
+      "total-blocking-time": 75,
+      "cumulative-layout-shift": 0,
+      "speed-index": 912.1310000000001,
+      "total-byte-weight": 304839
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/start",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:09:02.063Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 253.19979999999998,
+      "largest-contentful-paint": 464.39959999999996,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 253.19979999999998,
+      "total-byte-weight": 304839
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:09:10.086Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 973.0492999999999,
+      "largest-contentful-paint": 2002.0986000000003,
+      "total-blocking-time": 160.99999999999977,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2421.7101502491714,
+      "total-byte-weight": 289337
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:09:20.887Z",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 919.7978,
+      "largest-contentful-paint": 2678.6966999999995,
+      "total-blocking-time": 29,
+      "cumulative-layout-shift": 0,
+      "speed-index": 919.7978,
+      "total-byte-weight": 288372
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:09:30.198Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 946.9969000000001,
+      "largest-contentful-paint": 2693.49535,
+      "total-blocking-time": 35.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 946.9969000000001,
+      "total-byte-weight": 288927
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:09:39.618Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 255.81,
+      "largest-contentful-paint": 599.81,
+      "total-blocking-time": 7,
+      "cumulative-layout-shift": 0,
+      "speed-index": 391.3590512512475,
+      "total-byte-weight": 371131
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo/usa-web-development-agency",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:09:53.168Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1099.0128,
+      "largest-contentful-paint": 2772.0191999999997,
+      "total-blocking-time": 50.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2149.5044299544047,
+      "total-byte-weight": 337512
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo/usa-web-development-agency",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:10:05.334Z",
+    "scores": {
+      "performance": 88,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1122.3951,
+      "largest-contentful-paint": 2709.3950999999997,
+      "total-blocking-time": 289.8024499999999,
+      "cumulative-layout-shift": 0,
+      "speed-index": 4355.806881160473,
+      "total-byte-weight": 335352
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo/usa-web-development-agency",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:10:22.540Z",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1101.3581,
+      "largest-contentful-paint": 2784.537149999999,
+      "total-blocking-time": 84.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 3582.7280760612075,
+      "total-byte-weight": 336527
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/seo/usa-web-development-agency",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:10:36.987Z",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 293.7994,
+      "largest-contentful-paint": 656.6991,
+      "total-blocking-time": 35.10029999999995,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1498.5911082402877,
+      "total-byte-weight": 349747
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/privacy-policy",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:10:56.802Z",
+    "scores": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 916.3704,
+      "largest-contentful-paint": 2647.5555999999997,
+      "total-blocking-time": 219,
+      "cumulative-layout-shift": 0,
+      "speed-index": 916.3704,
+      "total-byte-weight": 298904
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/privacy-policy",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:11:11.024Z",
+    "scores": {
+      "performance": 88,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 942.4287999999999,
+      "largest-contentful-paint": 1801.6432,
+      "total-blocking-time": 451.78559999999993,
+      "cumulative-layout-shift": 0,
+      "speed-index": 942.4287999999999,
+      "total-byte-weight": 298904
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/privacy-policy",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:11:33.154Z",
+    "scores": {
+      "performance": 68,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 921.4679000000001,
+      "largest-contentful-paint": 3036.20185,
+      "total-blocking-time": 1664.7660499999995,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1400.1425912537047,
+      "total-byte-weight": 298904
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/privacy-policy",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:11:46.285Z",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 265.342,
+      "largest-contentful-paint": 556.342,
+      "total-blocking-time": 103,
+      "cumulative-layout-shift": 0,
+      "speed-index": 590.7175896884929,
+      "total-byte-weight": 298904
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/cartix-ecommerce-platform",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:12:02.929Z",
+    "scores": {
+      "performance": 62,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 92
+    },
+    "metrics": {
+      "first-contentful-paint": 1628.9430000000002,
+      "largest-contentful-paint": 2623.943,
+      "total-blocking-time": 3080.0284999999994,
+      "cumulative-layout-shift": 0,
+      "speed-index": 5533.450729708682,
+      "total-byte-weight": 407092
+    },
+    "failed": [
+      {
+        "id": "meta-description",
+        "title": "Document does not have a meta description"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/cartix-ecommerce-platform",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:13:21.131Z",
+    "scores": {
+      "performance": 81,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1079.002,
+      "largest-contentful-paint": 2320.7535,
+      "total-blocking-time": 663.4990000000003,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2695.0846450540794,
+      "total-byte-weight": 405345
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/cartix-ecommerce-platform",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:14:04.228Z",
+    "scores": {
+      "performance": 65,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1419.12,
+      "largest-contentful-paint": 1699.34,
+      "total-blocking-time": 4690.94,
+      "cumulative-layout-shift": 0,
+      "speed-index": 5687.294717001044,
+      "total-byte-weight": 405556
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/work/cartix-ecommerce-platform",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:15:01.110Z",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 92
+    },
+    "metrics": {
+      "first-contentful-paint": 830.7860000000001,
+      "largest-contentful-paint": 883.7860000000001,
+      "total-blocking-time": 129,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1761.8286760091787,
+      "total-byte-weight": 650757
+    },
+    "failed": [
+      {
+        "id": "meta-description",
+        "title": "Document does not have a meta description"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/building-fast-web-apps-for-low-bandwidth-markets",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T19:16:29.198Z",
+    "scores": {
+      "performance": 70,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1079.137,
+      "largest-contentful-paint": 3252.7055,
+      "total-blocking-time": 1050.9999999999998,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1572.535807138748,
+      "total-byte-weight": 332888
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/building-fast-web-apps-for-low-bandwidth-markets",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T19:17:18.252Z",
+    "scores": {
+      "performance": 42,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 2532.9958,
+      "largest-contentful-paint": 6441.493700000001,
+      "total-blocking-time": 6349.002100000001,
+      "cumulative-layout-shift": 0,
+      "speed-index": 4092.5780263505303,
+      "total-byte-weight": 333376
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/building-fast-web-apps-for-low-bandwidth-markets",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T19:18:54.694Z",
+    "scores": {
+      "performance": 70,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1090.6368,
+      "largest-contentful-paint": 3261.9552000000003,
+      "total-blocking-time": 1081.1815999999997,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1476.0220651079821,
+      "total-byte-weight": 333549
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "environment": {
+      "next": "16.2.12",
+      "node": "v25.1.0"
+    },
+    "route": "/blog/building-fast-web-apps-for-low-bandwidth-markets",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T19:19:39.922Z",
+    "scores": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 375,
+      "largest-contentful-paint": 920.5,
+      "total-blocking-time": 196,
+      "cumulative-layout-shift": 0,
+      "speed-index": 955.3992341749372,
+      "total-byte-weight": 413092
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  }
+]

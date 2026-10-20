@@ -1,38 +1,23 @@
-"use client";
-
-import * as m from "framer-motion/m";
 import { SectionTag, AccentLine } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
 import { PHASES } from "@/constants";
 import { PhaseCard } from "./PhaseCard";
 
-
-
 export function DeliveryProcess() {
-  const [ref, inView] = useReveal();
-
   return (
     <section className="py-32 px-6 md:px-10 bg-surface border-y border-line">
       <div className="max-w-300 mx-auto">
-
-        <m.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
+        <div>
           {/* Header */}
-          <m.div variants={fadeUp()}>
+          <div>
             <SectionTag>How We Deliver</SectionTag>
             <AccentLine />
-          </m.div>
+          </div>
 
-          <m.div
-            variants={fadeUp(0.1)}
-            className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16"
-          >
-            <h2 className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
-              tracking-tight text-ink leading-[1.1] max-w-120">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
+            <h2
+              className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold
+              tracking-tight text-ink leading-[1.1] max-w-120"
+            >
               A Delivery Model Built on{" "}
               <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                 Zero Surprises
@@ -42,27 +27,21 @@ export function DeliveryProcess() {
               Every engagement follows the same structured process — regardless
               of size or service. Predictable, transparent, and repeatable.
             </p>
-          </m.div>
+          </div>
 
           {/* Phase grid */}
-          <m.div
-            variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {PHASES.map((p, i) => (
               <PhaseCard key={p.num} phase={p} index={i} />
             ))}
-          </m.div>
+          </div>
 
           {/* Bottom note */}
-          <m.p
-            variants={fadeUp(0.3)}
-            className="mt-10 text-center font-sans text-sm text-ink-faint max-w-140 mx-auto"
-          >
+          <p className="mt-10 text-center font-sans text-sm text-ink-faint max-w-140 mx-auto">
             Timeline varies by project scope. All projects include a fixed-price
             proposal — no hourly billing, no surprise invoices.
-          </m.p>
-        </m.div>
+          </p>
+        </div>
       </div>
     </section>
   );

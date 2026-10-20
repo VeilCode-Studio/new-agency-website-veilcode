@@ -1,0 +1,30 @@
+{
+  "states": {
+    "light-enquiry-validation": [],
+    "light-enquiry-details": [],
+    "light-enquiry-success": [],
+    "light-newsletter-validation": [],
+    "light-newsletter-success": [],
+    "linen-enquiry-validation": [],
+    "linen-enquiry-details": [],
+    "linen-enquiry-success": [],
+    "linen-newsletter-validation": [],
+    "linen-newsletter-success": [],
+    "midnight-enquiry-validation": [],
+    "midnight-enquiry-details": [],
+    "midnight-enquiry-success": [],
+    "midnight-newsletter-validation": [],
+    "midnight-newsletter-success": [],
+    "dark-enquiry-validation": [],
+    "dark-enquiry-details": [],
+    "dark-enquiry-success": [],
+    "dark-newsletter-validation": [],
+    "dark-newsletter-success": []
+  },
+  "navigation": {
+    "projectUsesClientNavigation": true,
+    "footerUsesClientNavigation": true,
+    "mobileMenuUsesClientNavigation": true
+  },
+  "errors": []
+}

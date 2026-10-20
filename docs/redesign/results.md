@@ -90,3 +90,8 @@ node scripts/audit-homepage.mjs review-homepage
 ```
 
 Audit dependencies use the existing external tool directory at `$env:TEMP/veilcode-lighthouse-tools/node_modules`, or `VEILCODE_AUDIT_TOOLS`. They are not production dependencies. `VEILCODE_VERIFY_URL` and `VEILCODE_AUDIT_URL` can point to another local server. Use a new audit label to keep previous evidence.
+
+
+## Client-pages follow-up (20 October 2026)
+
+The remaining public-page redesign includes a targeted Next.js renderer update and an explicit UTC publication-date formatter. The current homepage and all five location browser regressions pass without runtime errors on a normal production server with direct database access. See the [current integration report](client-pages/results.md) for the final evidence and new performance measurements. The earlier measurements and environment caveats above remain historical records.

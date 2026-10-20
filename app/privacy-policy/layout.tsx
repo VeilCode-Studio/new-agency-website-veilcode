@@ -1,4 +1,4 @@
-import { AnimationBoundary } from "@/components/providers/AnimationBoundary";
+import { PublicShell } from "@/components/public/PublicShell";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { DEFAULT_OG_IMAGE } from "@/lib/seo/site";
@@ -17,5 +17,9 @@ export default function PrivacyPolicyLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <AnimationBoundary><main>{children}</main></AnimationBoundary>;
+  return (
+    <PublicShell>
+      <main>{children}</main>
+    </PublicShell>
+  );
 }

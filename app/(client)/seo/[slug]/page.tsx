@@ -10,7 +10,8 @@ import {
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { GridBg, GlowOrb, SectionTag, AccentLine } from "@/components/extras/Primitives";
+import { PublicHero } from "@/components/public/PublicHero";
+import { getProjectKindLabel } from "@/lib/projects/kind";
 import { ArticleBody } from "../../blog/[slug]/ArticleBody";
 import { getLocationMarketByCountryCode } from "@/constants/locations";
 
@@ -41,13 +42,13 @@ export async function generateMetadata({ params }: Params) {
 function pageTypeLabel(value: string) {
   switch (value) {
     case "location":
-      return "Location";
+      return "Location guide";
     case "service-location":
-      return "Service + Location";
+      return "Services & markets";
     case "industry":
-      return "Industry";
+      return "Industry guide";
     default:
-      return "Custom";
+      return "Expertise";
   }
 }
 
@@ -57,30 +58,40 @@ export default async function SeoPage({ params }: Params) {
 
   if (!page) return notFound();
 
-  const [servicesResult, projectsResult, blogsResult, seoPagesResult] = await Promise.allSettled([
-    getPublishedServices(),
-    getAllProjects(),
-    getPublishedBlogs(),
-    getPublishedSeoPages(),
-  ]);
+  const [servicesResult, projectsResult, blogsResult, seoPagesResult] =
+    await Promise.allSettled([
+      getPublishedServices(),
+      getAllProjects(),
+      getPublishedBlogs(),
+      getPublishedSeoPages(),
+    ]);
 
-  const services = servicesResult.status === "fulfilled" ? servicesResult.value : [];
-  const projects = projectsResult.status === "fulfilled" ? projectsResult.value : [];
+  const services =
+    servicesResult.status === "fulfilled" ? servicesResult.value : [];
+  const projects =
+    projectsResult.status === "fulfilled" ? projectsResult.value : [];
   const blogs = blogsResult.status === "fulfilled" ? blogsResult.value : [];
 
   const relatedServices = page.relatedServiceIds
     .map((serviceId) => services.find((service) => service.id === serviceId))
-    .filter((service): service is NonNullable<typeof service> => Boolean(service));
+    .filter((service): service is NonNullable<typeof service> =>
+      Boolean(service),
+    );
 
   const relatedProjects = page.relatedProjectSlugs
-    .map((projectSlug) => projects.find((project) => project.slug === projectSlug))
-    .filter((project): project is NonNullable<typeof project> => Boolean(project));
+    .map((projectSlug) =>
+      projects.find((project) => project.slug === projectSlug),
+    )
+    .filter((project): project is NonNullable<typeof project> =>
+      Boolean(project),
+    );
 
   const relatedBlogs = page.relatedBlogSlugs
     .map((blogSlug) => blogs.find((blog) => blog.slug === blogSlug))
     .filter((blog): blog is NonNullable<typeof blog> => Boolean(blog));
 
-  const seoPages = seoPagesResult.status === "fulfilled" ? seoPagesResult.value : [];
+  const seoPages =
+    seoPagesResult.status === "fulfilled" ? seoPagesResult.value : [];
 
   // Every service-location page links to its location page and its service page.
   const locationMarket = getLocationMarketByCountryCode(page.countryCode);
@@ -88,12 +99,15 @@ export default async function SeoPage({ params }: Params) {
     ? services.find((service) => service.id === page.serviceId)
     : undefined;
   const primaryServiceHref =
-    primaryService?.seoEnabled && primaryService.slug ? `/services/${primaryService.slug}` : null;
+    primaryService?.seoEnabled && primaryService.slug
+      ? `/services/${primaryService.slug}`
+      : null;
 
   const relatedSeoPages = seoPages
     .filter((item) => item.slug !== page.slug)
     .filter((item) => {
-      if (page.countryName && item.countryName === page.countryName) return true;
+      if (page.countryName && item.countryName === page.countryName)
+        return true;
       if (page.serviceId && item.serviceId === page.serviceId) return true;
       return false;
     })
@@ -111,95 +125,47 @@ export default async function SeoPage({ params }: Params) {
       <StructuredData
         data={breadcrumbJsonLd([
           { name: "Home", href: "/" },
-          { name: "SEO Pages", href: "/seo" },
+          { name: "Expertise", href: "/seo" },
           { name: page.title, href: `/seo/${page.slug}` },
         ])}
       />
 
-      <section className="relative min-h-[72vh] overflow-hidden flex items-center">
-        <GridBg />
-        <GlowOrb color="rgba(0,229,255,0.10)" size={560} top="5%" left="58%" />
-        <GlowOrb color="rgba(16,217,160,0.07)" size={400} bottom="0%" left="0%" delay="2s" />
-
-        <div
-          aria-hidden
-          className="absolute inset-x-0 h-px pointer-events-none bg-linear-to-r from-transparent via-brand/20 to-transparent animate-scan"
-        />
-
-        <div className="relative z-10 w-full max-w-300 mx-auto px-6 md:px-10 pt-36 pb-24">
-          <div className="max-w-205">
-            <SectionTag>{pageTypeLabel(page.pageType)}</SectionTag>
-            <AccentLine width={56} />
-
-            <h1 className="font-display text-[clamp(40px,6.5vw,80px)] font-extrabold leading-[1.02] tracking-tight text-ink mb-6">
-              {page.h1}
-            </h1>
-
-            <p className="font-sans font-light text-lg text-ink-muted leading-relaxed max-w-145 mb-10">
-              {page.heroCopy}
-            </p>
-
-            <div className="flex flex-wrap gap-2.5">
-              {page.countryName ? (
-                locationMarket ? (
-                  <Link
-                    href={`/locations/${locationMarket.slug}`}
-                    className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint transition-colors hover:border-line-hi hover:text-ink"
-                  >
-                    {page.countryName}
-                  </Link>
-                ) : (
-                  <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
-                    {page.countryName}
-                  </span>
-                )
-              ) : null}
-              {page.serviceId ? (
-                primaryService && primaryServiceHref ? (
-                  <Link
-                    href={primaryServiceHref}
-                    className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint transition-colors hover:border-line-hi hover:text-ink"
-                  >
-                    {primaryService.title}
-                  </Link>
-                ) : (
-                  <span className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint">
-                    {page.serviceId}
-                  </span>
-                )
-              ) : null}
-              {page.relatedServiceIds.slice(0, 3).map((serviceId) => (
-                <span
-                  key={serviceId}
-                  className="font-mono text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded border border-line bg-surface text-ink-faint"
-                >
-                  {serviceId}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                href={page.cta?.href ?? "/start"}
-                className="rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
-              >
-                {page.cta?.label ?? "Let's Discuss your Project"}
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-md border border-line px-5 py-3 text-sm font-semibold text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
-              >
-                Contact us
-              </Link>
-            </div>
-          </div>
+      <PublicHero
+        eyebrow={pageTypeLabel(page.pageType)}
+        parent={{ label: "Expertise", href: "/seo" }}
+        title={page.h1}
+        description={page.heroCopy}
+      >
+        <div className="public-tags">
+          {locationMarket && (
+            <Link
+              className="public-button public-button-secondary"
+              href={`/locations/${locationMarket.slug}`}
+            >
+              {page.countryName}
+            </Link>
+          )}
+          {primaryService && primaryServiceHref && (
+            <Link
+              className="public-button public-button-secondary"
+              href={primaryServiceHref}
+            >
+              {primaryService.title}
+            </Link>
+          )}
         </div>
-
-        <div
-          aria-hidden
-          className="absolute bottom-0 inset-x-0 h-28 bg-linear-to-t from-page to-transparent pointer-events-none"
-        />
-      </section>
+        <div className="public-actions">
+          <Link href={page.cta?.href ?? "/start"} className="public-button">
+            {page.cta?.label ?? "Discuss your project"}
+          </Link>
+          <Link
+            href="/contact"
+            className="public-button public-button-secondary"
+          >
+            Contact the studio
+          </Link>
+        </div>
+      </PublicHero>
 
       {page.body.length > 0 && (
         <section className="border-t border-line px-6 py-20 md:px-10">
@@ -210,12 +176,12 @@ export default async function SeoPage({ params }: Params) {
                   Overview
                 </p>
                 <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
-                  What this page covers
+                  A closer look
                 </h2>
               </div>
               <p className="max-w-120 text-sm leading-relaxed text-ink-muted">
-                This section is structured to support search intent, internal linking, and a clearer
-                reading path for visitors.
+                Explore the approach, capabilities and practical details for
+                your project.
               </p>
             </div>
 
@@ -234,7 +200,7 @@ export default async function SeoPage({ params }: Params) {
                     </span>
                     {page.serviceId ? (
                       <span className="rounded-full border border-line bg-page px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
-                        {page.serviceId}
+                        {primaryService?.title || "Services"}
                       </span>
                     ) : null}
                   </div>
@@ -247,30 +213,15 @@ export default async function SeoPage({ params }: Params) {
 
               <aside className="space-y-4">
                 <div className="rounded-2xl border border-line bg-surface p-6">
-                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-                    Page focus
+                  <p className="public-eyebrow">Your next step</p>
+                  <h2>Let’s talk through the details.</h2>
+                  <p className="mt-5 text-sm leading-relaxed text-ink-muted">
+                    Share what you need to build, who it is for and what needs
+                    to work better. We will help you define a practical scope.
                   </p>
-                  <div className="space-y-3 text-sm leading-relaxed text-ink-muted">
-                    <p>
-                      Search target:{" "}
-                      <span className="font-medium text-ink">{page.title}</span>
-                    </p>
-                    <p>
-                      Primary angle: {page.serviceId || pageTypeLabel(page.pageType).toLowerCase()}{" "}
-                      positioning for {page.countryName || "global"} search intent.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-line bg-page p-6">
-                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-faint">
-                    What to expect
-                  </p>
-                  <ul className="space-y-3 text-sm leading-relaxed text-ink-muted">
-                    <li>Clear positioning for the market and service combination.</li>
-                    <li>Readable sections that support both visitors and search engines.</li>
-                    <li>Internal links to services, projects, and related articles.</li>
-                  </ul>
+                  <Link className="public-button mt-6" href="/start">
+                    Discuss your project ↓
+                  </Link>
                 </div>
               </aside>
             </div>
@@ -278,7 +229,9 @@ export default async function SeoPage({ params }: Params) {
         </section>
       )}
 
-      {(relatedServices.length > 0 || relatedProjects.length > 0 || relatedBlogs.length > 0) && (
+      {(relatedServices.length > 0 ||
+        relatedProjects.length > 0 ||
+        relatedBlogs.length > 0) && (
         <section className="border-t border-line px-6 py-20 md:px-10">
           <div className="mx-auto max-w-300">
             <div className="mb-8">
@@ -286,7 +239,7 @@ export default async function SeoPage({ params }: Params) {
                 Related content
               </p>
               <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
-                Internal links that support this page
+                Services, builds and further reading
               </h2>
             </div>
 
@@ -299,14 +252,18 @@ export default async function SeoPage({ params }: Params) {
                   <div className="space-y-3">
                     {relatedServices.map((service) => (
                       <Link
-                        key={service.id}
-                        href={service.slug ? `/services/${service.slug}` : "/services"}
+                        key={service.tagline || service.title}
+                        href={
+                          service.seoEnabled && service.slug
+                            ? `/services/${service.slug}`
+                            : "/services"
+                        }
                         className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0">
                             <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                              {service.id}
+                              {service.tagline || service.title}
                             </p>
                             <h3 className="mt-2 font-display text-lg font-bold text-ink">
                               {service.title}
@@ -335,6 +292,7 @@ export default async function SeoPage({ params }: Params) {
                         className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
                       >
                         <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                          {getProjectKindLabel(project.client)} ·{" "}
                           {project.serviceLabel}
                         </p>
                         <h3 className="mt-2 font-display text-lg font-bold text-ink">
@@ -385,10 +343,10 @@ export default async function SeoPage({ params }: Params) {
           <div className="mx-auto max-w-300">
             <div className="mb-8">
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
-                Related SEO pages
+                Explore further
               </p>
               <h2 className="font-display text-[clamp(28px,4vw,46px)] font-extrabold tracking-tight text-ink">
-                More pages in this market cluster
+                More for your business
               </h2>
             </div>
 
@@ -410,11 +368,15 @@ export default async function SeoPage({ params }: Params) {
                     </span>
                     {item.serviceId ? (
                       <span className="rounded-full border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                        {item.serviceId}
+                        {services.find(
+                          (service) => service.id === item.serviceId,
+                        )?.title || "Services"}
                       </span>
                     ) : null}
                   </div>
-                  <h3 className="mt-3 font-display text-lg font-bold text-ink">{item.title}</h3>
+                  <h3 className="mt-3 font-display text-lg font-bold text-ink">
+                    {item.title}
+                  </h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                     {item.metaDescription}
                   </p>

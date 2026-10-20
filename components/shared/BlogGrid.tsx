@@ -1,10 +1,17 @@
 "use client";
 
+import { publicImageSource } from "@/lib/public-image";
+
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatedArrow, AccentLine, GhostButton, SectionTag } from "@/components/extras/Primitives";
+import {
+  AnimatedArrow,
+  AccentLine,
+  GhostButton,
+  SectionTag,
+} from "@/components/extras/Primitives";
 import { formatDate } from "@/constants/blog";
 import type { BlogGridPost } from "@/lib/blog/grid";
 import { cn } from "@/lib/utils";
@@ -30,7 +37,10 @@ type BlogGridProps = {
 };
 
 const CATEGORY_ACCENTS: Record<string, { active: string; dot: string }> = {
-  All: { active: "bg-brand-dim border-brand-border text-brand", dot: "bg-brand" },
+  All: {
+    active: "bg-brand-dim border-brand-border text-brand",
+    dot: "bg-brand",
+  },
   Engineering: {
     active: "bg-svc-web-dim border-svc-web-border text-svc-web",
     dot: "bg-svc-web",
@@ -81,7 +91,11 @@ function BlogGridFilterBar({
   return (
     <div className="sticky top-18 z-20 w-full min-w-0 max-w-full border-y border-line bg-page/90 backdrop-blur-md">
       <div className="mx-auto w-full min-w-0 max-w-300 space-y-3 px-5 py-4 sm:px-6 md:px-10">
-        <div className="flex min-w-0 flex-wrap items-center gap-2" aria-label="Filter by category">
+        <div
+          className="flex min-w-0 flex-wrap items-center gap-2"
+          role="group"
+          aria-label="Filter by category"
+        >
           {allCategories.map((category) => {
             const isActive = state.category === category;
             const styles = accentFor(category);
@@ -90,8 +104,7 @@ function BlogGridFilterBar({
               <button
                 key={category}
                 type="button"
-                role="tab"
-                aria-selected={isActive}
+                aria-pressed={isActive}
                 onClick={() => setCategory(category)}
                 className={cn(
                   "relative inline-flex max-w-full cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 font-sans text-[13px] font-medium outline-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 focus-visible:ring-2 focus-visible:ring-brand",
@@ -172,10 +185,33 @@ function EmptyState({
       className="col-span-full flex flex-col items-center gap-5 py-24 text-center"
     >
       <div className="flex size-16 items-center justify-center rounded-2xl border border-line bg-surface">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden className="text-ink-faint">
-          <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          <path d="M8 11h6M11 8v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden
+          className="text-ink-faint"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M21 21l-4.35-4.35"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M8 11h6M11 8v6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
         </svg>
       </div>
       <div>
@@ -197,7 +233,12 @@ function CardVisual({ post }: { post: BlogGridPost }) {
   const { classes } = post;
 
   return (
-    <div className={cn("relative aspect-[11/6] overflow-hidden bg-linear-to-br to-surface", classes.dimBg)}>
+    <div
+      className={cn(
+        "relative aspect-[11/6] overflow-hidden bg-linear-to-br to-surface",
+        classes.dimBg,
+      )}
+    >
       <div
         aria-hidden
         className="absolute inset-0 bg-size-[28px_28px] opacity-20 [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)]"
@@ -217,7 +258,7 @@ function CardVisual({ post }: { post: BlogGridPost }) {
 
       {post.heroSrc ? (
         <Image
-          src={post.heroSrc}
+          src={publicImageSource(post.heroSrc)}
           alt={post.heroAlt}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           fill
@@ -226,11 +267,44 @@ function CardVisual({ post }: { post: BlogGridPost }) {
         />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className={cn("flex size-10 items-center justify-center rounded-lg border opacity-60", classes.dimBg, classes.border)}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden className={classes.accent}>
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M21 15l-5-5L5 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <div
+            className={cn(
+              "flex size-10 items-center justify-center rounded-lg border opacity-60",
+              classes.dimBg,
+              classes.border,
+            )}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden
+              className={classes.accent}
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <circle
+                cx="8.5"
+                cy="8.5"
+                r="1.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M21 15l-5-5L5 21"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -265,7 +339,12 @@ function BlogCard({ post }: { post: BlogGridPost }) {
         classes.border.replace("border-", "hover:border-"),
       )}
     >
-      <div className={cn("h-0.5 w-full origin-left scale-x-0 bg-linear-to-r from-current to-transparent transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500 group-hover:scale-x-100", classes.accent)} />
+      <div
+        className={cn(
+          "h-0.5 w-full origin-left scale-x-0 bg-linear-to-r from-current to-transparent transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-500 group-hover:scale-x-100",
+          classes.accent,
+        )}
+      />
 
       <CardVisual post={post} />
 
@@ -282,7 +361,9 @@ function BlogCard({ post }: { post: BlogGridPost }) {
             {post.author.initials}
           </div>
           <div className="flex min-w-0 items-center gap-1.5">
-            <span className="truncate font-sans text-xs text-ink-muted">{post.author.name}</span>
+            <span className="truncate font-sans text-xs text-ink-muted">
+              {post.author.name}
+            </span>
             <span className="text-ink-faint" aria-hidden>
               |
             </span>
@@ -310,15 +391,34 @@ function BlogCard({ post }: { post: BlogGridPost }) {
             </span>
           ))}
           {post.tags.length > 3 && (
-            <span className="font-mono text-[9px] text-ink-faint">+{post.tags.length - 3}</span>
+            <span className="font-mono text-[9px] text-ink-faint">
+              +{post.tags.length - 3}
+            </span>
           )}
         </div>
 
         <div className="flex items-center justify-between border-t border-line pt-4">
           <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-ink-faint">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M12 6v6l4 2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
             </svg>
             {post.readTime}
           </span>
@@ -353,15 +453,25 @@ export function BlogGrid({
   emptyDescription = "Try a different category or clear the tag filter.",
   className,
 }: BlogGridProps) {
-  const [filter, setFilter] = useState<BlogFilterState>({ category: "All", tag: "" });
-  const derivedCategories = useMemo(() => categories ?? uniqueValues(posts.map((post) => post.category)), [categories, posts]);
-  const derivedTags = useMemo(() => tags ?? uniqueValues(posts.flatMap((post) => post.tags)), [tags, posts]);
+  const [filter, setFilter] = useState<BlogFilterState>({
+    category: "All",
+    tag: "",
+  });
+  const derivedCategories = useMemo(
+    () => categories ?? uniqueValues(posts.map((post) => post.category)),
+    [categories, posts],
+  );
+  const derivedTags = useMemo(
+    () => tags ?? uniqueValues(posts.flatMap((post) => post.tags)),
+    [tags, posts],
+  );
 
   const filteredPosts = useMemo(() => {
     if (!showFilters) return posts;
 
     return posts.filter((post) => {
-      const categoryOk = filter.category === "All" || post.category === filter.category;
+      const categoryOk =
+        filter.category === "All" || post.category === filter.category;
       const tagOk = filter.tag === "" || post.tags.includes(filter.tag);
       return categoryOk && tagOk;
     });
@@ -372,12 +482,15 @@ export function BlogGrid({
   }
 
   return (
-    <section className={cn("w-full min-w-0 max-w-full overflow-x-clip px-6 py-32 md:px-10", className)}>
+    <section
+      className={cn(
+        "w-full min-w-0 max-w-full overflow-x-clip px-6 py-32 md:px-10",
+        className,
+      )}
+    >
       <div className="mx-auto w-full max-w-300">
         {(title || description || ctaHref) && (
-          <div
-            className="mb-16"
-          >
+          <div className="mb-16">
             <div>
               <SectionTag>{eyebrow}</SectionTag>
               <AccentLine />
@@ -386,16 +499,12 @@ export function BlogGrid({
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
                 {title && (
-                  <h2
-                    className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold leading-[1.1] tracking-tight text-ink"
-                  >
+                  <h2 className="font-display text-[clamp(28px,3.5vw,48px)] font-extrabold leading-[1.1] tracking-tight text-ink">
                     {title}
                   </h2>
                 )}
                 {description && (
-                  <p
-                    className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-ink-muted"
-                  >
+                  <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-ink-muted">
                     {description}
                   </p>
                 )}
@@ -440,7 +549,11 @@ export function BlogGrid({
                 <BlogCard key={post.slug} post={post} />
               ))
             ) : (
-              <EmptyState title={emptyTitle} description={emptyDescription} onReset={reset} />
+              <EmptyState
+                title={emptyTitle}
+                description={emptyDescription}
+                onReset={reset}
+              />
             )}
           </div>
         </>

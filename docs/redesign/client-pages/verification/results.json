@@ -1,0 +1,3512 @@
+{
+  "environment": {
+    "next": "16.2.12",
+    "node": "v25.1.0"
+  },
+  "routes": {
+    "/work": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Our Work | VeilCode",
+        "description": "Client work, our own products, and concept builds for the industries we serve. Each one shows how we'd approach your project.",
+        "canonical": "https://www.veilcode.studio/work",
+        "h1": [
+          "Real problems.Thoughtful products."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/services": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Services | Web, Mobile, and AI Automation | VeilCode",
+        "description": "Explore VeilCode services across web solutions, mobile application development, AI automation, and supporting digital capabilities.",
+        "canonical": "https://www.veilcode.studio/services",
+        "h1": [
+          "The right build foryour next chapter."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/contact": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Contact | VeilCode",
+        "description": "Talk to VeilCode Studio about a web platform, mobile app or AI automation project. Founder-led studio in Kampala working with clients worldwide.",
+        "canonical": "https://www.veilcode.studio/contact",
+        "h1": [
+          "A good project startswith a conversation."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/about": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute -left-40 top-20 size-150 rounded-full bg-brand/10 blur-3xl"
+            }
+          ],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "About VeilCode Studio | Founder-led product studio in Kampala",
+        "description": "Learn about VeilCode Studio — a founder-led product studio in Kampala. Our story, mission, values, and the engineer behind the work.",
+        "canonical": "https://www.veilcode.studio/about",
+        "h1": [
+          "A small studio.A direct connection."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/start": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Start a Project | VeilCode",
+        "description": "Share your website, mobile app, AI automation, or analytics brief with VeilCode and get a tailored project proposal.",
+        "canonical": "https://www.veilcode.studio/start",
+        "h1": [
+          "Tell us what you need."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/blog": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-web-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-web-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-brand-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-brand-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-ai-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-ai-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-social-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-social-border"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-web-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-web-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-brand-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-brand-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-ai-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-ai-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-social-border"
+            },
+            {
+              "tag": "DIV",
+              "class": "absolute right-[-20%] top-1/2 -translate-y-1/2 rounded-full border opacity-10 border-svc-social-border"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Blog | VeilCode",
+        "description": "Engineering deep dives, design thinking, and practical AI written by Frank Tamale, founder of VeilCode Studio.",
+        "canonical": "https://www.veilcode.studio/blog",
+        "h1": [
+          "Ideas worthbuilding on."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/seo": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Explore Our Expertise | VeilCode",
+        "description": "Explore VeilCode services, industries and markets. Find guidance and relevant projects for your next website, mobile app or AI automation build.",
+        "canonical": "https://www.veilcode.studio/seo",
+        "h1": [
+          "Find the right approachfor your business."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/privacy-policy": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Privacy Policy | VeilCode",
+        "description": "How VeilCode Studio collects, uses and protects personal information shared through veilcode.studio.",
+        "canonical": "https://www.veilcode.studio/privacy-policy",
+        "h1": [
+          "Privacy Policy"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/services/web-solutions": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Web Solutions Agency | VeilCode",
+        "description": "VeilCode designs and develops high-performance websites and web applications for businesses that need speed, clarity, and measurable growth.",
+        "canonical": "https://www.veilcode.studio/services/web-solutions",
+        "h1": [
+          "Web solutions for ambitious businesses"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Web Solutions",
+            "description": "VeilCode designs and develops high-performance websites and web applications for businesses that need speed, clarity, and measurable growth.",
+            "url": "https://www.veilcode.studio/services/web-solutions",
+            "provider": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            },
+            "areaServed": "Global"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.veilcode.studio/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Web Solutions",
+                "item": "https://www.veilcode.studio/services/web-solutions"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/services/mobile-applications": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Mobile Application Development Agency | VeilCode",
+        "description": "VeilCode builds iOS and Android mobile applications with React Native, Expo, backend integrations, and practical launch support.",
+        "canonical": "https://www.veilcode.studio/services/mobile-applications",
+        "h1": [
+          "Mobile applications built for real users and real operations"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Mobile Applications",
+            "description": "VeilCode builds iOS and Android mobile applications with React Native, Expo, backend integrations, and practical launch support.",
+            "url": "https://www.veilcode.studio/services/mobile-applications",
+            "provider": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            },
+            "areaServed": "Global"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.veilcode.studio/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Mobile Applications",
+                "item": "https://www.veilcode.studio/services/mobile-applications"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/services/ai-automation": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "AI Automation Agency | VeilCode",
+        "description": "VeilCode builds AI automation systems, workflow tools, internal copilots, and reporting layers that reduce manual work and improve operational visibility.",
+        "canonical": "https://www.veilcode.studio/services/ai-automation",
+        "h1": [
+          "AI automation systems for teams ready to reduce manual work"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "AI Automation",
+            "description": "VeilCode builds AI automation systems, workflow tools, internal copilots, and reporting layers that reduce manual work and improve operational visibility.",
+            "url": "https://www.veilcode.studio/services/ai-automation",
+            "provider": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            },
+            "areaServed": "Global"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.veilcode.studio/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Automation",
+                "item": "https://www.veilcode.studio/services/ai-automation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/seo/usa-mobile-app-development": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Mobile App Development Agency in the United States | VeilCode",
+        "description": "Mobile App Development Agency for United States businesses that need a practical, senior delivery partner.",
+        "canonical": "https://www.veilcode.studio/seo/usa-mobile-app-development",
+        "h1": [
+          "Mobile apps for the United States teams that need reliable product delivery"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Mobile App Development Agency in the United States | VeilCode",
+            "description": "Mobile App Development Agency for United States businesses that need a practical, senior delivery partner.",
+            "url": "https://www.veilcode.studio/seo/usa-mobile-app-development",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Expertise",
+                "item": "https://www.veilcode.studio/seo"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Mobile App Development Agency in the United States | VeilCode",
+                "item": "https://www.veilcode.studio/seo/usa-mobile-app-development"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/seo/usa-ai-automation": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "AI Automation Agency in the United States | VeilCode",
+        "description": "AI Automation Agency for United States businesses that need a practical, senior delivery partner.",
+        "canonical": "https://www.veilcode.studio/seo/usa-ai-automation",
+        "h1": [
+          "AI automation that removes repetitive work for the United States teams"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "AI Automation Agency in the United States | VeilCode",
+            "description": "AI Automation Agency for United States businesses that need a practical, senior delivery partner.",
+            "url": "https://www.veilcode.studio/seo/usa-ai-automation",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Expertise",
+                "item": "https://www.veilcode.studio/seo"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Automation Agency in the United States | VeilCode",
+                "item": "https://www.veilcode.studio/seo/usa-ai-automation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/seo/usa-web-development-agency": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Web Development Agency in the United States | VeilCode",
+        "description": "Web Solutions Agency for United States businesses that need a practical, senior delivery partner.",
+        "canonical": "https://www.veilcode.studio/seo/usa-web-development-agency",
+        "h1": [
+          "Web solutions that make the United States businesses faster to launch and easier to trust"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Web Development Agency in the United States | VeilCode",
+            "description": "Web Solutions Agency for United States businesses that need a practical, senior delivery partner.",
+            "url": "https://www.veilcode.studio/seo/usa-web-development-agency",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Expertise",
+                "item": "https://www.veilcode.studio/seo"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Web Development Agency in the United States | VeilCode",
+                "item": "https://www.veilcode.studio/seo/usa-web-development-agency"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/bienvenidos-apartments": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Bienvenidos Apartments Platform - VeilCode Case Study",
+        "description": "A real estate web application for Bienvenidos Apartments that helps people discover, explore and enquire about its properties.",
+        "canonical": "https://www.veilcode.studio/work/bienvenidos-apartments",
+        "h1": [
+          "Bienvenidos Apartments Platform"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Bienvenidos Apartments Platform - VeilCode Case Study",
+            "description": "A real estate web application for Bienvenidos Apartments that helps people discover, explore and enquire about its properties.",
+            "url": "https://www.veilcode.studio/work/bienvenidos-apartments",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bienvenidos Apartments Platform",
+                "item": "https://www.veilcode.studio/work/bienvenidos-apartments"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/reachflow-lead-tracking-crm": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "ReachFlow Lead Tracking CRM - VeilCode Case Study",
+        "description": "ReachFlow is an AI powered CRM built for agencies and small growth teams running cold outreach. The platform combines prospect management, AI message generation, and outreach tracking in one clean dashboard. Users can add prospects, generate personalized DMs or cold emails based on industry, location, channel, and pain point, then track each lead through statuses like sent, waiting, replied, booked, or dead ",
+        "canonical": "https://www.veilcode.studio/work/reachflow-lead-tracking-crm",
+        "h1": [
+          "ReachFlow Lead Tracking CRM"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "ReachFlow Lead Tracking CRM - VeilCode Case Study",
+            "description": "ReachFlow is an AI powered CRM built for agencies and small growth teams running cold outreach. The platform combines prospect management, AI message generation, and outreach tracking in one clean dashboard. Users can add prospects, generate personalized DMs or cold emails based on industry, location, channel, and pain point, then track each lead through statuses like sent, waiting, replied, booked, or dead ",
+            "url": "https://www.veilcode.studio/work/reachflow-lead-tracking-crm",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "ReachFlow Lead Tracking CRM",
+                "item": "https://www.veilcode.studio/work/reachflow-lead-tracking-crm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/dreamhomes-property-management-solution": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "DreamHomes Property Management Solution - VeilCode Case Study",
+        "description": "DreamHomes Admin is a real estate management platform built for property companies that need a cleaner way to manage listings, agents, inquiries, and operational activity. The dashboard centralizes property data, customer leads, and admin workflows into one scalable web application, giving teams better visibility and control over their real estate operations.",
+        "canonical": "https://www.veilcode.studio/work/dreamhomes-property-management-solution",
+        "h1": [
+          "DreamHomes Property Management Solution"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "DreamHomes Property Management Solution - VeilCode Case Study",
+            "description": "DreamHomes Admin is a real estate management platform built for property companies that need a cleaner way to manage listings, agents, inquiries, and operational activity. The dashboard centralizes property data, customer leads, and admin workflows into one scalable web application, giving teams better visibility and control over their real estate operations.",
+            "url": "https://www.veilcode.studio/work/dreamhomes-property-management-solution",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "DreamHomes Property Management Solution",
+                "item": "https://www.veilcode.studio/work/dreamhomes-property-management-solution"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/inspire-me-salon-website": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Inspire Me Salon Website - VeilCode Case Study",
+        "description": "A premium website designed and developed for a modern women’s salon — transforming their online presence into a high-converting digital storefront that attracts and books clients effortlessly.",
+        "canonical": "https://www.veilcode.studio/work/inspire-me-salon-website",
+        "h1": [
+          "Inspire Me Salon Website"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Inspire Me Salon Website - VeilCode Case Study",
+            "description": "A premium website designed and developed for a modern women’s salon — transforming their online presence into a high-converting digital storefront that attracts and books clients effortlessly.",
+            "url": "https://www.veilcode.studio/work/inspire-me-salon-website",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Inspire Me Salon Website",
+                "item": "https://www.veilcode.studio/work/inspire-me-salon-website"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/dean-s-fitness-app": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Dean's Fitness App - VeilCode Case Study",
+        "description": "Dean’s Fitness is a mobile fitness and nutrition application built to help users access structured workout programs, video based classes, meal guidance, and personalized fitness support from one platform. The app supports clients, trainers, and nutritionists, creating a scalable digital fitness ecosystem where users can train, track progress, receive guidance, and manage their wellness journey directly from their phones.\n\nThe product was designed as a subscription based fitness platform with room for premium add ons such as custom nutrition plans, expert coaching, and paid fitness programs.",
+        "canonical": "https://www.veilcode.studio/work/dean-s-fitness-app",
+        "h1": [
+          "Dean's Fitness App"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Dean's Fitness App - VeilCode Case Study",
+            "description": "Dean’s Fitness is a mobile fitness and nutrition application built to help users access structured workout programs, video based classes, meal guidance, and personalized fitness support from one platform. The app supports clients, trainers, and nutritionists, creating a scalable digital fitness ecosystem where users can train, track progress, receive guidance, and manage their wellness journey directly from their phones.\n\nThe product was designed as a subscription based fitness platform with room for premium add ons such as custom nutrition plans, expert coaching, and paid fitness programs.",
+            "url": "https://www.veilcode.studio/work/dean-s-fitness-app",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Dean's Fitness App",
+                "item": "https://www.veilcode.studio/work/dean-s-fitness-app"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/cartix-ecommerce-platform": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Cartix Ecommerce Platform - VeilCode Case Study",
+        "description": "A modern ecommerce storefront built to help customers browse product categories, view product details, and move from discovery to purchase with less friction.",
+        "canonical": "https://www.veilcode.studio/work/cartix-ecommerce-platform",
+        "h1": [
+          "Cartix Ecommerce Platform"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Cartix Ecommerce Platform - VeilCode Case Study",
+            "description": "A modern ecommerce storefront built to help customers browse product categories, view product details, and move from discovery to purchase with less friction.",
+            "url": "https://www.veilcode.studio/work/cartix-ecommerce-platform",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cartix Ecommerce Platform",
+                "item": "https://www.veilcode.studio/work/cartix-ecommerce-platform"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/clickfolio-affiliate-landing-page-saas": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Clickfolio Affiliate Landing Page SaaS - VeilCode Case Study",
+        "description": "A SaaS platform that helps affiliate marketers turn product links into trackable landing pages, campaign URLs, content assets, and performance insights.",
+        "canonical": "https://www.veilcode.studio/work/clickfolio-affiliate-landing-page-saas",
+        "h1": [
+          "Clickfolio Affiliate Landing Page SaaS"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Clickfolio Affiliate Landing Page SaaS - VeilCode Case Study",
+            "description": "A SaaS platform that helps affiliate marketers turn product links into trackable landing pages, campaign URLs, content assets, and performance insights.",
+            "url": "https://www.veilcode.studio/work/clickfolio-affiliate-landing-page-saas",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clickfolio Affiliate Landing Page SaaS",
+                "item": "https://www.veilcode.studio/work/clickfolio-affiliate-landing-page-saas"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/plumberanswered-ai-receptionist": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "PlumberAnswered - VeilCode Case Study",
+        "description": "AI-powered receptionist that answers calls, triages emergencies and books jobs for solo plumbers. Ready to deploy, onboarding its first plumbers now.",
+        "canonical": "https://www.veilcode.studio/work/plumberanswered-ai-receptionist",
+        "h1": [
+          "PlumberAnswered"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "PlumberAnswered - VeilCode Case Study",
+            "description": "AI-powered receptionist that answers calls, triages emergencies and books jobs for solo plumbers. Ready to deploy, onboarding its first plumbers now.",
+            "url": "https://www.veilcode.studio/work/plumberanswered-ai-receptionist",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "PlumberAnswered",
+                "item": "https://www.veilcode.studio/work/plumberanswered-ai-receptionist"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/work/brightsmile-dental-clinic": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Brightsmile Dental - VeilCode Case Study",
+        "description": "Concept website for a full-service dental clinic, set in Austin, Texas.",
+        "canonical": "https://www.veilcode.studio/work/brightsmile-dental-clinic",
+        "h1": [
+          "Brightsmile Dental"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Brightsmile Dental - VeilCode Case Study",
+            "description": "Concept website for a full-service dental clinic, set in Austin, Texas.",
+            "url": "https://www.veilcode.studio/work/brightsmile-dental-clinic",
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "url": "https://www.veilcode.studio"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": "https://www.veilcode.studio/work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Brightsmile Dental",
+                "item": "https://www.veilcode.studio/work/brightsmile-dental-clinic"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/blog/seo-thinking-for-business-websites": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Why Is My Business Website Not Ranking on Google? A Practical SEO Guide | VeilCode",
+        "description": "If your business website is not ranking on Google, the problem is usually not one missing SEO trick. This guide explains search intent, technical SEO, content quality, internal linking, authority, and AI search visibility.",
+        "canonical": "https://www.veilcode.studio/blog/seo-thinking-for-business-websites",
+        "h1": [
+          "Why Is My Business Website Not Ranking on Google? A Practical SEO Guide"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Why Is My Business Website Not Ranking on Google? A Practical SEO Guide",
+            "description": "If your business website is not ranking on Google, the problem is usually not one missing SEO trick. This guide explains search intent, technical SEO, content quality, internal linking, authority, and AI search visibility.",
+            "url": "https://www.veilcode.studio/blog/seo-thinking-for-business-websites",
+            "datePublished": "2026-08-20T00:00:00.000Z",
+            "dateModified": "2026-08-20T11:30:27.535Z",
+            "author": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.veilcode.studio/assets/logo.png"
+              }
+            },
+            "image": [
+              "https://res.cloudinary.com/dljizbsqx/image/upload/v1787225388/veilcode/blog/ukohue4hxbektgqwecko.png"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.veilcode.studio/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Why Is My Business Website Not Ranking on Google? A Practical SEO Guide",
+                "item": "https://www.veilcode.studio/blog/seo-thinking-for-business-websites"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/blog/affiliate-landing-page-generator": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Why Affiliate Marketers Need Landing Pages Instead of Raw Affiliate Links | VeilCode",
+        "description": "Affiliate marketers lose clicks, trust, and useful data when they send traffic straight to raw affiliate links. This guide explains how dedicated affiliate landing pages help creators promote products with clearer messaging, better tracking, stronger campaign structure, and more useful performance data.",
+        "canonical": "https://www.veilcode.studio/blog/affiliate-landing-page-generator",
+        "h1": [
+          "Why Affiliate Marketers Need Landing Pages Instead of Raw Affiliate Links"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Why Affiliate Marketers Need Landing Pages Instead of Raw Affiliate Links",
+            "description": "Affiliate marketers lose clicks, trust, and useful data when they send traffic straight to raw affiliate links. This guide explains how dedicated affiliate landing pages help creators promote products with clearer messaging, better tracking, stronger campaign structure, and more useful performance data.",
+            "url": "https://www.veilcode.studio/blog/affiliate-landing-page-generator",
+            "datePublished": "2026-05-26T00:00:00.000Z",
+            "dateModified": "2026-06-07T02:27:01.881Z",
+            "author": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.veilcode.studio/assets/logo.png"
+              }
+            },
+            "image": [
+              "https://res.cloudinary.com/dljizbsqx/image/upload/v1780799206/veilcode/blog/smrhibvhjd9rljckhmys.png"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.veilcode.studio/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Why Affiliate Marketers Need Landing Pages Instead of Raw Affiliate Links",
+                "item": "https://www.veilcode.studio/blog/affiliate-landing-page-generator"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/blog/how-do-i-choose-the-right-web-development-agency-for-my-business": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "How Do I Choose the Right Web Development Agency for My Business? | VeilCode",
+        "description": "Choosing a web development agency is not about picking the prettiest portfolio. This guide shows business owners how to evaluate strategy, technical ability, communication, SEO readiness, pricing, ownership, and long term support before hiring an agency.",
+        "canonical": "https://www.veilcode.studio/blog/how-do-i-choose-the-right-web-development-agency-for-my-business",
+        "h1": [
+          "How Do I Choose the Right Web Development Agency for My Business?"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "How Do I Choose the Right Web Development Agency for My Business?",
+            "description": "Choosing a web development agency is not about picking the prettiest portfolio. This guide shows business owners how to evaluate strategy, technical ability, communication, SEO readiness, pricing, ownership, and long term support before hiring an agency.",
+            "url": "https://www.veilcode.studio/blog/how-do-i-choose-the-right-web-development-agency-for-my-business",
+            "datePublished": "2026-05-15T00:00:00.000Z",
+            "dateModified": "2026-09-29T04:54:55.705Z",
+            "author": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.veilcode.studio/assets/logo.png"
+              }
+            },
+            "image": [
+              "https://res.cloudinary.com/dljizbsqx/image/upload/v1778851030/veilcode/blog/m506anuplga2wpiy05ir.png"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.veilcode.studio/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How Do I Choose the Right Web Development Agency for My Business?",
+                "item": "https://www.veilcode.studio/blog/how-do-i-choose-the-right-web-development-agency-for-my-business"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/blog/automate-business-workflows": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "How to Automate Business Workflows Without Breaking Your Operations | VeilCode",
+        "description": "Learn how to automate business workflows that waste time, create errors, and slow customer delivery. This practical guide shows which workflows to automate first, what data to prepare, and how to avoid expensive automation mistakes.",
+        "canonical": "https://www.veilcode.studio/blog/automate-business-workflows",
+        "h1": [
+          "How to Automate Business Workflows Without Breaking Your Operations"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "How to Automate Business Workflows Without Breaking Your Operations",
+            "description": "Learn how to automate business workflows that waste time, create errors, and slow customer delivery. This practical guide shows which workflows to automate first, what data to prepare, and how to avoid expensive automation mistakes.",
+            "url": "https://www.veilcode.studio/blog/automate-business-workflows",
+            "datePublished": "2026-05-15T00:00:00.000Z",
+            "dateModified": "2026-09-29T04:54:55.705Z",
+            "author": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.veilcode.studio/assets/logo.png"
+              }
+            },
+            "image": [
+              "https://res.cloudinary.com/dljizbsqx/image/upload/v1778860468/veilcode/blog/hkkawvaiwb9qedygt1nj.png"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.veilcode.studio/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Automate Business Workflows Without Breaking Your Operations",
+                "item": "https://www.veilcode.studio/blog/automate-business-workflows"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/blog/building-fast-web-apps-for-low-bandwidth-markets": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            }
+          ],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [
+            {
+              "tag": "CODE",
+              "class": "block w-max min-w-full whitespace-pre"
+            },
+            {
+              "tag": "SPAN",
+              "class": "text-svc-mobile"
+            }
+          ],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Building Fast Web Apps for Low-Bandwidth Markets | VeilCode",
+        "description": "Performance optimisation isn't a nice-to-have when your users are on 3G in Kampala or Nairobi. Here's the exact stack and techniques we use to build sub-2s load times across East Africa.",
+        "canonical": "https://www.veilcode.studio/blog/building-fast-web-apps-for-low-bandwidth-markets",
+        "h1": [
+          "Building Fast Web Apps for Low-Bandwidth Markets"
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Building Fast Web Apps for Low-Bandwidth Markets",
+            "description": "Performance optimisation isn't a nice-to-have when your users are on 3G in Kampala or Nairobi. Here's the exact stack and techniques we use to build sub-2s load times across East Africa.",
+            "url": "https://www.veilcode.studio/blog/building-fast-web-apps-for-low-bandwidth-markets",
+            "datePublished": "2026-05-11T00:00:00.000Z",
+            "dateModified": "2026-09-29T04:54:55.705Z",
+            "author": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "VeilCode Studio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.veilcode.studio/assets/logo.png"
+              }
+            },
+            "image": [
+              "https://res.cloudinary.com/dljizbsqx/image/upload/v1778535135/veilcode/blog/nzgbkqclbxo2eto7phtm.png"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.veilcode.studio/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.veilcode.studio/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Building Fast Web Apps for Low-Bandwidth Markets",
+                "item": "https://www.veilcode.studio/blog/building-fast-web-apps-for-low-bandwidth-markets"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/careers": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Careers | VeilCode",
+        "description": "Explore published opportunities to build web platforms, mobile apps and AI automation with VeilCode Studio.",
+        "canonical": "https://www.veilcode.studio/careers",
+        "robots": "noindex, follow",
+        "h1": [
+          "Care about the craft?So do we."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/newsletter/confirmed": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Newsletter subscription confirmed | VeilCode",
+        "description": "Newsletter subscription confirmed. Read the next steps for your VeilCode Studio newsletter subscription.",
+        "canonical": "https://www.veilcode.studio/newsletter/confirmed",
+        "robots": "noindex, follow",
+        "h1": [
+          "You’re on the list."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/newsletter/expired": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Newsletter link expired | VeilCode",
+        "description": "Newsletter link expired. Read the next steps for your VeilCode Studio newsletter subscription.",
+        "canonical": "https://www.veilcode.studio/newsletter/expired",
+        "robots": "noindex, follow",
+        "h1": [
+          "This link has expired."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    },
+    "/newsletter/invalid": {
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "320": {
+          "overflow": false,
+          "viewport": 320,
+          "documentWidth": 320,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "390": {
+          "overflow": false,
+          "viewport": 390,
+          "documentWidth": 390,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "768": {
+          "overflow": false,
+          "viewport": 768,
+          "documentWidth": 768,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1280": {
+          "overflow": false,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "offenders": [],
+          "hiddenHeadings": 0
+        },
+        "1440": {
+          "overflow": false,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "offenders": [],
+          "hiddenHeadings": 0
+        }
+      },
+      "metadata": {
+        "title": "Invalid newsletter link | VeilCode",
+        "description": "Invalid newsletter link. Read the next steps for your VeilCode Studio newsletter subscription.",
+        "canonical": "https://www.veilcode.studio/newsletter/invalid",
+        "robots": "noindex, follow",
+        "h1": [
+          "This link isn’t valid."
+        ],
+        "schemas": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VeilCode Studio",
+            "url": "https://www.veilcode.studio",
+            "logo": "https://www.veilcode.studio/assets/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Tamale Junior Frank"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressCountry": "UG"
+            },
+            "sameAs": [
+              "https://facebook.com/veilcode",
+              "https://instagram.com/veilcodestudio"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "errors": [],
+  "links": {
+    "/": 200,
+    "/services": 200,
+    "/work": 200,
+    "/about": 200,
+    "/blog": 200,
+    "/contact": 200,
+    "/start": 200,
+    "/work/bienvenidos-apartments": 200,
+    "/work/reachflow-lead-tracking-crm": 200,
+    "/work/dreamhomes-property-management-solution": 200,
+    "/work/inspire-me-salon-website": 200,
+    "/work/dean-s-fitness-app": 200,
+    "/work/cartix-ecommerce-platform": 200,
+    "/work/clickfolio-affiliate-landing-page-saas": 200,
+    "/work/plumberanswered-ai-receptionist": 200,
+    "/work/brightsmile-dental-clinic": 200,
+    "/services/web-solutions": 200,
+    "/services/mobile-applications": 200,
+    "/services/ai-automation": 200,
+    "/locations/uganda": 200,
+    "/locations/united-states": 200,
+    "/locations/united-kingdom": 200,
+    "/locations/canada": 200,
+    "/locations/australia": 200,
+    "/privacy-policy": 200,
+    "/blog/seo-thinking-for-business-websites": 200,
+    "/blog/affiliate-landing-page-generator": 200,
+    "/blog/how-do-i-choose-the-right-web-development-agency-for-my-business": 200,
+    "/blog/automate-business-workflows": 200,
+    "/blog/building-fast-web-apps-for-low-bandwidth-markets": 200,
+    "/seo/usa-mobile-app-development": 200,
+    "/seo/usa-ai-automation": 200,
+    "/seo/usa-web-development-agency": 200,
+    "/seo": 200,
+    "/services/not-a-real-service": 404,
+    "/work/not-a-real-project": 404,
+    "/blog/not-a-real-post": 404,
+    "/seo/not-a-real-guide": 404,
+    "/not-a-real-page": 404
+  },
+  "interactions": {
+    "portfolio": [
+      {
+        "filter": "All Work (9)",
+        "count": "9 projects"
+      },
+      {
+        "filter": "Web Solutions (6)",
+        "count": "6 projects"
+      },
+      {
+        "filter": "Mobile Apps (1)",
+        "count": "1 project"
+      },
+      {
+        "filter": "AI Automation (2)",
+        "count": "2 projects"
+      }
+    ],
+    "nativeFaq": true,
+    "mobileMenu": true,
+    "/contact": {
+      "validation": true,
+      "optionalDetails": true,
+      "error": true,
+      "success": true
+    },
+    "/start": {
+      "validation": true,
+      "optionalDetails": true,
+      "error": true,
+      "success": true
+    },
+    "newsletter": true
+  },
+  "noJavaScript": {
+    "/about": true,
+    "/services": true,
+    "/work": true,
+    "/blog": true,
+    "/contact": true,
+    "/start": true,
+    "/careers": true,
+    "/seo": true,
+    "/privacy-policy": true,
+    "/services/web-solutions": true,
+    "/work/bienvenidos-apartments": true,
+    "/blog/seo-thinking-for-business-websites": true,
+    "/seo/usa-mobile-app-development": true
+  },
+  "failures": []
+}

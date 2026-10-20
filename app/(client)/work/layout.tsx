@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { AnimationBoundary } from "@/components/providers/AnimationBoundary";
+import { PublicShell } from "@/components/public/PublicShell";
 
-export default function AnimatedRouteLayout({ children }: { children: ReactNode }) {
-  return <AnimationBoundary>{children}</AnimationBoundary>;
+export default function RouteLayout({ children }: { children: ReactNode }) {
+  return <PublicShell>{children}</PublicShell>;
 }

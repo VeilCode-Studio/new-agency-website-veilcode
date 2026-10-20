@@ -1,3 +1,4 @@
+import { PublicShell } from "@/components/public/PublicShell";
 import React from "react";
 import { db } from "@/db/drizzle";
 import { projects } from "@/db/schema";
@@ -48,7 +49,10 @@ export default async function AdminSingleProjectPreviewPage({
       {/* Admin Preview Banner */}
       <div className="flex items-center justify-between border-b border-brand/20 bg-brand/5 px-6 py-3 text-sm text-brand">
         <div className="flex items-center gap-4">
-          <Link href="/admin/projects" className="flex items-center gap-1 font-medium hover:underline">
+          <Link
+            href="/admin/projects"
+            className="flex items-center gap-1 font-medium hover:underline"
+          >
             <ChevronLeft className="size-4" />
             Back to Dashboard
           </Link>
@@ -58,14 +62,16 @@ export default async function AdminSingleProjectPreviewPage({
       </div>
 
       {/* Main Client Content */}
-      <div className="pb-12">
-        <CaseStudyHero project={project} />
-        <CaseStudyBody project={project} />
-        <ScreenshotGallery project={project} />
-        <CaseStudyTestimonial project={project} />
-        <CTA />
-        <NextProject project={project} nextProject={nextProject} />
-      </div>
+      <PublicShell>
+        <div className="pb-12">
+          <CaseStudyHero project={project} />
+          <CaseStudyBody project={project} />
+          <ScreenshotGallery project={project} />
+          <CaseStudyTestimonial project={project} />
+          <CTA />
+          <NextProject project={project} nextProject={nextProject} />
+        </div>
+      </PublicShell>
     </div>
   );
 }

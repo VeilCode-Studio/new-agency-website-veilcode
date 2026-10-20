@@ -1,4 +1,3 @@
-"use client";
 import { ServiceDeepDiveCard } from "./ServicesDeepDiveCard";
 import type { Service } from "@/db/schema";
 

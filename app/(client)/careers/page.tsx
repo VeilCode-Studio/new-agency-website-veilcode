@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import { eq, asc } from "drizzle-orm";
 import { db } from "@/db/drizzle";
 import { jobOpenings } from "@/db/schema";
@@ -12,6 +13,12 @@ export const dynamic = "force-dynamic";
 // openings. To index it: swap this for buildPageMetadata({ path: "/careers", ... })
 // and add "/careers" to STATIC_PAGE_LASTMOD in app/sitemap.ts.
 export const metadata = {
+  ...buildPageMetadata({
+    title: "Careers",
+    description:
+      "Explore published opportunities to build web platforms, mobile apps and AI automation with VeilCode Studio.",
+    path: "/careers",
+  }),
   robots: { index: false, follow: true },
 };
 
@@ -55,7 +62,7 @@ export default async function CareersPage() {
   const hasOpenings = openings.length > 0;
 
   return (
-    <div className="min-h-screen bg-page pt-20 pb-24">
+    <div className="min-h-screen bg-page pb-24">
       <CareersHero />
 
       <div className="max-w-5xl mx-auto px-6">

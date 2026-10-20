@@ -9,11 +9,13 @@ import { MobileDrawer } from "../extras/MobileDrawer";
 import { NAV_LINKS } from "@/constants";
 import { ThemeToggle } from "../ui/ThemeToggle";
 
-
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
   const pathname = usePathname();
   const hrefPath = href.split("#")[0];
-  const active = hrefPath === "/" ? pathname === "/" && !href.includes("#") : pathname.startsWith(hrefPath);
+  const active =
+    hrefPath === "/"
+      ? pathname === "/" && !href.includes("#")
+      : pathname.startsWith(hrefPath);
 
   return (
     <Link
@@ -32,7 +34,6 @@ function DesktopNavLink({ label, href }: { label: string; href: string }) {
     </Link>
   );
 }
-
 
 function HamburgerButton({
   open,
@@ -75,18 +76,13 @@ function HamburgerButton({
   );
 }
 
-
-
-
-
 export function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  const [scrolled,  setScrolled]  = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -94,11 +90,11 @@ export function Nav() {
   }, []);
 
   if (pathname === "/start" || pathname.includes("/newsletter")) return null;
-  
+
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 ${isHome ? "home-navigation" : pathname.startsWith("/locations") ? "location-navigation" : ""}
+        className={`fixed top-0 inset-x-0 z-40 ${isHome ? "home-navigation" : pathname.startsWith("/locations") ? "location-navigation" : "public-navigation"}
           h-16 sm:h-18 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-400
           ${
             scrolled
@@ -108,51 +104,67 @@ export function Nav() {
         id="navbar"
       >
         <div className="mx-auto flex h-full w-full max-w-350 items-center justify-between px-4 sm:px-6 md:px-10">
-        {/* Logo */}
-        <Link href="/" prefetch={false} className="flex items-center gap-2.5 no-underline shrink-0">
-          <LogoMark size={32} />
-          <WordMark />
-        </Link>
+          {/* Logo */}
+          <Link
+            href="/"
+            prefetch={false}
+            className="flex items-center gap-2.5 no-underline shrink-0"
+          >
+            <LogoMark size={32} />
+            <WordMark />
+          </Link>
 
-        {/* Desktop links — hidden on mobile */}
-        <nav className="hidden xl:flex items-center gap-7 2xl:gap-9" aria-label="Primary">
-          {(isHome ? [
-            { label: "Home", href: "/" },
-            { label: "Services", href: "#services" },
-            { label: "Work", href: "#work" },
-            { label: "Reviews", href: "#testimonials" },
-            { label: "Pricing", href: "#pricing" },
-            { label: "Blog", href: "/blog" },
-            { label: "Contact", href: "#contact" },
-          ] : NAV_LINKS).map(({ label, href }) => href.startsWith("#") ? (
-            <a key={label} href={href} className="home-nav-anchor">{label}</a>
-          ) : (
-            <DesktopNavLink key={label} label={label} href={href} />
-          ))}
-        </nav>
+          {/* Desktop links — hidden on mobile */}
+          <nav
+            className="hidden xl:flex items-center gap-7 2xl:gap-9"
+            aria-label="Primary"
+          >
+            {(isHome
+              ? [
+                  { label: "Home", href: "/" },
+                  { label: "Services", href: "#services" },
+                  { label: "Work", href: "#work" },
+                  { label: "Reviews", href: "#testimonials" },
+                  { label: "Pricing", href: "#pricing" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Contact", href: "#contact" },
+                ]
+              : NAV_LINKS
+            ).map(({ label, href }) =>
+              href.startsWith("#") ? (
+                <a key={label} href={href} className="home-nav-anchor">
+                  {label}
+                </a>
+              ) : (
+                <DesktopNavLink key={label} label={label} href={href} />
+              ),
+            )}
+          </nav>
 
-        {/* Right side actions */}
-        <div className="flex items-center gap-3">
-          <ThemeToggle size="sm" className="hidden sm:inline-flex" />
+          {/* Right side actions */}
+          <div className="flex items-center gap-3">
+            <ThemeToggle size="sm" className="hidden sm:inline-flex" />
 
-          <Link href="/start"
-            className="hidden xl:inline-flex items-center gap-1.5
+            <Link
+              href="/start"
+              className="hidden xl:inline-flex items-center gap-1.5
               font-sans text-[13px] font-medium px-5 py-2.5 rounded-lg
               border border-brand text-brand no-underline
               hover:bg-brand hover:text-page
               hover:shadow-[0_0_20px_var(--color-brand-glow)]
-              transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200">
-            Start a Project →
-          </Link>
+              transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
+            >
+              Start a Project →
+            </Link>
 
-          {/* Hamburger — visible on mobile only */}
-          <div className="xl:hidden">
-            <HamburgerButton
-              open={drawerOpen}
-              onClick={() => setDrawerOpen((v) => !v)}
-            />
+            {/* Hamburger — visible on mobile only */}
+            <div className="xl:hidden">
+              <HamburgerButton
+                open={drawerOpen}
+                onClick={() => setDrawerOpen((v) => !v)}
+              />
+            </div>
           </div>
-        </div>
         </div>
       </header>
 

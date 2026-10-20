@@ -1,39 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import * as m from "framer-motion/m";
-import { SectionTag, AccentLine, PrimaryButton, GhostButton } from "@/components/extras/Primitives";
-import { fadeUp, stagger, useReveal } from "@/lib/motion";
+import {
+  SectionTag,
+  AccentLine,
+  PrimaryButton,
+  GhostButton,
+} from "@/components/extras/Primitives";
 import { MeetingCard } from "./MeetingCard";
 import { MEETING_TYPES } from "@/constants";
 import Link from "next/link";
 
-
 export function BookingCTA() {
   const [selected, setSelected] = useState(0);
-  const [ref, inView] = useReveal();
 
   return (
     <section className="py-32 px-6 md:px-10 bg-surface border-t border-line">
       <div className="max-w-300 mx-auto">
-        <m.div
-          ref={ref}
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
+        <div>
           {/* Header */}
-          <m.div variants={fadeUp()}>
+          <div>
             <SectionTag>Book a Call</SectionTag>
             <AccentLine />
-          </m.div>
+          </div>
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-20 gap-12">
-
             {/* Left — copy */}
             <div className="lg:w-100 shrink-0">
-              <m.h2
-                variants={fadeUp(0.1)}
+              <h2
                 className="font-display text-[clamp(28px,3.5vw,46px)] font-extrabold
                   tracking-tight text-ink leading-[1.1] mb-5"
               >
@@ -41,24 +35,20 @@ export function BookingCTA() {
                 <span className="text-brand drop-shadow-[0_0_24px_var(--color-brand-glow)]">
                   Talk First?
                 </span>
-              </m.h2>
+              </h2>
 
-              <m.p
-                variants={fadeUp(0.16)}
-                className="font-sans text-[15px] text-ink-muted leading-relaxed mb-8"
-              >
-                Some projects need a conversation before they need a brief.
-                Pick the session type that fits your situation — all calls are
-                free, focused, and never a sales pitch.
-              </m.p>
+              <p className="font-sans text-[15px] text-ink-muted leading-relaxed mb-8">
+                Some projects need a conversation before they need a brief. Pick
+                the session type that fits your situation — all calls are free,
+                focused, and never a sales pitch.
+              </p>
 
               {/* What to expect */}
-              <m.div
-                variants={fadeUp(0.22)}
-                className="bg-page rounded-xl border border-line p-6"
-              >
-                <p className="font-mono text-[11px] tracking-widest uppercase
-                  text-ink-faint mb-4">
+              <div className="bg-page rounded-xl border border-line p-6">
+                <p
+                  className="font-mono text-[11px] tracking-widest uppercase
+                  text-ink-faint mb-4"
+                >
                   What to Expect
                 </p>
                 <ul className="space-y-3 list-none p-0 m-0">
@@ -80,16 +70,13 @@ export function BookingCTA() {
                     </li>
                   ))}
                 </ul>
-              </m.div>
+              </div>
             </div>
 
             {/* Right — meeting type selector + booking */}
             <div className="flex-1">
               {/* Meeting type cards */}
-              <m.div
-                variants={stagger}
-                className="grid grid-cols-1 gap-4 mb-8"
-              >
+              <div className="grid grid-cols-1 gap-4 mb-8">
                 {MEETING_TYPES.map((m, i) => (
                   <MeetingCard
                     key={m.title}
@@ -99,31 +86,27 @@ export function BookingCTA() {
                     onSelect={() => setSelected(i)}
                   />
                 ))}
-              </m.div>
+              </div>
 
               {/* Book button */}
-              <m.div
-                variants={fadeUp(0.3)}
-                className="flex flex-wrap gap-4"
-              >
+              <div className="flex flex-wrap gap-4">
                 <PrimaryButton asChild className="text-[15px]! px-8! py-4!">
-                  <Link href={"/start"}>Book a {MEETING_TYPES[selected].title} →</Link>
+                  <Link href={"/start"}>
+                    Book a {MEETING_TYPES[selected].title} →
+                  </Link>
                 </PrimaryButton>
                 <GhostButton asChild className="text-[15px]! px-8! py-4!">
                   <Link href={"#form-message"}>Send a Message Instead</Link>
                 </GhostButton>
-              </m.div>
+              </div>
 
-              <m.p
-                variants={fadeUp(0.34)}
-                className="mt-4 font-sans text-xs text-ink-faint"
-              >
-                Calls are conducted via Google Meet or Zoom. A calendar link will
-                be sent to your email after booking.
-              </m.p>
+              <p className="mt-4 font-sans text-xs text-ink-faint">
+                Calls are conducted via Google Meet or Zoom. A calendar link
+                will be sent to your email after booking.
+              </p>
             </div>
           </div>
-        </m.div>
+        </div>
       </div>
     </section>
   );
