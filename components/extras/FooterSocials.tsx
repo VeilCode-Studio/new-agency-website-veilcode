@@ -12,7 +12,9 @@ const FooterSocials = () => {
                         aria-label={`${s.abbr} ? ${s.label}`}
                         className="size-11 flex items-center justify-center rounded-md
                         border border-line text-ink-faint
-                        hover:border-line-hi hover:text-ink-muted
+                        hover:border-brand hover:bg-brand-dim hover:text-brand
+                        focus-visible:border-brand focus-visible:bg-brand-dim focus-visible:text-brand
+                        focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-4
                         transition-colors duration-200 no-underline"
                         target="_blank"
                         rel="noopener noreferrer"

@@ -48,7 +48,10 @@ export function Footer() {
                     <Link
                       href={href}
                       className="font-sans text-sm text-ink-muted no-underline
-                        hover:text-ink transition-colors duration-150"
+                        decoration-2 underline-offset-4 hover:text-brand hover:underline
+                        focus-visible:text-brand focus-visible:underline
+                        focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-4
+                        transition-colors duration-150"
                     >
                       {label}
                     </Link>

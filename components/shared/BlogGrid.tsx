@@ -89,7 +89,7 @@ function BlogGridFilterBar({
   }
 
   return (
-    <div className="sticky top-18 z-20 w-full min-w-0 max-w-full border-y border-line bg-page/90 backdrop-blur-md">
+    <div className="w-full min-w-0 max-w-full border-y border-line bg-page">
       <div className="mx-auto w-full min-w-0 max-w-300 space-y-3 px-5 py-4 sm:px-6 md:px-10">
         <div
           className="flex min-w-0 flex-wrap items-center gap-2"
