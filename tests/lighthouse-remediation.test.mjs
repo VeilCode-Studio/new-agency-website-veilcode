@@ -10,7 +10,7 @@ function loadModule(path, dependencies = {}) {
   }).outputText;
   const exports = {};
   vm.runInNewContext(code, {
-    exports, console: { log() {}, error() {} }, Date, Response,
+    exports, console: { log() {}, error() {} }, Date, Response, URL,
     require: (name) => {
       assert.ok(name in dependencies, `Unexpected real dependency: ${name}`);
       return dependencies[name];
@@ -28,6 +28,8 @@ test("Meta Pixel stays disabled unless explicitly enabled with a numeric ID", ()
 });
 
 // Exercise actual route handlers with fake persistence: no production writes.
+const serviceImages = loadModule("lib/service-images.ts");
+const serviceImageInput = loadModule("lib/services/image-input.ts", { "@/lib/service-images": serviceImages });
 for (const category of ["projects", "services", "blog"]) {
   for (const method of ["POST", "PUT", "DELETE"]) {
     for (const scenario of ["success", "unauthorized", "database failure"]) {
@@ -57,6 +59,7 @@ for (const category of ["projects", "services", "blog"]) {
           "@/db/drizzle": { db: { insert: mutate, update: mutate, delete: mutate } },
           "@/db/schema": { projects: {}, services: {}, blogPosts: {} },
           "@/lib/auth/admin": { getAdminContext: async () => scenario === "unauthorized" ? null : { userId: "test-admin" } },
+          "@/lib/services/image-input": serviceImageInput,
           "@/lib/blog/validation": { blogPostInputSchema: { safeParse: () => ({ success: true, data: row }) }, formatBlogValidationError() {} },
         };
         const path = `app/api/admin/${category}/${method === "POST" ? "" : "[id]/"}route.ts`;

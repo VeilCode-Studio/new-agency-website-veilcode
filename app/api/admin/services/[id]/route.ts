@@ -4,6 +4,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/db/drizzle";
 import { services } from "@/db/schema";
 import { getAdminContext } from "@/lib/auth/admin";
+import { parseServiceImageInput } from "@/lib/services/image-input";
 
 export const runtime = "nodejs";
 
@@ -37,9 +38,12 @@ export async function PUT(
 
   try {
     const body = await req.json();
+    const image = parseServiceImageInput(body);
+    if (!image.success) return NextResponse.json({ error: image.error }, { status: 400 });
     const [updated] = await db
       .update(services)
       .set({
+        ...image.data,
         number:         body.number,
         icon:           body.icon,
         title:          body.title,

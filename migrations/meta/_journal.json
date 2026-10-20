@@ -43,6 +43,13 @@
       "when": 1781110000000,
       "tag": "0005_chatbot_settings",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792534806045,
+      "tag": "0006_service_hero_images",
+      "breakpoints": true
     }
   ]
 }

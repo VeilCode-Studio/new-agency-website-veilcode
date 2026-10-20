@@ -6,6 +6,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { Plus, Trash2, Loader2, Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ServiceHeroImageField } from "./ServiceHeroImageField";
 import type {
   ServiceCardClasses,
   ServiceOverviewClasses,
@@ -25,6 +26,9 @@ export type ServiceFormData = {
   seoTitle: string | null;
   metaDescription: string | null;
   h1: string | null;
+  heroSrc: string | null;
+  heroAlt: string | null;
+  heroTitle: string | null;
   tagline: string;
   desc: string;
   intro: string;
@@ -203,6 +207,9 @@ const EMPTY: ServiceFormData = {
   seoTitle: "",
   metaDescription: "",
   h1: "",
+  heroSrc: null,
+  heroAlt: null,
+  heroTitle: null,
   tagline: "",
   desc: "",
   intro: "",
@@ -282,6 +289,7 @@ export function ServiceForm(props: ServiceFormProps) {
     props.mode === "edit" ? props.initialData : EMPTY,
   );
   const [isPending, startTransition] = useTransition();
+  const [imageUploading, setImageUploading] = useState(false);
 
   function set<K extends keyof ServiceFormData>(key: K, value: ServiceFormData[K]) {
     setData((prev) => ({ ...prev, [key]: value }));
@@ -310,6 +318,7 @@ export function ServiceForm(props: ServiceFormProps) {
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (imageUploading) return;
     startTransition(async () => {
       const url =
         props.mode === "edit"
@@ -361,7 +370,7 @@ export function ServiceForm(props: ServiceFormProps) {
           </Link>
           <button
             type="submit"
-            disabled={isPending}
+            disabled={isPending || imageUploading}
             className="inline-flex items-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-semibold text-page transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {isPending && <Loader2 className="size-4 animate-spin" />}
@@ -374,6 +383,13 @@ export function ServiceForm(props: ServiceFormProps) {
       <div className="grid gap-6 lg:grid-cols-[1fr_272px]">
         {/* Main content */}
         <div className="space-y-5">
+          <ServiceHeroImageField
+            value={data}
+            onChange={(image) => setData((previous) => ({ ...previous, ...image }))}
+            uploading={imageUploading}
+            onUploadingChange={setImageUploading}
+            disabled={isPending}
+          />
 
           {/* 1. Identity */}
           <SectionCard
@@ -806,7 +822,7 @@ export function ServiceForm(props: ServiceFormProps) {
           {/* Save button */}
           <button
             type="submit"
-            disabled={isPending}
+            disabled={isPending || imageUploading}
             className="flex w-full items-center justify-center gap-2 rounded-md bg-brand py-2.5 text-sm font-semibold text-page transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {isPending && <Loader2 className="size-4 animate-spin" />}
