@@ -119,26 +119,9 @@ export function Nav() {
             className="hidden xl:flex items-center gap-7 2xl:gap-9"
             aria-label="Primary"
           >
-            {(isHome
-              ? [
-                  { label: "Home", href: "/" },
-                  { label: "Services", href: "#services" },
-                  { label: "Work", href: "#work" },
-                  { label: "Reviews", href: "#testimonials" },
-                  { label: "Pricing", href: "#pricing" },
-                  { label: "Blog", href: "/blog" },
-                  { label: "Contact", href: "#contact" },
-                ]
-              : NAV_LINKS
-            ).map(({ label, href }) =>
-              href.startsWith("#") ? (
-                <a key={label} href={href} className="home-nav-anchor">
-                  {label}
-                </a>
-              ) : (
-                <DesktopNavLink key={label} label={label} href={href} />
-              ),
-            )}
+            {NAV_LINKS.map(({ label, href }) => (
+              <DesktopNavLink key={label} label={label} href={href} />
+            ))}
           </nav>
 
           {/* Right side actions */}
