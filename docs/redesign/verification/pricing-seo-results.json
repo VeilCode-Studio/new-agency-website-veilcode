@@ -1,0 +1,56 @@
+[
+  {
+    "route": "/",
+    "title": "Web Design & App Development in Kampala | VeilCode Studio",
+    "h1": "Web design and development in Kampala that turns visitors into customers",
+    "canonical": "https://www.veilcode.studio",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 1,
+    "keyboardFocus": "visible"
+  },
+  {
+    "route": "/locations/uganda",
+    "title": "Website Design & Development in Uganda | VeilCode",
+    "h1": "Websites and apps for Ugandan businesses, with Mobile Money and WhatsApp built in",
+    "canonical": "https://www.veilcode.studio/locations/uganda",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 4,
+    "keyboardFocus": "visible"
+  },
+  {
+    "route": "/locations/united-states",
+    "title": "Remote Web, Mobile & AI Automation Agency for US Companies | VeilCode",
+    "h1": "Senior product engineering for US founders who need to move fast",
+    "canonical": "https://www.veilcode.studio/locations/united-states",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 4,
+    "keyboardFocus": "visible"
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "title": "Digital Product Agency for UK Businesses | Web, Mobile & AI | VeilCode",
+    "h1": "Web, mobile and AI systems for UK businesses with measurable growth targets",
+    "canonical": "https://www.veilcode.studio/locations/united-kingdom",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 4,
+    "keyboardFocus": "visible"
+  },
+  {
+    "route": "/locations/canada",
+    "title": "Web, Mobile & AI Automation Agency for Canadian Companies | VeilCode",
+    "h1": "Senior digital product delivery for Canadian businesses that need focused execution",
+    "canonical": "https://www.veilcode.studio/locations/canada",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 4,
+    "keyboardFocus": "visible"
+  },
+  {
+    "route": "/locations/australia",
+    "title": "Web, Mobile & AI Automation Agency for Australian Businesses | VeilCode",
+    "h1": "Offshore development done right - for Australian businesses that have been burned before",
+    "canonical": "https://www.veilcode.studio/locations/australia",
+    "robots": "index, follow, max-image-preview:large",
+    "jsonLdBlocks": 4,
+    "keyboardFocus": "visible"
+  }
+]

@@ -157,7 +157,7 @@ test("United States location has US-specific FAQs, services, CTAs, and cross-mar
   assert.match(locationData, /Do you sign NDAs/);
   assert.match(locationData, /Who owns the code/);
   assert.match(locationData, /HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion/);
-  assert.match(locationData, /Most US engagements run between \$5,000 and \$30,000/);
+  assert.match(locationData, /Larger custom US engagements run between \$5,000 and \$30,000/);
   assert.match(locationData, /Book a no-commitment discovery call\./);
   assert.match(locationData, /30 minutes\. You explain the goal\./);
   assert.match(locationData, /Book a Call/);

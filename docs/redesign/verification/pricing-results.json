@@ -1,0 +1,1898 @@
+[
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.609375,
+        "featureTop": 639.703125,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.59375,
+        "featureTop": 1487.6875,
+        "ctaBottom": 2118.875,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.453125,
+        "featureTop": 2420.546875,
+        "ctaBottom": 3087.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.265625,
+        "featureTop": 660.359375,
+        "ctaBottom": 1185.234375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1428.3125,
+        "featureTop": 1507.40625,
+        "ctaBottom": 2138.59375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2381.671875,
+        "featureTop": 2460.765625,
+        "ctaBottom": 3127.390625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 582.046875,
+        "featureTop": 661.140625,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1429.09375,
+        "featureTop": 1508.1875,
+        "ctaBottom": 2139.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2382.453125,
+        "featureTop": 2461.546875,
+        "ctaBottom": 3128.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.609375,
+        "featureTop": 660.703125,
+        "ctaBottom": 1207.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1450.09375,
+        "featureTop": 1529.1875,
+        "ctaBottom": 2160.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.453125,
+        "featureTop": 2482.546875,
+        "ctaBottom": 3149.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.328125,
+        "featureTop": 660.421875,
+        "ctaBottom": 1206.734375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1449.8125,
+        "featureTop": 1528.90625,
+        "ctaBottom": 2160.09375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.171875,
+        "featureTop": 2482.265625,
+        "ctaBottom": 3148.890625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "linen",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.625,
+        "featureTop": 639.71875,
+        "ctaBottom": 1186.03125,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.609375,
+        "featureTop": 1487.703125,
+        "ctaBottom": 2118.890625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.46875,
+        "featureTop": 2420.5625,
+        "ctaBottom": 3087.1875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "linen",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.609375,
+        "featureTop": 639.703125,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.59375,
+        "featureTop": 1487.6875,
+        "ctaBottom": 2118.875,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.453125,
+        "featureTop": 2420.546875,
+        "ctaBottom": 3087.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.265625,
+        "featureTop": 660.359375,
+        "ctaBottom": 1185.234375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1428.3125,
+        "featureTop": 1507.40625,
+        "ctaBottom": 2138.59375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2381.671875,
+        "featureTop": 2460.765625,
+        "ctaBottom": 3127.390625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 582.046875,
+        "featureTop": 661.140625,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1429.09375,
+        "featureTop": 1508.1875,
+        "ctaBottom": 2139.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2382.453125,
+        "featureTop": 2461.546875,
+        "ctaBottom": 3128.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.609375,
+        "featureTop": 660.703125,
+        "ctaBottom": 1207.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1450.09375,
+        "featureTop": 1529.1875,
+        "ctaBottom": 2160.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.453125,
+        "featureTop": 2482.546875,
+        "ctaBottom": 3149.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.328125,
+        "featureTop": 660.421875,
+        "ctaBottom": 1206.734375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1449.8125,
+        "featureTop": 1528.90625,
+        "ctaBottom": 2160.09375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.171875,
+        "featureTop": 2482.265625,
+        "ctaBottom": 3148.890625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "light",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.625,
+        "featureTop": 639.71875,
+        "ctaBottom": 1186.03125,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.609375,
+        "featureTop": 1487.703125,
+        "ctaBottom": 2118.890625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.46875,
+        "featureTop": 2420.5625,
+        "ctaBottom": 3087.1875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "light",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.609375,
+        "featureTop": 639.703125,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.59375,
+        "featureTop": 1487.6875,
+        "ctaBottom": 2118.875,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.453125,
+        "featureTop": 2420.546875,
+        "ctaBottom": 3087.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.265625,
+        "featureTop": 660.359375,
+        "ctaBottom": 1185.234375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1428.3125,
+        "featureTop": 1507.40625,
+        "ctaBottom": 2138.59375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2381.671875,
+        "featureTop": 2460.765625,
+        "ctaBottom": 3127.390625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 582.046875,
+        "featureTop": 661.140625,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1429.09375,
+        "featureTop": 1508.1875,
+        "ctaBottom": 2139.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2382.453125,
+        "featureTop": 2461.546875,
+        "ctaBottom": 3128.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.609375,
+        "featureTop": 660.703125,
+        "ctaBottom": 1207.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1450.09375,
+        "featureTop": 1529.1875,
+        "ctaBottom": 2160.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.453125,
+        "featureTop": 2482.546875,
+        "ctaBottom": 3149.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.328125,
+        "featureTop": 660.421875,
+        "ctaBottom": 1206.734375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1449.8125,
+        "featureTop": 1528.90625,
+        "ctaBottom": 2160.09375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.171875,
+        "featureTop": 2482.265625,
+        "ctaBottom": 3148.890625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "dark",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.625,
+        "featureTop": 639.71875,
+        "ctaBottom": 1186.03125,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.609375,
+        "featureTop": 1487.703125,
+        "ctaBottom": 2118.890625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.46875,
+        "featureTop": 2420.5625,
+        "ctaBottom": 3087.1875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "dark",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.609375,
+        "featureTop": 639.703125,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.59375,
+        "featureTop": 1487.6875,
+        "ctaBottom": 2118.875,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.453125,
+        "featureTop": 2420.546875,
+        "ctaBottom": 3087.171875,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.265625,
+        "featureTop": 660.359375,
+        "ctaBottom": 1185.234375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1428.3125,
+        "featureTop": 1507.40625,
+        "ctaBottom": 2138.59375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2381.671875,
+        "featureTop": 2460.765625,
+        "ctaBottom": 3127.390625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 582.046875,
+        "featureTop": 661.140625,
+        "ctaBottom": 1186.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1429.09375,
+        "featureTop": 1508.1875,
+        "ctaBottom": 2139.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2382.453125,
+        "featureTop": 2461.546875,
+        "ctaBottom": 3128.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.609375,
+        "featureTop": 660.703125,
+        "ctaBottom": 1207.015625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1450.09375,
+        "featureTop": 1529.1875,
+        "ctaBottom": 2160.375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.453125,
+        "featureTop": 2482.546875,
+        "ctaBottom": 3149.171875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 581.328125,
+        "featureTop": 660.421875,
+        "ctaBottom": 1206.734375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1449.8125,
+        "featureTop": 1528.90625,
+        "ctaBottom": 2160.09375,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2403.171875,
+        "featureTop": 2482.265625,
+        "ctaBottom": 3148.890625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "midnight",
+    "viewport": 390,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 560.625,
+        "featureTop": 639.71875,
+        "ctaBottom": 1186.03125,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 1408.609375,
+        "featureTop": 1487.703125,
+        "ctaBottom": 2118.890625,
+        "overflow": false
+      },
+      {
+        "x": 20,
+        "width": 350,
+        "priceTop": 2341.46875,
+        "featureTop": 2420.5625,
+        "ctaBottom": 3087.1875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "market": "uganda",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 593.6875,
+        "featureTop": 672.78125,
+        "ctaBottom": 1339.40625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-states",
+    "market": "united-states",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "USD 3,400",
+      "USD 5,950",
+      "USD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 614.296875,
+        "featureTop": 693.390625,
+        "ctaBottom": 1360.015625,
+        "overflow": false
+      }
+    ],
+    "axeViolations": 0
+  },
+  {
+    "route": "/locations/united-kingdom",
+    "market": "united-kingdom",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "GBP 1,275",
+      "GBP 2,550",
+      "GBP 3,400"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 613.953125,
+        "featureTop": 693.046875,
+        "ctaBottom": 1359.671875,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/canada",
+    "market": "canada",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "CAD 3,400",
+      "CAD 5,525",
+      "CAD 7,650"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.1875,
+        "featureTop": 740.28125,
+        "ctaBottom": 1406.90625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/australia",
+    "market": "australia",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "AUD 4,250",
+      "AUD 6,800",
+      "AUD 8,500"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 661.296875,
+        "featureTop": 740.390625,
+        "ctaBottom": 1407.015625,
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "route": "/locations/uganda",
+    "market": "uganda",
+    "theme": "midnight",
+    "viewport": 1440,
+    "prices": [
+      "UGX 900,000",
+      "UGX 1,800,000",
+      "UGX 3,500,000"
+    ],
+    "overflow": false,
+    "documentOverflow": false,
+    "cards": [
+      {
+        "x": 120,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 528,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      },
+      {
+        "x": 936,
+        "width": 384,
+        "priceTop": 641.046875,
+        "featureTop": 720.140625,
+        "ctaBottom": 1386.765625,
+        "overflow": false
+      }
+    ]
+  }
+]

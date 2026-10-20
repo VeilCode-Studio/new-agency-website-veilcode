@@ -305,7 +305,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "What's your typical project size?",
         answer:
-          "Most US engagements run between $5,000 and $30,000 depending on scope. We don't pad $5,000 jobs into $50,000 ones. Scope is fixed in writing before we start.",
+          "Larger custom US engagements run between $5,000 and $30,000 depending on scope. Website packages cover a smaller, defined scope. Scope is fixed in writing before we start.",
       },
     ],
     ctaLabel: "Book a Call",

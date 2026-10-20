@@ -23,7 +23,7 @@ export default function StartProjectPage() {
             scope together.
           </p>
         </div>
-        <ContactForm standalone />
+        <ContactForm standalone showBudget={false} />
       </div>
     </div>
   );

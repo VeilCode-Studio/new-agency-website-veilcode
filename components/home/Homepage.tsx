@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  Check,
   Code2,
   Compass,
   Globe2,
@@ -24,7 +23,8 @@ import {
 import type { Project, Service } from "@/db/schema";
 import type { BlogGridPost } from "@/lib/blog/grid";
 import type { DisplayTestimonial } from "@/lib/testimonials/display";
-import { FAQS, TIERS } from "@/constants";
+import { FAQS } from "@/constants";
+import { WebsitePricing } from "@/components/pricing/WebsitePricing";
 import { getProjectKindLabel } from "@/lib/projects/kind";
 import { HorizontalGallery } from "./HorizontalGallery";
 import { HomeContactForm } from "./HomeContactForm";
@@ -885,68 +885,6 @@ function Testimonials({ testimonials }: Pick<HomeProps, "testimonials">) {
   );
 }
 
-function Pricing() {
-  return (
-    <section id="pricing" className="home-section home-pricing">
-      <div className="home-container">
-        <Heading
-          eyebrow="Clarity before commitment"
-          title="The right investment for your next step."
-        >
-          A focused first website or a more ambitious product. Start with a
-          clear scope and a proposal built around your needs.
-        </Heading>
-        <div className="home-pricing-grid">
-          {TIERS.map((tier) => (
-            <article
-              className={`home-price-card ${tier.featured ? "home-price-featured" : ""}`}
-              key={tier.name}
-            >
-              {tier.badge ? (
-                <span className="home-price-badge">{tier.badge}</span>
-              ) : null}
-              <span className="home-eyebrow">{tier.name}</span>
-              <h3>
-                {tier.name === "Starter"
-                  ? "Start something good."
-                  : tier.name === "Growth"
-                    ? "Make your next move."
-                    : "Think a little bigger."}
-              </h3>
-              <p>{tier.desc}</p>
-              <div className="home-price">
-                <strong>{tier.price.split(/\s[—-]\s/)[0]}</strong>
-                <span>{tier.priceSub}</span>
-              </div>
-              <ul>
-                {tier.features.map((feature) => (
-                  <li key={feature}>
-                    <Check size={16} aria-hidden="true" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Action href="/start" secondary={!tier.featured}>
-                {tier.cta}
-              </Action>
-            </article>
-          ))}
-        </div>
-        <div className="home-center-action">
-          <Link
-            href="/services#pricing"
-            prefetch={false}
-            className="home-text-link"
-          >
-            Compare services and packages
-            <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function QuestionsAndContact() {
   return (
     <section id="contact" className="home-section home-questions">
@@ -1097,7 +1035,7 @@ export function Homepage({
       <LocalPresence />
       <Technology />
       <Testimonials testimonials={testimonials} />
-      <Pricing />
+      <WebsitePricing homepage />
       <QuestionsAndContact />
       <Insights posts={posts} />
       <section className="home-closing">

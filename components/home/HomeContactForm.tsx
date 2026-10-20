@@ -16,16 +16,6 @@ const services = [
   "Multiple Services",
   "Not Sure Yet",
 ];
-const budgets = [
-  "Under $1,500",
-  "$1,500 – $5,000",
-  "$5,000 – $15,000",
-  "$15,000 – $30,000",
-  "$30,000 - $60,000",
-  "$60,000",
-  "Let's Discuss",
-];
-
 const subscribe = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
@@ -149,28 +139,17 @@ export function HomeContactForm() {
               placeholder="Your company"
             />
           </label>
-          <div className="home-form-row">
-            <label htmlFor="home-service">
-              I’m interested in <span aria-hidden="true">*</span>
-              <select id="home-service" name="service" required defaultValue="">
-                <option value="" disabled>
-                  Select a service
-                </option>
-                {services.map((service) => (
-                  <option key={service}>{service}</option>
-                ))}
-              </select>
-            </label>
-            <label htmlFor="home-budget">
-              Project budget <span className="home-optional">(optional)</span>
-              <select id="home-budget" name="budget" defaultValue="">
-                <option value="">Let’s discuss</option>
-                {budgets.map((budget) => (
-                  <option key={budget}>{budget}</option>
-                ))}
-              </select>
-            </label>
-          </div>
+          <label htmlFor="home-service">
+            I’m interested in <span aria-hidden="true">*</span>
+            <select id="home-service" name="service" required defaultValue="">
+              <option value="" disabled>
+                Select a service
+              </option>
+              {services.map((service) => (
+                <option key={service}>{service}</option>
+              ))}
+            </select>
+          </label>
           <label htmlFor="home-message">
             What would you like to build? <span aria-hidden="true">*</span>
             <textarea

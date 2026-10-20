@@ -6,6 +6,7 @@ import type { LocationMarket } from "@/constants/locations";
 import type { Project, Service } from "@/db/schema";
 import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
 import { getProjectKindLabel } from "@/lib/projects/kind";
+import { WebsitePricing } from "@/components/pricing/WebsitePricing";
 
 function LocationWorkCard({
   project,
@@ -344,6 +345,7 @@ export function LocationBody({
           </div>
         </div>
       </section>
+      <WebsitePricing market={market.slug} />
       <section
         className="location-section"
         aria-labelledby="location-questions"

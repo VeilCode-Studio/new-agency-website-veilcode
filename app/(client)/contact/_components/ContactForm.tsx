@@ -203,7 +203,13 @@ const EMPTY: FormData = {
   message: "",
 };
 
-export function ContactForm({ standalone = false }: { standalone?: boolean }) {
+export function ContactForm({
+  standalone = false,
+  showBudget = true,
+}: {
+  standalone?: boolean;
+  showBudget?: boolean;
+}) {
   const [formData, setFormData] = useState<FormData>(EMPTY);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -432,22 +438,24 @@ export function ContactForm({ standalone = false }: { standalone?: boolean }) {
                               className={inputBase}
                             />
                           </div>
-                          <div>
-                            <Label htmlFor="budget-group">
-                              Approximate Budget
-                            </Label>
-                            <PillSelector
-                              id="budget-group"
-                              options={BUDGETS}
-                              value={formData.budget}
-                              onChange={(val) =>
-                                setFormData((prev) => ({
-                                  ...prev,
-                                  budget: val,
-                                }))
-                              }
-                            />
-                          </div>
+                          {showBudget && (
+                            <div>
+                              <Label htmlFor="budget-group">
+                                Approximate Budget
+                              </Label>
+                              <PillSelector
+                                id="budget-group"
+                                options={BUDGETS}
+                                value={formData.budget}
+                                onChange={(val) =>
+                                  setFormData((prev) => ({
+                                    ...prev,
+                                    budget: val,
+                                  }))
+                                }
+                              />
+                            </div>
+                          )}
                           <div>
                             <Label htmlFor="timeline-group">
                               Project Timeline
