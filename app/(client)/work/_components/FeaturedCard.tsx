@@ -34,6 +34,9 @@ function FeaturedVisual({ project: p }: { project: ProjectType }) {
           <Image
             src={heroShot!.src!}
             alt={heroShot!.alt}
+            title={
+              heroShot!.caption || heroShot!.alt || `${p.title} project preview`
+            }
             fill
             loading="lazy"
             sizes="(max-width: 1024px) 100vw, 60vw"

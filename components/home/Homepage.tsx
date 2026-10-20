@@ -210,6 +210,7 @@ function Services({ services }: Pick<HomeProps, "services">) {
             <Image
               src="/assets/bienvenidos-apartments/homepage-hero.png"
               alt="Responsive real estate website shown on a laptop"
+              title="Responsive real estate website preview"
               width={1012}
               height={709}
               sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 48vw, 570px"
@@ -382,6 +383,9 @@ function FeaturedWork({ projects }: Pick<HomeProps, "projects">) {
                     <Image
                       src={shot.src}
                       alt={shot.alt || `${project.title} website preview`}
+                      title={
+                        shot.caption || shot.alt || `${project.title} website preview`
+                      }
                       fill
                       sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 55vw, 650px"
                       loading="lazy"
@@ -444,6 +448,9 @@ function Portfolio({ projects }: Pick<HomeProps, "projects">) {
                       <Image
                         src={shot.src}
                         alt={shot.alt || `${project.title} preview`}
+                        title={
+                          shot.caption || shot.alt || `${project.title} project preview`
+                        }
                         fill
                         sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
                         loading="lazy"
@@ -507,6 +514,7 @@ function Industries() {
             <Image
               src="/assets/tradepost-app/image-1.jpg"
               alt="Mobile marketplace interface with product search and listings"
+              title="Mobile marketplace search and product listings"
               width={720}
               height={1280}
               sizes="(max-width: 767px) 75vw, 340px"
@@ -998,6 +1006,7 @@ function Insights({ posts }: Pick<HomeProps, "posts">) {
                   <Image
                     src={post.heroSrc}
                     alt={post.heroAlt || post.title}
+                    title={post.heroAlt || post.title}
                     fill
                     sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
                     loading="lazy"

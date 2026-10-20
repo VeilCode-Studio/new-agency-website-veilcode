@@ -28,6 +28,7 @@ export function BlogPostHero({ post: p }: { post: BlogPost }) {
             <Image
               src={publicImageSource(p.heroSrc)}
               alt={p.heroAlt}
+              title={p.heroAlt || p.title}
               fill
               loading="lazy"
               sizes="(max-width:1264px) calc(100vw - 48px),1200px"

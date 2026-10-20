@@ -52,6 +52,7 @@ function FeaturedVisual({ post: p }: { post: BlogPost }) {
         <Image
           src={publicImageSource(p.heroSrc)}
           alt={p.heroAlt}
+          title={p.heroAlt || p.title}
           className="absolute inset-0 w-full h-full object-cover"
           fill
           loading="lazy"

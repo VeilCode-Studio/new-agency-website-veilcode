@@ -22,6 +22,11 @@ function LocationWorkCard({
           <Image
             src={screenshot.src}
             alt={screenshot.alt || `${project.title} website`}
+            title={
+              screenshot.caption ||
+              screenshot.alt ||
+              `${project.title} website preview`
+            }
             fill
             sizes="(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px"
           />

@@ -29,6 +29,7 @@ function Shot({
               <Image
                 src={publicImageSource(shot.src)}
                 alt={shot.alt || shot.caption || "Project screenshot"}
+                title={shot.caption || shot.alt || "Project screenshot"}
                 fill
                 loading="lazy"
                 sizes="(max-width: 640px) 70vw, (max-width: 1024px) 30vw, 280px"
@@ -49,6 +50,7 @@ function Shot({
           <Image
             src={publicImageSource(shot.src)}
             alt={shot.alt || shot.caption || "Project screenshot"}
+            title={shot.caption || shot.alt || "Project screenshot"}
             fill
             loading="lazy"
             sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1200px) 50vw, 1024px"

@@ -36,6 +36,9 @@ function CardVisual({ project: p }: { project: ProjectType }) {
                     <Image
                         src={heroShot!.src!}
                         alt={heroShot!.alt}
+                        title={
+                            heroShot!.caption || heroShot!.alt || `${p.title} project preview`
+                        }
                         fill
                         loading="lazy"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"

@@ -260,6 +260,7 @@ function CardVisual({ post }: { post: BlogGridPost }) {
         <Image
           src={publicImageSource(post.heroSrc)}
           alt={post.heroAlt}
+          title={post.heroAlt || post.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           fill
           loading="lazy"

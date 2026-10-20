@@ -86,6 +86,9 @@ function WorkBentoCard({ project, index }: { project: Project; index: number }) 
           <Image
             src={shot.src}
             alt={shot.alt || `${project.title} preview`}
+            title={
+              shot.caption || shot.alt || `${project.title} project preview`
+            }
             fill
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             sizes={

@@ -36,6 +36,11 @@ export function ProjectCard({
         <Image
           src={firstScreenshot}
           alt={`${project.title} preview`}
+          title={
+            project.screenshots[0]?.caption ||
+            project.screenshots[0]?.alt ||
+            `${project.title} project preview`
+          }
           fill
           className="object-cover object-center transition-transform duration-700
             group-hover:scale-105"

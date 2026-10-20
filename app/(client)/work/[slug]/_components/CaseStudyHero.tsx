@@ -73,6 +73,9 @@ export function CaseStudyHero({ project: p }: { project: Project }) {
                 <Image
                   src={publicImageSource(shot.src)}
                   alt={shot.alt || `${p.title} project preview`}
+                  title={
+                    shot.caption || shot.alt || `${p.title} project preview`
+                  }
                   fill
                   loading="lazy"
                   sizes={

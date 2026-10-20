@@ -65,6 +65,11 @@ export function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
                   <Image
                     src={publicImageSource(p.screenshots[0].src)}
                     alt={p.screenshots[0].alt || `${p.title} project preview`}
+                    title={
+                      p.screenshots[0].caption ||
+                      p.screenshots[0].alt ||
+                      `${p.title} project preview`
+                    }
                     fill
                     loading="lazy"
                     sizes="(max-width:700px) calc(100vw - 40px), (max-width:1264px) calc(50vw - 47px), 585px"

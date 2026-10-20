@@ -50,6 +50,7 @@ export function LocationHero({ market }: { market: LocationMarket }) {
               <Image
                 src="/images/home/studio-workspace.webp"
                 alt="A laptop and engineering workspace, illustrating our digital product studio"
+                title="Laptop and engineering workspace"
                 fill
                 loading="eager"
                 fetchPriority="high"
