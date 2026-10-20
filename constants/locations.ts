@@ -50,7 +50,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "uganda",
     countryName: "Uganda",
     shortName: "Uganda",
-    metaTitle: "Web Development & AI Automation Agency in Kampala | VeilCode",
+    metaTitle: "Website Design & Development in Uganda | VeilCode",
     metaDescription:
       "VeilCode is Kampala's digital product agency. We build conversion-focused websites, mobile apps, and AI automation systems for Ugandan businesses ready to grow.",
     ogImage: "/assets/og/uganda.jpg",
@@ -59,7 +59,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     addressCountry: "UG",
     eyebrow: "Based in Kampala · Serving Uganda & East Africa",
     locationBadge: "Kampala, Uganda",
-    h1: "Kampala's digital product agency for businesses built to grow",
+    h1: "Websites and apps for Ugandan businesses, with Mobile Money and WhatsApp built in",
     heroCopy:
       "We build websites, mobile apps, and AI automation systems that give Ugandan businesses a real competitive edge - built for local realities, engineered to global standards.",
     statLine: "Kampala-based · Meet in person · Mobile-first by default",

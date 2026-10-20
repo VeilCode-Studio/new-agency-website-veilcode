@@ -17,7 +17,7 @@ const metadataHelper = readFileSync("lib/seo/metadata.ts", "utf8");
 test("Uganda location has Phase 1 SEO and schema requirements", () => {
   assert.match(
     locationData,
-    /metaTitle:\s*"Web Development & AI Automation Agency in Kampala \| VeilCode"/,
+    /metaTitle:\s*"Website Design & Development in Uganda \| VeilCode"/,
   );
   assert.match(
     locationData,
@@ -42,7 +42,7 @@ test("Uganda hero contains the required local trust signals", () => {
   assert.match(locationData, /Based in Kampala · Serving Uganda & East Africa/);
   assert.match(
     locationData,
-    /Kampala's digital product agency for businesses built to grow/,
+    /Websites and apps for Ugandan businesses, with Mobile Money and WhatsApp built in/,
   );
   assert.match(locationData, /Kampala, Uganda/);
   assert.match(

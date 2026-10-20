@@ -102,11 +102,11 @@ function Hero() {
           Independent studio. Kampala, Uganda.
         </span>
         <h1 id="home-title">
-          Websites that turn
+          Web design and development in
           <br />
-          visitors into your
+          Kampala that turns visitors into
           <br />
-          <span>next customers.</span>
+          <span>customers</span>
         </h1>
         <p>
           Web design, mobile apps, and AI automation.

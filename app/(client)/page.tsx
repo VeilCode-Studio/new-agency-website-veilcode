@@ -17,7 +17,7 @@ import {
 import { NewsletterCTA } from "./blog/[slug]/Newsletter";
 
 export const metadata = buildPageMetadata({
-  title: "VeilCode Studio | Web, Mobile & AI Automation from Kampala",
+  title: "Web Design & App Development in Kampala | VeilCode Studio",
   description: SITE_DESCRIPTION,
   path: "/",
   image: DEFAULT_OG_IMAGE,
