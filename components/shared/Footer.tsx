@@ -12,7 +12,7 @@ export function Footer() {
 
   if (pathname === "/start" || pathname.includes("/newsletter")) return null;
   return (
-    <footer className={`border-t border-line bg-surface pt-16 pb-10 px-6 md:px-10 ${pathname === "/" ? "home-footer" : ""}`}>
+    <footer className={`border-t border-line bg-surface pt-16 pb-10 px-6 md:px-10 ${pathname === "/" ? "home-footer" : pathname.startsWith("/locations") ? "location-footer" : ""}`}>
       <div className="max-w-30Link mx-auto relative z-5">
 
         {/* Top grid */}

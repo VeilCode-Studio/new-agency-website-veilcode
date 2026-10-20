@@ -1,8 +1,16 @@
 import { notFound } from "next/navigation";
-import { getAllProjects, getPublishedSeoPages, getPublishedServices } from "@/queries";
+import {
+  getAllProjects,
+  getPublishedSeoPages,
+  getPublishedServices,
+} from "@/queries";
 import { getLocationMarket, getMarketCountryCode } from "@/constants/locations";
 import { StructuredData } from "@/lib/seo/StructuredData";
-import { breadcrumbJsonLd, localBusinessJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
+import {
+  breadcrumbJsonLd,
+  localBusinessJsonLd,
+  webPageJsonLd,
+} from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { SITE_NAME } from "@/lib/seo/site";
 import { LocationBody } from "./_components/LocationBody";
@@ -20,12 +28,15 @@ export async function generateMetadata({ params }: Params) {
 
   if (!market) return {};
 
-  return buildPageMetadata({
-    title: market.metaTitle,
-    description: market.metaDescription,
-    path: `/locations/${market.slug}`,
-    image: market.ogImage,
-  });
+  return {
+    ...buildPageMetadata({
+      title: market.metaTitle,
+      description: market.metaDescription,
+      path: `/locations/${market.slug}`,
+      image: market.ogImage,
+    }),
+    keywords: [],
+  };
 }
 
 export default async function LocationPage({ params }: Params) {
@@ -34,11 +45,12 @@ export default async function LocationPage({ params }: Params) {
 
   if (!market) return notFound();
 
-  const [servicesResult, projectsResult, seoPagesResult] = await Promise.allSettled([
-    getPublishedServices(),
-    getAllProjects(),
-    getPublishedSeoPages(),
-  ]);
+  const [servicesResult, projectsResult, seoPagesResult] =
+    await Promise.allSettled([
+      getPublishedServices(),
+      getAllProjects(),
+      getPublishedSeoPages(),
+    ]);
 
   const servicesUnavailable = servicesResult.status === "rejected";
   const projectsUnavailable = projectsResult.status === "rejected";
@@ -48,11 +60,17 @@ export default async function LocationPage({ params }: Params) {
     projectsResult.status === "fulfilled" ? projectsResult.value : [];
 
   if (servicesUnavailable) {
-    console.error("[locations] failed to load services:", servicesResult.reason);
+    console.error(
+      "[locations] failed to load services:",
+      servicesResult.reason,
+    );
   }
 
   if (projectsUnavailable) {
-    console.error("[locations] failed to load projects:", projectsResult.reason);
+    console.error(
+      "[locations] failed to load projects:",
+      projectsResult.reason,
+    );
   }
 
   const relevantServices = services.filter((service) =>

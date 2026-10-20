@@ -1,0 +1,97 @@
+[
+  {
+    "country": "uganda",
+    "mobile": {
+      "performance": 95,
+      "lcp": 2837.6198999999997,
+      "tbt": 35,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "country": "united-states",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2830.89105,
+      "tbt": 30.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "country": "united-kingdom",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2819.9302500000003,
+      "tbt": 26,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "country": "canada",
+    "mobile": {
+      "performance": 96,
+      "lcp": 2672.6552,
+      "tbt": 27.5,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  },
+  {
+    "country": "australia",
+    "mobile": {
+      "performance": 97,
+      "lcp": 2678.7470000000003,
+      "tbt": 31.500000000000227,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  }
+]

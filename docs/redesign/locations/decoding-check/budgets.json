@@ -1,0 +1,21 @@
+[
+  {
+    "country": "uganda",
+    "mobile": {
+      "performance": 95,
+      "lcp": 2858.4997000000003,
+      "tbt": 37,
+      "cls": 0
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "failures": [
+      "Mobile LCP exceeds 2.5 seconds"
+    ],
+    "passed": false
+  }
+]

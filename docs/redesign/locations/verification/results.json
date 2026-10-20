@@ -1,0 +1,722 @@
+{
+  "markets": {
+    "uganda": {
+      "status": 200,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "1440x900": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 549.390625,
+              "bottom": 597.578125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Work",
+              "top": 549.390625,
+              "bottom": 597.578125,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "1280x720": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 477.625,
+              "bottom": 525.8125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Work",
+              "top": 477.625,
+              "bottom": 525.8125,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "768x1024": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 555.9375,
+              "bottom": 604.125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Work",
+              "top": 555.9375,
+              "bottom": 604.125,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "390x844": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 464.484375,
+              "bottom": 512.484375,
+              "height": 48,
+              "width": 142.171875
+            },
+            {
+              "text": "See Our Work",
+              "top": 464.484375,
+              "bottom": 512.484375,
+              "height": 48,
+              "width": 112.03125
+            }
+          ]
+        },
+        "320x740": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 490.65625,
+              "bottom": 538.65625,
+              "height": 48,
+              "width": 280
+            },
+            {
+              "text": "See Our Work",
+              "top": 548.65625,
+              "bottom": 596.65625,
+              "height": 48,
+              "width": 280
+            }
+          ]
+        }
+      },
+      "faq": {
+        "keyboard": "pass",
+        "accessibility": []
+      },
+      "images": [
+        {
+          "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=640&q=75",
+          "loading": "eager",
+          "priority": "high",
+          "sizes": "(max-width: 700px) calc(100vw - 50px), (max-width: 1000px) 40vw, (max-width: 1264px) 36vw, 462px",
+          "naturalWidth": 270
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        }
+      ],
+      "mobileMenu": "open and Escape close passed"
+    },
+    "united-states": {
+      "status": 200,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "1440x900": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Book a Discovery Call",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 205.578125
+            },
+            {
+              "text": "See Case Studies",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 146.78125
+            }
+          ]
+        },
+        "1280x720": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Book a Discovery Call",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 205.578125
+            },
+            {
+              "text": "See Case Studies",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 146.78125
+            }
+          ]
+        },
+        "768x1024": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Book a Discovery Call",
+              "top": 572.9375,
+              "bottom": 621.125,
+              "height": 48.1875,
+              "width": 205.578125
+            },
+            {
+              "text": "See Case Studies",
+              "top": 572.9375,
+              "bottom": 621.125,
+              "height": 48.1875,
+              "width": 146.78125
+            }
+          ]
+        },
+        "390x844": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Book a Discovery Call",
+              "top": 479.78125,
+              "bottom": 527.78125,
+              "height": 48,
+              "width": 183.453125
+            },
+            {
+              "text": "See Case Studies",
+              "top": 479.78125,
+              "bottom": 527.78125,
+              "height": 48,
+              "width": 127.03125
+            }
+          ]
+        },
+        "320x740": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Book a Discovery Call",
+              "top": 490.65625,
+              "bottom": 538.65625,
+              "height": 48,
+              "width": 280
+            },
+            {
+              "text": "See Case Studies",
+              "top": 548.65625,
+              "bottom": 596.65625,
+              "height": 48,
+              "width": 280
+            }
+          ]
+        }
+      },
+      "faq": {
+        "keyboard": "pass",
+        "accessibility": []
+      },
+      "images": [
+        {
+          "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=640&q=75",
+          "loading": "eager",
+          "priority": "high",
+          "sizes": "(max-width: 700px) calc(100vw - 50px), (max-width: 1000px) 40vw, (max-width: 1264px) 36vw, 462px",
+          "naturalWidth": 270
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778590356%2Fveilcode%2Fprojects%2Fajan79xxzdw9p6fchu63.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778755251%2Fveilcode%2Fprojects%2Fnw8skepuhi4rapmzxx8g.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        }
+      ],
+      "mobileMenu": "open and Escape close passed"
+    },
+    "united-kingdom": {
+      "status": 200,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "1440x900": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "View Case Studies",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 155.1875
+            }
+          ]
+        },
+        "1280x720": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "View Case Studies",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 155.1875
+            }
+          ]
+        },
+        "768x1024": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 616.125,
+              "bottom": 664.3125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "View Case Studies",
+              "top": 616.125,
+              "bottom": 664.3125,
+              "height": 48.1875,
+              "width": 155.1875
+            }
+          ]
+        },
+        "390x844": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 515.578125,
+              "bottom": 563.578125,
+              "height": 48,
+              "width": 142.171875
+            },
+            {
+              "text": "View Case Studies",
+              "top": 515.578125,
+              "bottom": 563.578125,
+              "height": 48,
+              "width": 134.78125
+            }
+          ]
+        },
+        "320x740": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 523.046875,
+              "bottom": 571.046875,
+              "height": 48,
+              "width": 280
+            },
+            {
+              "text": "View Case Studies",
+              "top": 581.046875,
+              "bottom": 629.046875,
+              "height": 48,
+              "width": 280
+            }
+          ]
+        }
+      },
+      "faq": {
+        "keyboard": "pass",
+        "accessibility": []
+      },
+      "images": [
+        {
+          "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=640&q=75",
+          "loading": "eager",
+          "priority": "high",
+          "sizes": "(max-width: 700px) calc(100vw - 50px), (max-width: 1000px) 40vw, (max-width: 1264px) 36vw, 462px",
+          "naturalWidth": 270
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778590356%2Fveilcode%2Fprojects%2Fajan79xxzdw9p6fchu63.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778755251%2Fveilcode%2Fprojects%2Fnw8skepuhi4rapmzxx8g.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        }
+      ],
+      "mobileMenu": "open and Escape close passed"
+    },
+    "canada": {
+      "status": 200,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "1440x900": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 595.265625,
+              "bottom": 643.453125,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Process",
+              "top": 595.265625,
+              "bottom": 643.453125,
+              "height": 48.1875,
+              "width": 143.203125
+            }
+          ]
+        },
+        "1280x720": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Process",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 143.203125
+            }
+          ]
+        },
+        "768x1024": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 601.734375,
+              "bottom": 649.921875,
+              "height": 48.1875,
+              "width": 160.859375
+            },
+            {
+              "text": "See Our Process",
+              "top": 601.734375,
+              "bottom": 649.921875,
+              "height": 48.1875,
+              "width": 143.203125
+            }
+          ]
+        },
+        "390x844": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 479.78125,
+              "bottom": 527.78125,
+              "height": 48,
+              "width": 142.171875
+            },
+            {
+              "text": "See Our Process",
+              "top": 479.78125,
+              "bottom": 527.78125,
+              "height": 48,
+              "width": 123.71875
+            }
+          ]
+        },
+        "320x740": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start a Project",
+              "top": 547.546875,
+              "bottom": 595.546875,
+              "height": 48,
+              "width": 280
+            },
+            {
+              "text": "See Our Process",
+              "top": 605.546875,
+              "bottom": 653.546875,
+              "height": 48,
+              "width": 280
+            }
+          ]
+        }
+      },
+      "faq": {
+        "keyboard": "pass",
+        "accessibility": []
+      },
+      "images": [
+        {
+          "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=640&q=75",
+          "loading": "eager",
+          "priority": "high",
+          "sizes": "(max-width: 700px) calc(100vw - 50px), (max-width: 1000px) 40vw, (max-width: 1264px) 36vw, 462px",
+          "naturalWidth": 270
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778590356%2Fveilcode%2Fprojects%2Fajan79xxzdw9p6fchu63.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778755251%2Fveilcode%2Fprojects%2Fnw8skepuhi4rapmzxx8g.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        }
+      ],
+      "mobileMenu": "open and Escape close passed"
+    },
+    "australia": {
+      "status": 200,
+      "cache": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "themes": {
+        "light": [],
+        "linen": [],
+        "midnight": [],
+        "dark": []
+      },
+      "viewports": {
+        "1440x900": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start with a Discovery Sprint",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 248.9375
+            },
+            {
+              "text": "See Our Work",
+              "top": 596.265625,
+              "bottom": 644.453125,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "1280x720": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start with a Discovery Sprint",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 248.9375
+            },
+            {
+              "text": "See Our Work",
+              "top": 490.375,
+              "bottom": 538.5625,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "768x1024": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start with a Discovery Sprint",
+              "top": 644.921875,
+              "bottom": 693.109375,
+              "height": 48.1875,
+              "width": 248.9375
+            },
+            {
+              "text": "See Our Work",
+              "top": 644.921875,
+              "bottom": 693.109375,
+              "height": 48.1875,
+              "width": 130.53125
+            }
+          ]
+        },
+        "390x844": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start with a Discovery Sprint",
+              "top": 540.078125,
+              "bottom": 588.078125,
+              "height": 48,
+              "width": 223.484375
+            },
+            {
+              "text": "See Our Work",
+              "top": 540.078125,
+              "bottom": 588.078125,
+              "height": 48,
+              "width": 112.03125
+            }
+          ]
+        },
+        "320x740": {
+          "overflow": false,
+          "ctas": [
+            {
+              "text": "Start with a Discovery Sprint",
+              "top": 547.546875,
+              "bottom": 595.546875,
+              "height": 48,
+              "width": 280
+            },
+            {
+              "text": "See Our Work",
+              "top": 605.546875,
+              "bottom": 653.546875,
+              "height": 48,
+              "width": 280
+            }
+          ]
+        }
+      },
+      "faq": {
+        "keyboard": "pass",
+        "accessibility": []
+      },
+      "images": [
+        {
+          "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=640&q=75",
+          "loading": "eager",
+          "priority": "high",
+          "sizes": "(max-width: 700px) calc(100vw - 50px), (max-width: 1000px) 40vw, (max-width: 1264px) 36vw, 462px",
+          "naturalWidth": 270
+        },
+        {
+          "src": "http://localhost:3100/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=384&q=75",
+          "loading": "lazy",
+          "priority": "auto",
+          "sizes": "(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px",
+          "naturalWidth": 288
+        }
+      ],
+      "mobileMenu": "open and Escape close passed"
+    }
+  },
+  "links": {
+    "/": 200,
+    "/locations": 200,
+    "/start": 200,
+    "/work": 200,
+    "/services": 200,
+    "/services/web-solutions": 200,
+    "/services/mobile-applications": 200,
+    "/services/ai-automation": 200,
+    "/work/bienvenidos-apartments": 200,
+    "/contact": 200,
+    "/locations/united-states": 200,
+    "/locations/united-kingdom": 200,
+    "/locations/canada": 200,
+    "/locations/australia": 200,
+    "/work/reachflow-lead-tracking-crm": 200,
+    "/work/dreamhomes-property-management-solution": 200,
+    "/seo/usa-mobile-app-development": 200,
+    "/seo/usa-ai-automation": 200,
+    "/seo/usa-web-development-agency": 200,
+    "/locations/uganda": 200,
+    "/blog/seo-thinking-for-business-websites": 200
+  },
+  "errors": [],
+  "noJavaScript": {
+    "uganda": "content, links and native FAQ usable",
+    "united-states": "content, links and native FAQ usable",
+    "united-kingdom": "content, links and native FAQ usable",
+    "canada": "content, links and native FAQ usable",
+    "australia": "content, links and native FAQ usable"
+  },
+  "hub": {
+    "status": 200,
+    "accessibilityViolations": 0,
+    "markets": 5
+  }
+}

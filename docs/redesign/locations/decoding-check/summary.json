@@ -1,0 +1,110 @@
+[
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T15:12:25.545Z",
+    "scores": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1076.563,
+      "largest-contentful-paint": 2995.126,
+      "total-blocking-time": 153.49999999999977,
+      "cumulative-layout-shift": 0,
+      "speed-index": 2271.927458006716,
+      "total-byte-weight": 379537
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T15:12:37.555Z",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1069.2402,
+      "largest-contentful-paint": 2288.4804,
+      "total-blocking-time": 30.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1069.2402,
+      "total-byte-weight": 379364
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T15:12:47.524Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1078.9998,
+      "largest-contentful-paint": 2858.4997000000003,
+      "total-blocking-time": 37,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1078.9998,
+      "total-byte-weight": 380159
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T15:12:56.986Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 306.25260000000003,
+      "largest-contentful-paint": 691.5052000000001,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 435.54405221559404,
+      "total-byte-weight": 422294
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  }
+]

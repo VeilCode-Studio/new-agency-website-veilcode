@@ -1,8 +1,11 @@
+import "server-only";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle } from "lucide-react";
+import { ArrowUpRight, Plus } from "lucide-react";
 import type { LocationMarket } from "@/constants/locations";
 import type { Project, Service } from "@/db/schema";
 import { DataRecoveryNotice } from "@/components/shared/DataRecoveryNotice";
+import { getProjectKindLabel } from "@/lib/projects/kind";
 
 function LocationWorkCard({
   project,
@@ -12,122 +15,58 @@ function LocationWorkCard({
   relevanceNote?: string;
 }) {
   const screenshot = project.screenshots.find((item) => item.src);
-  const classes = project.classes;
-
   return (
-    <Link
-      href={`/work/${project.slug}`}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-xl border border-line bg-page transition-all duration-300 hover:-translate-y-1 hover:bg-surface-hi ${classes.hoverBorder} ${classes.hoverShadow}`}
-    >
-      <div className={`h-1 w-full bg-linear-to-r from-current to-transparent ${classes.accent}`} />
-      <div className="flex flex-1 flex-col">
-        <div className="relative h-36 overflow-hidden bg-surface sm:h-40">
-          {screenshot?.src ? (
-            <div
-              role="img"
-              aria-label={screenshot.alt || `${project.title} screenshot`}
-              className="absolute inset-2 rounded-lg bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-[1.035]"
-              style={{ backgroundImage: `url("${screenshot.src}")` }}
-            />
-          ) : (
-            <div className={`flex h-full min-h-60 items-center justify-center ${classes.dimBg}`}>
-              <div className={`font-display text-5xl font-extrabold ${classes.accent}`}>
-                {project.metric}
-              </div>
-            </div>
-          )}
-          <div className="absolute inset-0 bg-linear-to-t from-page/45 via-transparent to-transparent" />
-          <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-            <span
-              className={`rounded border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest backdrop-blur-md ${classes.dimBg} ${classes.border} ${classes.accent}`}
-            >
-              {project.serviceLabel}
-            </span>
-            <span className="rounded border border-line bg-page/75 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-muted backdrop-blur-md">
-              {project.year}
-            </span>
-          </div>
-        </div>
-
-        <div className="flex flex-1 flex-col p-5">
-          <div className="mb-5 flex items-start justify-between gap-4">
-            <div>
-              <p className="mb-2 text-xs text-ink-faint">
-                {project.client} / {project.industry}
-              </p>
-              <h3 className="font-display text-xl font-extrabold leading-tight tracking-tight text-ink">
-                {project.title}
-              </h3>
-            </div>
-            <span className={`grid size-10 shrink-0 place-items-center rounded-full border ${classes.border} ${classes.dimBg} ${classes.accent}`}>
-              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </div>
-
-          <p className="line-clamp-3 text-sm leading-relaxed text-ink-muted">
-            {project.summary}
-          </p>
-
-          {relevanceNote && (
-            <p className="mt-4 rounded-lg border border-brand-border bg-brand-dim p-3 text-xs leading-relaxed text-ink-muted">
-              {relevanceNote}
-            </p>
-          )}
-
-          <div className="mt-5 grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-line bg-surface/60 p-3.5">
-            <div className={`font-display text-2xl font-extrabold leading-none ${classes.accent}`}>
-              {project.metric}
-            </div>
-            <div>
-              <p className="text-sm font-medium text-ink">{project.metricLabel}</p>
-              <p className="mt-0.5 text-xs leading-relaxed text-ink-muted">
-                {project.results[0]?.sub || project.outcome}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-auto flex flex-wrap gap-2 pt-5">
-            {project.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="rounded border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink-faint"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+    <Link href={`/work/${project.slug}`} className="location-work-card">
+      <div className="location-work-image">
+        {screenshot?.src ? (
+          <Image
+            src={screenshot.src}
+            alt={screenshot.alt || `${project.title} website`}
+            fill
+            sizes="(max-width: 700px) 90vw, (max-width: 1000px) 44vw, 380px"
+          />
+        ) : (
+          <span className="location-work-placeholder">{project.title}</span>
+        )}
+        <span className="location-work-kind">
+          {getProjectKindLabel(project.client)}
+        </span>
+      </div>
+      <div className="location-work-copy">
+        <p className="location-eyebrow">
+          {project.industry} / {project.year}
+        </p>
+        <h3>
+          {project.title}
+          <ArrowUpRight size={20} aria-hidden="true" />
+        </h3>
+        <p>{project.summary}</p>
+        {relevanceNote && <p className="location-relevance">{relevanceNote}</p>}
+        <span className="location-text-link">
+          Explore the build <ArrowUpRight size={16} aria-hidden="true" />
+        </span>
       </div>
     </Link>
   );
 }
 
-function getPainPoint(point: LocationMarket["painPoints"][number]) {
-  return typeof point === "string" ? { title: null, body: point } : point;
-}
-
-function getIndustry(industry: LocationMarket["industries"][number]) {
-  return typeof industry === "string"
-    ? { title: industry, desc: null, href: null }
-    : industry;
-}
-
 function getSelectedProjects(market: LocationMarket, projects: Project[]) {
-  if (!market.portfolioItems?.length) {
-    return projects.slice(0, 3).map((project) => ({
-      project,
-      relevanceNote: undefined,
-    }));
-  }
-
-  const projectMap = new Map(projects.map((project) => [project.slug, project]));
-
+  if (!market.portfolioItems?.length)
+    return projects
+      .slice(0, 3)
+      .map((project) => ({ project, relevanceNote: undefined }));
+  const projectMap = new Map(
+    projects.map((project) => [project.slug, project]),
+  );
   return market.portfolioItems
     .map((item) => {
       const project = projectMap.get(item.slug);
       return project ? { project, relevanceNote: item.relevanceNote } : null;
     })
-    .filter((item): item is { project: Project; relevanceNote: string } => item !== null);
+    .filter(
+      (item): item is { project: Project; relevanceNote: string } =>
+        item !== null,
+    );
 }
 
 export function LocationBody({
@@ -146,7 +85,16 @@ export function LocationBody({
   projectsUnavailable?: boolean;
 }) {
   const selectedProjects = getSelectedProjects(market, projects);
-
+  const serviceCards =
+    market.serviceCards ??
+    services.map((service) => ({
+      title: service.title,
+      desc: service.desc,
+      href:
+        service.seoEnabled && service.slug
+          ? `/services/${service.slug}`
+          : "/services",
+    }));
   return (
     <>
       {(servicesUnavailable || projectsUnavailable) && (
@@ -157,216 +105,162 @@ export function LocationBody({
           retryLabel="Retry page"
         />
       )}
-
-      <section className="px-6 py-24 md:px-10">
-        <div className="mx-auto grid max-w-[88rem] gap-8 xl:grid-cols-[minmax(0,0.85fr)_minmax(520px,1fr)]">
-          <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-              Market context
-            </p>
-            <h2 className="mb-8 font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
+      <section className="location-section" aria-labelledby="market-context">
+        <div className="location-container">
+          <div className="location-heading">
+            <p className="location-eyebrow">Your market, understood</p>
+            <h2 id="market-context">
               {market.whyTitle ?? `What we optimize for in ${market.shortName}`}
             </h2>
-            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
-              {market.painPoints.map((point) => {
-                const painPoint = getPainPoint(point);
-
-                return (
-                  <article key={painPoint.body} className="rounded-xl border border-line bg-surface/40 p-5">
-                    {painPoint.title && (
-                      <h3 className="mb-3 font-display text-xl font-bold text-ink">
-                        {painPoint.title}
-                      </h3>
-                    )}
-                    <p className="leading-relaxed text-ink-muted">{painPoint.body}</p>
-                  </article>
-                );
-              })}
-            </div>
           </div>
-
-          <aside className="rounded-2xl border border-brand-border bg-linear-to-br from-surface via-surface to-brand-dim/40 p-6 shadow-[0_18px_56px_rgba(15,23,42,0.08)] md:p-8 xl:p-10">
-            <p className="mb-6 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl">
-              {market.deliveryTitle ?? "Delivery model"}
-            </p>
-            <ul className="grid gap-4">
-              {market.deliveryNotes.map((note, index) => (
-                <li
-                  key={note}
-                  className="grid gap-4 rounded-xl border border-line bg-page/75 p-4 text-[15px] leading-8 text-ink shadow-sm sm:grid-cols-[auto_1fr] sm:p-5 md:text-base"
-                >
-                  <span className="flex items-center gap-3 sm:block">
-                    <span className="grid size-9 place-items-center rounded-full border border-brand-border bg-brand-dim font-mono text-[11px] font-semibold text-brand">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+          <div className="location-context-grid">
+            {market.painPoints.map((point, index) => {
+              const item =
+                typeof point === "string"
+                  ? { title: null, body: point }
+                  : point;
+              return (
+                <article className="location-context-card" key={item.body}>
+                  <span className="location-number" aria-hidden="true">
+                    0{index + 1}
                   </span>
-                  <span className="min-w-0">
-                    <CheckCircle className="mr-2 inline size-4 align-[-2px] text-brand" aria-hidden />
-                    {note}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </aside>
+                  {item.title && <h3>{item.title}</h3>}
+                  <p>{item.body}</p>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
-
-      {market.detailSections?.length ? (
-        <section className="border-t border-line px-6 py-24 md:px-10">
-          <div className="mx-auto max-w-300">
-            {market.detailTitle && (
-              <div className="mb-10 max-w-170">
-                <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-                  Remote model
-                </p>
-                <h2 className="font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
-                  {market.detailTitle}
-                </h2>
-              </div>
-            )}
-            <div className="grid gap-5 lg:grid-cols-3">
-            {market.detailSections.map((section) => (
-              <article key={section.title} className="rounded-xl border border-line bg-surface/50 p-6">
-                <h2 className="font-display text-2xl font-extrabold leading-tight tracking-tight text-ink">
-                  {section.title}
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                  {section.body}
-                </p>
-                {section.ctaLabel && section.ctaHref && (
-                  <Link
-                    href={section.ctaHref}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
-                  >
-                    {section.ctaLabel}
-                    <ArrowUpRight className="size-4" aria-hidden />
-                  </Link>
-                )}
-              </article>
-            ))}
+      <section
+        className="location-section location-section-tinted"
+        id="services"
+        aria-labelledby="location-services"
+      >
+        <div className="location-container">
+          <div className="location-heading location-heading-row">
+            <div>
+              <p className="location-eyebrow">From idea to a working product</p>
+              <h2 id="location-services">
+                {market.servicesTitle ??
+                  `Digital services for ${market.shortName}`}
+              </h2>
             </div>
+            <Link className="location-text-link" href="/services">
+              All services <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </div>
-        </section>
-      ) : null}
-
-      <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
-        <div className="mx-auto max-w-300">
-          <div className="mb-10 max-w-170">
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
-              Services
-            </p>
-            <h2 className="font-display text-[clamp(30px,4vw,52px)] font-extrabold leading-tight tracking-tight text-ink">
-              {market.servicesTitle ?? `Services relevant to ${market.shortName}`}
-            </h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {market.serviceCards
-              ? market.serviceCards.map((service) => (
-                  <Link
-                    key={service.title}
-                    href={service.href}
-                    className="rounded-xl border border-line bg-page p-5 transition-colors hover:border-line-hi"
-                  >
-                    <p className={`mb-3 font-mono text-[11px] uppercase tracking-[0.14em] ${service.accentClass ?? "text-brand"}`}>
-                      {service.title}
-                    </p>
-                    <h3 className="font-display text-xl font-bold text-ink">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-ink-muted">{service.desc}</p>
-                  </Link>
-                ))
-              : services.map((service) => (
+          <div className="location-services-grid">
+            {serviceCards.map((service, index) => (
               <Link
-                key={service.id}
-                href={service.seoEnabled && service.slug ? `/services/${service.slug}` : "/services"}
-                className="rounded-xl border border-line bg-page p-5 transition-colors hover:border-line-hi"
+                key={service.title}
+                href={service.href}
+                className="location-service-card"
               >
-                <p className={`mb-3 font-mono text-[11px] uppercase tracking-[0.14em] ${service.deepDiveClasses.accent}`}>
-                  {service.tagline}
-                </p>
-                <h3 className="font-display text-xl font-bold text-ink">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">{service.desc}</p>
+                <span className="location-service-symbol" aria-hidden="true">
+                  {["</>", "[ ]", "✳", "↗"][index % 4]}
+                </span>
+                <span className="location-service-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <span className="location-text-link">
+                  Explore service <ArrowUpRight size={16} aria-hidden="true" />
+                </span>
               </Link>
-                ))}
+            ))}
           </div>
+          {serviceCards.length === 0 && (
+            <p className="location-empty">
+              Tell us what you need to build.{" "}
+              <Link className="location-text-link" href="/start">
+                Discuss your project{" "}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            </p>
+          )}
         </div>
       </section>
-
-      <section className="px-6 py-24 md:px-10">
-        <div className="mx-auto grid max-w-300 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-              Industries
-            </p>
-            <h2 className="mb-6 font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
-              {market.industriesTitle ?? "Common fit"}
+      <section className="location-section" aria-labelledby="location-delivery">
+        <div className="location-container location-delivery-grid">
+          <div className="location-delivery-intro">
+            <p className="location-eyebrow">A clear way forward</p>
+            <h2 id="location-delivery">
+              {market.deliveryTitle ?? "How delivery works"}
             </h2>
-            <div className="grid gap-3">
-              {market.industries.map((industry) => {
-                const item = getIndustry(industry);
-                const content = (
-                  <>
-                    <span className="font-display text-base font-bold text-ink">{item.title}</span>
-                    {item.desc && (
-                      <span className="mt-1 block text-sm leading-relaxed text-ink-muted">
-                        {item.desc}
-                      </span>
-                    )}
-                  </>
-                );
-
-                return item.href ? (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="rounded-xl border border-line bg-surface p-4 transition-colors hover:border-line-hi"
-                  >
-                    {content}
-                  </Link>
-                ) : (
-                  <div key={item.title} className="rounded-xl border border-line bg-surface p-4">
-                    {content}
-                  </div>
-                );
-              })}
-            </div>
+            <p>{market.pricingContext}</p>
+            <Link
+              className="location-button location-button-outline"
+              href="/start"
+            >
+              Let’s scope your project{" "}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </div>
-
-          <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-              FAQ
-            </p>
-            <h2 className="mb-6 font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
-              {market.faqTitle ?? "Common questions"}
-            </h2>
-            <div className="divide-y divide-line rounded-xl border border-line bg-surface/40">
-              {market.faqs.map((faq) => (
-                <article key={faq.question} className="p-5">
-                  <h3 className="font-display text-lg font-bold text-ink">{faq.question}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{faq.answer}</p>
+          <ol className="location-delivery-list">
+            {market.deliveryNotes.map((note, index) => (
+              <li key={note}>
+                <span className="location-step" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p>{note}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      {market.detailSections?.length ? (
+        <section
+          className="location-section location-section-tinted"
+          aria-labelledby="location-remote"
+        >
+          <div className="location-container">
+            <div className="location-heading">
+              <p className="location-eyebrow">
+                Working together, across borders
+              </p>
+              <h2 id="location-remote">
+                {market.detailTitle ??
+                  "Remote delivery, with clear expectations"}
+              </h2>
+            </div>
+            <div className="location-details-grid">
+              {market.detailSections.map((section) => (
+                <article className="location-detail" key={section.title}>
+                  <h3>{section.title}</h3>
+                  <p>{section.body}</p>
+                  {section.ctaLabel && section.ctaHref && (
+                    <Link className="location-text-link" href={section.ctaHref}>
+                      {section.ctaLabel}
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </Link>
+                  )}
                 </article>
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      ) : null}
       {selectedProjects.length > 0 && (
-        <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
-          <div className="mx-auto max-w-300">
-            <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <section
+          className="location-section"
+          id="work"
+          aria-labelledby="location-work"
+        >
+          <div className="location-container">
+            <div className="location-heading location-heading-row">
               <div>
-                <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand">
-                  Proof
-                </p>
-                <h2 className="font-display text-[clamp(30px,4vw,48px)] font-extrabold tracking-tight text-ink">
-                  {market.portfolioTitle ?? "Relevant work"}
+                <p className="location-eyebrow">Work you can inspect</p>
+                <h2 id="location-work">
+                  {market.portfolioTitle ?? "Selected studio work"}
                 </h2>
               </div>
-              <Link href="/work" className="text-sm font-semibold text-brand hover:underline">
-                View all work
+              <Link href="/work" className="location-text-link">
+                View all work <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="location-work-grid">
               {selectedProjects.map(({ project, relevanceNote }) => (
                 <LocationWorkCard
                   key={project.slug}
@@ -376,143 +270,151 @@ export function LocationBody({
               ))}
             </div>
             {market.portfolioCta && (
-              <div className="mt-8 rounded-xl border border-brand-border bg-page p-6">
-                <p className="font-display text-2xl font-extrabold tracking-tight text-ink">
-                  {market.portfolioCta}
-                </p>
-                <Link href="/start" className="mt-4 inline-flex text-sm font-semibold text-brand hover:underline">
-                  Start a Project
+              <div className="location-portfolio-note">
+                <p>{market.portfolioCta}</p>
+                <Link className="location-text-link" href="/start">
+                  Discuss a similar build{" "}
+                  <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>
               </div>
             )}
           </div>
         </section>
       )}
-
       {projectsUnavailable && projects.length === 0 && (
-        <section className="border-t border-line bg-surface px-6 py-24 md:px-10">
-          <div className="mx-auto max-w-220 rounded-xl border border-line bg-page p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-brand">
-              Work examples unavailable
+        <section className="location-section">
+          <div className="location-container location-empty">
+            <h2>Work examples are temporarily unavailable.</h2>
+            <p>
+              Refresh the page or come back shortly. You can still discuss your
+              project with us.
             </p>
-            <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-ink">
-              We could not load the relevant work examples just now.
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-              Refresh the page or come back shortly. The rest of the location page is still
-              available.
-            </p>
+            <Link className="location-text-link" href="/start">
+              Start a conversation <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </div>
         </section>
       )}
-
-      <section className="border-t border-line px-6 py-24 md:px-10">
-        <div className="mx-auto max-w-220 overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_18px_56px_rgba(15,23,42,0.08)]">
-          <div className="grid gap-0 lg:grid-cols-[1.3fr_0.7fr]">
-            <div className="relative px-8 py-8 md:px-10 md:py-10">
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-linear-to-br from-brand-dim/70 via-transparent to-svc-data-dim/40"
-              />
-              <div
-                aria-hidden
-                className="absolute -right-10 top-6 size-32 rounded-full bg-brand-dim/40 blur-3xl"
-              />
-              <div className="relative z-10">
-                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-brand">
-                  Next step
-                </p>
-                <h2 className="max-w-120 font-display text-[clamp(24px,3vw,36px)] font-extrabold leading-tight tracking-tight text-ink">
-                  {market.ctaCopy}
-                </h2>
-                <p className="mt-4 max-w-115 text-sm leading-relaxed text-ink-muted">
-                  {market.ctaBody ??
-                    "We will scope the opportunity, recommend the right service mix, and map a practical launch path."}
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t border-line bg-page px-8 py-8 md:px-10 lg:border-l lg:border-t-0">
-              <div className="flex h-full flex-col justify-between gap-6">
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div className="rounded-lg border border-line bg-surface p-3">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                        Scope
-                      </p>
-                      <p className="mt-1 font-medium text-ink">Clarify the build</p>
-                    </div>
-                    <div className="rounded-lg border border-line bg-surface p-3">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
-                        Response
-                      </p>
-                      <p className="mt-1 font-medium text-ink">Practical next step</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {market.serviceFocus.map((service) => (
-                      <span
-                        key={service}
-                        className="rounded border border-line bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink-faint"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
+      <section
+        className="location-section location-section-tinted"
+        aria-labelledby="location-industries"
+      >
+        <div className="location-container location-industries-layout">
+          <div className="location-heading">
+            <p className="location-eyebrow">Built around your business</p>
+            <h2 id="location-industries">
+              {market.industriesTitle ??
+                `Industries we support in ${market.shortName}`}
+            </h2>
+          </div>
+          <div className="location-industries-grid">
+            {market.industries.map((industry) => {
+              const item =
+                typeof industry === "string"
+                  ? { title: industry, desc: null, href: null }
+                  : industry;
+              const content = (
+                <>
+                  <h3>
+                    {item.title}
+                    {item.href && <ArrowUpRight size={17} aria-hidden="true" />}
+                  </h3>
+                  {item.desc && <p>{item.desc}</p>}
+                </>
+              );
+              return item.href ? (
                 <Link
-                  href="/start"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-brand px-5 py-3 text-sm font-semibold text-page transition-opacity hover:opacity-90"
+                  href={item.href}
+                  className="location-industry"
+                  key={item.title}
                 >
-                  {market.ctaLabel}
+                  {content}
                 </Link>
-              </div>
-            </div>
+              ) : (
+                <article className="location-industry" key={item.title}>
+                  {content}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {seoPages.length > 0 ? (
-        <section className="border-t border-line px-6 py-12 md:px-10">
-          <div className="mx-auto flex max-w-300 flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-              {market.shortName} service pages:
-            </p>
-            <div className="flex flex-wrap gap-2">
+      <section
+        className="location-section"
+        aria-labelledby="location-questions"
+      >
+        <div className="location-container location-faq-layout">
+          <div className="location-heading">
+            <p className="location-eyebrow">Before we begin</p>
+            <h2 id="location-questions">
+              {market.faqTitle ?? "Questions, answered"}
+            </h2>
+            <p>Have a question about your particular project?</p>
+            <Link href="/contact" className="location-text-link">
+              Talk to the studio <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="location-faqs">
+            {market.faqs.map((faq) => (
+              <details key={faq.question}>
+                <summary>
+                  <h3>{faq.question}</h3>
+                  <Plus size={18} aria-hidden="true" />
+                </summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+        className="location-section location-closing"
+        aria-labelledby="location-cta"
+      >
+        <div className="location-container location-cta-panel">
+          <div>
+            <p className="location-eyebrow">Your next chapter</p>
+            <h2 id="location-cta">{market.ctaCopy}</h2>
+            {market.ctaBody && <p>{market.ctaBody}</p>}
+          </div>
+          <Link
+            className="location-button location-button-primary"
+            href="/start"
+          >
+            {market.ctaLabel}
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+      {seoPages.length > 0 && (
+        <section className="location-related">
+          <div className="location-container">
+            <h2>More services for {market.shortName}</h2>
+            <div className="location-market-links">
               {seoPages.map((page) => (
-                <Link
-                  key={page.slug}
-                  href={`/seo/${page.slug}`}
-                  className="rounded border border-line bg-surface px-3 py-2 text-sm text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
-                >
+                <Link key={page.slug} href={`/seo/${page.slug}`}>
                   {page.title}
+                  <ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
               ))}
             </div>
           </div>
         </section>
-      ) : null}
-
+      )}
       {market.crossMarketLinks?.length ? (
-        <section className="border-t border-line bg-surface px-6 py-12 md:px-10">
-          <div className="mx-auto flex max-w-300 flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-              {market.crossMarketLabel ?? "Also serving clients in:"}
-            </p>
-            <div className="flex flex-wrap gap-2">
+        <nav className="location-related" aria-label="Other markets">
+          <div className="location-container">
+            <p>{market.crossMarketLabel ?? "Also serving clients in:"}</p>
+            <div className="location-market-links">
               {market.crossMarketLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded border border-line bg-page px-3 py-2 text-sm text-ink-muted transition-colors hover:border-line-hi hover:text-ink"
-                >
+                <Link key={link.href} href={link.href}>
                   {link.label}
+                  <ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
               ))}
             </div>
           </div>
-        </section>
+        </nav>
       ) : null}
     </>
   );

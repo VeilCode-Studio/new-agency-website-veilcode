@@ -125,7 +125,7 @@ test("United States location has Phase 2 SEO, schema, and remote trust requireme
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
   assert.match(locationData, /areaServed:\s*"US"/);
   assert.match(locationData, /Remote delivery for US teams/);
-  assert.match(locationData, /EST overlap available/);
+  assert.match(locationData, /Eastern Time overlap available/);
   assert.match(
     locationData,
     /Senior product engineering for US founders who need to move fast/,
@@ -143,6 +143,7 @@ test("United States location includes the requested Phase 2 content sections", (
   assert.match(locationData, /Agencies with overflow/);
   assert.match(locationData, /The remote concerns - addressed directly/);
   assert.match(locationData, /8 to 11 AM Eastern \(3 to 6 PM in Kampala\)/);
+  assert.match(locationData, /during US daylight saving time, or 4 to 7 PM in Kampala during US standard time/);
   assert.match(locationData, /Next\.js, React Native, TypeScript, Supabase/);
   assert.match(locationData, /What working with us looks like/);
   assert.match(locationData, /Discovery \(Week 1\)/);

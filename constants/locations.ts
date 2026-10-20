@@ -194,7 +194,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ogImage: "/assets/og/united-states.jpg",
     schemaType: "ProfessionalService",
     areaServed: "US",
-    eyebrow: "Remote delivery for US teams · EST overlap available",
+    eyebrow: "Remote delivery for US teams · Eastern Time overlap available",
     h1: "Senior product engineering for US founders who need to move fast",
     heroCopy:
       "We partner with US startups, operators, and growth teams to ship web platforms, mobile apps, and AI automation systems - lean delivery, senior execution, no bloated agency overhead.",
@@ -202,8 +202,8 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     primaryCtaHref: "/start",
     secondaryCtaLabel: "See Case Studies",
     secondaryCtaHref: "/work",
-    statLine: "NDA-ready · Milestone billing · IP ownership included · EST overlap available",
-    stats: ["NDA-ready", "Milestone billing", "IP ownership included", "EST overlap available"],
+    statLine: "NDA-ready · Milestone billing · IP ownership included · Eastern Time overlap available",
+    stats: ["NDA-ready", "Milestone billing", "IP ownership included", "Eastern Time overlap available"],
     whyTitle: "Best fit for US teams",
     painPoints: [
       {
@@ -222,7 +222,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     detailSections: [
       {
         title: "Timezone",
-        body: "Our afternoon overlaps with your morning. Live reviews run 8 to 11 AM Eastern (3 to 6 PM in Kampala), and written updates land before your day starts.",
+        body: "Our afternoon overlaps with your morning. Live reviews run 8 to 11 AM Eastern (3 to 6 PM in Kampala) during US daylight saving time, or 4 to 7 PM in Kampala during US standard time. Written updates land before your day starts.",
       },
       {
         title: "Accountability",

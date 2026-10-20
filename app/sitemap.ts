@@ -18,6 +18,7 @@ export const revalidate = 3600;
  */
 const STATIC_PAGE_LASTMOD: Record<string, string> = {
   "/": "2026-10-20",
+  "/locations": "2026-10-20",
   "/work": "2026-09-29",
   "/services": "2026-09-29",
   "/contact": "2026-09-29",
@@ -30,11 +31,11 @@ const STATIC_PAGE_LASTMOD: Record<string, string> = {
 
 /** Same idea for the location pages, keyed by market slug. */
 const LOCATION_LASTMOD: Record<string, string> = {
-  uganda: "2026-09-29",
-  "united-states": "2026-09-29",
-  "united-kingdom": "2026-09-29",
-  canada: "2026-09-29",
-  australia: "2026-09-29",
+  uganda: "2026-10-20",
+  "united-states": "2026-10-20",
+  "united-kingdom": "2026-10-20",
+  canada: "2026-10-20",
+  australia: "2026-10-20",
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -47,10 +48,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getPublishedSeoPages(),
   ]);
 
-  const staticUrls = Object.entries(STATIC_PAGE_LASTMOD).map(([path, date]) => ({
-    url: pageUrl(path),
-    lastModified: date,
-  }));
+  const staticUrls = Object.entries(STATIC_PAGE_LASTMOD).map(
+    ([path, date]) => ({
+      url: pageUrl(path),
+      lastModified: date,
+    }),
+  );
 
   const serviceUrls = serviceRows
     .filter((service) => service.slug)
@@ -62,7 +65,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const locationUrls = LOCATION_MARKETS.map((market) => ({
     url: pageUrl(`/locations/${market.slug}`),
     // Omit lastmod rather than invent one for a market missing from the map.
-    ...(LOCATION_LASTMOD[market.slug] ? { lastModified: LOCATION_LASTMOD[market.slug] } : {}),
+    ...(LOCATION_LASTMOD[market.slug]
+      ? { lastModified: LOCATION_LASTMOD[market.slug] }
+      : {}),
   }));
 
   const seoPageUrls = seoPageRows.map((page) => ({

@@ -98,7 +98,7 @@ export function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 ${isHome ? "home-navigation" : ""}
+        className={`fixed top-0 inset-x-0 z-40 ${isHome ? "home-navigation" : pathname.startsWith("/locations") ? "location-navigation" : ""}
           h-16 sm:h-18 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-400
           ${
             scrolled

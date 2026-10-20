@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { AnimationBoundary } from "@/components/providers/AnimationBoundary";
+import "./locations.css";
 
-export default function AnimatedRouteLayout({ children }: { children: ReactNode }) {
-  return <AnimationBoundary>{children}</AnimationBoundary>;
+export default function LocationsLayout({ children }: { children: ReactNode }) {
+  return <div className="locations-design">{children}</div>;
 }

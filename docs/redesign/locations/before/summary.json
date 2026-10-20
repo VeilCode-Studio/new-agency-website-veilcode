@@ -1,0 +1,570 @@
+[
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T12:51:57.896Z",
+    "scores": {
+      "performance": 43,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1076.74855,
+      "largest-contentful-paint": 5054.871375000001,
+      "total-blocking-time": 2477.000000000002,
+      "cumulative-layout-shift": 0,
+      "speed-index": 20512.0973075033,
+      "total-byte-weight": 346857
+    },
+    "failed": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T12:53:09.464Z",
+    "scores": {
+      "performance": 60,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 987.222,
+      "largest-contentful-paint": 2370.8329999999996,
+      "total-blocking-time": 1919,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17503.015164110548,
+      "total-byte-weight": 344675
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T12:54:16.242Z",
+    "scores": {
+      "performance": 60,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1028.1105,
+      "largest-contentful-paint": 2379.1657499999997,
+      "total-blocking-time": 2029.4447499999997,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17714.327613981415,
+      "total-byte-weight": 346435
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "uganda",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T12:55:26.427Z",
+    "scores": {
+      "performance": 80,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 408.749,
+      "largest-contentful-paint": 991.749,
+      "total-blocking-time": 246.62550000000022,
+      "cumulative-layout-shift": 0,
+      "speed-index": 7318.260100281659,
+      "total-byte-weight": 368924
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-states",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T12:56:35.020Z",
+    "scores": {
+      "performance": 58,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1044.039,
+      "largest-contentful-paint": 2658.078,
+      "total-blocking-time": 2516,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18419.197433247326,
+      "total-byte-weight": 351754
+    },
+    "failed": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-states",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T12:57:36.412Z",
+    "scores": {
+      "performance": 57,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 960.453,
+      "largest-contentful-paint": 3105.453,
+      "total-blocking-time": 1597.7735000000005,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17524.347067790255,
+      "total-byte-weight": 345046
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-states",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T12:58:30.301Z",
+    "scores": {
+      "performance": 60,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1294.1225,
+      "largest-contentful-paint": 1792.1225,
+      "total-blocking-time": 3977.06125,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18632.890444211815,
+      "total-byte-weight": 345593
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-states",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T12:59:25.380Z",
+    "scores": {
+      "performance": 79,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 356.491,
+      "largest-contentful-paint": 889.491,
+      "total-blocking-time": 268.7545,
+      "cumulative-layout-shift": 0,
+      "speed-index": 7363.4202060697835,
+      "total-byte-weight": 376380
+    },
+    "failed": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-kingdom",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T13:00:31.195Z",
+    "scores": {
+      "performance": 61,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1038.857,
+      "largest-contentful-paint": 2308.2855,
+      "total-blocking-time": 1728.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17448.761822587927,
+      "total-byte-weight": 346906
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-kingdom",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T13:01:26.366Z",
+    "scores": {
+      "performance": 59,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1104.819,
+      "largest-contentful-paint": 2353.638,
+      "total-blocking-time": 2999.9999999999995,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18052.831449144418,
+      "total-byte-weight": 345986
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-kingdom",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T13:02:33.239Z",
+    "scores": {
+      "performance": 60,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1088.1545,
+      "largest-contentful-paint": 2162.6180000000004,
+      "total-blocking-time": 2896.499999999999,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18789.089317905877,
+      "total-byte-weight": 345369
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "united-kingdom",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T13:03:31.958Z",
+    "scores": {
+      "performance": 66,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 454.649,
+      "largest-contentful-paint": 897.2980000000001,
+      "total-blocking-time": 568.0000000000007,
+      "cumulative-layout-shift": 0,
+      "speed-index": 7779.184584072653,
+      "total-byte-weight": 370662
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "canada",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T13:04:51.513Z",
+    "scores": {
+      "performance": 59,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1538.911,
+      "largest-contentful-paint": 1933.18325,
+      "total-blocking-time": 6314.5445,
+      "cumulative-layout-shift": 0,
+      "speed-index": 21014.268687776002,
+      "total-byte-weight": 345874
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "canada",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T13:05:58.595Z",
+    "scores": {
+      "performance": 61,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1020.229,
+      "largest-contentful-paint": 2178.458,
+      "total-blocking-time": 1833.9999999999995,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17445.085959588723,
+      "total-byte-weight": 344313
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "canada",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T13:07:10.341Z",
+    "scores": {
+      "performance": 58,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1351.422,
+      "largest-contentful-paint": 2275.0665,
+      "total-blocking-time": 4919.000000000001,
+      "cumulative-layout-shift": 0,
+      "speed-index": 19920.346453225102,
+      "total-byte-weight": 351265
+    },
+    "failed": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "canada",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T13:08:25.505Z",
+    "scores": {
+      "performance": 74,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 499.2225000000001,
+      "largest-contentful-paint": 1339.83375,
+      "total-blocking-time": 296.3887500000001,
+      "cumulative-layout-shift": 0,
+      "speed-index": 8691.330382941298,
+      "total-byte-weight": 377607
+    },
+    "failed": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console"
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "australia",
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T13:09:32.341Z",
+    "scores": {
+      "performance": 52,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1137.968,
+      "largest-contentful-paint": 3597.9680000000003,
+      "total-blocking-time": 2123.000000000001,
+      "cumulative-layout-shift": 0,
+      "speed-index": 17358.51651418971,
+      "total-byte-weight": 297559
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "australia",
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T13:10:30.668Z",
+    "scores": {
+      "performance": 57,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1058.443,
+      "largest-contentful-paint": 2800.8859999999995,
+      "total-blocking-time": 2785.499999999999,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18148.36917869977,
+      "total-byte-weight": 297121
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "australia",
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T13:11:39.741Z",
+    "scores": {
+      "performance": 56,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1269.025,
+      "largest-contentful-paint": 3191.0250000000005,
+      "total-blocking-time": 1740.9999999999995,
+      "cumulative-layout-shift": 0,
+      "speed-index": 18184.765662391404,
+      "total-byte-weight": 296720
+    },
+    "failed": [
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "country": "australia",
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T13:12:37.386Z",
+    "scores": {
+      "performance": 60,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 441.313,
+      "largest-contentful-paint": 857.313,
+      "total-blocking-time": 1248.5000000000005,
+      "cumulative-layout-shift": 0,
+      "speed-index": 8270.195444623685,
+      "total-byte-weight": 371295
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration"
+      }
+    ],
+    "warnings": []
+  }
+]
