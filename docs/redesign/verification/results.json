@@ -1,0 +1,172 @@
+{
+  "themes": {
+    "light": [],
+    "linen": [],
+    "midnight": [],
+    "dark": []
+  },
+  "viewports": {
+    "1440x900": {
+      "scroll": 1440,
+      "client": 1440,
+      "ctaBottom": 659.109375
+    },
+    "1280x720": {
+      "scroll": 1280,
+      "client": 1280,
+      "ctaBottom": 547.21875
+    },
+    "768x1024": {
+      "scroll": 768,
+      "client": 768,
+      "ctaBottom": 600.3125
+    },
+    "390x844": {
+      "scroll": 390,
+      "client": 390,
+      "ctaBottom": 497.421875
+    },
+    "320x740": {
+      "scroll": 320,
+      "client": 320,
+      "ctaBottom": 522.109375
+    }
+  },
+  "forms": {
+    "failure": "An intercepted 500 shows an error and preserves the draft.",
+    "success": "An intercepted 201 shows confirmation, resets fields, and moves focus; duplicate submission is disabled while pending."
+  },
+  "links": {
+    "/": 200,
+    "/blog": 200,
+    "/start": 200,
+    "/work": 200,
+    "/work/bienvenidos-apartments": 200,
+    "/work/reachflow-lead-tracking-crm": 200,
+    "/work/dreamhomes-property-management-solution": 200,
+    "/services": 200,
+    "/locations/uganda": 200,
+    "/services/web-solutions": 200,
+    "/services/mobile-applications": 200,
+    "/services/ai-automation": 200,
+    "/about": 200,
+    "/privacy-policy": 200,
+    "/blog/seo-thinking-for-business-websites": 200,
+    "/blog/affiliate-landing-page-generator": 200,
+    "/blog/how-do-i-choose-the-right-web-development-agency-for-my-business": 200,
+    "/locations/united-states": 200,
+    "/locations/united-kingdom": 200,
+    "/locations/canada": 200,
+    "/locations/australia": 200
+  },
+  "errors": [],
+  "cache": "s-maxage=300, stale-while-revalidate=31535700",
+  "images": [
+    {
+      "src": "http://localhost:3100/_next/image?url=%2Fimages%2Fhome%2Fstudio-workspace.webp&w=1920&q=75",
+      "loading": "eager",
+      "priority": "high",
+      "sizes": "(min-width: 1600px) 1600px, 100vw"
+    },
+    {
+      "src": "http://localhost:3100/_next/image?url=%2Fassets%2Fbienvenidos-apartments%2Fhomepage-hero.png&w=640&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 48vw, 570px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 55vw, 650px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778590356%2Fveilcode%2Fprojects%2Fajan79xxzdw9p6fchu63.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 55vw, 650px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778755251%2Fveilcode%2Fprojects%2Fnw8skepuhi4rapmzxx8g.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 767px) calc(100vw - 40px), (max-width: 1232px) 55vw, 650px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1777051883%2Fveilcode%2Fprojects%2Frghoihv6r4dgmahigk3o.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778590356%2Fveilcode%2Fprojects%2Fajan79xxzdw9p6fchu63.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778755251%2Fveilcode%2Fprojects%2Fnw8skepuhi4rapmzxx8g.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    },
+    {
+      "src": "/_next/image?url=%2Fassets%2Ftradepost-app%2Fimage-1.jpg&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 767px) 75vw, 340px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1787225388%2Fveilcode%2Fblog%2Fukohue4hxbektgqwecko.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1780799206%2Fveilcode%2Fblog%2Fsmrhibvhjd9rljckhmys.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    },
+    {
+      "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdljizbsqx%2Fimage%2Fupload%2Fv1778851030%2Fveilcode%2Fblog%2Fm506anuplga2wpiy05ir.png&w=3840&q=75",
+      "loading": "lazy",
+      "priority": "auto",
+      "sizes": "(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 46vw, (max-width: 1232px) 30vw, 380px"
+    }
+  ],
+  "gallery": "Native scroll-snap gallery controls move the server-rendered slides.",
+  "faq": "Native disclosures open and close from the keyboard.",
+  "chat": "Panel downloads on activation, and the unsent draft persists when navigating to /work. No chat messages sent.",
+  "hashTargets": [
+    {
+      "href": "#services",
+      "exists": true
+    },
+    {
+      "href": "#work",
+      "exists": true
+    },
+    {
+      "href": "#testimonials",
+      "exists": true
+    },
+    {
+      "href": "#pricing",
+      "exists": true
+    },
+    {
+      "href": "#contact",
+      "exists": true
+    },
+    {
+      "href": "#top",
+      "exists": true
+    }
+  ],
+  "coldAnchor": "A direct contact anchor lands below the fixed header before the long page has been scrolled.",
+  "mobileMenu": "Mobile menu opens and Escape restores focus.",
+  "mobileAccessibility": [],
+  "reducedMotion": "Homepage transitions respect reduced motion.",
+  "noJavaScript": "Server content and FAQs remain usable; form submission is disabled and a direct email fallback is present."
+}

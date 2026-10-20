@@ -17,7 +17,7 @@ export const revalidate = 3600;
  * only when that page's content actually changes, so lastmod stays truthful.
  */
 const STATIC_PAGE_LASTMOD: Record<string, string> = {
-  "/": "2026-09-29",
+  "/": "2026-10-20",
   "/work": "2026-09-29",
   "/services": "2026-09-29",
   "/contact": "2026-09-29",

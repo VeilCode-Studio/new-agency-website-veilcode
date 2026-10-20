@@ -1,0 +1,86 @@
+[
+  {
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T11:01:09.784Z",
+    "scores": {
+      "performance": 90,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1062.2399,
+      "largest-contentful-paint": 3044.35985,
+      "total-blocking-time": 238.88004999999998,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1504.902306445104,
+      "total-byte-weight": 325492
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T11:01:21.441Z",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1061.2927,
+      "largest-contentful-paint": 2716.93905,
+      "total-blocking-time": 106.85365000000002,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1061.2927,
+      "total-byte-weight": 325492
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T11:01:32.491Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1060.9005,
+      "largest-contentful-paint": 2913.35075,
+      "total-blocking-time": 71.5497499999999,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1060.9005,
+      "total-byte-weight": 325492
+    },
+    "failed": [],
+    "warnings": []
+  },
+  {
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T11:01:43.111Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 289.1779,
+      "largest-contentful-paint": 665.7668500000001,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 390.4667771840233,
+      "total-byte-weight": 432459
+    },
+    "failed": [],
+    "warnings": []
+  }
+]

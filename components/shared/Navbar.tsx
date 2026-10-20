@@ -81,6 +81,7 @@ function HamburgerButton({
 
 export function Nav() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const [scrolled,  setScrolled]  = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -97,7 +98,7 @@ export function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40
+        className={`fixed top-0 inset-x-0 z-40 ${isHome ? "home-navigation" : ""}
           h-16 sm:h-18 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-400
           ${
             scrolled
@@ -115,7 +116,17 @@ export function Nav() {
 
         {/* Desktop links — hidden on mobile */}
         <nav className="hidden xl:flex items-center gap-7 2xl:gap-9" aria-label="Primary">
-          {NAV_LINKS.map(({ label, href }) => (
+          {(isHome ? [
+            { label: "Home", href: "/" },
+            { label: "Services", href: "#services" },
+            { label: "Work", href: "#work" },
+            { label: "Reviews", href: "#testimonials" },
+            { label: "Pricing", href: "#pricing" },
+            { label: "Blog", href: "/blog" },
+            { label: "Contact", href: "#contact" },
+          ] : NAV_LINKS).map(({ label, href }) => href.startsWith("#") ? (
+            <a key={label} href={href} className="home-nav-anchor">{label}</a>
+          ) : (
             <DesktopNavLink key={label} label={label} href={href} />
           ))}
         </nav>

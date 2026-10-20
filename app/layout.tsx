@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <StructuredData data={organizationJsonLd()} />
         <noscript><style>{`[style*="opacity:0;"], [style$="opacity:0"], [style*="opacity: 0;"] { opacity: 1 !important; transform: none !important; }`}</style></noscript>

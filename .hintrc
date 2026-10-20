@@ -17,6 +17,7 @@
           "border: 1px solid color-mix(in srgb, var(--vc-brand), transparent 72%)"
         ]
       }
-    ]
+    ],
+    "meta-viewport": "off"
   }
 }

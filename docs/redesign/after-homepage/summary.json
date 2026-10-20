@@ -1,0 +1,106 @@
+[
+  {
+    "formFactor": "mobile",
+    "run": 1,
+    "fetched": "2026-10-20T10:49:19.669Z",
+    "scores": {
+      "performance": 90,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1068.0547,
+      "largest-contentful-paint": 3070.58205,
+      "total-blocking-time": 233.47264999999993,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1580.711244456665,
+      "total-byte-weight": 325465
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "formFactor": "mobile",
+    "run": 2,
+    "fetched": "2026-10-20T10:49:34.742Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1064.3234,
+      "largest-contentful-paint": 2802.4851,
+      "total-blocking-time": 91.33830000000012,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1158.0939039667444,
+      "total-byte-weight": 325463
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "formFactor": "mobile",
+    "run": 3,
+    "fetched": "2026-10-20T10:49:48.586Z",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 1065.1937,
+      "largest-contentful-paint": 2944.29055,
+      "total-blocking-time": 73.90314999999987,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1150.4976624871551,
+      "total-byte-weight": 325463
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "formFactor": "desktop",
+    "run": 1,
+    "fetched": "2026-10-20T10:50:02.579Z",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": 301.5362,
+      "largest-contentful-paint": 691.3043,
+      "total-blocking-time": 0.231899999999996,
+      "cumulative-layout-shift": 0,
+      "speed-index": 494.8464259276065,
+      "total-byte-weight": 432023
+    },
+    "failed": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      }
+    ],
+    "warnings": []
+  }
+]

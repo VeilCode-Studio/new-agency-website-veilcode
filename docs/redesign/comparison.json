@@ -1,0 +1,99 @@
+{
+  "before-homepage": {
+    "mobile": {
+      "scores": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1168.7759999999998,
+        "largest-contentful-paint": 3071.6325,
+        "total-blocking-time": 307.35585000000015,
+        "cumulative-layout-shift": 0,
+        "speed-index": 4110.727938953696,
+        "total-byte-weight": 256061
+      },
+      "runs": [
+        72,
+        90,
+        88
+      ]
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "run": 1,
+      "fetched": "2026-10-20T10:22:30.222Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 266.3018,
+        "largest-contentful-paint": 646.3018,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 559.2028822842283,
+        "total-byte-weight": 421860
+      },
+      "failed": [
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names."
+        }
+      ],
+      "warnings": []
+    }
+  },
+  "after-homepage-final": {
+    "mobile": {
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1061.2927,
+        "largest-contentful-paint": 2913.35075,
+        "total-blocking-time": 106.85365000000002,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1061.2927,
+        "total-byte-weight": 325492
+      },
+      "runs": [
+        90,
+        96,
+        95
+      ]
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "run": 1,
+      "fetched": "2026-10-20T11:01:43.111Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 289.1779,
+        "largest-contentful-paint": 665.7668500000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 390.4667771840233,
+        "total-byte-weight": 432459
+      },
+      "failed": [],
+      "warnings": []
+    }
+  }
+}
