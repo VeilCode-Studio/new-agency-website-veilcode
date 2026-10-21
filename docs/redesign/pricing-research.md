@@ -1,5 +1,7 @@
 # Regional website pricing research
 
+Historical research: the later international location-page task supersedes these calculated prices with explicit approved amounts. See [current pricing](pricing.md) and the [location-copy report](international-location-copy.md). The research below is retained as context, not the current pricing policy.
+
 Research date: **21 October 2026**. This supersedes the previous UGX currency-conversion approach. The user requested local package estimates for the US, UK, Canada and Australia, discounted by **15%**, and authorized using the resulting prices. Uganda and the homepage retain UGX 900,000 / 1,800,000 / 3,500,000.
 
 ## Method and limits

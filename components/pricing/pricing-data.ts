@@ -1,15 +1,13 @@
 /** Set to false to remove the shared pricing section from home and every location. */
 export const WEBSITE_PRICING_ENABLED = true;
 
-export const REGIONAL_DISCOUNT_PERCENT = 15;
-// Scope-adjusted planning estimates researched on 21 October 2026, in each
-// market's own currency. Sources and rationale: docs/redesign/pricing-research.md.
-// These are estimates for comparable packages, not surveyed national averages.
-export const REGIONAL_PRICE_BENCHMARKS = {
-  "united-states": { starter: 4_000, business: 7_000, ecommerce: 10_000 },
-  "united-kingdom": { starter: 1_500, business: 3_000, ecommerce: 4_000 },
-  canada: { starter: 4_000, business: 6_500, ecommerce: 9_000 },
-  australia: { starter: 5_000, business: 8_000, ecommerce: 10_000 },
+// Approved regional starting prices, in each market's own currency.
+// These explicit amounts supersede the previous researched-benchmark discount.
+export const REGIONAL_PACKAGE_PRICES = {
+  "united-states": { starter: 1_500, business: 2_900, ecommerce: 4_500 },
+  "united-kingdom": { starter: 1_200, business: 2_300, ecommerce: 3_500 },
+  canada: { starter: 2_000, business: 3_900, ecommerce: 6_000 },
+  australia: { starter: 2_200, business: 4_300, ecommerce: 6_800 },
 } as const;
 
 type Currency = "UGX" | "USD" | "GBP" | "CAD" | "AUD";
@@ -56,10 +54,10 @@ export function getWebsitePricing(marketSlug = "uganda") {
   const market = Object.hasOwn(PRICING_MARKETS, marketSlug) ? PRICING_MARKETS[marketSlug] : null;
   if (!market) return null;
   const local = market.currency === "UGX";
-  const benchmarks = Object.hasOwn(REGIONAL_PRICE_BENCHMARKS, marketSlug)
-    ? REGIONAL_PRICE_BENCHMARKS[marketSlug as keyof typeof REGIONAL_PRICE_BENCHMARKS]
+  const regionalPrices = Object.hasOwn(REGIONAL_PACKAGE_PRICES, marketSlug)
+    ? REGIONAL_PACKAGE_PRICES[marketSlug as keyof typeof REGIONAL_PACKAGE_PRICES]
     : null;
-  if (!local && !benchmarks) return null;
+  if (!local && !regionalPrices) return null;
   const common = ["Free domain name (1st year)", "Free hosting (1st year)", "1 professional email address"];
   const features = {
     starter: [
@@ -97,7 +95,7 @@ export function getWebsitePricing(marketSlug = "uganda") {
       "Full ecommerce platform",
       local ? "MTN Mobile Money & Airtel Money" : "Local payment gateway integration",
       local ? "Visa/Mastercard payments (Flutterwave)" : "Visa/Mastercard payments",
-      "WhatsApp ordering",
+      marketSlug === "united-states" || marketSlug === "canada" ? "SMS and email order alerts" : "WhatsApp ordering",
       "Product inventory management",
       "Order & customer management",
       local ? "Kampala delivery zones & fees" : "Shipping zones & delivery fees",
@@ -114,11 +112,9 @@ export function getWebsitePricing(marketSlug = "uganda") {
     ...market,
     startingFrom: !local,
     plans: PLANS.map((plan) => {
-      const benchmark = benchmarks?.[plan.id] ?? null;
-      const amount = benchmark === null ? plan.ugxPrice : benchmark * (100 - REGIONAL_DISCOUNT_PERCENT) / 100;
+      const amount = regionalPrices?.[plan.id] ?? plan.ugxPrice;
       return {
         ...plan,
-        benchmark,
         amount,
         price: `${market.currency} ${formatter.format(amount)}`,
         featured: plan.id === "business",

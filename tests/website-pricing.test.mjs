@@ -33,7 +33,6 @@ function renderPricing(props = {}, enabled = true) {
 test("homepage and Uganda use the screenshot's exact package names, prices and inclusions", () => {
   const pricing = pricingData.getWebsitePricing();
   assert.equal(pricing.startingFrom, false);
-  assert.ok(pricing.plans.every(plan => plan.benchmark === null));
   assert.deepEqual(pricing.plans.map(plan => plan.name), ["Starter", "Business", "Ecommerce"]);
   assert.deepEqual(pricing.plans.map(plan => plan.price), ["UGX 900,000", "UGX 1,800,000", "UGX 3,500,000"]);
   assert.deepEqual(pricing.plans.map(plan => plan.features.length), [13, 16, 17]);
@@ -45,21 +44,23 @@ test("homepage and Uganda use the screenshot's exact package names, prices and i
 });
 
 for (const [market, currency, amounts] of [
-  ["united-states", "USD", [3400, 5950, 8500]],
-  ["united-kingdom", "GBP", [1275, 2550, 3400]],
-  ["canada", "CAD", [3400, 5525, 7650]],
-  ["australia", "AUD", [4250, 6800, 8500]],
+  ["united-states", "USD", [1500, 2900, 4500]],
+  ["united-kingdom", "GBP", [1200, 2300, 3500]],
+  ["canada", "CAD", [2000, 3900, 6000]],
+  ["australia", "AUD", [2200, 4300, 6800]],
 ]) {
-  test(`${market} prices are exactly 15% below independent regional benchmarks`, () => {
+  test(`${market} uses the approved regional prices and ordering features`, () => {
     const pricing = pricingData.getWebsitePricing(market);
     assert.equal(pricing.currency, currency);
     assert.equal(pricing.startingFrom, true);
     assert.deepEqual(pricing.plans.map(plan => plan.amount), amounts);
     assert.ok(pricing.plans.every(plan => plan.price.startsWith(`${currency} `)));
     for (const plan of pricing.plans) {
-      assert.equal(plan.benchmark, pricingData.REGIONAL_PRICE_BENCHMARKS[market][plan.id]);
-      assert.equal(plan.amount * 100, plan.benchmark * 85);
+      assert.equal(plan.amount, pricingData.REGIONAL_PACKAGE_PRICES[market][plan.id]);
     }
+    const smsOrders = market === "united-states" || market === "canada";
+    assert.equal(pricing.plans[2].features.includes("SMS and email order alerts"), smsOrders);
+    assert.equal(pricing.plans[2].features.includes("WhatsApp ordering"), !smsOrders);
     assert.ok(pricing.plans[0].features.some(feature => feature.includes(pricing.customerLabel)));
     assert.ok(pricing.plans[2].features.includes("Shipping zones & delivery fees"));
     assert.doesNotMatch(pricing.plans.flatMap(plan => plan.features).join(" "), /Kampala|Ugandan|MTN|Airtel/);

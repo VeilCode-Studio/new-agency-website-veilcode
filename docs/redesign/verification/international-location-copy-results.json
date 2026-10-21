@@ -1,0 +1,350 @@
+{
+  "date": "2026-10-21",
+  "productionBuild": true,
+  "protectedPages": [
+    {
+      "route": "/",
+      "status": 200,
+      "copyUnchanged": true,
+      "linksUnchanged": true,
+      "schemaUnchanged": true
+    },
+    {
+      "route": "/locations/uganda",
+      "status": 200,
+      "copyUnchanged": true,
+      "linksUnchanged": true,
+      "schemaUnchanged": true
+    }
+  ],
+  "cases": [
+    {
+      "route": "/locations/united-states",
+      "width": 1440,
+      "status": 200,
+      "prices": [
+        "USD 1,500",
+        "USD 2,900",
+        "USD 4,500"
+      ],
+      "faqCount": 7,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-states",
+      "width": 390,
+      "status": 200,
+      "prices": [
+        "USD 1,500",
+        "USD 2,900",
+        "USD 4,500"
+      ],
+      "faqCount": 7,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-kingdom",
+      "width": 1440,
+      "status": 200,
+      "prices": [
+        "GBP 1,200",
+        "GBP 2,300",
+        "GBP 3,500"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-kingdom",
+      "width": 390,
+      "status": 200,
+      "prices": [
+        "GBP 1,200",
+        "GBP 2,300",
+        "GBP 3,500"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/canada",
+      "width": 1440,
+      "status": 200,
+      "prices": [
+        "CAD 2,000",
+        "CAD 3,900",
+        "CAD 6,000"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/canada",
+      "width": 390,
+      "status": 200,
+      "prices": [
+        "CAD 2,000",
+        "CAD 3,900",
+        "CAD 6,000"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/australia",
+      "width": 1440,
+      "status": 200,
+      "prices": [
+        "AUD 2,200",
+        "AUD 4,300",
+        "AUD 6,800"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/australia",
+      "width": 390,
+      "status": 200,
+      "prices": [
+        "AUD 2,200",
+        "AUD 4,300",
+        "AUD 6,800"
+      ],
+      "faqCount": 6,
+      "faqPageSchemaCount": 0,
+      "metadataMatches": true,
+      "validJsonLd": true,
+      "forbiddenPhrasesAbsent": true,
+      "holdsAbsent": true,
+      "placeholdersAbsent": true,
+      "labelsUnchanged": true,
+      "internalLinksPreserved": true,
+      "horizontalOverflow": false,
+      "accessibilityViolations": 0,
+      "browserErrors": []
+    }
+  ],
+  "serverRendered": [
+    {
+      "route": "/locations/united-states",
+      "pricesAndFaqsWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/united-kingdom",
+      "pricesAndFaqsWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/canada",
+      "pricesAndFaqsWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/australia",
+      "pricesAndFaqsWithoutJavaScript": true
+    }
+  ],
+  "changedStrings": [
+    {
+      "market": "united-states",
+      "path": ".metaDescription"
+    },
+    {
+      "market": "united-states",
+      "path": ".h1"
+    },
+    {
+      "market": "united-states",
+      "path": ".heroCopy"
+    },
+    {
+      "market": "united-states",
+      "path": ".painPoints.0.body"
+    },
+    {
+      "market": "united-states",
+      "path": ".pricingContext"
+    },
+    {
+      "market": "united-states",
+      "path": ".portfolioCta"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.0.answer"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.5.answer"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.6.question"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.6.answer"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.6.link.text"
+    },
+    {
+      "market": "united-states",
+      "path": ".faqs.6.link.href"
+    },
+    {
+      "market": "united-kingdom",
+      "path": ".pricingContext"
+    },
+    {
+      "market": "united-kingdom",
+      "path": ".faqs.1.answer"
+    },
+    {
+      "market": "united-kingdom",
+      "path": ".faqs.5.question"
+    },
+    {
+      "market": "united-kingdom",
+      "path": ".faqs.5.answer"
+    },
+    {
+      "market": "canada",
+      "path": ".metaDescription"
+    },
+    {
+      "market": "canada",
+      "path": ".h1"
+    },
+    {
+      "market": "canada",
+      "path": ".pricingContext"
+    },
+    {
+      "market": "canada",
+      "path": ".faqs.4.answer"
+    },
+    {
+      "market": "canada",
+      "path": ".faqs.5.question"
+    },
+    {
+      "market": "canada",
+      "path": ".faqs.5.answer"
+    },
+    {
+      "market": "australia",
+      "path": ".metaDescription"
+    },
+    {
+      "market": "australia",
+      "path": ".painPoints.0.body"
+    },
+    {
+      "market": "australia",
+      "path": ".pricingContext"
+    },
+    {
+      "market": "australia",
+      "path": ".portfolioItems.0.relevanceNote"
+    },
+    {
+      "market": "australia",
+      "path": ".faqs.4.question"
+    },
+    {
+      "market": "australia",
+      "path": ".faqs.4.answer"
+    },
+    {
+      "market": "australia",
+      "path": ".faqs.5.question"
+    },
+    {
+      "market": "australia",
+      "path": ".faqs.5.answer"
+    }
+  ],
+  "remainingSenior": [
+    {
+      "market": "canada",
+      "path": ".faqs.0.answer",
+      "value": "Because you're paying for the output, not the postcode. Our delivery process - written scopes, milestone billing, documented handover - is the same discipline you'd expect from a senior Canadian agency, at a cost structure that makes sense for a company that's not ready to hire a full engineering team. You own everything we build, from day one."
+    }
+  ],
+  "preservedAustraliaSection": true,
+  "plumberAnswered": {
+    "status": 200,
+    "title": "PlumberAnswered - VeilCode Case Study"
+  }
+}

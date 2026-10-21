@@ -1,6 +1,6 @@
 # Shared website pricing
 
-Implemented October 21, 2026, using the user-provided pricing screenshot. Regional prices now use researched local-package benchmarks minus 15%, following the user's updated instruction; the earlier currency-conversion approach is superseded.
+Implemented October 21, 2026, using the user-provided pricing screenshot. The international location-copy update supplies explicit regional starting prices, superseding the earlier researched-benchmark discount and currency-conversion approaches.
 
 ## Component and scope
 
@@ -8,7 +8,7 @@ Implemented October 21, 2026, using the user-provided pricing screenshot. Region
 
 The homepage preserves its pricing-section position and heading. Location pricing appears before each market's FAQ section. The cards use Starter, Business and Ecommerce, the supplied descriptions and inclusions, and a Most Popular badge for Business. Pricing is semantic HTML with native links, no new client state, animation, images, database queries or API calls.
 
-The homepage and Uganda use the screenshot's exact prices and local features. The US, UK, Canada and Australia use their own currency codes, customer wording, payment-gateway wording and shipping-zone wording. The US pricing FAQ now distinguishes larger custom engagements from smaller website packages; its existing custom-project range remains unchanged. Other page copy, metadata, structured-data helpers, route policies and themes are preserved.
+The homepage and Uganda use the screenshot's exact prices and local features. The US, UK, Canada and Australia use their own currency codes, customer wording, payment-gateway wording and shipping-zone wording. US and Canadian Ecommerce packages use SMS and email order alerts; UK, Australian and Ugandan packages retain WhatsApp ordering. The US FAQ states the USD 1,500 website starting price separately from the existing custom-project range. The shared Server Component, route policies and themes are preserved.
 
 ## Removal
 
@@ -16,23 +16,27 @@ Set `WEBSITE_PRICING_ENABLED = false` in `components/pricing/pricing-data.ts` to
 
 ## Regional pricing policy
 
-The US, UK, Canadian and Australian prices are independent local-market starting prices. [Research, primary sources, selected benchmarks and calculation details](pricing-research.md) explain the scope comparisons. These are reasoned comparable-package estimates, not statistically surveyed national averages.
+The US, UK, Canadian and Australian prices are explicit amounts approved in the international location-page task. They are stored in `REGIONAL_PACKAGE_PRICES` in `components/pricing/pricing-data.ts`. The [earlier research](pricing-research.md) is historical context and no longer determines displayed amounts.
 
-The checked-in regional benchmarks are multiplied by 85/100, giving an exact 15% reduction without post-discount rounding. International cards say **From**. The old FX snapshot, Approx. labels, conversion explanation and exchange-rate attribution have been removed. There is no runtime research/rate request and no unsupported public competitor-discount claim.
+International cards say **From**. There is no exchange-rate conversion, benchmark-discount calculation, runtime pricing request or public competitor-discount claim.
 
 | Page | Currency | Starter | Business | Ecommerce |
 | --- | --- | ---: | ---: | ---: |
 | Home and Uganda | UGX | 900,000 | 1,800,000 | 3,500,000 |
-| United States | USD | 3,400 | 5,950 | 8,500 |
-| United Kingdom | GBP | 1,275 | 2,550 | 3,400 |
-| Canada | CAD | 3,400 | 5,525 | 7,650 |
-| Australia | AUD | 4,250 | 6,800 | 8,500 |
+| United States | USD | 1,500 | 2,900 | 4,500 |
+| United Kingdom | GBP | 1,200 | 2,300 | 3,500 |
+| Canada | CAD | 2,000 | 3,900 | 6,000 |
+| Australia | AUD | 2,200 | 4,300 | 6,800 |
 
 Website packages are distinguished from mobile apps, AI automation and larger custom builds. Final scope, price and billing currency are confirmed in the proposal. The user requested this regional positioning; Uganda and the homepage retain their original amounts.
 
-## Validation
+## Current validation
 
-The build, automated suite, targeted lint and responsive/accessibility matrix below were rerun after replacing FX pricing with regional benchmarks. The SEO/keyboard evidence records the earlier checks on the same page titles, H1s, canonicals and route metadata; those files and values were not changed by the regional-price update.
+See the [international location-copy report](international-location-copy.md) for the current build, copy, metadata, pricing, FAQ and protected-page checks.
+
+## Historical validation of the initial pricing component
+
+The following evidence predates the international copy update and its explicit regional prices. It records validation of the initial component after replacing FX pricing with regional benchmarks. Screenshots and result files in this section show those previous regional amounts.
 
 - Production build passed, including TypeScript and generation of all 41 static pages. Existing route rendering/cache policies remain unchanged.
 - All 66 automated tests passed. Pricing tests cover exact Uganda amounts and inclusions, all twelve regional prices, the exact 15% arithmetic against independent benchmarks, market-specific features, From labels, removal of FX copy, server markup, enquiry links, unknown-market handling and the global removal switch.

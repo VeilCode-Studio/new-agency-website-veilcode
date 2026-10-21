@@ -362,15 +362,29 @@ export function LocationBody({
             </Link>
           </div>
           <div className="location-faqs">
-            {market.faqs.map((faq) => (
-              <details key={faq.question}>
-                <summary>
-                  <h3>{faq.question}</h3>
-                  <Plus size={18} aria-hidden="true" />
-                </summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
+            {market.faqs.map((faq) => {
+              const link = faq.link;
+              const linkIndex = link ? faq.answer.indexOf(link.text) : -1;
+              return (
+                <details key={faq.question}>
+                  <summary>
+                    <h3>{faq.question}</h3>
+                    <Plus size={18} aria-hidden="true" />
+                  </summary>
+                  <p>
+                    {link && linkIndex >= 0 ? (
+                      <>
+                        {faq.answer.slice(0, linkIndex)}
+                        <Link href={link.href} prefetch={false} className="underline!">
+                          {link.text}
+                        </Link>
+                        {faq.answer.slice(linkIndex + link.text.length)}
+                      </>
+                    ) : faq.answer}
+                  </p>
+                </details>
+              );
+            })}
           </div>
         </div>
       </section>

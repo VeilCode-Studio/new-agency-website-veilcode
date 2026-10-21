@@ -37,7 +37,7 @@ export type LocationMarket = {
   portfolioItems?: Array<{ slug: string; relevanceNote: string }>;
   portfolioCta?: string;
   faqTitle?: string;
-  faqs: SeoFaq[];
+  faqs: Array<SeoFaq & { link?: { text: string; href: string } }>;
   ctaLabel: string;
   ctaCopy: string;
   ctaBody?: string;
@@ -190,14 +190,14 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     shortName: "USA",
     metaTitle: "Remote Web, Mobile & AI Automation Agency for US Companies | VeilCode",
     metaDescription:
-      "VeilCode partners with US founders and operators who need senior web, mobile, and AI automation delivery without the cost of a large domestic agency. Remote-first, outcome-driven.",
+      "VeilCode builds websites, mobile apps and AI automation for US businesses. Work directly with your engineer, with fixed written scopes and full code ownership.",
     ogImage: "/assets/og/united-states.jpg",
     schemaType: "ProfessionalService",
     areaServed: "US",
     eyebrow: "Remote delivery for US teams · Eastern Time overlap available",
-    h1: "Senior product engineering for US founders who need to move fast",
+    h1: "Web, app and AI development for US businesses, built directly by your engineer",
     heroCopy:
-      "We partner with US startups, operators, and growth teams to ship web platforms, mobile apps, and AI automation systems - lean delivery, senior execution, no bloated agency overhead.",
+      "We work with US small businesses, startups and agencies to ship websites, mobile apps and AI automation. You work directly with the engineer building it, with no agency overhead.",
     primaryCtaLabel: "Book a Discovery Call",
     primaryCtaHref: "/start",
     secondaryCtaLabel: "See Case Studies",
@@ -208,7 +208,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     painPoints: [
       {
         title: "Early-stage founders",
-        body: "You have funding, a clear product vision, and a 90-day launch target. You need a senior team that can move without handholding.",
+        body: "You have funding, a clear product vision, and a 90-day launch target. You need an engineer who can move without handholding.",
       },
       {
         title: "Operators scaling ops",
@@ -242,7 +242,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       "Handover (Week 10): source code, documentation, analytics setup, and ownership details are transferred.",
     ],
     pricingContext:
-      "US clients usually engage us when they want senior product execution without the cost structure of a large domestic agency.",
+      "US clients usually engage us when they want reliable product execution without the cost structure of a large domestic agency.",
     industriesTitle: "Products we build for US markets",
     industries: [
       "SaaS MVPs and customer portals",
@@ -274,13 +274,13 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     ],
     serviceFocus: ["web", "mobile", "ai"],
     portfolioTitle: "Work you can inspect",
-    portfolioCta: "Need a web development agency for US startups or a remote software agency for US companies? Start with a written scope.",
+    portfolioCta: "Have a similar build in mind? Start with a written scope.",
     faqTitle: "What US clients ask before they hire us",
     faqs: [
       {
         question: "You're based in Uganda - why would we hire you over a US agency?",
         answer:
-          "Because geography doesn't determine quality. Our stack, process, and delivery standards are identical to what a senior US engineering team would produce - at a cost structure that makes more sense for a founder or operator who needs results, not overhead. We don't ask you to take that on faith: we scope everything in writing before work begins, you own all IP from day one, and you can stop at any milestone.",
+          "Because geography doesn't determine quality. Our stack, process, and delivery standards are the same standards a good US engineering team would apply, at a cost structure that makes more sense for a founder or operator who needs results, not overhead. We don't ask you to take that on faith: we scope everything in writing before work begins, you own all IP from day one, and you can stop at any milestone.",
       },
       {
         question: "How do you handle the timezone difference?",
@@ -305,8 +305,18 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "What's your typical project size?",
         answer:
-          "Larger custom US engagements run between $5,000 and $30,000 depending on scope. Website packages cover a smaller, defined scope. Scope is fixed in writing before we start.",
+          "Websites start at $1,500. Custom web apps and AI systems usually scope between $5,000 and $30,000. Scope is fixed in writing before we start.",
       },
+      {
+        question: "Do you build for plumbers, HVAC and other home service businesses?",
+        answer: "Yes. We build fast, mobile-first websites for service businesses that turn searches into booked jobs. We also built PlumberAnswered, an AI receptionist that answers calls, triages emergencies and books jobs.",
+        link: { text: "PlumberAnswered", href: "/work/plumberanswered-ai-receptionist" },
+      },
+      // HOLD: Frank must confirm the payment method before enabling this FAQ.
+      // {
+      //   question: "How do we pay you?",
+      //   answer: "We invoice in USD and accept [PAYMENT METHOD]. Payment is split by milestone, so you never pay for work you haven't seen.",
+      // },
     ],
     ctaLabel: "Book a Call",
     ctaCopy: "Book a no-commitment discovery call.",
@@ -377,7 +387,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       "Analytics and conversion tracking set up at launch, not retrospectively.",
     ],
     pricingContext:
-      "UK clients usually come to us for senior execution, clear scope control, and measurable commercial outcomes. This page is written for digital agency for UK businesses, web development agency UK, and AI automation UK SME searches while still reading like a serious British business page.",
+      "UK clients usually come to us for clear scope control and measurable commercial outcomes.",
     industriesTitle: "Sectors we work with in the UK",
     industries: [
       "Professional Services (law, accounting, consulting)",
@@ -419,7 +429,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "Do you build GDPR-compliant websites?",
         answer:
-          "Yes. Cookie consent management, privacy policy integration, data handling practices, and analytics setup are all part of our standard delivery for UK clients. We won't ship a site that puts your business at compliance risk.",
+          "Yes. Cookie consent management, privacy policy integration, data handling practices, and analytics setup are all part of our standard delivery for UK clients. We build the technical side of GDPR in from the start. Your privacy policy wording should still be checked by you or your adviser.",
       },
       {
         question: "Do you build to WCAG accessibility standards?",
@@ -436,6 +446,15 @@ export const LOCATION_MARKETS: LocationMarket[] = [
         answer:
           "Yes. We audit the current stack, identify what's holding it back, and recommend whether improvement or a rebuild makes better commercial sense. We won't recommend a rebuild to inflate the invoice.",
       },
+      {
+        question: "Do you charge VAT?",
+        answer: "We're based in Uganda and not UK VAT-registered, so our invoices don't include UK VAT. If your business is VAT-registered, your accountant can confirm whether you need to account for VAT under the reverse charge.",
+      },
+      // HOLD: Frank must confirm he will sign these agreements before enabling this FAQ.
+      // {
+      //   question: "How do you handle UK GDPR when work is done outside the UK?",
+      //   answer: "Where we handle personal data, we sign a data processing agreement, including the international transfer terms UK GDPR requires.",
+      // },
     ],
     ctaLabel: "Start the conversation",
     ctaCopy: "Tell us what needs to perform better.",
@@ -455,12 +474,12 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     shortName: "Canada",
     metaTitle: "Web, Mobile & AI Automation Agency for Canadian Companies | VeilCode",
     metaDescription:
-      "VeilCode helps Canadian businesses build web platforms, mobile apps, and AI automation systems with senior remote delivery, clear documentation, and practical scope control.",
+      "VeilCode helps Canadian businesses build web platforms, mobile apps and AI automation, with remote delivery, clear documentation and practical scope control.",
     ogImage: "/assets/og/canada.jpg",
     schemaType: "ProfessionalService",
     areaServed: "CA",
     eyebrow: "Remote delivery for Canadian teams · Eastern & Pacific overlap available",
-    h1: "Senior digital product delivery for Canadian businesses that need focused execution",
+    h1: "Web, mobile and AI development for Canadian businesses, with documentation you can hand over",
     heroCopy:
       "We partner with Canadian startups, SMEs, and operators to build web platforms, mobile products, and workflow automation - with the documentation, scope discipline, and handover standards Canadian teams expect.",
     primaryCtaLabel: "Start a Project",
@@ -504,7 +523,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       "Post-launch support window available on request, typically 30 or 60 days.",
     ],
     pricingContext:
-      "Canadian clients in Toronto, Vancouver, and Montreal often need senior delivery without building a full engineering team first. We frame the value around clean output, documentation, and ownership - not cheap labour. This page supports web development agency Canada, digital agency for Canadian startups, and remote software agency Canada searches without turning the copy into keyword stuffing.",
+      "Clients in Toronto, Vancouver and Montreal often need reliable delivery without hiring a full engineering team first. We focus on clean output, documentation and ownership, not cheap labour.",
     industriesTitle: "Canadian sectors we fit best",
     industries: ["SaaS", "Healthcare", "Education", "Retail", "B2B services"],
     servicesTitle: "What Canadian teams hire us for",
@@ -554,8 +573,22 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         question: "What payment methods do you accept from Canadian clients?",
         answer:
-          "We accept international wire transfer and major online payment platforms. Invoices are issued in USD. We're happy to discuss CAD invoicing for larger engagements.",
+          "Prices are shown in CAD as a guide. The billing currency and payment method are confirmed in your proposal.",
       },
+      // HOLD: Frank must confirm CAD or USD billing before replacing the safe answer above.
+      // {
+      //   question: "What payment methods do you accept from Canadian clients?",
+      //   answer: "Prices are shown in CAD. We invoice in [CAD or USD] and accept international wire transfer and major online payment platforms.",
+      // },
+      {
+        question: "Does our website need to be in French?",
+        answer: "If you do business in Quebec, French-language rules generally apply to your website, so confirm the specifics with your adviser. We build bilingual-ready from day one, so adding French later doesn't mean rebuilding.",
+      },
+      // HOLD: Frank must confirm he will sign these agreements before enabling this FAQ.
+      // {
+      //   question: "How do you handle privacy under PIPEDA and Quebec's Law 25?",
+      //   answer: "We sign a data processing agreement and document where your data is stored and who can access it, which supports your own privacy assessment.",
+      // },
     ],
     ctaLabel: "Get a Project Scope",
     ctaCopy: "Clear scope. Clean delivery. No surprises.",
@@ -575,7 +608,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     shortName: "Australia",
     metaTitle: "Web, Mobile & AI Automation Agency for Australian Businesses | VeilCode",
     metaDescription:
-      "VeilCode helps Australian businesses ship web platforms, mobile apps, and automation systems with senior remote delivery, full IP ownership, and the process discipline offshore work often lacks.",
+      "VeilCode helps Australian businesses ship web platforms, mobile apps and automation systems with remote delivery, full IP ownership and the process discipline offshore work often lacks.",
     ogImage: "/assets/og/australia.jpg",
     schemaType: "ProfessionalService",
     areaServed: "AU",
@@ -598,7 +631,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     painPoints: [
       {
         title: "Vague scope, scope creep, surprise invoices",
-        body: "VeilCode works from a written scope and fixed milestone pricing before work begins. Changes are scoped and priced separately so offshore web development Australia teams can evaluate stays commercially clear.",
+        body: "VeilCode works from a written scope and fixed milestone pricing before work begins. Changes are scoped and priced separately, so costs stay clear.",
       },
       {
         title: "Work disappears into a timezone black hole",
@@ -637,7 +670,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       "Week 10: Handover - full source code, documentation, deployment access, and IP ownership transferred.",
     ],
     pricingContext:
-      "Australian clients usually benefit from our remote software development agency Australia model when they need senior execution and predictable scope without local agency overhead.",
+      "Australian clients usually work with us when they want predictable scope without local agency overhead.",
     serviceCards: [
       {
         title: "Web Solutions",
@@ -665,7 +698,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
       {
         slug: "bienvenidos-apartments",
         relevanceNote:
-          "Property platforms like this show how a digital agency for Australian businesses can turn search, listings, and inquiries into a measurable sales channel.",
+          "Property platforms like this turn listings and enquiries into a measurable sales channel.",
       },
       {
         slug: "nexus-commerce",
@@ -702,6 +735,15 @@ export const LOCATION_MARKETS: LocationMarket[] = [
         answer:
           "Yes. We recommend it. Our Discovery Sprint, usually 1-2 weeks, produces requirements documentation, a technical architecture plan, and prototypes or wireframes. The sprint is priced on its own, so you can stop there if it isn't a fit.",
       },
+      {
+        question: "Do your invoices include GST?",
+        answer: "No. We're based outside Australia, so our invoices don't include Australian GST. Your accountant can confirm whether the reverse charge applies to your business.",
+      },
+      // HOLD: Frank must confirm hosting ownership, region options and DPA signing before enabling this FAQ.
+      // {
+      //   question: "Where is our data stored?",
+      //   answer: "On hosting in your business's name, in an Australian region if you prefer. We sign a data processing agreement covering how we access it.",
+      // },
       {
         question: "Is this a direct hire arrangement or a project engagement?",
         answer:

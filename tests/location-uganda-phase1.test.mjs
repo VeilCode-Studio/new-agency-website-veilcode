@@ -87,7 +87,7 @@ test("Australia location has Phase 5 SEO, schema, and offshore trust requirement
   );
   assert.match(
     locationData,
-    /metaDescription:\s*"VeilCode helps Australian businesses ship web platforms, mobile apps, and automation systems with senior remote delivery, full IP ownership, and the process discipline offshore work often lacks\."/,
+    /metaDescription:\s*"VeilCode helps Australian businesses ship web platforms, mobile apps and automation systems with remote delivery, full IP ownership and the process discipline offshore work often lacks\."/,
   );
   assert.match(locationData, /ogImage:\s*"\/assets\/og\/australia\.jpg"/);
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
@@ -119,7 +119,7 @@ test("United States location has Phase 2 SEO, schema, and remote trust requireme
   );
   assert.match(
     locationData,
-    /metaDescription:\s*"VeilCode partners with US founders and operators who need senior web, mobile, and AI automation delivery without the cost of a large domestic agency\. Remote-first, outcome-driven\."/,
+    /metaDescription:\s*"VeilCode builds websites, mobile apps and AI automation for US businesses\. Work directly with your engineer, with fixed written scopes and full code ownership\."/,
   );
   assert.match(locationData, /ogImage:\s*"\/assets\/og\/united-states\.jpg"/);
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
@@ -128,7 +128,7 @@ test("United States location has Phase 2 SEO, schema, and remote trust requireme
   assert.match(locationData, /Eastern Time overlap available/);
   assert.match(
     locationData,
-    /Senior product engineering for US founders who need to move fast/,
+    /Web, app and AI development for US businesses, built directly by your engineer/,
   );
   assert.match(locationData, /Book a Discovery Call/);
   assert.match(locationData, /NDA-ready/);
@@ -157,7 +157,7 @@ test("United States location has US-specific FAQs, services, CTAs, and cross-mar
   assert.match(locationData, /Do you sign NDAs/);
   assert.match(locationData, /Who owns the code/);
   assert.match(locationData, /HubSpot, Stripe, Twilio, Intercom, Zapier, Airtable, Notion/);
-  assert.match(locationData, /Larger custom US engagements run between \$5,000 and \$30,000/);
+  assert.match(locationData, /Websites start at \$1,500\. Custom web apps and AI systems usually scope between \$5,000 and \$30,000/);
   assert.match(locationData, /Book a no-commitment discovery call\./);
   assert.match(locationData, /30 minutes\. You explain the goal\./);
   assert.match(locationData, /Book a Call/);
@@ -177,7 +177,7 @@ test("Canada location has Phase 3 SEO, schema, and documentation trust requireme
   );
   assert.match(
     locationData,
-    /metaDescription:\s*"VeilCode helps Canadian businesses build web platforms, mobile apps, and AI automation systems with senior remote delivery, clear documentation, and practical scope control\."/,
+    /metaDescription:\s*"VeilCode helps Canadian businesses build web platforms, mobile apps and AI automation, with remote delivery, clear documentation and practical scope control\."/,
   );
   assert.match(locationData, /ogImage:\s*"\/assets\/og\/canada\.jpg"/);
   assert.match(locationData, /schemaType:\s*"ProfessionalService"/);
@@ -186,7 +186,7 @@ test("Canada location has Phase 3 SEO, schema, and documentation trust requireme
   assert.match(locationData, /Eastern & Pacific overlap available/);
   assert.match(
     locationData,
-    /Senior digital product delivery for Canadian businesses that need focused execution/,
+    /Web, mobile and AI development for Canadian businesses, with documentation you can hand over/,
   );
   assert.match(locationData, /Full IP ownership/);
   assert.match(locationData, /Written scopes/);
@@ -213,13 +213,10 @@ test("Canada location has Canadian FAQs, services, CTA, and cross-market links",
   assert.match(locationData, /Can you build bilingual \(English and French\) websites/);
   assert.match(locationData, /What does documentation look like at handover/);
   assert.match(locationData, /What payment methods do you accept from Canadian clients/);
-  assert.match(locationData, /CAD invoicing/);
+  assert.match(locationData, /Prices are shown in CAD as a guide\. The billing currency and payment method are confirmed in your proposal\./);
   assert.match(locationData, /Clear scope\. Clean delivery\. No surprises\./);
   assert.match(locationData, /Get a Project Scope/);
-  assert.match(locationData, /web development agency Canada/);
-  assert.match(locationData, /digital agency for Canadian startups/);
-  assert.match(locationData, /remote software agency Canada/);
-  assert.match(locationData, /Toronto, Vancouver, and Montreal/);
+  assert.match(locationData, /Clients in Toronto, Vancouver and Montreal often need reliable delivery/);
   assert.match(locationData, /\/locations\/uganda/);
   assert.match(locationData, /\/locations\/united-states/);
   assert.match(locationData, /\/locations\/united-kingdom/);
@@ -271,9 +268,7 @@ test("United Kingdom location has UK FAQs, services, CTA, and cross-market links
   assert.match(locationData, /Can you work alongside our existing UK marketing or product team/);
   assert.match(locationData, /Tell us what needs to perform better\./);
   assert.match(locationData, /Start the conversation/);
-  assert.match(locationData, /digital agency for UK businesses/);
-  assert.match(locationData, /web development agency UK/);
-  assert.match(locationData, /AI automation UK SME/);
+  assert.match(locationData, /UK clients usually come to us for clear scope control and measurable commercial outcomes/);
   assert.match(locationData, /\/blog/);
   assert.match(locationData, /\/services\/web-solutions/);
   assert.match(locationData, /\/locations\/uganda/);
