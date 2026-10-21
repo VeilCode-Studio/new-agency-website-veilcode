@@ -1,0 +1,222 @@
+{
+  "date": "2026-10-21",
+  "results": [
+    {
+      "route": "/",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/",
+      "alternates": [],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations",
+      "alternates": [],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/uganda",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations/uganda",
+      "alternates": [
+        {
+          "language": "en-UG",
+          "href": "https://www.veilcode.studio/locations/uganda"
+        },
+        {
+          "language": "en-US",
+          "href": "https://www.veilcode.studio/locations/united-states"
+        },
+        {
+          "language": "en-GB",
+          "href": "https://www.veilcode.studio/locations/united-kingdom"
+        },
+        {
+          "language": "en-CA",
+          "href": "https://www.veilcode.studio/locations/canada"
+        },
+        {
+          "language": "en-AU",
+          "href": "https://www.veilcode.studio/locations/australia"
+        }
+      ],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/united-states",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations/united-states",
+      "alternates": [
+        {
+          "language": "en-UG",
+          "href": "https://www.veilcode.studio/locations/uganda"
+        },
+        {
+          "language": "en-US",
+          "href": "https://www.veilcode.studio/locations/united-states"
+        },
+        {
+          "language": "en-GB",
+          "href": "https://www.veilcode.studio/locations/united-kingdom"
+        },
+        {
+          "language": "en-CA",
+          "href": "https://www.veilcode.studio/locations/canada"
+        },
+        {
+          "language": "en-AU",
+          "href": "https://www.veilcode.studio/locations/australia"
+        }
+      ],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/united-kingdom",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations/united-kingdom",
+      "alternates": [
+        {
+          "language": "en-UG",
+          "href": "https://www.veilcode.studio/locations/uganda"
+        },
+        {
+          "language": "en-US",
+          "href": "https://www.veilcode.studio/locations/united-states"
+        },
+        {
+          "language": "en-GB",
+          "href": "https://www.veilcode.studio/locations/united-kingdom"
+        },
+        {
+          "language": "en-CA",
+          "href": "https://www.veilcode.studio/locations/canada"
+        },
+        {
+          "language": "en-AU",
+          "href": "https://www.veilcode.studio/locations/australia"
+        }
+      ],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/canada",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations/canada",
+      "alternates": [
+        {
+          "language": "en-UG",
+          "href": "https://www.veilcode.studio/locations/uganda"
+        },
+        {
+          "language": "en-US",
+          "href": "https://www.veilcode.studio/locations/united-states"
+        },
+        {
+          "language": "en-GB",
+          "href": "https://www.veilcode.studio/locations/united-kingdom"
+        },
+        {
+          "language": "en-CA",
+          "href": "https://www.veilcode.studio/locations/canada"
+        },
+        {
+          "language": "en-AU",
+          "href": "https://www.veilcode.studio/locations/australia"
+        }
+      ],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/locations/australia",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/locations/australia",
+      "alternates": [
+        {
+          "language": "en-UG",
+          "href": "https://www.veilcode.studio/locations/uganda"
+        },
+        {
+          "language": "en-US",
+          "href": "https://www.veilcode.studio/locations/united-states"
+        },
+        {
+          "language": "en-GB",
+          "href": "https://www.veilcode.studio/locations/united-kingdom"
+        },
+        {
+          "language": "en-CA",
+          "href": "https://www.veilcode.studio/locations/canada"
+        },
+        {
+          "language": "en-AU",
+          "href": "https://www.veilcode.studio/locations/australia"
+        }
+      ],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    },
+    {
+      "route": "/services/web-solutions",
+      "status": 200,
+      "canonical": "https://www.veilcode.studio/services/web-solutions",
+      "alternates": [],
+      "copyUnchanged": true,
+      "otherMetadataUnchanged": true,
+      "jsonLdUnchanged": true,
+      "internalLinksUnchanged": true,
+      "renderedWithoutJavaScript": true
+    }
+  ],
+  "reciprocalRegionalGraph": true,
+  "regionalSelfReferences": true,
+  "invalidMarketStatus": 404,
+  "invalidMarketAlternatesAbsent": true,
+  "sitemapIncludesAllMarkets": true,
+  "requestsAdded": 0,
+  "clientJavaScriptAdded": false,
+  "rawHtmlCrawlerHeadChecks": [
+    {
+      "userAgent": "Googlebot",
+      "status": 200,
+      "alternateTagsInHead": 5
+    },
+    {
+      "userAgent": "bingbot",
+      "status": 200,
+      "alternateTagsInHead": 5
+    },
+    {
+      "userAgent": "Twitterbot/1.0",
+      "status": 200,
+      "alternateTagsInHead": 5
+    }
+  ]
+}

@@ -31,11 +31,11 @@ const STATIC_PAGE_LASTMOD: Record<string, string> = {
 
 /** Same idea for the location pages, keyed by market slug. */
 const LOCATION_LASTMOD: Record<string, string> = {
-  uganda: "2026-10-20",
-  "united-states": "2026-10-20",
-  "united-kingdom": "2026-10-20",
-  canada: "2026-10-20",
-  australia: "2026-10-20",
+  uganda: "2026-10-21",
+  "united-states": "2026-10-21",
+  "united-kingdom": "2026-10-21",
+  canada: "2026-10-21",
+  australia: "2026-10-21",
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

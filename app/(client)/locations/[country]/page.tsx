@@ -4,7 +4,11 @@ import {
   getPublishedSeoPages,
   getPublishedServices,
 } from "@/queries";
-import { getLocationMarket, getMarketCountryCode } from "@/constants/locations";
+import {
+  LOCATION_MARKETS,
+  getLocationMarket,
+  getMarketCountryCode,
+} from "@/constants/locations";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import {
   breadcrumbJsonLd,
@@ -12,7 +16,7 @@ import {
   webPageJsonLd,
 } from "@/lib/seo/jsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { SITE_NAME } from "@/lib/seo/site";
+import { pageUrl, SITE_NAME } from "@/lib/seo/site";
 import { LocationBody } from "./_components/LocationBody";
 import { LocationHero } from "./_components/LocationHero";
 
@@ -22,19 +26,36 @@ interface Params {
 
 export const dynamic = "force-dynamic";
 
+// All current location pages are English regional versions. Every page emits
+// the same set, including itself, so the hreflang links are reciprocal.
+const locationLanguages = Object.fromEntries(
+  LOCATION_MARKETS.flatMap((market) => {
+    const countryCode = getMarketCountryCode(market);
+    return countryCode
+      ? [[`en-${countryCode}`, pageUrl(`/locations/${market.slug}`)]]
+      : [];
+  }),
+);
+
 export async function generateMetadata({ params }: Params) {
   const { country } = await params;
   const market = getLocationMarket(country);
 
   if (!market) return {};
 
+  const metadata = buildPageMetadata({
+    title: market.metaTitle,
+    description: market.metaDescription,
+    path: `/locations/${market.slug}`,
+    image: market.ogImage,
+  });
+
   return {
-    ...buildPageMetadata({
-      title: market.metaTitle,
-      description: market.metaDescription,
-      path: `/locations/${market.slug}`,
-      image: market.ogImage,
-    }),
+    ...metadata,
+    alternates: {
+      ...metadata.alternates,
+      languages: locationLanguages,
+    },
     keywords: [],
   };
 }
