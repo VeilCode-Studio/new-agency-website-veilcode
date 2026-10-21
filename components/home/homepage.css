@@ -1394,6 +1394,11 @@
 .home-faq-list {
   margin-bottom: 18px;
 }
+.home-faq-list p a {
+  color: var(--home-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .home-faq details {
   border-bottom: 1px solid var(--line);
 }

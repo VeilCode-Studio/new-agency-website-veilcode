@@ -23,7 +23,6 @@ import {
 import type { Project, Service } from "@/db/schema";
 import type { BlogGridPost } from "@/lib/blog/grid";
 import type { DisplayTestimonial } from "@/lib/testimonials/display";
-import { FAQS } from "@/constants";
 import { WebsitePricing } from "@/components/pricing/WebsitePricing";
 import { getProjectKindLabel } from "@/lib/projects/kind";
 import { HorizontalGallery } from "./HorizontalGallery";
@@ -885,6 +884,53 @@ function Testimonials({ testimonials }: Pick<HomeProps, "testimonials">) {
   );
 }
 
+const HOME_FAQS = [
+  {
+    q: "How much does a website cost in Uganda?",
+    a: "Our packages start at UGX 900,000 for a business website. A site with bookings and a blog is UGX 1,800,000, and an online shop with Mobile Money checkout is UGX 3,500,000. Each includes your domain, hosting and a business email for the first year. Your price is fixed in writing before work starts.",
+  },
+  {
+    q: "How long does it take to build a website?",
+    a: "About 7 days for Starter, 2-3 weeks for Business and 4-6 weeks for Ecommerce, counted from when we receive your logo, photos and service details. Waiting on content is the most common cause of delay, so you get a checklist on day one.",
+  },
+  {
+    q: "Can I pay with Mobile Money?",
+    a: "Yes. We accept MTN Mobile Money, Airtel Money and bank transfer. You pay 30% to start and the balance before launch, so you see your site working before you pay in full.",
+  },
+  {
+    q: "What happens after the free first year of hosting and domain?",
+    a: "The domain is registered in your business’s name, not ours. From year two, hosting and domain have to be renewed per year, and we remind you a month before. If you ever want to move to another provider, we hand everything over.",
+  },
+  {
+    q: "Will my business show up on Google and Google Maps?",
+    a: "Every package includes Google Business Profile setup and local SEO, so people nearby can find you when they search for what you offer. Nobody can honestly promise first position on Google. We promise a fast site, a correct setup, and pages written around the words your customers actually search.",
+  },
+  {
+    q: "Can I update the website myself?",
+    a: "Business and Ecommerce come with a simple dashboard for changing text, photos, prices and products. On Starter, send changes to us on WhatsApp during your support period.",
+  },
+  {
+    q: "Who owns the website when it’s finished?",
+    a: "You do. Once the final payment is made, the design, code, content and domain are fully yours, with no ongoing licence fees to us.",
+  },
+  {
+    q: "Do you build apps and AI tools too?",
+    a: "Yes. We build Android and iOS apps, and AI tools such as WhatsApp assistants that answer customer questions and follow up on enquiries. These are quoted separately after a short call.",
+  },
+  {
+    q: "Do you work with businesses outside Uganda?",
+    a: (
+      <>
+        Yes. We work remotely with clients in the{" "}
+        <Link href="/locations/united-states" prefetch={false}>US</Link>,{" "}
+        <Link href="/locations/united-kingdom" prefetch={false}>UK</Link>,{" "}
+        <Link href="/locations/canada" prefetch={false}>Canada</Link> and{" "}
+        <Link href="/locations/australia" prefetch={false}>Australia</Link>.
+      </>
+    ),
+  },
+] as const;
+
 function QuestionsAndContact() {
   return (
     <section id="contact" className="home-section home-questions">
@@ -898,7 +944,7 @@ function QuestionsAndContact() {
           </h2>
           <p>A few things you might be wondering before we start.</p>
           <div className="home-faq-list">
-            {FAQS.slice(0, 7).map((faq) => (
+            {HOME_FAQS.map((faq) => (
               <details key={faq.q}>
                 <summary>
                   {faq.q}
