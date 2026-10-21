@@ -60,9 +60,9 @@ export function ThemeToggle({
     };
   }, [open]);
 
-  const currentValue = (theme === "system" ? resolvedTheme : theme) ?? "dark";
+  const currentValue = (theme === "system" ? resolvedTheme : theme) ?? "linen";
   const isAppTheme = (APP_THEMES as readonly string[]).includes(currentValue);
-  const activeTheme: AppTheme = isAppTheme ? (currentValue as AppTheme) : "dark";
+  const activeTheme: AppTheme = isAppTheme ? (currentValue as AppTheme) : "linen";
   const ActiveIcon = ICON_BY_THEME[activeTheme];
 
   const dims =
@@ -95,11 +95,11 @@ export function ThemeToggle({
             <Palette className="size-3" />
             Theme
           </div>
-          <ul className="py-1">
+          <ul role="none" className="py-1">
             {OPTIONS.map(({ value, label, hint, icon: Icon }) => {
               const active = activeTheme === value;
               return (
-                <li key={value}>
+                <li key={value} role="none">
                   <button
                     type="button"
                     role="menuitemradio"

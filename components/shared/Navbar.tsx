@@ -126,7 +126,10 @@ export function Nav() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-3">
-            <ThemeToggle size="sm" className="hidden sm:inline-flex" />
+            <ThemeToggle
+              size="sm"
+              className="[&>button]:size-11 sm:[&>button]:size-8"
+            />
 
             <Link
               href="/start"

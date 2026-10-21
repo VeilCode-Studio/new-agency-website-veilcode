@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-21",
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": false,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-states",
+      "width": 320,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-states",
+      "width": 390,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-states",
+      "width": 768,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/locations/united-states",
+      "width": 1440,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": false,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/services/web-solutions",
+      "width": 320,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/services/web-solutions",
+      "width": 390,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 44,
+        "height": 44
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/services/web-solutions",
+      "width": 768,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": true,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "route": "/services/web-solutions",
+      "width": 1440,
+      "status": 200,
+      "freshVisitorTheme": "linen",
+      "osColorPreference": "dark",
+      "visibleWithoutOpeningNavigation": true,
+      "triggerSize": {
+        "width": 32,
+        "height": 32
+      },
+      "dropdownFitsViewport": true,
+      "switchingAndPersistencePassed": true,
+      "keyboardAndEscapePassed": true,
+      "drawerPassed": false,
+      "accessibilityViolations": 0,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    }
+  ],
+  "savedThemes": [
+    {
+      "stored": "light",
+      "rendered": "light",
+      "preserved": true
+    },
+    {
+      "stored": "dark",
+      "rendered": "dark",
+      "preserved": true
+    },
+    {
+      "stored": "midnight",
+      "rendered": "midnight",
+      "preserved": true
+    },
+    {
+      "stored": "linen",
+      "rendered": "linen",
+      "preserved": true
+    },
+    {
+      "stored": "system",
+      "rendered": "dark",
+      "preserved": true
+    }
+  ]
+}
