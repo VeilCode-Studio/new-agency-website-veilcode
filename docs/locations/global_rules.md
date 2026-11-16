@@ -20,4 +20,4 @@ CONTENT RULES:
 - Portfolio must show projects with a connection to that market (add a relevance note if needed)
 - Every FAQ must include one entry that directly addresses the remote/offshore trust question
 - Add a visible "cross-market" footer link section: "Also serving [other markets]"
-- Hero H1 must contain the target keyword naturally (not bolted on)
+- The hero H1 should include the target keyword in a natural way (not bolted on)
