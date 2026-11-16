@@ -83,7 +83,7 @@ test("Uganda content has internal service links, portfolio relevance, FAQs, and 
 test("Australia location has Phase 5 SEO, schema, and offshore trust requirements", () => {
   assert.match(
     locationData,
-    /metaTitle:\s*"Web, Mobile & AI Automation Agency for Australian Businesses \| VeilCode"/,
+    /metaTitle:\s*"Web, Mobile & AI Agency for Australian Business \| VeilCode"/,
   );
   assert.match(
     locationData,
@@ -115,7 +115,7 @@ test("Australia location has Phase 5 SEO, schema, and offshore trust requirement
 test("United States location has Phase 2 SEO, schema, and remote trust requirements", () => {
   assert.match(
     locationData,
-    /metaTitle:\s*"Remote Web, Mobile & AI Automation Agency for US Companies \| VeilCode"/,
+    /metaTitle:\s*"Remote Web, Mobile & AI Agency for US Companies \| VeilCode"/,
   );
   assert.match(
     locationData,
@@ -173,7 +173,7 @@ test("United States location has US-specific FAQs, services, CTAs, and cross-mar
 test("Canada location has Phase 3 SEO, schema, and documentation trust requirements", () => {
   assert.match(
     locationData,
-    /metaTitle:\s*"Web, Mobile & AI Automation Agency for Canadian Companies \| VeilCode"/,
+    /metaTitle:\s*"Web, Mobile & AI Agency for Canadian Companies \| VeilCode"/,
   );
   assert.match(
     locationData,
@@ -226,7 +226,7 @@ test("Canada location has Canadian FAQs, services, CTA, and cross-market links",
 test("United Kingdom location has Phase 4 SEO, schema, and UK trust requirements", () => {
   assert.match(
     locationData,
-    /metaTitle:\s*"Digital Product Agency for UK Businesses \| Web, Mobile & AI \| VeilCode"/,
+    /metaTitle:\s*"Web, Mobile & AI Agency for UK Businesses \| VeilCode"/,
   );
   assert.match(
     locationData,

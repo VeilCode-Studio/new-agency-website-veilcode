@@ -125,7 +125,9 @@ indexable
 createdAt
 updatedAt
 
-Do not add hreflang, slug history, similarity detection, or complex SEO scoring yet. Leave comments or TODOs for future phases.
+Do not add slug history, similarity detection, or complex SEO scoring yet. Leave comments or TODOs for future phases.
+
+Note: this prompt originally said not to add hreflang. That was superseded; regional hreflang (with x-default) now exists for the location pages. See docs/redesign/location-hreflang.md.
 
 Coding standards:
 Use TypeScript strictly.

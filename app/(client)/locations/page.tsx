@@ -2,19 +2,26 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { LOCATION_MARKETS } from "@/constants/locations";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { locationAlternateLanguages } from "@/lib/seo/locationAlternates";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/jsonLd";
 import { StructuredData } from "@/lib/seo/StructuredData";
 
 const title = "Locations | Kampala Studio & Remote Digital Product Delivery";
 const description =
   "Meet VeilCode in Kampala or work with our digital product studio remotely from the United States, United Kingdom, Canada, and Australia. Explore delivery in your market.";
+const baseMetadata = buildPageMetadata({
+  title,
+  description,
+  path: "/locations",
+  image: "/assets/og/uganda.jpg",
+});
+
 export const metadata = {
-  ...buildPageMetadata({
-    title,
-    description,
-    path: "/locations",
-    image: "/assets/og/uganda.jpg",
-  }),
+  ...baseMetadata,
+  alternates: {
+    ...baseMetadata.alternates,
+    languages: locationAlternateLanguages,
+  },
   keywords: [],
 };
 

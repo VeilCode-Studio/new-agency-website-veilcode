@@ -188,7 +188,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "united-states",
     countryName: "United States",
     shortName: "USA",
-    metaTitle: "Remote Web, Mobile & AI Automation Agency for US Companies | VeilCode",
+    metaTitle: "Remote Web, Mobile & AI Agency for US Companies | VeilCode",
     metaDescription:
       "VeilCode builds websites, mobile apps and AI automation for US businesses. Work directly with your engineer, with fixed written scopes and full code ownership.",
     ogImage: "/assets/og/united-states.jpg",
@@ -334,7 +334,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "united-kingdom",
     countryName: "United Kingdom",
     shortName: "UK",
-    metaTitle: "Digital Product Agency for UK Businesses | Web, Mobile & AI | VeilCode",
+    metaTitle: "Web, Mobile & AI Agency for UK Businesses | VeilCode",
     metaDescription:
       "VeilCode builds web platforms, mobile apps, and AI automation systems for UK SMEs and growth-stage businesses. GDPR-aware delivery, accessibility-conscious builds, documented delivery.",
     ogImage: "/assets/og/united-kingdom.jpg",
@@ -472,7 +472,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "canada",
     countryName: "Canada",
     shortName: "Canada",
-    metaTitle: "Web, Mobile & AI Automation Agency for Canadian Companies | VeilCode",
+    metaTitle: "Web, Mobile & AI Agency for Canadian Companies | VeilCode",
     metaDescription:
       "VeilCode helps Canadian businesses build web platforms, mobile apps and AI automation, with remote delivery, clear documentation and practical scope control.",
     ogImage: "/assets/og/canada.jpg",
@@ -606,7 +606,7 @@ export const LOCATION_MARKETS: LocationMarket[] = [
     slug: "australia",
     countryName: "Australia",
     shortName: "Australia",
-    metaTitle: "Web, Mobile & AI Automation Agency for Australian Businesses | VeilCode",
+    metaTitle: "Web, Mobile & AI Agency for Australian Business | VeilCode",
     metaDescription:
       "VeilCode helps Australian businesses ship web platforms, mobile apps and automation systems with remote delivery, full IP ownership and the process discipline offshore work often lacks.",
     ogImage: "/assets/og/australia.jpg",

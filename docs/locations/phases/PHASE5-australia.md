@@ -15,7 +15,7 @@ MARKET RESEARCH CONTEXT (use this to write authentic, specific copy):
 PAGE STRUCTURE TO BUILD:
 
 1. METADATA
-   - Title: "Web, Mobile & AI Automation Agency for Australian Businesses | VeilCode"
+   - Title: "Web, Mobile & AI Agency for Australian Business | VeilCode"
    - Meta description: "VeilCode helps Australian businesses ship web platforms, mobile apps, and automation systems with senior remote delivery, full IP ownership, and the process discipline offshore work often lacks."
    - OG image: use /assets/og/australia.jpg
    - JSON-LD: ProfessionalService schema, areaServed="AU"

@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Google modern web guidance rule
+
+Target Baseline Widely Available browsers. Always consult modern-web-guidance before writing HTML, CSS, or client-side JS.
+
 ## Commands
 
 ```bash

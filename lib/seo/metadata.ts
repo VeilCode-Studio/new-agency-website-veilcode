@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { absoluteUrl, pageUrl, SITE_NAME, TITLE_SUFFIX } from "./site";
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE,
+  pageUrl,
+  SITE_NAME,
+  TITLE_SUFFIX,
+} from "./site";
 
 type BuildMetadataInput = {
   title: string;
@@ -31,7 +37,7 @@ export function buildPageMetadata({
 }: BuildMetadataInput): Metadata {
   const url = pageUrl(path);
   const fullTitle = fullPageTitle(title);
-  const imageUrl = image ? absoluteUrl(image) : absoluteUrl("/assets/logo.png");
+  const imageUrl = image ? absoluteUrl(image) : absoluteUrl(DEFAULT_OG_IMAGE);
 
   return {
     title: { absolute: fullTitle },

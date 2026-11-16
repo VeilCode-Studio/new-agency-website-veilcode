@@ -16,6 +16,8 @@ Every location page emits the following complete set, including its own URL:
 | en-CA | https://www.veilcode.studio/locations/canada |
 | en-AU | https://www.veilcode.studio/locations/australia |
 
+Update (SEO audit follow-up): the set also includes `x-default`, pointing to https://www.veilcode.studio/locations. The `/locations` directory page emits the identical set so the annotations stay reciprocal. The set is defined once in `lib/seo/locationAlternates.ts` and used by both the location pages and the directory.
+
 These alternate URLs are reciprocal and fully qualified. The homepage and other page types remain outside this regional group. No automatic redirects were introduced. HTML metadata is the single hreflang source; the same annotations are not duplicated in the sitemap.
 
 `app/sitemap.ts` updates the five location pages' last-modified dates to reflect the metadata change. All other sitemap dates and URLs remain unchanged.

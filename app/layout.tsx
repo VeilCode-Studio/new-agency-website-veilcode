@@ -28,15 +28,6 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
   },
 
-  keywords: [
-    "Next.js development",
-    "AI automation",
-    "web development",
-    "software engineering",
-    "Website development",
-    "Mobile Applications development"
-  ],
-
   openGraph: {
     title: ROOT_TITLE,
     description: SITE_DESCRIPTION,
