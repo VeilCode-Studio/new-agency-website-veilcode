@@ -225,9 +225,10 @@ export const PROJECTS: SampleProjects[] = [
 ];
 
 export const SOCIALS = [
-  { label: "Twitter / X", abbr: "TW", href: "#" },
-  { label: "LinkedIn", abbr: "LI", href: "#" },
-  { label: "GitHub", abbr: "GH", href: "https://github.com/ghost-sys-coder" },
+  { label: "Twitter / X", abbr: "TW", href: "https://x.com/veilcodestudio" },
+  { label: "Instagram", abbr: "IG", href: "https://www.instagram.com/veilcodestudio/" },
+  { label: "LinkedIn", abbr: "LI", href: "https://www.linkedin.com/in/tamalefrank/" },
+  { label: "GitHub", abbr: "GH", href: "https://github.com/VeilCode-Studio" },
 ] as const;
 
 export const TYPEWRITER_WORDS = [

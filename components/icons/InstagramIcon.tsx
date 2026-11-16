@@ -1,6 +1,6 @@
-export function InstagramIcon() {
+export function InstagramIcon({ size = 15 }: { size?: number }) {
   return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
       <rect
         x="2"
         y="2"

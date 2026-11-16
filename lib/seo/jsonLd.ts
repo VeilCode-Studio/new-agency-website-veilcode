@@ -45,9 +45,15 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl("/assets/logo.png"),
+    // Personal profiles describe the founder, not the company, so they sit on
+    // the Person rather than in the Organization's sameAs.
     founder: {
       "@type": "Person",
       name: FOUNDER_NAME,
+      sameAs: [
+        "https://www.linkedin.com/in/tamalefrank/",
+        "https://github.com/ghost-sys-coder",
+      ],
     },
     address: {
       "@type": "PostalAddress",
@@ -56,7 +62,9 @@ export function organizationJsonLd() {
     },
     sameAs: [
       "https://facebook.com/veilcode",
-      "https://instagram.com/veilcodestudio",
+      "https://www.instagram.com/veilcodestudio/",
+      "https://x.com/veilcodestudio",
+      "https://github.com/VeilCode-Studio",
     ],
   };
 }
